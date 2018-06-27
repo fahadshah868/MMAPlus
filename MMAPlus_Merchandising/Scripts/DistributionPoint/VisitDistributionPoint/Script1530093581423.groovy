@@ -19,7 +19,33 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Validate_ShopModulesScreen'), 'Channel: Small Kiryana1')
+MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen'), 'Dashboard')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.visitShopProducts'()
+MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/DaysDropdownMenu'), 0)
+
+CustomKeywords.'customkeywords.CustomKeywordsCollection.selectday'()
+
+MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay'), 0)
+
+Mobile.delay(10, FailureHandling.STOP_ON_FAILURE)
+
+Mobile.waitForElementPresent(findTestObject('CommonScreenElements/Validate_MapScreen'), 30)
+
+MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/Location_CheckIn'), 0)
+
+Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_InfoPopUP'), 0)
+
+MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/InfoPopUp_NoButton'), 0)
+
+MobileBuiltInKeywords.verifyElementText(findTestObject('DistributionPoint/Validate_RouteInfoScreen'), 'Route Info')
+
+MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/RouteInfoNextButton'), 0)
+
+MobileBuiltInKeywords.verifyElementText(findTestObject('DistributionPoint/Validate_DistributionPointScreen'), 'Poster Quantity:')
+
+CustomKeywords.'customkeywords.CustomKeywordsCollection.visitdistributionPoint'()
+
+MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/DistributionPoint_SubmitButton'), 0)
+
+MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen'), 'Dashboard')
 

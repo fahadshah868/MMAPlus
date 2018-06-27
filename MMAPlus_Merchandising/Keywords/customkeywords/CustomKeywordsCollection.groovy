@@ -62,6 +62,7 @@ import WebUiBuiltInKeywords as WebUI
 public class CustomKeywordsCollection {
 
 	public static AppiumDriver<?> driver = MobileDriverFactory.getDriver()
+	public static TestData datafordistributionpoint = findTestData("Data Files/DistributionPoint/DistributionPoint")
 	public static TestData dataforshopwithchiller = findTestData("Shops/ShopWithChiller")
 	public static TestData dataforshopwithchillerutilization = findTestData("Data Files/Shops/ShopWithChillerUtilization")
 	public static TestData dataforvisitchillerproducts = findTestData("Data Files/Chiller/VisitChillerProducts")
@@ -71,133 +72,61 @@ public class CustomKeywordsCollection {
 	public static TestData dataforvisitchilleravailableproducts = findTestData("Data Files/ChillerUtilization/VisitChillerAvailableProducts")
 	public static TestData dataforoverwritechilleravailableproducts = findTestData("Data Files/ChillerUtilization/OverwriteChillerAvailableProducts")
 	public static TestData dataforvisitchillernotavailableproducts = findTestData("Data Files/ChillerUtilization/VisitChillerNotAvailableProducts")
-	public static TestData dataforselectingmerchandiser = findTestData("Data Files/Merchandiser/SelectMerchandiser")
+
 
 	@Keyword
-	def checkSupervisorSelfie(){
-		try{
-			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]").isDisplayed()
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton"), 0)
-			Mobile.tap(findTestObject("Object Repository/SupervisorAttendanceScreenElements/TakePicture"), 0)
-			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton"), 0)
-			Mobile.delay(5)
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton"), 0)
-			Mobile.tap(findTestObject("Object Repository/SupervisorAttendanceScreenElements/SubmitButton"), 0)
-			Mobile.waitForElementPresent(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen"), 30)
-			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen"), 0)
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn"), 0)
+	def selectday(){
+		Calendar calendar = Calendar.getInstance();
+		int day = calendar.get(Calendar.DAY_OF_WEEK);
+		ArrayList<MobileElement> days = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+		if(day == 1){
+			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.TextView[7]").click()
 		}
-		catch(Exception ex){
-			Mobile.waitForElementPresent(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen"), 30)
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn"), 0)
+		else if(day == 2){
+			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.TextView[1]").click()
 		}
-	}
-	@Keyword
-	def markMerchandisersAttendance(){
-		int index = 0
-		try{
-			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]").isDisplayed()
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton"), 0)
-			ArrayList<MobileElement> totalmerchandisers = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
-			for(int i=1; i<=totalmerchandisers.size(); i++){
-				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.verifyElementText(findTestObject("MerchandiserAttendanceScreenElements/Validate_AttendancePopUp"), "Merchandisers")
-				Mobile.tap(findTestObject("MerchandiserAttendanceScreenElements/Present"), 0)
-				totalmerchandisers = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
-			}
-			if(totalmerchandisers.size() == 8){
-				Mobile.swipe(0, 245, 0, 200)
-				while(true){
-					index = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-					MobileElement lastitembeforeswipe = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-					String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
-					Mobile.swipe(0, 293, 0, 200)
-					index = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-					MobileElement lastitemafterswipe = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-					String lastitemnameafterswipe = lastitemafterswipe.getText()
-					if(lastitemnamebeforeswipe.equals(lastitemnameafterswipe)){
-						break
-					}
-					else{
-						driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-						Mobile.verifyElementText(findTestObject("MerchandiserAttendanceScreenElements/Validate_AttendancePopUp"), "Merchandisers")
-						Mobile.tap(findTestObject("MerchandiserAttendanceScreenElements/Present"), 0)
-					}
-				}
-			}
-			Mobile.tap(findTestObject("MerchandiserAttendanceScreenElements/StartYourDay"), 0)
+		else if(day == 3){
+			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.TextView[2]").click()
 		}
-		catch(Exception ex){
+		else if(day == 4){
+			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.TextView[3]").click()
+		}
+		else if(day == 5){
+			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.TextView[4]").click()
+		}
+		else if(day == 6){
+			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.TextView[5]").click()
+		}
+		else if(day == 7){
+			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.TextView[6]").click()
 		}
 	}
 	@Keyword
-	def selectMerchandiser(){
-		boolean flag = false
-		String _merchandisername = dataforselectingmerchandiser.getObjectValue("Merchandiser Name", 1)
-		int index = 0
-		ArrayList<MobileElement> merchandisers = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
-		for(int i=1; i<=merchandisers.size(); i++){
-			if(i == 8){
-				Mobile.swipe(0, 353, 0, 300)
+	def visitdistributionPoint(){
+		ArrayList<MobileElement> distributionitems = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/*")
+		for(int i=1; i<=(distributionitems.size()-2); i++){
+			MobileElement distributionitem = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			String distributionitemname = distributionitem.getText()
+			if(distributionitemname.equals("Poster Quantity:")){
+				MobileElement distributionitemtextfield = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.EditText[1]")
+				distributionitemtextfield.setValue(datafordistributionpoint.getObjectValue("Poster Quantity", 1))
+				Mobile.hideKeyboard()
 			}
-			MobileElement merchandiser = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout["+i+"]/android.widget.TextView[1]")
-			String merchandisername = merchandiser.getText()
-			if(merchandisername.equals(_merchandisername)){
-				flag = true
-				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout["+i+"]").click()
-				break
+			else if(distributionitemname.equals("Bunting Quantity:")){
+				MobileElement distributionitemtextfield = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.EditText[1]")
+				distributionitemtextfield.setValue(datafordistributionpoint.getObjectValue("Bunting Quantity", 1))
+				Mobile.hideKeyboard()
 			}
-			merchandisers = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
-		}
-		if(flag == false){
-			while(true){
-				index = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-				MobileElement lastitembeforeswipe = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout["+index+"]/android.widget.TextView[1]")
-				String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
-				Mobile.swipe(0, 393, 0, 300)
-				index = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-				MobileElement lastitemafterswipe = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout["+index+"]/android.widget.TextView[1]")
-				String lastitemnameafterswipe = lastitemafterswipe.getText()
-				if(lastitemnamebeforeswipe.equals(lastitemnameafterswipe)){
-					break
-				}
-				else if(lastitemnameafterswipe.equals(_merchandisername)){
-					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout["+index+"]").click()
-					break
-				}
+			else if(distributionitemname.equals("Shelf Talker Quantity:")){
+				MobileElement distributionitemtextfield = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.EditText[1]")
+				distributionitemtextfield.setValue(datafordistributionpoint.getObjectValue("Shelf Talker Quantity", 1))
+				Mobile.hideKeyboard()
 			}
-		}
-		Mobile.waitForElementPresent(findTestObject("Validate_ModuleSelectionScreen"), 30)
-	}
-	@Keyword
-	def selectRoute(){
-		Date now = new Date()
-		SimpleDateFormat dateformat = new SimpleDateFormat("EEEE")
-		String currentday = dateformat.format(now)
-		ArrayList<MobileElement> dayslist = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
-		for(int i=1; i<=dayslist.size(); i++){
-			MobileElement day = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-			String dayname = day.getText()
-			if(dayname.equals(currentday)){
-				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				break
+			else if(distributionitemname.equals("Banners:")){
+				MobileElement distributionitemtextfield = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.EditText[1]")
+				distributionitemtextfield.setValue(datafordistributionpoint.getObjectValue("Banners", 1))
+				Mobile.hideKeyboard()
 			}
-			dayslist = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
-		}
-	}
-	@Keyword
-	def checkUnCapturedShops(){
-		try{
-			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]").isDisplayed()
-			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 1)
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton"), 0)
-			Mobile.verifyElementText(findTestObject("Object Repository/ModuleSelectionScreenElements/WR/Validate_RouteSelectionScreen"), "Select")
-		}
-		catch(Exception ex){
-			Mobile.verifyElementText(findTestObject("Object Repository/ModuleSelectionScreenElements/WR/Validate_ShopsListScreen"), "Shops on Route")
-			Mobile.pressBack()
-			Mobile.verifyElementText(findTestObject("Object Repository/ModuleSelectionScreenElements/WR/Validate_RouteSelectionScreen"), "Select")
 		}
 	}
 	@Keyword
@@ -294,42 +223,42 @@ public class CustomKeywordsCollection {
 			if(productname.equals("Chiller")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/Chiller/VisitChiller"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitChiller"), null)
 			}
 			else if(productname.equals("Chiller Utilization")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerUtilization"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerUtilization"), null)
 			}
 			else if(productname.equals("Sachets")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/Sachets/VisitSachets"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Sachets/VisitSachets"), null)
 			}
 			else if(productname.equals("Additional Picture")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/AdditionalPicture/VisitAdditionalPicture"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/VisitAdditionalPicture"), null)
 			}
 			//			else if(productname.equals("Competition Tracking")){
 			//				flag = flag+1
 			//				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			//				Mobile.callTestCase(findTestCase("ShopOpen/CompetitionTracking/VisitCompetitionTracking"), null)
+			//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/VisitCompetitionTracking"), null)
 			//			}
 			else if(productname.equals("Retailer Remarks")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/RetailerRemarks/VisitRetailerRemarks"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/VisitRetailerRemarks"), null)
 			}
 			else if(productname.equals("RTM -Visit Frequency")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/RTMVisitFrequency/VisitRTMVisitFrequency"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/VisitRTMVisitFrequency"), null)
 			}
 			else if(productname.equals("Hanger Availibility")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/HangerAvailability/VisitHangerAvailability"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/VisitHangerAvailability"), null)
 			}
 			products = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		}
@@ -351,49 +280,49 @@ public class CustomKeywordsCollection {
 					_flag = true
 					lastvisitedproduct = "Chiller"
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-					Mobile.callTestCase(findTestCase("ShopOpen/Chiller/VisitChiller"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitChiller"), null)
 				}
 				else if(lastitemnameafterswipe.equals("Chiller Utilization")){
 					_flag = true
 					lastvisitedproduct = "Chiller Utilization"
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-					Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerUtilization"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerUtilization"), null)
 				}
 				else if(lastitemnameafterswipe.equals("Sachets")){
 					_flag = true
 					lastvisitedproduct = "Sachets"
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-					Mobile.callTestCase(findTestCase("ShopOpen/Sachets/VisitSachets"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Sachets/VisitSachets"), null)
 				}
 				else if(lastitemnameafterswipe.equals("Additional Picture")){
 					_flag = true
 					lastvisitedproduct = "Additional Picture"
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-					Mobile.callTestCase(findTestCase("ShopOpen/AdditionalPicture/VisitAdditionalPicture"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/VisitAdditionalPicture"), null)
 				}
 				//				else if(lastitemnameafterswipe.equals("Competition Tracking")){
 				//					_flag = true
 				//					lastvisitedproduct = "Competition Tracking"
 				//					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				//					Mobile.callTestCase(findTestCase("ShopOpen/CompetitionTracking/VisitCompetitionTracking"), null)
+				//					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/VisitCompetitionTracking"), null)
 				//				}
 				else if(lastitemnameafterswipe.equals("Retailer Remarks")){
 					_flag = true
 					lastvisitedproduct = "Retailer Remarks"
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-					Mobile.callTestCase(findTestCase("ShopOpen/RetailerRemarks/VisitRetailerRemarks"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/VisitRetailerRemarks"), null)
 				}
 				else if(lastitemnameafterswipe.equals("RTM -Visit Frequency")){
 					_flag = true
 					lastvisitedproduct = "RTM -Visit Frequency"
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-					Mobile.callTestCase(findTestCase("ShopOpen/RTMVisitFrequency/VisitRTMVisitFrequency"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/VisitRTMVisitFrequency"), null)
 				}
 				else if(lastitemnameafterswipe.equals("Hanger Availibility")){
 					_flag = true
 					lastvisitedproduct = "Hanger Availibility"
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-					Mobile.callTestCase(findTestCase("ShopOpen/HangerAvailability/VisitHangerAvailability"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/VisitHangerAvailability"), null)
 				}
 				if(_flag == true){
 					while(true){
@@ -423,52 +352,52 @@ public class CustomKeywordsCollection {
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), 0)
-				Mobile.callTestCase(findTestCase("ShopOpen/Chiller/OverwriteChiller"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChiller"), null)
 			}
 			else if(productname.equals("Chiller Utilization")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), 0)
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/OverwriteChillerUtilization"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/OverwriteChillerUtilization"), null)
 			}
 			else if(productname.equals("Sachets")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), 0)
-				Mobile.callTestCase(findTestCase("ShopOpen/Sachets/OverwriteSachets"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Sachets/OverwriteSachets"), null)
 			}
 			else if(productname.equals("Additional Picture")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/AdditionalPicture/OverwriteAdditionalPicture"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/OverwriteAdditionalPicture"), null)
 			}
 			//			else if(productname.equals("Competition Tracking")){
 			//				flag = flag+1
 			//				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			//				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 			//				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), 0)
-			//				Mobile.callTestCase(findTestCase("ShopOpen/CompetitionTracking/OverwriteCompetitionTracking"), null)
+			//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/OverwriteCompetitionTracking"), null)
 			//			}
 			else if(productname.equals("Retailer Remarks")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), 0)
-				Mobile.callTestCase(findTestCase("ShopOpen/RetailerRemarks/OverwriteRetailerRemarks"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/OverwriteRetailerRemarks"), null)
 			}
 			else if(productname.equals("RTM -Visit Frequency")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), 0)
-				Mobile.callTestCase(findTestCase("ShopOpen/RTMVisitFrequency/OverwriteRTMVisitFrequency"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/OverwriteRTMVisitFrequency"), null)
 			}
 			else if(productname.equals("Hanger Availibility")){
 				flag = flag+1
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/HangerAvailability/OverwriteHangerAvailability"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/OverwriteHangerAvailability"), null)
 			}
 			products = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		}
@@ -492,7 +421,7 @@ public class CustomKeywordsCollection {
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
 					Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), 0)
-					Mobile.callTestCase(findTestCase("ShopOpen/Chiller/OverwriteChiller"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChiller"), null)
 				}
 				else if(lastitemnameafterswipe.equals("Chiller Utilization")){
 					_flag = true
@@ -500,7 +429,7 @@ public class CustomKeywordsCollection {
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
 					Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), 0)
-					Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/OverwriteChillerUtilization"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/OverwriteChillerUtilization"), null)
 				}
 				else if(lastitemnameafterswipe.equals("Sachets")){
 					_flag = true
@@ -508,13 +437,13 @@ public class CustomKeywordsCollection {
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
 					Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), 0)
-					Mobile.callTestCase(findTestCase("ShopOpen/Sachets/OverwriteSachets"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Sachets/OverwriteSachets"), null)
 				}
 				else if(lastitemnameafterswipe.equals("Additional Picture")){
 					_flag = true
 					lastvisitedproduct = "Additional Picture"
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-					Mobile.callTestCase(findTestCase("ShopOpen/AdditionalPicture/OverwriteAdditionalPicture"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/OverwriteAdditionalPicture"), null)
 				}
 				//				else if(lastitemnameafterswipe.equals("Competition Tracking")){
 				//					_flag = true
@@ -522,7 +451,7 @@ public class CustomKeywordsCollection {
 				//					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
 				//					Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 				//					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), 0)
-				//					Mobile.callTestCase(findTestCase("ShopOpen/CompetitionTracking/OverwriteCompetitionTracking"), null)
+				//					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/OverwriteCompetitionTracking"), null)
 				//				}
 				else if(lastitemnameafterswipe.equals("Retailer Remarks")){
 					_flag = true
@@ -530,7 +459,7 @@ public class CustomKeywordsCollection {
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
 					Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), 0)
-					Mobile.callTestCase(findTestCase("ShopOpen/RetailerRemarks/OverwriteRetailerRemarks"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/OverwriteRetailerRemarks"), null)
 				}
 				else if(lastitemnameafterswipe.equals("RTM -Visit Frequency")){
 					_flag = true
@@ -538,13 +467,13 @@ public class CustomKeywordsCollection {
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
 					Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), 0)
-					Mobile.callTestCase(findTestCase("ShopOpen/RTMVisitFrequency/OverwriteRTMVisitFrequency"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/OverwriteRTMVisitFrequency"), null)
 				}
 				else if(lastitemnameafterswipe.equals("Hanger Availibility")){
 					_flag = true
 					lastvisitedproduct = "Hanger Availibility"
 					driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-					Mobile.callTestCase(findTestCase("ShopOpen/HangerAvailability/OverwriteHangerAvailability"), null)
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/OverwriteHangerAvailability"), null)
 				}
 				if(_flag == true){
 					while(true){
@@ -769,8 +698,8 @@ public class CustomKeywordsCollection {
 		ArrayList<MobileElement> products = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		for(int i=1; i<=products.size(); i++){
 			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			Mobile.verifyElementExist(findTestObject("ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks"), 0)
-			Mobile.tap(findTestObject("ShopOpen/RTMVisitFrequency/OnceAWeek"), 0)
+			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks"), 0)
+			Mobile.tap(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/OnceAWeek"), 0)
 			products = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		}
 	}
@@ -779,8 +708,8 @@ public class CustomKeywordsCollection {
 		ArrayList<MobileElement> products = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		for(int i=1; i<=products.size(); i++){
 			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			Mobile.verifyElementExist(findTestObject("ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks"), 0)
-			Mobile.tap(findTestObject("ShopOpen/RTMVisitFrequency/TwiceAWeek"), 0)
+			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks"), 0)
+			Mobile.tap(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/TwiceAWeek"), 0)
 			products = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		}
 	}
@@ -789,10 +718,10 @@ public class CustomKeywordsCollection {
 		ArrayList<MobileElement> products = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		for(int i=1; i<=products.size(); i++){
 			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			Mobile.verifyElementText(findTestObject("ShopOpen/RetailerRemarks/Validate_RetailerRemarksDetailScreen"), "Channel:Small Kiryana")
-			Mobile.tap(findTestObject("ShopOpen/RetailerRemarks/OBNotVisiting"), 0)
+			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksDetailScreen"), "Channel:Small Kiryana")
+			Mobile.tap(findTestObject("Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting"), 0)
 			Mobile.pressBack()
-			Mobile.verifyElementText(findTestObject("ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen"), "KPI: Retailer Remarks")
+			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen"), "KPI: Retailer Remarks")
 			products = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		}
 	}
@@ -801,10 +730,10 @@ public class CustomKeywordsCollection {
 		ArrayList<MobileElement> products = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		for(int i=1; i<=products.size(); i++){
 			driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			Mobile.verifyElementText(findTestObject("ShopOpen/RetailerRemarks/Validate_RetailerRemarksDetailScreen"), "Channel:Small Kiryana")
-			Mobile.tap(findTestObject("ShopOpen/RetailerRemarks/SMNotVisiting"), 0)
+			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksDetailScreen"), "Channel:Small Kiryana")
+			Mobile.tap(findTestObject("Object Repository/ShopOpen/RetailerRemarks/SMNotVisiting"), 0)
 			Mobile.pressBack()
-			Mobile.verifyElementText(findTestObject("ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen"), "KPI: Retailer Remarks")
+			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen"), "KPI: Retailer Remarks")
 			products = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		}
 	}
@@ -816,37 +745,37 @@ public class CustomKeywordsCollection {
 			String actionname = action.getText()
 			if(actionname.equals("Chiller Available")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
 				actions = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 			}
 			else if(actionname.equals("Chiller not Available")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
 				actions = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 			}
 			else if(actionname.equals("Chiller need maintenance")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerNeedMaintenance/VisitChillerNeedMaintenance"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNeedMaintenance/VisitChillerNeedMaintenance"), null)
 				actions = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 			}
 			else if(actionname.equals("Chiller removed for maintenance")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerRemovedForMaintenance/VisitChillerRemovedForMaintenance"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerRemovedForMaintenance/VisitChillerRemovedForMaintenance"), null)
 				actions = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 			}
 			else if(actionname.equals("Chiller not in access")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerNotInAccess/VisitChillerNotInAccess"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotInAccess/VisitChillerNotInAccess"), null)
 				actions = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 			}
 			else if(actionname.equals("Shopkeeper did not allow")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
 				actions = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 			}
 			else if(actionname.equals("Chiller Type not Available")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/VisitChillerTypeNotAvailable"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/VisitChillerTypeNotAvailable"), null)
 			}
 		}
 	}
@@ -858,7 +787,7 @@ public class CustomKeywordsCollection {
 			String actionname = action.getText()
 			if(actionname.equals("Chiller Type not Available")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("Test Cases/WW/ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/overwriteChillerTypeNotAvailable"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/overwriteChillerTypeNotAvailable"), null)
 			}
 		}
 	}
@@ -870,23 +799,23 @@ public class CustomKeywordsCollection {
 			String categoryname = category.getText()
 			if(categoryname.equals("Flavoured Milk")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerAvailableProducts/VisitFlavouredMilkProducts"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailableProducts/VisitFlavouredMilkProducts"), null)
 			}
 			else if(categoryname.equals("Juices - 1000ML")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerAvailableProducts/VisitJuices1000mlProducts"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailableProducts/VisitJuices1000mlProducts"), null)
 			}
 			else if(categoryname.equals("Juices - 200ML")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerAvailableProducts/VisitJuices200mlProducts"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailableProducts/VisitJuices200mlProducts"), null)
 			}
 			else if(categoryname.equals("Water")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerAvailableProducts/VisitWaterProducts"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailableProducts/VisitWaterProducts"), null)
 			}
 			else if(categoryname.equals("Yogurt")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerAvailableProducts/VisitYogurtProducts"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailableProducts/VisitYogurtProducts"), null)
 			}
 			categories = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
 		}
@@ -900,23 +829,23 @@ public class CustomKeywordsCollection {
 			String categoryname = category.getText()
 			if(categoryname.equals("Flavoured Milk")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerAvailableProducts/OverwriteFlavouredMilkProducts"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailableProducts/OverwriteFlavouredMilkProducts"), null)
 			}
 			else if(categoryname.equals("Juices - 1000ML")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerAvailableProducts/OverwriteJuices1000mlProducts"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailableProducts/OverwriteJuices1000mlProducts"), null)
 			}
 			else if(categoryname.equals("Juices - 200ML")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerAvailableProducts/OverwriteJuices200mlProducts"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailableProducts/OverwriteJuices200mlProducts"), null)
 			}
 			else if(categoryname.equals("Water")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerAvailableProducts/OverwriteWaterProducts"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailableProducts/OverwriteWaterProducts"), null)
 			}
 			else if(categoryname.equals("Yogurt")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerAvailableProducts/OverwriteYogurtProducts"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailableProducts/OverwriteYogurtProducts"), null)
 			}
 			categories = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
 		}
@@ -1303,7 +1232,7 @@ public class CustomKeywordsCollection {
 			String categoryname = category.getText()
 			if(categoryname.equals("Juices - 200ML")){
 				driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerNotAvailableProducts/VisitJuices-200ML"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailableProducts/VisitJuices-200ML"), null)
 			}
 			categories = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
 		}
@@ -1337,15 +1266,15 @@ public class CustomKeywordsCollection {
 	}
 	@Keyword
 	def continueChillerAvailableModuleFlowForChillerNeedMaintenance(){
-		Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
+		Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
 	}
 	@Keyword
 	def continueChillerNotAvailableModuleFlowForChillerRemovedForMaintenance(){
-		Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
+		Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
 	}
 	@Keyword
 	def continueChillerNotAvailableModuleFlowForChillerNotInAccess(){
-		Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
+		Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
 	}
 	@Keyword
 	def comapareImages(){

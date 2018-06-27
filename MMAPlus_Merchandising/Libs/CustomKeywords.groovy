@@ -6,24 +6,12 @@
 import java.lang.String
 
 
-def static "customkeywords.CustomKeywordsCollection.checkSupervisorSelfie"() {
-    (new customkeywords.CustomKeywordsCollection()).checkSupervisorSelfie()
+def static "customkeywords.CustomKeywordsCollection.selectday"() {
+    (new customkeywords.CustomKeywordsCollection()).selectday()
 }
 
-def static "customkeywords.CustomKeywordsCollection.markMerchandisersAttendance"() {
-    (new customkeywords.CustomKeywordsCollection()).markMerchandisersAttendance()
-}
-
-def static "customkeywords.CustomKeywordsCollection.selectMerchandiser"() {
-    (new customkeywords.CustomKeywordsCollection()).selectMerchandiser()
-}
-
-def static "customkeywords.CustomKeywordsCollection.selectRoute"() {
-    (new customkeywords.CustomKeywordsCollection()).selectRoute()
-}
-
-def static "customkeywords.CustomKeywordsCollection.checkUnCapturedShops"() {
-    (new customkeywords.CustomKeywordsCollection()).checkUnCapturedShops()
+def static "customkeywords.CustomKeywordsCollection.visitdistributionPoint"() {
+    (new customkeywords.CustomKeywordsCollection()).visitdistributionPoint()
 }
 
 def static "customkeywords.CustomKeywordsCollection.findPictureImageView"() {
