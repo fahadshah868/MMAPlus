@@ -16,6 +16,12 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/LaunchingApp/LaunchApp</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>8644ebf3-0b87-4389-b6e5-796ac7ab46da</variableId>
+      </variableLink>
    </testCaseLink>
    <testCaseLink>
       <guid>6fff486e-8791-4abb-aa5d-3cc3cfd97e16</guid>

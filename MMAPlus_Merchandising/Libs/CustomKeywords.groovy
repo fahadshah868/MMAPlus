@@ -163,3 +163,7 @@ def static "customkeywords.CustomKeywordsCollection.continueChillerNotAvailableM
 def static "customkeywords.CustomKeywordsCollection.comapareImages"() {
     (new customkeywords.CustomKeywordsCollection()).comapareImages()
 }
+
+def static "customkeywords.sample.samplee"() {
+    (new customkeywords.sample()).samplee()
+}
