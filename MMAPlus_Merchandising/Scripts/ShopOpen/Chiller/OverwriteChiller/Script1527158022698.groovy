@@ -90,6 +90,6 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validat
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Juices_BackButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Validate_ShopModulesScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
     'Channel: Small Kiryana')
 

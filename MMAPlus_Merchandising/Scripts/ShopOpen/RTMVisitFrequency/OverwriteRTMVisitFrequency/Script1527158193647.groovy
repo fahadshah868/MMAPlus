@@ -26,6 +26,6 @@ CustomKeywords.'customkeywords.CustomKeywordsCollection.overwriteRTMVisitFrequen
 
 Mobile.tap(findTestObject('ShopOpen/RTMVisitFrequency/BackButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Validate_ShopModulesScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
     'Channel: Small Kiryana')
 

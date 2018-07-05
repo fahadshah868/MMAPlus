@@ -21,7 +21,5 @@ import internal.GlobalVariable as GlobalVariable
 
 Mobile.startApplication('F:\\QA_Automation\\Builds\\MMAPlus_Sup_v147_0304_live.apk', false)
 
-not_run: MobileBuiltInKeywords.delay(5)
-
-CustomKeywords.'customkeywords.sample.samplee'()
+MobileBuiltInKeywords.delay(5)
 

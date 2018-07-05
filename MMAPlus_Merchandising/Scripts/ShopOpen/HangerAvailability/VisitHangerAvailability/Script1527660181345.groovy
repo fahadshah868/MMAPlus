@@ -28,6 +28,6 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/HangerAvailability/HangerAvai
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/HangerAvailability/HangerAvailability_BackButton'), 
     0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Validate_ShopModulesScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
     'Channel: Small Kiryana')
 
