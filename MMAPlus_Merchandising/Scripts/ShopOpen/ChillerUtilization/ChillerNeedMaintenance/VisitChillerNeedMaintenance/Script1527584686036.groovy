@@ -28,5 +28,5 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNee
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNeedMaintenance/CategoryRemarks_BackButton'), 
     0)
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.continueChillerAvailableModuleFlowForChillerNeedMaintenance'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.continueChillerAvailableModuleFlowForChillerNeedMaintenance'()
 

@@ -22,7 +22,7 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen'), 
     'KPI: Retailer Remarks')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.overwriteRetailerRemarks'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteRetailerRemarks'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RetailerRemarks/BackButton'), 0)
 

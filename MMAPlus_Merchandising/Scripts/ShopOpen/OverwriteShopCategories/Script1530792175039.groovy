@@ -26,5 +26,5 @@ Mobile.swipe(0, 200, 0, 600)
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
     'Channel: Small Kiryana')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.overwriteShopProducts'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteShopProducts'()
 

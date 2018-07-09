@@ -23,13 +23,13 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/
 
 MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/DaysDropdownMenu'), 0)
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.selectday'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.selectday'()
 
 MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay'), 0)
 
-Mobile.delay(10, FailureHandling.STOP_ON_FAILURE)
+Mobile.delay(15, FailureHandling.STOP_ON_FAILURE)
 
-Mobile.waitForElementPresent(findTestObject('CommonScreenElements/Validate_MapScreen'), 30)
+MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_MapScreen'), 0)
 
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/Location_CheckIn'), 0)
 
@@ -43,7 +43,7 @@ MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/RouteInfoNextButton'
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('DistributionPoint/Validate_DistributionPointScreen'), 'Poster Quantity:')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.visitdistributionPoint'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitdistributionPoint'()
 
 MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/DistributionPoint_SubmitButton'), 0)
 

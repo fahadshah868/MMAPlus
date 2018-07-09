@@ -22,7 +22,7 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/AdditionalPicture/Validate_AdditionalPictureScreen'), 
     'Additional Picture')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.comapareImages'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.comapareImages'()
 
 Mobile.pressBack()
 

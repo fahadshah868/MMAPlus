@@ -25,7 +25,7 @@ MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtiliza
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Planogram_ImageView'), 
     0)
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.checkPlanogramAvailability'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.checkPlanogramAvailability'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Planogram_CloseButton'), 
     0)
@@ -33,7 +33,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen'), 
     0)
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.findPictureImageView'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.findPictureImageView'()
 
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen'), 
     0)
@@ -72,12 +72,12 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen'), 
     'Category:Chiller Utilization')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.visitChillerAvailableProductsCategories'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerAvailableProductsCategories'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/ChillerProductsCategories_Planogram_ImageView'), 
     0)
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.checkPlanogramAvailability'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.checkPlanogramAvailability'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Planogram_CloseButton'), 
     0)
@@ -85,7 +85,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen'), 
     'Category:Chiller Utilization')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.findPictureImageView'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.findPictureImageView'()
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen'), 
     'Category:Chiller Utilization')

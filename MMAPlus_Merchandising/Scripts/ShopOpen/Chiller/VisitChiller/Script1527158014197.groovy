@@ -19,64 +19,33 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen'), 
-    'KPI: Chiller')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen'), 'KPI: Chiller')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocated'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Juices-200ML'), 0)
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategories'()
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_JuicesScreen'), 
-    'Channel: Small Kiryana')
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Facing'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_FacingScreen'), 
-    'Facing')
-
-CustomKeywords.'customkeywords.CustomKeywordsCollection.visitChillerJuices'()
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_JuicesScreen'), 
-    'Channel: Small Kiryana')
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/StockTaking'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_StockTakingScreen'), 
-    'Stock Taking')
-
-CustomKeywords.'customkeywords.CustomKeywordsCollection.visitChillerJuices'()
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_JuicesScreen'), 
-    'Channel: Small Kiryana')
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Juices_BackButton'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Planogram_ImageView'), 0)
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.checkPlanogramAvailability'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.checkPlanogramAvailability'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Planogram_CloseButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.findPictureImageView'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.findPictureImageView'()
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Juices_BackButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
-    'Channel: Small Kiryana')
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

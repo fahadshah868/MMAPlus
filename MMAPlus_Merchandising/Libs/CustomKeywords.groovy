@@ -4,30 +4,58 @@
  */
 
 
-def static "customkeywords.CustomKeywordsCollection.selectday"() {
-    (new customkeywords.CustomKeywordsCollection()).selectday()
+def static "com.ct.qa.keywords.KeywordsCollection.selectday"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).selectday()
 }
 
-def static "customkeywords.CustomKeywordsCollection.visitdistributionPoint"() {
-    (new customkeywords.CustomKeywordsCollection()).visitdistributionPoint()
+def static "com.ct.qa.keywords.KeywordsCollection.visitdistributionPoint"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitdistributionPoint()
 }
 
-def static "customkeywords.CustomKeywordsCollection.findPictureImageView"() {
-    (new customkeywords.CustomKeywordsCollection()).findPictureImageView()
+def static "com.ct.qa.keywords.KeywordsCollection.findPictureImageView"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).findPictureImageView()
 }
 
-def static "customkeywords.CustomKeywordsCollection.selectShop"() {
-    (new customkeywords.CustomKeywordsCollection()).selectShop()
+def static "com.ct.qa.keywords.KeywordsCollection.selectShop"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).selectShop()
 }
 
-def static "customkeywords.CustomKeywordsCollection.visitShopCategories"() {
-    (new customkeywords.CustomKeywordsCollection()).visitShopCategories()
+def static "com.ct.qa.keywords.KeywordsCollection.visitShopCategories"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitShopCategories()
 }
 
-def static "customkeywords.CustomKeywordsCollection.overwriteShopCategories"() {
-    (new customkeywords.CustomKeywordsCollection()).overwriteShopCategories()
+def static "com.ct.qa.keywords.KeywordsCollection.overwriteShopCategories"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).overwriteShopCategories()
 }
 
-def static "customkeywords.CustomKeywordsCollection.checkPlanogramAvailability"() {
-    (new customkeywords.CustomKeywordsCollection()).checkPlanogramAvailability()
+def static "com.ct.qa.keywords.KeywordsCollection.checkPlanogramAvailability"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).checkPlanogramAvailability()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategories"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerNotAllocatedProductCategories()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategoryFacing"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerNotAllocatedProductCategoryFacing()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategoryStockTaking"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerNotAllocatedProductCategoryStockTaking()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.visitDisplaySpaceAvailableFacing"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitDisplaySpaceAvailableFacing()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.visitDisplaySpaceAvailableStockTaking"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitDisplaySpaceAvailableStockTaking()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.visitNoSpaceForDisplayFacing"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitNoSpaceForDisplayFacing()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.visitNoSpaceForDisplayStockTaking"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitNoSpaceForDisplayStockTaking()
 }

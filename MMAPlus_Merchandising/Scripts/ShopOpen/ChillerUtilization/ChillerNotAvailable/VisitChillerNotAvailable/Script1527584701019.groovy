@@ -22,12 +22,12 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen'), 
     'Category:Chiller Utilization')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.visitChillerNotAvailableProductsCategories'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerNotAvailableProductsCategories'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Planogram_ImageView'), 
     0)
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.checkPlanogramAvailability'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.checkPlanogramAvailability'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Planogram_CloseButton'), 
     0)
@@ -35,7 +35,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNot
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen'), 
     'Category:Chiller Utilization')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.findPictureImageView'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.findPictureImageView'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/ChillerNotAvailable_BackButton'), 
     0)
@@ -49,7 +49,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerUti
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
     'Channel: Small Kiryana')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.findShopProduct'('Chiller Utilization')
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.findShopProduct'('Chiller Utilization')
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')

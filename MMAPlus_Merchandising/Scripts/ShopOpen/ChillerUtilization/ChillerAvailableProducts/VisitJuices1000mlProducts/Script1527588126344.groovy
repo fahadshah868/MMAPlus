@@ -28,7 +28,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen'), 
     'Facing')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.visitChillerAvailableJuices1000mlProducts'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerAvailableJuices1000mlProducts'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 
     0)
@@ -42,7 +42,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen'), 
     'Depth')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.visitChillerAvailableJuices1000mlProducts'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerAvailableJuices1000mlProducts'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 
     0)
@@ -56,7 +56,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen'), 
     'Stock Count')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.visitChillerAvailableJuices1000mlProducts'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerAvailableJuices1000mlProducts'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 
     0)

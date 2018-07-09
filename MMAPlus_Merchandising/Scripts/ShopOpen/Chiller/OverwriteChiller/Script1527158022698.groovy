@@ -37,12 +37,12 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validat
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocated'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Juices-200ML'), 0)
+MobileBuiltInKeywords.tap(findTestObject('null'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_JuicesScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
     'Channel: Small Kiryana')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Facing'), 0)
@@ -50,11 +50,11 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Facing'), 0)
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_FacingScreen'), 
     'Facing')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.overwriteChillerJuices'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteChillerJuices'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_JuicesScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
     'Channel: Small Kiryana')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/StockTaking'), 0)
@@ -62,33 +62,33 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/StockTaking'), 0)
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_StockTakingScreen'), 
     'Stock Taking')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.overwriteChillerJuices'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteChillerJuices'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_JuicesScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
     'Channel: Small Kiryana')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Juices_BackButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Planogram_ImageView'), 0)
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.checkPlanogramAvailability'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.checkPlanogramAvailability'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Planogram_CloseButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
-CustomKeywords.'customkeywords.CustomKeywordsCollection.findPictureImageView'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.findPictureImageView'()
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Juices_BackButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'), 0)
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
     'Channel: Small Kiryana')
