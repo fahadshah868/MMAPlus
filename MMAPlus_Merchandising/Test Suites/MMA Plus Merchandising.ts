@@ -4,7 +4,7 @@
    <name>MMA Plus Merchandising</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-07-09T17:04:21</lastRun>
+   <lastRun>2018-07-09T18:59:16</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -26,13 +26,13 @@
    <testCaseLink>
       <guid>6fff486e-8791-4abb-aa5d-3cc3cfd97e16</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>caa82ba9-836e-4364-b403-406147a54b8c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Shop/SelectShop</testCaseId>
    </testCaseLink>
    <testCaseLink>

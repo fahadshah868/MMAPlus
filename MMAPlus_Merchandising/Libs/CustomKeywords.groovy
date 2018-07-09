@@ -59,3 +59,55 @@ def static "com.ct.qa.keywords.KeywordsCollection.visitNoSpaceForDisplayFacing"(
 def static "com.ct.qa.keywords.KeywordsCollection.visitNoSpaceForDisplayStockTaking"() {
     (new com.ct.qa.keywords.KeywordsCollection()).visitNoSpaceForDisplayStockTaking()
 }
+
+def static "com.ct.qa.keywords.KeywordsCollection.overwriteChillerNotAllocatedProductCategoryFacing"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).overwriteChillerNotAllocatedProductCategoryFacing()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.overwriteChillerNotAllocatedProductCategoryStockTaking"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).overwriteChillerNotAllocatedProductCategoryStockTaking()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.overwriteDisplaySpaceAvailableFacing"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).overwriteDisplaySpaceAvailableFacing()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.overwriteDisplaySpaceAvailableStockTaking"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).overwriteDisplaySpaceAvailableStockTaking()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.overwriteNoSpaceForDisplayFacing"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).overwriteNoSpaceForDisplayFacing()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.overwriteNoSpaceForDisplayStockTaking"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).overwriteNoSpaceForDisplayStockTaking()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.visitCompetitiontrackingProducts"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitCompetitiontrackingProducts()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.overwriteCompetitiontrackingProducts"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).overwriteCompetitiontrackingProducts()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.visitRTMVisitFrequency"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitRTMVisitFrequency()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.overwriteRTMVisitFrequency"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).overwriteRTMVisitFrequency()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.visitRetailerRemarks"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitRetailerRemarks()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.overwriteRetailerRemarks"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).overwriteRetailerRemarks()
+}
+
+def static "com.ct.qa.keywords.KeywordsCollection.visitChillerUtilization"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerUtilization()
+}

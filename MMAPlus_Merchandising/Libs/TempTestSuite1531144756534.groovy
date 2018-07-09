@@ -28,8 +28,8 @@ DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.m
 
 
 
-RunConfiguration.setExecutionSettingFile("F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising\\20180709_170759\\execution.properties")
+RunConfiguration.setExecutionSettingFile("F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising\\20180709_185916\\execution.properties")
 
 TestCaseMain.beforeStart()
 
-TestCaseMain.startTestSuite('Test Suites/MMA Plus Merchandising', suiteProperties, [new TestCaseBinding('Test Cases/LaunchingApp/LaunchApp', 'Test Cases/LaunchingApp/LaunchApp',  null), new TestCaseBinding('Test Cases/Shop/SelectShop', 'Test Cases/Shop/SelectShop',  null)])
+TestCaseMain.startTestSuite('Test Suites/MMA Plus Merchandising', suiteProperties, [new TestCaseBinding('Test Cases/LaunchingApp/LaunchApp', 'Test Cases/LaunchingApp/LaunchApp',  null), new TestCaseBinding('Test Cases/DistributionPoint/VisitDistributionPoint', 'Test Cases/DistributionPoint/VisitDistributionPoint',  null)])
