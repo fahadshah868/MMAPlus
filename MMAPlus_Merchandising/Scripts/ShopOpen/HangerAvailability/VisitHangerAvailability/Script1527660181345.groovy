@@ -22,12 +22,9 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/HangerAvailability/Validate_HangerAvailabilityScreen'), 
     'Hanger Availability')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/HangerAvailability/HangerAvailability_Yes'), 
-    0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/HangerAvailability/HangerAvailability_Yes'), 0)
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/HangerAvailability/HangerAvailability_BackButton'), 
-    0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/HangerAvailability/HangerAvailability_BackButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
-    'Channel: Small Kiryana')
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

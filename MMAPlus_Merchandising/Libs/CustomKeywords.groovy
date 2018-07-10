@@ -32,8 +32,10 @@ def static "com.ct.qa.keywords.KeywordsCollection.checkPlanogramAvailability"() 
     (new com.ct.qa.keywords.KeywordsCollection()).checkPlanogramAvailability()
 }
 
-def static "com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategories"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerNotAllocatedProductCategories()
+def static "com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategories"(
+    	int flag	) {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerNotAllocatedProductCategories(
+        	flag)
 }
 
 def static "com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategoryFacing"() {

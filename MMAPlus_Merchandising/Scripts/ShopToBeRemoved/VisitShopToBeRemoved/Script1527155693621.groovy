@@ -19,9 +19,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate shop actions list screen appearance'
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopActions_List'), 0)
+
+'tap on "Shop To Be Removed" option from shop actions list'
 MobileBuiltInKeywords.tap(findTestObject('ShopToBeRemoved/ShopToBeRemoved'), 0)
 
+'validate confirm popup appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_InfoPopUP'), 0)
 
+'tap on confirm pop up yes button'
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/InfoPopUp_YesButton'), 0)
 

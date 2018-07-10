@@ -19,22 +19,30 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShoopKeeperDidNotAllow'), 
-    0)
+'validate shop actions list screen appearance'
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopActions_List'), 0)
 
+'tap on "Shopkeeper Did Not Allow" option from shop actions list'
+MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShoopKeeperDidNotAllow'), 0)
+
+'validate camera screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
 
+'tap on take picture button'
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton'), 0)
 
+'delay of 5 seconds while taking shop picture'
 MobileBuiltInKeywords.delay(5)
 
+'tap on done button after taking picture'
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopKeeperDidNotAllow/Validate_ShopRemarksScreen'), 
-    'SHOP REMARKS')
+'validate shop remarks screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopKeeperDidNotAllow/Validate_ShopRemarksScreen'), 'SHOP REMARKS')
 
+'tap on shop remark "Others" from shop remarks list'
 MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShopRemarks_Others'), 0)
 
-MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShopRemarks_BackButton'), 
-    0)
+'tap on shop remarks back button'
+MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShopRemarks_BackButton'), 0)
 

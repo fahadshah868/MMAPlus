@@ -26,6 +26,5 @@ CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitCompetitiontrackingPr
 
 Mobile.pressBack()
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
-    'Channel: Small Kiryana')
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

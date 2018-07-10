@@ -19,12 +19,11 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/HangerAvailability/Validate_HangerAvailabilityScreen'), 
-    'Hanger Availability')
+Mobile.verifyElementText(findTestObject('ShopOpen/POPApplication/Validate_POPApplicationDetailScreen'), 'KPI :POP Application')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/HangerAvailability/HangerAvailability_No'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/POPApplication/POPDeployment_No'), 0)
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/HangerAvailability/HangerAvailability_BackButton'), 0)
+Mobile.pressBack()
 
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

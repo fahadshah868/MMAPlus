@@ -19,57 +19,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen'), 
-    'KPI: Chiller')
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ShopKeeperDidNotAllow'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_CategoryRemarks'), 
-    'CATEGORY REMARKS')
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/CategoryRemarks_Others'), 0)
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/CategoryRemarks_BackButton'), 
-    0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen'), 
-    'KPI: Chiller')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen'), 'KPI: Chiller')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocated'), 0)
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
-MobileBuiltInKeywords.tap(findTestObject('null'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
-    'Channel: Small Kiryana')
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Facing'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_FacingScreen'), 
-    'Facing')
-
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteChillerJuices'()
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
-    'Channel: Small Kiryana')
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/StockTaking'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_StockTakingScreen'), 
-    'Stock Taking')
-
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteChillerJuices'()
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
-    'Channel: Small Kiryana')
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'), 0)
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategories'(1)
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
@@ -90,6 +47,5 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validat
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
-    'Channel: Small Kiryana')
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

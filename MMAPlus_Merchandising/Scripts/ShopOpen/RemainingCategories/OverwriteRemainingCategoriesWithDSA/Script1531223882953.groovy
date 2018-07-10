@@ -19,59 +19,44 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
-    'KPI: Sachets')
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ShopKeeperDidNotAllow'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_CategoryRemarksScreen'), 
-    'CATEGORY REMARKS')
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_Others'), 0)
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_BackButton'), 
-    0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
-    'KPI: Sachets')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen'), 
+    'Display Space Available')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/DisplaySpaceAvailable'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
-    'Category:Sachets')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
+    'Facing')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Facing'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_FacingScreen'), 
-    'Facing')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_FacingScreen'), 'Facing')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteSachetsProducts'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteDisplaySpaceAvailableFacing'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
-    'Category:Sachets')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
+    'Facing')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/StockTaking'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_StockTakingScreen'), 
-    'Stock Taking')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_StockTakingScreen'), 'Stock Taking')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteSachetsProducts'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteDisplaySpaceAvailableStockTaking'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
-    'Category:Sachets')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
+    'Facing')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/planogram_ImageView'), 0)
 
 CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.checkPlanogramAvailability'()
 
-MobileBuiltInKeywords.tap(findTestObject('null'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Planogram_CloseButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
-    'Category:Sachets')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
+    'Facing')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Picture_ImageView'), 0)
 
@@ -81,12 +66,10 @@ MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton
 
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 
-    'Category:Sachets')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
+    'Facing')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton'), 
-    0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
-    'Channel: Small Kiryana')
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

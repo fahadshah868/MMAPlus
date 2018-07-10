@@ -19,19 +19,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate shop actions list screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopActions_List'), 0)
 
+'tap on "Shop Open" option from shop actions list'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ShopOpen'), 0)
 
+'validate camera screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
 
+'tap on take picture button'
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton'), 0)
 
+'delay of 5 seconds while taking shop picture '
 MobileBuiltInKeywords.delay(5)
 
+'tap on done button after taking shop picture'
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
-
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
-
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitShopCategories'()
 

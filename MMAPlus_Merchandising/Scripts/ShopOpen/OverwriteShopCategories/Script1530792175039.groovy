@@ -23,8 +23,7 @@ Mobile.swipe(0, 200, 0, 600)
 
 Mobile.swipe(0, 200, 0, 600)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
-    'Channel: Small Kiryana')
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 
 CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteShopProducts'()
 

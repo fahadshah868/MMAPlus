@@ -61,6 +61,3 @@ CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitdistributionPoint'()
 'tap on submit button after enter the quantity of products on distribution point'
 MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/DistributionPoint_SubmitButton'), 0)
 
-'validate the dashboard screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen'), 'Dashboard')
-
