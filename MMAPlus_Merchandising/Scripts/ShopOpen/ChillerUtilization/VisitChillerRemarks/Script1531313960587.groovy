@@ -19,19 +19,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
-    'Shops on Route')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 'KPI: Chiller Utilization')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/Chiller'), 0)
-
-Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
-
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton'), 0)
-
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerActionsScreen'), 
-    'KPI: Chiller Utilization')
-
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteChillerUtilization'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerRemarks'()
 

@@ -3,6 +3,8 @@
  * This class is generated automatically by Katalon Studio and should not be modified or deleted.
  */
 
+import java.lang.String
+
 
 def static "com.ct.qa.keywords.KeywordsCollection.selectday"() {
     (new com.ct.qa.keywords.KeywordsCollection()).selectday()
@@ -38,52 +40,48 @@ def static "com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProduc
         	flag)
 }
 
-def static "com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategoryFacing"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerNotAllocatedProductCategoryFacing()
+def static "com.ct.qa.keywords.KeywordsCollection.visitChannelWiseProductsData"(
+    	int columnindex	
+     , 	String messageondisplayedproductsgreater	
+     , 	String messageondisplayedproductsless	) {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitChannelWiseProductsData(
+        	columnindex
+         , 	messageondisplayedproductsgreater
+         , 	messageondisplayedproductsless)
 }
 
-def static "com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategoryStockTaking"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerNotAllocatedProductCategoryStockTaking()
+def static "com.ct.qa.keywords.KeywordsCollection.visitChillerTaggedInChillerUtilization"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerTaggedInChillerUtilization()
 }
 
-def static "com.ct.qa.keywords.KeywordsCollection.visitDisplaySpaceAvailableFacing"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).visitDisplaySpaceAvailableFacing()
+def static "com.ct.qa.keywords.KeywordsCollection.visitChillerRemarks"() {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerRemarks()
 }
 
-def static "com.ct.qa.keywords.KeywordsCollection.visitDisplaySpaceAvailableStockTaking"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).visitDisplaySpaceAvailableStockTaking()
+def static "com.ct.qa.keywords.KeywordsCollection.visitChillerAvailableProductCategories"(
+    	int flag	) {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerAvailableProductCategories(
+        	flag)
 }
 
-def static "com.ct.qa.keywords.KeywordsCollection.visitNoSpaceForDisplayFacing"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).visitNoSpaceForDisplayFacing()
+def static "com.ct.qa.keywords.KeywordsCollection.visitChillerAvailableProductsData"(
+    	int columnindex	
+     , 	String messageondisplayedproductsgreater	
+     , 	String messageondisplayedproductsless	) {
+    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerAvailableProductsData(
+        	columnindex
+         , 	messageondisplayedproductsgreater
+         , 	messageondisplayedproductsless)
 }
 
-def static "com.ct.qa.keywords.KeywordsCollection.visitNoSpaceForDisplayStockTaking"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).visitNoSpaceForDisplayStockTaking()
-}
-
-def static "com.ct.qa.keywords.KeywordsCollection.overwriteChillerNotAllocatedProductCategoryFacing"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).overwriteChillerNotAllocatedProductCategoryFacing()
-}
-
-def static "com.ct.qa.keywords.KeywordsCollection.overwriteChillerNotAllocatedProductCategoryStockTaking"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).overwriteChillerNotAllocatedProductCategoryStockTaking()
-}
-
-def static "com.ct.qa.keywords.KeywordsCollection.overwriteDisplaySpaceAvailableFacing"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).overwriteDisplaySpaceAvailableFacing()
-}
-
-def static "com.ct.qa.keywords.KeywordsCollection.overwriteDisplaySpaceAvailableStockTaking"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).overwriteDisplaySpaceAvailableStockTaking()
-}
-
-def static "com.ct.qa.keywords.KeywordsCollection.overwriteNoSpaceForDisplayFacing"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).overwriteNoSpaceForDisplayFacing()
-}
-
-def static "com.ct.qa.keywords.KeywordsCollection.overwriteNoSpaceForDisplayStockTaking"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).overwriteNoSpaceForDisplayStockTaking()
+def static "com.ct.qa.keywords.KeywordsCollection.VisitChillerNotAvailableProductsData"(
+    	int columnindex	
+     , 	String messageondisplayedproductsgreater	
+     , 	String messageondisplayedproductsless	) {
+    (new com.ct.qa.keywords.KeywordsCollection()).VisitChillerNotAvailableProductsData(
+        	columnindex
+         , 	messageondisplayedproductsgreater
+         , 	messageondisplayedproductsless)
 }
 
 def static "com.ct.qa.keywords.KeywordsCollection.visitCompetitiontrackingProducts"() {
@@ -108,8 +106,4 @@ def static "com.ct.qa.keywords.KeywordsCollection.visitRetailerRemarks"() {
 
 def static "com.ct.qa.keywords.KeywordsCollection.overwriteRetailerRemarks"() {
     (new com.ct.qa.keywords.KeywordsCollection()).overwriteRetailerRemarks()
-}
-
-def static "com.ct.qa.keywords.KeywordsCollection.visitChillerUtilization"() {
-    (new com.ct.qa.keywords.KeywordsCollection()).visitChillerUtilization()
 }

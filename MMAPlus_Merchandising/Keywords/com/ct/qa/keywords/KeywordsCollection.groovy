@@ -46,7 +46,7 @@ import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 import com.ct.qa.constants.ProjectConstants
-import com.ct.qa.struct.ChannelProducts
+import com.ct.qa.struct.ProductsData
 
 
 public class KeywordsCollection {
@@ -423,9 +423,9 @@ public class KeywordsCollection {
 			}
 		}
 	}
-	def loadChannelProductsList(XSSFSheet sheet, int column){
+	def loadChannelWiseProductsList(XSSFSheet sheet, int column){
 		DataFormatter dataformatter = new DataFormatter()
-		ArrayList<ChannelProducts> channelproducts = new ArrayList<ChannelProducts>()
+		ArrayList<ProductsData> channelproducts = new ArrayList<ProductsData>()
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<=totalrows; i++){
 			Row row = sheet.getRow(i)
@@ -433,7 +433,7 @@ public class KeywordsCollection {
 			String maincategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.channel_maincategory))
 			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.channel_productcategory))
 			if(ProjectConstants.currentvisitingshopchannel.contains(channel) && ProjectConstants.currentvisitingmaincategory.equals(maincategory) && ProjectConstants.currentvisitingproductcategory.equals(productcategory)){
-				ChannelProducts channelproduct = new ChannelProducts()
+				ProductsData channelproduct = new ProductsData()
 				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.channel_product))
 				String columndata = dataformatter.formatCellValue(row.getCell(column))
 				channelproduct.setProduct(product)
@@ -443,17 +443,35 @@ public class KeywordsCollection {
 		}
 		return channelproducts
 	}
-	def loadChillerProductsList(XSSFSheet sheet, int column){
+	def loadChillerAvailableProductsList(XSSFSheet sheet, int column){
 		DataFormatter dataformatter = new DataFormatter()
-		ArrayList<ChannelProducts> channelproducts = new ArrayList<ChannelProducts>()
+		ArrayList<ProductsData> channelproducts = new ArrayList<ProductsData>()
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<=totalrows; i++){
+			Row row = sheet.getRow(i)
+			String chillertype = dataformatter.formatCellValue(row.getCell(ProjectConstants.chiller_type))
+			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.chiller_productcategory))
+			if(ProjectConstants.currentvisitingchillertype.equalsIgnoreCase(chillertype) && ProjectConstants.currentvisitingproductcategory.equalsIgnoreCase(productcategory)){
+				ProductsData channelproduct = new ProductsData()
+				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.chiller_product))
+				String columndata = dataformatter.formatCellValue(row.getCell(column))
+				channelproduct.setProduct(product)
+				channelproduct.setProduct_data(columndata)
+				channelproducts.add(channelproduct)
+			}
+		}
+		return channelproducts
+	}
+	def loadChillerNotAvailableProductsList(XSSFSheet sheet, int column){
+		DataFormatter dataformatter = new DataFormatter()
+		ArrayList<ProductsData> channelproducts = new ArrayList<ProductsData>()
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<=totalrows; i++){
 			Row row = sheet.getRow(i)
 			String channel = dataformatter.formatCellValue(row.getCell(ProjectConstants.channel))
-			String maincategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.channel_maincategory))
 			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.channel_productcategory))
-			if(ProjectConstants.currentvisitingshopchannel.contains(channel) && ProjectConstants.currentvisitingmaincategory.equals(maincategory) && ProjectConstants.currentvisitingproductcategory.equals(productcategory)){
-				ChannelProducts channelproduct = new ChannelProducts()
+			if(ProjectConstants.currentvisitingshopchannel.contains(channel) && ProjectConstants.currentvisitingmaincategory.equals("Chiller") && ProjectConstants.currentvisitingproductcategory.equals(productcategory)){
+				ProductsData channelproduct = new ProductsData()
 				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.channel_product))
 				String columndata = dataformatter.formatCellValue(row.getCell(column))
 				channelproduct.setProduct(product)
@@ -464,18 +482,18 @@ public class KeywordsCollection {
 		return channelproducts
 	}
 	@Keyword
-	def visitChillerNotAllocatedProductCategoryFacing(){
+	def visitChannelWiseProductsData(int columnindex, String messageondisplayedproductsgreater, String messageondisplayedproductsless){
 		int displayedproducts = 0
 		int index = 0
 		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ChannelProducts> channelproducts = loadChannelProductsList(channelproductssheet,ProjectConstants.channel_chiller_facing)
+		ArrayList<ProductsData> channelproducts = loadChannelWiseProductsList(channelproductssheet, columnindex)
 		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
 		for(int i=2; i<products.size(); i=i+3){
 			index = index + 1
 			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String selectedproductname = selectedproduct.getText()
 			for(int j=0; j<channelproducts.size(); j++){
-				ChannelProducts channelproduct = channelproducts.get(j)
+				ProductsData channelproduct = channelproducts.get(j)
 				String productname = channelproduct.getProduct()
 				if(selectedproductname.equals(productname)){
 					displayedproducts = displayedproducts + 1
@@ -497,7 +515,7 @@ public class KeywordsCollection {
 			}
 			else{
 				for(int j=0; j<channelproducts.size(); j++){
-					ChannelProducts channelproduct = channelproducts.get(j)
+					ProductsData channelproduct = channelproducts.get(j)
 					String productname = channelproduct.getProduct()
 					if(lastproductnameafterswipe.equals(productname)){
 						displayedproducts = displayedproducts + 1
@@ -509,28 +527,96 @@ public class KeywordsCollection {
 				}
 			}
 		}
-		if(displayedproducts > channelproducts.size()){
-			KeywordUtil.markFailedAndStop("displayed products in VISIT CHILLER NOT ALLOCATED WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products...")
+		if(displayedproducts > channelproducts.size())	//if displayed products are greater than expected products
+		{
+			KeywordUtil.markFailedAndStop(messageondisplayedproductsgreater)
 		}
-		else if(displayedproducts < channelproducts.size()){
-			KeywordUtil.markFailed("displayed products in VISIT CHILLER NOT ALLOCATED WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products...")
+		else if(displayedproducts < channelproducts.size())	//if displayed products are less than expected products
+		{
+			KeywordUtil.markFailed(messageondisplayedproductsless)
 		}
 	}
 	@Keyword
-	def visitChillerNotAllocatedProductCategoryStockTaking(){
+	def visitChillerTaggedInChillerUtilization(){
+		ArrayList<MobileElement> chillers = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
+		for(int i=1; i<=chillers.size(); i++){
+			MobileElement chiller = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			ProjectConstants.currentvisitingchillertype = chiller.getText()
+			ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
+			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton"), 0)
+			Mobile.delay(5)
+			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton"),0)
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerRemarks"), null)
+		}
+	}
+	@Keyword
+	def visitChillerRemarks(){
+		ArrayList<MobileElement> remarks = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
+		for(int i=1; i<=remarks.size(); i++){
+			MobileElement action = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			String actionname = action.getText()
+			if(actionname.equals("Chiller Available")){
+				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
+			}
+			else if(actionname.equals("Chiller not Available")){
+				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
+			}
+			else if(actionname.equals("Chiller need maintenance")){
+				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNeedMaintenance/VisitChillerNeedMaintenance"), null)
+			}
+			else if(actionname.equals("Chiller removed for maintenance")){
+				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerRemovedForMaintenance/VisitChillerRemovedForMaintenance"), null)
+			}
+			else if(actionname.equals("Chiller not in access")){
+				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotInAccess/VisitChillerNotInAccess"), null)
+			}
+			else if(actionname.equals("Shopkeeper did not allow")){
+				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
+			}
+			else if(actionname.equals("Chiller Type not Available")){
+				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/VisitChillerTypeNotAvailable"), null)
+			}
+		}
+	}
+	@Keyword
+	def visitChillerAvailableProductCategories(int flag){
+		ArrayList<MobileElement> productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+		for(int i=1; i<=productcategories.size(); i++){
+			MobileElement productcategory = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			ProjectConstants.currentvisitingproductcategory = productcategory.getText()
+			ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+			if(flag == 1){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets"), null)
+			}
+			else if(flag == 2){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteProductCategoryAssets"), null)
+			}
+		}
+	}
+	@Keyword
+	def visitChillerAvailableProductsData(int columnindex, String messageondisplayedproductsgreater, String messageondisplayedproductsless){
 		int displayedproducts = 0
 		int index = 0
-		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ChannelProducts> channelproducts = loadChannelProductsList(channelproductssheet,ProjectConstants.channel_chiller_stocktaking)
+		XSSFSheet chillerproductssheet = ProjectConstants.loadChillerProductsSheet()
+		ArrayList<ProductsData> chillerproducts = loadChillerAvailableProductsList(chillerproductssheet, columnindex)
 		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
 		for(int i=2; i<products.size(); i=i+3){
 			index = index + 1
 			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<channelproducts.size(); j++){
-				ChannelProducts channelproduct = channelproducts.get(j)
+			for(int j=0; j<chillerproducts.size(); j++){
+				ProductsData channelproduct = chillerproducts.get(j)
 				String productname = channelproduct.getProduct()
 				if(selectedproductname.equals(productname)){
+					displayedproducts = displayedproducts + 1
 					String productquantity = channelproduct.getProduct_data()
 					MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 					selectedproducttextfield.setValue(productquantity)
@@ -548,8 +634,8 @@ public class KeywordsCollection {
 				break
 			}
 			else{
-				for(int j=0; j<channelproducts.size(); j++){
-					ChannelProducts channelproduct = channelproducts.get(j)
+				for(int j=0; j<chillerproducts.size(); j++){
+					ProductsData channelproduct = chillerproducts.get(j)
 					String productname = channelproduct.getProduct()
 					if(lastproductnameafterswipe.equals(productname)){
 						displayedproducts = displayedproducts + 1
@@ -561,246 +647,28 @@ public class KeywordsCollection {
 				}
 			}
 		}
-		if(displayedproducts > channelproducts.size()){
-			KeywordUtil.markFailedAndStop("displayed products in VISIT CHILLER NOT ALLOCATED WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products...")
+		if(displayedproducts > chillerproducts.size())	//if displayed products are greater than expected products
+		{
+			KeywordUtil.markFailedAndStop(messageondisplayedproductsgreater)
 		}
-		else if(displayedproducts < channelproducts.size()){
-			KeywordUtil.markFailed("displayed products in VISIT CHILLER NOT ALLOCATED WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products...")
+		else if(displayedproducts < chillerproducts.size())	//if displayed products are less than expected products
+		{
+			KeywordUtil.markFailed(messageondisplayedproductsless)
 		}
 	}
 	@Keyword
-	def visitDisplaySpaceAvailableFacing(){
+	def VisitChillerNotAvailableProductsData(int columnindex, String messageondisplayedproductsgreater, String messageondisplayedproductsless){
 		int displayedproducts = 0
 		int index = 0
 		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ChannelProducts> channelproducts = loadChannelProductsList(channelproductssheet,ProjectConstants.channel_dsa_facing)
+		ArrayList<ProductsData> channelproducts = loadChillerAvailableProductsList(channelproductssheet, columnindex)
 		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
 		for(int i=2; i<products.size(); i=i+3){
 			index = index + 1
 			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String selectedproductname = selectedproduct.getText()
 			for(int j=0; j<channelproducts.size(); j++){
-				ChannelProducts channelproduct = channelproducts.get(j)
-				String productname = channelproduct.getProduct()
-				if(selectedproductname.equals(productname)){
-					String productquantity = channelproduct.getProduct_data()
-					MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
-					selectedproducttextfield.setValue(productquantity)
-					Mobile.hideKeyboard()
-				}
-			}
-		}
-		while(true){
-			MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-			Mobile.swipe(0, 309, 0, 200)
-			MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnameafterswipe = lastproductafterswipe.getText()
-			if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
-				break
-			}
-			else{
-				for(int j=0; j<channelproducts.size(); j++){
-					ChannelProducts channelproduct = channelproducts.get(j)
-					String productname = channelproduct.getProduct()
-					if(lastproductnameafterswipe.equals(productname)){
-						displayedproducts = displayedproducts + 1
-						String productquantity = channelproduct.getProduct_data()
-						MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-						selectedproducttextfield.setValue(productquantity)
-						Mobile.hideKeyboard()
-					}
-				}
-			}
-		}
-		if(displayedproducts > channelproducts.size()){
-			KeywordUtil.markFailedAndStop("displayed products in VISIT DISPLAY SPACE AVAILABLE FACING are greater than to expected products...")
-		}
-		else if(displayedproducts < channelproducts.size()){
-			KeywordUtil.markFailed("displayed products in VISIT DISPLAY SPACE AVAILABLE FACING are less than to expected products...")
-		}
-	}
-	@Keyword
-	def visitDisplaySpaceAvailableStockTaking(){
-		int displayedproducts = 0
-		int index = 0
-		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ChannelProducts> channelproducts = loadChannelProductsList(channelproductssheet,ProjectConstants.channel_dsa_stocktaking)
-		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
-		for(int i=2; i<products.size(); i=i+3){
-			index = index + 1
-			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
-			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<channelproducts.size(); j++){
-				ChannelProducts channelproduct = channelproducts.get(j)
-				String productname = channelproduct.getProduct()
-				if(selectedproductname.equals(productname)){
-					String productquantity = channelproduct.getProduct_data()
-					MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
-					selectedproducttextfield.setValue(productquantity)
-					Mobile.hideKeyboard()
-				}
-			}
-		}
-		while(true){
-			MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-			Mobile.swipe(0, 309, 0, 200)
-			MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnameafterswipe = lastproductafterswipe.getText()
-			if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
-				break
-			}
-			else{
-				for(int j=0; j<channelproducts.size(); j++){
-					ChannelProducts channelproduct = channelproducts.get(j)
-					String productname = channelproduct.getProduct()
-					if(lastproductnameafterswipe.equals(productname)){
-						displayedproducts = displayedproducts + 1
-						String productquantity = channelproduct.getProduct_data()
-						MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-						selectedproducttextfield.setValue(productquantity)
-						Mobile.hideKeyboard()
-					}
-				}
-			}
-		}
-		if(displayedproducts > channelproducts.size()){
-			KeywordUtil.markFailedAndStop("displayed products in VISIT DISPLAY SPACE AVAILABLE STOCK TAKING are greater than to expected products...")
-		}
-		else if(displayedproducts < channelproducts.size()){
-			KeywordUtil.markFailed("displayed products in VISIT DISPLAY SPACE AVAILABLE STOCK TAKING are less than to expected products...")
-		}
-	}
-	@Keyword
-	def visitNoSpaceForDisplayFacing(){
-		int displayedproducts = 0
-		int index = 0
-		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ChannelProducts> channelproducts = loadChannelProductsList(channelproductssheet,ProjectConstants.channel_nsfd_facing)
-		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
-		for(int i=2; i<products.size(); i=i+3){
-			index = index + 1
-			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
-			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<channelproducts.size(); j++){
-				ChannelProducts channelproduct = channelproducts.get(j)
-				String productname = channelproduct.getProduct()
-				if(selectedproductname.equals(productname)){
-					String productquantity = channelproduct.getProduct_data()
-					MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
-					selectedproducttextfield.setValue(productquantity)
-					Mobile.hideKeyboard()
-				}
-			}
-		}
-		while(true){
-			MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-			Mobile.swipe(0, 309, 0, 200)
-			MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnameafterswipe = lastproductafterswipe.getText()
-			if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
-				break
-			}
-			else{
-				for(int j=0; j<channelproducts.size(); j++){
-					ChannelProducts channelproduct = channelproducts.get(j)
-					String productname = channelproduct.getProduct()
-					if(lastproductnameafterswipe.equals(productname)){
-						displayedproducts = displayedproducts + 1
-						String productquantity = channelproduct.getProduct_data()
-						MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-						selectedproducttextfield.setValue(productquantity)
-						Mobile.hideKeyboard()
-					}
-				}
-			}
-		}
-		if(displayedproducts > channelproducts.size()){
-			KeywordUtil.markFailedAndStop("displayed products in VISIT NO SPACE FOR DISPLAY FACING are greater than to expected products...")
-		}
-		else if(displayedproducts < channelproducts.size()){
-			KeywordUtil.markFailed("displayed products in VISIT NO SPACE FOR DISPLAY FACING are less than to expected products...")
-		}
-	}
-	@Keyword
-	def visitNoSpaceForDisplayStockTaking(){
-		int displayedproducts = 0
-		int index = 0
-		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ChannelProducts> channelproducts = loadChannelProductsList(channelproductssheet,ProjectConstants.channel_nsfd_stocktaking)
-		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
-		for(int i=2; i<products.size(); i=i+3){
-			index = index + 1
-			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
-			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<channelproducts.size(); j++){
-				ChannelProducts channelproduct = channelproducts.get(j)
-				String productname = channelproduct.getProduct()
-				if(selectedproductname.equals(productname)){
-					String productquantity = channelproduct.getProduct_data()
-					MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
-					selectedproducttextfield.setValue(productquantity)
-					Mobile.hideKeyboard()
-				}
-			}
-		}
-		while(true){
-			MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-			Mobile.swipe(0, 309, 0, 200)
-			MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnameafterswipe = lastproductafterswipe.getText()
-			if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
-				break
-			}
-			else{
-				for(int j=0; j<channelproducts.size(); j++){
-					ChannelProducts channelproduct = channelproducts.get(j)
-					String productname = channelproduct.getProduct()
-					if(lastproductnameafterswipe.equals(productname)){
-						displayedproducts = displayedproducts + 1
-						String productquantity = channelproduct.getProduct_data()
-						MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-						selectedproducttextfield.setValue(productquantity)
-						Mobile.hideKeyboard()
-					}
-				}
-			}
-		}
-		if(displayedproducts > channelproducts.size()){
-			KeywordUtil.markFailedAndStop("displayed products in VISIT NO SPACE FOR DISPLAY STOCK TAKING are greater than to expected products...")
-		}
-		else if(displayedproducts < channelproducts.size()){
-			KeywordUtil.markFailed("displayed products in VISIT NO SPACE FOR DISPLAY STOCK TAKING are less than to expected products...")
-		}
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-	@Keyword
-	def overwriteChillerNotAllocatedProductCategoryFacing(){
-		int displayedproducts = 0
-		int index = 0
-		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ChannelProducts> channelproducts = loadChannelProductsList(channelproductssheet,ProjectConstants.channel_chiller_facing)
-		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
-		for(int i=2; i<products.size(); i=i+3){
-			index = index + 1
-			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
-			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<channelproducts.size(); j++){
-				ChannelProducts channelproduct = channelproducts.get(j)
+				ProductsData channelproduct = channelproducts.get(j)
 				String productname = channelproduct.getProduct()
 				if(selectedproductname.equals(productname)){
 					displayedproducts = displayedproducts + 1
@@ -822,7 +690,7 @@ public class KeywordsCollection {
 			}
 			else{
 				for(int j=0; j<channelproducts.size(); j++){
-					ChannelProducts channelproduct = channelproducts.get(j)
+					ProductsData channelproduct = channelproducts.get(j)
 					String productname = channelproduct.getProduct()
 					if(lastproductnameafterswipe.equals(productname)){
 						displayedproducts = displayedproducts + 1
@@ -834,277 +702,22 @@ public class KeywordsCollection {
 				}
 			}
 		}
-		if(displayedproducts > channelproducts.size()){
-			KeywordUtil.markFailedAndStop("displayed products in OVERWRITE CHILLER NOT ALLOCATED with "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products...")
+		if(displayedproducts > channelproducts.size())	//if displayed products are greater than expected products
+		{
+			KeywordUtil.markFailedAndStop(messageondisplayedproductsgreater)
 		}
-		else if(displayedproducts < channelproducts.size()){
-			KeywordUtil.markFailed("displayed products in OVERWRITE CHILLER NOT ALLOCATED with "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products...")
-		}
-	}
-	@Keyword
-	def overwriteChillerNotAllocatedProductCategoryStockTaking(){
-		int displayedproducts = 0
-		int index = 0
-		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ChannelProducts> channelproducts = loadChannelProductsList(channelproductssheet,ProjectConstants.channel_chiller_stocktaking)
-		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
-		for(int i=2; i<products.size(); i=i+3){
-			index = index + 1
-			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
-			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<channelproducts.size(); j++){
-				ChannelProducts channelproduct = channelproducts.get(j)
-				String productname = channelproduct.getProduct()
-				if(selectedproductname.equals(productname)){
-					String productquantity = channelproduct.getProduct_data()
-					MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
-					selectedproducttextfield.setValue(productquantity)
-					Mobile.hideKeyboard()
-				}
-			}
-		}
-		while(true){
-			MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-			Mobile.swipe(0, 309, 0, 200)
-			MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnameafterswipe = lastproductafterswipe.getText()
-			if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
-				break
-			}
-			else{
-				for(int j=0; j<channelproducts.size(); j++){
-					ChannelProducts channelproduct = channelproducts.get(j)
-					String productname = channelproduct.getProduct()
-					if(lastproductnameafterswipe.equals(productname)){
-						displayedproducts = displayedproducts + 1
-						String productquantity = channelproduct.getProduct_data()
-						MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-						selectedproducttextfield.setValue(productquantity)
-						Mobile.hideKeyboard()
-					}
-				}
-			}
-		}
-		if(displayedproducts > channelproducts.size()){
-			KeywordUtil.markFailedAndStop("displayed products in OVERWRITE CHILLER NOT ALLOCATED with "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products...")
-		}
-		else if(displayedproducts < channelproducts.size()){
-			KeywordUtil.markFailed("displayed products in OVERWRITE CHILLER NOT ALLOCATED with "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products...")
-		}
-	}
-	@Keyword
-	def overwriteDisplaySpaceAvailableFacing(){
-		int displayedproducts = 0
-		int index = 0
-		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ChannelProducts> channelproducts = loadChannelProductsList(channelproductssheet,ProjectConstants.channel_dsa_facing)
-		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
-		for(int i=2; i<products.size(); i=i+3){
-			index = index + 1
-			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
-			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<channelproducts.size(); j++){
-				ChannelProducts channelproduct = channelproducts.get(j)
-				String productname = channelproduct.getProduct()
-				if(selectedproductname.equals(productname)){
-					String productquantity = channelproduct.getProduct_data()
-					MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
-					selectedproducttextfield.setValue(productquantity)
-					Mobile.hideKeyboard()
-				}
-			}
-		}
-		while(true){
-			MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-			Mobile.swipe(0, 309, 0, 200)
-			MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnameafterswipe = lastproductafterswipe.getText()
-			if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
-				break
-			}
-			else{
-				for(int j=0; j<channelproducts.size(); j++){
-					ChannelProducts channelproduct = channelproducts.get(j)
-					String productname = channelproduct.getProduct()
-					if(lastproductnameafterswipe.equals(productname)){
-						displayedproducts = displayedproducts + 1
-						String productquantity = channelproduct.getProduct_data()
-						MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-						selectedproducttextfield.setValue(productquantity)
-						Mobile.hideKeyboard()
-					}
-				}
-			}
-		}
-		if(displayedproducts > channelproducts.size()){
-			KeywordUtil.markFailedAndStop("displayed products in OVERWRITE DISPLAY SPACE AVAILABLE FACING are greater than to expected products...")
-		}
-		else if(displayedproducts < channelproducts.size()){
-			KeywordUtil.markFailed("displayed products in OVERWRITE DISPLAY SPACE AVAILABLE FACING are less than to expected products...")
-		}
-	}
-	@Keyword
-	def overwriteDisplaySpaceAvailableStockTaking(){
-		int displayedproducts = 0
-		int index = 0
-		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ChannelProducts> channelproducts = loadChannelProductsList(channelproductssheet,ProjectConstants.channel_dsa_stocktaking)
-		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
-		for(int i=2; i<products.size(); i=i+3){
-			index = index + 1
-			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
-			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<channelproducts.size(); j++){
-				ChannelProducts channelproduct = channelproducts.get(j)
-				String productname = channelproduct.getProduct()
-				if(selectedproductname.equals(productname)){
-					String productquantity = channelproduct.getProduct_data()
-					MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
-					selectedproducttextfield.setValue(productquantity)
-					Mobile.hideKeyboard()
-				}
-			}
-		}
-		while(true){
-			MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-			Mobile.swipe(0, 309, 0, 200)
-			MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnameafterswipe = lastproductafterswipe.getText()
-			if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
-				break
-			}
-			else{
-				for(int j=0; j<channelproducts.size(); j++){
-					ChannelProducts channelproduct = channelproducts.get(j)
-					String productname = channelproduct.getProduct()
-					if(lastproductnameafterswipe.equals(productname)){
-						displayedproducts = displayedproducts + 1
-						String productquantity = channelproduct.getProduct_data()
-						MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-						selectedproducttextfield.setValue(productquantity)
-						Mobile.hideKeyboard()
-					}
-				}
-			}
-		}
-		if(displayedproducts > channelproducts.size()){
-			KeywordUtil.markFailedAndStop("displayed products in OVERWRITE DISPLAY SPACE AVAILABLE STOCK TAKING are greater than to expected products...")
-		}
-		else if(displayedproducts < channelproducts.size()){
-			KeywordUtil.markFailed("displayed products in OVERWRITE DISPLAY SPACE AVAILABLE STOCK TAKING are less than to expected products...")
-		}
-	}
-	@Keyword
-	def overwriteNoSpaceForDisplayFacing(){
-		int displayedproducts = 0
-		int index = 0
-		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ChannelProducts> channelproducts = loadChannelProductsList(channelproductssheet,ProjectConstants.channel_nsfd_facing)
-		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
-		for(int i=2; i<products.size(); i=i+3){
-			index = index + 1
-			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
-			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<channelproducts.size(); j++){
-				ChannelProducts channelproduct = channelproducts.get(j)
-				String productname = channelproduct.getProduct()
-				if(selectedproductname.equals(productname)){
-					String productquantity = channelproduct.getProduct_data()
-					MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
-					selectedproducttextfield.setValue(productquantity)
-					Mobile.hideKeyboard()
-				}
-			}
-		}
-		while(true){
-			MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-			Mobile.swipe(0, 309, 0, 200)
-			MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnameafterswipe = lastproductafterswipe.getText()
-			if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
-				break
-			}
-			else{
-				for(int j=0; j<channelproducts.size(); j++){
-					ChannelProducts channelproduct = channelproducts.get(j)
-					String productname = channelproduct.getProduct()
-					if(lastproductnameafterswipe.equals(productname)){
-						displayedproducts = displayedproducts + 1
-						String productquantity = channelproduct.getProduct_data()
-						MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-						selectedproducttextfield.setValue(productquantity)
-						Mobile.hideKeyboard()
-					}
-				}
-			}
-		}
-		if(displayedproducts > channelproducts.size()){
-			KeywordUtil.markFailedAndStop("displayed products in OVERWRITE NO SPACE FOR DISPLAY FACING are greater than to expected products...")
-		}
-		else if(displayedproducts < channelproducts.size()){
-			KeywordUtil.markFailed("displayed products in OVERWRITE NO SPACE FOR DISPLAY FACING are less than to expected products...")
-		}
-	}
-	@Keyword
-	def overwriteNoSpaceForDisplayStockTaking(){
-		int displayedproducts = 0
-		int index = 0
-		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ChannelProducts> channelproducts = loadChannelProductsList(channelproductssheet,ProjectConstants.channel_nsfd_stocktaking)
-		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
-		for(int i=2; i<products.size(); i=i+3){
-			index = index + 1
-			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
-			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<channelproducts.size(); j++){
-				ChannelProducts channelproduct = channelproducts.get(j)
-				String productname = channelproduct.getProduct()
-				if(selectedproductname.equals(productname)){
-					String productquantity = channelproduct.getProduct_data()
-					MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
-					selectedproducttextfield.setValue(productquantity)
-					Mobile.hideKeyboard()
-				}
-			}
-		}
-		while(true){
-			MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-			Mobile.swipe(0, 309, 0, 200)
-			MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnameafterswipe = lastproductafterswipe.getText()
-			if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
-				break
-			}
-			else{
-				for(int j=0; j<channelproducts.size(); j++){
-					ChannelProducts channelproduct = channelproducts.get(j)
-					String productname = channelproduct.getProduct()
-					if(lastproductnameafterswipe.equals(productname)){
-						displayedproducts = displayedproducts + 1
-						String productquantity = channelproduct.getProduct_data()
-						MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-						selectedproducttextfield.setValue(productquantity)
-						Mobile.hideKeyboard()
-					}
-				}
-			}
-		}
-		if(displayedproducts > channelproducts.size()){
-			KeywordUtil.markFailedAndStop("displayed products in OVERWRITE NO SPACE FOR DISPLAY STOCK TAKING are greater than to expected products...")
-		}
-		else if(displayedproducts < channelproducts.size()){
-			KeywordUtil.markFailed("displayed products in OVERWRITE NO SPACE FOR DISPLAY STOCK TAKING are less than to expected products...")
+		else if(displayedproducts < channelproducts.size())	//if displayed products are less than expected products
+		{
+			KeywordUtil.markFailed(messageondisplayedproductsless)
 		}
 	}
 
 
-
-
+	
+	
+	
+	
+	
 	@Keyword
 	def visitCompetitiontrackingProducts(){
 		int index = 0
@@ -1177,48 +790,7 @@ public class KeywordsCollection {
 			products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		}
 	}
-	@Keyword
-	def visitChillerUtilization(){
-		ArrayList<MobileElement> actions = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
-		for(int i=1; i<=actions.size(); i++){
-			MobileElement action = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-			String actionname = action.getText()
-			if(actionname.equals("Chiller Available")){
-				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
-				actions = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
-			}
-			else if(actionname.equals("Chiller not Available")){
-				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
-				actions = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
-			}
-			else if(actionname.equals("Chiller need maintenance")){
-				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNeedMaintenance/VisitChillerNeedMaintenance"), null)
-				actions = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
-			}
-			else if(actionname.equals("Chiller removed for maintenance")){
-				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerRemovedForMaintenance/VisitChillerRemovedForMaintenance"), null)
-				actions = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
-			}
-			else if(actionname.equals("Chiller not in access")){
-				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotInAccess/VisitChillerNotInAccess"), null)
-				actions = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
-			}
-			else if(actionname.equals("Shopkeeper did not allow")){
-				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
-				actions = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
-			}
-			else if(actionname.equals("Chiller Type not Available")){
-				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/VisitChillerTypeNotAvailable"), null)
-			}
-		}
-	}
+
 	//	@Keyword
 	//	def overwriteChillerUtilization(){
 	//		ArrayList<MobileElement> actions = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")

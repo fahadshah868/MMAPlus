@@ -93,7 +93,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/ChillerProductsCategories_BackButton'), 
     0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerActionsScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 
     'KPI: Chiller Utilization')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerActions_BackButton'), 

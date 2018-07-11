@@ -62,6 +62,6 @@ MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton
 
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerActionsScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 
     'KPI: Chiller Utilization')
 

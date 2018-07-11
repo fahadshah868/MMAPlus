@@ -33,12 +33,68 @@ import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
 public class ProjectConstants {
-
+	//variables for excel file and sheets
 	public static final String excelFilePath = "F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\MMAPlus_Merchandising.xlsx"
 	public static final String channelproductssheet = "Channel Products"
 	public static final String chillerproductssheet = "Chiller Products"
 	public static final String DistributionPointSheet = "Distribution Point"
 	public static final AppiumDriver<MobileElement> driver = MobileDriverFactory.getDriver()
+	//variables for display messages
+	//channel wise products
+	public static final String visitchillernotallocatedfacing_displayedproductsaregreater = "displayed products in VISIT CHILLER NOT ALLOCATED WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products..."
+	public static final String visitchillernotallocatedfacing_displayedproductsareless = "displayed products in VISIT CHILLER NOT ALLOCATED WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products..."
+	public static final String visitchillernotallocatedstocktaking_displayedproductsaregreater = "displayed products in VISIT CHILLER NOT ALLOCATED WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products..."
+	public static final String visitchillernotallocatedstocktaking_displayedproductsareless = "displayed products in VISIT CHILLER NOT ALLOCATED WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products..."
+	public static final String visitdisplayspaceavailablefacing_displayedproductsaregreater = "displayed products in VISIT DISPLAY SPACE AVAILABLE FACING are greater than to expected products..."
+	public static final String visitdisplayspaceavailablefacing_displayedproductsareless = "displayed products in VISIT DISPLAY SPACE AVAILABLE FACING are less than to expected products..."
+	public static final String visitdisplayspaceavailablestocktaking_displayedproductsaregreater = "displayed products in VISIT DISPLAY SPACE AVAILABLE STOCK TAKING are greater than to expected products..."
+	public static final String visitdisplayspaceavailablestocktaking_displayedproductsareless = "displayed products in VISIT DISPLAY SPACE AVAILABLE STOCK TAKING are less than to expected products..."
+	public static final String visitnospacefordisplayfacing_displayedproductsaregreater = "displayed products in VISIT NO SPACE FOR DISPLAY FACING are greater than to expected products..."
+	public static final String visitnospacefordisplayfacing_displayedproductsareless = "displayed products in VISIT NO SPACE FOR DISPLAY FACING are less than to expected products..."
+	public static final String visitnospacefordisplaystocktaking_displayedproductsaregreater = "displayed products in VISIT NO SPACE FOR DISPLAY STOCK TAKING are greater than to expected products..."
+	public static final String visitnospacefordisplaystocktaking_displayedproductsareless = "displayed products in VISIT NO SPACE FOR DISPLAY STOCK TAKING are less than to expected products..."
+	
+	public static final String overwritechillernotallocatedfacing_displayedproductsaregreater = "displayed products in OVERWRITE CHILLER NOT ALLOCATED with "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products..."
+	public static final String overwritechillernotallocatedfacing_displayedproductsareless = "displayed products in OVERWRITE CHILLER NOT ALLOCATED with "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products..."
+	public static final String overwritechillernotallocatedstocktaking_displayedproductsaregreater = "displayed products in OVERWRITE CHILLER NOT ALLOCATED with "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products..."
+	public static final String overwritechillernotallocatedstocktaking_displayedproductsareless = "displayed products in OVERWRITE CHILLER NOT ALLOCATED with "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products..."
+	public static final String overwritedisplayspaceavailablefacing_displayedproductsaregreater = "displayed products in OVERWRITE DISPLAY SPACE AVAILABLE FACING are greater than to expected products..."
+	public static final String overwritedisplayspaceavailablefacing_displayedproductsareless = "displayed products in OVERWRITE DISPLAY SPACE AVAILABLE FACING are less than to expected products..."
+	public static final String overwritedisplayspaceavailablestocktaking_displayedproductsaregreater = "displayed products in OVERWRITE DISPLAY SPACE AVAILABLE STOCK TAKING are greater than to expected products..."
+	public static final String overwritedisplayspaceavailablestocktaking_displayedproductsareless = "displayed products in OVERWRITE DISPLAY SPACE AVAILABLE STOCK TAKING are less than to expected products..."
+	public static final String overwritenospacefordisplayfacing_displayedproductsaregreater = "displayed products in OVERWRITE NO SPACE FOR DISPLAY FACING are greater than to expected products..."
+	public static final String overwritenospacefordisplayfacing_displayedproductsareless = "displayed products in OVERWRITE NO SPACE FOR DISPLAY FACING are less than to expected products..."
+	public static final String overwritenospacefordisplaystocktaking_displayedproductsaregreater = "displayed products in OVERWRITE NO SPACE FOR DISPLAY STOCK TAKING are greater than to expected products..."
+	public static final String overwritenospacefordisplaystocktaking_displayedproductsareless = "displayed products in OVERWRITE NO SPACE FOR DISPLAY STOCK TAKING are less than to expected products..."
+	
+	//chiller available products
+	public static final String visitchilleravailablefacing_displayedproductsaregreater = "displayed products in VISIT CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products..."
+	public static final String visitchilleravailablefacing_displayedproductsareless = "displayed products in VISIT CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products..."
+	public static final String visitchilleravailabledepth_displayedproductsaregreater = "displayed products in VISIT CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" DEPTH are greater than to expected products..."
+	public static final String visitchilleravailabledepth_displayedproductsareless = "displayed products in VISIT CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" DEPTH are less than to expected products..."
+	public static final String visitchilleravailablestocktaking_displayedproductsaregreater = "displayed products in VISIT CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products..."
+	public static final String visitchilleravailablestocktaking_displayedproductsareless = "displayed products in VISIT CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products..."
+	
+	public static final String overwritechilleravailablefacing_displayedproductsaregreater = "displayed products in OVERWRITING CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products..."
+	public static final String overwritechilleravailablefacing_displayedproductsareless = "displayed products in OVERWRITING CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products..."
+	public static final String overwritechilleravailabledepth_displayedproductsaregreater = "displayed products in OVERWRITING CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" DEPTH are greater than to expected products..."
+	public static final String overwritechilleravailabledepth_displayedproductsareless = "displayed products in OVERWRITING CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" DEPTH are less than to expected products..."
+	public static final String overwritechilleravailablestocktaking_displayedproductsaregreater = "displayed products in OVERWRITING CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products..."
+	public static final String overwritechilleravailablestocktaking_displayedproductsareless = "displayed products in OVERWRITING CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products..."
+	
+	//chiller not available products
+	public static final String visitchillernotavailablefacing_displayedproductsaregreater = "displayed products in VISIT CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products..."
+	public static final String visitchillernotavailablefacing_displayedproductsareless = "displayed products in VISIT CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products..."
+	public static final String visitchillernotavailablestocktaking_displayedproductsaregreater = "displayed products in VISIT CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products..."
+	public static final String visitchillernotavailablestocktaking_displayedproductsareless = "displayed products in VISIT CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products..."
+	
+	public static final String overwritechillernotavailablefacing_displayedproductsaregreater = "displayed products in OVERWRITE CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products..."
+	public static final String overwritechillernotavailablefacing_displayedproductsareless = "displayed products in OVERWRITE CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products..."
+	public static final String overwritechillernotavailablestocktaking_displayedproductsaregreater = "displayed products in OVERWRITE CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products..."
+	public static final String overwritechillernotavailablestocktaking_displayedproductsareless = "displayed products in OVERWRITE CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products..."
+	
+	//variables for excel sheet columns index
+	//channel wise product categories product columns
 	public static final int channel
 	public static final int channel_maincategory
 	public static final int channel_productcategory
@@ -55,8 +111,10 @@ public class ProjectConstants {
 	public static final int channel_chiller_stocktaking
 	public static final int channel_chiller_overwritefacing
 	public static final int channel_chiller_overwritestocktaking
-	public static final int chiller
-	public static final int chiller_category
+	
+	//chiller available columns
+	public static final int chiller_type
+	public static final int chiller_productcategory
 	public static final int chiller_product
 	public static final int chiller_facing
 	public static final int chiller_depth
@@ -64,13 +122,23 @@ public class ProjectConstants {
 	public static final int chiller_overwritefacing
 	public static final int chiller_overwritedepth
 	public static final int chiller_overwritestocktaking
-
+	
+	//chiller not available columns
+	public static final int channel_cna_facing
+	public static final int channel_cna_depth
+	public static final int channel_cna_stocktaking
+	public static final int channel_cna_overwritefacing
+	public static final int channel_cna_overwritedepth
+	public static final int channel_cna_overwritestocktaking
+	
+	//variables for current visiting shop channels, chiller and categories
 	public static String currentvisitingshopname
 	public static String currentvisitingshopchannel
 	public static String currentvisitingmaincategory
 	public static String currentvisitingproductcategory
-
-
+	public static String currentvisitingchillertype
+	
+	//initialization of sheet columns index
 	static{
 		XSSFSheet channelproductssheet = loadChannelProductsSheet()
 		XSSFSheet chillerproductssheet = loadChannelProductsSheet()
@@ -128,14 +196,32 @@ public class ProjectConstants {
 			else if(columnname.equals("Overwrite Stock Taking For Chiller")){
 				channel_chiller_overwritestocktaking = cellnumber
 			}
+			else if(columnname.equals("Facing For CNA")){
+				channel_cna_facing = cellnumber
+			}
+			else if(columnname.equals("Depth For CNA")){
+				channel_cna_depth = cellnumber
+			}
+			else if(columnname.equals("Stocktaking For CNA")){
+				channel_cna_stocktaking = cellnumber
+			}
+			else if(columnname.equals("Overwrite Facing For CNA")){
+				channel_cna_overwritefacing = cellnumber
+			}
+			else if(columnname.equals("Overwrite Depth For CNA")){
+				channel_cna_overwritedepth = cellnumber
+			}
+			else if(columnname.equals("Overwrite Stock Taking For CNA")){
+				channel_cna_overwritestocktaking = cellnumber
+			}
 		}
 		for(int cellnumber=0; cellnumber<chillerproductssheettotalcolumns; cellnumber++){
 			String columnname = chillerproductssheetheaderrow.getCell(cellnumber)
 			if(columnname.equals("Chiller Type")){
-				chiller = cellnumber
+				chiller_type = cellnumber
 			}
-			if(columnname.equals("Category")){
-				chiller_category = cellnumber
+			if(columnname.equals("Product Category")){
+				chiller_productcategory = cellnumber
 			}
 			else if(columnname.equals("Product")){
 				chiller_product = cellnumber
@@ -161,7 +247,7 @@ public class ProjectConstants {
 		}
 	}
 
-
+	//load channel wise products sheet
 	def static loadChannelProductsSheet(){
 		try{
 			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.excelFilePath))
@@ -172,6 +258,7 @@ public class ProjectConstants {
 		catch(Exception ex){
 		}
 	}
+	//load chiller wise products sheet
 	def static loadChillerProductsSheet(){
 		try{
 			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.excelFilePath))
@@ -182,6 +269,7 @@ public class ProjectConstants {
 		catch(Exception ex){
 		}
 	}
+	//load distribution point sheet
 	def static loadDistributionPointSheet(){
 		try{
 			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.excelFilePath))

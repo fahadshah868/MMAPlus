@@ -2,6 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import com.ct.qa.constants.ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -31,7 +33,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Facing'),
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_FacingScreen'), 'Facing')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitDisplaySpaceAvailableFacing'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChannelWiseProductsData'(ProjectConstants.channel_dsa_facing, ProjectConstants.visitdisplayspaceavailablefacing_displayedproductsaregreater, ProjectConstants.visitdisplayspaceavailablefacing_displayedproductsareless)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
 
@@ -42,7 +44,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/StockTaki
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_StockTakingScreen'), 'Stock Taking')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitDisplaySpaceAvailableStockTaking'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChannelWiseProductsData'(ProjectConstants.channel_dsa_stocktaking, ProjectConstants.visitdisplayspaceavailablestocktaking_displayedproductsaregreater, ProjectConstants.visitdisplayspaceavailablestocktaking_displayedproductsareless)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
 

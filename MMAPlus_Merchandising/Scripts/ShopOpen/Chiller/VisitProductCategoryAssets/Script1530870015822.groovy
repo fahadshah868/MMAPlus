@@ -2,6 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import com.ct.qa.constants.ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -25,7 +27,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Facing'), 0)
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_FacingScreen'), 'Facing')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategoryFacing'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChannelWiseProductsData'(ProjectConstants.channel_chiller_facing, ProjectConstants.visitchillernotallocatedfacing_displayedproductsaregreater, ProjectConstants.visitchillernotallocatedfacing_displayedproductsareless)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
 
@@ -35,7 +37,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/StockTaking'), 0)
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_StockTakingScreen'), 'Stock Taking')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategoryStockTaking'()
+CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChannelWiseProductsData'(ProjectConstants.channel_chiller_stocktaking, ProjectConstants.visitchillernotallocatedstocktaking_displayedproductsaregreater, ProjectConstants.visitchillernotallocatedstocktaking_displayedproductsareless)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
 
