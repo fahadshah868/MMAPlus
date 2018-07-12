@@ -58,25 +58,24 @@ public class CommonKeywords {
 	}
 	@Keyword
 	def findPictureImageView(){
-		try{
-			ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.ImageButton[1]").isDisplayed()
+		ArrayList<MobileElement> imageviews = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/*")
+		if(imageviews.size() == 3){
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/Picture_ImageView"), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton"), 0)
 			Mobile.delay(5)
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton"), 0)
 		}
-		catch(Exception ex){
-		}
 	}
 	@Keyword
 	def checkPlanogramAvailability(){
 		try{
+			Mobile.delay(1)
 			ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]").isDisplayed()
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton"), 0)
 		}
 		catch(Exception ex){
-			Mobile.delay(2)
+			Mobile.delay(1)
 		}
 	}
 	@Keyword

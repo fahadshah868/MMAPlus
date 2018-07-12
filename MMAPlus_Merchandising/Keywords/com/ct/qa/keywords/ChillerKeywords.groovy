@@ -43,6 +43,10 @@ public class ChillerKeywords {
 			Row row = sheet.getRow(i)
 			String chillertype = dataformatter.formatCellValue(row.getCell(ProjectConstants.chiller_type))
 			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.chiller_productcategory))
+
+			//			String ct = ProjectConstants.currentvisitingchillertype
+			//			String pc = ProjectConstants.currentvisitingproductcategory
+
 			if(ProjectConstants.currentvisitingchillertype.equalsIgnoreCase(chillertype) && ProjectConstants.currentvisitingproductcategory.equalsIgnoreCase(productcategory)){
 				ProductsData channelproduct = new ProductsData()
 				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.chiller_product))
@@ -170,6 +174,7 @@ public class ChillerKeywords {
 		int index = 0
 		XSSFSheet chillerproductssheet = ProjectConstants.loadChillerProductsSheet()
 		ArrayList<ProductsData> chillerproducts = loadChillerAvailableProductsList(chillerproductssheet, columnindex)
+		int expectedproducts = chillerproducts.size()
 		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
 		for(int i=2; i<products.size(); i=i+3){
 			index = index + 1
@@ -187,34 +192,36 @@ public class ChillerKeywords {
 				}
 			}
 		}
-		while(true){
-			MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-			Mobile.swipe(0, 309, 0, 200)
-			MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnameafterswipe = lastproductafterswipe.getText()
-			if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
-				break
-			}
-			else{
-				for(int j=0; j<chillerproducts.size(); j++){
-					ProductsData channelproduct = chillerproducts.get(j)
-					String productname = channelproduct.getProduct()
-					if(lastproductnameafterswipe.equals(productname)){
-						displayedproducts = displayedproducts + 1
-						String productquantity = channelproduct.getProduct_data()
-						MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-						selectedproducttextfield.setValue(productquantity)
-						Mobile.hideKeyboard()
+		if(products.size() == 14){
+			while(true){
+				MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
+				String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
+				Mobile.swipe(0, 309, 0, 200)
+				MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
+				String lastproductnameafterswipe = lastproductafterswipe.getText()
+				if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
+					break
+				}
+				else{
+					for(int j=0; j<chillerproducts.size(); j++){
+						ProductsData channelproduct = chillerproducts.get(j)
+						String productname = channelproduct.getProduct()
+						if(lastproductnameafterswipe.equals(productname)){
+							displayedproducts = displayedproducts + 1
+							String productquantity = channelproduct.getProduct_data()
+							MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
+							selectedproducttextfield.setValue(productquantity)
+							Mobile.hideKeyboard()
+						}
 					}
 				}
 			}
 		}
-		if(displayedproducts > chillerproducts.size())	//if displayed products are greater than expected products
+		if(displayedproducts > expectedproducts)	//if displayed products are greater than expected products
 		{
 			KeywordUtil.markFailedAndStop(messageondisplayedproductsgreater)
 		}
-		else if(displayedproducts < chillerproducts.size())	//if displayed products are less than expected products
+		else if(displayedproducts < expectedproducts)	//if displayed products are less than expected products
 		{
 			KeywordUtil.markFailed(messageondisplayedproductsless)
 		}
@@ -225,6 +232,7 @@ public class ChillerKeywords {
 		int index = 0
 		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
 		ArrayList<ProductsData> channelproducts = loadChillerAvailableProductsList(channelproductssheet, columnindex)
+		int expectedproducts = channelproducts.size()
 		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
 		for(int i=2; i<products.size(); i=i+3){
 			index = index + 1
@@ -242,25 +250,27 @@ public class ChillerKeywords {
 				}
 			}
 		}
-		while(true){
-			MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-			Mobile.swipe(0, 309, 0, 200)
-			MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-			String lastproductnameafterswipe = lastproductafterswipe.getText()
-			if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
-				break
-			}
-			else{
-				for(int j=0; j<channelproducts.size(); j++){
-					ProductsData channelproduct = channelproducts.get(j)
-					String productname = channelproduct.getProduct()
-					if(lastproductnameafterswipe.equals(productname)){
-						displayedproducts = displayedproducts + 1
-						String productquantity = channelproduct.getProduct_data()
-						MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-						selectedproducttextfield.setValue(productquantity)
-						Mobile.hideKeyboard()
+		if(products.size() == 14){
+			while(true){
+				MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
+				String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
+				Mobile.swipe(0, 309, 0, 200)
+				MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
+				String lastproductnameafterswipe = lastproductafterswipe.getText()
+				if(lastproductnamebeforeswipe.equals(lastproductnameafterswipe)){
+					break
+				}
+				else{
+					for(int j=0; j<channelproducts.size(); j++){
+						ProductsData channelproduct = channelproducts.get(j)
+						String productname = channelproduct.getProduct()
+						if(lastproductnameafterswipe.equals(productname)){
+							displayedproducts = displayedproducts + 1
+							String productquantity = channelproduct.getProduct_data()
+							MobileElement selectedproducttextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
+							selectedproducttextfield.setValue(productquantity)
+							Mobile.hideKeyboard()
+						}
 					}
 				}
 			}

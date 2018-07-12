@@ -140,7 +140,7 @@ public class ProjectConstants {
 	//initialization of sheet columns index
 	static{
 		XSSFSheet channelproductssheet = loadChannelProductsSheet()
-		XSSFSheet chillerproductssheet = loadChannelProductsSheet()
+		XSSFSheet chillerproductssheet = loadChillerProductsSheet()
 		Row chillerproductssheetheaderrow = chillerproductssheet.getRow(0)
 		Row channelproductssheetheaderrow = channelproductssheet.getRow(0)
 		int channelproductssheettotalcolumns = channelproductssheetheaderrow.getLastCellNum()
@@ -171,7 +171,7 @@ public class ProjectConstants {
 			else if(columnname.equals("Stock Taking For NSFD")){
 				channel_nsfd_stocktaking = cellnumber
 			}
-			else if(columnname.equals("Overwrite Facing For DSA ")){
+			else if(columnname.equals("Overwrite Facing For DSA")){
 				channel_dsa_overwritefacing = cellnumber
 			}
 			else if(columnname.equals("Overwrite Stock Taking For DSA")){
@@ -213,7 +213,7 @@ public class ProjectConstants {
 			if(columnname.equals("Chiller Type")){
 				chiller_type = cellnumber
 			}
-			if(columnname.equals("Product Category")){
+			if(columnname.equals("Category")){
 				chiller_productcategory = cellnumber
 			}
 			else if(columnname.equals("Product")){
