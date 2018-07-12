@@ -2,8 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
-import com.ct.qa.constants.ProjectConstants
+import com.ct.qa.constants.ProjectConstants as ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -33,7 +32,8 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Facing'),
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_FacingScreen'), 'Facing')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChannelWiseProductsData'(ProjectConstants.channel_nsfd_overwritefacing, ProjectConstants.overwritenospacefordisplayfacing_displayedproductsaregreater, ProjectConstants.overwritenospacefordisplayfacing_displayedproductsareless)
+CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData'(ProjectConstants.channel_nsfd_overwritefacing, 
+    ProjectConstants.overwritenospacefordisplayfacing_displayedproductsaregreater, ProjectConstants.overwritenospacefordisplayfacing_displayedproductsareless)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
 
@@ -44,7 +44,8 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/StockTaki
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_StockTakingScreen'), 'Stock Taking')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChannelWiseProductsData'(ProjectConstants.channel_nsfd_overwritestocktaking, ProjectConstants.overwritenospacefordisplaystocktaking_displayedproductsaregreater, ProjectConstants.overwritenospacefordisplaystocktaking_displayedproductsareless)
+CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData'(ProjectConstants.channel_nsfd_overwritestocktaking, 
+    ProjectConstants.overwritenospacefordisplaystocktaking_displayedproductsaregreater, ProjectConstants.overwritenospacefordisplaystocktaking_displayedproductsareless)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
 
@@ -53,20 +54,14 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCatego
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/planogram_ImageView'), 0)
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.checkPlanogramAvailability'()
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Planogram_CloseButton'), 0)
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
     'Facing')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Picture_ImageView'), 0)
-
-MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
-
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton'), 0)
-
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
     'Facing')

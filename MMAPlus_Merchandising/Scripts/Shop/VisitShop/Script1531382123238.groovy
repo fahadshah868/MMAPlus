@@ -19,11 +19,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/AdditionalPicture/Validate_AdditionalPictureScreen'), 'Additional Picture')
+'validate the dashboard screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen'), 'Dashboard')
 
-CustomKeywords.'com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages'()
+'tap on start your day button to further proceed'
+MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay'), 0)
 
-Mobile.pressBack()
+'Validate shops list screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('Validate_ShopListScreen'), 'Shops on Route')
 
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
+'select shops from shops list'
+CustomKeywords.'com.ct.qa.keywords.VisitingScenariosKeywords.visitShop'()
 

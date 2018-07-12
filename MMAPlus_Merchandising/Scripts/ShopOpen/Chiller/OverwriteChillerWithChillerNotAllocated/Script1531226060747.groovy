@@ -26,21 +26,21 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocated')
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerNotAllocatedProductCategories'(2)
+CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChillerNotAllocatedProductCategories'(2)
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Planogram_ImageView'), 0)
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.checkPlanogramAvailability'()
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Planogram_CloseButton'), 0)
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.findPictureImageView'()
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')

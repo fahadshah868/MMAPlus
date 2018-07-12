@@ -26,7 +26,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/
 MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/DaysDropdownMenu'), 0)
 
 'select the current day for further proceed'
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.selectday'()
+CustomKeywords.'com.ct.qa.keywords.ab.selectday'()
 
 'tap on start your day button'
 MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay'), 0)
@@ -56,7 +56,7 @@ MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/RouteInfoNextButton'
 MobileBuiltInKeywords.verifyElementText(findTestObject('DistributionPoint/Validate_DistributionPointScreen'), 'Poster Quantity:')
 
 'enter quantity of products on distribution point'
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitdistributionPoint'()
+CustomKeywords.'com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPoint'()
 
 'tap on submit button after enter the quantity of products on distribution point'
 MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/DistributionPoint_SubmitButton'), 0)

@@ -25,5 +25,5 @@ Mobile.swipe(0, 200, 0, 600)
 
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.overwriteShopProducts'()
+CustomKeywords.'com.ct.qa.keywords.ab.overwriteShopProducts'()
 

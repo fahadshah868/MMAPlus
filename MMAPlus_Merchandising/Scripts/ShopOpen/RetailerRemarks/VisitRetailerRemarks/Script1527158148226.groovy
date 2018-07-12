@@ -21,7 +21,7 @@ import internal.GlobalVariable as GlobalVariable
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen'), 'KPI: Retailer Remarks')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitRetailerRemarks'()
+CustomKeywords.'com.ct.qa.keywords.RetailerRemarksKeywords.visitRetailerRemarks'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RetailerRemarks/BackButton'), 0)
 

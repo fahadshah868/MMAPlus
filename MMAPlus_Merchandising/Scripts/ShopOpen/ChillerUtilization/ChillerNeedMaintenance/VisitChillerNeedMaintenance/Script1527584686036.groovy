@@ -22,11 +22,10 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNeedMaintenance/Validate_CategoryRemarksScreen'), 
     'CATEGORY REMARKS')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNeedMaintenance/Others'), 
-    0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNeedMaintenance/Others'), 0)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNeedMaintenance/CategoryRemarks_BackButton'), 
     0)
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.continueChillerAvailableModuleFlowForChillerNeedMaintenance'()
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.continueChillerAvailableCategoryFlowForChillerNeedMaintenance'()
 

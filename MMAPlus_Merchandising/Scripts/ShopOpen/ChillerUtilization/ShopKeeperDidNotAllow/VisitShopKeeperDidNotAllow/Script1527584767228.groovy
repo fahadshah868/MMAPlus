@@ -37,7 +37,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerUti
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
     'Channel: Small Kiryana')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.findShopProduct'('Chiller Utilization')
+CustomKeywords.'com.ct.qa.keywords.ab.findShopProduct'('Chiller Utilization')
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')

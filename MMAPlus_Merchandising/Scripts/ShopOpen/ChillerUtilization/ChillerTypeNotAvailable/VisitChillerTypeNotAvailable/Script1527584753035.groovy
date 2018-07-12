@@ -22,8 +22,7 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/Validate_SelectAppropriateTypeScreen'), 
     'Select appropriate type')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/ChillerType'), 
-    0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/ChillerType'), 0)
 
 Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
 
@@ -33,5 +32,5 @@ MobileBuiltInKeywords.delay(5)
 
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
 
-Mobile.callTestCase(findTestCase('ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/VisitChillerType'), [:], FailureHandling.STOP_ON_FAILURE)
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.continueChillerNotAvailableCategoryFlowForChillerTypeNotAvailable'()
 

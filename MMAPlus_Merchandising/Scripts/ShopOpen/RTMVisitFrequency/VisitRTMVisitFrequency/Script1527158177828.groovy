@@ -21,7 +21,7 @@ import internal.GlobalVariable as GlobalVariable
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyScreen'), 'Options')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitRTMVisitFrequency'()
+CustomKeywords.'com.ct.qa.keywords.RTMVisitFrequencyKeywords.visitRTMVisitFrequency'()
 
 Mobile.tap(findTestObject('ShopOpen/RTMVisitFrequency/BackButton'), 0)
 

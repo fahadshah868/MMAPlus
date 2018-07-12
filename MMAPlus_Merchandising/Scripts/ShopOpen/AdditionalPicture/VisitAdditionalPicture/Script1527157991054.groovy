@@ -21,7 +21,7 @@ import internal.GlobalVariable as GlobalVariable
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/AdditionalPicture/Validate_AdditionalPictureScreen'), 'Additional Picture')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.comapareImages'()
+CustomKeywords.'com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages'()
 
 Mobile.pressBack()
 

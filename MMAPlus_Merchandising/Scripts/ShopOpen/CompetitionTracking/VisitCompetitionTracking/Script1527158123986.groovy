@@ -22,7 +22,7 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/CompetitionTracking/Validate_CompetitionTrackingScreen'), 
     0)
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitCompetitiontrackingProducts'()
+CustomKeywords.'com.ct.qa.keywords.CompetitionTrackingKeywords.visitCompetitiontrackingProducts'()
 
 Mobile.pressBack()
 

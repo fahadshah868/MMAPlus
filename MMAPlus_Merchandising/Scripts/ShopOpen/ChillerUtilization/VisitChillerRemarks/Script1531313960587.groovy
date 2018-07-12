@@ -21,5 +21,5 @@ import internal.GlobalVariable as GlobalVariable
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 'KPI: Chiller Utilization')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerRemarks'()
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerRemarks'()
 

@@ -22,20 +22,18 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen'), 
     'Category:Chiller Utilization')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.visitChillerNotAvailableProductsCategories'()
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerNotAvailableProductCategories'(1)
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Planogram_ImageView'), 
-    0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Planogram_ImageView'), 0)
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.checkPlanogramAvailability'()
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Planogram_CloseButton'), 
-    0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Planogram_CloseButton'), 0)
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen'), 
     'Category:Chiller Utilization')
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.findPictureImageView'()
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/ChillerNotAvailable_BackButton'), 
     0)
@@ -43,25 +41,16 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNot
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerUtilization_backButton'), 
-    0)
+not_run: MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerUtilization_backButton'), 0)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
-    'Channel: Small Kiryana')
+not_run: MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 
-CustomKeywords.'com.ct.qa.keywords.KeywordsCollection.findShopProduct'('Chiller Utilization')
+not_run: CustomKeywords.'com.ct.qa.keywords.MainKeywords.findShopCategory'(ProjectConstants.currentvisitingmaincategory)
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
+not_run: MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/Chiller'), 0)
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.findTaggedVisitingChiller'()
 
-Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
-
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton'), 0)
-
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 
-    'KPI: Chiller Utilization')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 'KPI: Chiller Utilization')
 
