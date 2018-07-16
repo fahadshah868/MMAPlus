@@ -78,7 +78,7 @@ public class VisitingScenariosKeywords {
 		int index = 0
 		String lastvisitedcategory = ""
 		ArrayList<MobileElement> categories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
-		for(int i=2; i<=categories.size(); i++){
+		for(int i=1; i<=categories.size(); i++){
 			MobileElement category = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String categoryname = category.getText()
 			if(categoryname.equalsIgnoreCase("Chiller")){
