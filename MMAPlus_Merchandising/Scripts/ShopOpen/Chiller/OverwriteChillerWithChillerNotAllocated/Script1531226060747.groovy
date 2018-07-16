@@ -35,7 +35,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Planogram_ImageView')
 
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Planogram_CloseButton'), 0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')

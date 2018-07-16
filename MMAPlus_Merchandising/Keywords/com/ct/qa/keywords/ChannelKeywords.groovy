@@ -73,6 +73,7 @@ public class ChannelKeywords {
 			else if(flag == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteProductCategoryAssets"), null)
 			}
+			productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
 		}
 	}
 	//enter quantity to related field
@@ -84,7 +85,7 @@ public class ChannelKeywords {
 		ArrayList<ProductsData> channelproducts = loadChannelWiseProductsList(channelproductssheet, columnindex)
 		int expectedproducts = channelproducts.size()
 		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
-		for(int i=2; i<products.size(); i=i+3){
+		for(int i=1; i<products.size(); i=i+3){
 			index = index + 1
 			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String selectedproductname = selectedproduct.getText()
@@ -128,13 +129,19 @@ public class ChannelKeywords {
 				}
 			}
 		}
-		if(displayedproducts>expectedproducts)	//if displayed products are greater than expected products
+		int result = displayedproducts.compareTo(expectedproducts)
+		//if displayed products are greater than expected products
+		if(result == 1)
 		{
 			KeywordUtil.markFailedAndStop(messageondisplayedproductsgreater)
 		}
-		else if(displayedproducts<expectedproducts)	//if displayed products are less than expected products
+		//if displayed products are less than expected products
+		else if(result == -1)
 		{
 			KeywordUtil.markFailed(messageondisplayedproductsless)
+		}
+		else{
+			System.out.println("displayed products are equals to expected products...")
 		}
 	}
 }

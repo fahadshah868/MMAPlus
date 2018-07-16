@@ -56,7 +56,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/planogram
 
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Planogram_CloseButton'), 0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
     'Facing')

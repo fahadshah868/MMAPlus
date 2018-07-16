@@ -26,7 +26,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/
 MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/DaysDropdownMenu'), 0)
 
 'select the current day for further proceed'
-CustomKeywords.'com.ct.qa.keywords.ab.selectday'()
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.selectday'()
 
 'tap on start your day button'
 MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay'), 0)

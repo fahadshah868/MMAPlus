@@ -42,6 +42,10 @@ def static "com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability"() {
     (new com.ct.qa.keywords.CommonKeywords()).checkPlanogramAvailability()
 }
 
+def static "com.ct.qa.keywords.CommonKeywords.closePlanogram"() {
+    (new com.ct.qa.keywords.CommonKeywords()).closePlanogram()
+}
+
 def static "com.ct.qa.keywords.CommonKeywords.findShopCategory"(
     	String productcategory	) {
     (new com.ct.qa.keywords.CommonKeywords()).findShopCategory(
