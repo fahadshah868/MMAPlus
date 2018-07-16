@@ -58,7 +58,7 @@ public class CommonKeywords {
 	}
 	@Keyword
 	def findPictureImageView(){
-		ArrayList<MobileElement> imageviews = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/*")
+		ArrayList<MobileElement> imageviews = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/*")
 		if(imageviews.size() == 3){
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/Picture_ImageView"), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
@@ -69,14 +69,7 @@ public class CommonKeywords {
 	}
 	@Keyword
 	def checkPlanogramAvailability(){
-		try{
-			Mobile.delay(1)
-			ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]").isDisplayed()
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton"), 0)
-		}
-		catch(Exception ex){
-			Mobile.delay(1)
-		}
+		Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton"), 0, FailureHandling.OPTIONAL)
 	}
 	@Keyword
 	def findShopCategory(String productcategory){
@@ -86,7 +79,7 @@ public class CommonKeywords {
 		for(int i=1; i<=products.size(); i++){
 			MobileElement product = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String productname = product.getText()
-			if(productname.equals(productcategory)){
+			if(productname.equalsIgnoreCase(productcategory)){
 				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			}
 		}

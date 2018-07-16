@@ -130,12 +130,12 @@ public class ProjectConstants {
 	public static final int channel_cna_overwritestocktaking
 
 	//variables for current visiting shop channels, chiller and categories
-	public static String currentvisitingshopname
-	public static String currentvisitingshopchannel
-	public static String currentvisitingmaincategory
-	public static String currentvisitingproductcategory
-	public static String currentvisitingchillertype
-	public static int currentvisitingchillerindex
+	public static String currentvisitingshopname = ""
+	public static String currentvisitingshopchannel = ""
+	public static String currentvisitingmaincategory = ""
+	public static String currentvisitingproductcategory = ""
+	public static String currentvisitingchillertype = ""
+	public static int currentvisitingchillerindex = 0
 
 	//initialization of sheet columns index
 	static{
