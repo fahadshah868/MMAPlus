@@ -4,6 +4,12 @@
    <name>Validate_POPApplicationDetailScreen</name>
    <tag></tag>
    <elementGuidId>00000000-0000-0000-0000-000000000000</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@class = 'android.widget.TextView' and @instance = '4' and (text() = 'KPI :POP Application' or . = 'KPI :POP Application') and @resource-id = 'com.concavetech.bloc:id/date_text']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>

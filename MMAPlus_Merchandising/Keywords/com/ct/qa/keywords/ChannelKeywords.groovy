@@ -141,7 +141,7 @@ public class ChannelKeywords {
 			KeywordUtil.markFailed(messageondisplayedproductsless)
 		}
 		else{
-			System.out.println("displayed products are equals to expected products...")
+			Mobile.comment("displayed products and expected products are equals......................///")
 		}
 	}
 }

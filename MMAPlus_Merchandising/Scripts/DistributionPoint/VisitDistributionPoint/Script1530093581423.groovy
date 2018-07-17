@@ -22,9 +22,6 @@ import internal.GlobalVariable as GlobalVariable
 'validate dashboard screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen'), 'Dashboard')
 
-'tap on days drop down menu to select the day'
-MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/DaysDropdownMenu'), 0)
-
 'select the current day for further proceed'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.selectday'()
 

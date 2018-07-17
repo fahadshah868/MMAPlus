@@ -22,6 +22,8 @@ import internal.GlobalVariable as GlobalVariable
 'validate the dashboard screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen'), 'Dashboard')
 
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.selectday'()
+
 'tap on start your day button to further proceed'
 MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay'), 0)
 
