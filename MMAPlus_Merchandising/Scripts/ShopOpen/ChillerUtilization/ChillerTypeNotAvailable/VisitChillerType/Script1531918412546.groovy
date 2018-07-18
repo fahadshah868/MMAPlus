@@ -27,7 +27,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Planogram_CloseButton'), 0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
 
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen'), 
     0)
@@ -75,7 +75,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Planogram_CloseButton'), 0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen'), 
     'Category:Chiller Utilization')
@@ -87,6 +87,10 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/ChillerProductsCategories_BackButton'), 
     0)
+
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 'KPI: Chiller Utilization')
+
+Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerRemarks_BackButton'), 0)
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')

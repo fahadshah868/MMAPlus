@@ -124,6 +124,10 @@ def static "com.ct.qa.keywords.ChillerKeywords.VisitChillerNotAvailableProductsD
          , 	messageondisplayedproductsless)
 }
 
+def static "com.ct.qa.keywords.ChillerKeywords.selectChillerType"() {
+    (new com.ct.qa.keywords.ChillerKeywords()).selectChillerType()
+}
+
 def static "com.ct.qa.keywords.ChillerKeywords.continueChillerAvailableCategoryFlowForChillerNeedMaintenance"() {
     (new com.ct.qa.keywords.ChillerKeywords()).continueChillerAvailableCategoryFlowForChillerNeedMaintenance()
 }
@@ -136,8 +140,8 @@ def static "com.ct.qa.keywords.ChillerKeywords.continueChillerNotAvailableCatego
     (new com.ct.qa.keywords.ChillerKeywords()).continueChillerNotAvailableCategoryFlowForChillerNotInAccess()
 }
 
-def static "com.ct.qa.keywords.ChillerKeywords.continueChillerNotAvailableCategoryFlowForChillerTypeNotAvailable"() {
-    (new com.ct.qa.keywords.ChillerKeywords()).continueChillerNotAvailableCategoryFlowForChillerTypeNotAvailable()
+def static "com.ct.qa.keywords.ChillerKeywords.continueChillerAvailableCategoryFlowForChillerTypeNotAvailable"() {
+    (new com.ct.qa.keywords.ChillerKeywords()).continueChillerAvailableCategoryFlowForChillerTypeNotAvailable()
 }
 
 def static "com.ct.qa.keywords.RTMVisitFrequencyKeywords.visitRTMVisitFrequency"() {

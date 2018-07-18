@@ -43,10 +43,6 @@ public class ChillerKeywords {
 			Row row = sheet.getRow(i)
 			String chillertype = dataformatter.formatCellValue(row.getCell(ProjectConstants.chiller_type))
 			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.chiller_productcategory))
-
-			//			String ct = ProjectConstants.currentvisitingchillertype
-			//			String pc = ProjectConstants.currentvisitingproductcategory
-
 			if(ProjectConstants.currentvisitingchillertype.equalsIgnoreCase(chillertype) && ProjectConstants.currentvisitingproductcategory.equalsIgnoreCase(productcategory)){
 				ProductsData channelproduct = new ProductsData()
 				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.chiller_product))
@@ -65,8 +61,9 @@ public class ChillerKeywords {
 		for(int i=1; i<=totalrows; i++){
 			Row row = sheet.getRow(i)
 			String channel = dataformatter.formatCellValue(row.getCell(ProjectConstants.channel))
+			String maincategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.channel_maincategory))
 			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.channel_productcategory))
-			if((ProjectConstants.currentvisitingshopchannel.contains(channel) && ProjectConstants.currentvisitingmaincategory.equalsIgnoreCase("Chiller")) && ProjectConstants.currentvisitingproductcategory.equalsIgnoreCase(productcategory)){
+			if((ProjectConstants.currentvisitingshopchannel.contains(channel) && maincategory.equalsIgnoreCase("Chiller")) && ProjectConstants.currentvisitingproductcategory.equalsIgnoreCase(productcategory)){
 				ProductsData channelproduct = new ProductsData()
 				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.channel_product))
 				String columndata = dataformatter.formatCellValue(row.getCell(column))
@@ -151,6 +148,7 @@ public class ChillerKeywords {
 			else if(flag == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/OverwriteProductCategoryAssets"), null)
 			}
+			productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
 		}
 	}
 	@Keyword
@@ -166,6 +164,7 @@ public class ChillerKeywords {
 			else if(flag == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
 			}
+			productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
 		}
 	}
 	@Keyword
@@ -180,7 +179,7 @@ public class ChillerKeywords {
 			index = index + 1
 			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<=chillerproducts.size(); j++){
+			for(int j=0; j<chillerproducts.size(); j++){
 				ProductsData channelproduct = chillerproducts.get(j)
 				String productname = channelproduct.getProduct()
 				if(selectedproductname.equalsIgnoreCase(productname)){
@@ -192,18 +191,20 @@ public class ChillerKeywords {
 				}
 			}
 		}
-		if(products.size() == 14){
+		products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
+		int pro = products.size()
+		if(products.size() == 16){
 			while(true){
 				MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 				String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-				Mobile.swipe(0, 309, 0, 200)
+				Mobile.swipe(0, 359, 0, 250)
 				MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 				String lastproductnameafterswipe = lastproductafterswipe.getText()
 				if(lastproductnamebeforeswipe.equalsIgnoreCase(lastproductnameafterswipe)){
 					break
 				}
 				else{
-					for(int j=0; j<=chillerproducts.size(); j++){
+					for(int j=0; j<chillerproducts.size(); j++){
 						ProductsData channelproduct = chillerproducts.get(j)
 						String productname = channelproduct.getProduct()
 						if(lastproductnameafterswipe.equalsIgnoreCase(productname)){
@@ -217,13 +218,19 @@ public class ChillerKeywords {
 				}
 			}
 		}
-		if(displayedproducts > expectedproducts)	//if displayed products are greater than expected products
+		int result = displayedproducts.compareTo(expectedproducts)
+		//if displayed products are greater than expected products
+		if(result == 1)
 		{
 			KeywordUtil.markFailedAndStop(messageondisplayedproductsgreater)
 		}
-		else if(displayedproducts < expectedproducts)	//if displayed products are less than expected products
+		//if displayed products are less than expected products
+		else if(result == -1)
 		{
 			KeywordUtil.markFailed(messageondisplayedproductsless)
+		}
+		else{
+			Mobile.comment("displayed products and expected products are equals......................///")
 		}
 	}
 	@Keyword
@@ -231,14 +238,14 @@ public class ChillerKeywords {
 		int displayedproducts = 0
 		int index = 0
 		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ProductsData> channelproducts = loadChillerAvailableProductsList(channelproductssheet, columnindex)
+		ArrayList<ProductsData> channelproducts = loadChillerNotAvailableProductsList(channelproductssheet, columnindex)
 		int expectedproducts = channelproducts.size()
 		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
 		for(int i=1; i<products.size(); i=i+3){
 			index = index + 1
 			MobileElement selectedproduct = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<=channelproducts.size(); j++){
+			for(int j=0; j<channelproducts.size(); j++){
 				ProductsData channelproduct = channelproducts.get(j)
 				String productname = channelproduct.getProduct()
 				if(selectedproductname.equalsIgnoreCase(productname)){
@@ -250,19 +257,19 @@ public class ChillerKeywords {
 				}
 			}
 		}
-		Mobile.swipe(0, 250, 0, 220)
-		if(products.size() == 14){
+		products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*")
+		if(products.size() == 16){
 			while(true){
 				MobileElement lastproductbeforeswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 				String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-				Mobile.swipe(0, 309, 0, 200)
+				Mobile.swipe(0, 359, 0, 250)
 				MobileElement lastproductafterswipe = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 				String lastproductnameafterswipe = lastproductafterswipe.getText()
 				if(lastproductnamebeforeswipe.equalsIgnoreCase(lastproductnameafterswipe)){
 					break
 				}
 				else{
-					for(int j=0; j<=channelproducts.size(); j++){
+					for(int j=0; j<channelproducts.size(); j++){
 						ProductsData channelproduct = channelproducts.get(j)
 						String productname = channelproduct.getProduct()
 						if(lastproductnameafterswipe.equalsIgnoreCase(productname)){
@@ -276,13 +283,29 @@ public class ChillerKeywords {
 				}
 			}
 		}
-		if(displayedproducts > channelproducts.size())	//if displayed products are greater than expected products
+		int result = displayedproducts.compareTo(expectedproducts)
+		//if displayed products are greater than expected products
+		if(result == 1)
 		{
 			KeywordUtil.markFailedAndStop(messageondisplayedproductsgreater)
 		}
-		else if(displayedproducts < channelproducts.size())	//if displayed products are less than expected products
+		//if displayed products are less than expected products
+		else if(result == -1)
 		{
 			KeywordUtil.markFailed(messageondisplayedproductsless)
+		}
+		else{
+			Mobile.comment("displayed products and expected products are equals......................///")
+		}
+	}
+	@Keyword
+	def selectChillerType(){
+		ArrayList<MobileElement> chillertypes = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+		for(int i=1; i<=chillertypes.size()-1; i++){
+			MobileElement chiller = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			ProjectConstants.currentvisitingchillertype = chiller.getText()
+			ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+			break
 		}
 	}
 	@Keyword
@@ -298,7 +321,7 @@ public class ChillerKeywords {
 		Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
 	}
 	@Keyword
-	def continueChillerNotAvailableCategoryFlowForChillerTypeNotAvailable(){
-		Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
+	def continueChillerAvailableCategoryFlowForChillerTypeNotAvailable(){
+		Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/VisitChillerType"), null)
 	}
 }

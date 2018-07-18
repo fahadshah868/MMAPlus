@@ -4,7 +4,7 @@
    <name>MMA Plus Merchandising</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-07-17T12:15:56</lastRun>
+   <lastRun>2018-07-18T18:17:37</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>5</pageLoadTimeout>

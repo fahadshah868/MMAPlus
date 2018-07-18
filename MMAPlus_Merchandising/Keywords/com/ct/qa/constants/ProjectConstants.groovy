@@ -198,7 +198,7 @@ public class ProjectConstants {
 			else if(columnname.equals("Facing For Chiller Not Available")){
 				channel_cna_facing = cellnumber
 			}
-			else if(columnname.equals("Stocktaking For Chiller Not Available")){
+			else if(columnname.equals("Stock Taking For Chiller Not Available")){
 				channel_cna_stocktaking = cellnumber
 			}
 			else if(columnname.equals("Overwrite Facing For Chiller Not Available")){

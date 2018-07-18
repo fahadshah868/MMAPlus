@@ -22,8 +22,7 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/Validate_CategoryRemarksScreen'), 
     'CATEGORY REMARKS')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/CategoryRemarks_Others'), 
-    0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/CategoryRemarks_Others'), 0)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/CategoryRemarks_BackButton'), 
     0)
@@ -31,27 +30,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ShopKeeper
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerUtilization_backButton'), 
-    0)
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.findTaggedVisitingChiller'()
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ShopChannel'), 
-    'Channel: Small Kiryana')
-
-CustomKeywords.'com.ct.qa.keywords.ab.findShopProduct'('Chiller Utilization')
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
-    'Shops on Route')
-
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/Chiller'), 0)
-
-Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
-
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton'), 0)
-
-MobileBuiltInKeywords.delay(5)
-
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 
-    'KPI: Chiller Utilization')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 'KPI: Chiller Utilization')
 
