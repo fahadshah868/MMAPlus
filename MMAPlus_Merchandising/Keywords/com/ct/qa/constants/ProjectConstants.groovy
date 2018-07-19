@@ -23,6 +23,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 import internal.GlobalVariable
 import io.appium.java_client.AppiumDriver
 import io.appium.java_client.MobileElement
+import org.apache.poi.ss.usermodel.DataFormatter
 import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
@@ -136,6 +137,8 @@ public class ProjectConstants {
 	public static String currentvisitingproductcategory = ""
 	public static String currentvisitingchillertype = ""
 	public static int currentvisitingchillerindex = 0
+	public static int totalexpectedproductscategories = 0
+	public static int totaldisplayedproductscategories = 0
 
 	//initialization of sheet columns index
 	static{
@@ -147,94 +150,94 @@ public class ProjectConstants {
 		int chillerproductssheettotalcolumns = chillerproductssheetheaderrow.getLastCellNum()
 		for(int cellnumber=0; cellnumber<channelproductssheettotalcolumns; cellnumber++){
 			String columnname = channelproductssheetheaderrow.getCell(cellnumber)
-			if(columnname.equals("Channel")){
+			if(columnname.equalsIgnoreCase("Channel")){
 				channel = cellnumber
 			}
-			else if(columnname.equals("Main Category")){
+			else if(columnname.equalsIgnoreCase("Main Category")){
 				channel_maincategory = cellnumber
 			}
-			else if(columnname.equals("Product Category")){
+			else if(columnname.equalsIgnoreCase("Product Category")){
 				channel_productcategory = cellnumber
 			}
-			else if(columnname.equals("Product")){
+			else if(columnname.equalsIgnoreCase("Product")){
 				channel_product = cellnumber
 			}
-			else if(columnname.equals("Facing For DSA")){
+			else if(columnname.equalsIgnoreCase("Facing For DSA")){
 				channel_dsa_facing = cellnumber
 			}
-			else if(columnname.equals("Stock Taking For DSA")){
+			else if(columnname.equalsIgnoreCase("Stock Taking For DSA")){
 				channel_dsa_stocktaking = cellnumber
 			}
-			else if(columnname.equals("Facing For NSFD")){
+			else if(columnname.equalsIgnoreCase("Facing For NSFD")){
 				channel_nsfd_facing = cellnumber
 			}
-			else if(columnname.equals("Stock Taking For NSFD")){
+			else if(columnname.equalsIgnoreCase("Stock Taking For NSFD")){
 				channel_nsfd_stocktaking = cellnumber
 			}
-			else if(columnname.equals("Overwrite Facing For DSA")){
+			else if(columnname.equalsIgnoreCase("Overwrite Facing For DSA")){
 				channel_dsa_overwritefacing = cellnumber
 			}
-			else if(columnname.equals("Overwrite Stock Taking For DSA")){
+			else if(columnname.equalsIgnoreCase("Overwrite Stock Taking For DSA")){
 				channel_dsa_overwritestocktaking = cellnumber
 			}
-			else if(columnname.equals("Overwrite Facing For NSFD")){
+			else if(columnname.equalsIgnoreCase("Overwrite Facing For NSFD")){
 				channel_nsfd_overwritefacing = cellnumber
 			}
-			else if(columnname.equals("Overwrite Stock Taking For NSFD")){
+			else if(columnname.equalsIgnoreCase("Overwrite Stock Taking For NSFD")){
 				channel_nsfd_overwritestocktaking = cellnumber
 			}
-			else if(columnname.equals("Facing For Chiller")){
+			else if(columnname.equalsIgnoreCase("Facing For Chiller")){
 				channel_chiller_facing = cellnumber
 			}
-			else if(columnname.equals("Stock Taking For Chiller")){
+			else if(columnname.equalsIgnoreCase("Stock Taking For Chiller")){
 				channel_chiller_stocktaking = cellnumber
 			}
-			else if(columnname.equals("Overwrite Facing For Chiller")){
+			else if(columnname.equalsIgnoreCase("Overwrite Facing For Chiller")){
 				channel_chiller_overwritefacing = cellnumber
 			}
-			else if(columnname.equals("Overwrite Stock Taking For Chiller")){
+			else if(columnname.equalsIgnoreCase("Overwrite Stock Taking For Chiller")){
 				channel_chiller_overwritestocktaking = cellnumber
 			}
-			else if(columnname.equals("Facing For Chiller Not Available")){
+			else if(columnname.equalsIgnoreCase("Facing For Chiller Not Available")){
 				channel_cna_facing = cellnumber
 			}
-			else if(columnname.equals("Stock Taking For Chiller Not Available")){
+			else if(columnname.equalsIgnoreCase("Stock Taking For Chiller Not Available")){
 				channel_cna_stocktaking = cellnumber
 			}
-			else if(columnname.equals("Overwrite Facing For Chiller Not Available")){
+			else if(columnname.equalsIgnoreCase("Overwrite Facing For Chiller Not Available")){
 				channel_cna_overwritefacing = cellnumber
 			}
-			else if(columnname.equals("Overwrite Stock Taking For Chiller Not Available")){
+			else if(columnname.equalsIgnoreCase("Overwrite Stock Taking For Chiller Not Available")){
 				channel_cna_overwritestocktaking = cellnumber
 			}
 		}
 		for(int cellnumber=0; cellnumber<chillerproductssheettotalcolumns; cellnumber++){
 			String columnname = chillerproductssheetheaderrow.getCell(cellnumber)
-			if(columnname.equals("Chiller Type")){
+			if(columnname.equalsIgnoreCase("Chiller Type")){
 				chiller_type = cellnumber
 			}
-			if(columnname.equals("Category")){
+			if(columnname.equalsIgnoreCase("Category")){
 				chiller_productcategory = cellnumber
 			}
-			else if(columnname.equals("Product")){
+			else if(columnname.equalsIgnoreCase("Product")){
 				chiller_product = cellnumber
 			}
-			else if(columnname.equals("Facing ")){
+			else if(columnname.equalsIgnoreCase("Facing ")){
 				chiller_facing = cellnumber
 			}
-			else if(columnname.equals("Depth")){
+			else if(columnname.equalsIgnoreCase("Depth")){
 				chiller_depth = cellnumber
 			}
-			else if(columnname.equals("Stock Count")){
+			else if(columnname.equalsIgnoreCase("Stock Count")){
 				chiller_stockcount = cellnumber
 			}
-			else if(columnname.equals("Overwrite Facing ")){
+			else if(columnname.equalsIgnoreCase("Overwrite Facing ")){
 				chiller_overwritefacing = cellnumber
 			}
-			else if(columnname.equals("Overwrite Depth")){
+			else if(columnname.equalsIgnoreCase("Overwrite Depth")){
 				chiller_overwritedepth = cellnumber
 			}
-			else if(columnname.equals("Overwrite Stock Count")){
+			else if(columnname.equalsIgnoreCase("Overwrite Stock Count")){
 				chiller_overwritestockcount = cellnumber
 			}
 		}
@@ -271,6 +274,67 @@ public class ProjectConstants {
 			return sheet
 		}
 		catch(Exception ex){
+		}
+	}
+	def static compareChannelWiseProductsCategories(){
+		DataFormatter dataformatter = new DataFormatter()
+		XSSFSheet sheet = loadChannelProductsSheet()
+		ArrayList<String> expectedproductscategorieslist = new ArrayList<String>()
+		ArrayList<String> displayedproductscategorieslist = new ArrayList<String>()
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<=totalrows; i++){
+			Row row = sheet.getRow(i)
+			String channel = dataformatter.formatCellValue(row.getCell(channel))
+			String maincategory = dataformatter.formatCellValue(row.getCell(channel_maincategory))
+			if(currentvisitingshopchannel.contains(channel) && maincategory.equalsIgnoreCase("Chiller")){
+				String productcategory = dataformatter.formatCellValue(row.getCell(channel_productcategory))
+				expectedproductscategorieslist.add(productcategory)
+			}
+		}
+		int totalproductscategories = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+		for(int i=1; i<=totalproductscategories; i++){
+			MobileElement productcategory = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			displayedproductscategorieslist.add(productcategory.getText())
+		}
+		Set<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
+		Set<String> displayedproductscategories = new HashSet<String>(displayedproductscategorieslist)
+		if(!expectedproductscategories.containsAll(displayedproductscategories) && !displayedproductscategories.containsAll(expectedproductscategories)){
+			totalexpectedproductscategories = expectedproductscategories.size()
+			totaldisplayedproductscategories = displayedproductscategories.size()
+			return false
+		}
+		else{
+			return true
+		}
+	}
+	def static compareChillerWiseProductsCategories(){
+		DataFormatter dataformatter = new DataFormatter()
+		XSSFSheet sheet = loadChillerProductsSheet()
+		ArrayList<String> expectedproductscategorieslist = new ArrayList<String>()
+		ArrayList<String> displayedproductscategorieslist = new ArrayList<String>()
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<=totalrows; i++){
+			Row row = sheet.getRow(i)
+			String chiller = dataformatter.formatCellValue(row.getCell(chiller_type))
+			if(currentvisitingchillertype.equalsIgnoreCase(chiller)){
+				String productcategory = dataformatter.formatCellValue(row.getCell(chiller_productcategory))
+				expectedproductscategorieslist.add(productcategory)
+			}
+		}
+		int totalproductscategories = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+		for(int i=1; i<=totalproductscategories; i++){
+			MobileElement productcategory = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			displayedproductscategorieslist.add(productcategory.getText())
+		}
+		Set<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
+		Set<String> displayedproductscategories = new HashSet<String>(displayedproductscategorieslist)
+		if(!expectedproductscategories.containsAll(displayedproductscategories) && !displayedproductscategories.containsAll(expectedproductscategories)){
+			totalexpectedproductscategories = expectedproductscategories.size()
+			totaldisplayedproductscategories = displayedproductscategories.size()
+			return false
+		}
+		else{
+			return true
 		}
 	}
 }

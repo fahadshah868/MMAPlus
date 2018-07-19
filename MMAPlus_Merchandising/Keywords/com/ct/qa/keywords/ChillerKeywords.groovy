@@ -102,7 +102,7 @@ public class ChillerKeywords {
 	@Keyword
 	def visitChillerRemarks(){
 		ArrayList<MobileElement> remarks = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
-		for(int i=1; i<=remarks.size(); i++){
+		for(int i=7; i<=remarks.size(); i++){
 			MobileElement action = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String actionname = action.getText()
 			if(actionname.equalsIgnoreCase("Chiller Available")){
@@ -136,35 +136,47 @@ public class ChillerKeywords {
 		}
 	}
 	@Keyword
-	def visitChillerAvailableProductCategories(int flag){
-		ArrayList<MobileElement> productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
-		for(int i=1; i<=productcategories.size(); i++){
-			MobileElement productcategory = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-			ProjectConstants.currentvisitingproductcategory = productcategory.getText()
-			ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			if(flag == 1){
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets"), null)
-			}
-			else if(flag == 2){
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/OverwriteProductCategoryAssets"), null)
-			}
-			productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+	def visitChillerAvailableProductCategories(int flag, String category){
+		boolean status = ProjectConstants.compareChillerWiseProductsCategories()
+		if(status == true){
+			ArrayList<MobileElement> productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+			 for(int i=1; i<=productcategories.size(); i++){
+				 MobileElement productcategory = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+				 ProjectConstants.currentvisitingproductcategory = productcategory.getText()
+				 ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				 if(flag == 1){
+					 Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets"), null)
+				 }
+				 else if(flag == 2){
+					 Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/OverwriteProductCategoryAssets"), null)
+				 }
+				 productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+			 }
+		}
+		else{
+			KeywordUtil.markErrorAndStop("Expected products categories: ("+ProjectConstants.totalexpectedproductscategories+") are not match with displayed products categories: ("+ProjectConstants.totaldisplayedproductscategories+") in "+category)
 		}
 	}
 	@Keyword
-	def visitChillerNotAvailableProductCategories(int flag){
-		ArrayList<MobileElement> productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
-		for(int i=1; i<=productcategories.size(); i++){
-			MobileElement productcategory = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-			ProjectConstants.currentvisitingproductcategory = productcategory.getText()
-			ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			if(flag == 1){
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
-			}
-			else if(flag == 2){
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
-			}
-			productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+	def visitChillerNotAvailableProductCategories(int flag, String category){
+		boolean status = ProjectConstants.compareChannelWiseProductsCategories()
+		if(status == true){
+			ArrayList<MobileElement> productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+			 for(int i=1; i<=productcategories.size(); i++){
+				 MobileElement productcategory = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+				 ProjectConstants.currentvisitingproductcategory = productcategory.getText()
+				 ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				 if(flag == 1){
+					 Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
+				 }
+				 else if(flag == 2){
+					 Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
+				 }
+				 productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+			 }
+		}
+		else{
+			KeywordUtil.markErrorAndStop("Expected products categories: ("+ProjectConstants.totalexpectedproductscategories+") are not match with displayed products categories: ("+ProjectConstants.totaldisplayedproductscategories+") in "+category)
 		}
 	}
 	@Keyword
@@ -222,15 +234,14 @@ public class ChillerKeywords {
 		//if displayed products are greater than expected products
 		if(result == 1)
 		{
-			KeywordUtil.markFailedAndStop(messageondisplayedproductsgreater)
+			KeywordUtil.markErrorAndStop(messageondisplayedproductsgreater)
 		}
 		//if displayed products are less than expected products
 		else if(result == -1)
 		{
-			KeywordUtil.markFailed(messageondisplayedproductsless)
+			KeywordUtil.markErrorAndStop(messageondisplayedproductsless)
 		}
 		else{
-			Mobile.comment("displayed products and expected products are equals......................///")
 		}
 	}
 	@Keyword
@@ -287,15 +298,14 @@ public class ChillerKeywords {
 		//if displayed products are greater than expected products
 		if(result == 1)
 		{
-			KeywordUtil.markFailedAndStop(messageondisplayedproductsgreater)
+			KeywordUtil.markErrorAndStop(messageondisplayedproductsgreater)
 		}
 		//if displayed products are less than expected products
 		else if(result == -1)
 		{
-			KeywordUtil.markFailed(messageondisplayedproductsless)
+			KeywordUtil.markErrorAndStop(messageondisplayedproductsless)
 		}
 		else{
-			Mobile.comment("displayed products and expected products are equals......................///")
 		}
 	}
 	@Keyword

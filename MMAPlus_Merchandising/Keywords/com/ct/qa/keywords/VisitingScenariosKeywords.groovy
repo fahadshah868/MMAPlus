@@ -34,7 +34,7 @@ public class VisitingScenariosKeywords {
 	def visitShop(){
 		int index = 0
 		ArrayList<MobileElement> shops = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
-		for(int i=1; i<=shops.size(); i++){
+		for(int i=2; i<=shops.size(); i++){
 			MobileElement shop = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			ProjectConstants.currentvisitingshopname = shop.getText()
 			ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
@@ -45,7 +45,7 @@ public class VisitingScenariosKeywords {
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn"), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton"), 0)
-			if(i == 1){
+			if(i == 1 || i == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopCategories"), null)
 				Mobile.callTestCase(findTestObject("Test Cases/ShopOpen/SaveShop"), null)

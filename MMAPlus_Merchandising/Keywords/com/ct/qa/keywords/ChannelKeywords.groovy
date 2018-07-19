@@ -61,19 +61,25 @@ public class ChannelKeywords {
 	//visit chiller not allocated product categories in chiller
 	@Keyword
 	def visitChillerNotAllocatedProductCategories(int flag){
-		ArrayList<MobileElement> productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
-		for(int i=1; i<=productcategories.size(); i++){
-			MobileElement productcategory = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-			String selectedproductcategory = productcategory.getText()
-			ProjectConstants.currentvisitingproductcategory = selectedproductcategory
-			ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			if(flag == 1){
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets"), null)
+		boolean status = ProjectConstants.compareChannelWiseProductsCategories()
+		if(status == true){
+			ArrayList<MobileElement> productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+			for(int i=1; i<=productcategories.size(); i++){
+				MobileElement productcategory = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+				String selectedproductcategory = productcategory.getText()
+				ProjectConstants.currentvisitingproductcategory = selectedproductcategory
+				ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				if(flag == 1){
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets"), null)
+				}
+				else if(flag == 2){
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteProductCategoryAssets"), null)
+				}
+				productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
 			}
-			else if(flag == 2){
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteProductCategoryAssets"), null)
-			}
-			productcategories = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+		}
+		else{
+			KeywordUtil.markErrorAndStop("Expected products categories: "+ProjectConstants.totalexpectedproductscategories+" are not match with displayed products categories: "+ProjectConstants.totaldisplayedproductscategories+" in CHILLER NOT ALLOCATED")
 		}
 	}
 	//enter quantity to related field
@@ -134,15 +140,14 @@ public class ChannelKeywords {
 		//if displayed products are greater than expected products
 		if(result == 1)
 		{
-			KeywordUtil.markFailedAndStop(messageondisplayedproductsgreater)
+			KeywordUtil.markErrorAndStop(messageondisplayedproductsgreater)
 		}
 		//if displayed products are less than expected products
 		else if(result == -1)
 		{
-			KeywordUtil.markFailed(messageondisplayedproductsless)
+			KeywordUtil.markErrorAndStop(messageondisplayedproductsless)
 		}
 		else{
-			Mobile.comment("displayed products and expected products are equals......................///")
 		}
 	}
 }

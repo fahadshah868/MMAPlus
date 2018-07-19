@@ -68,7 +68,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen'), 
     'Category:Chiller Utilization')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductCategories'(1)
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductCategories'(1, 'CHILLER AVAILABLE')
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/ChillerProductsCategories_Planogram_ImageView'), 
     0)
