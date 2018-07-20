@@ -39,16 +39,16 @@ public class DistributionPointKeywords {
 		DataFormatter dataFormatter = new DataFormatter()
 		XSSFSheet sheet = ProjectConstants.loadDistributionPointSheet()
 		int totalrows = sheet.getLastRowNum()
-		ArrayList<MobileElement> distributionitems = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/*")
+		ArrayList<MobileElement> distributionitems = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/*")
 		for(int i=1; i<=(distributionitems.size()-2); i++){
-			MobileElement distributionitem = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			MobileElement distributionitem = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String distributionitemname = distributionitem.getText()
 			for(int j=1; j<=totalrows; j++){
 				Row row = sheet.getRow(j)
 				String distributionpoint = row.getCell(0)
 				String distributionpointvalue = dataFormatter.formatCellValue(row.getCell(1))
 				if(distributionitemname.contains(distributionpoint)){
-					MobileElement distributionitemtextfield = ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.EditText[1]")
+					MobileElement distributionitemtextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.EditText[1]")
 					distributionitemtextfield.setValue(distributionpointvalue)
 					Mobile.hideKeyboard()
 					break

@@ -35,110 +35,95 @@ import WebUiBuiltInKeywords as WebUI
 
 public class ProjectConstants {
 	//variables for excel file and sheets
-	public static final String excelFilePath = "F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\MMAPlus_Merchandising.xlsx"
-	public static final String channelproductssheet = "Channel Products"
-	public static final String chillerproductssheet = "Chiller Products"
-	public static final String DistributionPointSheet = "Distribution Point"
-	public static final AppiumDriver<MobileElement> driver = MobileDriverFactory.getDriver()
+	public static final String EXCEL_FILEPATH = "F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\MMAPlus_Merchandising.xlsx"
+	public static final String CHANNEL_PRODUCTSSHEET = "Channel Products"
+	public static final String CHILLER_PRODUCTSSHEET = "Chiller Products"
+	public static final String DISTRIBUTION_SHEET = "Distribution Point"
+	public static final AppiumDriver<MobileElement> DRIVER = MobileDriverFactory.getDriver()
 	//variables for display messages
 	//channel wise products
-	public static final String visitchillernotallocatedfacing_displayedproductsaregreater = "displayed products in VISIT CHILLER NOT ALLOCATED WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products..."
-	public static final String visitchillernotallocatedfacing_displayedproductsareless = "displayed products in VISIT CHILLER NOT ALLOCATED WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products..."
-	public static final String visitchillernotallocatedstocktaking_displayedproductsaregreater = "displayed products in VISIT CHILLER NOT ALLOCATED WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products..."
-	public static final String visitchillernotallocatedstocktaking_displayedproductsareless = "displayed products in VISIT CHILLER NOT ALLOCATED WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products..."
-	public static final String visitdisplayspaceavailablefacing_displayedproductsaregreater = "displayed products in VISIT DISPLAY SPACE AVAILABLE FACING are greater than to expected products..."
-	public static final String visitdisplayspaceavailablefacing_displayedproductsareless = "displayed products in VISIT DISPLAY SPACE AVAILABLE FACING are less than to expected products..."
-	public static final String visitdisplayspaceavailablestocktaking_displayedproductsaregreater = "displayed products in VISIT DISPLAY SPACE AVAILABLE STOCK TAKING are greater than to expected products..."
-	public static final String visitdisplayspaceavailablestocktaking_displayedproductsareless = "displayed products in VISIT DISPLAY SPACE AVAILABLE STOCK TAKING are less than to expected products..."
-	public static final String visitnospacefordisplayfacing_displayedproductsaregreater = "displayed products in VISIT NO SPACE FOR DISPLAY FACING are greater than to expected products..."
-	public static final String visitnospacefordisplayfacing_displayedproductsareless = "displayed products in VISIT NO SPACE FOR DISPLAY FACING are less than to expected products..."
-	public static final String visitnospacefordisplaystocktaking_displayedproductsaregreater = "displayed products in VISIT NO SPACE FOR DISPLAY STOCK TAKING are greater than to expected products..."
-	public static final String visitnospacefordisplaystocktaking_displayedproductsareless = "displayed products in VISIT NO SPACE FOR DISPLAY STOCK TAKING are less than to expected products..."
+	
+	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_FACING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER NOT ALLOCATED WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are greater than to expected products..."
+	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER NOT ALLOCATED WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are less than to expected products..."
+	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_STOCKTAKING_DISPLAYEDPRODUCTSARE__GREATER = "displayed products in CHILLER NOT ALLOCATED WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are greater than to expected products..."
+	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER NOT ALLOCATED WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are less than to expected products..."
+	
+	public static final String MESSAGEFOR_DISPLAYSPACEAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in DISPLAY SPACE AVAILABLE FACING are greater than to expected products..."
+	public static final String MESSAGEFOR_DISPLAYSPACEAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in DISPLAY SPACE AVAILABLE FACING are less than to expected products..."
+	public static final String MESSAGEFOR_DISPLAYSPACEAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in DISPLAY SPACE AVAILABLE STOCK TAKING are greater than to expected products..."
+	public static final String MESSAGEFOR_DISPLAYSPACEAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in DISPLAY SPACE AVAILABLE STOCK TAKING are less than to expected products..."
+	
+	public static final String MESSAGEFOR_NOSPACEFORDISPLAY_FACING_DISPLAYEDPRODUCTSARE__GREATER = "displayed products in NO SPACE FOR DISPLAY FACING are greater than to expected products..."
+	public static final String MESSAGEFOR_NOSPACEFORDISPLAY_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in NO SPACE FOR DISPLAY FACING are less than to expected products..."
+	public static final String MESSAGEFOR_NOSPACEFORDISPLAY_STOCKTAKING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in NO SPACE FOR DISPLAY STOCK TAKING are greater than to expected products..."
+	public static final String MESSAGEFOR_NOSPACEFORDISPLAY_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in NO SPACE FOR DISPLAY STOCK TAKING are less than to expected products..."
 
-	public static final String overwritechillernotallocatedfacing_displayedproductsaregreater = "displayed products in OVERWRITE CHILLER NOT ALLOCATED with "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products..."
-	public static final String overwritechillernotallocatedfacing_displayedproductsareless = "displayed products in OVERWRITE CHILLER NOT ALLOCATED with "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products..."
-	public static final String overwritechillernotallocatedstocktaking_displayedproductsaregreater = "displayed products in OVERWRITE CHILLER NOT ALLOCATED with "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products..."
-	public static final String overwritechillernotallocatedstocktaking_displayedproductsareless = "displayed products in OVERWRITE CHILLER NOT ALLOCATED with "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products..."
-	public static final String overwritedisplayspaceavailablefacing_displayedproductsaregreater = "displayed products in OVERWRITE DISPLAY SPACE AVAILABLE FACING are greater than to expected products..."
-	public static final String overwritedisplayspaceavailablefacing_displayedproductsareless = "displayed products in OVERWRITE DISPLAY SPACE AVAILABLE FACING are less than to expected products..."
-	public static final String overwritedisplayspaceavailablestocktaking_displayedproductsaregreater = "displayed products in OVERWRITE DISPLAY SPACE AVAILABLE STOCK TAKING are greater than to expected products..."
-	public static final String overwritedisplayspaceavailablestocktaking_displayedproductsareless = "displayed products in OVERWRITE DISPLAY SPACE AVAILABLE STOCK TAKING are less than to expected products..."
-	public static final String overwritenospacefordisplayfacing_displayedproductsaregreater = "displayed products in OVERWRITE NO SPACE FOR DISPLAY FACING are greater than to expected products..."
-	public static final String overwritenospacefordisplayfacing_displayedproductsareless = "displayed products in OVERWRITE NO SPACE FOR DISPLAY FACING are less than to expected products..."
-	public static final String overwritenospacefordisplaystocktaking_displayedproductsaregreater = "displayed products in OVERWRITE NO SPACE FOR DISPLAY STOCK TAKING are greater than to expected products..."
-	public static final String overwritenospacefordisplaystocktaking_displayedproductsareless = "displayed products in OVERWRITE NO SPACE FOR DISPLAY STOCK TAKING are less than to expected products..."
 
 	//chiller available products
-	public static final String visitchilleravailablefacing_displayedproductsaregreater = "displayed products in VISIT CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products..."
-	public static final String visitchilleravailablefacing_displayedproductsareless = "displayed products in VISIT CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products..."
-	public static final String visitchilleravailabledepth_displayedproductsaregreater = "displayed products in VISIT CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" DEPTH are greater than to expected products..."
-	public static final String visitchilleravailabledepth_displayedproductsareless = "displayed products in VISIT CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" DEPTH are less than to expected products..."
-	public static final String visitchilleravailablestockcount_displayedproductsaregreater = "displayed products in VISIT CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products..."
-	public static final String visitchilleravailablestockcount_displayedproductsareless = "displayed products in VISIT CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products..."
-
-	public static final String overwritechilleravailablefacing_displayedproductsaregreater = "displayed products in OVERWRITING CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products..."
-	public static final String overwritechilleravailablefacing_displayedproductsareless = "displayed products in OVERWRITING CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products..."
-	public static final String overwritechilleravailabledepth_displayedproductsaregreater = "displayed products in OVERWRITING CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" DEPTH are greater than to expected products..."
-	public static final String overwritechilleravailabledepth_displayedproductsareless = "displayed products in OVERWRITING CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" DEPTH are less than to expected products..."
-	public static final String overwritechilleravailablestockcount_displayedproductsaregreater = "displayed products in OVERWRITING CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products..."
-	public static final String overwritechilleravailablestockcount_displayedproductsareless = "displayed products in OVERWRITING CHILLER AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products..."
+	public static final String MESSAGEFOR_CHILLERAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are greater than to expected products..."
+	public static final String MESSAGEFOR_CHILLERAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are less than to expected products..."
+	public static final String MESSAGEFOR_CHILLERAVAILABLE_DEPTH_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" DEPTH are greater than to expected products..."
+	public static final String MESSAGEFOR_CHILLERAVAILABLE_DEPTH_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" DEPTH are less than to expected products..."
+	public static final String MESSAGEFOR_CHILLERAVAILABLE_STOCKCOUNT_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are greater than to expected products..."
+	public static final String MESSAGEFOR_CHILLERAVAILABLE_STOCKCOUNT_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are less than to expected products..."
 
 	//chiller not available products
-	public static final String visitchillernotavailablefacing_displayedproductsaregreater = "displayed products in VISIT CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products..."
-	public static final String visitchillernotavailablefacing_displayedproductsareless = "displayed products in VISIT CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products..."
-	public static final String visitchillernotavailablestocktaking_displayedproductsaregreater = "displayed products in VISIT CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products..."
-	public static final String visitchillernotavailablestocktaking_displayedproductsareless = "displayed products in VISIT CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products..."
+	public static final String MESSAGEFOR_CHILLERNOTAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER NOT AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are greater than to expected products..."
+	public static final String MESSAGEFOR_CHILLERNOTAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER NOT AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are less than to expected products..."
+	public static final String MESSAGEFOR_CHILLERNOTAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER NOT AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are greater than to expected products..."
+	public static final String MESSAGEFOR_CHILLERNOTAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER NOT AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are less than to expected products..."
 
-	public static final String overwritechillernotavailablefacing_displayedproductsaregreater = "displayed products in OVERWRITE CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are greater than to expected products..."
-	public static final String overwritechillernotavailablefacing_displayedproductsareless = "displayed products in OVERWRITE CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" FACING are less than to expected products..."
-	public static final String overwritechillernotavailablestocktaking_displayedproductsaregreater = "displayed products in OVERWRITE CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are greater than to expected products..."
-	public static final String overwritechillernotavailablestocktaking_displayedproductsareless = "displayed products in OVERWRITE CHILLER NOT AVAILABLE WITH "+ProjectConstants.currentvisitingproductcategory+" STOCK TAKING are less than to expected products..."
+	//products categories comparison messages
+	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER = "displayed products categories in CHILLER NOT ALLOCATED are greater than to expected products..."
+	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_DISPLAYEDPRODUCTSCATEGORIESARE_LESS = "displayed products categories in CHILLER NOT ALLOCATED are less than to expected products..."
+	public static final String MESSAGEFOR_CHILLERUTILIZATION_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER = "displayed products categories in "+CURRENTVISITING_CHILLERREMARK+" are greater than to expected products..."
+	public static final String MESSAGEFOR_CHILLERUTILIZATION_DISPLAYEDPRODUCTSCATEGORIESARE_LESS = "displayed products categories in "+CURRENTVISITING_CHILLERREMARK+" are less than to expected products..."
+	
 
 	//variables for excel sheet columns index
 	//channel wise product categories product columns
-	public static final int channel
-	public static final int channel_maincategory
-	public static final int channel_productcategory
-	public static final int channel_product
-	public static final int channel_dsa_facing
-	public static final int channel_dsa_stocktaking
-	public static final int channel_nsfd_facing
-	public static final int channel_nsfd_stocktaking
-	public static final int channel_dsa_overwritefacing
-	public static final int channel_dsa_overwritestocktaking
-	public static final int channel_nsfd_overwritefacing
-	public static final int channel_nsfd_overwritestocktaking
-	public static final int channel_chiller_facing
-	public static final int channel_chiller_stocktaking
-	public static final int channel_chiller_overwritefacing
-	public static final int channel_chiller_overwritestocktaking
+	public static final int CHANNEL
+	public static final int CHANNEL_MAINCATEGORY
+	public static final int CHANNEL_PRODUCTCATEGORY
+	public static final int CHANNEL_PRODUCT
+	public static final int CHANNEL_DSA_FACING
+	public static final int CHANNEL_DSA_STOCKTAKING
+	public static final int CHANNEL_NSFD_FACING
+	public static final int CHANNEL_NSFD_STOCKTAKING
+	public static final int CHANNEL_DSA_OVERWRITEFACING
+	public static final int CHANNEL_DSA_OVERWRITESTOCKTAKING
+	public static final int CHANNEL_NSFD_OVERWRITEFACING
+	public static final int CHANNEL_NSFD_OVERWRITESTOCKTAKING
+	public static final int CHANNEL_CHILLER_FACING
+	public static final int CHANNEL_CHILLER_STOCKTAKING
+	public static final int CHANNEL_CHILLER_OVERWRITEFACING
+	public static final int CHANNEL_CHILLER_OVERWRITESTOCKTAKING
 
 	//chiller available columns
-	public static final int chiller_type
-	public static final int chiller_productcategory
-	public static final int chiller_product
-	public static final int chiller_facing
-	public static final int chiller_depth
-	public static final int chiller_stockcount
-	public static final int chiller_overwritefacing
-	public static final int chiller_overwritedepth
-	public static final int chiller_overwritestockcount
+	public static final int CHILLER_TYPE
+	public static final int CHILLER_PRODUCTCATEGORY
+	public static final int CHILLER_PRODUCT
+	public static final int CHILLER_FACING
+	public static final int CHILLER_DEPTH
+	public static final int CHILLER_STOCKCOUNT
+	public static final int CHILLER_OVERWRITEFACING
+	public static final int CHILLER_OVERWRITEDEPTH
+	public static final int CHILLER_OVERWRITESTOCKCOUNT
 
 	//chiller not available columns
-	public static final int channel_cna_facing
-	public static final int channel_cna_stocktaking
-	public static final int channel_cna_overwritefacing
-	public static final int channel_cna_overwritestocktaking
+	public static final int CHANNEL_CNA_FACING
+	public static final int CHANNEL_CNA_STOCKTAKING
+	public static final int CHANNEL_CNA_OVERWRITEFACING
+	public static final int CHANNEL_CNA_OVERWRITESTOCKTAKING
 
 	//variables for current visiting shop channels, chiller and categories
-	public static String currentvisitingshopname = ""
-	public static String currentvisitingshopchannel = ""
-	public static String currentvisitingmaincategory = ""
-	public static String currentvisitingproductcategory = ""
-	public static String currentvisitingchillertype = ""
-	public static int currentvisitingchillerindex = 0
-	public static int totalexpectedproductscategories = 0
-	public static int totaldisplayedproductscategories = 0
+	public static String CURRENTVISITING_SHOPNAME
+	public static String CURRENTVISITING_SHOPCHANNEL = ""
+	public static String CURRENTVISITING_MAINCATEGORY = ""
+	public static String CURRENTVISITING_PRODUCTCATEGORY = ""
+	public static String CURRENTVISITING_CHILLERTYPE = ""
+	public static String CURRENTVISITING_CHILLERREMARK = ""
+	public static int CURRENTVISITING_CHILLERINDEX = 0
 
 	//initialization of sheet columns index
 	static{
@@ -151,94 +136,94 @@ public class ProjectConstants {
 		for(int cellnumber=0; cellnumber<channelproductssheettotalcolumns; cellnumber++){
 			String columnname = channelproductssheetheaderrow.getCell(cellnumber)
 			if(columnname.equalsIgnoreCase("Channel")){
-				channel = cellnumber
+				CHANNEL = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Main Category")){
-				channel_maincategory = cellnumber
+				CHANNEL_MAINCATEGORY = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Product Category")){
-				channel_productcategory = cellnumber
+				CHANNEL_PRODUCTCATEGORY = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Product")){
-				channel_product = cellnumber
+				CHANNEL_PRODUCT = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Facing For DSA")){
-				channel_dsa_facing = cellnumber
+				CHANNEL_DSA_FACING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Stock Taking For DSA")){
-				channel_dsa_stocktaking = cellnumber
+				CHANNEL_DSA_STOCKTAKING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Facing For NSFD")){
-				channel_nsfd_facing = cellnumber
+				CHANNEL_NSFD_FACING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Stock Taking For NSFD")){
-				channel_nsfd_stocktaking = cellnumber
+				CHANNEL_NSFD_STOCKTAKING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Facing For DSA")){
-				channel_dsa_overwritefacing = cellnumber
+				CHANNEL_DSA_OVERWRITEFACING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Stock Taking For DSA")){
-				channel_dsa_overwritestocktaking = cellnumber
+				CHANNEL_DSA_OVERWRITESTOCKTAKING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Facing For NSFD")){
-				channel_nsfd_overwritefacing = cellnumber
+				CHANNEL_NSFD_OVERWRITEFACING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Stock Taking For NSFD")){
-				channel_nsfd_overwritestocktaking = cellnumber
+				CHANNEL_NSFD_OVERWRITESTOCKTAKING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Facing For Chiller")){
-				channel_chiller_facing = cellnumber
+				CHANNEL_CHILLER_FACING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Stock Taking For Chiller")){
-				channel_chiller_stocktaking = cellnumber
+				CHANNEL_CHILLER_STOCKTAKING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Facing For Chiller")){
-				channel_chiller_overwritefacing = cellnumber
+				CHANNEL_CHILLER_OVERWRITEFACING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Stock Taking For Chiller")){
-				channel_chiller_overwritestocktaking = cellnumber
+				CHANNEL_CHILLER_OVERWRITESTOCKTAKING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Facing For Chiller Not Available")){
-				channel_cna_facing = cellnumber
+				CHANNEL_CNA_FACING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Stock Taking For Chiller Not Available")){
-				channel_cna_stocktaking = cellnumber
+				CHANNEL_CNA_STOCKTAKING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Facing For Chiller Not Available")){
-				channel_cna_overwritefacing = cellnumber
+				CHANNEL_CNA_OVERWRITEFACING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Stock Taking For Chiller Not Available")){
-				channel_cna_overwritestocktaking = cellnumber
+				CHANNEL_CNA_OVERWRITESTOCKTAKING = cellnumber
 			}
 		}
 		for(int cellnumber=0; cellnumber<chillerproductssheettotalcolumns; cellnumber++){
 			String columnname = chillerproductssheetheaderrow.getCell(cellnumber)
 			if(columnname.equalsIgnoreCase("Chiller Type")){
-				chiller_type = cellnumber
+				CHILLER_TYPE = cellnumber
 			}
 			if(columnname.equalsIgnoreCase("Category")){
-				chiller_productcategory = cellnumber
+				CHILLER_PRODUCTCATEGORY = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Product")){
-				chiller_product = cellnumber
+				CHILLER_PRODUCT = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Facing ")){
-				chiller_facing = cellnumber
+				CHILLER_FACING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Depth")){
-				chiller_depth = cellnumber
+				CHILLER_DEPTH = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Stock Count")){
-				chiller_stockcount = cellnumber
+				CHILLER_STOCKCOUNT = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Facing ")){
-				chiller_overwritefacing = cellnumber
+				CHILLER_OVERWRITEFACING = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Depth")){
-				chiller_overwritedepth = cellnumber
+				CHILLER_OVERWRITEDEPTH = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Stock Count")){
-				chiller_overwritestockcount = cellnumber
+				CHILLER_OVERWRITESTOCKCOUNT = cellnumber
 			}
 		}
 	}
@@ -246,9 +231,9 @@ public class ProjectConstants {
 	//load channel wise products sheet
 	def static loadChannelProductsSheet(){
 		try{
-			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.excelFilePath))
+			FileInputStream inputStream = new FileInputStream(new File(EXCEL_FILEPATH))
 			XSSFWorkbook wb = new XSSFWorkbook(inputStream)
-			XSSFSheet sheet = wb.getSheet(ProjectConstants.channelproductssheet)
+			XSSFSheet sheet = wb.getSheet(CHANNEL_PRODUCTSSHEET)
 			return sheet
 		}
 		catch(Exception ex){
@@ -257,9 +242,9 @@ public class ProjectConstants {
 	//load chiller wise products sheet
 	def static loadChillerProductsSheet(){
 		try{
-			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.excelFilePath))
+			FileInputStream inputStream = new FileInputStream(new File(EXCEL_FILEPATH))
 			XSSFWorkbook wb = new XSSFWorkbook(inputStream)
-			XSSFSheet sheet = wb.getSheet(ProjectConstants.chillerproductssheet)
+			XSSFSheet sheet = wb.getSheet(CHILLER_PRODUCTSSHEET)
 			return sheet
 		}
 		catch(Exception ex){
@@ -268,14 +253,14 @@ public class ProjectConstants {
 	//load distribution point sheet
 	def static loadDistributionPointSheet(){
 		try{
-			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.excelFilePath))
+			FileInputStream inputStream = new FileInputStream(new File(EXCEL_FILEPATH))
 			XSSFWorkbook wb = new XSSFWorkbook(inputStream)
-			XSSFSheet sheet = wb.getSheet(DistributionPointSheet)
+			XSSFSheet sheet = wb.getSheet(DISTRIBUTION_SHEET)
 			return sheet
 		}
 		catch(Exception ex){
 		}
-	}
+	}	
 	def static compareChannelWiseProductsCategories(){
 		DataFormatter dataformatter = new DataFormatter()
 		XSSFSheet sheet = loadChannelProductsSheet()
@@ -284,27 +269,28 @@ public class ProjectConstants {
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<=totalrows; i++){
 			Row row = sheet.getRow(i)
-			String channel = dataformatter.formatCellValue(row.getCell(channel))
-			String maincategory = dataformatter.formatCellValue(row.getCell(channel_maincategory))
-			if(currentvisitingshopchannel.contains(channel) && maincategory.equalsIgnoreCase("Chiller")){
-				String productcategory = dataformatter.formatCellValue(row.getCell(channel_productcategory))
+			String channel = dataformatter.formatCellValue(row.getCell(CHANNEL))
+			String maincategory = dataformatter.formatCellValue(row.getCell(CHANNEL_MAINCATEGORY))
+			if(CURRENTVISITING_SHOPCHANNEL.contains(channel) && maincategory.equalsIgnoreCase("Chiller")){
+				String productcategory = dataformatter.formatCellValue(row.getCell(CHANNEL_PRODUCTCATEGORY))
 				expectedproductscategorieslist.add(productcategory)
 			}
 		}
-		int totalproductscategories = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+		int totalproductscategories = DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalproductscategories; i++){
-			MobileElement productcategory = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			MobileElement productcategory = DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			displayedproductscategorieslist.add(productcategory.getText())
 		}
 		Set<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
 		Set<String> displayedproductscategories = new HashSet<String>(displayedproductscategorieslist)
-		if(!expectedproductscategories.containsAll(displayedproductscategories) && !displayedproductscategories.containsAll(expectedproductscategories)){
-			totalexpectedproductscategories = expectedproductscategories.size()
-			totaldisplayedproductscategories = displayedproductscategories.size()
-			return false
+		if(!expectedproductscategories.containsAll(displayedproductscategories)){
+			return 1
+		}
+		else if(!displayedproductscategories.containsAll(expectedproductscategories)){
+			return -1
 		}
 		else{
-			return true
+			return 0
 		}
 	}
 	def static compareChillerWiseProductsCategories(){
@@ -315,26 +301,27 @@ public class ProjectConstants {
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<=totalrows; i++){
 			Row row = sheet.getRow(i)
-			String chiller = dataformatter.formatCellValue(row.getCell(chiller_type))
-			if(currentvisitingchillertype.equalsIgnoreCase(chiller)){
-				String productcategory = dataformatter.formatCellValue(row.getCell(chiller_productcategory))
+			String chiller = dataformatter.formatCellValue(row.getCell(CHILLER_TYPE))
+			if(CURRENTVISITING_CHILLERTYPE.equalsIgnoreCase(chiller)){
+				String productcategory = dataformatter.formatCellValue(row.getCell(CHILLER_PRODUCTCATEGORY))
 				expectedproductscategorieslist.add(productcategory)
 			}
 		}
-		int totalproductscategories = driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+		int totalproductscategories = DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalproductscategories; i++){
-			MobileElement productcategory = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			MobileElement productcategory = DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			displayedproductscategorieslist.add(productcategory.getText())
 		}
 		Set<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
 		Set<String> displayedproductscategories = new HashSet<String>(displayedproductscategorieslist)
-		if(!expectedproductscategories.containsAll(displayedproductscategories) && !displayedproductscategories.containsAll(expectedproductscategories)){
-			totalexpectedproductscategories = expectedproductscategories.size()
-			totaldisplayedproductscategories = displayedproductscategories.size()
-			return false
+		if(!expectedproductscategories.containsAll(displayedproductscategories)){
+			return 1
+		}
+		else if(!displayedproductscategories.containsAll(expectedproductscategories)){
+			return -1
 		}
 		else{
-			return true
+			return 0
 		}
 	}
 }

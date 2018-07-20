@@ -93,19 +93,15 @@ def static "com.ct.qa.keywords.ChillerKeywords.visitChillerRemarks"() {
 }
 
 def static "com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductCategories"(
-    	int flag	
-     , 	String category	) {
+    	int flag	) {
     (new com.ct.qa.keywords.ChillerKeywords()).visitChillerAvailableProductCategories(
-        	flag
-         , 	category)
+        	flag)
 }
 
 def static "com.ct.qa.keywords.ChillerKeywords.visitChillerNotAvailableProductCategories"(
-    	int flag	
-     , 	String category	) {
+    	int flag	) {
     (new com.ct.qa.keywords.ChillerKeywords()).visitChillerNotAvailableProductCategories(
-        	flag
-         , 	category)
+        	flag)
 }
 
 def static "com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductsData"(

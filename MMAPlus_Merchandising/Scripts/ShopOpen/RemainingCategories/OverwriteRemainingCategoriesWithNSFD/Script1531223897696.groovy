@@ -32,8 +32,8 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Facing'),
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_FacingScreen'), 'Facing')
 
-CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData'(ProjectConstants.channel_nsfd_overwritefacing, 
-    ProjectConstants.overwritenospacefordisplayfacing_displayedproductsaregreater, ProjectConstants.overwritenospacefordisplayfacing_displayedproductsareless)
+CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_NSFD_OVERWRITEFACING, ProjectConstants.MESSAGEFOR_NOSPACEFORDISPLAY_FACING_DISPLAYEDPRODUCTSARE__GREATER, 
+    ProjectConstants.MESSAGEFOR_NOSPACEFORDISPLAY_FACING_DISPLAYEDPRODUCTSARE_LESS)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
 
@@ -44,8 +44,8 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/StockTaki
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_StockTakingScreen'), 'Stock Taking')
 
-CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData'(ProjectConstants.channel_nsfd_overwritestocktaking, 
-    ProjectConstants.overwritenospacefordisplaystocktaking_displayedproductsaregreater, ProjectConstants.overwritenospacefordisplaystocktaking_displayedproductsareless)
+CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_NSFD_OVERWRITESTOCKTAKING, 
+    ProjectConstants.MESSAGEFOR_NOSPACEFORDISPLAY_STOCKTAKING_DISPLAYEDPRODUCTSARE_GREATER, ProjectConstants.MESSAGEFOR_NOSPACEFORDISPLAY_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
 

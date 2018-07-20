@@ -31,26 +31,26 @@ import io.appium.java_client.MobileElement
 public class RetailerRemarksKeywords {
 	@Keyword
 	def visitRetailerRemarks(){
-		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
+		ArrayList<MobileElement> products = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		for(int i=1; i<=products.size(); i++){
-			ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksDetailScreen"), "Channel:Small Kiryana")
 			Mobile.tap(findTestObject("Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting"), 0)
 			Mobile.pressBack()
 			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen"), "KPI: Retailer Remarks")
-			products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
+			products = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		}
 	}
 	@Keyword
 	def overwriteRetailerRemarks(){
-		ArrayList<MobileElement> products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
+		ArrayList<MobileElement> products = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		for(int i=1; i<=products.size(); i++){
-			ProjectConstants.driver.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksDetailScreen"), "Channel:Small Kiryana")
 			Mobile.tap(findTestObject("Object Repository/ShopOpen/RetailerRemarks/SMNotVisiting"), 0)
 			Mobile.pressBack()
 			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen"), "KPI: Retailer Remarks")
-			products = ProjectConstants.driver.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
+			products = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
 		}
 	}
 }

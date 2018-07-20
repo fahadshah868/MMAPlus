@@ -22,7 +22,7 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen'), 
     'Category:Chiller Utilization')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerNotAvailableProductCategories'(1)
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerNotAvailableProductCategories'(2)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Planogram_ImageView'), 0)
 
