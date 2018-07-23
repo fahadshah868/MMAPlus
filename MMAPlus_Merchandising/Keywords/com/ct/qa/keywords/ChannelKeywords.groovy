@@ -47,6 +47,11 @@ public class ChannelKeywords {
 			String channel = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL))
 			String maincategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_MAINCATEGORY))
 			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCTCATEGORY))
+			
+			String ch = ProjectConstants.CURRENTVISITING_SHOPCHANNEL
+			String mc =  ProjectConstants.CURRENTVISITING_MAINCATEGORY
+			String pc = ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY
+			
 			if((ProjectConstants.CURRENTVISITING_SHOPCHANNEL.contains(channel) && ProjectConstants.CURRENTVISITING_MAINCATEGORY.equalsIgnoreCase(maincategory)) && ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY.equalsIgnoreCase(productcategory)){
 				ProductsData channelproduct = new ProductsData()
 				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCT))
@@ -81,7 +86,31 @@ public class ChannelKeywords {
 				else if(flag == 2){
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteProductCategoryAssets"), null)
 				}
-				productcategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+			}
+		}
+	}
+	@Keyword
+	def visitNestradeProductsCategories(int flag){
+		boolean status = ProjectConstants.compareChannelWiseProductsCategories()
+		if(status == 1){
+			KeywordUtil.markErrorAndStop(ProjectConstants.MESSAGEFOR_CHILLERNOTALLOCATED_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER)
+		}
+		else if(status == -1){
+			KeywordUtil.markErrorAndStop(ProjectConstants.MESSAGEFOR_CHILLERNOTALLOCATED_DISPLAYEDPRODUCTSCATEGORIESARE_LESS)
+		}
+		else{
+			ArrayList<MobileElement> productcategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*")
+			for(int i=1; i<=productcategories.size(); i++){
+				MobileElement productcategory = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+				String selectedproductcategory = productcategory.getText()
+				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = selectedproductcategory
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				if(flag == 1){
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets"), null)
+				}
+				else if(flag == 2){
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteProductCategoryAssets"), null)
+				}
 			}
 		}
 	}
@@ -98,9 +127,6 @@ public class ChannelKeywords {
 			index = index + 1
 			MobileElement selectedproduct = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String selectedproductname = selectedproduct.getText()
-			if(i == products.size()-1){
-				Mobile.swipe(0, 240, 0, 220)
-			}
 			for(int j=0; j<channelproducts.size(); j++){
 				ProductsData channelproduct = channelproducts.get(j)
 				String productname = channelproduct.getProduct()
@@ -110,6 +136,7 @@ public class ChannelKeywords {
 					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 					selectedproducttextfield.setValue(productquantity)
 					Mobile.hideKeyboard()
+					break
 				}
 			}
 		}
@@ -134,6 +161,7 @@ public class ChannelKeywords {
 							MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
 							selectedproducttextfield.setValue(productquantity)
 							Mobile.hideKeyboard()
+							break
 						}
 					}
 				}

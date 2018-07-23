@@ -42,17 +42,17 @@ public class ProjectConstants {
 	public static final AppiumDriver<MobileElement> DRIVER = MobileDriverFactory.getDriver()
 	//variables for display messages
 	//channel wise products
-	
+
 	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_FACING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER NOT ALLOCATED WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are greater than to expected products..."
 	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER NOT ALLOCATED WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are less than to expected products..."
 	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_STOCKTAKING_DISPLAYEDPRODUCTSARE__GREATER = "displayed products in CHILLER NOT ALLOCATED WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are greater than to expected products..."
 	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER NOT ALLOCATED WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are less than to expected products..."
-	
+
 	public static final String MESSAGEFOR_DISPLAYSPACEAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in DISPLAY SPACE AVAILABLE FACING are greater than to expected products..."
 	public static final String MESSAGEFOR_DISPLAYSPACEAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in DISPLAY SPACE AVAILABLE FACING are less than to expected products..."
 	public static final String MESSAGEFOR_DISPLAYSPACEAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in DISPLAY SPACE AVAILABLE STOCK TAKING are greater than to expected products..."
 	public static final String MESSAGEFOR_DISPLAYSPACEAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in DISPLAY SPACE AVAILABLE STOCK TAKING are less than to expected products..."
-	
+
 	public static final String MESSAGEFOR_NOSPACEFORDISPLAY_FACING_DISPLAYEDPRODUCTSARE__GREATER = "displayed products in NO SPACE FOR DISPLAY FACING are greater than to expected products..."
 	public static final String MESSAGEFOR_NOSPACEFORDISPLAY_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in NO SPACE FOR DISPLAY FACING are less than to expected products..."
 	public static final String MESSAGEFOR_NOSPACEFORDISPLAY_STOCKTAKING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in NO SPACE FOR DISPLAY STOCK TAKING are greater than to expected products..."
@@ -78,7 +78,7 @@ public class ProjectConstants {
 	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_DISPLAYEDPRODUCTSCATEGORIESARE_LESS = "displayed products categories in CHILLER NOT ALLOCATED are less than to expected products..."
 	public static final String MESSAGEFOR_CHILLERUTILIZATION_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER = "displayed products categories in "+CURRENTVISITING_CHILLERREMARK+" are greater than to expected products..."
 	public static final String MESSAGEFOR_CHILLERUTILIZATION_DISPLAYEDPRODUCTSCATEGORIESARE_LESS = "displayed products categories in "+CURRENTVISITING_CHILLERREMARK+" are less than to expected products..."
-	
+
 
 	//variables for excel sheet columns index
 	//channel wise product categories product columns
@@ -260,7 +260,7 @@ public class ProjectConstants {
 		}
 		catch(Exception ex){
 		}
-	}	
+	}
 	def static compareChannelWiseProductsCategories(){
 		DataFormatter dataformatter = new DataFormatter()
 		XSSFSheet sheet = loadChannelProductsSheet()
@@ -271,7 +271,7 @@ public class ProjectConstants {
 			Row row = sheet.getRow(i)
 			String channel = dataformatter.formatCellValue(row.getCell(CHANNEL))
 			String maincategory = dataformatter.formatCellValue(row.getCell(CHANNEL_MAINCATEGORY))
-			if(CURRENTVISITING_SHOPCHANNEL.contains(channel) && maincategory.equalsIgnoreCase("Chiller")){
+			if(CURRENTVISITING_SHOPCHANNEL.contains(channel) && (maincategory.equalsIgnoreCase("Chiller") || maincategory.equalsIgnoreCase("Nestrade"))){
 				String productcategory = dataformatter.formatCellValue(row.getCell(CHANNEL_PRODUCTCATEGORY))
 				expectedproductscategorieslist.add(productcategory)
 			}

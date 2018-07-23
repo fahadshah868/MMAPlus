@@ -12,6 +12,12 @@ def static "com.ct.qa.keywords.ChannelKeywords.visitChillerNotAllocatedProductCa
         	flag)
 }
 
+def static "com.ct.qa.keywords.ChannelKeywords.visitNestradeProductsCategories"(
+    	int flag	) {
+    (new com.ct.qa.keywords.ChannelKeywords()).visitNestradeProductsCategories(
+        	flag)
+}
+
 def static "com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData"(
     	int columnindex	
      , 	String messageondisplayedproductsgreater	
