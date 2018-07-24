@@ -52,6 +52,8 @@ public class ChillerKeywords {
 				channelproduct.setProduct_data(columndata)
 				channelproducts.add(channelproduct)
 			}
+			else{
+			}
 		}
 		return channelproducts
 	}
@@ -71,6 +73,8 @@ public class ChillerKeywords {
 				channelproduct.setProduct(product)
 				channelproduct.setProduct_data(columndata)
 				channelproducts.add(channelproduct)
+			}
+			else{
 			}
 		}
 		return channelproducts
@@ -135,11 +139,13 @@ public class ChillerKeywords {
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/VisitChillerTypeNotAvailable"), null)
 			}
+			else{
+			}
 		}
 	}
 	@Keyword
 	def visitChillerAvailableProductCategories(int flag){
-		boolean status = ProjectConstants.compareChillerWiseProductsCategories()
+		int status = ProjectConstants.compareChillerWiseProductsCategories()
 		if(status == 1){
 			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_GREATER
 			KeywordUtil.markErrorAndStop(message)
@@ -160,12 +166,14 @@ public class ChillerKeywords {
 				else if(flag == 2){
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/OverwriteProductCategoryAssets"), null)
 				}
+				else{
+				}
 			}
 		}
 	}
 	@Keyword
 	def visitChillerNotAvailableProductCategories(int flag){
-		boolean status = ProjectConstants.compareChannelWiseProductsCategories()
+		int status = ProjectConstants.compareChannelWiseProductsCategories()
 		if(status == 1){
 			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_GREATER
 			KeywordUtil.markErrorAndStop(message)
@@ -185,6 +193,8 @@ public class ChillerKeywords {
 				}
 				else if(flag == 2){
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
+				}
+				else{
 				}
 			}
 		}
@@ -212,8 +222,11 @@ public class ChillerKeywords {
 					Mobile.hideKeyboard()
 					break
 				}
+				else{
+				}
 			}
 		}
+		totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*").size()
 		if(totalproducts == 16){
 			while(true){
 				MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
@@ -235,6 +248,8 @@ public class ChillerKeywords {
 							selectedproducttextfield.setValue(productquantity)
 							Mobile.hideKeyboard()
 							break
+						}
+						else{
 						}
 					}
 				}
@@ -279,6 +294,8 @@ public class ChillerKeywords {
 					Mobile.hideKeyboard()
 					break
 				}
+				else{
+				}
 			}
 		}
 		if(totalproducts == 16){
@@ -302,6 +319,8 @@ public class ChillerKeywords {
 							selectedproducttextfield.setValue(productquantity)
 							Mobile.hideKeyboard()
 							break
+						}
+						else{
 						}
 					}
 				}

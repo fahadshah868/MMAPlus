@@ -91,7 +91,7 @@ public class ProjectConstants {
 	//variables for current visiting shop channels, chiller and categories
 	public static String CURRENTVISITING_SHOPNAME
 	public static String CURRENTVISITING_SHOPCHANNEL = ""
-	public static String CURRENTVISITING_MAINCATEGORY = "this is main category"
+	public static String CURRENTVISITING_MAINCATEGORY = ""
 	public static String CURRENTVISITING_PRODUCTCATEGORY = ""
 	public static String CURRENTVISITING_CHILLERTYPE = ""
 	public static String CURRENTVISITING_CHILLERREMARK = ""

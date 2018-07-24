@@ -48,9 +48,9 @@ public class ChannelKeywords {
 			String maincategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_MAINCATEGORY))
 			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCTCATEGORY))
 
-//			String ch = ProjectConstants.CURRENTVISITING_SHOPCHANNEL
-//			String mc =  ProjectConstants.CURRENTVISITING_MAINCATEGORY
-//			String pc = ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY
+			//			String ch = ProjectConstants.CURRENTVISITING_SHOPCHANNEL
+			//			String mc =  ProjectConstants.CURRENTVISITING_MAINCATEGORY
+			//			String pc = ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY
 
 			if((ProjectConstants.CURRENTVISITING_SHOPCHANNEL.contains(channel) && ProjectConstants.CURRENTVISITING_MAINCATEGORY.equalsIgnoreCase(maincategory)) && ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY.equalsIgnoreCase(productcategory)){
 				ProductsData channelproduct = new ProductsData()
@@ -60,13 +60,15 @@ public class ChannelKeywords {
 				channelproduct.setProduct_data(columndata)
 				channelproducts.add(channelproduct)
 			}
+			else{
+			}
 		}
 		return channelproducts
 	}
 	//visit chiller not allocated product categories in chiller
 	@Keyword
 	def visitChillerNotAllocatedProductCategories(int flag){
-		boolean status = ProjectConstants.compareChannelWiseProductsCategories()
+		int status = ProjectConstants.compareChannelWiseProductsCategories()
 		if(status == 1){
 			String message = "Main Category: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER
 			KeywordUtil.markErrorAndStop(message)
@@ -79,21 +81,23 @@ public class ChannelKeywords {
 			int totalproductcategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 			for(int i=1; i<=totalproductcategories; i++){
 				MobileElement productcategory = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-				String selectedproductcategory = productcategory.getText()
-				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = selectedproductcategory
+				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = productcategory.getText()
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				if(flag == 1){
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets"), null)
+					MobileBuiltInKeywords.verifyElementText(findTestObject("ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen"),"Category:Chiller")
 				}
 				else if(flag == 2){
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteProductCategoryAssets"), null)
+				}
+				else{
 				}
 			}
 		}
 	}
 	@Keyword
 	def visitNestradeProductsCategories(int flag){
-		boolean status = ProjectConstants.compareChannelWiseProductsCategories()
+		int status = ProjectConstants.compareChannelWiseProductsCategories()
 		if(status == 1){
 			String message = "Main Category: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER
 			KeywordUtil.markErrorAndStop(message)
@@ -106,14 +110,15 @@ public class ChannelKeywords {
 			int totalproductcategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 			for(int i=1; i<=totalproductcategories; i++){
 				MobileElement productcategory = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-				String selectedproductcategory = productcategory.getText()
-				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = selectedproductcategory
+				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = productcategory.getText()
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				if(flag == 1){
 					Mobile.callTestCase(findTestCase("ShopOpen/Nestrade/VisitProductCategoryAssetsWithDSA"), null)
 				}
 				else if(flag == 2){
 					Mobile.callTestCase(findTestCase("ShopOpen/Nestrade/VisitProductCategoryAssetsWithDSA"), null)
+				}
+				else{
 				}
 			}
 		}
@@ -142,13 +147,16 @@ public class ChannelKeywords {
 					Mobile.hideKeyboard()
 					break
 				}
+				else{
+				}
 			}
 		}
+		totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*").size()
 		if(totalproducts == 16){
 			while(true){
 				MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 				String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-				Mobile.swipe(0, 359, 0, 250)
+				Mobile.swipe(5, 359, 5, 250)
 				MobileElement lastproductafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 				String lastproductnameafterswipe = lastproductafterswipe.getText()
 				if(lastproductnamebeforeswipe.equalsIgnoreCase(lastproductnameafterswipe)){
@@ -165,6 +173,8 @@ public class ChannelKeywords {
 							selectedproducttextfield.setValue(productquantity)
 							Mobile.hideKeyboard()
 							break
+						}
+						else{
 						}
 					}
 				}

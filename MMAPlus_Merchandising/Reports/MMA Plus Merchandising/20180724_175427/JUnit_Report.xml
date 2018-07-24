@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="MMA Plus Merchandising" time="205" tests="1" failures="0" errors="1">
+   <testsuite name="MMA Plus Merchandising" tests="1" failures="0" errors="1" time="205" timestamp="2018-07-24 17:54:30" hostname="Fahad Shah - DESKTOP-L12UUAD" id="Test Suites/MMA Plus Merchandising">
+      <properties>
+         <property name="deviceName" value="samsung SM-J110H (Android 4.4.4)"/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising\\20180724_175427"/>
+         <property name="logFiles" value="F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising\\20180724_175427\\appium.log, F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising\\20180724_175427\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="Fahad Shah - DESKTOP-L12UUAD"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.5.0.1"/>
+         <property name="deviceOS" value="Android"/>
+         <property name="appiumVersion" value="1.8.1"/>
+         <property name="deviceModel" value="SM-J110H"/>
+         <property name="hostAddress" value="192.168.3.191"/>
+         <property name="deviceManufacturer" value="samsung"/>
+         <property name="deviceId" value="11015a1136d0b24a"/>
+         <property name="deviceName" value="samsung SM-J110H (Android 4.4.4)"/>
+         <property name="deviceOSVersion" value="4.4.4"/>
+      </properties>
+      <testcase name="Test Cases/LaunchingApp/LaunchApp" classname="Test Cases/LaunchingApp/LaunchApp" status="PASSED">
+         <system-out><![CDATA[2018-07-24 17:54:30 - [TEST_CASE][PASSED] - Test Cases/LaunchingApp/LaunchApp: Test Cases/LaunchingApp/LaunchApp
+
+2018-07-24 17:54:31 - [TEST_STEP][PASSED] - startApplication: Started app at: 'F:\QA_Automation\Builds\MMAPlus_Sup_v147_0304_live.apk'
+
+2018-07-24 17:54:50 - [MESSAGE][PASSED] - Started app at: 'F:\QA_Automation\Builds\MMAPlus_Sup_v147_0304_live.apk'
+
+2018-07-24 17:54:50 - [TEST_STEP][PASSED] - delay: Delayed 5 second(s)
+
+2018-07-24 17:54:55 - [MESSAGE][PASSED] - Delayed 5 second(s)]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Shop/VisitShop" classname="Test Cases/Shop/VisitShop" status="ERROR">
+         <error type="ERROR" message="Test Cases/Shop/VisitShop FAILED because (of) org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}"/>
+         <system-out><![CDATA[2018-07-24 17:54:55 - [TEST_CASE][ERROR] - Test Cases/Shop/VisitShop: Test Cases/Shop/VisitShop FAILED because (of) org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}
+
+2018-07-24 17:54:55 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/DashboardScreenElements/Validate_DashboardScreen' are matched.
+
+2018-07-24 17:55:01 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/DashboardScreenElements/Validate_DashboardScreen' are matched.
+
+2018-07-24 17:55:01 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.selectday: com.ct.qa.keywords.CommonKeywords.selectday is PASSED
+
+2018-07-24 17:55:03 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.selectday is PASSED
+
+2018-07-24 17:55:03 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/DashboardScreenElements/StartYourDay'
+
+2018-07-24 17:55:03 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:04 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/DashboardScreenElements/StartYourDay'
+
+2018-07-24 17:55:04 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-07-24 17:55:06 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-07-24 17:55:06 - [TEST_STEP][ERROR] - com.ct.qa.keywords.VisitingScenariosKeywords.visitShop: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}
+
+2018-07-24 17:55:10 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopOptionsScreen' are matched.
+
+2018-07-24 17:55:10 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:10 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/StartWorking'
+
+2018-07-24 17:55:25 - [MESSAGE][PASSED] - Delayed 15 second(s)
+
+2018-07-24 17:55:27 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_MapScreen' is exist
+
+2018-07-24 17:55:27 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:27 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Location_CheckIn'
+
+2018-07-24 17:55:27 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:28 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist
+
+2018-07-24 17:55:28 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:29 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_NoButton'
+
+2018-07-24 17:55:29 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/VisitShopOpen: Test Cases/ShopOpen/VisitShopOpen
+
+2018-07-24 17:55:30 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopActions_List' is exist
+
+2018-07-24 17:55:30 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:30 - [MESSAGE][PASSED] - Element 'Object Repository/ShopActions_List' is exist
+
+2018-07-24 17:55:30 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/ShopOpen'
+
+2018-07-24 17:55:30 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:32 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ShopOpen'
+
+2018-07-24 17:55:32 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-07-24 17:55:32 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:33 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-07-24 17:55:33 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-07-24 17:55:33 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:36 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-07-24 17:55:36 - [TEST_STEP][PASSED] - delay: Delayed 5 second(s)
+
+2018-07-24 17:55:41 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-07-24 17:55:41 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-07-24 17:55:41 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:42 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-07-24 17:55:42 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/VisitShopOpen' successfully
+
+2018-07-24 17:55:42 - [TEST_CASE][ERROR] - Test Cases/ShopOpen/VisitShopCategories: Test Cases/ShopOpen/VisitShopCategories FAILED because (of) org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}
+
+2018-07-24 17:55:42 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-07-24 17:55:42 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:44 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-07-24 17:55:44 - [TEST_STEP][ERROR] - com.ct.qa.keywords.VisitingScenariosKeywords.visitShopCategories: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}
+
+2018-07-24 17:55:46 - [TEST_CASE][ERROR] - Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated: Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated FAILED because (of) org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}
+
+2018-07-24 17:55:47 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerScreen' are matched.
+
+2018-07-24 17:55:48 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerScreen' are matched.
+
+2018-07-24 17:55:48 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocated'
+
+2018-07-24 17:55:48 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:48 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocated'
+
+2018-07-24 17:55:48 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-07-24 17:55:51 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-07-24 17:55:51 - [TEST_STEP][ERROR] - com.ct.qa.keywords.ChannelKeywords.visitChillerNotAllocatedProductCategories: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}
+
+2018-07-24 17:55:55 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets: Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets
+
+2018-07-24 17:55:56 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:55:57 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:55:57 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/Facing'
+
+2018-07-24 17:55:57 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:55:57 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/Facing'
+
+2018-07-24 17:55:57 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_FacingScreen' are matched.
+
+2018-07-24 17:55:59 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_FacingScreen' are matched.
+
+2018-07-24 17:55:59 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData is PASSED
+
+2018-07-24 17:56:03 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:06 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:09 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:12 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:15 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:18 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData is PASSED
+
+2018-07-24 17:56:18 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-07-24 17:56:18 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:56:18 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-07-24 17:56:18 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:56:19 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:56:19 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/StockTaking'
+
+2018-07-24 17:56:19 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:56:20 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/StockTaking'
+
+2018-07-24 17:56:20 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_StockTakingScreen' are matched.
+
+2018-07-24 17:56:21 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_StockTakingScreen' are matched.
+
+2018-07-24 17:56:21 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData is PASSED
+
+2018-07-24 17:56:25 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:28 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:31 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:34 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:37 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:39 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData is PASSED
+
+2018-07-24 17:56:39 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-07-24 17:56:39 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:56:39 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-07-24 17:56:39 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:56:40 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:56:40 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'
+
+2018-07-24 17:56:40 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:56:40 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'
+
+2018-07-24 17:56:40 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets' successfully
+
+2018-07-24 17:56:42 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets: Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets
+
+2018-07-24 17:56:42 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:56:44 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:56:44 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/Facing'
+
+2018-07-24 17:56:44 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:56:44 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/Facing'
+
+2018-07-24 17:56:44 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_FacingScreen' are matched.
+
+2018-07-24 17:56:46 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_FacingScreen' are matched.
+
+2018-07-24 17:56:46 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData is PASSED
+
+2018-07-24 17:56:50 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:53 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:56 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:56:59 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:57:02 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:57:05 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:57:08 - [MESSAGE][PASSED] - Swiped from 0,359 to 0,250
+
+2018-07-24 17:57:08 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData is PASSED
+
+2018-07-24 17:57:08 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-07-24 17:57:08 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:57:09 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-07-24 17:57:09 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:57:10 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:57:10 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/StockTaking'
+
+2018-07-24 17:57:10 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:57:10 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/StockTaking'
+
+2018-07-24 17:57:10 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_StockTakingScreen' are matched.
+
+2018-07-24 17:57:12 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_StockTakingScreen' are matched.
+
+2018-07-24 17:57:12 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData is PASSED
+
+2018-07-24 17:57:16 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:57:19 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:57:22 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:57:25 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:57:28 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:57:31 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:57:34 - [MESSAGE][PASSED] - Swiped from 0,359 to 0,250
+
+2018-07-24 17:57:34 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData is PASSED
+
+2018-07-24 17:57:34 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-07-24 17:57:34 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:57:35 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-07-24 17:57:35 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:57:36 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:57:36 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'
+
+2018-07-24 17:57:36 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:57:36 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'
+
+2018-07-24 17:57:36 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets' successfully
+
+2018-07-24 17:57:38 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets: Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets
+
+2018-07-24 17:57:38 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:57:39 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:57:39 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/Facing'
+
+2018-07-24 17:57:39 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:57:39 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/Facing'
+
+2018-07-24 17:57:39 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_FacingScreen' are matched.
+
+2018-07-24 17:57:41 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_FacingScreen' are matched.
+
+2018-07-24 17:57:41 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData is PASSED
+
+2018-07-24 17:57:44 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:57:45 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData is PASSED
+
+2018-07-24 17:57:45 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-07-24 17:57:45 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:57:45 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-07-24 17:57:45 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:57:46 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:57:46 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/StockTaking'
+
+2018-07-24 17:57:46 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:57:47 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/StockTaking'
+
+2018-07-24 17:57:47 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_StockTakingScreen' are matched.
+
+2018-07-24 17:57:49 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_StockTakingScreen' are matched.
+
+2018-07-24 17:57:49 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData is PASSED
+
+2018-07-24 17:57:52 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-07-24 17:57:53 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData is PASSED
+
+2018-07-24 17:57:53 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-07-24 17:57:53 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:57:53 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-07-24 17:57:53 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:57:54 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-07-24 17:57:54 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'
+
+2018-07-24 17:57:54 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '15'
+
+2018-07-24 17:57:54 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'
+
+2018-07-24 17:57:54 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets' successfully
+
+2018-07-24 17:57:55 - [MESSAGE][ERROR] - An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}
+
+2018-07-24 17:57:55 - [MESSAGE][FAILED] - Unable to call Test Case with id 'Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated' (Root cause: Call Test Case 'Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated' failed because of error(s))
+
+2018-07-24 17:57:55 - [MESSAGE][ERROR] - An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}
+
+2018-07-24 17:57:55 - [MESSAGE][FAILED] - Unable to call Test Case with id 'Test Cases/ShopOpen/VisitShopCategories' (Root cause: Call Test Case 'Test Cases/ShopOpen/VisitShopCategories' failed because of error(s))
+
+2018-07-24 17:57:55 - [MESSAGE][ERROR] - An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}]]></system-out>
+         <system-err><![CDATA[2018-07-24 17:54:55 - [TEST_CASE][ERROR] - Test Cases/Shop/VisitShop: Test Cases/Shop/VisitShop FAILED because (of) org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-07-24 17:54:30 - [TEST_SUITE][ERROR] - MMA Plus Merchandising: Test Cases/Shop/VisitShop FAILED because (of) org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}]]></system-out>
+      <system-err><![CDATA[2018-07-24 17:54:30 - [TEST_SUITE][ERROR] - MMA Plus Merchandising: Test Cases/Shop/VisitShop FAILED because (of) org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:07:36.161Z'
+System info: host: 'DESKTOP-L12UUAD', ip: '192.168.3.191', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
+Driver info: com.kms.katalon.core.appium.driver.SwipeableAndroidDriver
+Capabilities {app: F:\QA_Automation\Builds\MMA..., appActivity: com.audit.main.ui.SplashScreen, appPackage: com.concavetech.bloc, appWaitActivity: com.audit.main.ui.SplashScreen, appWaitPackage: com.concavetech.bloc, autoGrantPermissions: true, databaseEnabled: false, desired: {app: F:\QA_Automation\Builds\MMA..., autoGrantPermissions: true, deviceId: , deviceName: samsung SM-J110H (Android 4..., fullReset: false, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: Android, udid: 11015a1136d0b24a}, deviceId: , deviceManufacturer: samsung, deviceModel: SM-J110H, deviceName: 11015a1136d0b24a, deviceScreenSize: 480x800, deviceUDID: 11015a1136d0b24a, fullReset: false, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 1800, noReset: true, platform: ANDROID, platformName: ANDROID, platformVersion: 4.4.4, takesScreenshot: true, udid: 11015a1136d0b24a, warnings: {}, webStorageEnabled: false}
+Session ID: d781e562-acd0-461e-88b9-53342856f187
+*** Element info: {Using=xpath, value=//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[4]/android.widget.TextView[1]}]]></system-err>
+   </testsuite>
+</testsuites>

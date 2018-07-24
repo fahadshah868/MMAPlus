@@ -1,0 +1,13 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Plus Merchandising,,,2018-07-24 17:54:30,2018-07-24 17:57:55,3m - 25.219s,ERROR
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2018-07-24 17:54:30,2018-07-24 17:54:55,24.521s,PASSED
+startApplication,,launch application,2018-07-24 17:54:31,2018-07-24 17:54:50,18.665s,PASSED
+delay,,delay of 5 seconds after starting application,2018-07-24 17:54:50,2018-07-24 17:54:55,5.105s,PASSED
+,,,,,,
+Test Cases/Shop/VisitShop,,,2018-07-24 17:54:55,2018-07-24 17:57:55,3m - 0.126s,ERROR
+verifyElementText,,validate the dashboard screen appearance,2018-07-24 17:54:55,2018-07-24 17:55:01,5.673s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday,,,2018-07-24 17:55:01,2018-07-24 17:55:03,2.484s,PASSED
+tap,,tap on start your day button to further proceed,2018-07-24 17:55:03,2018-07-24 17:55:04,1.179s,PASSED
+verifyElementText,,Validate shops list screen appearance,2018-07-24 17:55:04,2018-07-24 17:55:06,1.645s,PASSED
+com.ct.qa.keywords.VisitingScenariosKeywords.visitShop,,select shops from shops list,2018-07-24 17:55:06,2018-07-24 17:57:55,2m - 48.764s,ERROR
