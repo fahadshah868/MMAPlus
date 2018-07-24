@@ -32,8 +32,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Facing'),
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_FacingScreen'), 'Facing')
 
-CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_DSA_FACING, ProjectConstants.MESSAGEFOR_DISPLAYSPACEAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_GREATER, 
-    ProjectConstants.MESSAGEFOR_DISPLAYSPACEAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_LESS)
+CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_DSA_FACING)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
 
@@ -44,8 +43,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/StockTaki
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_StockTakingScreen'), 'Stock Taking')
 
-CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_DSA_STOCKTAKING, 
-    ProjectConstants.MESSAGEFOR_DISPLAYSPACEAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_GREATER, ProjectConstants.MESSAGEFOR_DISPLAYSPACEAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS)
+CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_DSA_STOCKTAKING)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
 

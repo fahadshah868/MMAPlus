@@ -28,8 +28,7 @@ Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Facing')
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen'), 
     'Facing')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITEFACING, ProjectConstants.MESSAGEFOR_CHILLERAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_GREATER, 
-    ProjectConstants.MESSAGEFOR_CHILLERAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_LESS)
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITEFACING)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 0)
 
@@ -41,8 +40,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen'), 
     'Depth')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITEDEPTH, ProjectConstants.MESSAGEFOR_CHILLERAVAILABLE_DEPTH_DISPLAYEDPRODUCTSARE_GREATER, 
-    ProjectConstants.MESSAGEFOR_CHILLERAVAILABLE_DEPTH_DISPLAYEDPRODUCTSARE_LESS)
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITEDEPTH)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 0)
 
@@ -54,8 +52,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen'), 
     'Stock Count')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITESTOCKCOUNT, 
-    ProjectConstants.MESSAGEFOR_CHILLERAVAILABLE_STOCKCOUNT_DISPLAYEDPRODUCTSARE_GREATER, ProjectConstants.MESSAGEFOR_CHILLERAVAILABLE_STOCKCOUNT_DISPLAYEDPRODUCTSARE_LESS)
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITESTOCKCOUNT)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 0)
 

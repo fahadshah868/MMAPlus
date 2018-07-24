@@ -43,41 +43,13 @@ public class ProjectConstants {
 	//variables for display messages
 	//channel wise products
 
-	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_FACING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER NOT ALLOCATED WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are greater than to expected products..."
-	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER NOT ALLOCATED WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are less than to expected products..."
-	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_STOCKTAKING_DISPLAYEDPRODUCTSARE__GREATER = "displayed products in CHILLER NOT ALLOCATED WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are greater than to expected products..."
-	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER NOT ALLOCATED WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are less than to expected products..."
-
-	public static final String MESSAGEFOR_DISPLAYSPACEAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in DISPLAY SPACE AVAILABLE FACING are greater than to expected products..."
-	public static final String MESSAGEFOR_DISPLAYSPACEAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in DISPLAY SPACE AVAILABLE FACING are less than to expected products..."
-	public static final String MESSAGEFOR_DISPLAYSPACEAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in DISPLAY SPACE AVAILABLE STOCK TAKING are greater than to expected products..."
-	public static final String MESSAGEFOR_DISPLAYSPACEAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in DISPLAY SPACE AVAILABLE STOCK TAKING are less than to expected products..."
-
-	public static final String MESSAGEFOR_NOSPACEFORDISPLAY_FACING_DISPLAYEDPRODUCTSARE__GREATER = "displayed products in NO SPACE FOR DISPLAY FACING are greater than to expected products..."
-	public static final String MESSAGEFOR_NOSPACEFORDISPLAY_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in NO SPACE FOR DISPLAY FACING are less than to expected products..."
-	public static final String MESSAGEFOR_NOSPACEFORDISPLAY_STOCKTAKING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in NO SPACE FOR DISPLAY STOCK TAKING are greater than to expected products..."
-	public static final String MESSAGEFOR_NOSPACEFORDISPLAY_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in NO SPACE FOR DISPLAY STOCK TAKING are less than to expected products..."
-
-
-	//chiller available products
-	public static final String MESSAGEFOR_CHILLERAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are greater than to expected products..."
-	public static final String MESSAGEFOR_CHILLERAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are less than to expected products..."
-	public static final String MESSAGEFOR_CHILLERAVAILABLE_DEPTH_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" DEPTH are greater than to expected products..."
-	public static final String MESSAGEFOR_CHILLERAVAILABLE_DEPTH_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" DEPTH are less than to expected products..."
-	public static final String MESSAGEFOR_CHILLERAVAILABLE_STOCKCOUNT_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are greater than to expected products..."
-	public static final String MESSAGEFOR_CHILLERAVAILABLE_STOCKCOUNT_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are less than to expected products..."
-
-	//chiller not available products
-	public static final String MESSAGEFOR_CHILLERNOTAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER NOT AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are greater than to expected products..."
-	public static final String MESSAGEFOR_CHILLERNOTAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER NOT AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" FACING are less than to expected products..."
-	public static final String MESSAGEFOR_CHILLERNOTAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_GREATER = "displayed products in CHILLER NOT AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are greater than to expected products..."
-	public static final String MESSAGEFOR_CHILLERNOTAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS = "displayed products in CHILLER NOT AVAILABLE WITH "+CURRENTVISITING_PRODUCTCATEGORY+" STOCK TAKING are less than to expected products..."
+	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSARE_GREATER = "displayed products are greater than to expected products..."
+	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSARE_LESS = "displayed products are less than to expected products..."
 
 	//products categories comparison messages
-	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER = "displayed products categories in CHILLER NOT ALLOCATED are greater than to expected products..."
-	public static final String MESSAGEFOR_CHILLERNOTALLOCATED_DISPLAYEDPRODUCTSCATEGORIESARE_LESS = "displayed products categories in CHILLER NOT ALLOCATED are less than to expected products..."
-	public static final String MESSAGEFOR_CHILLERUTILIZATION_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER = "displayed products categories in "+CURRENTVISITING_CHILLERREMARK+" are greater than to expected products..."
-	public static final String MESSAGEFOR_CHILLERUTILIZATION_DISPLAYEDPRODUCTSCATEGORIESARE_LESS = "displayed products categories in "+CURRENTVISITING_CHILLERREMARK+" are less than to expected products..."
+	//messages for chiller not allocated product categories
+	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER = "displayed products categories are greater than to expected products..."
+	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_LESS = "displayed products categories are less than to expected products..."
 
 
 	//variables for excel sheet columns index
@@ -119,7 +91,7 @@ public class ProjectConstants {
 	//variables for current visiting shop channels, chiller and categories
 	public static String CURRENTVISITING_SHOPNAME
 	public static String CURRENTVISITING_SHOPCHANNEL = ""
-	public static String CURRENTVISITING_MAINCATEGORY = ""
+	public static String CURRENTVISITING_MAINCATEGORY = "this is main category"
 	public static String CURRENTVISITING_PRODUCTCATEGORY = ""
 	public static String CURRENTVISITING_CHILLERTYPE = ""
 	public static String CURRENTVISITING_CHILLERREMARK = ""
@@ -322,6 +294,81 @@ public class ProjectConstants {
 		}
 		else{
 			return 0
+		}
+	}
+	def static checkMandatoryShopCategories(){
+		int index = 0
+		int mandatorycategories = 0
+		int totalcategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+		for(int i=1; i<=totalcategories; i++){
+			MobileElement category = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			String categoryname = category.getText()
+			if(categoryname.equalsIgnoreCase("Chiller")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(categoryname.equalsIgnoreCase("Additional Picture")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(categoryname.equalsIgnoreCase("POP Application")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(categoryname.equalsIgnoreCase("Competition Tracking")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(categoryname.equalsIgnoreCase("Retailer Remarks")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(categoryname.equalsIgnoreCase("RTM -Visit Frequency")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(categoryname.equalsIgnoreCase("Hanger Availibility")){
+				mandatorycategories = mandatorycategories + 1
+			}
+		}
+		while(true){
+			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+			MobileElement lastitembeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+			String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
+			Mobile.swipe(0, 293, 0, 200)
+			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+			MobileElement lastitemafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+			String lastitemnameafterswipe = lastitemafterswipe.getText()
+			if(lastitemnamebeforeswipe.equalsIgnoreCase(lastitemnameafterswipe)){
+				break
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Competition Tracking")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Retailer Remarks")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("RTM -Visit Frequency")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("POP Application")){
+				mandatorycategories = mandatorycategories + 1
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
+				mandatorycategories = mandatorycategories + 1
+			}
+		}
+		if(mandatorycategories == 7){
+			return true
+		}
+		else{
+			return false
 		}
 	}
 }

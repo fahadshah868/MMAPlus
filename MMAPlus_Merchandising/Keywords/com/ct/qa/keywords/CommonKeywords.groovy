@@ -68,8 +68,8 @@ public class CommonKeywords {
 	}
 	@Keyword
 	def findPictureImageView(){
-		ArrayList<MobileElement> imageviews = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/*")
-		if(imageviews.size() == 3){
+		ArrayList<MobileElement> totalimageviews = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/*").size()
+		if(totalimageviews == 3){
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/Picture_ImageView"), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton"), 0)
@@ -97,8 +97,8 @@ public class CommonKeywords {
 	def findShopCategory(String productcategory){
 		int index = 0
 		String lastvisitedcategory = ""
-		ArrayList<MobileElement> products = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*")
-		for(int i=1; i<=products.size(); i++){
+		int totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+		for(int i=1; i<=totalproducts; i++){
 			MobileElement product = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String productname = product.getText()
 			if(productname.equalsIgnoreCase(productcategory)){

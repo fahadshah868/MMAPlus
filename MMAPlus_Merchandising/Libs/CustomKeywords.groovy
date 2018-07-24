@@ -19,13 +19,9 @@ def static "com.ct.qa.keywords.ChannelKeywords.visitNestradeProductsCategories"(
 }
 
 def static "com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData"(
-    	int columnindex	
-     , 	String messageondisplayedproductsgreater	
-     , 	String messageondisplayedproductsless	) {
+    	int columnindex	) {
     (new com.ct.qa.keywords.ChannelKeywords()).visitChannelWiseProductsData(
-        	columnindex
-         , 	messageondisplayedproductsgreater
-         , 	messageondisplayedproductsless)
+        	columnindex)
 }
 
 def static "com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPoint"() {
@@ -111,23 +107,15 @@ def static "com.ct.qa.keywords.ChillerKeywords.visitChillerNotAvailableProductCa
 }
 
 def static "com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductsData"(
-    	int columnindex	
-     , 	String messageondisplayedproductsgreater	
-     , 	String messageondisplayedproductsless	) {
+    	int columnindex	) {
     (new com.ct.qa.keywords.ChillerKeywords()).visitChillerAvailableProductsData(
-        	columnindex
-         , 	messageondisplayedproductsgreater
-         , 	messageondisplayedproductsless)
+        	columnindex)
 }
 
 def static "com.ct.qa.keywords.ChillerKeywords.VisitChillerNotAvailableProductsData"(
-    	int columnindex	
-     , 	String messageondisplayedproductsgreater	
-     , 	String messageondisplayedproductsless	) {
+    	int columnindex	) {
     (new com.ct.qa.keywords.ChillerKeywords()).VisitChillerNotAvailableProductsData(
-        	columnindex
-         , 	messageondisplayedproductsgreater
-         , 	messageondisplayedproductsless)
+        	columnindex)
 }
 
 def static "com.ct.qa.keywords.ChillerKeywords.selectChillerType"() {

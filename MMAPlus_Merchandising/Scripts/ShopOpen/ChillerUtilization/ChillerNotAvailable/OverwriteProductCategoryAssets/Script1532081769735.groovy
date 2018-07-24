@@ -29,8 +29,7 @@ Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Facin
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen'), 
     'Facing')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.VisitChillerNotAvailableProductsData'(ProjectConstants.CHANNEL_CNA_OVERWRITEFACING, 
-    ProjectConstants.MESSAGEFOR_CHILLERNOTAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_GREATER, ProjectConstants.MESSAGEFOR_CHILLERNOTAVAILABLE_FACING_DISPLAYEDPRODUCTSARE_LESS)
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.VisitChillerNotAvailableProductsData'(ProjectConstants.CHANNEL_CNA_OVERWRITEFACING)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'), 0)
 
@@ -42,8 +41,7 @@ Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Stock
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen'), 
     'Stock Taking')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.VisitChillerNotAvailableProductsData'(ProjectConstants.CHANNEL_CNA_OVERWRITESTOCKTAKING, 
-    ProjectConstants.MESSAGEFOR_CHILLERNOTAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_GREATER, ProjectConstants.MESSAGEFOR_CHILLERNOTAVAILABLE_STOCKTAKING_DISPLAYEDPRODUCTSARE_LESS)
+CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.VisitChillerNotAvailableProductsData'(ProjectConstants.CHANNEL_CNA_OVERWRITESTOCKTAKING)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'), 0)
 

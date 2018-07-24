@@ -39,8 +39,8 @@ public class DistributionPointKeywords {
 		DataFormatter dataFormatter = new DataFormatter()
 		XSSFSheet sheet = ProjectConstants.loadDistributionPointSheet()
 		int totalrows = sheet.getLastRowNum()
-		ArrayList<MobileElement> distributionitems = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/*")
-		for(int i=1; i<=(distributionitems.size()-2); i++){
+		int totaldistributionitems = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/*").size()
+		for(int i=1; i<=(totaldistributionitems-2); i++){
 			MobileElement distributionitem = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String distributionitemname = distributionitem.getText()
 			for(int j=1; j<=totalrows; j++){

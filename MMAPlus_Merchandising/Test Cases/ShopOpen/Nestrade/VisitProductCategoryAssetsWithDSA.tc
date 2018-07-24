@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VisitProductCategoryAssets</name>
+   <name>VisitProductCategoryAssetsWithDSA</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>6b74b0ad-56d6-47df-8be4-820a4c7c1bbc</testCaseGuid>
