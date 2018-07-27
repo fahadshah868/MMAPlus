@@ -21,7 +21,9 @@ import internal.GlobalVariable as GlobalVariable
 
 Mobile.verifyElementText(findTestObject('ShopOpen/POPApplication/Validate_POPApplicationDetailScreen'), 'KPI :POP Application')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/POPApplication/POPDeployment_yes'), 0)
+Mobile.tap(findTestObject('ShopOpen/POPApplication/POPDeployment_No'), 0)
+
+Mobile.tap(findTestObject('ShopOpen/POPApplication/POPDeployment_yes'), 0)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/POPApplication/TakePicture1'), 0)
 

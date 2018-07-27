@@ -91,16 +91,3 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')
 
-not_run: MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerUtilization_backButton'), 0)
-
-not_run: MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
-
-not_run: CustomKeywords.'com.ct.qa.keywords.MainKeywords.findShopCategory'(ProjectConstants.currentvisitingmaincategory)
-
-not_run: MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
-    'Shops on Route')
-
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.findTaggedVisitingChiller'()
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 'KPI: Chiller Utilization')
-

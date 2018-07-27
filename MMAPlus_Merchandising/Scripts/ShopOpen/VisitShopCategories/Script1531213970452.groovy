@@ -21,5 +21,5 @@ import internal.GlobalVariable as GlobalVariable
 
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 
-CustomKeywords.'com.ct.qa.keywords.VisitingScenariosKeywords.visitShopCategories'()
+CustomKeywords.'com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategories'()
 

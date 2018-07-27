@@ -27,6 +27,7 @@ import org.apache.poi.ss.usermodel.DataFormatter
 import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import org.openqa.selenium.Point
 import org.openqa.selenium.remote.server.handler.AcceptAlert
 
 import MobileBuiltInKeywords as Mobile
@@ -39,6 +40,7 @@ public class ProjectConstants {
 	public static final String CHANNEL_PRODUCTSSHEET = "Channel Products"
 	public static final String CHILLER_PRODUCTSSHEET = "Chiller Products"
 	public static final String DISTRIBUTION_SHEET = "Distribution Point"
+	public static final int MOBILEWIDTH = 480
 	public static final AppiumDriver<MobileElement> DRIVER = MobileDriverFactory.getDriver()
 	//variables for display messages
 	//channel wise products
@@ -96,6 +98,7 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_CHILLERTYPE = ""
 	public static String CURRENTVISITING_CHILLERREMARK = ""
 	public static int CURRENTVISITING_CHILLERINDEX = 0
+	public static int visitingstatus = 0
 
 	//initialization of sheet columns index
 	static{
@@ -370,5 +373,10 @@ public class ProjectConstants {
 		else{
 			return false
 		}
+	}
+	def static getXPoint(){
+		Point point = DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]").getLocation()
+		int xlocation = point.getX()
+		return xlocation+1
 	}
 }

@@ -34,7 +34,7 @@ public class RetailerRemarksKeywords {
 		int totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalproducts; i++){
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksDetailScreen"), "Channel:Small Kiryana")
+			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting"), 0)
 			Mobile.tap(findTestObject("Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting"), 0)
 			Mobile.pressBack()
 			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen"), "KPI: Retailer Remarks")
@@ -45,7 +45,7 @@ public class RetailerRemarksKeywords {
 		int totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalproducts; i++){
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksDetailScreen"), "Channel:Small Kiryana")
+			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting"), 0)
 			Mobile.tap(findTestObject("Object Repository/ShopOpen/RetailerRemarks/SMNotVisiting"), 0)
 			Mobile.pressBack()
 			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen"), "KPI: Retailer Remarks")

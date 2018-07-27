@@ -22,5 +22,9 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerTaggedInChillerUtilization'()
+CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitChillerTaggedInChillerUtilization'()
+
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerUtilization_backButton'), 0)
+
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

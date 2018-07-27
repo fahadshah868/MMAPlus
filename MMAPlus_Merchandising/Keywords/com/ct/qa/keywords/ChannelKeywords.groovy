@@ -154,9 +154,10 @@ public class ChannelKeywords {
 		totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*").size()
 		if(totalproducts == 16){
 			while(true){
+				int xlocation = ProjectConstants.getXPoint()
 				MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 				String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-				Mobile.swipe(5, 359, 5, 250)
+				Mobile.swipe(xlocation, 359, xlocation, 250)
 				MobileElement lastproductafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 				String lastproductnameafterswipe = lastproductafterswipe.getText()
 				if(lastproductnamebeforeswipe.equalsIgnoreCase(lastproductnameafterswipe)){

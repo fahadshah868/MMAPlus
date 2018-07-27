@@ -95,7 +95,3 @@ Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerRemarks_BackButton
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerUtilization_backButton'), 0)
-
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
-
