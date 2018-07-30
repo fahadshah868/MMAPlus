@@ -19,11 +19,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate "Pop Application" detail screen appearance'
 Mobile.verifyElementText(findTestObject('ShopOpen/POPApplication/Validate_POPApplicationDetailScreen'), 'KPI :POP Application')
 
+'tap on pop deployment no radio button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/POPApplication/POPDeployment_No'), 0)
 
+'press device back button'
 Mobile.pressBack()
 
+'validate shops\'s categories screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

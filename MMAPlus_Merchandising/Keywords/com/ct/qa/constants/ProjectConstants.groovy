@@ -42,14 +42,15 @@ public class ProjectConstants {
 	public static final String DISTRIBUTION_SHEET = "Distribution Point"
 	public static final int MOBILEWIDTH = 480
 	public static final AppiumDriver<MobileElement> DRIVER = MobileDriverFactory.getDriver()
-	//variables for display messages
-	//channel wise products
 
+
+	//variables for display messages
+	//products comparison messages
 	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSARE_GREATER = "displayed products are greater than to expected products..."
 	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSARE_LESS = "displayed products are less than to expected products..."
+	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSARE_EQUAL = "displayed products are equals to expected products..."
 
 	//products categories comparison messages
-	//messages for chiller not allocated product categories
 	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER = "displayed products categories are greater than to expected products..."
 	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_LESS = "displayed products categories are less than to expected products..."
 
@@ -97,8 +98,7 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_PRODUCTCATEGORY = ""
 	public static String CURRENTVISITING_CHILLERTYPE = ""
 	public static String CURRENTVISITING_CHILLERREMARK = ""
-	public static int CURRENTVISITING_CHILLERINDEX = 0
-	public static int visitingstatus = 0
+	public static int VISITED_CHILLERREMARKS = 1
 
 	//initialization of sheet columns index
 	static{

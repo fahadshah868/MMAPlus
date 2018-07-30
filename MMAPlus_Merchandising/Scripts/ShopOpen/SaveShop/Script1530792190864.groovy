@@ -19,11 +19,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'tap on submit button for save shop\'s categories data'
 Mobile.tap(findTestObject('ShopOpen/SubmitButtonToSaveShop'), 0)
 
+'validate confirmation popup appearance'
 Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_InfoPopUP'), 0)
 
+'tap on yes button for confirmation popup'
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/InfoPopUp_YesButton'), 0)
 
+'validate shops on route screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('Validate_ShopListScreen'), 'Shops on Route')
 

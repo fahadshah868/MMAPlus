@@ -19,12 +19,16 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate "Hanger Availability" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/HangerAvailability/Validate_HangerAvailabilityScreen'), 
     'Hanger Availability')
 
+'tap on hanger availability yes radio button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/HangerAvailability/HangerAvailability_Yes'), 0)
 
+'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/HangerAvailability/HangerAvailability_BackButton'), 0)
 
+'validate shop\'s categories screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

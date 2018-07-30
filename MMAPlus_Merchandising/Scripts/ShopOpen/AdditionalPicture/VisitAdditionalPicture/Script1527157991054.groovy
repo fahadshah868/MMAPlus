@@ -19,11 +19,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate "Additional Picture" category screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/AdditionalPicture/Validate_AdditionalPictureScreen'), 'Additional Picture')
 
+'take mandatory pictures for "Additional Picture" category'
 CustomKeywords.'com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages'()
 
+'press device back button'
 Mobile.pressBack()
 
+'validate shops on route screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

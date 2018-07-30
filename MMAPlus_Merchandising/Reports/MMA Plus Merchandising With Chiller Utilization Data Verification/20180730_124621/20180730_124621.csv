@@ -1,0 +1,28 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Plus Merchandising With Chiller Utilization Data Verification,,,2018-07-30 12:46:24,2018-07-30 12:47:37,1m - 12.343s,ERROR
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2018-07-30 12:46:26,2018-07-30 12:46:47,21.822s,PASSED
+startApplication,,launch application,2018-07-30 12:46:26,2018-07-30 12:46:42,16.243s,PASSED
+delay,,delay of 5 seconds after starting application,2018-07-30 12:46:42,2018-07-30 12:46:47,5.089s,PASSED
+,,,,,,
+Test Cases/DistributionPoint/VisitDistributionPoint,,,2018-07-30 12:46:47,2018-07-30 12:47:31,43.432s,PASSED
+verifyElementText,,validate dashboard screen appearance,2018-07-30 12:46:48,2018-07-30 12:46:49,0.895s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday,,select the current day for further proceed,2018-07-30 12:46:49,2018-07-30 12:46:53,3.865s,PASSED
+tap,,tap on start your day button,2018-07-30 12:46:53,2018-07-30 12:46:55,2.049s,PASSED
+delay,,delay of 15 seconds for check in through map screen,2018-07-30 12:46:55,2018-07-30 12:47:10,15.029s,PASSED
+verifyElementExist,,validate map screen appearance,2018-07-30 12:47:10,2018-07-30 12:47:10,0.721s,PASSED
+tap,,tap on check in button through map,2018-07-30 12:47:10,2018-07-30 12:47:11,0.707s,PASSED
+verifyElementExist,,validate confirm popup appearance,2018-07-30 12:47:11,2018-07-30 12:47:12,1.117s,PASSED
+tap,,tap on confirm popup no button,2018-07-30 12:47:12,2018-07-30 12:47:13,0.669s,PASSED
+verifyElementText,,validate channel summary detail screen appearance,2018-07-30 12:47:13,2018-07-30 12:47:14,0.895s,PASSED
+tap,,tap on next button to further proceed,2018-07-30 12:47:14,2018-07-30 12:47:15,1.007s,PASSED
+verifyElementText,,validate distribution point screen appearance,2018-07-30 12:47:15,2018-07-30 12:47:16,1.742s,PASSED
+com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPoint,,enter quantity of products on distribution point,2018-07-30 12:47:16,2018-07-30 12:47:30,13.467s,PASSED
+tap,,tap on submit button after enter the quantity of products on distribution point,2018-07-30 12:47:30,2018-07-30 12:47:31,0.895s,PASSED
+,,,,,,
+Test Cases/VisitShopScenarios/VisitShopsWithDataVerification,,,2018-07-30 12:47:31,2018-07-30 12:47:37,5.861s,ERROR
+verifyElementText,,validate the dashboard screen appearance,2018-07-30 12:47:31,2018-07-30 12:47:32,1.399s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday,,,2018-07-30 12:47:32,2018-07-30 12:47:34,1.616s,PASSED
+tap,,tap on start your day button to further proceed,2018-07-30 12:47:34,2018-07-30 12:47:35,0.880s,PASSED
+verifyElementText,,Validate shops list screen appearance,2018-07-30 12:47:35,2018-07-30 12:47:37,1.644s,PASSED
+com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWithChillerNotAllocatedDataVerification,,select shops from shops list,2018-07-30 12:47:37,2018-07-30 12:47:37,0.049s,ERROR

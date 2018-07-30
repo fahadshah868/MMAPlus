@@ -20,27 +20,39 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate product category detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen'), 'Facing')
 
+'tap on product category "Facing"'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Facing'), 0)
 
+'Validate product category facing screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_FacingScreen'), 'Facing')
 
-CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_CHILLER_FACING)
+'visit products for facing'
+CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_CHILLER_FACING)
 
+'tap on submit button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
 
+'validate product category detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen'), 'Facing')
 
+'tap on "Stock Taking"'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/StockTaking'), 0)
 
+'validate stock taking detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_StockTakingScreen'), 'Stock Taking')
 
-CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_CHILLER_STOCKTAKING)
+'visit products for stock taking'
+CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_CHILLER_STOCKTAKING)
 
+'tap on submit button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
 
+'validate product category detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen'), 'Facing')
 
+'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'), 0)
 

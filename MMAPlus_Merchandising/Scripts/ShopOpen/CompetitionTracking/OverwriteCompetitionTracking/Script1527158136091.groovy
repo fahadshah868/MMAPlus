@@ -19,12 +19,16 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate "Competition Tracking" detail screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/CompetitionTracking/Validate_CompetitionTrackingScreen'), 
     0)
 
+'overwrite competition tracking products'
 CustomKeywords.'com.ct.qa.keywords.CompetitionTrackingKeywords.overwriteCompetitiontrackingProducts'()
 
+'tap on back button'
 Mobile.pressBack()
 
+'validate shop\'s categories screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

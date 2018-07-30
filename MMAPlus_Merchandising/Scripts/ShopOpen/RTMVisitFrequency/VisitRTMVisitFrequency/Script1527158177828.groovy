@@ -19,11 +19,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate "RTM Visit Frequency" detail screen'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyScreen'), 'Options')
 
+'visit rtm visit frequency remarks'
 CustomKeywords.'com.ct.qa.keywords.RTMVisitFrequencyKeywords.visitRTMVisitFrequency'()
 
+'tap on back button'
 Mobile.tap(findTestObject('ShopOpen/RTMVisitFrequency/BackButton'), 0)
 
+'validate shop\'s categories screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

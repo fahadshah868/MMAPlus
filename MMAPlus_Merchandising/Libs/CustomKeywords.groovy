@@ -3,13 +3,35 @@
  * This class is generated automatically by Katalon Studio and should not be modified or deleted.
  */
 
+import java.lang.String
 
-def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategories"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategories()
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_CNAl_CU_DSA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_CNAl_CU_DSA()
 }
 
-def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.overwriteShopCategories"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).overwriteShopCategories()
+def static "com.ct.qa.keywords.ChannelProductsDataKeywords.visitChillerNotAllocatedProductCategories"(
+    	int flag	) {
+    (new com.ct.qa.keywords.ChannelProductsDataKeywords()).visitChillerNotAllocatedProductCategories(
+        	flag)
+}
+
+def static "com.ct.qa.keywords.ChannelProductsDataKeywords.visitNestradeProductsCategoriesWithDSA"(
+    	int flag	) {
+    (new com.ct.qa.keywords.ChannelProductsDataKeywords()).visitNestradeProductsCategoriesWithDSA(
+        	flag)
+}
+
+def static "com.ct.qa.keywords.ChannelProductsDataKeywords.visitNestradeProductsCategoriesWithNSFD"(
+    	int flag	) {
+    (new com.ct.qa.keywords.ChannelProductsDataKeywords()).visitNestradeProductsCategoriesWithNSFD(
+        	flag)
+}
+
+def static "com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData"(
+    	int columnindex	) {
+    (new com.ct.qa.keywords.ChannelProductsDataKeywords()).visitChannelWiseProductsData(
+        	columnindex)
 }
 
 def static "com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages"() {
@@ -24,6 +46,54 @@ def static "com.ct.qa.keywords.RetailerRemarksKeywords.overwriteRetailerRemarks"
     (new com.ct.qa.keywords.RetailerRemarksKeywords()).overwriteRetailerRemarks()
 }
 
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.findTaggedVisitingChiller"() {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).findTaggedVisitingChiller()
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories"(
+    	int flag	) {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).visitChillerAvailableProductCategories(
+        	flag)
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerNotAvailableProductCategories"(
+    	int flag	) {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).visitChillerNotAvailableProductCategories(
+        	flag)
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData"(
+    	int columnindex	) {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).visitChillerAvailableProductsData(
+        	columnindex)
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData"(
+    	int columnindex	) {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).VisitChillerNotAvailableProductsData(
+        	columnindex)
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.selectChillerType"() {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).selectChillerType()
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.continueChillerAvailableCategoryFlowForChillerNeedMaintenance"() {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).continueChillerAvailableCategoryFlowForChillerNeedMaintenance()
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.continueChillerNotAvailableCategoryFlowForChillerRemovedForMaintenance"() {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).continueChillerNotAvailableCategoryFlowForChillerRemovedForMaintenance()
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.continueChillerNotAvailableCategoryFlowForChillerNotInAccess"() {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).continueChillerNotAvailableCategoryFlowForChillerNotInAccess()
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.continueChillerAvailableCategoryFlowForChillerTypeNotAvailable"() {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).continueChillerAvailableCategoryFlowForChillerTypeNotAvailable()
+}
+
 def static "com.ct.qa.keywords.CompetitionTrackingKeywords.visitCompetitiontrackingProducts"() {
     (new com.ct.qa.keywords.CompetitionTrackingKeywords()).visitCompetitiontrackingProducts()
 }
@@ -32,64 +102,8 @@ def static "com.ct.qa.keywords.CompetitionTrackingKeywords.overwriteCompetitiont
     (new com.ct.qa.keywords.CompetitionTrackingKeywords()).overwriteCompetitiontrackingProducts()
 }
 
-def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWithChillerNotAllocatedDataVerification"() {
-    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopWithChillerNotAllocatedDataVerification()
-}
-
-def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWithChillerAvailableDataVerification"() {
-    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopWithChillerAvailableDataVerification()
-}
-
-def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWithChillerNotAvailableDataVerification"() {
-    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopWithChillerNotAvailableDataVerification()
-}
-
-def static "com.ct.qa.keywords.ChillerKeywords.findTaggedVisitingChiller"() {
-    (new com.ct.qa.keywords.ChillerKeywords()).findTaggedVisitingChiller()
-}
-
-def static "com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductCategories"(
-    	int flag	) {
-    (new com.ct.qa.keywords.ChillerKeywords()).visitChillerAvailableProductCategories(
-        	flag)
-}
-
-def static "com.ct.qa.keywords.ChillerKeywords.visitChillerNotAvailableProductCategories"(
-    	int flag	) {
-    (new com.ct.qa.keywords.ChillerKeywords()).visitChillerNotAvailableProductCategories(
-        	flag)
-}
-
-def static "com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductsData"(
-    	int columnindex	) {
-    (new com.ct.qa.keywords.ChillerKeywords()).visitChillerAvailableProductsData(
-        	columnindex)
-}
-
-def static "com.ct.qa.keywords.ChillerKeywords.VisitChillerNotAvailableProductsData"(
-    	int columnindex	) {
-    (new com.ct.qa.keywords.ChillerKeywords()).VisitChillerNotAvailableProductsData(
-        	columnindex)
-}
-
-def static "com.ct.qa.keywords.ChillerKeywords.selectChillerType"() {
-    (new com.ct.qa.keywords.ChillerKeywords()).selectChillerType()
-}
-
-def static "com.ct.qa.keywords.ChillerKeywords.continueChillerAvailableCategoryFlowForChillerNeedMaintenance"() {
-    (new com.ct.qa.keywords.ChillerKeywords()).continueChillerAvailableCategoryFlowForChillerNeedMaintenance()
-}
-
-def static "com.ct.qa.keywords.ChillerKeywords.continueChillerNotAvailableCategoryFlowForChillerRemovedForMaintenance"() {
-    (new com.ct.qa.keywords.ChillerKeywords()).continueChillerNotAvailableCategoryFlowForChillerRemovedForMaintenance()
-}
-
-def static "com.ct.qa.keywords.ChillerKeywords.continueChillerNotAvailableCategoryFlowForChillerNotInAccess"() {
-    (new com.ct.qa.keywords.ChillerKeywords()).continueChillerNotAvailableCategoryFlowForChillerNotInAccess()
-}
-
-def static "com.ct.qa.keywords.ChillerKeywords.continueChillerAvailableCategoryFlowForChillerTypeNotAvailable"() {
-    (new com.ct.qa.keywords.ChillerKeywords()).continueChillerAvailableCategoryFlowForChillerTypeNotAvailable()
+def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWithDataVerification"() {
+    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopWithDataVerification()
 }
 
 def static "com.ct.qa.keywords.RTMVisitFrequencyKeywords.visitRTMVisitFrequency"() {
@@ -98,24 +112,6 @@ def static "com.ct.qa.keywords.RTMVisitFrequencyKeywords.visitRTMVisitFrequency"
 
 def static "com.ct.qa.keywords.RTMVisitFrequencyKeywords.overwriteRTMVisitFrequency"() {
     (new com.ct.qa.keywords.RTMVisitFrequencyKeywords()).overwriteRTMVisitFrequency()
-}
-
-def static "com.ct.qa.keywords.ChannelKeywords.visitChillerNotAllocatedProductCategories"(
-    	int flag	) {
-    (new com.ct.qa.keywords.ChannelKeywords()).visitChillerNotAllocatedProductCategories(
-        	flag)
-}
-
-def static "com.ct.qa.keywords.ChannelKeywords.visitNestradeProductsCategories"(
-    	int flag	) {
-    (new com.ct.qa.keywords.ChannelKeywords()).visitNestradeProductsCategories(
-        	flag)
-}
-
-def static "com.ct.qa.keywords.ChannelKeywords.visitChannelWiseProductsData"(
-    	int columnindex	) {
-    (new com.ct.qa.keywords.ChannelKeywords()).visitChannelWiseProductsData(
-        	columnindex)
 }
 
 def static "com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPoint"() {
@@ -142,18 +138,12 @@ def static "com.ct.qa.keywords.CommonKeywords.findShopCategory"() {
     (new com.ct.qa.keywords.CommonKeywords()).findShopCategory()
 }
 
-def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillerTaggedInChillerUtilization"() {
-    (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).visitChillerTaggedInChillerUtilization()
+def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedInChillerUtilizationWithDataVerification"() {
+    (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).visitChillersTaggedInChillerUtilizationWithDataVerification()
 }
 
-def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillerAvailableRemarkForDataVerification"() {
-    (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).visitChillerAvailableRemarkForDataVerification()
-}
-
-def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillerNotAvailableRemarkForDataVerification"() {
-    (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).visitChillerNotAvailableRemarkForDataVerification()
-}
-
-def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillerRemarks"() {
-    (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).visitChillerRemarks()
+def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.findChillerRemark"(
+    	String _chillerremark	) {
+    (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).findChillerRemark(
+        	_chillerremark)
 }

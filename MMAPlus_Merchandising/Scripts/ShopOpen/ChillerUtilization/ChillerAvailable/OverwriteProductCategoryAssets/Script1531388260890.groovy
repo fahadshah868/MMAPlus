@@ -28,7 +28,7 @@ Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Facing')
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen'), 
     'Facing')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITEFACING)
+CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITEFACING)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 0)
 
@@ -40,7 +40,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen'), 
     'Depth')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITEDEPTH)
+CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITEDEPTH)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 0)
 
@@ -52,7 +52,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen'), 
     'Stock Count')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITESTOCKCOUNT)
+CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITESTOCKCOUNT)
 
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 0)
 

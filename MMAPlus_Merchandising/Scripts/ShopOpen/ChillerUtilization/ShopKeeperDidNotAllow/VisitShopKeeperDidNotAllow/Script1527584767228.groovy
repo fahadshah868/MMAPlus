@@ -30,7 +30,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ShopKeeper
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.findTaggedVisitingChiller'()
+CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.findTaggedVisitingChiller'()
 
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 'KPI: Chiller Utilization')
 

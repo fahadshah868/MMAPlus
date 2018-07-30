@@ -22,7 +22,7 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/Validate_SelectAppropriateTypeScreen'), 
     'Select appropriate type')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.selectChillerType'()
+CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.selectChillerType'()
 
 Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
 
@@ -32,5 +32,5 @@ MobileBuiltInKeywords.delay(5)
 
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
 
-CustomKeywords.'com.ct.qa.keywords.ChillerKeywords.continueChillerAvailableCategoryFlowForChillerTypeNotAvailable'()
+CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.continueChillerAvailableCategoryFlowForChillerTypeNotAvailable'()
 

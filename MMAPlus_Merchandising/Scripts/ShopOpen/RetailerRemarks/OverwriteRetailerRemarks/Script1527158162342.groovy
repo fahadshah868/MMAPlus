@@ -19,11 +19,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate "Retailer Remarks" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen'), 'KPI: Retailer Remarks')
 
+'overwrite retailer remarks products'
 CustomKeywords.'com.ct.qa.keywords.RetailerRemarksKeywords.overwriteRetailerRemarks'()
 
+'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RetailerRemarks/BackButton'), 0)
 
+'validate shop\'s categories screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

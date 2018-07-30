@@ -19,33 +19,46 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate "Chiller" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen'), 'KPI: Chiller')
 
+'tap on "Chiller Not Allocated"'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocated'), 0)
 
+'validate "Chiller Not Allocated" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
-CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitChillerNotAllocatedProductCategories'(1)
+'visit "Chiller Not Allocated" products categories'
+CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChillerNotAllocatedProductCategories'(1)
 
+'validate "Chiller Not Allocated" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
+'tap on planogram imageview'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Planogram_ImageView'), 0)
 
+'find planogram availability'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 
+'tap on planogram close button'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
 
+'validate "Chiller Not Allocated" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
+'tap on picture imageview and take picture for category'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
 
+'validate "Chiller Not Allocated" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
     'Category:Chiller')
 
+'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'), 0)
 
+'validate shop categories screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 

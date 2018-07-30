@@ -19,30 +19,40 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'Validate shop\'s category detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen'), 
     'Display Space Available')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/DisplaySpaceAvailable'), 0)
+'tap on "Display Space Available"'
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/NoSpaceForDisplay'), 0)
 
+'validate display space available detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen'), 'Category:Nestrade')
 
-CustomKeywords.'com.ct.qa.keywords.ChannelKeywords.visitNestradeProductsCategories'(1)
+'visit products categories'
+CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitNestradeProductsCategoriesWithDSA'(1)
 
+'tap on "Planogram" imageview'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/planogram_ImageView'), 0)
 
+'find planogram availability'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 
+'tap on planogram close button'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
-    'Facing')
+'validate display space available detail screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen'), 'Category:Nestrade')
 
+'tap on picture imageview and take picture for category'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
 
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
-    'Facing')
+'validate display space available detail screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen'), 'Category:Nestrade')
 
+'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton'), 0)
 
+'validate shop\'s category screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 
