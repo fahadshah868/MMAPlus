@@ -20,74 +20,104 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate "Chiller Available" detail screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen'), 
     0)
 
+'tap on "Planogram" imageview'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Planogram_ImageView'), 0)
 
+'find planogram availability'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 
+'tap on planogram close button'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
 
+'validate "Chiller Available" detail screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen'), 
     0)
 
+'find "Picture" imageview and take chiller picture'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
 
+'validate "Chiller Available" detail screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen'), 
     0)
 
+'tap on take picture for depth 1'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Depth1_TakePicture'), 0)
 
+'validate camera screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
 
+'tap on tak picture button'
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton'), 0)
 
+'delay of 5 seconds while taking picture'
 MobileBuiltInKeywords.delay(5)
 
+'tap on done button'
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
 
+'validate "Chiller Available" detail screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen'), 
     0)
 
+'tap on take picture button fot depth 2'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Depth2TakePicture'), 0)
 
+'validate camera screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
 
+'tap on take picture button'
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton'), 0)
 
+'delay of 5 seconds while taking picture'
 MobileBuiltInKeywords.delay(5)
 
+'tap on done button'
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
 
+'validate "Chiller Available" detail screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen'), 
     0)
 
+'tap on next button to further proceed'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/NextButton'), 0)
 
+'validate products categories screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen'), 
     'Category:Chiller Utilization')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories'(2, 'OVERWRITE CHILLER AVAILABLE')
+'overwrite chiller available products categories'
+CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories'(2)
 
+'tap on "Planogram" imageview'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/ChillerProductsCategories_Planogram_ImageView'), 
     0)
 
+'find planogram availability'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 
+'tap on planogram close button'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
 
+'validate products categories screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen'), 
     'Category:Chiller Utilization')
 
+'find "Picture" imageview and taking picture for category'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
 
+'validate products categories screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen'), 
     'Category:Chiller Utilization')
 
+'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/ChillerProductsCategories_BackButton'), 
     0)
 
+'validate "Chiller Utilization" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')
 

@@ -6,8 +6,36 @@
 import java.lang.String
 
 
-def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_CNAl_CU_DSA"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_CNAl_CU_DSA()
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWithDataVerification()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_CNAl_CAv_DSA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_CNAl_CAv_DSA()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_SKDNA_CNAv_NSFD"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_SKDNA_CNAv_NSFD()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_SKDNA_SKDNA_SKDNA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_SKDNA_SKDNA_SKDNA()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.overwriteShopCategoriesWith_CNAl_CAv_DSA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).overwriteShopCategoriesWith_CNAl_CAv_DSA()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_CNAl_CTNAv_NSFD"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_CNAl_CTNAv_NSFD()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_SKDNA_CAv_DSA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_SKDNA_CAv_DSA()
 }
 
 def static "com.ct.qa.keywords.ChannelProductsDataKeywords.visitChillerNotAllocatedProductCategories"(
@@ -46,10 +74,6 @@ def static "com.ct.qa.keywords.RetailerRemarksKeywords.overwriteRetailerRemarks"
     (new com.ct.qa.keywords.RetailerRemarksKeywords()).overwriteRetailerRemarks()
 }
 
-def static "com.ct.qa.keywords.ChillerProductsDataKeywords.findTaggedVisitingChiller"() {
-    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).findTaggedVisitingChiller()
-}
-
 def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories"(
     	int flag	) {
     (new com.ct.qa.keywords.ChillerProductsDataKeywords()).visitChillerAvailableProductCategories(
@@ -72,26 +96,6 @@ def static "com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvaila
     	int columnindex	) {
     (new com.ct.qa.keywords.ChillerProductsDataKeywords()).VisitChillerNotAvailableProductsData(
         	columnindex)
-}
-
-def static "com.ct.qa.keywords.ChillerProductsDataKeywords.selectChillerType"() {
-    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).selectChillerType()
-}
-
-def static "com.ct.qa.keywords.ChillerProductsDataKeywords.continueChillerAvailableCategoryFlowForChillerNeedMaintenance"() {
-    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).continueChillerAvailableCategoryFlowForChillerNeedMaintenance()
-}
-
-def static "com.ct.qa.keywords.ChillerProductsDataKeywords.continueChillerNotAvailableCategoryFlowForChillerRemovedForMaintenance"() {
-    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).continueChillerNotAvailableCategoryFlowForChillerRemovedForMaintenance()
-}
-
-def static "com.ct.qa.keywords.ChillerProductsDataKeywords.continueChillerNotAvailableCategoryFlowForChillerNotInAccess"() {
-    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).continueChillerNotAvailableCategoryFlowForChillerNotInAccess()
-}
-
-def static "com.ct.qa.keywords.ChillerProductsDataKeywords.continueChillerAvailableCategoryFlowForChillerTypeNotAvailable"() {
-    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).continueChillerAvailableCategoryFlowForChillerTypeNotAvailable()
 }
 
 def static "com.ct.qa.keywords.CompetitionTrackingKeywords.visitCompetitiontrackingProducts"() {
@@ -134,16 +138,32 @@ def static "com.ct.qa.keywords.CommonKeywords.closePlanogram"() {
     (new com.ct.qa.keywords.CommonKeywords()).closePlanogram()
 }
 
-def static "com.ct.qa.keywords.CommonKeywords.findShopCategory"() {
-    (new com.ct.qa.keywords.CommonKeywords()).findShopCategory()
-}
-
 def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedInChillerUtilizationWithDataVerification"() {
     (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).visitChillersTaggedInChillerUtilizationWithDataVerification()
+}
+
+def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedinChillerUtilizationWithSingleRemark"(
+    	String chillerremark	) {
+    (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).visitChillersTaggedinChillerUtilizationWithSingleRemark(
+        	chillerremark)
+}
+
+def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.overwriteChillersTaggedinChillerUtilizationWithSingleRemark"(
+    	String chillerremark	) {
+    (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).overwriteChillersTaggedinChillerUtilizationWithSingleRemark(
+        	chillerremark)
 }
 
 def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.findChillerRemark"(
     	String _chillerremark	) {
     (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).findChillerRemark(
         	_chillerremark)
+}
+
+def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.selectChillerType"() {
+    (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).selectChillerType()
+}
+
+def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.selectDifferentChillerType"() {
+    (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).selectDifferentChillerType()
 }

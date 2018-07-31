@@ -4,7 +4,7 @@
    <name>MMA Plus Merchandising With Chiller Not Allocated Data Verification</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-07-27T16:37:27</lastRun>
+   <lastRun>2018-07-31T15:53:25</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>15</pageLoadTimeout>
@@ -26,13 +26,13 @@
    <testCaseLink>
       <guid>29b8720b-e6cb-4d54-bb93-c240c64d2319</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>e7ce5887-335b-4a99-af85-93a0bd822f88</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithDataVerification</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

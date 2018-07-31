@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VisitChillerUtilizationWith_ChillerRemovedForMaintenance</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a40192ae-bcf2-40de-b761-8f9493fc6a8e</testCaseGuid>
+</TestCaseEntity>

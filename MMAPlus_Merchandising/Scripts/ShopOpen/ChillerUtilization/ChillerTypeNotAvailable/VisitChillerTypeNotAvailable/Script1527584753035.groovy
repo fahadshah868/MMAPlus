@@ -19,18 +19,25 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate chiller types listview appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/Validate_SelectAppropriateTypeScreen'), 
     'Select appropriate type')
 
-CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.selectChillerType'()
+'select chiller type'
+CustomKeywords.'com.ct.qa.keywords.ChillerVisitingScenariosKeywords.selectChillerType'()
 
+'validate camera screen appearance'
 Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
 
+'tap on take picture button'
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton'), 0)
 
+'delay of 5 seconds while taking picture'
 MobileBuiltInKeywords.delay(5)
 
+'tap on done button'
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
 
-CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.continueChillerAvailableCategoryFlowForChillerTypeNotAvailable'()
+'visit "Chiller Available" flow for "Chiller Type Not Available"'
+WebUI.callTestCase(findTestCase('ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable'), [:], FailureHandling.STOP_ON_FAILURE)
 

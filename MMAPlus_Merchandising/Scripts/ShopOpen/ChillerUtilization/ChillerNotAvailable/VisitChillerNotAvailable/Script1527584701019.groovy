@@ -19,25 +19,34 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate "Chiller Not Available" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen'), 
     'Category:Chiller Utilization')
 
+'visit chiller not available products categories'
 CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerNotAvailableProductCategories'(1)
 
+'tap on "Planogram" imageview'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Planogram_ImageView'), 0)
 
+'find planogram availability'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 
+'tap on planogram close button'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
 
+'validate "Chiller Not Available" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen'), 
     'Category:Chiller Utilization')
 
+'find "Picture" imageview and take picture for chiller not available'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
 
+'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/ChillerNotAvailable_BackButton'), 
     0)
 
+'validate "Chiller Utilization" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')
 

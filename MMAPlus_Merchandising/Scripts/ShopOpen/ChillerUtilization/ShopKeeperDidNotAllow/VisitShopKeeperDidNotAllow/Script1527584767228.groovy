@@ -19,18 +19,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate category remarks screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/Validate_CategoryRemarksScreen'), 
     'CATEGORY REMARKS')
 
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/CategoryRemarks_Others'), 0)
+'tap on category remark'
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/CategoryRemark_ExpiryIssue'), 
+    0)
 
+'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/CategoryRemarks_BackButton'), 
     0)
 
+'validate "Chiller Utilization" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
     'Shops on Route')
-
-CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.findTaggedVisitingChiller'()
-
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 'KPI: Chiller Utilization')
 

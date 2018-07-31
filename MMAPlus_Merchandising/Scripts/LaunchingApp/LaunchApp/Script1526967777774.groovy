@@ -2,6 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import org.eclipse.persistence.sessions.Project as Project
+import com.ct.qa.constants.ProjectConstants as ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger
@@ -24,6 +26,6 @@ import internal.GlobalVariable as GlobalVariable
 'launch application'
 Mobile.startApplication('F:\\QA_Automation\\Builds\\mmaplus_local_merchandising_030518.apk', false)
 
-'delay of 5 seconds after starting application'
+'delay of 5 seconds'
 MobileBuiltInKeywords.delay(5)
 

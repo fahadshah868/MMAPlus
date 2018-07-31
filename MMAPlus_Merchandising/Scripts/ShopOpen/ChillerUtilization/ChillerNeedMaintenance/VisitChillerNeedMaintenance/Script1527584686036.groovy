@@ -19,13 +19,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+'validate category remarks screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNeedMaintenance/Validate_CategoryRemarksScreen'), 
     'CATEGORY REMARKS')
 
+'tap on category remark'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNeedMaintenance/Others'), 0)
 
+'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNeedMaintenance/CategoryRemarks_BackButton'), 
     0)
 
-CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.continueChillerAvailableCategoryFlowForChillerNeedMaintenance'()
+'visit "Chiller Available" flow for "Chiller Nees Maintenance"'
+WebUI.callTestCase(findTestCase('ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable'), [:], FailureHandling.STOP_ON_FAILURE)
 

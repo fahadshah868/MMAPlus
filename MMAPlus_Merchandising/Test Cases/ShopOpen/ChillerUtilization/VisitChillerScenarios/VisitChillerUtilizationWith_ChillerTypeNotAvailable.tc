@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VisitChillerUtilizationWith_ChillerTypeNotAvailable</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f3d430b2-3cf8-4918-a0e9-6e1590b20b57</testCaseGuid>
+</TestCaseEntity>

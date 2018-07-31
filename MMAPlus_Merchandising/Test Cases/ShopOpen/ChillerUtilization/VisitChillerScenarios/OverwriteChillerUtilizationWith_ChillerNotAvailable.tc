@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>OverwriteChillerUtilizationWith_ChillerNotAvailable</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e456cd7a-b079-4b52-af4e-a279488b0335</testCaseGuid>
+</TestCaseEntity>
