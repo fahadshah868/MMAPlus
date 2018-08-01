@@ -30,7 +30,7 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ShopKeepe
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_CategoryRemarksScreen'), 'CATEGORY REMARKS')
 
 'tap on category remark'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_ExpiryIssue'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_Others'), 0)
 
 'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_BackButton'), 0)

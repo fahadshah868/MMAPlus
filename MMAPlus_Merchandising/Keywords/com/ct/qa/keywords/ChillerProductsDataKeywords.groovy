@@ -82,7 +82,11 @@ public class ChillerProductsDataKeywords {
 	@Keyword
 	def visitChillerAvailableProductCategories(int flag){
 		int status = ProjectConstants.compareChillerWiseProductsCategories()
-		if(status == 1){
+		if(status == 2){
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\nCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_CATEGORYDATAISNOTAVAILABLE
+			KeywordUtil.markErrorAndStop(message)
+		}
+		else if(status == 1){
 			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_GREATER
 			KeywordUtil.markErrorAndStop(message)
 		}
@@ -110,7 +114,11 @@ public class ChillerProductsDataKeywords {
 	@Keyword
 	def visitChillerNotAvailableProductCategories(int flag){
 		int status = ProjectConstants.compareChannelWiseProductsCategories()
-		if(status == 1){
+		if(status == 2){
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\nCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_CATEGORYDATAISNOTAVAILABLE
+			KeywordUtil.markErrorAndStop(message)
+		}
+		else if(status == 1){
 			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_GREATER
 			KeywordUtil.markErrorAndStop(message)
 		}

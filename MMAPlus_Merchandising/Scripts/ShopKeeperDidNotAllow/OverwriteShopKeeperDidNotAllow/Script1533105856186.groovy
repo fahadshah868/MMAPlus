@@ -19,29 +19,30 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'validate shop\'s category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen'), 
-    'Display Space Available')
+'validate shop actions list screen appearance'
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopActions_List'), 0)
 
-'tap on "Shopkeeper did not Allow"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ShopKeeperDidNotAllow'), 0)
+'tap on "Shopkeeper Did Not Allow" option from shop actions list'
+MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShoopKeeperDidNotAllow'), 0)
 
-'validate category remarks screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_CategoryRemarksScreen'), 'CATEGORY REMARKS')
+'validate camera screen appearance'
+MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
 
-'tap on category remark'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_ExpiryIssue'), 0)
+'tap on take picture button'
+MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton'), 0)
 
-'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_BackButton'), 0)
+'delay of 5 seconds while taking shop picture'
+MobileBuiltInKeywords.delay(5)
 
-'validate shop\'s category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen'), 
-    'Display Space Available')
+'tap on done button after taking picture'
+MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
 
-'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/RemainingCategory_BackButton'), 0)
+'validate shop remarks screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopKeeperDidNotAllow/Validate_ShopRemarksScreen'), 'SHOP REMARKS')
 
-'validate shop\'s categories screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
+'tap on shop remark "Others" from shop remarks list'
+MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShopRemarks_Others'), 0)
+
+'tap on shop remarks back button'
+MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShopRemarks_BackButton'), 0)
 

@@ -41,7 +41,7 @@ MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopKeeperDidNotAllow/Validate_ShopRemarksScreen'), 'SHOP REMARKS')
 
 'tap on shop remark "Others" from shop remarks list'
-MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShopRemarks_Others'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/CategoryRemark_ExpiryIssue'), 0)
 
 'tap on shop remarks back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShopRemarks_BackButton'), 0)

@@ -24,7 +24,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCatego
     'Display Space Available')
 
 'tap on "Display Space Available"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/NoSpaceForDisplay'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/DisplaySpaceAvailable'), 0)
 
 'validate display space available detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen'), 'Category:Nestrade')

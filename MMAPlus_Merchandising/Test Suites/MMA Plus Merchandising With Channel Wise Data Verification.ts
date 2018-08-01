@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>MMA Plus Merchandising With Chiller Not Allocated Data Verification</name>
+   <name>MMA Plus Merchandising With Channel Wise Data Verification</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-07-31T15:53:25</lastRun>
+   <lastRun>2018-08-01T15:18:26</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>15</pageLoadTimeout>
@@ -32,7 +32,7 @@
    <testCaseLink>
       <guid>e7ce5887-335b-4a99-af85-93a0bd822f88</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithDataVerification</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

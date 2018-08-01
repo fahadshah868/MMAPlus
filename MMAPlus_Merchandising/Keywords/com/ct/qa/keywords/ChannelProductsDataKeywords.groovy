@@ -69,7 +69,11 @@ public class ChannelProductsDataKeywords {
 	@Keyword
 	def visitChillerNotAllocatedProductCategories(int flag){
 		int status = ProjectConstants.compareChannelWiseProductsCategories()
-		if(status == 1){
+		if(status == 2){
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\nCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_CATEGORYDATAISNOTAVAILABLE
+			KeywordUtil.markErrorAndStop(message)
+		}
+		else if(status == 1){
 			String message = "Main Category: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER
 			KeywordUtil.markErrorAndStop(message)
 		}
@@ -98,7 +102,11 @@ public class ChannelProductsDataKeywords {
 	@Keyword
 	def visitNestradeProductsCategoriesWithDSA(int flag){
 		int status = ProjectConstants.compareChannelWiseProductsCategories()
-		if(status == 1){
+		if(status == 2){
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\nCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_CATEGORYDATAISNOTAVAILABLE
+			KeywordUtil.markErrorAndStop(message)
+		}
+		else if(status == 1){
 			String message = "Main Category: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER
 			KeywordUtil.markErrorAndStop(message)
 		}
@@ -126,7 +134,11 @@ public class ChannelProductsDataKeywords {
 	@Keyword
 	def visitNestradeProductsCategoriesWithNSFD(int flag){
 		int status = ProjectConstants.compareChannelWiseProductsCategories()
-		if(status == 1){
+		if(status == 2){
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\nCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_CATEGORYDATAISNOTAVAILABLE
+			KeywordUtil.markErrorAndStop(message)
+		}
+		else if(status == 1){
 			String message = "Main Category: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER
 			KeywordUtil.markErrorAndStop(message)
 		}

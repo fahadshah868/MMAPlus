@@ -19,29 +19,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'validate shop\'s category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen'), 
-    'Display Space Available')
-
-'tap on "Shopkeeper did not Allow"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ShopKeeperDidNotAllow'), 0)
-
-'validate category remarks screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_CategoryRemarksScreen'), 'CATEGORY REMARKS')
-
-'tap on category remark'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_ExpiryIssue'), 0)
-
-'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_BackButton'), 0)
-
-'validate shop\'s category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen'), 
-    'Display Space Available')
-
-'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/RemainingCategory_BackButton'), 0)
-
 'validate shop\'s categories screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
+
+'visit shop categories with "Chiller Not Allocated" / "Chiller Available" & "Display Space Available"'
+CustomKeywords.'com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_CNAl_CAv_DSA'()
 

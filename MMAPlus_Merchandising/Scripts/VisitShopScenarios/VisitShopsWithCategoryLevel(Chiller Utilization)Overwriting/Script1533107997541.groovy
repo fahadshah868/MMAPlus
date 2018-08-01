@@ -19,29 +19,18 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'validate shop\'s category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen'), 
-    'Display Space Available')
+'validate the dashboard screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen'), 'Dashboard')
 
-'tap on "Shopkeeper did not Allow"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ShopKeeperDidNotAllow'), 0)
+'select current day'
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.selectday'()
 
-'validate category remarks screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_CategoryRemarksScreen'), 'CATEGORY REMARKS')
+'tap on start your day button to further proceed'
+MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay'), 0)
 
-'tap on category remark'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_ExpiryIssue'), 0)
+'Validate shops list screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('Validate_ShopListScreen'), 'Shops on Route')
 
-'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_BackButton'), 0)
-
-'validate shop\'s category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen'), 
-    'Display Space Available')
-
-'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/RemainingCategory_BackButton'), 0)
-
-'validate shop\'s categories screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
+'select shops from shops list with "Shop Level" overwriting '
+CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithShopLevelOverwriting'()
 

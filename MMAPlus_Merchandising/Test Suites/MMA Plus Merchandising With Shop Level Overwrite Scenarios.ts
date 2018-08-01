@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>MMA Plus Merchandising With Chiller Utilization Data Verification</name>
+   <name>MMA Plus Merchandising With Shop Level Overwrite Scenarios</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-07-30T14:40:28</lastRun>
+   <lastRun>2018-08-01T17:35:30</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
-   <pageLoadTimeout>15</pageLoadTimeout>
+   <pageLoadTimeout>4</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>274dd2f1-114b-440e-be3c-d78c9f50b43f</testSuiteGuid>
+   <testSuiteGuid>75b95793-bc5d-41e0-ae7c-16a9faed4cb8</testSuiteGuid>
    <testCaseLink>
-      <guid>31f42947-b530-4c2a-b89b-89cd6caf3bdf</guid>
+      <guid>5205da17-eb8f-4e77-9d78-51623189c057</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/LaunchingApp/LaunchApp</testCaseId>
@@ -24,15 +24,15 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>29b8720b-e6cb-4d54-bb93-c240c64d2319</guid>
+      <guid>f3022bb4-0c7c-4b9e-aa6d-a3911d3dbd52</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e7ce5887-335b-4a99-af85-93a0bd822f88</guid>
+      <guid>1aed1dc1-4c53-44cb-972f-1517463fd380</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithDataVerification</testCaseId>
+      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithShopLevelOverwriting</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

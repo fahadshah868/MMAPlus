@@ -35,11 +35,11 @@ import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
 public class ProjectConstants {
-	
+
 	public static int a = 1
-	
+
 	//variables for excel file and sheets
-	public static final String EXCEL_FILEPATH = "F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\MMAPlus_Merchandising.xlsx"
+	public static final String EXCEL_FILEPATH = "F:\\MMA_Merchandising.xlsx"
 	public static final String CHANNEL_PRODUCTSSHEET = "Channel Products"
 	public static final String CHILLER_PRODUCTSSHEET = "Chiller Products"
 	public static final String DISTRIBUTION_SHEET = "Distribution Point"
@@ -56,6 +56,9 @@ public class ProjectConstants {
 	//products categories comparison messages
 	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER = "displayed products categories are greater than to expected products..."
 	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_LESS = "displayed products categories are less than to expected products..."
+
+	//category data is not available
+	public static final String MESSAGEFOR_CATEGORYDATAISNOTAVAILABLE = "data is not available for this category"
 
 
 	//variables for excel sheet columns index
@@ -249,7 +252,7 @@ public class ProjectConstants {
 			Row row = sheet.getRow(i)
 			String channel = dataformatter.formatCellValue(row.getCell(CHANNEL))
 			String maincategory = dataformatter.formatCellValue(row.getCell(CHANNEL_MAINCATEGORY))
-			if(CURRENTVISITING_SHOPCHANNEL.contains(channel) && (maincategory.equalsIgnoreCase("Chiller") || maincategory.equalsIgnoreCase("Nestrade"))){
+			if(CURRENTVISITING_SHOPCHANNEL.contains(channel) && maincategory.equalsIgnoreCase(ProjectConstants.CURRENTVISITING_MAINCATEGORY)){
 				String productcategory = dataformatter.formatCellValue(row.getCell(CHANNEL_PRODUCTCATEGORY))
 				expectedproductscategorieslist.add(productcategory)
 			}
@@ -261,14 +264,19 @@ public class ProjectConstants {
 		}
 		Set<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
 		Set<String> displayedproductscategories = new HashSet<String>(displayedproductscategorieslist)
-		if(!expectedproductscategories.containsAll(displayedproductscategories)){
-			return 1
-		}
-		else if(!displayedproductscategories.containsAll(expectedproductscategories)){
-			return -1
+		if(expectedproductscategories.isEmpty()){
+			return 2
 		}
 		else{
-			return 0
+			if(!expectedproductscategories.containsAll(displayedproductscategories)){
+				return 1
+			}
+			else if(!displayedproductscategories.containsAll(expectedproductscategories)){
+				return -1
+			}
+			else{
+				return 0
+			}
 		}
 	}
 	def static compareChillerWiseProductsCategories(){
@@ -292,14 +300,19 @@ public class ProjectConstants {
 		}
 		Set<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
 		Set<String> displayedproductscategories = new HashSet<String>(displayedproductscategorieslist)
-		if(!expectedproductscategories.containsAll(displayedproductscategories)){
-			return 1
-		}
-		else if(!displayedproductscategories.containsAll(expectedproductscategories)){
-			return -1
+		if(expectedproductscategories.isEmpty()){
+			return 2
 		}
 		else{
-			return 0
+			if(!expectedproductscategories.containsAll(displayedproductscategories)){
+				return 1
+			}
+			else if(!displayedproductscategories.containsAll(expectedproductscategories)){
+				return -1
+			}
+			else{
+				return 0
+			}
 		}
 	}
 	def static checkMandatoryShopCategories(){
@@ -381,5 +394,9 @@ public class ProjectConstants {
 		Point point = DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]").getLocation()
 		int xlocation = point.getX()
 		return xlocation+1
+	}
+	def static visitPopUpForOverwriting(){
+//		Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0, FailureHandling.OPTIONAL)
+//		Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), -20, FailureHandling.OPTIONAL)
 	}
 }
