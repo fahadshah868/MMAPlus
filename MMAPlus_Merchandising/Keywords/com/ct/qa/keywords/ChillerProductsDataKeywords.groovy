@@ -87,11 +87,11 @@ public class ChillerProductsDataKeywords {
 			KeywordUtil.markErrorAndStop(message)
 		}
 		else if(status == 1){
-			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_GREATER
+			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER
 			KeywordUtil.markErrorAndStop(message)
 		}
 		else if(status == -1){
-			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_LESS
+			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER
 			KeywordUtil.markErrorAndStop(message)
 		}
 		else{
@@ -119,11 +119,11 @@ public class ChillerProductsDataKeywords {
 			KeywordUtil.markErrorAndStop(message)
 		}
 		else if(status == 1){
-			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_GREATER
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\nMain Category: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER
 			KeywordUtil.markErrorAndStop(message)
 		}
 		else if(status == -1){
-			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_LESS
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\nMain Category: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+" \n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_LESS
 			KeywordUtil.markErrorAndStop(message)
 		}
 		else{

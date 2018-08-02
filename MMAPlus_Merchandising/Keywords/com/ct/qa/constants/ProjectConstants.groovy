@@ -36,8 +36,6 @@ import WebUiBuiltInKeywords as WebUI
 
 public class ProjectConstants {
 
-	public static int a = 1
-
 	//variables for excel file and sheets
 	public static final String EXCEL_FILEPATH = "F:\\MMA_Merchandising.xlsx"
 	public static final String CHANNEL_PRODUCTSSHEET = "Channel Products"
@@ -60,6 +58,9 @@ public class ProjectConstants {
 	//category data is not available
 	public static final String MESSAGEFOR_CATEGORYDATAISNOTAVAILABLE = "data is not available for this category"
 
+	//shop categories are not match
+	public static final String MESSAGEFOR_SHOPCATEGORIESARE_GREATER = "display shop categories are greater than to expected shop categories"
+	public static final String MESSAGEFOR_SHOPCATEGORIESARE_LESS = "display shop categories are less than to expected shop categories"
 
 	//variables for excel sheet columns index
 	//channel wise product categories product columns
@@ -247,12 +248,19 @@ public class ProjectConstants {
 		XSSFSheet sheet = loadChannelProductsSheet()
 		ArrayList<String> expectedproductscategorieslist = new ArrayList<String>()
 		ArrayList<String> displayedproductscategorieslist = new ArrayList<String>()
+		String currentvisitingmaincategory = ""
+		if(ProjectConstants.CURRENTVISITING_MAINCATEGORY.equalsIgnoreCase("Chiller Utilization")){
+			currentvisitingmaincategory = "Chiller"
+		}
+		else{
+			currentvisitingmaincategory = ProjectConstants.CURRENTVISITING_MAINCATEGORY
+		}
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<=totalrows; i++){
 			Row row = sheet.getRow(i)
 			String channel = dataformatter.formatCellValue(row.getCell(CHANNEL))
 			String maincategory = dataformatter.formatCellValue(row.getCell(CHANNEL_MAINCATEGORY))
-			if(CURRENTVISITING_SHOPCHANNEL.contains(channel) && maincategory.equalsIgnoreCase(ProjectConstants.CURRENTVISITING_MAINCATEGORY)){
+			if(CURRENTVISITING_SHOPCHANNEL.contains(channel) && maincategory.equalsIgnoreCase(currentvisitingmaincategory)){
 				String productcategory = dataformatter.formatCellValue(row.getCell(CHANNEL_PRODUCTCATEGORY))
 				expectedproductscategorieslist.add(productcategory)
 			}
@@ -315,7 +323,23 @@ public class ProjectConstants {
 			}
 		}
 	}
-	def static checkMandatoryShopCategories(){
+	def static loadShopCategories(){
+		DataFormatter dataformatter = new DataFormatter()
+		ArrayList<String> expectedshopcategories = new ArrayList<String>()
+		XSSFSheet sheet = loadChannelProductsSheet()
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<=totalrows; i++){
+			Row row = sheet.getRow(i)
+			String channel = dataformatter.formatCellValue(row.getCell(CHANNEL))
+			if(CURRENTVISITING_SHOPCHANNEL.contains(channel)){
+				String productcategory = dataformatter.formatCellValue(row.getCell(CHANNEL_MAINCATEGORY))
+				expectedshopcategories.add(productcategory)
+			}
+		}
+		return expectedshopcategories
+	}
+	def static compareMandatoryShopCategories(){
+		ArrayList<String> displayshopcategorieslist = new ArrayList<String>()
 		int index = 0
 		int mandatorycategories = 0
 		int totalcategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
@@ -323,9 +347,11 @@ public class ProjectConstants {
 			MobileElement category = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String categoryname = category.getText()
 			if(categoryname.equalsIgnoreCase("Chiller")){
+				displayshopcategorieslist.add(categoryname)
 				mandatorycategories = mandatorycategories + 1
 			}
 			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
+				displayshopcategorieslist.add(categoryname)
 				mandatorycategories = mandatorycategories + 1
 			}
 			else if(categoryname.equalsIgnoreCase("Additional Picture")){
@@ -346,6 +372,9 @@ public class ProjectConstants {
 			else if(categoryname.equalsIgnoreCase("Hanger Availibility")){
 				mandatorycategories = mandatorycategories + 1
 			}
+			else{
+				displayshopcategorieslist.add(categoryname)
+			}
 		}
 		while(true){
 			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
@@ -359,9 +388,11 @@ public class ProjectConstants {
 				break
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller")){
+				displayshopcategorieslist.add(lastitemnameafterswipe)
 				mandatorycategories = mandatorycategories + 1
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
+				displayshopcategorieslist.add(lastitemnameafterswipe)
 				mandatorycategories = mandatorycategories + 1
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
@@ -382,12 +413,26 @@ public class ProjectConstants {
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
 				mandatorycategories = mandatorycategories + 1
 			}
+			else{
+				displayshopcategorieslist.add(lastitemnameafterswipe)
+			}
 		}
-		if(mandatorycategories == 7){
-			return true
+		ArrayList<String> expectedshopcategorieslist = loadShopCategories()
+		Set<String> displayshopcategories = new HashSet<String>(displayshopcategorieslist)
+		Set<String> expectedshopcategories = new HashSet<String>(expectedshopcategorieslist)
+		if(!expectedshopcategories.containsAll(displayshopcategorieslist)){
+			return 1
+		}
+		else if(!displayshopcategorieslist.containsAll(expectedshopcategories)){
+			return -1
 		}
 		else{
-			return false
+			if(mandatorycategories == 7){
+				return 0
+			}
+			else{
+				return 2
+			}
 		}
 	}
 	def static getXPoint(){
@@ -396,7 +441,7 @@ public class ProjectConstants {
 		return xlocation+1
 	}
 	def static visitPopUpForOverwriting(){
-//		Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0, FailureHandling.OPTIONAL)
-//		Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), -20, FailureHandling.OPTIONAL)
+		Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0, FailureHandling.OPTIONAL)
+		Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), -20, FailureHandling.OPTIONAL)
 	}
 }

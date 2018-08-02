@@ -90,7 +90,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
     'Category:Chiller Utilization')
 
 'visit chiller available products categories'
-CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories'(1)
+CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories'(2)
 
 'tap on "Planogram" imageview'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/ChillerProductsCategories_Planogram_ImageView'), 

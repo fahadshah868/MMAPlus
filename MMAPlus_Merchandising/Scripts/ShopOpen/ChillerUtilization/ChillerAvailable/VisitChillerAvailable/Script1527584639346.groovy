@@ -119,5 +119,5 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 
 'validate "Chiller Utilization" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
-    'Shops on Route')
+    'Shop Chillers')
 

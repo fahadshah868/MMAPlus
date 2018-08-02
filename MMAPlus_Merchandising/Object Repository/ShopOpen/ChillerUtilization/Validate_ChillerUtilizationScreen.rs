@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Shops on Route' or . = 'Shops on Route') and @resource-id = 'com.concavetech.bloc:id/shops_list_id']</value>
+         <value>//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Shop Chillers' or . = 'Shop Chillers') and @resource-id = 'com.concavetech.bloc:id/shops_list_id']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -31,7 +31,7 @@
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>Shops on Route</value>
+      <value>Shop Chillers</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

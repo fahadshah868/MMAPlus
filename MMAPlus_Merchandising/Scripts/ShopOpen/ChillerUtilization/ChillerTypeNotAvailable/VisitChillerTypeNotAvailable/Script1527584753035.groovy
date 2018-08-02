@@ -39,5 +39,5 @@ MobileBuiltInKeywords.delay(5)
 MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
 
 'visit "Chiller Available" flow for "Chiller Type Not Available"'
-WebUI.callTestCase(findTestCase('ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/VisitChillerAvailable'), [:], FailureHandling.STOP_ON_FAILURE)
 
