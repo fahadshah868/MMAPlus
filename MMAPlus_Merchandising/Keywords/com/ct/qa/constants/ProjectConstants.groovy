@@ -5,6 +5,7 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import com.ct.qa.struct.UnmatchedProducts
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory
@@ -47,20 +48,17 @@ public class ProjectConstants {
 
 	//variables for display messages
 	//products comparison messages
-	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSARE_GREATER = "displayed products are greater than to expected products..."
-	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSARE_LESS = "displayed products are less than to expected products..."
+	public static final String MESSAGEFOR_PRODUCTSARE_MORE = "above products are displaying on device more than to expected products..."
+	public static final String MESSAGEFOR_PRODUCTSARE_MISSING = "above products are missing on device..."
 	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSARE_EQUAL = "displayed products are equals to expected products..."
 
 	//products categories comparison messages
-	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER = "displayed products categories are greater than to expected products..."
-	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_LESS = "displayed products categories are less than to expected products..."
-
-	//category data is not available
-	public static final String MESSAGEFOR_CATEGORYDATAISNOTAVAILABLE = "data is not available for this category"
+	public static final String MESSAGEFOR_PRODUCTSCATEGORIESARE_MORE = "above products categories are displaying on device more than to expected products..."
+	public static final String MESSAGEFOR_PRODUCTSCATEGORIESARE_MISSING = "above products categories are missing on device"
 
 	//shop categories are not match
-	public static final String MESSAGEFOR_SHOPCATEGORIESARE_GREATER = "display shop categories are greater than to expected shop categories"
-	public static final String MESSAGEFOR_SHOPCATEGORIESARE_LESS = "display shop categories are less than to expected shop categories"
+	public static final String MESSAGEFOR_SHOPCATEGORIESARE_MORE = "above shop categories are displaying on device more than to expected shop categories"
+	public static final String MESSAGEFOR_SHOPCATEGORIESARE_MISSING = "above shop categories are missing on device"
 
 	//variables for excel sheet columns index
 	//channel wise product categories product columns
@@ -270,21 +268,52 @@ public class ProjectConstants {
 			MobileElement productcategory = DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			displayedproductscategorieslist.add(productcategory.getText())
 		}
-		Set<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
-		Set<String> displayedproductscategories = new HashSet<String>(displayedproductscategorieslist)
-		if(expectedproductscategories.isEmpty()){
-			return 2
+		ArrayList<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
+		//if display products are more than to expected products
+		if(!expectedproductscategories.containsAll(displayedproductscategorieslist)){
+			ArrayList<String> products = new ArrayList<String>()
+			UnmatchedProducts unmatchedproducts = new UnmatchedProducts()
+			for(int i=0; i<displayedproductscategorieslist.size(); i++){
+				boolean match = false
+				for(int j=0; j<expectedproductscategories.size(); j++){
+					if(displayedproductscategorieslist.get(i).equalsIgnoreCase(expectedproductscategories.get(j))){
+						match = true
+					}
+				}
+				if(match == false){
+					products.add(displayedproductscategorieslist.get(i))
+				}
+				else{
+				}
+			}
+			unmatchedproducts.setProducts(products)
+			unmatchedproducts.setStatus(1)
+			return unmatchedproducts
+		}
+		//if displayed products are less than to expected products
+		else if(!displayedproductscategorieslist.containsAll(expectedproductscategories)){
+			ArrayList<String> products = new ArrayList<String>()
+			UnmatchedProducts unmatchedproducts = new UnmatchedProducts()
+			for(int i=0; i<expectedproductscategories.size(); i++){
+				boolean match = false
+				for(int j=0; j<displayedproductscategorieslist.size(); j++){
+					if(displayedproductscategorieslist.get(i).equalsIgnoreCase(expectedproductscategories.get(j))){
+						match = true
+						break
+					}
+				}
+				if(match == false){
+					products.add(expectedproductscategories.get(i))
+				}
+				else{
+				}
+			}
+			unmatchedproducts.setProducts(products)
+			unmatchedproducts.setStatus(-1)
+			return unmatchedproducts
 		}
 		else{
-			if(!expectedproductscategories.containsAll(displayedproductscategories)){
-				return 1
-			}
-			else if(!displayedproductscategories.containsAll(expectedproductscategories)){
-				return -1
-			}
-			else{
-				return 0
-			}
+			return 0
 		}
 	}
 	def static compareChillerWiseProductsCategories(){
@@ -306,21 +335,51 @@ public class ProjectConstants {
 			MobileElement productcategory = DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			displayedproductscategorieslist.add(productcategory.getText())
 		}
-		Set<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
-		Set<String> displayedproductscategories = new HashSet<String>(displayedproductscategorieslist)
-		if(expectedproductscategories.isEmpty()){
-			return 2
+		ArrayList<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
+		if(!expectedproductscategories.containsAll(displayedproductscategorieslist)){
+			ArrayList<String> products = new ArrayList<String>()
+			UnmatchedProducts unmatchedproducts = new UnmatchedProducts()
+			for(int i=0; i<displayedproductscategorieslist.size(); i++){
+				boolean match = false
+				for(int j=0; j<expectedproductscategories.size(); j++){
+					if(displayedproductscategorieslist.get(i).equalsIgnoreCase(expectedproductscategories.get(j))){
+						match = true
+					}
+				}
+				if(match == false){
+					products.add(displayedproductscategorieslist.get(i))
+				}
+				else{
+				}
+			}
+			unmatchedproducts.setProducts(products)
+			unmatchedproducts.setStatus(1)
+			return unmatchedproducts
+		}
+		//if displayed products are less than to expected products
+		else if(!displayedproductscategorieslist.containsAll(expectedproductscategories)){
+			ArrayList<String> products = new ArrayList<String>()
+			UnmatchedProducts unmatchedproducts = new UnmatchedProducts()
+			for(int i=0; i<expectedproductscategories.size(); i++){
+				boolean match = false
+				for(int j=0; j<displayedproductscategorieslist.size(); j++){
+					if(displayedproductscategorieslist.get(i).equalsIgnoreCase(expectedproductscategories.get(j))){
+						match = true
+						break
+					}
+				}
+				if(match == false){
+					products.add(expectedproductscategories.get(i))
+				}
+				else{
+				}
+			}
+			unmatchedproducts.setProducts(products)
+			unmatchedproducts.setStatus(-1)
+			return unmatchedproducts
 		}
 		else{
-			if(!expectedproductscategories.containsAll(displayedproductscategories)){
-				return 1
-			}
-			else if(!displayedproductscategories.containsAll(expectedproductscategories)){
-				return -1
-			}
-			else{
-				return 0
-			}
+			return 0
 		}
 	}
 	def static loadShopCategories(){
@@ -332,13 +391,13 @@ public class ProjectConstants {
 			Row row = sheet.getRow(i)
 			String channel = dataformatter.formatCellValue(row.getCell(CHANNEL))
 			if(CURRENTVISITING_SHOPCHANNEL.contains(channel)){
-				String productcategory = dataformatter.formatCellValue(row.getCell(CHANNEL_MAINCATEGORY))
-				expectedshopcategories.add(productcategory)
+				String category = dataformatter.formatCellValue(row.getCell(CHANNEL_MAINCATEGORY))
+				expectedshopcategories.add(category)
 			}
 		}
 		return expectedshopcategories
 	}
-	def static compareMandatoryShopCategories(){
+	def static compareShopCategories(){
 		ArrayList<String> displayshopcategorieslist = new ArrayList<String>()
 		int index = 0
 		int mandatorycategories = 0
@@ -418,21 +477,58 @@ public class ProjectConstants {
 			}
 		}
 		ArrayList<String> expectedshopcategorieslist = loadShopCategories()
-		Set<String> displayshopcategories = new HashSet<String>(displayshopcategorieslist)
-		Set<String> expectedshopcategories = new HashSet<String>(expectedshopcategorieslist)
+		ArrayList<String> expectedshopcategories = new HashSet<String>(expectedshopcategorieslist)
+		//if displayed products are greater than expected products
 		if(!expectedshopcategories.containsAll(displayshopcategorieslist)){
-			return 1
+			ArrayList<String> products = new ArrayList<String>()
+			UnmatchedProducts unmatchedproducts = new UnmatchedProducts()
+			for(int i=0; i<displayshopcategorieslist.size(); i++){
+				boolean match = false
+				for(int j=0; j<expectedshopcategories.size(); j++){
+					if(displayshopcategorieslist.get(i).equalsIgnoreCase(expectedshopcategories.get(j))){
+						match = true
+					}
+				}
+				if(match == false){
+					products.add(displayshopcategorieslist.get(i))
+				}
+				else{
+				}
+			}
+			unmatchedproducts.setProducts(products)
+			unmatchedproducts.setStatus(1)
+			return unmatchedproducts
 		}
+		//if displayed products are less than to expected products
 		else if(!displayshopcategorieslist.containsAll(expectedshopcategories)){
-			return -1
+			ArrayList<String> products = new ArrayList<String>()
+			UnmatchedProducts unmatchedproducts = new UnmatchedProducts()
+			for(int i=0; i<expectedshopcategories.size(); i++){
+				boolean match = false
+				for(int j=0; j<displayshopcategorieslist.size(); j++){
+					if(displayshopcategorieslist.get(i).equalsIgnoreCase(expectedshopcategories.get(j))){
+						match = true
+						break
+					}
+				}
+				if(match == false){
+					products.add(expectedshopcategories.get(i))
+				}
+				else{
+				}
+			}
+			unmatchedproducts.setProducts(products)
+			unmatchedproducts.setStatus(-1)
+			return unmatchedproducts
 		}
 		else{
-			if(mandatorycategories == 7){
-				return 0
-			}
-			else{
-				return 2
-			}
+			return 0
+			//			if(mandatorycategories == 7){
+			//				return 0
+			//			}
+			//			else{
+			//				return 2
+			//			}
 		}
 	}
 	def static getXPoint(){

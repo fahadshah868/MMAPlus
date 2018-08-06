@@ -33,6 +33,7 @@ import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 import com.ct.qa.constants.ProjectConstants
 import com.ct.qa.struct.ProductsData
+import com.ct.qa.struct.UnmatchedProducts
 import io.appium.java_client.MobileElement
 
 public class ChillerProductsDataKeywords {
@@ -81,17 +82,25 @@ public class ChillerProductsDataKeywords {
 	}
 	@Keyword
 	def visitChillerAvailableProductCategories(int flag){
-		int status = ProjectConstants.compareChillerWiseProductsCategories()
-		if(status == 2){
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\nCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_CATEGORYDATAISNOTAVAILABLE
+		UnmatchedProducts unmatchedproducts_status = ProjectConstants.compareChannelWiseProductsCategories()
+		//if displayed rpoducts are more than to expected products
+		if(unmatchedproducts_status.getStatus() == 1){
+			ArrayList<String> products = unmatchedproducts_status.getProducts()
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMainCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Categories: "
+			for(int i=0; i<products.size(); i++){
+				message = message+products.get(i)+" , "
+			}
+			message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MORE
 			KeywordUtil.markErrorAndStop(message)
 		}
-		else if(status == 1){
-			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER
-			KeywordUtil.markErrorAndStop(message)
-		}
-		else if(status == -1){
-			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER
+		//if displayed products are less than to expected products
+		else if(unmatchedproducts_status.getStatus() == -1){
+			ArrayList<String> products = unmatchedproducts_status.getProducts()
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMainCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Categories: "
+			for(int i=0; i<products.size(); i++){
+				message = message+products.get(i)+" , "
+			}
+			message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MISSING
 			KeywordUtil.markErrorAndStop(message)
 		}
 		else{
@@ -113,17 +122,25 @@ public class ChillerProductsDataKeywords {
 	}
 	@Keyword
 	def visitChillerNotAvailableProductCategories(int flag){
-		int status = ProjectConstants.compareChannelWiseProductsCategories()
-		if(status == 2){
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\nCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_CATEGORYDATAISNOTAVAILABLE
+		UnmatchedProducts unmatchedproducts_status = ProjectConstants.compareChannelWiseProductsCategories()
+		//if displayed rpoducts are more than to expected products
+		if(unmatchedproducts_status.getStatus() == 1){
+			ArrayList<String> products = unmatchedproducts_status.getProducts()
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMainCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Categories: "
+			for(int i=0; i<products.size(); i++){
+				message = message+products.get(i)+" , "
+			}
+			message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MORE
 			KeywordUtil.markErrorAndStop(message)
 		}
-		else if(status == 1){
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\nMain Category: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_GREATER
-			KeywordUtil.markErrorAndStop(message)
-		}
-		else if(status == -1){
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\nMain Category: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+" \n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSCATEGORIESARE_LESS
+		//if displayed products are less than to expected products
+		else if(unmatchedproducts_status.getStatus() == -1){
+			ArrayList<String> products = unmatchedproducts_status.getProducts()
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMainCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Categories: "
+			for(int i=0; i<products.size(); i++){
+				message = message+products.get(i)+" , "
+			}
+			message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MISSING
 			KeywordUtil.markErrorAndStop(message)
 		}
 		else{
@@ -148,18 +165,20 @@ public class ChillerProductsDataKeywords {
 		int displayedproducts = 0
 		int index = 0
 		XSSFSheet chillerproductssheet = ProjectConstants.loadChillerProductsSheet()
-		ArrayList<ProductsData> chillerproducts = loadChillerAvailableProductsList(chillerproductssheet, columnindex)
-		int expectedproducts = chillerproducts.size()
+		ArrayList<String> displayedproductslist = new ArrayList<String>()
+		ArrayList<ProductsData> expectedproductslist = loadChillerAvailableProductsList(chillerproductssheet, columnindex)
+		int expectedproducts = expectedproductslist.size()
 		int totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*").size()
 		for(int i=1; i<totalproducts; i=i+3){
+			displayedproducts = displayedproducts + 1
 			index = index + 1
 			MobileElement selectedproduct = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<chillerproducts.size(); j++){
-				ProductsData channelproduct = chillerproducts.get(j)
+			displayedproductslist.add(selectedproductname)
+			for(int j=0; j<expectedproductslist.size(); j++){
+				ProductsData channelproduct = expectedproductslist.get(j)
 				String productname = channelproduct.getProduct()
 				if(selectedproductname.equalsIgnoreCase(productname)){
-					displayedproducts = displayedproducts + 1
 					String productquantity = channelproduct.getProduct_data()
 					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 					selectedproducttextfield.setValue(productquantity)
@@ -183,11 +202,11 @@ public class ChillerProductsDataKeywords {
 					break
 				}
 				else{
-					for(int j=0; j<chillerproducts.size(); j++){
-						ProductsData channelproduct = chillerproducts.get(j)
+					displayedproducts = displayedproducts + 1
+					for(int j=0; j<expectedproductslist.size(); j++){
+						ProductsData channelproduct = expectedproductslist.get(j)
 						String productname = channelproduct.getProduct()
 						if(lastproductnameafterswipe.equalsIgnoreCase(productname)){
-							displayedproducts = displayedproducts + 1
 							String productquantity = channelproduct.getProduct_data()
 							MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
 							selectedproducttextfield.setValue(productquantity)
@@ -204,13 +223,49 @@ public class ChillerProductsDataKeywords {
 		//if displayed products are greater than expected products
 		if(result == 1)
 		{
-			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_GREATER
+			ArrayList<String> products = new ArrayList<String>()
+			for(int i=0; i<displayedproductslist.size(); i++){
+				boolean match = false
+				for(int j=0; j<expectedproductslist.size(); j++){
+					if(displayedproductslist.get(i).equalsIgnoreCase(expectedproductslist.get(j))){
+						match = true
+					}
+				}
+				if(match == false){
+					products.add(displayedproductslist.get(i))
+				}
+				else{
+				}
+			}
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
+			for(int i=0; i<products.size(); i++){
+				message = message+products.get(i)+" , "
+			}
+			message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSARE_MORE
 			KeywordUtil.markErrorAndStop(message)
 		}
 		//if displayed products are less than expected products
 		else if(result == -1)
 		{
-			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_LESS
+			ArrayList<String> products = new ArrayList<String>()
+			for(int i=0; i<displayedproductslist.size(); i++){
+				boolean match = false
+				for(int j=0; j<expectedproductslist.size(); j++){
+					if(displayedproductslist.get(i).equalsIgnoreCase(expectedproductslist.get(j))){
+						match = true
+					}
+				}
+				if(match == false){
+					products.add(displayedproductslist.get(i))
+				}
+				else{
+				}
+			}
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
+			for(int i=0; i<products.size(); i++){
+				message = message+products.get(i)+" , "
+			}
+			message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSARE_MISSING
 			KeywordUtil.markErrorAndStop(message)
 		}
 		else{
@@ -223,18 +278,20 @@ public class ChillerProductsDataKeywords {
 		int displayedproducts = 0
 		int index = 0
 		XSSFSheet channelproductssheet = ProjectConstants.loadChannelProductsSheet()
-		ArrayList<ProductsData> channelproducts = loadChillerNotAvailableProductsList(channelproductssheet, columnindex)
-		int expectedproducts = channelproducts.size()
+		ArrayList<String> displayedproductslist = new ArrayList<String>()
+		ArrayList<ProductsData> expectedproductslist = loadChillerNotAvailableProductsList(channelproductssheet, columnindex)
+		int expectedproducts = expectedproductslist.size()
 		int totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*").size()
 		for(int i=1; i<totalproducts; i=i+3){
+			displayedproducts = displayedproducts + 1
 			index = index + 1
 			MobileElement selectedproduct = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String selectedproductname = selectedproduct.getText()
-			for(int j=0; j<channelproducts.size(); j++){
-				ProductsData channelproduct = channelproducts.get(j)
+			displayedproductslist.add(selectedproductname)
+			for(int j=0; j<expectedproductslist.size(); j++){
+				ProductsData channelproduct = expectedproductslist.get(j)
 				String productname = channelproduct.getProduct()
 				if(selectedproductname.equalsIgnoreCase(productname)){
-					displayedproducts = displayedproducts + 1
 					String productquantity = channelproduct.getProduct_data()
 					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 					selectedproducttextfield.setValue(productquantity)
@@ -257,11 +314,11 @@ public class ChillerProductsDataKeywords {
 					break
 				}
 				else{
-					for(int j=0; j<channelproducts.size(); j++){
-						ProductsData channelproduct = channelproducts.get(j)
+					displayedproducts = displayedproducts + 1
+					for(int j=0; j<expectedproductslist.size(); j++){
+						ProductsData channelproduct = expectedproductslist.get(j)
 						String productname = channelproduct.getProduct()
 						if(lastproductnameafterswipe.equalsIgnoreCase(productname)){
-							displayedproducts = displayedproducts + 1
 							String productquantity = channelproduct.getProduct_data()
 							MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
 							selectedproducttextfield.setValue(productquantity)
@@ -278,13 +335,49 @@ public class ChillerProductsDataKeywords {
 		//if displayed products are greater than expected products
 		if(result == 1)
 		{
-			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_GREATER
+			ArrayList<String> products = new ArrayList<String>()
+			for(int i=0; i<displayedproductslist.size(); i++){
+				boolean match = false
+				for(int j=0; j<expectedproductslist.size(); j++){
+					if(displayedproductslist.get(i).equalsIgnoreCase(expectedproductslist.get(j))){
+						match = true
+					}
+				}
+				if(match == false){
+					products.add(displayedproductslist.get(i))
+				}
+				else{
+				}
+			}
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
+			for(int i=0; i<products.size(); i++){
+				message = message+products.get(i)+" , "
+			}
+			message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSARE_MORE
 			KeywordUtil.markErrorAndStop(message)
 		}
 		//if displayed products are less than expected products
 		else if(result == -1)
 		{
-			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\nChiller Remark: "+ProjectConstants.CURRENTVISITING_CHILLERREMARK+"\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_LESS
+			ArrayList<String> products = new ArrayList<String>()
+			for(int i=0; i<displayedproductslist.size(); i++){
+				boolean match = false
+				for(int j=0; j<expectedproductslist.size(); j++){
+					if(displayedproductslist.get(i).equalsIgnoreCase(expectedproductslist.get(j))){
+						match = true
+					}
+				}
+				if(match == false){
+					products.add(displayedproductslist.get(i))
+				}
+				else{
+				}
+			}
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
+			for(int i=0; i<products.size(); i++){
+				message = message+products.get(i)+" , "
+			}
+			message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSARE_MISSING
 			KeywordUtil.markErrorAndStop(message)
 		}
 		else{

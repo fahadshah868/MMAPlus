@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="MMA Plus Merchandising With Channel Wise Data Verification" time="101" tests="1" failures="0" errors="1">
+   <testsuite name="MMA Plus Merchandising With Channel Wise Data Verification" tests="1" failures="0" errors="1" time="101" timestamp="2018-08-06 18:47:16" hostname="Fahad Shah - DESKTOP-L12UUAD" id="Test Suites/MMA Plus Merchandising With Channel Wise Data Verification">
+      <properties>
+         <property name="deviceName" value="samsung SM-J110H (Android 4.4.4)"/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Channel Wise Data Verification\\20180806_184714"/>
+         <property name="logFiles" value="F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Channel Wise Data Verification\\20180806_184714\\appium.log, F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Channel Wise Data Verification\\20180806_184714\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="Fahad Shah - DESKTOP-L12UUAD"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.6.0.1"/>
+         <property name="deviceOS" value="Android"/>
+         <property name="appiumVersion" value="1.8.1"/>
+         <property name="deviceModel" value="SM-J110H"/>
+         <property name="hostAddress" value="192.168.3.191"/>
+         <property name="deviceManufacturer" value="samsung"/>
+         <property name="deviceId" value="11015a1136d0b24a"/>
+         <property name="deviceName" value="samsung SM-J110H (Android 4.4.4)"/>
+         <property name="deviceOSVersion" value="4.4.4"/>
+      </properties>
+      <testcase name="Test Cases/LaunchingApp/LaunchApp" classname="Test Cases/LaunchingApp/LaunchApp" status="PASSED">
+         <system-out><![CDATA[2018-08-06 18:47:17 - [TEST_CASE][PASSED] - Test Cases/LaunchingApp/LaunchApp: Test Cases/LaunchingApp/LaunchApp
+
+2018-08-06 18:47:17 - [TEST_STEP][PASSED] - startApplication: Started app at: 'F:\QA_Automation\Builds\mma_Merchandising_200618_local.apk'
+
+2018-08-06 18:47:33 - [MESSAGE][PASSED] - Started app at: 'F:\QA_Automation\Builds\mma_Merchandising_200618_local.apk'
+
+2018-08-06 18:47:33 - [TEST_STEP][PASSED] - delay: Delayed 5 second(s)
+
+2018-08-06 18:47:38 - [MESSAGE][PASSED] - Delayed 5 second(s)]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/VisitShopScenarios/VisitShopsWithDataVerification" classname="Test Cases/VisitShopScenarios/VisitShopsWithDataVerification" status="ERROR">
+         <error type="ERROR" message="Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED because (of) Channel: Small General
+
+Categories: Confectionery and Culinary , Sachets , 
+
+above shop categories are displaying on device more than to expected shop categories"/>
+         <system-out><![CDATA[2018-08-06 18:47:38 - [TEST_CASE][ERROR] - Test Cases/VisitShopScenarios/VisitShopsWithDataVerification: Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED because (of) Channel: Small General
+
+Categories: Confectionery and Culinary , Sachets , 
+
+above shop categories are displaying on device more than to expected shop categories
+
+2018-08-06 18:47:39 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/DashboardScreenElements/Validate_DashboardScreen' are matched.
+
+2018-08-06 18:47:39 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/DashboardScreenElements/Validate_DashboardScreen' are matched.
+
+2018-08-06 18:47:39 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.selectday: com.ct.qa.keywords.CommonKeywords.selectday is PASSED
+
+2018-08-06 18:47:39 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-06 18:47:41 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/DashboardScreenElements/DaysDropdownMenu'
+
+2018-08-06 18:47:43 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.selectday is PASSED
+
+2018-08-06 18:47:43 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/DashboardScreenElements/StartYourDay'
+
+2018-08-06 18:47:43 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-06 18:47:44 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/DashboardScreenElements/StartYourDay'
+
+2018-08-06 18:47:44 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-08-06 18:47:45 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-08-06 18:47:45 - [TEST_STEP][ERROR] - com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWithDataVerification: Channel: Small General
+
+Categories: Confectionery and Culinary , Sachets , 
+
+above shop categories are displaying on device more than to expected shop categories
+
+2018-08-06 18:47:49 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopOptionsScreen' are matched.
+
+2018-08-06 18:47:49 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-06 18:47:50 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/StartWorking'
+
+2018-08-06 18:48:05 - [MESSAGE][PASSED] - Delayed 15 second(s)
+
+2018-08-06 18:48:06 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_MapScreen' is exist
+
+2018-08-06 18:48:06 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-06 18:48:06 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Location_CheckIn'
+
+2018-08-06 18:48:06 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-06 18:48:08 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist
+
+2018-08-06 18:48:08 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-06 18:48:09 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_NoButton'
+
+2018-08-06 18:48:09 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/VisitShopOpen: Test Cases/ShopOpen/VisitShopOpen
+
+2018-08-06 18:48:09 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopActions_List' is exist
+
+2018-08-06 18:48:09 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-06 18:48:09 - [MESSAGE][PASSED] - Element 'Object Repository/ShopActions_List' is exist
+
+2018-08-06 18:48:09 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/ShopOpen'
+
+2018-08-06 18:48:09 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-06 18:48:11 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ShopOpen'
+
+2018-08-06 18:48:11 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-08-06 18:48:11 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-06 18:48:12 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-08-06 18:48:12 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-08-06 18:48:12 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-06 18:48:15 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-08-06 18:48:15 - [TEST_STEP][PASSED] - delay: Delayed 5 second(s)
+
+2018-08-06 18:48:20 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-08-06 18:48:20 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-08-06 18:48:20 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-06 18:48:21 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-08-06 18:48:21 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/VisitShopOpen' successfully
+
+2018-08-06 18:48:21 - [TEST_CASE][ERROR] - Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification: Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification FAILED because (of) Channel: Small General
+
+Categories: Confectionery and Culinary , Sachets , 
+
+above shop categories are displaying on device more than to expected shop categories
+
+2018-08-06 18:48:21 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-06 18:48:21 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-06 18:48:22 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-06 18:48:22 - [TEST_STEP][ERROR] - com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification: Channel: Small General
+
+Categories: Confectionery and Culinary , Sachets , 
+
+above shop categories are displaying on device more than to expected shop categories
+
+2018-08-06 18:48:28 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-06 18:48:31 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-06 18:48:35 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-06 18:48:39 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-06 18:48:42 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-06 18:48:45 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-06 18:48:49 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-06 18:48:52 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-06 18:48:55 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-06 18:48:57 - [MESSAGE][ERROR] - Channel: Small General
+
+Categories: Confectionery and Culinary , Sachets , 
+
+above shop categories are displaying on device more than to expected shop categories
+
+2018-08-06 18:48:57 - [MESSAGE][FAILED] - Unable to call Test Case with id 'Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification' (Root cause: Call Test Case 'Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification' failed because of error(s))
+
+2018-08-06 18:48:57 - [MESSAGE][ERROR] - Channel: Small General
+
+Categories: Confectionery and Culinary , Sachets , 
+
+above shop categories are displaying on device more than to expected shop categories]]></system-out>
+         <system-err><![CDATA[2018-08-06 18:47:38 - [TEST_CASE][ERROR] - Test Cases/VisitShopScenarios/VisitShopsWithDataVerification: Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED because (of) Channel: Small General
+
+Categories: Confectionery and Culinary , Sachets , 
+
+above shop categories are displaying on device more than to expected shop categories]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-08-06 18:47:16 - [TEST_SUITE][ERROR] - MMA Plus Merchandising With Channel Wise Data Verification: Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED because (of) Channel: Small General
+
+Categories: Confectionery and Culinary , Sachets , 
+
+above shop categories are displaying on device more than to expected shop categories]]></system-out>
+      <system-err><![CDATA[2018-08-06 18:47:16 - [TEST_SUITE][ERROR] - MMA Plus Merchandising With Channel Wise Data Verification: Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED because (of) Channel: Small General
+
+Categories: Confectionery and Culinary , Sachets , 
+
+above shop categories are displaying on device more than to expected shop categories]]></system-err>
+   </testsuite>
+</testsuites>

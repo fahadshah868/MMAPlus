@@ -4,7 +4,7 @@
    <name>MMA Plus Merchandising With Chiller Wise Data Verification</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-08-02T18:57:55</lastRun>
+   <lastRun>2018-08-06T17:57:54</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>15</pageLoadTimeout>

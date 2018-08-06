@@ -22,6 +22,10 @@ import internal.GlobalVariable as GlobalVariable
 'validate shop\'s categories screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 
+Mobile.swipe(0, 200, 0, 700)
+
+Mobile.swipe(0, 200, 0, 700)
+
 'visit shop categories with "SKDNA" / "Chiller Not Available" & "Display Space Available"'
 CustomKeywords.'com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_SKDNA_CNAv_NSFD'()
 
