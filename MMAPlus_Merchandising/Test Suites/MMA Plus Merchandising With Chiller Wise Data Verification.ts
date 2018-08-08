@@ -4,7 +4,7 @@
    <name>MMA Plus Merchandising With Chiller Wise Data Verification</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-08-06T17:57:54</lastRun>
+   <lastRun>2018-08-08T16:30:16</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>15</pageLoadTimeout>
@@ -26,7 +26,7 @@
    <testCaseLink>
       <guid>29b8720b-e6cb-4d54-bb93-c240c64d2319</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
    </testCaseLink>
    <testCaseLink>

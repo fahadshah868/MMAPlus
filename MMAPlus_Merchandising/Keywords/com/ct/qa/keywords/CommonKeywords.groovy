@@ -35,6 +35,7 @@ public class CommonKeywords {
 		Calendar calendar = Calendar.getInstance()
 		int day = calendar.get(Calendar.DAY_OF_WEEK)
 		Mobile.tap(findTestObject("Object Repository/DashboardScreenElements/DaysDropdownMenu"), 0)
+		Mobile.verifyElementExist(findTestObject("Object Repository/DashboardScreenElements/Validate_DaysListScreen"), 0)
 		if(day == 1){
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.TextView[7]").click()
 		}

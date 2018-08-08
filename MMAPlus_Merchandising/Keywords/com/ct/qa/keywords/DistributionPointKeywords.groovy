@@ -37,7 +37,7 @@ public class DistributionPointKeywords {
 	@Keyword
 	def visitdistributionPoint(){
 		DataFormatter dataFormatter = new DataFormatter()
-		XSSFSheet sheet = ProjectConstants.loadDistributionPointSheet()
+		XSSFSheet sheet = LoadDataKeywords.loadDistributionPointSheet()
 		int totalrows = sheet.getLastRowNum()
 		int totaldistributionitems = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/*").size()
 		for(int i=1; i<=(totaldistributionitems-2); i++){

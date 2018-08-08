@@ -56,3 +56,9 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitBut
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
     'Facing')
 
+'tap on back button'
+Mobile.tap(findTestObject('ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton'), 0)
+
+'validate display space available detail screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen'), 'Category:Nestrade')
+

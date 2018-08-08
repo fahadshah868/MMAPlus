@@ -5,6 +5,7 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import com.ct.qa.keywords.LoadDataKeywords
 import com.ct.qa.struct.UnmatchedProducts
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -42,7 +43,6 @@ public class ProjectConstants {
 	public static final String CHANNEL_PRODUCTSSHEET = "Channel Products"
 	public static final String CHILLER_PRODUCTSSHEET = "Chiller Products"
 	public static final String DISTRIBUTION_SHEET = "Distribution Point"
-	public static final int MOBILEWIDTH = 480
 	public static final AppiumDriver<MobileElement> DRIVER = MobileDriverFactory.getDriver()
 
 
@@ -50,15 +50,19 @@ public class ProjectConstants {
 	//products comparison messages
 	public static final String MESSAGEFOR_PRODUCTSARE_MORE = "above products are displaying on device more than to expected products..."
 	public static final String MESSAGEFOR_PRODUCTSARE_MISSING = "above products are missing on device..."
+	public static final String MESSAGEFOR_PRODUCTSARE_NOTMATCH = "above products are display on device not match with expected products..."
+
 	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSARE_EQUAL = "displayed products are equals to expected products..."
 
 	//products categories comparison messages
 	public static final String MESSAGEFOR_PRODUCTSCATEGORIESARE_MORE = "above products categories are displaying on device more than to expected products..."
 	public static final String MESSAGEFOR_PRODUCTSCATEGORIESARE_MISSING = "above products categories are missing on device"
+	public static final String MESSAGEFOR_PRODUCTSCATEGORIESARE_NOTMATCH = "above products categories are displaying on device not matching with expected products..."
 
 	//shop categories are not match
 	public static final String MESSAGEFOR_SHOPCATEGORIESARE_MORE = "above shop categories are displaying on device more than to expected shop categories"
 	public static final String MESSAGEFOR_SHOPCATEGORIESARE_MISSING = "above shop categories are missing on device"
+	public static final String MESSAGEFOR_SHOPCATEGORIESARE_NOTMATCH = "above shop categories are displaying on device not matching with expected shop categories"
 
 	//variables for excel sheet columns index
 	//channel wise product categories product columns
@@ -107,8 +111,8 @@ public class ProjectConstants {
 
 	//initialization of sheet columns index
 	static{
-		XSSFSheet channelproductssheet = loadChannelProductsSheet()
-		XSSFSheet chillerproductssheet = loadChillerProductsSheet()
+		XSSFSheet channelproductssheet = LoadDataKeywords.loadChannelProductsSheet()
+		XSSFSheet chillerproductssheet = LoadDataKeywords.loadChillerProductsSheet()
 		Row chillerproductssheetheaderrow = chillerproductssheet.getRow(0)
 		Row channelproductssheetheaderrow = channelproductssheet.getRow(0)
 		int channelproductssheettotalcolumns = channelproductssheetheaderrow.getLastCellNum()
@@ -205,330 +209,6 @@ public class ProjectConstants {
 			else if(columnname.equalsIgnoreCase("Overwrite Stock Count")){
 				CHILLER_OVERWRITESTOCKCOUNT = cellnumber
 			}
-		}
-	}
-
-	//load channel wise products sheet
-	def static loadChannelProductsSheet(){
-		try{
-			FileInputStream inputStream = new FileInputStream(new File(EXCEL_FILEPATH))
-			XSSFWorkbook wb = new XSSFWorkbook(inputStream)
-			XSSFSheet sheet = wb.getSheet(CHANNEL_PRODUCTSSHEET)
-			return sheet
-		}
-		catch(Exception ex){
-		}
-	}
-	//load chiller wise products sheet
-	def static loadChillerProductsSheet(){
-		try{
-			FileInputStream inputStream = new FileInputStream(new File(EXCEL_FILEPATH))
-			XSSFWorkbook wb = new XSSFWorkbook(inputStream)
-			XSSFSheet sheet = wb.getSheet(CHILLER_PRODUCTSSHEET)
-			return sheet
-		}
-		catch(Exception ex){
-		}
-	}
-	//load distribution point sheet
-	def static loadDistributionPointSheet(){
-		try{
-			FileInputStream inputStream = new FileInputStream(new File(EXCEL_FILEPATH))
-			XSSFWorkbook wb = new XSSFWorkbook(inputStream)
-			XSSFSheet sheet = wb.getSheet(DISTRIBUTION_SHEET)
-			return sheet
-		}
-		catch(Exception ex){
-		}
-	}
-	def static compareChannelWiseProductsCategories(){
-		DataFormatter dataformatter = new DataFormatter()
-		XSSFSheet sheet = loadChannelProductsSheet()
-		ArrayList<String> expectedproductscategorieslist = new ArrayList<String>()
-		ArrayList<String> displayedproductscategorieslist = new ArrayList<String>()
-		String currentvisitingmaincategory = ""
-		if(ProjectConstants.CURRENTVISITING_MAINCATEGORY.equalsIgnoreCase("Chiller Utilization")){
-			currentvisitingmaincategory = "Chiller"
-		}
-		else{
-			currentvisitingmaincategory = ProjectConstants.CURRENTVISITING_MAINCATEGORY
-		}
-		int totalrows = sheet.getLastRowNum()
-		for(int i=1; i<=totalrows; i++){
-			Row row = sheet.getRow(i)
-			String channel = dataformatter.formatCellValue(row.getCell(CHANNEL))
-			String maincategory = dataformatter.formatCellValue(row.getCell(CHANNEL_MAINCATEGORY))
-			if(CURRENTVISITING_SHOPCHANNEL.contains(channel) && maincategory.equalsIgnoreCase(currentvisitingmaincategory)){
-				String productcategory = dataformatter.formatCellValue(row.getCell(CHANNEL_PRODUCTCATEGORY))
-				expectedproductscategorieslist.add(productcategory)
-			}
-		}
-		int totalproductscategories = DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=totalproductscategories; i++){
-			MobileElement productcategory = DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-			displayedproductscategorieslist.add(productcategory.getText())
-		}
-		ArrayList<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
-		//if display products are more than to expected products
-		if(!expectedproductscategories.containsAll(displayedproductscategorieslist)){
-			ArrayList<String> products = new ArrayList<String>()
-			UnmatchedProducts unmatchedproducts = new UnmatchedProducts()
-			for(int i=0; i<displayedproductscategorieslist.size(); i++){
-				boolean match = false
-				for(int j=0; j<expectedproductscategories.size(); j++){
-					if(displayedproductscategorieslist.get(i).equalsIgnoreCase(expectedproductscategories.get(j))){
-						match = true
-					}
-				}
-				if(match == false){
-					products.add(displayedproductscategorieslist.get(i))
-				}
-				else{
-				}
-			}
-			unmatchedproducts.setProducts(products)
-			unmatchedproducts.setStatus(1)
-			return unmatchedproducts
-		}
-		//if displayed products are less than to expected products
-		else if(!displayedproductscategorieslist.containsAll(expectedproductscategories)){
-			ArrayList<String> products = new ArrayList<String>()
-			UnmatchedProducts unmatchedproducts = new UnmatchedProducts()
-			for(int i=0; i<expectedproductscategories.size(); i++){
-				boolean match = false
-				for(int j=0; j<displayedproductscategorieslist.size(); j++){
-					if(displayedproductscategorieslist.get(i).equalsIgnoreCase(expectedproductscategories.get(j))){
-						match = true
-						break
-					}
-				}
-				if(match == false){
-					products.add(expectedproductscategories.get(i))
-				}
-				else{
-				}
-			}
-			unmatchedproducts.setProducts(products)
-			unmatchedproducts.setStatus(-1)
-			return unmatchedproducts
-		}
-		else{
-			return 0
-		}
-	}
-	def static compareChillerWiseProductsCategories(){
-		DataFormatter dataformatter = new DataFormatter()
-		XSSFSheet sheet = loadChillerProductsSheet()
-		ArrayList<String> expectedproductscategorieslist = new ArrayList<String>()
-		ArrayList<String> displayedproductscategorieslist = new ArrayList<String>()
-		int totalrows = sheet.getLastRowNum()
-		for(int i=1; i<=totalrows; i++){
-			Row row = sheet.getRow(i)
-			String chiller = dataformatter.formatCellValue(row.getCell(CHILLER_TYPE))
-			if(CURRENTVISITING_CHILLERTYPE.equalsIgnoreCase(chiller)){
-				String productcategory = dataformatter.formatCellValue(row.getCell(CHILLER_PRODUCTCATEGORY))
-				expectedproductscategorieslist.add(productcategory)
-			}
-		}
-		int totalproductscategories = DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=totalproductscategories; i++){
-			MobileElement productcategory = DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-			displayedproductscategorieslist.add(productcategory.getText())
-		}
-		ArrayList<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
-		if(!expectedproductscategories.containsAll(displayedproductscategorieslist)){
-			ArrayList<String> products = new ArrayList<String>()
-			UnmatchedProducts unmatchedproducts = new UnmatchedProducts()
-			for(int i=0; i<displayedproductscategorieslist.size(); i++){
-				boolean match = false
-				for(int j=0; j<expectedproductscategories.size(); j++){
-					if(displayedproductscategorieslist.get(i).equalsIgnoreCase(expectedproductscategories.get(j))){
-						match = true
-					}
-				}
-				if(match == false){
-					products.add(displayedproductscategorieslist.get(i))
-				}
-				else{
-				}
-			}
-			unmatchedproducts.setProducts(products)
-			unmatchedproducts.setStatus(1)
-			return unmatchedproducts
-		}
-		//if displayed products are less than to expected products
-		else if(!displayedproductscategorieslist.containsAll(expectedproductscategories)){
-			ArrayList<String> products = new ArrayList<String>()
-			UnmatchedProducts unmatchedproducts = new UnmatchedProducts()
-			for(int i=0; i<expectedproductscategories.size(); i++){
-				boolean match = false
-				for(int j=0; j<displayedproductscategorieslist.size(); j++){
-					if(displayedproductscategorieslist.get(i).equalsIgnoreCase(expectedproductscategories.get(j))){
-						match = true
-						break
-					}
-				}
-				if(match == false){
-					products.add(expectedproductscategories.get(i))
-				}
-				else{
-				}
-			}
-			unmatchedproducts.setProducts(products)
-			unmatchedproducts.setStatus(-1)
-			return unmatchedproducts
-		}
-		else{
-			return 0
-		}
-	}
-	def static loadShopCategories(){
-		DataFormatter dataformatter = new DataFormatter()
-		ArrayList<String> expectedshopcategories = new ArrayList<String>()
-		XSSFSheet sheet = loadChannelProductsSheet()
-		int totalrows = sheet.getLastRowNum()
-		for(int i=1; i<=totalrows; i++){
-			Row row = sheet.getRow(i)
-			String channel = dataformatter.formatCellValue(row.getCell(CHANNEL))
-			if(CURRENTVISITING_SHOPCHANNEL.contains(channel)){
-				String category = dataformatter.formatCellValue(row.getCell(CHANNEL_MAINCATEGORY))
-				expectedshopcategories.add(category)
-			}
-		}
-		return expectedshopcategories
-	}
-	def static compareShopCategories(){
-		ArrayList<String> displayshopcategorieslist = new ArrayList<String>()
-		int index = 0
-		int mandatorycategories = 0
-		int totalcategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=totalcategories; i++){
-			MobileElement category = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-			String categoryname = category.getText()
-			if(categoryname.equalsIgnoreCase("Chiller")){
-				displayshopcategorieslist.add(categoryname)
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
-				displayshopcategorieslist.add(categoryname)
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("Additional Picture")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("POP Application")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("Competition Tracking")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("Retailer Remarks")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("RTM -Visit Frequency")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("Hanger Availibility")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else{
-				displayshopcategorieslist.add(categoryname)
-			}
-		}
-		while(true){
-			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-			MobileElement lastitembeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-			String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
-			Mobile.swipe(0, 293, 0, 200)
-			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-			MobileElement lastitemafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-			String lastitemnameafterswipe = lastitemafterswipe.getText()
-			if(lastitemnamebeforeswipe.equalsIgnoreCase(lastitemnameafterswipe)){
-				break
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller")){
-				displayshopcategorieslist.add(lastitemnameafterswipe)
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
-				displayshopcategorieslist.add(lastitemnameafterswipe)
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Competition Tracking")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Retailer Remarks")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("RTM -Visit Frequency")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("POP Application")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else{
-				displayshopcategorieslist.add(lastitemnameafterswipe)
-			}
-		}
-		ArrayList<String> expectedshopcategorieslist = loadShopCategories()
-		ArrayList<String> expectedshopcategories = new HashSet<String>(expectedshopcategorieslist)
-		//if displayed products are greater than expected products
-		if(!expectedshopcategories.containsAll(displayshopcategorieslist)){
-			ArrayList<String> products = new ArrayList<String>()
-			UnmatchedProducts unmatchedproducts = new UnmatchedProducts()
-			for(int i=0; i<displayshopcategorieslist.size(); i++){
-				boolean match = false
-				for(int j=0; j<expectedshopcategories.size(); j++){
-					if(displayshopcategorieslist.get(i).equalsIgnoreCase(expectedshopcategories.get(j))){
-						match = true
-					}
-				}
-				if(match == false){
-					products.add(displayshopcategorieslist.get(i))
-				}
-				else{
-				}
-			}
-			unmatchedproducts.setProducts(products)
-			unmatchedproducts.setStatus(1)
-			return unmatchedproducts
-		}
-		//if displayed products are less than to expected products
-		else if(!displayshopcategorieslist.containsAll(expectedshopcategories)){
-			ArrayList<String> products = new ArrayList<String>()
-			UnmatchedProducts unmatchedproducts = new UnmatchedProducts()
-			for(int i=0; i<expectedshopcategories.size(); i++){
-				boolean match = false
-				for(int j=0; j<displayshopcategorieslist.size(); j++){
-					if(displayshopcategorieslist.get(i).equalsIgnoreCase(expectedshopcategories.get(j))){
-						match = true
-						break
-					}
-				}
-				if(match == false){
-					products.add(expectedshopcategories.get(i))
-				}
-				else{
-				}
-			}
-			unmatchedproducts.setProducts(products)
-			unmatchedproducts.setStatus(-1)
-			return unmatchedproducts
-		}
-		else{
-			return 0
-			//			if(mandatorycategories == 7){
-			//				return 0
-			//			}
-			//			else{
-			//				return 2
-			//			}
 		}
 	}
 	def static getXPoint(){
