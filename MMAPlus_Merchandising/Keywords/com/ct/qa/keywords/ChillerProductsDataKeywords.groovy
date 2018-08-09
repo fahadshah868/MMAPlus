@@ -40,11 +40,11 @@ public class ChillerProductsDataKeywords {
 
 	@Keyword
 	def visitChillerAvailableProductCategories(int flag){
-		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareChannelWiseProductsCategories()
+		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareChillerWiseProductsCategories()
 		//if displayed rpoducts are more than to expected products
 		if(unmatchedproducts_status.getStatus() == 2){
 			ArrayList<String> products = unmatchedproducts_status.getProducts()
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMainCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Categories: "
+			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\n\nProduct Categories: "
 			for(int i=0; i<products.size(); i++){
 				message = message+products.get(i)+" , "
 			}
@@ -53,7 +53,7 @@ public class ChillerProductsDataKeywords {
 		}
 		else if(unmatchedproducts_status.getStatus() == 1){
 			ArrayList<String> products = unmatchedproducts_status.getProducts()
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMainCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Categories: "
+			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\n\nProduct Categories: "
 			for(int i=0; i<products.size(); i++){
 				message = message+products.get(i)+" , "
 			}
@@ -63,7 +63,7 @@ public class ChillerProductsDataKeywords {
 		//if displayed products are less than to expected products
 		else if(unmatchedproducts_status.getStatus() == -1){
 			ArrayList<String> products = unmatchedproducts_status.getProducts()
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMainCategory: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Categories: "
+			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\n\nProduct Categories: "
 			for(int i=0; i<products.size(); i++){
 				message = message+products.get(i)+" , "
 			}
@@ -210,8 +210,8 @@ public class ChillerProductsDataKeywords {
 				}
 			}
 			if(!products.isEmpty()){
-				String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
-				for(int i=0; i<products.size(); i++){
+				String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\n\nProduct Categories: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
+			for(int i=0; i<products.size(); i++){
 					message = message+products.get(i)+" , "
 				}
 				message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSARE_NOTMATCH
@@ -234,7 +234,7 @@ public class ChillerProductsDataKeywords {
 				else{
 				}
 			}
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
+			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\n\nProduct Categories: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
 			for(int i=0; i<products.size(); i++){
 				message = message+products.get(i)+" , "
 			}
@@ -257,7 +257,7 @@ public class ChillerProductsDataKeywords {
 				else{
 				}
 			}
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
+			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\n\nProduct Categories: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
 			for(int i=0; i<products.size(); i++){
 				message = message+products.get(i)+" , "
 			}
@@ -342,7 +342,7 @@ public class ChillerProductsDataKeywords {
 				}
 			}
 			if(!products.isEmpty()){
-				String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
+				String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
 				for(int i=0; i<products.size(); i++){
 					message = message+products.get(i)+" , "
 				}
@@ -366,7 +366,7 @@ public class ChillerProductsDataKeywords {
 				else{
 				}
 			}
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
 			for(int i=0; i<products.size(); i++){
 				message = message+products.get(i)+" , "
 			}
@@ -389,7 +389,7 @@ public class ChillerProductsDataKeywords {
 				else{
 				}
 			}
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
 			for(int i=0; i<products.size(); i++){
 				message = message+products.get(i)+" , "
 			}

@@ -21,7 +21,7 @@ import internal.GlobalVariable as GlobalVariable
 
 'validate "Chiller Utilization" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen'), 
-    'Shops on Route')
+    'Shop Chillers')
 
 'visit chillers tagged in "Chiller Utilization" and select chiller remark "Chiller Removed For Maintenance"'
 CustomKeywords.'com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedinChillerUtilizationWithSingleRemark'(

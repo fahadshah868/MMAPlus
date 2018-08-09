@@ -258,7 +258,7 @@ public class ChannelProductsDataKeywords {
 				}
 			}
 			if(!products.isEmpty()){
-				String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
+				String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
 				for(int i=0; i<products.size(); i++){
 					message = message+products.get(i)+" , "
 				}
@@ -284,7 +284,7 @@ public class ChannelProductsDataKeywords {
 				else{
 				}
 			}
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
 			for(int i=0; i<products.size(); i++){
 				message = message+products.get(i)+" , "
 			}
@@ -307,7 +307,7 @@ public class ChannelProductsDataKeywords {
 				else{
 				}
 			}
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProducts: "
+			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
 			for(int i=0; i<products.size(); i++){
 				message = message+products.get(i)+" , "
 			}

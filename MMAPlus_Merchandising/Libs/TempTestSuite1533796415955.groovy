@@ -16,9 +16,9 @@ import internal.GlobalVariable as GlobalVariable
 Map<String, String> suiteProperties = new HashMap<String, String>();
 
 
-suiteProperties.put('id', 'Test Suites/MMA Plus Merchandising With Chiller Wise Data Verification')
+suiteProperties.put('id', 'Test Suites/MMA Plus Merchandising With Channel Wise Data Verification')
 
-suiteProperties.put('name', 'MMA Plus Merchandising With Chiller Wise Data Verification')
+suiteProperties.put('name', 'MMA Plus Merchandising With Channel Wise Data Verification')
 
 suiteProperties.put('description', '')
  
@@ -28,8 +28,8 @@ DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.m
 
 
 
-RunConfiguration.setExecutionSettingFile("F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Chiller Wise Data Verification\\20180808_162221\\execution.properties")
+RunConfiguration.setExecutionSettingFile("F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Channel Wise Data Verification\\20180809_113335\\execution.properties")
 
 TestCaseMain.beforeStart()
 
-TestCaseMain.startTestSuite('Test Suites/MMA Plus Merchandising With Chiller Wise Data Verification', suiteProperties, [new TestCaseBinding('Test Cases/LaunchingApp/LaunchApp', 'Test Cases/LaunchingApp/LaunchApp',  null), new TestCaseBinding('Test Cases/VisitShopScenarios/VisitShopsWithDataVerification', 'Test Cases/VisitShopScenarios/VisitShopsWithDataVerification',  null)])
+TestCaseMain.startTestSuite('Test Suites/MMA Plus Merchandising With Channel Wise Data Verification', suiteProperties, [new TestCaseBinding('Test Cases/LaunchingApp/LaunchApp', 'Test Cases/LaunchingApp/LaunchApp',  null), new TestCaseBinding('Test Cases/VisitShopScenarios/VisitShopsWithDataVerification', 'Test Cases/VisitShopScenarios/VisitShopsWithDataVerification',  null)])
