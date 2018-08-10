@@ -1,0 +1,8 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Plus Merchandising With Chiller Wise Data Verification,,,2018-08-09 16:23:11,2018-08-09 16:23:18,7.597s,FAILED
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2018-08-09 16:23:11,2018-08-09 16:23:18,6.452s,FAILED
+startApplication,,launch application,2018-08-09 16:23:12,2018-08-09 16:23:18,5.906s,FAILED
+,,,,,,
+Test Cases/VisitShopScenarios/VisitShopsWithDataVerification,,,2018-08-09 16:23:18,2018-08-09 16:23:18,0.541s,FAILED
+verifyElementText,,validate the dashboard screen appearance,2018-08-09 16:23:18,2018-08-09 16:23:18,0.248s,PASSED

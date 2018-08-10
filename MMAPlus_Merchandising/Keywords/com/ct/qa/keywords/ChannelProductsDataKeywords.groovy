@@ -302,7 +302,7 @@ public class ChannelProductsDataKeywords {
 					}
 				}
 				if(match == false){
-					products.add(expectedproductslist.get(i))
+					products.add(expectedproductslist.get(i).getProduct())
 				}
 				else{
 				}

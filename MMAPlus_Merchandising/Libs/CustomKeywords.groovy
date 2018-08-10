@@ -62,6 +62,10 @@ def static "com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProdu
         	columnindex)
 }
 
+def static "com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages"() {
+    (new com.ct.qa.keywords.AdditionalPictureKeywords()).takeMendatoryImages()
+}
+
 def static "com.ct.qa.keywords.RetailerRemarksKeywords.visitRetailerRemarks"() {
     (new com.ct.qa.keywords.RetailerRemarksKeywords()).visitRetailerRemarks()
 }
@@ -70,8 +74,12 @@ def static "com.ct.qa.keywords.RetailerRemarksKeywords.overwriteRetailerRemarks"
     (new com.ct.qa.keywords.RetailerRemarksKeywords()).overwriteRetailerRemarks()
 }
 
-def static "com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages"() {
-    (new com.ct.qa.keywords.AdditionalPictureKeywords()).takeMendatoryImages()
+def static "com.ct.qa.keywords.CompetitionTrackingKeywords.visitCompetitiontrackingProducts"() {
+    (new com.ct.qa.keywords.CompetitionTrackingKeywords()).visitCompetitiontrackingProducts()
+}
+
+def static "com.ct.qa.keywords.CompetitionTrackingKeywords.overwriteCompetitiontrackingProducts"() {
+    (new com.ct.qa.keywords.CompetitionTrackingKeywords()).overwriteCompetitiontrackingProducts()
 }
 
 def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories"(
@@ -96,14 +104,6 @@ def static "com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvaila
     	int columnindex	) {
     (new com.ct.qa.keywords.ChillerProductsDataKeywords()).VisitChillerNotAvailableProductsData(
         	columnindex)
-}
-
-def static "com.ct.qa.keywords.CompetitionTrackingKeywords.visitCompetitiontrackingProducts"() {
-    (new com.ct.qa.keywords.CompetitionTrackingKeywords()).visitCompetitiontrackingProducts()
-}
-
-def static "com.ct.qa.keywords.CompetitionTrackingKeywords.overwriteCompetitiontrackingProducts"() {
-    (new com.ct.qa.keywords.CompetitionTrackingKeywords()).overwriteCompetitiontrackingProducts()
 }
 
 def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWithDataVerification"() {

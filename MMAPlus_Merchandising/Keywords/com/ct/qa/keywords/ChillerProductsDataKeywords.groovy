@@ -211,7 +211,7 @@ public class ChillerProductsDataKeywords {
 			}
 			if(!products.isEmpty()){
 				String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\n\nProduct Categories: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
-			for(int i=0; i<products.size(); i++){
+				for(int i=0; i<products.size(); i++){
 					message = message+products.get(i)+" , "
 				}
 				message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSARE_NOTMATCH
@@ -223,7 +223,7 @@ public class ChillerProductsDataKeywords {
 			for(int i=0; i<displayproductslist.size(); i++){
 				boolean match = false
 				for(int j=0; j<expectedproductslist.size(); j++){
-					if(displayproductslist.get(i).equalsIgnoreCase(expectedproductslist.get(j))){
+					if(displayproductslist.get(i).equalsIgnoreCase(expectedproductslist.get(j).getProduct())){
 						match = true
 						break
 					}
@@ -252,7 +252,7 @@ public class ChillerProductsDataKeywords {
 					}
 				}
 				if(match == false){
-					products.add(expectedproductslist.get(i))
+					products.add(expectedproductslist.get(i).getProduct())
 				}
 				else{
 				}
@@ -384,7 +384,7 @@ public class ChillerProductsDataKeywords {
 					}
 				}
 				if(match == false){
-					products.add(expectedproductslist.get(i))
+					products.add(expectedproductslist.get(i).getProduct())
 				}
 				else{
 				}
