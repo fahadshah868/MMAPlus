@@ -4,7 +4,7 @@
    <name>MMA Plus Merchandising With Shop Level Overwrite Scenarios</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-08-01T17:35:30</lastRun>
+   <lastRun>2018-08-10T19:04:29</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>4</pageLoadTimeout>

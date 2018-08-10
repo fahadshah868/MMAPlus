@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="MMA Plus Merchandising With Category Level(Chiller) Overwrite Scenarios" time="9" tests="0" failures="3" errors="0">
+   <testsuite name="MMA Plus Merchandising With Category Level(Chiller) Overwrite Scenarios" tests="0" failures="3" errors="0" time="9" timestamp="2018-08-10 18:36:34" hostname="Fahad Shah - DESKTOP-L12UUAD" id="Test Suites/MMA Plus Merchandising With Category Level(Chiller) Overwrite Scenarios">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Category Level(Chiller) Overwrite Scenarios\\20180810_183631"/>
+         <property name="logFiles" value="F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Category Level(Chiller) Overwrite Scenarios\\20180810_183631\\appium.log, F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Category Level(Chiller) Overwrite Scenarios\\20180810_183631\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="Fahad Shah - DESKTOP-L12UUAD"/>
+         <property name="hostAddress" value="192.168.3.191"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.6.0.1"/>
+      </properties>
+      <testcase name="Test Cases/LaunchingApp/LaunchApp" classname="Test Cases/LaunchingApp/LaunchApp" status="FAILED">
+         <failure type="FAILED" message="Unable to start app at: 'F:\QA_Automation\Builds\mma_local_060818_v150.apk' (Root cause: com.kms.katalon.core.appium.exception.AppiumStartException: Fail to start Appium server in 5 seconds)"/>
+         <system-out><![CDATA[2018-08-10 18:36:35 - [TEST_CASE][FAILED] - Test Cases/LaunchingApp/LaunchApp: Test Cases/LaunchingApp/LaunchApp FAILED because (of) Unable to start app at: 'F:\QA_Automation\Builds\mma_local_060818_v150.apk' (Root cause: com.kms.katalon.core.appium.exception.AppiumStartException: Fail to start Appium server in 5 seconds)
+
+2018-08-10 18:36:35 - [TEST_STEP][FAILED] - startApplication: Unable to start app at: 'F:\QA_Automation\Builds\mma_local_060818_v150.apk' (Root cause: com.kms.katalon.core.appium.exception.AppiumStartException: Fail to start Appium server in 5 seconds)
+
+2018-08-10 18:36:42 - [MESSAGE][FAILED] - Unable to start app at: 'F:\QA_Automation\Builds\mma_local_060818_v150.apk' (Root cause: com.kms.katalon.core.appium.exception.AppiumStartException: Fail to start Appium server in 5 seconds)]]></system-out>
+         <system-err><![CDATA[2018-08-10 18:36:35 - [TEST_CASE][FAILED] - Test Cases/LaunchingApp/LaunchApp: Test Cases/LaunchingApp/LaunchApp FAILED because (of) Unable to start app at: 'F:\QA_Automation\Builds\mma_local_060818_v150.apk' (Root cause: com.kms.katalon.core.appium.exception.AppiumStartException: Fail to start Appium server in 5 seconds)]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/DistributionPoint/VisitDistributionPoint" classname="Test Cases/DistributionPoint/VisitDistributionPoint" status="FAILED">
+         <failure type="FAILED" message="No driver found"/>
+         <system-out><![CDATA[2018-08-10 18:36:42 - [TEST_CASE][FAILED] - Test Cases/DistributionPoint/VisitDistributionPoint: Test Cases/DistributionPoint/VisitDistributionPoint FAILED because (of) No driver found
+
+2018-08-10 18:36:43 - [TEST_STEP][PASSED] - verifyElementText: Checking timeout]]></system-out>
+         <system-err><![CDATA[2018-08-10 18:36:42 - [TEST_CASE][FAILED] - Test Cases/DistributionPoint/VisitDistributionPoint: Test Cases/DistributionPoint/VisitDistributionPoint FAILED because (of) No driver found]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller)Overwriting" classname="Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller)Overwriting" status="FAILED">
+         <failure type="FAILED" message="No driver found"/>
+         <system-out><![CDATA[2018-08-10 18:36:43 - [TEST_CASE][FAILED] - Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller)Overwriting: Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller)Overwriting FAILED because (of) No driver found
+
+2018-08-10 18:36:44 - [TEST_STEP][PASSED] - verifyElementText: Checking timeout]]></system-out>
+         <system-err><![CDATA[2018-08-10 18:36:43 - [TEST_CASE][FAILED] - Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller)Overwriting: Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller)Overwriting FAILED because (of) No driver found]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-08-10 18:36:34 - [TEST_SUITE][FAILED] - MMA Plus Merchandising With Category Level(Chiller) Overwrite Scenarios: Test Cases/LaunchingApp/LaunchApp FAILED because (of) Unable to start app at: 'F:\QA_Automation\Builds\mma_local_060818_v150.apk' (Root cause: com.kms.katalon.core.appium.exception.AppiumStartException: Fail to start Appium server in 5 seconds)]]></system-out>
+      <system-err><![CDATA[2018-08-10 18:36:34 - [TEST_SUITE][FAILED] - MMA Plus Merchandising With Category Level(Chiller) Overwrite Scenarios: Test Cases/LaunchingApp/LaunchApp FAILED because (of) Unable to start app at: 'F:\QA_Automation\Builds\mma_local_060818_v150.apk' (Root cause: com.kms.katalon.core.appium.exception.AppiumStartException: Fail to start Appium server in 5 seconds)]]></system-err>
+   </testsuite>
+</testsuites>

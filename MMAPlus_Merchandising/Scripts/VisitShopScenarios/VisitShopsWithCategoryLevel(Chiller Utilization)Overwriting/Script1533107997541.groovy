@@ -32,5 +32,5 @@ MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay')
 MobileBuiltInKeywords.verifyElementText(findTestObject('Validate_ShopListScreen'), 'Shops on Route')
 
 'select shops from shops list with "Shop Level" overwriting '
-CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithShopLevelOverwriting'()
+CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithCategoryLevel_ChillerUtilization_Overwriting'()
 

@@ -4,6 +4,7 @@
    <name>MMA Plus Merchandising With Category Level(Chiller) Overwrite Scenarios</name>
    <tag></tag>
    <isRerun>false</isRerun>
+   <lastRun>2018-08-10T18:36:31</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>4</pageLoadTimeout>

@@ -6,6 +6,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.ct.qa.keywords.LoadDataKeywords
+import com.ct.qa.struct.ShopInfo
 import com.ct.qa.struct.UnmatchedProducts
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -108,6 +109,9 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_CHILLERTYPE = ""
 	public static String CURRENTVISITING_CHILLERREMARK = ""
 	public static int VISITED_CHILLERREMARKS = 1
+
+	//list for containing shop info
+	public static ArrayList<ShopInfo> shopinfo = new ArrayList<ShopInfo>()
 
 	//initialization of sheet columns index
 	static{

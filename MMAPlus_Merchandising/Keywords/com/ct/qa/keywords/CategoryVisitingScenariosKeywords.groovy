@@ -213,7 +213,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 			}
 			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable"), null)
 			}
@@ -367,7 +367,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 			}
 			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerNotAvailable"), null)
 			}
@@ -521,7 +521,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 			}
 			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ShopKeeperDidNotAllow"), null)
 			}
@@ -675,7 +675,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 			}
 			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerTypeNotAvailable"), null)
 			}
@@ -829,7 +829,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 			}
 			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable"), null)
 			}
@@ -983,7 +983,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 			}
 			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ShopKeeperDidNotAllow"), null)
 			}
@@ -1137,7 +1137,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 			}
 			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
 			}

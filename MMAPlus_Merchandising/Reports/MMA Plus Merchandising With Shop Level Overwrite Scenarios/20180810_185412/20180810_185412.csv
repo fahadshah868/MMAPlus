@@ -1,0 +1,13 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Plus Merchandising With Shop Level Overwrite Scenarios,,,2018-08-10 18:54:14,2018-08-10 18:56:08,1m - 54.055s,ERROR
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2018-08-10 18:54:15,2018-08-10 18:54:37,22.418s,PASSED
+startApplication,,launch application,2018-08-10 18:54:15,2018-08-10 18:54:32,16.876s,PASSED
+delay,,delay of 5 seconds,2018-08-10 18:54:32,2018-08-10 18:54:37,5.040s,PASSED
+,,,,,,
+Test Cases/VisitShopScenarios/VisitShopsWithShopLevelOverwriting,,,2018-08-10 18:54:37,2018-08-10 18:56:08,1m - 31.191s,ERROR
+verifyElementText,,validate the dashboard screen appearance,2018-08-10 18:54:37,2018-08-10 18:54:39,1.659s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday,,select current day,2018-08-10 18:54:39,2018-08-10 18:54:43,4.177s,PASSED
+tap,,tap on start your day button to further proceed,2018-08-10 18:54:43,2018-08-10 18:54:44,1.360s,PASSED
+verifyElementText,,Validate shops list screen appearance,2018-08-10 18:54:44,2018-08-10 18:54:47,2.539s,PASSED
+com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithShopLevelOverwriting,,"select shops from shops list with ""Shop Level"" overwriting ",2018-08-10 18:54:47,2018-08-10 18:56:08,1m - 21.251s,ERROR
