@@ -137,12 +137,20 @@ public class ShopVisitingScenariosKeywords{
 				ProjectConstants.shopinfo.add(shopinfo)
 			}
 		}
+		for(int i=0; i<ProjectConstants.shopinfo.size(); i++){
+			ShopInfo shopinfo = ProjectConstants.shopinfo.get(i)
+			String message = "\n\n<------------------------------------------------------------------------------------------------------>\n\n"+
+					"Shop Name:  "+shopinfo.getShopname()+"		,		Shop Channel:  "+shopinfo.getShopchannel()+"\n\n"+
+					shopinfo.getScenario()+
+					"\n\n<------------------------------------------------------------------------------------------------------>"
+			KeywordUtil.logInfo(message)
+		}
 	}
 	@Keyword
 	def visitShopsWithShopLevelOverwriting(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=1; i++){
+		for(int i=1; i<=totalshops; i++){
 			ShopInfo shopinfo = new ShopInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			ProjectConstants.CURRENTVISITING_SHOPNAME = shop.getText()
@@ -154,7 +162,7 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn"), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton"), 0)
-			if(i == 11){
+			if(i == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopClosed/VisitShopClosed"), null)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 				findShop()
@@ -167,7 +175,7 @@ public class ShopVisitingScenariosKeywords{
 				ProjectConstants.shopinfo.add(shopinfo)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 			}
-			else if(i == 1){
+			else if(i == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 				findShop()
@@ -206,11 +214,10 @@ public class ShopVisitingScenariosKeywords{
 		}
 		for(int i=0; i<ProjectConstants.shopinfo.size(); i++){
 			ShopInfo shopinfo = ProjectConstants.shopinfo.get(i)
-			String message = "\n\n<------------------------------------------------------------------------------------------------------>\n\n"
-			message = message+"Shop Name:  "+shopinfo.getShopname()
-			message = message+"			Shop Channel:  "+shopinfo.getShopchannel()
-			message = message+"\n"+shopinfo.getScenario()
-			message = message+"\n\n<------------------------------------------------------------------------------------------------------>"
+			String message = "\n\n<------------------------------------------------------------------------------------------------------>\n\n"+
+					"Shop Name:  "+shopinfo.getShopname()+"		,		Shop Channel:  "+shopinfo.getShopchannel()+"\n\n"+
+					shopinfo.getScenario()+
+					"\n\n<------------------------------------------------------------------------------------------------------>"
 			KeywordUtil.logInfo(message)
 		}
 	}
@@ -237,18 +244,18 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				shopinfo.setShopname(ProjectConstants.CURRENTVISITING_SHOPNAME)
 				shopinfo.setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-				String message = "(1) 'Chiller Not Allocated' for chiller\n"
-				+"'Display Space Available' for remaining categories\n"
-				+"'RTM visit frequency' with 'Once a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'OB not visiting' remark\n"
-				+"'Hanger Availability' with 'Yes' remark\n\n"
-				+"(2) 'SKDNA' for chiller with 'Expiry Issue' remark\n"
-				+"'No Space for Display' for remaining categories\n"
-				+"'RTM visit frequency' with 'Twice a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'SM not visiting' remark\n"
-				+"'Hanger Availability' with 'No' remark\n\n\n"
+				String message = "(1) 'Chiller Not Allocated' for chiller\n"+
+						"'Display Space Available' for remaining categories\n"+
+						"'RTM visit frequency' with 'Once a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'OB not visiting' remark\n"+
+						"'Hanger Availability' with 'Yes' remark\n\n"+
+						"(2) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
+						"'No Space for Display' for remaining categories\n"+
+						"'RTM visit frequency' with 'Twice a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'SM not visiting' remark\n"+
+						"'Hanger Availability' with 'No' remark"
 				shopinfo.setScenario(message)
 				ProjectConstants.shopinfo.add(shopinfo)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
@@ -260,18 +267,18 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				shopinfo.setShopname(ProjectConstants.CURRENTVISITING_SHOPNAME)
 				shopinfo.setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-				String message = "(1) 'SKDNA' for chiller with 'Expiry Issue' remark\n"
-				+"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"
-				+"'RTM visit frequency' with 'Once a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'OB not visiting' remark\n"
-				+"'Hanger Availability' with 'Yes' remark\n\n"
-				+"(2) 'SKDNA' for chiller with 'Others' remark\n"
-				+"'SKDNA' for remaining categories with 'Others' remark\n"
-				+"'RTM visit frequency' with 'Twice a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'SM not visiting' remark\n"
-				+"'Hanger Availability' with 'No' remark\n\n\n"
+				String message = "(1) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
+						"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
+						"'RTM visit frequency' with 'Once a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'OB not visiting' remark\n"+
+						"'Hanger Availability' with 'Yes' remark\n\n"+
+						"(2) 'SKDNA' for chiller with 'Others' remark\n"+
+						"'SKDNA' for remaining categories with 'Others' remark\n"+
+						"'RTM visit frequency' with 'Twice a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'SM not visiting' remark\n"+
+						"'Hanger Availability' with 'No' remark"
 				shopinfo.setScenario(message)
 				ProjectConstants.shopinfo.add(shopinfo)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
@@ -283,18 +290,18 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				shopinfo.setShopname(ProjectConstants.CURRENTVISITING_SHOPNAME)
 				shopinfo.setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-				String message = "(1) 'SKDNA' for chiller with 'Expiry Issue' remark\n"
-				+"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"
-				+"'RTM visit frequency' with 'Once a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'OB not visiting' remark\n"
-				+"'Hanger Availability' with 'Yes' remark\n\n"
-				+"(2) 'Chiller Not Allocated' for chiller\n"
-				+"'Display Space Available' for remaining categories\n"
-				+"'RTM visit frequency' with 'Once a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'OB not visiting' remark\n"
-				+"'Hanger Availability' with 'Yes' remark\n\n\n"
+				String message = "(1) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
+						"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
+						"'RTM visit frequency' with 'Once a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'OB not visiting' remark\n"+
+						"'Hanger Availability' with 'Yes' remark\n\n"+
+						"(2) 'Chiller Not Allocated' for chiller\n"+
+						"'Display Space Available' for remaining categories\n"+
+						"'RTM visit frequency' with 'Once a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'OB not visiting' remark\n"+
+						"'Hanger Availability' with 'Yes' remark"
 				shopinfo.setScenario(message)
 				ProjectConstants.shopinfo.add(shopinfo)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
@@ -306,18 +313,18 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				shopinfo.setShopname(ProjectConstants.CURRENTVISITING_SHOPNAME)
 				shopinfo.setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-				String message = "(1) 'Chiller Not Allocated' for chiller\n"
-				+"'Display Space Available' for remaining categories\n"
-				+"'RTM visit frequency' with 'Once a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'OB not visiting' remark\n"
-				+"'Hanger Availability' with 'Yes' remark\n\n"
-				+"(2) Overwrite 'Chiller Not Allocated' for chiller\n"
-				+"Overwrite 'Display Space Available' for remaining categories\n"
-				+"'RTM visit frequency' with 'Twice a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'SM not visiting' remark\n"
-				+"'Hanger Availability' with 'No' remark\n\n\n"
+				String message = "(1) 'Chiller Not Allocated' for chiller\n"+
+						"'Display Space Available' for remaining categories\n"+
+						"'RTM visit frequency' with 'Once a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'OB not visiting' remark\n"+
+						"'Hanger Availability' with 'Yes' remark\n\n"+
+						"(2) Overwrite 'Chiller Not Allocated' for chiller\n"+
+						"Overwrite 'Display Space Available' for remaining categories\n"+
+						"'RTM visit frequency' with 'Twice a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'SM not visiting' remark\n"+
+						"'Hanger Availability' with 'No' remark"
 				shopinfo.setScenario(message)
 				ProjectConstants.shopinfo.add(shopinfo)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
@@ -325,6 +332,14 @@ public class ShopVisitingScenariosKeywords{
 			else{
 				break
 			}
+		}
+		for(int i=0; i<ProjectConstants.shopinfo.size(); i++){
+			ShopInfo shopinfo = ProjectConstants.shopinfo.get(i)
+			String message = "\n\n<------------------------------------------------------------------------------------------------------>\n\n"+
+					"Shop Name:  "+shopinfo.getShopname()+"		,		Shop Channel:  "+shopinfo.getShopchannel()+"\n\n"+
+					shopinfo.getScenario()+
+					"\n\n<------------------------------------------------------------------------------------------------------>"
+			KeywordUtil.logInfo(message)
 		}
 	}
 	@Keyword
@@ -350,18 +365,18 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				shopinfo.setShopname(ProjectConstants.CURRENTVISITING_SHOPNAME)
 				shopinfo.setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-				String message = "(1) 'Chiller Available' for 'Chiller Utilization'\n"
-				+"'Display Space Available' for remaining categories\n"
-				+"'RTM visit frequency' with 'Once a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'OB not visiting' remark\n"
-				+"'Hanger Availability' with 'Yes' remark\n\n"
-				+"(2) 'Chiller Not Available' for 'Chiller Utilization'\n"
-				+"'No Space for Display' for remaining categories\n"
-				+"'RTM visit frequency' with 'Twice a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'SM not visiting' remark\n"
-				+"'Hanger Availability' with 'No' remark\n\n\n"
+				String message = "(1) 'Chiller Available' for 'Chiller Utilization'\n"+
+						"'Display Space Available' for remaining categories\n"+
+						"'RTM visit frequency' with 'Once a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'OB not visiting' remark\n"+
+						"'Hanger Availability' with 'Yes' remark\n\n"+
+						"(2) 'Chiller Not Available' for 'Chiller Utilization'\n"+
+						"'No Space for Display' for remaining categories\n"+
+						"'RTM visit frequency' with 'Twice a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'SM not visiting' remark\n"+
+						"'Hanger Availability' with 'No' remark"
 				shopinfo.setScenario(message)
 				ProjectConstants.shopinfo.add(shopinfo)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
@@ -373,18 +388,18 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				shopinfo.setShopname(ProjectConstants.CURRENTVISITING_SHOPNAME)
 				shopinfo.setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-				String message = "(1) 'SKDNA' for chiller Utilization with 'Expiry Issue' remark\n"
-				+"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"
-				+"'RTM visit frequency' with 'Once a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'OB not visiting' remark\n"
-				+"'Hanger Availability' with 'Yes' remark\n\n"
-				+"(2) 'SKDNA' for chiller with 'Others' remark\n"
-				+"'SKDNA' for remaining categories with 'Others' remark\n"
-				+"'RTM visit frequency' with 'Twice a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'SM not visiting' remark\n"
-				+"'Hanger Availability' with 'No' remark\n\n\n"
+				String message = "(1) 'SKDNA' for chiller Utilization with 'Expiry Issue' remark\n"+
+						"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
+						"'RTM visit frequency' with 'Once a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'OB not visiting' remark\n"+
+						"'Hanger Availability' with 'Yes' remark\n\n"+
+						"(2) 'SKDNA' for chiller with 'Others' remark\n"+
+						"'SKDNA' for remaining categories with 'Others' remark\n"+
+						"'RTM visit frequency' with 'Twice a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'SM not visiting' remark\n"+
+						"'Hanger Availability' with 'No' remark"
 				shopinfo.setScenario(message)
 				ProjectConstants.shopinfo.add(shopinfo)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
@@ -396,18 +411,18 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				shopinfo.setShopname(ProjectConstants.CURRENTVISITING_SHOPNAME)
 				shopinfo.setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-				String message = "(1) 'Chiller Type not Available' for chiller Utilization   '(note: if tagged chiller is with yogurt than select chiller without yogurt otherwise select chiller with withouyogurt)'\n"
-				+"'No Space for Display' for remaining categories\n"
-				+"'RTM visit frequency' with 'Once a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'OB not visiting' remark\n"
-				+"'Hanger Availability' with 'Yes' remark\n\n"
-				+"(2) 'Chiller Available' for chiller Utilization\n"
-				+"Overwrite 'No Space for Display' for remaining categories\n"
-				+"'RTM visit frequency' with 'Twice a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'SM not visiting' remark\n"
-				+"'Hanger Availability' with 'No' remark\n\n\n"
+				String message = "(1) 'Chiller Type not Available' for chiller Utilization   '(note: if tagged chiller is with yogurt than select chiller without yogurt otherwise select chiller with withouyogurt)'\n"+
+						"'No Space for Display' for remaining categories\n"+
+						"'RTM visit frequency' with 'Once a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'OB not visiting' remark\n"+
+						"'Hanger Availability' with 'Yes' remark\n\n"+
+						"(2) 'Chiller Available' for chiller Utilization\n"+
+						"Overwrite 'No Space for Display' for remaining categories\n"+
+						"'RTM visit frequency' with 'Twice a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'SM not visiting' remark\n"+
+						"'Hanger Availability' with 'No' remark"
 				shopinfo.setScenario(message)
 				ProjectConstants.shopinfo.add(shopinfo)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
@@ -419,24 +434,32 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				shopinfo.setShopname(ProjectConstants.CURRENTVISITING_SHOPNAME)
 				shopinfo.setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-				String message = "(1) 'Chiller Available' for chiller utilization\n"
-				+"'Display Space Available' for remaining categories\n"
-				+"'RTM visit frequency' with 'Once a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'OB not visiting' remark\n"
-				+"'Hanger Availability' with 'Yes' remark\n\n"
-				+"(2) Overwrite 'Chiller Available' for chiller utilization\n"
-				+"Overwrite 'Display Space Available' for remaining categories\n"
-				+"'RTM visit frequency' with 'Twice a week'\n"
-				+"'Pop Application' with 'No' remark\n"
-				+"'Retailer Remarks' with 'SM not visiting' remark\n"
-				+"'Hanger Availability' with 'No' remark\n\n\n"
+				String message = "(1) 'Chiller Available' for chiller utilization\n"+
+						"'Display Space Available' for remaining categories\n"+
+						"'RTM visit frequency' with 'Once a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'OB not visiting' remark\n"+
+						"'Hanger Availability' with 'Yes' remark\n\n"+
+						"(2) Overwrite 'Chiller Available' for chiller utilization\n"+
+						"Overwrite 'Display Space Available' for remaining categories\n"+
+						"'RTM visit frequency' with 'Twice a week'\n"+
+						"'Pop Application' with 'No' remark\n"+
+						"'Retailer Remarks' with 'SM not visiting' remark\n"+
+						"'Hanger Availability' with 'No' remark"
 				shopinfo.setScenario(message)
 				ProjectConstants.shopinfo.add(shopinfo)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 			}
 			else{
 			}
+		}
+		for(int i=0; i<ProjectConstants.shopinfo.size(); i++){
+			ShopInfo shopinfo = ProjectConstants.shopinfo.get(i)
+			String message = "\n\n<------------------------------------------------------------------------------------------------------>\n\n"+
+					"Shop Name:  "+shopinfo.getShopname()+"		,		Shop Channel:  "+shopinfo.getShopchannel()+"\n\n"+
+					shopinfo.getScenario()+
+					"\n\n<------------------------------------------------------------------------------------------------------>"
+			KeywordUtil.logInfo(message)
 		}
 	}
 }

@@ -62,16 +62,16 @@ def static "com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProdu
         	columnindex)
 }
 
+def static "com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages"() {
+    (new com.ct.qa.keywords.AdditionalPictureKeywords()).takeMendatoryImages()
+}
+
 def static "com.ct.qa.keywords.RetailerRemarksKeywords.visitRetailerRemarks"() {
     (new com.ct.qa.keywords.RetailerRemarksKeywords()).visitRetailerRemarks()
 }
 
 def static "com.ct.qa.keywords.RetailerRemarksKeywords.overwriteRetailerRemarks"() {
     (new com.ct.qa.keywords.RetailerRemarksKeywords()).overwriteRetailerRemarks()
-}
-
-def static "com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages"() {
-    (new com.ct.qa.keywords.AdditionalPictureKeywords()).takeMendatoryImages()
 }
 
 def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories"(
