@@ -27,7 +27,7 @@ import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 import com.ct.qa.constants.ProjectConstants
-import com.ct.qa.struct.ProductsData
+import com.ct.qa.struct.ShopProductsData
 import com.ct.qa.struct.VisitedCategoryData
 import com.ct.qa.struct.VisitedShopDataInfo
 import com.ct.qa.struct.MissingCategoryData
@@ -88,7 +88,7 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopWithDataVerification(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=2; i++){
+		for(int i=1; i<=1; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -156,7 +156,7 @@ public class ShopVisitingScenariosKeywords{
 		//			}
 		//		}
 
-		String message = "---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"
+		String message = "\n\n---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"
 		if(ProjectConstants.missingshopdatainfo != null){
 			for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
 				MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
@@ -211,23 +211,27 @@ public class ShopVisitingScenariosKeywords{
 			for(int i=0; i<ProjectConstants.visitedshopdatainfo.size(); i++){
 				VisitedShopDataInfo visitedshopdatainfo = ProjectConstants.visitedshopdatainfo.get(i)
 				message = message+"<------------------------------------------------------------------------------------------------------>\n\n"+
-				"Shop Name:	"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
-				"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()
+						"Shop Name:	"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+						"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()
 				if(visitedshopdatainfo.getVisitedcategoriesdata() != null){
 					message = message+"\n\nMain Category:	"
 					for(int j=0; j< visitedshopdatainfo.getVisitedcategoriesdata().size(); j++){
 						VisitedCategoryData visitedcategorydata = visitedshopdatainfo.getVisitedcategoriesdata().get(j)
 						message = message + visitedcategorydata.getMaincategory()+
-						"\nProduct Category:	"+visitedcategorydata.getProductcategory()
-						for(int k=0; k<visitedcategorydata.getProductsdata().size() ; k++){
-							ProductsData productsdata = visitedcategorydata.getProductsdata().get(k)
-							message = message + "\n" + 
-							productsdata.getProduct() +
-							"		" + productsdata.getProduct_data()
+								"\nProduct Category:	"+visitedcategorydata.getProductcategory()
+						for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
+							ShopProductsData shopproductsdata = visitedcategorydata.getShopProductsdata().get(k)
+							message = message + "\n" +
+									shopproductsdata.getProduct() +
+									"		" + shopproductsdata.getFacingdata() +
+									"		" + shopproductsdata.getStocktakingdata() +
+									"		" + shopproductsdata.getOverwritefacingdata() +
+									"		" + shopproductsdata.getOverwritestocktakingdata()
 						}
 					}
 				}
-				message = message + "\n\n<------------------------------------------------------------------------------------------------------>\n\n"				
+				message = message + "\n\n<------------------------------------------------------------------------------------------------------>\n\n"
+				KeywordUtil.logInfo(message)
 			}
 		}
 		else{

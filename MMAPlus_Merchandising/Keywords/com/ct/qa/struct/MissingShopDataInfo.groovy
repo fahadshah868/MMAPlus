@@ -70,7 +70,7 @@ public class MissingShopDataInfo {
 		return missingcategoriesdata;
 	}
 	public void setMissingCategoriesData(MissingCategoryData missingcategorydata, String assettype) {
-		if(assettype.equalsIgnoreCase("Facing") || assettype.equals("")) {
+		if(assettype.contains("Facing") || assettype.equals("")) {
 			this.missingcategoriesdata.add(missingcategorydata)
 		}
 	}

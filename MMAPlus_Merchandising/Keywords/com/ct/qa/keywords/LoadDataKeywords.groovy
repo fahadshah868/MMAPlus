@@ -6,7 +6,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.ct.qa.constants.ProjectConstants
-import com.ct.qa.struct.ProductsData
+import com.ct.qa.struct.LoadProductsData
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory
@@ -84,7 +84,7 @@ public class LoadDataKeywords {
 	//load channel wise products and quantity
 	def static loadChannelWiseProductsList(XSSFSheet sheet, int column){
 		DataFormatter dataformatter = new DataFormatter()
-		ArrayList<ProductsData> channelproducts = new ArrayList<ProductsData>()
+		ArrayList<LoadProductsData> channelproducts = new ArrayList<LoadProductsData>()
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<=totalrows; i++){
 			Row row = sheet.getRow(i)
@@ -93,7 +93,7 @@ public class LoadDataKeywords {
 			String maincategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_MAINCATEGORY))
 			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCTCATEGORY))
 			if((ProjectConstants.CURRENTVISITING_SHOPCHANNEL.equalsIgnoreCase(channelname) && ProjectConstants.CURRENTVISITING_MAINCATEGORY.equalsIgnoreCase(maincategory)) && ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY.equalsIgnoreCase(productcategory)){
-				ProductsData channelproduct = new ProductsData()
+				LoadProductsData channelproduct = new LoadProductsData()
 				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCT))
 				String columndata = dataformatter.formatCellValue(row.getCell(column))
 				channelproduct.setProduct(product)
@@ -108,14 +108,14 @@ public class LoadDataKeywords {
 	//load chiller products and quantity
 	def static loadChillerAvailableProductsList(XSSFSheet sheet, int column){
 		DataFormatter dataformatter = new DataFormatter()
-		ArrayList<ProductsData> channelproducts = new ArrayList<ProductsData>()
+		ArrayList<LoadProductsData> channelproducts = new ArrayList<LoadProductsData>()
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<=totalrows; i++){
 			Row row = sheet.getRow(i)
 			String chillertype = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHILLER_TYPE))
 			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHILLER_PRODUCTCATEGORY))
 			if(ProjectConstants.CURRENTVISITING_CHILLERTYPE.equalsIgnoreCase(chillertype) && ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY.equalsIgnoreCase(productcategory)){
-				ProductsData channelproduct = new ProductsData()
+				LoadProductsData channelproduct = new LoadProductsData()
 				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHILLER_PRODUCT))
 				String columndata = dataformatter.formatCellValue(row.getCell(column))
 				channelproduct.setProduct(product)
@@ -130,7 +130,7 @@ public class LoadDataKeywords {
 	//load channel products and quantity
 	def static loadChillerNotAvailableProductsList(XSSFSheet sheet, int column){
 		DataFormatter dataformatter = new DataFormatter()
-		ArrayList<ProductsData> channelproducts = new ArrayList<ProductsData>()
+		ArrayList<LoadProductsData> channelproducts = new ArrayList<LoadProductsData>()
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<=totalrows; i++){
 			Row row = sheet.getRow(i)
@@ -139,7 +139,7 @@ public class LoadDataKeywords {
 			String maincategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_MAINCATEGORY))
 			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCTCATEGORY))
 			if((ProjectConstants.CURRENTVISITING_SHOPCHANNEL.equalsIgnoreCase(channelname) && maincategory.equalsIgnoreCase("Chiller")) && ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY.equalsIgnoreCase(productcategory)){
-				ProductsData channelproduct = new ProductsData()
+				LoadProductsData channelproduct = new LoadProductsData()
 				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCT))
 				String columndata = dataformatter.formatCellValue(row.getCell(column))
 				channelproduct.setProduct(product)

@@ -5,6 +5,7 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import com.ct.qa.constants.ProjectConstants
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory
@@ -20,32 +21,25 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 
 import internal.GlobalVariable
-
+import org.apache.poi.ss.usermodel.Row
+import org.apache.poi.xssf.usermodel.XSSFSheet
 import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
-public class VisitedCategoryData {
-	public String maincategory
-	public String productcategory
-	public ArrayList<ShopProductsData> shopproductsdata
-
-	public String getMaincategory() {
-		return maincategory;
+public class LoadProductsData {
+	public String product
+	public String product_data
+	public String getProduct() {
+		return product;
 	}
-	public void setMaincategory(String maincategory) {
-		this.maincategory = maincategory;
+	public void setProduct(String product) {
+		this.product = product;
 	}
-	public String getProductcategory() {
-		return productcategory;
+	public String getProduct_data() {
+		return product_data;
 	}
-	public void setProductcategory(String productcategory) {
-		this.productcategory = productcategory;
-	}
-	public ArrayList<ShopProductsData> getShopProductsdata() {
-		return shopproductsdata;
-	}
-	public void setShopProductsdata(ArrayList<ShopProductsData> shopproductsdata) {
-		this.shopproductsdata = shopproductsdata;
+	public void setProduct_data(String product_data) {
+		this.product_data = product_data;
 	}
 }

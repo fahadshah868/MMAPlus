@@ -38,7 +38,8 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Facing'),
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_FacingScreen'), 'Facing')
 
 'visit category products with facing'
-CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_NSFD_OVERWRITEFACING)
+CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_NSFD_OVERWRITEFACING, 
+    'Overwrite Facing')
 
 'tap on submit button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
@@ -54,7 +55,8 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/StockTaki
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_StockTakingScreen'), 'Stock Taking')
 
 'visit category products with stock taking'
-CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_NSFD_OVERWRITESTOCKTAKING)
+CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_NSFD_OVERWRITESTOCKTAKING, 
+    'Overwrite Stock Taking')
 
 'tap on submit button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
