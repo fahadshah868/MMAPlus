@@ -25,47 +25,19 @@ import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
-public class CategoryDataInfo {
-	public String maincategory
-	public String ProductCategory
-	public ArrayList<String> productcategories
-	public ArrayList<String> products
-	public String productcategories_errormessage
-	public String products_errormessage
-	public String getMaincategory() {
-		return maincategory;
-	}
-	public void setMaincategory(String maincategory) {
-		this.maincategory = maincategory;
-	}
-	public String getProductCategory() {
-		return ProductCategory;
-	}
-	public void setProductCategory(String productCategory) {
-		this.ProductCategory = productCategory;
-	}
+public class VisitedProductCategoryData {
+	public String productcategories
+	public ArrayList<ProductsData> productsdata
 	public ArrayList<String> getProductcategories() {
 		return productcategories;
 	}
 	public void setProductcategories(ArrayList<String> productcategories) {
 		this.productcategories = productcategories;
 	}
-	public ArrayList<String> getProducts() {
-		return products;
+	public ArrayList<ProductsData> getProductsdata() {
+		return productsdata;
 	}
-	public void setProducts(ArrayList<String> products) {
-		this.products = products;
-	}
-	public String getProductcategories_errormessage() {
-		return productcategories_errormessage;
-	}
-	public void setProductcategories_errormessage(String productcategories_errormessage) {
-		this.productcategories_errormessage = productcategories_errormessage;
-	}
-	public String getProducts_errormessage() {
-		return products_errormessage;
-	}
-	public void setProducts_errormessage(String products_errormessage) {
-		this.products_errormessage = products_errormessage;
+	public void setProductsdata(ArrayList<ProductsData> productsdata) {
+		this.productsdata = productsdata;
 	}
 }

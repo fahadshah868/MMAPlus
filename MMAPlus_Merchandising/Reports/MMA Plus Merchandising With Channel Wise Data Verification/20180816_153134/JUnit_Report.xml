@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="MMA Plus Merchandising With Channel Wise Data Verification" time="560" tests="1" failures="0" errors="1">
+   <testsuite name="MMA Plus Merchandising With Channel Wise Data Verification" tests="1" failures="0" errors="1" time="560" timestamp="2018-08-16 15:31:36" hostname="Fahad Shah - DESKTOP-L12UUAD" id="Test Suites/MMA Plus Merchandising With Channel Wise Data Verification">
+      <properties>
+         <property name="deviceName" value="samsung SM-J110H (Android 4.4.4)"/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Channel Wise Data Verification\\20180816_153134"/>
+         <property name="logFiles" value="F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Channel Wise Data Verification\\20180816_153134\\appium.log, F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Channel Wise Data Verification\\20180816_153134\\execution0.log"/>
+         <property name="attachments" value="F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Channel Wise Data Verification\\20180816_153134\\1534415648757.png, F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Channel Wise Data Verification\\20180816_153134\\1534415835460.png"/>
+         <property name="hostName" value="Fahad Shah - DESKTOP-L12UUAD"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.6.0.1"/>
+         <property name="deviceOS" value="Android"/>
+         <property name="appiumVersion" value="1.8.1"/>
+         <property name="deviceModel" value="SM-J110H"/>
+         <property name="hostAddress" value="192.168.3.119"/>
+         <property name="deviceManufacturer" value="samsung"/>
+         <property name="deviceId" value="11015a1136d0b24a"/>
+         <property name="deviceName" value="samsung SM-J110H (Android 4.4.4)"/>
+         <property name="deviceOSVersion" value="4.4.4"/>
+      </properties>
+      <testcase name="Test Cases/LaunchingApp/LaunchApp" classname="Test Cases/LaunchingApp/LaunchApp" status="PASSED">
+         <system-out><![CDATA[2018-08-16 15:31:37 - [TEST_CASE][PASSED] - Test Cases/LaunchingApp/LaunchApp: Test Cases/LaunchingApp/LaunchApp
+
+2018-08-16 15:31:38 - [TEST_STEP][PASSED] - startApplication: Started app at: 'F:\QA_Automation\Builds\mma_local_060818_v150.apk'
+
+2018-08-16 15:31:54 - [MESSAGE][PASSED] - Started app at: 'F:\QA_Automation\Builds\mma_local_060818_v150.apk'
+
+2018-08-16 15:31:54 - [TEST_STEP][PASSED] - delay: Delayed 5 second(s)
+
+2018-08-16 15:31:59 - [MESSAGE][PASSED] - Delayed 5 second(s)]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/VisitShopScenarios/VisitShopsWithDataVerification" classname="Test Cases/VisitShopScenarios/VisitShopsWithDataVerification" status="ERROR">
+         <error type="ERROR" message="Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED because (of) groovy.lang.GroovyRuntimeException: Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)"/>
+         <system-out><![CDATA[2018-08-16 15:31:59 - [TEST_CASE][ERROR] - Test Cases/VisitShopScenarios/VisitShopsWithDataVerification: Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED because (of) groovy.lang.GroovyRuntimeException: Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)
+
+2018-08-16 15:32:00 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/DashboardScreenElements/Validate_DashboardScreen' are matched.
+
+2018-08-16 15:32:03 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/DashboardScreenElements/Validate_DashboardScreen' are matched.
+
+2018-08-16 15:32:03 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.selectday: com.ct.qa.keywords.CommonKeywords.selectday is PASSED
+
+2018-08-16 15:32:03 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:04 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/DashboardScreenElements/DaysDropdownMenu'
+
+2018-08-16 15:32:04 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:05 - [MESSAGE][PASSED] - Element 'Object Repository/DashboardScreenElements/Validate_DaysListScreen' is exist
+
+2018-08-16 15:32:07 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.selectday is PASSED
+
+2018-08-16 15:32:07 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/DashboardScreenElements/StartYourDay'
+
+2018-08-16 15:32:07 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:09 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/DashboardScreenElements/StartYourDay'
+
+2018-08-16 15:32:09 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-08-16 15:32:10 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-08-16 15:32:10 - [TEST_STEP][ERROR] - com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWithDataVerification: Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)
+
+2018-08-16 15:32:13 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopOptionsScreen' are matched.
+
+2018-08-16 15:32:13 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:14 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/StartWorking'
+
+2018-08-16 15:32:29 - [MESSAGE][PASSED] - Delayed 15 second(s)
+
+2018-08-16 15:32:30 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_MapScreen' is exist
+
+2018-08-16 15:32:30 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:31 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Location_CheckIn'
+
+2018-08-16 15:32:31 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:32 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist
+
+2018-08-16 15:32:32 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:32 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_NoButton'
+
+2018-08-16 15:32:32 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/VisitShopOpen: Test Cases/ShopOpen/VisitShopOpen
+
+2018-08-16 15:32:33 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopActions_List' is exist
+
+2018-08-16 15:32:33 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:33 - [MESSAGE][PASSED] - Element 'Object Repository/ShopActions_List' is exist
+
+2018-08-16 15:32:33 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/ShopOpen'
+
+2018-08-16 15:32:33 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:35 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ShopOpen'
+
+2018-08-16 15:32:35 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-08-16 15:32:35 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:36 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-08-16 15:32:36 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-08-16 15:32:36 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:37 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-08-16 15:32:37 - [TEST_STEP][PASSED] - delay: Delayed 5 second(s)
+
+2018-08-16 15:32:42 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-08-16 15:32:42 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-08-16 15:32:42 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:44 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-08-16 15:32:44 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/VisitShopOpen' successfully
+
+2018-08-16 15:32:44 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification: Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification
+
+2018-08-16 15:32:44 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:32:44 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:32:45 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:32:45 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification: com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification is PASSED
+
+2018-08-16 15:32:50 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:32:54 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:32:58 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:33:01 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:33:04 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:33:07 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:33:10 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:33:13 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:33:16 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,750
+
+2018-08-16 15:33:17 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,750
+
+2018-08-16 15:33:19 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated: Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated
+
+2018-08-16 15:33:19 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerScreen' are matched.
+
+2018-08-16 15:33:21 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerScreen' are matched.
+
+2018-08-16 15:33:21 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocated'
+
+2018-08-16 15:33:21 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:33:21 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocated'
+
+2018-08-16 15:33:21 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-08-16 15:33:23 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-08-16 15:33:23 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChillerNotAllocatedProductCategories: com.ct.qa.keywords.ChannelProductsDataKeywords.visitChillerNotAllocatedProductCategories is PASSED
+
+2018-08-16 15:33:24 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets: Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets
+
+2018-08-16 15:33:24 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-08-16 15:33:25 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-08-16 15:33:25 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/Facing'
+
+2018-08-16 15:33:25 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:33:26 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/Facing'
+
+2018-08-16 15:33:26 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_FacingScreen' are matched.
+
+2018-08-16 15:33:28 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_FacingScreen' are matched.
+
+2018-08-16 15:33:28 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:33:32 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:33:35 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:33:38 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:33:41 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:33:42 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:33:42 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-08-16 15:33:42 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:33:43 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-08-16 15:33:43 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-08-16 15:33:44 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-08-16 15:33:44 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/StockTaking'
+
+2018-08-16 15:33:44 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:33:44 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/StockTaking'
+
+2018-08-16 15:33:44 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_StockTakingScreen' are matched.
+
+2018-08-16 15:33:46 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_StockTakingScreen' are matched.
+
+2018-08-16 15:33:46 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:33:50 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:33:53 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:33:56 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:33:59 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:34:00 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:34:00 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-08-16 15:34:00 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:01 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/SubmitButton'
+
+2018-08-16 15:34:01 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-08-16 15:34:01 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' are matched.
+
+2018-08-16 15:34:01 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'
+
+2018-08-16 15:34:01 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:02 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'
+
+2018-08-16 15:34:02 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/Chiller/VisitProductCategoryAssets' successfully
+
+2018-08-16 15:34:03 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-08-16 15:34:03 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChillerNotAllocatedProductCategories is PASSED
+
+2018-08-16 15:34:03 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-08-16 15:34:03 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-08-16 15:34:03 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/Planogram_ImageView'
+
+2018-08-16 15:34:03 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:03 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/Planogram_ImageView'
+
+2018-08-16 15:34:03 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability: com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability is PASSED
+
+2018-08-16 15:34:03 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:09 - [MESSAGE][WARNING] - Object Object Repository/CommonScreenElements/InfoPopUp_OKButton not found
+[[ATTACHMENT|F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Channel Wise Data Verification\\20180816_153134\\1534415648757.png]]
+
+2018-08-16 15:34:09 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability is PASSED
+
+2018-08-16 15:34:09 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.closePlanogram: com.ct.qa.keywords.CommonKeywords.closePlanogram is PASSED
+
+2018-08-16 15:34:10 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.closePlanogram is PASSED
+
+2018-08-16 15:34:10 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-08-16 15:34:11 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-08-16 15:34:11 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.findPictureImageView: com.ct.qa.keywords.CommonKeywords.findPictureImageView is PASSED
+
+2018-08-16 15:34:11 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:15 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Picture_ImageView'
+
+2018-08-16 15:34:15 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:15 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-08-16 15:34:15 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:18 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-08-16 15:34:23 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-08-16 15:34:23 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:24 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-08-16 15:34:24 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.findPictureImageView is PASSED
+
+2018-08-16 15:34:24 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-08-16 15:34:25 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-08-16 15:34:25 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'
+
+2018-08-16 15:34:25 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:26 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'
+
+2018-08-16 15:34:26 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:34:26 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:27 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:34:27 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated' successfully
+
+2018-08-16 15:34:29 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:34:31 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA: Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA
+
+2018-08-16 15:34:31 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen' are matched.
+
+2018-08-16 15:34:33 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen' are matched.
+
+2018-08-16 15:34:33 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/DisplaySpaceAvailable'
+
+2018-08-16 15:34:33 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:33 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/DisplaySpaceAvailable'
+
+2018-08-16 15:34:33 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:34:35 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:34:35 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/Facing'
+
+2018-08-16 15:34:35 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:36 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/Facing'
+
+2018-08-16 15:34:36 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_FacingScreen' are matched.
+
+2018-08-16 15:34:37 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_FacingScreen' are matched.
+
+2018-08-16 15:34:37 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:34:41 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:34:41 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:34:41 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/SubmitButton'
+
+2018-08-16 15:34:41 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:42 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/SubmitButton'
+
+2018-08-16 15:34:42 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:34:43 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:34:43 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/StockTaking'
+
+2018-08-16 15:34:43 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:43 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/StockTaking'
+
+2018-08-16 15:34:43 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_StockTakingScreen' are matched.
+
+2018-08-16 15:34:44 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_StockTakingScreen' are matched.
+
+2018-08-16 15:34:44 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:34:48 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:34:48 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:34:48 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/SubmitButton'
+
+2018-08-16 15:34:48 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:49 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/SubmitButton'
+
+2018-08-16 15:34:49 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:34:50 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:34:50 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/planogram_ImageView'
+
+2018-08-16 15:34:50 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:51 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/planogram_ImageView'
+
+2018-08-16 15:34:51 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability: com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability is PASSED
+
+2018-08-16 15:34:51 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:52 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_OKButton'
+
+2018-08-16 15:34:52 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability is PASSED
+
+2018-08-16 15:34:52 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.closePlanogram: com.ct.qa.keywords.CommonKeywords.closePlanogram is PASSED
+
+2018-08-16 15:34:54 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.closePlanogram is PASSED
+
+2018-08-16 15:34:54 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:34:55 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:34:55 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.findPictureImageView: com.ct.qa.keywords.CommonKeywords.findPictureImageView is PASSED
+
+2018-08-16 15:34:55 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:57 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Picture_ImageView'
+
+2018-08-16 15:34:57 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:34:59 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-08-16 15:34:59 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:02 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-08-16 15:35:07 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-08-16 15:35:07 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:08 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-08-16 15:35:08 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.findPictureImageView is PASSED
+
+2018-08-16 15:35:08 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:35:09 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:35:09 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton'
+
+2018-08-16 15:35:09 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:09 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton'
+
+2018-08-16 15:35:09 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:35:09 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:11 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:35:11 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA' successfully
+
+2018-08-16 15:35:11 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:35:15 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:35:17 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA: Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA
+
+2018-08-16 15:35:17 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen' are matched.
+
+2018-08-16 15:35:18 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen' are matched.
+
+2018-08-16 15:35:18 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/DisplaySpaceAvailable'
+
+2018-08-16 15:35:18 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:19 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/DisplaySpaceAvailable'
+
+2018-08-16 15:35:19 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:35:21 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:35:21 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/Facing'
+
+2018-08-16 15:35:21 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:21 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/Facing'
+
+2018-08-16 15:35:21 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_FacingScreen' are matched.
+
+2018-08-16 15:35:22 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_FacingScreen' are matched.
+
+2018-08-16 15:35:22 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:35:26 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:35:29 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:35:30 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:35:30 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/SubmitButton'
+
+2018-08-16 15:35:30 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:30 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/SubmitButton'
+
+2018-08-16 15:35:30 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:35:31 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:35:31 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/StockTaking'
+
+2018-08-16 15:35:31 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:32 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/StockTaking'
+
+2018-08-16 15:35:32 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_StockTakingScreen' are matched.
+
+2018-08-16 15:35:33 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_StockTakingScreen' are matched.
+
+2018-08-16 15:35:33 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:35:37 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:35:40 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:35:41 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:35:41 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/SubmitButton'
+
+2018-08-16 15:35:41 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:41 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/SubmitButton'
+
+2018-08-16 15:35:41 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:35:42 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:35:42 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/planogram_ImageView'
+
+2018-08-16 15:35:42 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:43 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/planogram_ImageView'
+
+2018-08-16 15:35:43 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability: com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability is PASSED
+
+2018-08-16 15:35:43 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:44 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_OKButton'
+
+2018-08-16 15:35:44 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability is PASSED
+
+2018-08-16 15:35:44 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.closePlanogram: com.ct.qa.keywords.CommonKeywords.closePlanogram is PASSED
+
+2018-08-16 15:35:46 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.closePlanogram is PASSED
+
+2018-08-16 15:35:46 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:35:46 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:35:46 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.findPictureImageView: com.ct.qa.keywords.CommonKeywords.findPictureImageView is PASSED
+
+2018-08-16 15:35:47 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:49 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Picture_ImageView'
+
+2018-08-16 15:35:49 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:49 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-08-16 15:35:49 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:53 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-08-16 15:35:58 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-08-16 15:35:58 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:35:58 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-08-16 15:35:58 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.findPictureImageView is PASSED
+
+2018-08-16 15:35:58 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:36:00 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:36:00 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton'
+
+2018-08-16 15:36:00 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:36:00 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton'
+
+2018-08-16 15:36:00 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:36:00 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:36:02 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:36:02 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA' successfully
+
+2018-08-16 15:36:03 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:36:05 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:36:08 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:36:11 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA: Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA
+
+2018-08-16 15:36:11 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen' are matched.
+
+2018-08-16 15:36:12 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_RemainingCategoriesDetailScreen' are matched.
+
+2018-08-16 15:36:12 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/DisplaySpaceAvailable'
+
+2018-08-16 15:36:12 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:36:13 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/DisplaySpaceAvailable'
+
+2018-08-16 15:36:13 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:36:16 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:36:16 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/Facing'
+
+2018-08-16 15:36:16 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:36:16 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/Facing'
+
+2018-08-16 15:36:16 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_FacingScreen' are matched.
+
+2018-08-16 15:36:18 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_FacingScreen' are matched.
+
+2018-08-16 15:36:18 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:36:22 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:36:25 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:36:28 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:36:31 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:36:34 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:36:37 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:36:40 - [MESSAGE][PASSED] - Swiped from 115,359 to 115,250
+
+2018-08-16 15:36:41 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:36:41 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/SubmitButton'
+
+2018-08-16 15:36:41 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:36:42 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/SubmitButton'
+
+2018-08-16 15:36:42 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:36:43 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:36:43 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/StockTaking'
+
+2018-08-16 15:36:43 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:36:43 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/StockTaking'
+
+2018-08-16 15:36:43 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_StockTakingScreen' are matched.
+
+2018-08-16 15:36:45 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_StockTakingScreen' are matched.
+
+2018-08-16 15:36:45 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData: com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:36:49 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:36:52 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:36:55 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:36:58 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:37:01 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:37:04 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-08-16 15:37:07 - [MESSAGE][PASSED] - Swiped from 115,359 to 115,250
+
+2018-08-16 15:37:08 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData is PASSED
+
+2018-08-16 15:37:08 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/SubmitButton'
+
+2018-08-16 15:37:08 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:09 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/SubmitButton'
+
+2018-08-16 15:37:09 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:37:09 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:37:09 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/planogram_ImageView'
+
+2018-08-16 15:37:09 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:10 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/planogram_ImageView'
+
+2018-08-16 15:37:10 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability: com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability is PASSED
+
+2018-08-16 15:37:10 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:16 - [MESSAGE][WARNING] - Object Object Repository/CommonScreenElements/InfoPopUp_OKButton not found
+[[ATTACHMENT|F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising With Channel Wise Data Verification\\20180816_153134\\1534415835460.png]]
+
+2018-08-16 15:37:16 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability is PASSED
+
+2018-08-16 15:37:16 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.closePlanogram: com.ct.qa.keywords.CommonKeywords.closePlanogram is PASSED
+
+2018-08-16 15:37:16 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.closePlanogram is PASSED
+
+2018-08-16 15:37:16 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:37:17 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:37:17 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.findPictureImageView: com.ct.qa.keywords.CommonKeywords.findPictureImageView is PASSED
+
+2018-08-16 15:37:18 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:20 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Picture_ImageView'
+
+2018-08-16 15:37:20 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:21 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-08-16 15:37:21 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:24 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-08-16 15:37:29 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-08-16 15:37:29 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:30 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-08-16 15:37:30 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.findPictureImageView is PASSED
+
+2018-08-16 15:37:30 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:37:31 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-08-16 15:37:31 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton'
+
+2018-08-16 15:37:31 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:31 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton'
+
+2018-08-16 15:37:31 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:37:31 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:34 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:37:34 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA' successfully
+
+2018-08-16 15:37:34 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:37:36 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:37:38 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:37:41 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:37:44 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/RTMVisitFrequency/VisitRTMVisitFrequency: Test Cases/ShopOpen/RTMVisitFrequency/VisitRTMVisitFrequency
+
+2018-08-16 15:37:44 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyScreen' are matched.
+
+2018-08-16 15:37:45 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyScreen' are matched.
+
+2018-08-16 15:37:45 - [TEST_STEP][PASSED] - com.ct.qa.keywords.RTMVisitFrequencyKeywords.visitRTMVisitFrequency: com.ct.qa.keywords.RTMVisitFrequencyKeywords.visitRTMVisitFrequency is PASSED
+
+2018-08-16 15:37:46 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:47 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks' is exist
+
+2018-08-16 15:37:47 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:48 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RTMVisitFrequency/OnceAWeek'
+
+2018-08-16 15:37:49 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:50 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks' is exist
+
+2018-08-16 15:37:50 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:51 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RTMVisitFrequency/OnceAWeek'
+
+2018-08-16 15:37:52 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:53 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks' is exist
+
+2018-08-16 15:37:53 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:54 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RTMVisitFrequency/OnceAWeek'
+
+2018-08-16 15:37:55 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:56 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks' is exist
+
+2018-08-16 15:37:56 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:57 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RTMVisitFrequency/OnceAWeek'
+
+2018-08-16 15:37:57 - [MESSAGE][PASSED] - com.ct.qa.keywords.RTMVisitFrequencyKeywords.visitRTMVisitFrequency is PASSED
+
+2018-08-16 15:37:57 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RTMVisitFrequency/BackButton'
+
+2018-08-16 15:37:57 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:58 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RTMVisitFrequency/BackButton'
+
+2018-08-16 15:37:58 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:37:58 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:37:59 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:37:59 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/RTMVisitFrequency/VisitRTMVisitFrequency' successfully
+
+2018-08-16 15:38:00 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:02 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:04 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:07 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:11 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:13 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/POPApplication/OverwritePOPApplication: Test Cases/ShopOpen/POPApplication/OverwritePOPApplication
+
+2018-08-16 15:38:13 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/POPApplication/Validate_POPApplicationDetailScreen' are matched.
+
+2018-08-16 15:38:14 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/POPApplication/Validate_POPApplicationDetailScreen' are matched.
+
+2018-08-16 15:38:14 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/POPApplication/POPDeployment_No'
+
+2018-08-16 15:38:15 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:38:16 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/POPApplication/POPDeployment_No'
+
+2018-08-16 15:38:16 - [TEST_STEP][PASSED] - pressBack: Press back button successfully
+
+2018-08-16 15:38:17 - [MESSAGE][PASSED] - Press back button successfully
+
+2018-08-16 15:38:17 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:38:17 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:38:17 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:38:17 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/POPApplication/OverwritePOPApplication' successfully
+
+2018-08-16 15:38:18 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:20 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:22 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:24 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:26 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:30 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:32 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/RetailerRemarks/VisitRetailerRemarks: Test Cases/ShopOpen/RetailerRemarks/VisitRetailerRemarks
+
+2018-08-16 15:38:32 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen' are matched.
+
+2018-08-16 15:38:33 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen' are matched.
+
+2018-08-16 15:38:33 - [TEST_STEP][PASSED] - com.ct.qa.keywords.RetailerRemarksKeywords.visitRetailerRemarks: com.ct.qa.keywords.RetailerRemarksKeywords.visitRetailerRemarks is PASSED
+
+2018-08-16 15:38:34 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:38:35 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting' is exist
+
+2018-08-16 15:38:35 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:38:36 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting'
+
+2018-08-16 15:38:37 - [MESSAGE][PASSED] - Press back button successfully
+
+2018-08-16 15:38:38 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen' are matched.
+
+2018-08-16 15:38:38 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:38:40 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting' is exist
+
+2018-08-16 15:38:40 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:38:41 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting'
+
+2018-08-16 15:38:42 - [MESSAGE][PASSED] - Press back button successfully
+
+2018-08-16 15:38:43 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen' are matched.
+
+2018-08-16 15:38:43 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:38:44 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting' is exist
+
+2018-08-16 15:38:44 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:38:45 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting'
+
+2018-08-16 15:38:46 - [MESSAGE][PASSED] - Press back button successfully
+
+2018-08-16 15:38:47 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen' are matched.
+
+2018-08-16 15:38:47 - [MESSAGE][PASSED] - com.ct.qa.keywords.RetailerRemarksKeywords.visitRetailerRemarks is PASSED
+
+2018-08-16 15:38:47 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/RetailerRemarks/BackButton'
+
+2018-08-16 15:38:47 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:38:48 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/RetailerRemarks/BackButton'
+
+2018-08-16 15:38:48 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:38:48 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:38:50 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:38:50 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/RetailerRemarks/VisitRetailerRemarks' successfully
+
+2018-08-16 15:38:50 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:53 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:54 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:56 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:38:59 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:39:00 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:39:03 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:39:06 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/AdditionalPicture/VisitAdditionalPicture: Test Cases/ShopOpen/AdditionalPicture/VisitAdditionalPicture
+
+2018-08-16 15:39:06 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/AdditionalPicture/Validate_AdditionalPictureScreen' are matched.
+
+2018-08-16 15:39:07 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/AdditionalPicture/Validate_AdditionalPictureScreen' are matched.
+
+2018-08-16 15:39:07 - [TEST_STEP][PASSED] - com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages: com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages is PASSED
+
+2018-08-16 15:39:09 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:39:11 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-08-16 15:39:11 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:39:14 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-08-16 15:39:19 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-08-16 15:39:19 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:39:20 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-08-16 15:39:20 - [MESSAGE][PASSED] - com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages is PASSED
+
+2018-08-16 15:39:20 - [TEST_STEP][PASSED] - pressBack: Press back button successfully
+
+2018-08-16 15:39:21 - [MESSAGE][PASSED] - Press back button successfully
+
+2018-08-16 15:39:21 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:39:21 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:39:22 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:39:22 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/AdditionalPicture/VisitAdditionalPicture' successfully
+
+2018-08-16 15:39:23 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:39:25 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:39:27 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:39:30 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:39:31 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:39:33 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:39:35 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:39:38 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:39:40 - [MESSAGE][PASSED] - com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification is PASSED
+
+2018-08-16 15:39:40 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification' successfully
+
+2018-08-16 15:39:40 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/SaveShop: Test Cases/ShopOpen/SaveShop
+
+2018-08-16 15:39:40 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/SubmitButtonToSaveShop'
+
+2018-08-16 15:39:40 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:39:41 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/SubmitButtonToSaveShop'
+
+2018-08-16 15:39:41 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist
+
+2018-08-16 15:39:41 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:39:42 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist
+
+2018-08-16 15:39:42 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_YesButton'
+
+2018-08-16 15:39:42 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:39:42 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_YesButton'
+
+2018-08-16 15:39:42 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-08-16 15:39:44 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-08-16 15:39:44 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/SaveShop' successfully
+
+2018-08-16 15:39:46 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopOptionsScreen' are matched.
+
+2018-08-16 15:39:46 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:39:46 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/StartWorking'
+
+2018-08-16 15:40:01 - [MESSAGE][PASSED] - Delayed 15 second(s)
+
+2018-08-16 15:40:02 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_MapScreen' is exist
+
+2018-08-16 15:40:02 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:40:02 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Location_CheckIn'
+
+2018-08-16 15:40:02 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:40:03 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist
+
+2018-08-16 15:40:03 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:40:04 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_NoButton'
+
+2018-08-16 15:40:04 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/VisitShopOpen: Test Cases/ShopOpen/VisitShopOpen
+
+2018-08-16 15:40:04 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopActions_List' is exist
+
+2018-08-16 15:40:04 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:40:05 - [MESSAGE][PASSED] - Element 'Object Repository/ShopActions_List' is exist
+
+2018-08-16 15:40:05 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/ShopOpen'
+
+2018-08-16 15:40:05 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:40:07 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ShopOpen'
+
+2018-08-16 15:40:07 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-08-16 15:40:07 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:40:07 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-08-16 15:40:07 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-08-16 15:40:07 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:40:11 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-08-16 15:40:11 - [TEST_STEP][PASSED] - delay: Delayed 5 second(s)
+
+2018-08-16 15:40:16 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-08-16 15:40:16 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-08-16 15:40:16 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:40:16 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-08-16 15:40:16 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/VisitShopOpen' successfully
+
+2018-08-16 15:40:16 - [TEST_CASE][ERROR] - Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification: Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification FAILED because (of) groovy.lang.GroovyRuntimeException: Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)
+
+2018-08-16 15:40:17 - [TEST_STEP][PASSED] - verifyElementExist: Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:40:17 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:40:18 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-08-16 15:40:18 - [TEST_STEP][ERROR] - com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification: Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)
+
+2018-08-16 15:40:23 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:40:26 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:40:29 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:40:33 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:40:35 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:40:39 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:40:41 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:40:44 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-08-16 15:40:47 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,750
+
+2018-08-16 15:40:47 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,750
+
+2018-08-16 15:40:50 - [TEST_CASE][ERROR] - Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated: Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated FAILED because (of) groovy.lang.GroovyRuntimeException: Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)
+
+2018-08-16 15:40:50 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerScreen' are matched.
+
+2018-08-16 15:40:51 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerScreen' are matched.
+
+2018-08-16 15:40:51 - [TEST_STEP][PASSED] - tap: Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocated'
+
+2018-08-16 15:40:51 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-08-16 15:40:52 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/Chiller/ChillerNotAllocated'
+
+2018-08-16 15:40:52 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-08-16 15:40:55 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' are matched.
+
+2018-08-16 15:40:55 - [TEST_STEP][ERROR] - com.ct.qa.keywords.ChannelProductsDataKeywords.visitChillerNotAllocatedProductCategories: Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)
+
+2018-08-16 15:40:57 - [MESSAGE][ERROR] - Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)
+
+2018-08-16 15:40:57 - [MESSAGE][FAILED] - Unable to call Test Case with id 'Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated' (Root cause: Call Test Case 'Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated' failed because of error(s))
+
+2018-08-16 15:40:57 - [MESSAGE][ERROR] - Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)
+
+2018-08-16 15:40:57 - [MESSAGE][FAILED] - Unable to call Test Case with id 'Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification' (Root cause: Call Test Case 'Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification' failed because of error(s))
+
+2018-08-16 15:40:57 - [MESSAGE][ERROR] - Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)]]></system-out>
+         <system-err><![CDATA[2018-08-16 15:31:59 - [TEST_CASE][ERROR] - Test Cases/VisitShopScenarios/VisitShopsWithDataVerification: Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED because (of) groovy.lang.GroovyRuntimeException: Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-08-16 15:31:36 - [TEST_SUITE][ERROR] - MMA Plus Merchandising With Channel Wise Data Verification: Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED because (of) groovy.lang.GroovyRuntimeException: Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)]]></system-out>
+      <system-err><![CDATA[2018-08-16 15:31:36 - [TEST_SUITE][ERROR] - MMA Plus Merchandising With Channel Wise Data Verification: Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED because (of) groovy.lang.GroovyRuntimeException: Could not find matching constructor for: com.ct.qa.struct.CategoryDataInfo(com.ct.qa.struct.CategoryDataInfo)]]></system-err>
+   </testsuite>
+</testsuites>

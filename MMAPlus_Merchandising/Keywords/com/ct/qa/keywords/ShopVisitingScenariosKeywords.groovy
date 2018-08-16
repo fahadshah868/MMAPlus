@@ -28,7 +28,8 @@ import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 import com.ct.qa.constants.ProjectConstants
 import com.ct.qa.struct.ProductsData
-import com.ct.qa.struct.CategoryDataInfo
+import com.ct.qa.struct.VisitedShopDataInfo
+import com.ct.qa.struct.MissingCategoryData
 import com.ct.qa.struct.MissingShopDataInfo
 
 public class ShopVisitingScenariosKeywords{
@@ -86,12 +87,15 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopWithDataVerification(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=1; i++){
+		for(int i=1; i<=2; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
+			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			ProjectConstants.CURRENTVISITING_SHOPNAME = shop.getText()
 			missingshopdatainfo.setShopname(shop.getText())
+			visitedshopdatainfo.setShopname(shop.getText())
 			ProjectConstants.missingshopdatainfo.add(missingshopdatainfo)
+			ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen"), "Options")
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking"), 0)
@@ -107,6 +111,13 @@ public class ShopVisitingScenariosKeywords{
 				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 					ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 					ProjectConstants.missingshopdatainfo.get(j).setScenario("Data Verification")
+					break
+				}
+			}
+			for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+				if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+					ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+					ProjectConstants.visitedshopdatainfo.get(j).setScenario("Data Verification")
 					break
 				}
 			}
@@ -147,7 +158,8 @@ public class ShopVisitingScenariosKeywords{
 		if(ProjectConstants.missingshopdatainfo != null){
 			for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
 				MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
-				String message = "\n\n<------------------------------------------------------------------------------------------------------>\n\n"+
+				String message = "---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"+
+						"<------------------------------------------------------------------------------------------------------>\n\n"+
 						"Shop Name:	"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
 						"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()
 				if(missingshopdatainfo.getMissingshopcategories() != null){
@@ -157,34 +169,33 @@ public class ShopVisitingScenariosKeywords{
 					}
 					message = message+"\n"+missingshopdatainfo.getMissingshopcategories_errormessage()
 				}
-				if(missingshopdatainfo.getCategorydatainfo() != null){
+				if(missingshopdatainfo.getMissingCategoriesData() != null){
 					message = message+"\n\nProduct Categories:\n\n"
-					for(int j=0; j<missingshopdatainfo.getCategorydatainfo().size(); j++){
-						CategoryDataInfo categorydatainfo = missingshopdatainfo.getCategorydatainfo().get(j)
-						if(categorydatainfo.getProductcategories() != null){
+					for(int j=0; j<missingshopdatainfo.getMissingCategoriesData().size(); j++){
+						MissingCategoryData missingcategorydata = missingshopdatainfo.getMissingCategoriesData().get(j)
+						if(missingcategorydata.getProductcategories() != null){
 							message = message+"Main Category:	"
-							message = message+categorydatainfo.getMaincategory()+"\nProduct Categories:	"
-							for(int k=0; k<categorydatainfo.getProductcategories().size(); k++){
-								message = message+categorydatainfo.getProductcategories().get(k)+",	"
+							message = message+missingcategorydata.getMaincategory()+"\nProduct Categories:	"
+							for(int k=0; k<missingcategorydata.getProductcategories().size(); k++){
+								message = message+missingcategorydata.getProductcategories().get(k)+",	"
 							}
-							message = message+"\n"+categorydatainfo.getProductcategories_errormessage()
+							message = message+"\n"+missingcategorydata.getProductcategories_errormessage()+"\n\n"
 						}
 					}
 				}
-				if(missingshopdatainfo.getCategorydatainfo() != null){
+				if(missingshopdatainfo.getMissingCategoriesData() != null){
 					message = message+"\n\nProducts:\n\n"
-					int a = missingshopdatainfo.getCategorydatainfo().size()
-					for(int j=0; j<missingshopdatainfo.getCategorydatainfo().size(); j++){
-						CategoryDataInfo categorydatainfo = missingshopdatainfo.getCategorydatainfo().get(j)
-						if(categorydatainfo.getProducts() != null){
+					for(int j=0; j<missingshopdatainfo.getMissingCategoriesData().size(); j++){
+						MissingCategoryData missingcategorydata = missingshopdatainfo.getMissingCategoriesData().get(j)
+						if(missingcategorydata.getProducts() != null){
 							message = message+"Main Category:	"
-							message = message+categorydatainfo.getMaincategory()+"\nProduct Category:	"+
-									categorydatainfo.getProductCategory()+
+							message = message+missingcategorydata.getMaincategory()+"\nProduct Category:	"+
+									missingcategorydata.getProductCategory()+
 									"\nProducts:	"
-							for(int k=0; k<categorydatainfo.getProducts().size(); k++){
-								message = message+categorydatainfo.getProducts().get(k)+",	"
+							for(int k=0; k<missingcategorydata.getProducts().size(); k++){
+								message = message+missingcategorydata.getProducts().get(k)+",	"
 							}
-							message = message+"\n"+categorydatainfo.getProducts_errormessage()
+							message = message+"\n"+missingcategorydata.getProducts_errormessage()+"\n\n"
 						}
 					}
 				}

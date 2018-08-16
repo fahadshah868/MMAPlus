@@ -25,37 +25,19 @@ import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
-public class VisitedShopDataInfo {
-	public String shopname
-	public String shopchannel
-	public String scenario
-	public ArrayList<VisitedCategoryData> visitedcategoriesdata
-	
-	public VisitedShopDataInfo(){
-		this.visitedcategoriesdata = new ArrayList<VisitedCategoryData>()
-	}
-	public String getShopname() {
-		return shopname;
+public class VisitedCategoryData {
+	public String maincategory
+	public ArrayList<VisitedProductCategoryData> visitedproductcategorydata
+	public String getMaincategory() {
+		return maincategory;
 	}
-	public void setShopname(String shopname) {
-		this.shopname = shopname;
+	public void setMaincategory(String maincategory) {
+		this.maincategory = maincategory;
 	}
-	public String getShopchannel() {
-		return shopchannel;
+	public ArrayList<VisitedProductCategoryData> getVisitedproductcategorydata() {
+		return visitedproductcategorydata;
 	}
-	public void setShopchannel(String shopchannel) {
-		this.shopchannel = shopchannel;
-	}
-	public String getScenario() {
-		return scenario;
-	}
-	public void setScenario(String scenario) {
-		this.scenario = scenario;
-	}
-	public ArrayList<VisitedCategoryData> getVisitedcategoriesdata() {
-		return visitedcategoriesdata;
-	}
-	public void setVisitedcategoriesdata(ArrayList<VisitedCategoryData> visitedcategoriesdata) {
-		this.visitedcategoriesdata = visitedcategoriesdata;
+	public void setVisitedproductcategorydata(ArrayList<VisitedProductCategoryData> visitedproductcategorydata) {
+		this.visitedproductcategorydata = visitedproductcategorydata;
 	}
 }

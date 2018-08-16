@@ -8,6 +8,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.ct.qa.keywords.LoadDataKeywords
 import com.ct.qa.struct.MissingShopDataInfo
 import com.ct.qa.struct.UnmatchedProducts
+import com.ct.qa.struct.VisitedShopDataInfo
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory
@@ -112,7 +113,8 @@ public class ProjectConstants {
 
 	//list for containing shop info
 	public static ArrayList<MissingShopDataInfo> missingshopdatainfo = new ArrayList<MissingShopDataInfo>()
-
+	public static ArrayList<VisitedShopDataInfo> visitedshopdatainfo = new ArrayList<MissingShopDataInfo>()
+	
 	//initialization of sheet columns index
 	static{
 		XSSFSheet channelproductssheet = LoadDataKeywords.loadChannelProductsSheet()

@@ -31,10 +31,10 @@ public class MissingShopDataInfo {
 	public String scenario
 	public ArrayList<String> missingshopcategories
 	public String missingshopcategories_errormessage
-	public ArrayList<CategoryDataInfo> categorydatainfo
+	public ArrayList<MissingCategoryData> missingcategoriesdata
 
 	public MissingShopDataInfo(){
-		this.categorydatainfo = new ArrayList<CategoryDataInfo>()
+		this.missingcategoriesdata = new ArrayList<MissingCategoryData>()
 	}
 	public String getShopname() {
 		return shopname;
@@ -66,12 +66,12 @@ public class MissingShopDataInfo {
 	public void setMissingshopcategories_errormessage(String missingshopcategories_errormessage) {
 		this.missingshopcategories_errormessage = missingshopcategories_errormessage;
 	}
-	public ArrayList<CategoryDataInfo> getCategorydatainfo() {
-		return categorydatainfo;
+	public ArrayList<MissingCategoryData> getMissingCategoriesData() {
+		return missingcategoriesdata;
 	}
-	public void setCategorydatainfo(CategoryDataInfo categorydatainfo, String assettype) {
-		if(assettype.equalsIgnoreCase("Facing")) {
-			this.categorydatainfo.add(categorydatainfo)
+	public void setMissingCategoriesData(MissingCategoryData missingcategorydata, String assettype) {
+		if(assettype.equalsIgnoreCase("Facing") || assettype.equals("")) {
+			this.missingcategoriesdata.add(missingcategorydata)
 		}
 	}
 }
