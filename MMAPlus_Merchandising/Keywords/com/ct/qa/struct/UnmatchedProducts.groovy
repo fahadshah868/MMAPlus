@@ -28,7 +28,7 @@ import WebUiBuiltInKeywords as WebUI
 public class UnmatchedProducts {
 	public int status
 	public ArrayList<String> products
-	
+
 	public int getStatus() {
 		return status;
 	}

@@ -57,13 +57,11 @@ def static "com.ct.qa.keywords.ChannelProductsDataKeywords.visitNestradeProducts
 }
 
 def static "com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData"(
-    	int columnindex	) {
+    	int columnindex	
+     , 	String assettype	) {
     (new com.ct.qa.keywords.ChannelProductsDataKeywords()).visitChannelWiseProductsData(
-        	columnindex)
-}
-
-def static "com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages"() {
-    (new com.ct.qa.keywords.AdditionalPictureKeywords()).takeMendatoryImages()
+        	columnindex
+         , 	assettype)
 }
 
 def static "com.ct.qa.keywords.RetailerRemarksKeywords.visitRetailerRemarks"() {
@@ -72,6 +70,10 @@ def static "com.ct.qa.keywords.RetailerRemarksKeywords.visitRetailerRemarks"() {
 
 def static "com.ct.qa.keywords.RetailerRemarksKeywords.overwriteRetailerRemarks"() {
     (new com.ct.qa.keywords.RetailerRemarksKeywords()).overwriteRetailerRemarks()
+}
+
+def static "com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages"() {
+    (new com.ct.qa.keywords.AdditionalPictureKeywords()).takeMendatoryImages()
 }
 
 def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories"(

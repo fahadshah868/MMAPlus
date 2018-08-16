@@ -6,7 +6,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.ct.qa.keywords.LoadDataKeywords
-import com.ct.qa.struct.ShopInfo
+import com.ct.qa.struct.MissingShopDataInfo
 import com.ct.qa.struct.UnmatchedProducts
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -40,7 +40,7 @@ import WebUiBuiltInKeywords as WebUI
 public class ProjectConstants {
 
 	//variables for excel file and sheets
-	public static final String EXCEL_FILEPATH = "F:\\MMA_Merchandising.xlsx"
+	public static final String EXCEL_FILEPATH = "F:\\MMA_Merchandising1.xlsx"
 	public static final String CHANNEL_PRODUCTSSHEET = "Channel Products"
 	public static final String CHILLER_PRODUCTSSHEET = "Chiller Products"
 	public static final String DISTRIBUTION_SHEET = "Distribution Point"
@@ -111,7 +111,7 @@ public class ProjectConstants {
 	public static int VISITED_CHILLERREMARKS = 1
 
 	//list for containing shop info
-	public static ArrayList<ShopInfo> shopinfo = new ArrayList<ShopInfo>()
+	public static ArrayList<MissingShopDataInfo> missingshopdatainfo = new ArrayList<MissingShopDataInfo>()
 
 	//initialization of sheet columns index
 	static{

@@ -30,7 +30,8 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Facing'), 0)
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_FacingScreen'), 'Facing')
 
 'visit products with facing'
-CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_CHILLER_FACING)
+CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_CHILLER_FACING, 
+    'Facing')
 
 'tap on submit button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
@@ -45,7 +46,8 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/StockTaking'), 0)
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_StockTakingScreen'), 'Stock Taking')
 
 'visit products with stock taking'
-CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_CHILLER_STOCKTAKING)
+CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_CHILLER_STOCKTAKING, 
+    'Stock Taking')
 
 'tap on submit button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
