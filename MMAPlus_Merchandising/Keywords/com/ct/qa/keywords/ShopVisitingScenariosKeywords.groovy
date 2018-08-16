@@ -28,6 +28,7 @@ import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 import com.ct.qa.constants.ProjectConstants
 import com.ct.qa.struct.ProductsData
+import com.ct.qa.struct.VisitedCategoryData
 import com.ct.qa.struct.VisitedShopDataInfo
 import com.ct.qa.struct.MissingCategoryData
 import com.ct.qa.struct.MissingShopDataInfo
@@ -155,11 +156,11 @@ public class ShopVisitingScenariosKeywords{
 		//			}
 		//		}
 
+		String message = "---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"
 		if(ProjectConstants.missingshopdatainfo != null){
 			for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
 				MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
-				String message = "---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"+
-						"<------------------------------------------------------------------------------------------------------>\n\n"+
+				message = message+"<------------------------------------------------------------------------------------------------------>\n\n"+
 						"Shop Name:	"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
 						"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()
 				if(missingshopdatainfo.getMissingshopcategories() != null){
@@ -201,6 +202,32 @@ public class ShopVisitingScenariosKeywords{
 				}
 				message = message+"\n\n<------------------------------------------------------------------------------------------------------>\n\n"
 				KeywordUtil.logInfo(message)
+			}
+		}
+		else{
+		}
+		message = "\n\n\n---------------------------------------------Visited Shop Data-----------------------------------------------------------------------------------------------------\n\n"
+		if(ProjectConstants.visitedshopdatainfo != null){
+			for(int i=0; i<ProjectConstants.visitedshopdatainfo.size(); i++){
+				VisitedShopDataInfo visitedshopdatainfo = ProjectConstants.visitedshopdatainfo.get(i)
+				message = message+"<------------------------------------------------------------------------------------------------------>\n\n"+
+				"Shop Name:	"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+				"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()
+				if(visitedshopdatainfo.getVisitedcategoriesdata() != null){
+					message = message+"\n\nMain Category:	"
+					for(int j=0; j< visitedshopdatainfo.getVisitedcategoriesdata().size(); j++){
+						VisitedCategoryData visitedcategorydata = visitedshopdatainfo.getVisitedcategoriesdata().get(j)
+						message = message + visitedcategorydata.getMaincategory()+
+						"\nProduct Category:	"+visitedcategorydata.getProductcategory()
+						for(int k=0; k<visitedcategorydata.getProductsdata().size() ; k++){
+							ProductsData productsdata = visitedcategorydata.getProductsdata().get(k)
+							message = message + "\n" + 
+							productsdata.getProduct() +
+							"		" + productsdata.getProduct_data()
+						}
+					}
+				}
+				message = message + "\n\n<------------------------------------------------------------------------------------------------------>\n\n"				
 			}
 		}
 		else{

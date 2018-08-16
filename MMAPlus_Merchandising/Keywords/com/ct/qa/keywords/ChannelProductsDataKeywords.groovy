@@ -35,6 +35,7 @@ import com.ct.qa.constants.ProjectConstants
 import com.ct.qa.struct.MissingCategoryData
 import com.ct.qa.struct.ProductsData
 import com.ct.qa.struct.UnmatchedProducts
+import com.ct.qa.struct.VisitedCategoryData
 
 import io.appium.java_client.MobileElement
 
@@ -230,6 +231,7 @@ public class ChannelProductsDataKeywords {
 	//enter quantity to related field
 	@Keyword
 	def visitChannelWiseProductsData(int columnindex, String assettype){
+		ProductsData productsdata = new ProductsData()
 		int index = 0
 		XSSFSheet channelproductssheet = LoadDataKeywords.loadChannelProductsSheet()
 		ArrayList<String> displayproductslist = new ArrayList<String>()
@@ -241,6 +243,7 @@ public class ChannelProductsDataKeywords {
 			index = index + 1
 			MobileElement selectedproduct = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String selectedproductname = selectedproduct.getText()
+			productsdata.setProduct(selectedproductname)
 			displayproductslist.add(selectedproductname)
 			for(int j=0; j<expectedproductslist.size(); j++){
 				ProductsData channelproduct = expectedproductslist.get(j)
@@ -250,6 +253,7 @@ public class ChannelProductsDataKeywords {
 					String productquantity = channelproduct.getProduct_data()
 					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 					selectedproducttextfield.setValue(productquantity)
+					productsdata.setProduct_data(productquantity)
 					Mobile.hideKeyboard()
 					break
 				}
@@ -259,6 +263,7 @@ public class ChannelProductsDataKeywords {
 			if(flag == false){
 				MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 				selectedproducttextfield.setValue("0000")
+				productsdata.setProduct_data("0000")
 				Mobile.hideKeyboard()
 			}
 		}
@@ -280,11 +285,13 @@ public class ChannelProductsDataKeywords {
 					for(int j=0; j<expectedproductslist.size(); j++){
 						ProductsData channelproduct = expectedproductslist.get(j)
 						String productname = channelproduct.getProduct()
+						productsdata.setProduct(productname)
 						if(lastproductnameafterswipe.equalsIgnoreCase(productname)){
 							flag = true
 							String productquantity = channelproduct.getProduct_data()
 							MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
 							selectedproducttextfield.setValue(productquantity)
+							productsdata.setProduct_data(productquantity)
 							Mobile.hideKeyboard()
 							break
 						}
@@ -294,6 +301,7 @@ public class ChannelProductsDataKeywords {
 					if(flag == false){
 						MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
 						selectedproducttextfield.setValue(0000)
+						productsdata.setProduct_data("0000")
 						Mobile.hideKeyboard()
 					}
 				}
@@ -393,6 +401,16 @@ public class ChannelProductsDataKeywords {
 			}
 		}
 		else{
+			VisitedCategoryData visitedcategorydata = new VisitedCategoryData()
+			visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
+			visitedcategorydata.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
+			visitedcategorydata.setProductsdata(productsdata)
+			for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
+				if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
+					ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+					break
+				}
+			}
 			String message = "Main Category: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_EQUAL
 			KeywordUtil.logInfo(message)
 		}

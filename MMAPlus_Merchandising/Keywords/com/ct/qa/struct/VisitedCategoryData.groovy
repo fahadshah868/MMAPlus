@@ -27,17 +27,24 @@ import WebUiBuiltInKeywords as WebUI
 
 public class VisitedCategoryData {
 	public String maincategory
-	public ArrayList<VisitedProductCategoryData> visitedproductcategorydata
+	public String productcategory
+	public ArrayList<ProductsData> productsdata
 	public String getMaincategory() {
 		return maincategory;
 	}
 	public void setMaincategory(String maincategory) {
 		this.maincategory = maincategory;
 	}
-	public ArrayList<VisitedProductCategoryData> getVisitedproductcategorydata() {
-		return visitedproductcategorydata;
+	public String getProductcategory() {
+		return productcategory;
 	}
-	public void setVisitedproductcategorydata(ArrayList<VisitedProductCategoryData> visitedproductcategorydata) {
-		this.visitedproductcategorydata = visitedproductcategorydata;
+	public void setProductcategory(String productcategory) {
+		this.productcategory = productcategory;
+	}
+	public ArrayList<ProductsData> getProductsdata() {
+		return productsdata;
+	}
+	public void setProductsdata(ArrayList<ProductsData> productsdata) {
+		this.productsdata = productsdata;
 	}
 }
