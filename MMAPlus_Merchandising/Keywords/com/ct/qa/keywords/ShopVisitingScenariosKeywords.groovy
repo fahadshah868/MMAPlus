@@ -219,8 +219,8 @@ public class ShopVisitingScenariosKeywords{
 						if(visitedcategorydata.getMaincategory().equalsIgnoreCase("Chiller Utilization")){
 							if(visitedcategorydata.getChillertype().equalsIgnoreCase("Chiller Available") || visitedcategorydata.getChillertype().equalsIgnoreCase("Chiller need maintenance") || visitedcategorydata.getChillertype().equalsIgnoreCase("Chiller Type not Available")){
 								message = message+"\n\nMain Category:	"+visitedcategorydata.getMaincategory()+
-								"\nChiller Type:	"+visitedcategorydata.getChillertype()+
-								"\nProduct Category:	"+visitedcategorydata.getProductcategory()
+										"\nChiller Type:	"+visitedcategorydata.getChillertype()+
+										"\nProduct Category:	"+visitedcategorydata.getProductcategory()
 								message = message + "\n" + String.format("%-45s%-14s%-20s%-13s%-24s%-30s%-15s", "Products:","Facing","Stock Taking","Depth","Overwrite Facing","Overwrite Stock Taking","Overwrite depth")+"\n"
 								for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
 									ShopProductsData shopproductsdata = visitedcategorydata.getShopProductsdata().get(k)
@@ -229,8 +229,8 @@ public class ShopVisitingScenariosKeywords{
 							}
 							else if(visitedcategorydata.getChillertype().equalsIgnoreCase("Chiller not Available") || visitedcategorydata.getChillertype().equalsIgnoreCase("Chiller not in access") || visitedcategorydata.getChillertype().equalsIgnoreCase("Chiller removed for maintenance")){
 								message = message+"\n\nMain Category:	"+
-								visitedcategorydata.getMaincategory()+
-								"\nProduct Category:	"+visitedcategorydata.getProductcategory()
+										visitedcategorydata.getMaincategory()+
+										"\nProduct Category:	"+visitedcategorydata.getProductcategory()
 								message = message + "\n" + String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
 								for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
 									ShopProductsData shopproductsdata = visitedcategorydata.getShopProductsdata().get(k)
@@ -242,8 +242,8 @@ public class ShopVisitingScenariosKeywords{
 						}
 						else{
 							message = message+"\n\nMain Category:	"+
-							visitedcategorydata.getMaincategory()+
-							"\nProduct Category:	"+visitedcategorydata.getProductcategory()
+									visitedcategorydata.getMaincategory()+
+									"\nProduct Category:	"+visitedcategorydata.getProductcategory()
 							message = message + "\n" + String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
 							for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
 								ShopProductsData shopproductsdata = visitedcategorydata.getShopProductsdata().get(k)

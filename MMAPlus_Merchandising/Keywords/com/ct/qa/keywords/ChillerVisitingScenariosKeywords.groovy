@@ -6,6 +6,9 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.ct.qa.constants.ProjectConstants
+import com.ct.qa.struct.TaggedChillersRemark
+import com.ct.qa.struct.VisitedCategoryData
+import com.ct.qa.struct.VisitedShopDataInfo
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory
@@ -29,26 +32,34 @@ import WebUiBuiltInKeywords as WebUI
 public class ChillerVisitingScenariosKeywords {
 	@Keyword
 	def visitChillersTaggedInChillerUtilizationWithDataVerification(){
+		VisitedCategoryData visitedcategorydata = new VisitedCategoryData()
+		ArrayList<TaggedChillersRemark> taggedchillersremark = new ArrayList<TaggedChillersRemark>()
 		int index = 0
 		int totalchillers = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 		if(totalchillers == 7){
 			for(int i=1; i<=totalchillers; i++){
+				TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
 				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 				ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
+				taggedchillerremark.setChillertype(chiller.getText())
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
 				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton"), 0)
 				Mobile.delay(5)
 				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton"),0)
 				findChillerRemark("Chiller Available")
+				taggedchillerremark.setChillerremark("Chiller Available")
+				taggedchillersremark.add(taggedchillerremark)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
 			}
 		}
 		else{
 			ProjectConstants.VISITED_CHILLERREMARKS = ProjectConstants.VISITED_CHILLERREMARKS + 1
 			for(int i=1; i<=totalchillers; i++){
+				TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
 				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 				ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
+				taggedchillerremark.setChillertype(chiller.getText())
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
 				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton"), 0)
@@ -56,36 +67,51 @@ public class ChillerVisitingScenariosKeywords {
 				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton"),0)
 				if(ProjectConstants.VISITED_CHILLERREMARKS == 2){
 					findChillerRemark("Chiller not Available")
+					taggedchillerremark.setChillerremark("Chiller not Available")
+					taggedchillersremark.add(taggedchillerremark)
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
 				}
 				else if(ProjectConstants.VISITED_CHILLERREMARKS == 3){
 					findChillerRemark("Chiller removed for maintenance")
+					taggedchillerremark.setChillerremark("Chiller removed for maintenance")
+					taggedchillersremark.add(taggedchillerremark)
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerRemovedForMaintenance/VisitChillerRemovedForMaintenance"), null)
 				}
 				else if(ProjectConstants.VISITED_CHILLERREMARKS == 4){
 					findChillerRemark("Chiller need maintenance")
+					taggedchillerremark.setChillerremark("Chiller need maintenance")
+					taggedchillersremark.add(taggedchillerremark)
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNeedMaintenance/VisitChillerNeedMaintenance"), null)
 				}
 				else if(ProjectConstants.VISITED_CHILLERREMARKS == 5){
 					findChillerRemark("Chiller not in access")
+					taggedchillerremark.setChillerremark("Chiller not in access")
+					taggedchillersremark.add(taggedchillerremark)
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotInAccess/VisitChillerNotInAccess"), null)
 				}
 				else if(ProjectConstants.VISITED_CHILLERREMARKS == 6){
 					findChillerRemark("Shopkeeper did not allow")
+					taggedchillerremark.setChillerremark("Shopkeeper did not allow")
+					taggedchillersremark.add(taggedchillerremark)
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
 				}
 				else if(ProjectConstants.VISITED_CHILLERREMARKS == 7){
 					findChillerRemark("Chiller Type not Available")
+					taggedchillerremark.setChillerremark("Chiller Type not Available")
+					taggedchillersremark.add(taggedchillerremark)
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/VisitChillerTypeNotAvailable"), null)
 				}
 				else{
 					findChillerRemark("Shopkeeper did not allow")
+					taggedchillerremark.setChillerremark("Shopkeeper did not allow")
+					taggedchillersremark.add(taggedchillerremark)
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
 				}
 			}
 		}
 		if(totalchillers == 7){
 			while(true){
+				TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
 				index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 				MobileElement lastchillerbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
 				String lastchillernamebeforeswipe = lastchillerbeforeswipe.getText()
@@ -97,6 +123,7 @@ public class ChillerVisitingScenariosKeywords {
 					break
 				}
 				else{
+					taggedchillerremark.setChillertype(lastchillernameafterswipe)
 					ProjectConstants.CURRENTVISITING_CHILLERTYPE = lastchillernameafterswipe
 					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
 					Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
@@ -104,8 +131,19 @@ public class ChillerVisitingScenariosKeywords {
 					Mobile.delay(5)
 					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton"),0)
 					findChillerRemark("Chiller Available")
+					taggedchillerremark.setChillerremark("Chiller Available")
+					taggedchillersremark.add(taggedchillerremark)
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
 				}
+			}
+		}
+		
+		visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
+		visitedcategorydata.setTaggedchillersremark(taggedchillersremark)
+		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
+			if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
+				ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+				break
 			}
 		}
 	}

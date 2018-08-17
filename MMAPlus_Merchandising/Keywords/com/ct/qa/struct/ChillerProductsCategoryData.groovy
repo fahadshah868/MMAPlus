@@ -25,34 +25,19 @@ import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
-public class VisitedCategoryData {
-	public String maincategory
-	public ArrayList<TaggedChillersRemark> taggedchillersremark
-	public String productcategory
-	public ArrayList<ShopProductsData> shopproductsdata
-
-	public String getMaincategory() {
-		return maincategory;
+public class ChillerProductsCategoryData {
+	public String ProductCategory
+	public ArrayList<ShopProductsData> shopproductsdata
+	public String getProductCategory() {
+		return ProductCategory;
 	}
-	public void setMaincategory(String maincategory) {
-		this.maincategory = maincategory;
+	public void setProductCategory(String productCategory) {
+		ProductCategory = productCategory;
 	}
-	public ArrayList<TaggedChillersRemark> getTaggedchillersremark() {
-		return taggedchillersremark;
-	}
-	public void setTaggedchillersremark(ArrayList<TaggedChillersRemark> taggedchillersremark) {
-		this.taggedchillersremark = taggedchillersremark;
-	}
-	public String getProductcategory() {
-		return productcategory;
-	}
-	public void setProductcategory(String productcategory) {
-		this.productcategory = productcategory;
-	}
-	public ArrayList<ShopProductsData> getShopProductsdata() {
+	public ArrayList<ShopProductsData> getShopproductsdata() {
 		return shopproductsdata;
 	}
-	public void setShopProductsdata(ArrayList<ShopProductsData> shopproductsdata) {
+	public void setShopproductsdata(ArrayList<ShopProductsData> shopproductsdata) {
 		this.shopproductsdata = shopproductsdata;
 	}
 }

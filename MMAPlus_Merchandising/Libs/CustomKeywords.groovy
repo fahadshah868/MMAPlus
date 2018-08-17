@@ -6,38 +6,6 @@
 import java.lang.String
 
 
-def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWithDataVerification()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_CNAl_CAv_DSA"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_CNAl_CAv_DSA()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_SKDNA_CNAv_NSFD"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_SKDNA_CNAv_NSFD()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_SKDNA_SKDNA_SKDNA"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_SKDNA_SKDNA_SKDNA()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_CNAl_CTNAv_NSFD"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_CNAl_CTNAv_NSFD()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_SKDNA_CAv_DSA"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_SKDNA_CAv_DSA()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.overwriteShopCategoriesWith_CNAl_CAv_DSA"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).overwriteShopCategoriesWith_CNAl_CAv_DSA()
-}
-
 def static "com.ct.qa.keywords.ChannelProductsDataKeywords.visitChillerNotAllocatedProductCategories"(
     	int flag	) {
     (new com.ct.qa.keywords.ChannelProductsDataKeywords()).visitChillerNotAllocatedProductCategories(
@@ -64,48 +32,8 @@ def static "com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProdu
          , 	assettype)
 }
 
-def static "com.ct.qa.keywords.RetailerRemarksKeywords.visitRetailerRemarks"() {
-    (new com.ct.qa.keywords.RetailerRemarksKeywords()).visitRetailerRemarks()
-}
-
-def static "com.ct.qa.keywords.RetailerRemarksKeywords.overwriteRetailerRemarks"() {
-    (new com.ct.qa.keywords.RetailerRemarksKeywords()).overwriteRetailerRemarks()
-}
-
 def static "com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages"() {
     (new com.ct.qa.keywords.AdditionalPictureKeywords()).takeMendatoryImages()
-}
-
-def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories"(
-    	int flag	) {
-    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).visitChillerAvailableProductCategories(
-        	flag)
-}
-
-def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerNotAvailableProductCategories"(
-    	int flag	) {
-    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).visitChillerNotAvailableProductCategories(
-        	flag)
-}
-
-def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData"(
-    	int columnindex	) {
-    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).visitChillerAvailableProductsData(
-        	columnindex)
-}
-
-def static "com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData"(
-    	int columnindex	) {
-    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).VisitChillerNotAvailableProductsData(
-        	columnindex)
-}
-
-def static "com.ct.qa.keywords.CompetitionTrackingKeywords.visitCompetitiontrackingProducts"() {
-    (new com.ct.qa.keywords.CompetitionTrackingKeywords()).visitCompetitiontrackingProducts()
-}
-
-def static "com.ct.qa.keywords.CompetitionTrackingKeywords.overwriteCompetitiontrackingProducts"() {
-    (new com.ct.qa.keywords.CompetitionTrackingKeywords()).overwriteCompetitiontrackingProducts()
 }
 
 def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWithDataVerification"() {
@@ -122,46 +50,6 @@ def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithCateg
 
 def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithCategoryLevel_ChillerUtilization_Overwriting"() {
     (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopsWithCategoryLevel_ChillerUtilization_Overwriting()
-}
-
-def static "com.ct.qa.keywords.RTMVisitFrequencyKeywords.visitRTMVisitFrequency"() {
-    (new com.ct.qa.keywords.RTMVisitFrequencyKeywords()).visitRTMVisitFrequency()
-}
-
-def static "com.ct.qa.keywords.RTMVisitFrequencyKeywords.overwriteRTMVisitFrequency"() {
-    (new com.ct.qa.keywords.RTMVisitFrequencyKeywords()).overwriteRTMVisitFrequency()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWithDataVerification"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWithDataVerification()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_CNAl_CAv_DSA"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWith_CNAl_CAv_DSA()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_SKDNA_CNAv_NSFD"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWith_SKDNA_CNAv_NSFD()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_SKDNA_SKDNA_SKDNA"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWith_SKDNA_SKDNA_SKDNA()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_CNAl_CTNAv_NSFD"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWith_CNAl_CTNAv_NSFD()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_SKDNA_CAv_DSA"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWith_SKDNA_CAv_DSA()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA()
-}
-
-def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.overwriteShopCategoriesWith_CNAl_CAv_DSA"() {
-    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).overwriteShopCategoriesWith_CNAl_CAv_DSA()
 }
 
 def static "com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPoint"() {
@@ -212,4 +100,118 @@ def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.selectChillerTyp
 
 def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.selectDifferentChillerType"() {
     (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).selectDifferentChillerType()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWithDataVerification()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_CNAl_CAv_DSA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_CNAl_CAv_DSA()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_SKDNA_CNAv_NSFD"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_SKDNA_CNAv_NSFD()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_SKDNA_SKDNA_SKDNA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_SKDNA_SKDNA_SKDNA()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_CNAl_CTNAv_NSFD"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_CNAl_CTNAv_NSFD()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_SKDNA_CAv_DSA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_SKDNA_CAv_DSA()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.overwriteShopCategoriesWith_CNAl_CAv_DSA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).overwriteShopCategoriesWith_CNAl_CAv_DSA()
+}
+
+def static "com.ct.qa.keywords.RetailerRemarksKeywords.visitRetailerRemarks"() {
+    (new com.ct.qa.keywords.RetailerRemarksKeywords()).visitRetailerRemarks()
+}
+
+def static "com.ct.qa.keywords.RetailerRemarksKeywords.overwriteRetailerRemarks"() {
+    (new com.ct.qa.keywords.RetailerRemarksKeywords()).overwriteRetailerRemarks()
+}
+
+def static "com.ct.qa.keywords.CompetitionTrackingKeywords.visitCompetitiontrackingProducts"() {
+    (new com.ct.qa.keywords.CompetitionTrackingKeywords()).visitCompetitiontrackingProducts()
+}
+
+def static "com.ct.qa.keywords.CompetitionTrackingKeywords.overwriteCompetitiontrackingProducts"() {
+    (new com.ct.qa.keywords.CompetitionTrackingKeywords()).overwriteCompetitiontrackingProducts()
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories"(
+    	int flag	) {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).visitChillerAvailableProductCategories(
+        	flag)
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerNotAvailableProductCategories"(
+    	int flag	) {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).visitChillerNotAvailableProductCategories(
+        	flag)
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData"(
+    	int columnindex	
+     , 	String assettype	) {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).visitChillerAvailableProductsData(
+        	columnindex
+         , 	assettype)
+}
+
+def static "com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData"(
+    	int columnindex	) {
+    (new com.ct.qa.keywords.ChillerProductsDataKeywords()).VisitChillerNotAvailableProductsData(
+        	columnindex)
+}
+
+def static "com.ct.qa.keywords.RTMVisitFrequencyKeywords.visitRTMVisitFrequency"() {
+    (new com.ct.qa.keywords.RTMVisitFrequencyKeywords()).visitRTMVisitFrequency()
+}
+
+def static "com.ct.qa.keywords.RTMVisitFrequencyKeywords.overwriteRTMVisitFrequency"() {
+    (new com.ct.qa.keywords.RTMVisitFrequencyKeywords()).overwriteRTMVisitFrequency()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWithDataVerification"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWithDataVerification()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_CNAl_CAv_DSA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWith_CNAl_CAv_DSA()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_SKDNA_CNAv_NSFD"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWith_SKDNA_CNAv_NSFD()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_SKDNA_SKDNA_SKDNA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWith_SKDNA_SKDNA_SKDNA()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_CNAl_CTNAv_NSFD"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWith_CNAl_CTNAv_NSFD()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_SKDNA_CAv_DSA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWith_SKDNA_CAv_DSA()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.overwriteShopCategoriesWith_CNAl_CAv_DSA"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).overwriteShopCategoriesWith_CNAl_CAv_DSA()
 }

@@ -20,39 +20,31 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 
 import internal.GlobalVariable
-
+import net.sourceforge.htmlunit.corejs.javascript.ast.ArrayLiteral
 import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
-public class VisitedCategoryData {
-	public String maincategory
-	public ArrayList<TaggedChillersRemark> taggedchillersremark
-	public String productcategory
-	public ArrayList<ShopProductsData> shopproductsdata
-
-	public String getMaincategory() {
-		return maincategory;
+public class TaggedChillersRemark {
+	public String chillertype
+	public String chillerremark
+	public ArrayList<ChillerProductsCategoryData> chillerproductscategories
+	public String getChillertype() {
+		return chillertype;
 	}
-	public void setMaincategory(String maincategory) {
-		this.maincategory = maincategory;
+	public void setChillertype(String chillertype) {
+		this.chillertype = chillertype;
 	}
-	public ArrayList<TaggedChillersRemark> getTaggedchillersremark() {
-		return taggedchillersremark;
+	public String getChillerremark() {
+		return chillerremark;
 	}
-	public void setTaggedchillersremark(ArrayList<TaggedChillersRemark> taggedchillersremark) {
-		this.taggedchillersremark = taggedchillersremark;
+	public void setChillerremark(String chillerremark) {
+		this.chillerremark = chillerremark;
 	}
-	public String getProductcategory() {
-		return productcategory;
+	public ArrayList<ChillerProductsCategoryData> getChillerproductscategories() {
+		return chillerproductscategories;
 	}
-	public void setProductcategory(String productcategory) {
-		this.productcategory = productcategory;
-	}
-	public ArrayList<ShopProductsData> getShopProductsdata() {
-		return shopproductsdata;
-	}
-	public void setShopProductsdata(ArrayList<ShopProductsData> shopproductsdata) {
-		this.shopproductsdata = shopproductsdata;
+	public void setChillerproductscategories(ArrayList<ChillerProductsCategoryData> chillerproductscategories) {
+		this.chillerproductscategories = chillerproductscategories;
 	}
 }
