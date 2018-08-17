@@ -37,6 +37,7 @@ import com.ct.qa.struct.MissingCategoryData
 import com.ct.qa.struct.ShopProductsData
 import com.ct.qa.struct.UnmatchedProducts
 import com.ct.qa.struct.VisitedCategoryData
+import com.ct.qa.struct.VisitedShopDataInfo
 
 import io.appium.java_client.MobileElement
 
@@ -233,7 +234,6 @@ public class ChannelProductsDataKeywords {
 	@Keyword
 	def visitChannelWiseProductsData(int columnindex, String assettype){
 		ArrayList<ShopProductsData> shopproductsdata = new ArrayList<ShopProductsData>()
-		ShopProductsData productsdata = new ShopProductsData()
 		int index = 0
 		XSSFSheet channelproductssheet = LoadDataKeywords.loadChannelProductsSheet()
 		ArrayList<String> displayproductslist = new ArrayList<String>()
@@ -241,6 +241,7 @@ public class ChannelProductsDataKeywords {
 		int expectedproducts = expectedproductslist.size()
 		int totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*").size()
 		for(int i=1; i<totalproducts; i=i+3){
+			ShopProductsData productsdata = new ShopProductsData()
 			boolean flag = false
 			index = index + 1
 			MobileElement selectedproduct = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
@@ -282,13 +283,13 @@ public class ChannelProductsDataKeywords {
 					productsdata.setFacingdata("0000")
 				}
 				else if(assettype.equalsIgnoreCase("Stock Taking")){
-					productsdata.setFacingdata("0000")
+					productsdata.setStocktakingdata("0000")
 				}
 				else if(assettype.equalsIgnoreCase("Overwrite Facing")){
-					productsdata.setFacingdata("0000")
+					productsdata.setOverwritefacingdata("0000")
 				}
 				else if(assettype.equalsIgnoreCase("Overwrite Stock Taking")){
-					productsdata.setFacingdata("0000")
+					productsdata.setOverwritestocktakingdata("0000")
 				}
 				else{
 				}
@@ -299,6 +300,7 @@ public class ChannelProductsDataKeywords {
 		totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*").size()
 		if(totalproducts >= 16){
 			while(true){
+				ShopProductsData productsdata = new ShopProductsData()
 				int xlocation = ProjectConstants.getXPoint()
 				MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 				String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
@@ -347,21 +349,21 @@ public class ChannelProductsDataKeywords {
 							productsdata.setFacingdata("0000")
 						}
 						else if(assettype.equalsIgnoreCase("Stock Taking")){
-							productsdata.setFacingdata("0000")
+							productsdata.setStocktakingdata("0000")
 						}
 						else if(assettype.equalsIgnoreCase("Overwrite Facing")){
-							productsdata.setFacingdata("0000")
+							productsdata.setOverwritefacingdata("0000")
 						}
 						else if(assettype.equalsIgnoreCase("Overwrite Stock Taking")){
-							productsdata.setFacingdata("0000")
+							productsdata.setOverwritestocktakingdata("0000")
 						}
 						else{
 						}
 						Mobile.hideKeyboard()
 					}
 				}
+				shopproductsdata.add(productsdata)
 			}
-			shopproductsdata.add(productsdata)
 		}
 		if(expectedproductslist.size() == displayproductslist.size()){
 			ArrayList<String> products = new ArrayList<String>()
@@ -467,8 +469,53 @@ public class ChannelProductsDataKeywords {
 		visitedcategorydata.setShopProductsdata(shopproductsdata)
 		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
 			if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
-				ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
-				break
+				for(int j=0; j< ProjectConstants.visitedshopdatainfo.size(); j++){
+					VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(j)
+					ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
+					if(visitedcategoriesdata.size() != 0){
+						boolean flag = false
+						for(int k=0; k<visitedcategoriesdata.size(); k++){
+							VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
+							if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory()) && visitedcategorydatainfo.getProductcategory().equals(visitedcategorydata.getProductcategory())){
+								flag = true
+								for(int l=0; l< visitedcategorydatainfo.getShopProductsdata().size(); l++){
+									ShopProductsData existingproductsdata = visitedcategorydatainfo.getShopProductsdata().get(l)
+									for(int m=0; m< shopproductsdata.size(); m++){
+										ShopProductsData newproductsdatainfo = shopproductsdata.get(m)
+										if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
+											if(assettype.equals("Facing")){
+												existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
+												break
+											}
+											else if(assettype.equals("Stock Taking")){
+												existingproductsdata.setStocktakingdata(newproductsdatainfo.getStocktakingdata())
+												break
+											}
+											else if(assettype.equals("Overwrite Facing")){
+												existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
+												break
+											}
+											else if(assettype.equals("Overwrite Stock Taking")){
+												existingproductsdata.setOverwritestocktakingdata(newproductsdatainfo.getOverwritestocktakingdata())
+												break
+											}
+											else{
+											}
+										}
+									}
+								}
+							}
+						}
+						if(flag == false){
+							ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+							break
+						}
+					}
+					else{
+						ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+						break
+					}
+				}
 			}
 		}
 	}

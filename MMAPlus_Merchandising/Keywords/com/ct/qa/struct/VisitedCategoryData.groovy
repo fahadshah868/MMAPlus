@@ -29,7 +29,7 @@ public class VisitedCategoryData {
 	public String maincategory
 	public String productcategory
 	public ArrayList<ShopProductsData> shopproductsdata
-
+
 	public String getMaincategory() {
 		return maincategory;
 	}

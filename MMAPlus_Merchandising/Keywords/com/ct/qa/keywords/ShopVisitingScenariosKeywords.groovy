@@ -210,27 +210,24 @@ public class ShopVisitingScenariosKeywords{
 		if(ProjectConstants.visitedshopdatainfo != null){
 			for(int i=0; i<ProjectConstants.visitedshopdatainfo.size(); i++){
 				VisitedShopDataInfo visitedshopdatainfo = ProjectConstants.visitedshopdatainfo.get(i)
-				message = message+"<------------------------------------------------------------------------------------------------------>\n\n"+
+				message = message+"<---------------------------------------------------------------------------------------------------------------------------------------------------------------->\n\n"+
 						"Shop Name:	"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
 						"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()
 				if(visitedshopdatainfo.getVisitedcategoriesdata() != null){
-					message = message+"\n\nMain Category:	"
 					for(int j=0; j< visitedshopdatainfo.getVisitedcategoriesdata().size(); j++){
 						VisitedCategoryData visitedcategorydata = visitedshopdatainfo.getVisitedcategoriesdata().get(j)
-						message = message + visitedcategorydata.getMaincategory()+
-								"\nProduct Category:	"+visitedcategorydata.getProductcategory()
+						message = message+"\n\nMain Category:	"+
+						visitedcategorydata.getMaincategory()+
+						"\nProduct Category:	"+visitedcategorydata.getProductcategory()
+						message = message + "\n" + String.format("%-50s%-30s%-30s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n\n"
+
 						for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
 							ShopProductsData shopproductsdata = visitedcategorydata.getShopProductsdata().get(k)
-							message = message + "\n" +
-									shopproductsdata.getProduct() +
-									"		" + shopproductsdata.getFacingdata() +
-									"		" + shopproductsdata.getStocktakingdata() +
-									"		" + shopproductsdata.getOverwritefacingdata() +
-									"		" + shopproductsdata.getOverwritestocktakingdata()
+							message = message + String.format("%-50s%-30s%-30s%-30s%-30s", shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getStocktakingdata(),shopproductsdata.getOverwritefacingdata(),shopproductsdata.getOverwritestocktakingdata())
 						}
 					}
 				}
-				message = message + "\n\n<------------------------------------------------------------------------------------------------------>\n\n"
+				message = message + "\n\n<---------------------------------------------------------------------------------------------------------------------------------------------------------------->\n\n"
 				KeywordUtil.logInfo(message)
 			}
 		}
