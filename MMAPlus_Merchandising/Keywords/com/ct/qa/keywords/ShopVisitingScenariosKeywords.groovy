@@ -216,14 +216,39 @@ public class ShopVisitingScenariosKeywords{
 				if(visitedshopdatainfo.getVisitedcategoriesdata() != null){
 					for(int j=0; j< visitedshopdatainfo.getVisitedcategoriesdata().size(); j++){
 						VisitedCategoryData visitedcategorydata = visitedshopdatainfo.getVisitedcategoriesdata().get(j)
-						message = message+"\n\nMain Category:	"+
-						visitedcategorydata.getMaincategory()+
-						"\nProduct Category:	"+visitedcategorydata.getProductcategory()
-						message = message + "\n" + String.format("%-50s%-30s%-30s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n\n"
-
-						for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
-							ShopProductsData shopproductsdata = visitedcategorydata.getShopProductsdata().get(k)
-							message = message + String.format("%-50s%-30s%-30s%-30s%-30s", shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getStocktakingdata(),shopproductsdata.getOverwritefacingdata(),shopproductsdata.getOverwritestocktakingdata())
+						if(visitedcategorydata.getMaincategory().equalsIgnoreCase("Chiller Utilization")){
+							if(visitedcategorydata.getChillertype().equalsIgnoreCase("Chiller Available") || visitedcategorydata.getChillertype().equalsIgnoreCase("Chiller need maintenance") || visitedcategorydata.getChillertype().equalsIgnoreCase("Chiller Type not Available")){
+								message = message+"\n\nMain Category:	"+visitedcategorydata.getMaincategory()+
+								"\nChiller Type:	"+visitedcategorydata.getChillertype()+
+								"\nProduct Category:	"+visitedcategorydata.getProductcategory()
+								message = message + "\n" + String.format("%-45s%-14s%-20s%-13s%-24s%-30s%-15s", "Products:","Facing","Stock Taking","Depth","Overwrite Facing","Overwrite Stock Taking","Overwrite depth")+"\n"
+								for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
+									ShopProductsData shopproductsdata = visitedcategorydata.getShopProductsdata().get(k)
+									message = message + String.format("%-45s%-14s%-20s%-13s%-24s%-30s%-15s", shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getStocktakingdata(),shopproductsdata.getDepthdata(),shopproductsdata.getOverwritefacingdata(),shopproductsdata.getOverwritestocktakingdata(),shopproductsdata.getOverwritedepthdata())
+								}
+							}
+							else if(visitedcategorydata.getChillertype().equalsIgnoreCase("Chiller not Available") || visitedcategorydata.getChillertype().equalsIgnoreCase("Chiller not in access") || visitedcategorydata.getChillertype().equalsIgnoreCase("Chiller removed for maintenance")){
+								message = message+"\n\nMain Category:	"+
+								visitedcategorydata.getMaincategory()+
+								"\nProduct Category:	"+visitedcategorydata.getProductcategory()
+								message = message + "\n" + String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
+								for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
+									ShopProductsData shopproductsdata = visitedcategorydata.getShopProductsdata().get(k)
+									message = message + String.format("%-50s%-20s%-20s%-30s%-30s", shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getStocktakingdata(),shopproductsdata.getOverwritefacingdata(),shopproductsdata.getOverwritestocktakingdata())
+								}
+							}
+							else{
+							}
+						}
+						else{
+							message = message+"\n\nMain Category:	"+
+							visitedcategorydata.getMaincategory()+
+							"\nProduct Category:	"+visitedcategorydata.getProductcategory()
+							message = message + "\n" + String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
+							for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
+								ShopProductsData shopproductsdata = visitedcategorydata.getShopProductsdata().get(k)
+								message = message + String.format("%-50s%-20s%-20s%-30s%-30s", shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getStocktakingdata(),shopproductsdata.getOverwritefacingdata(),shopproductsdata.getOverwritestocktakingdata())
+							}
 						}
 					}
 				}

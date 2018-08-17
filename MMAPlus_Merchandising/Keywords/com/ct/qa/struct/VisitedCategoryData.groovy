@@ -27,6 +27,8 @@ import WebUiBuiltInKeywords as WebUI
 
 public class VisitedCategoryData {
 	public String maincategory
+	public ArrayList<String> chillertypes
+	public String chillerremark
 	public String productcategory
 	public ArrayList<ShopProductsData> shopproductsdata
 
