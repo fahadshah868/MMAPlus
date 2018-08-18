@@ -137,7 +137,7 @@ public class ChillerVisitingScenariosKeywords {
 				}
 			}
 		}
-		
+
 		visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 		visitedcategorydata.setTaggedchillersremark(taggedchillersremark)
 		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){

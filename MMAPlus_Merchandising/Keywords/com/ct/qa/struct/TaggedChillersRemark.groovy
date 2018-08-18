@@ -28,7 +28,14 @@ import WebUiBuiltInKeywords as WebUI
 public class TaggedChillersRemark {
 	public String chillertype
 	public String chillerremark
-	public ArrayList<ChillerProductsCategoryData> chillerproductscategories
+	public ArrayList<ChillerProductsCategoryData> chillerproductscategories
+	public String errormessage
+	public String getErrormessage() {
+		return errormessage;
+	}
+	public void setErrormessage(String errormessage) {
+		this.errormessage = errormessage;
+	}
 	public String getChillertype() {
 		return chillertype;
 	}
