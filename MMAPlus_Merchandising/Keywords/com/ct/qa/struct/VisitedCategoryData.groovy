@@ -30,6 +30,10 @@ public class VisitedCategoryData {
 	public ArrayList<TaggedChillersRemark> taggedchillersremark
 	public String productcategory
 	public ArrayList<ShopProductsData> shopproductsdata
+	
+	public VisitedCategoryData(){
+		this.taggedchillersremark = new ArrayList<TaggedChillersRemark>()
+	}
 
 	public String getMaincategory() {
 		return maincategory;
@@ -40,8 +44,8 @@ public class VisitedCategoryData {
 	public ArrayList<TaggedChillersRemark> getTaggedchillersremark() {
 		return taggedchillersremark;
 	}
-	public void setTaggedchillersremark(ArrayList<TaggedChillersRemark> taggedchillersremark) {
-		this.taggedchillersremark = taggedchillersremark;
+	public void setTaggedchillersremark(TaggedChillersRemark taggedchillersremark) {
+		this.taggedchillersremark.add(taggedchillersremark);
 	}
 	public String getProductcategory() {
 		return productcategory;

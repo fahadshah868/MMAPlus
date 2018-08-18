@@ -32,12 +32,15 @@ import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 import com.ct.qa.constants.ProjectConstants
-import com.ct.qa.struct.ChillerProductsCategoryData
+import com.ct.qa.struct.MissingChillerProductsCategoryData
 import com.ct.qa.struct.LoadProductsData
 import com.ct.qa.struct.MissingCategoryData
 import com.ct.qa.struct.ShopProductsData
 import com.ct.qa.struct.TaggedChillersRemark
 import com.ct.qa.struct.UnmatchedProducts
+import com.ct.qa.struct.VisitedCategoryData
+import com.ct.qa.struct.VisitedChillerProductsCategoryData
+import com.ct.qa.struct.VisitedShopDataInfo
 import io.appium.java_client.MobileElement
 
 public class ChillerProductsDataKeywords {
@@ -48,11 +51,12 @@ public class ChillerProductsDataKeywords {
 		if(unmatchedproducts_status.getStatus() == 2){
 			MissingCategoryData missingcategorydata = new MissingCategoryData()
 			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
+			MissingChillerProductsCategoryData missingchillercategory = new MissingChillerProductsCategoryData()
+			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
-			missingcategorydata.setProductcategories(unmatchedproducts_status.getProducts())
-			missingcategorydata.setProductcategories_errormessage(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_NOTMATCH)
+			missingchillercategory.setProductcategories(unmatchedproducts_status.getProducts())
+			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_NOTMATCH)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -66,11 +70,12 @@ public class ChillerProductsDataKeywords {
 		else if(unmatchedproducts_status.getStatus() == 1){
 			MissingCategoryData missingcategorydata = new MissingCategoryData()
 			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
+			MissingChillerProductsCategoryData missingchillercategory = new MissingChillerProductsCategoryData()
+			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
-			missingcategorydata.setProductcategories(unmatchedproducts_status.getProducts())
-			missingcategorydata.setProductcategories_errormessage(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MORE)
+			missingchillercategory.setProductcategories(unmatchedproducts_status.getProducts())
+			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MORE)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -84,11 +89,12 @@ public class ChillerProductsDataKeywords {
 		else if(unmatchedproducts_status.getStatus() == -1){
 			MissingCategoryData missingcategorydata = new MissingCategoryData()
 			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
+			MissingChillerProductsCategoryData missingchillercategory = new MissingChillerProductsCategoryData()
+			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
-			missingcategorydata.setProductcategories(unmatchedproducts_status.getProducts())
-			missingcategorydata.setProductcategories_errormessage(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MISSING)
+			missingchillercategory.setProductcategories(unmatchedproducts_status.getProducts())
+			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MISSING)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -121,13 +127,9 @@ public class ChillerProductsDataKeywords {
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareChannelWiseProductsCategories()
 		if(unmatchedproducts_status.getStatus() == 2){
 			MissingCategoryData missingcategorydata = new MissingCategoryData()
-			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
-			taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
 			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			missingcategorydata.setProductcategories(unmatchedproducts_status.getProducts())
 			missingcategorydata.setProductcategories_errormessage(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_NOTMATCH)
-			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 					ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, "")
@@ -139,13 +141,9 @@ public class ChillerProductsDataKeywords {
 		}
 		else if(unmatchedproducts_status.getStatus() == 1){
 			MissingCategoryData missingcategorydata = new MissingCategoryData()
-			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
-			taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
 			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			missingcategorydata.setProductcategories(unmatchedproducts_status.getProducts())
 			missingcategorydata.setProductcategories_errormessage(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MORE)
-			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 					ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, "")
@@ -157,13 +155,9 @@ public class ChillerProductsDataKeywords {
 		}
 		else if(unmatchedproducts_status.getStatus() == -1){
 			MissingCategoryData missingcategorydata = new MissingCategoryData()
-			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
-			taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
 			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			missingcategorydata.setProductcategories(unmatchedproducts_status.getProducts())
 			missingcategorydata.setProductcategories_errormessage(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MISSING)
-			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 					ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, "")
@@ -181,10 +175,10 @@ public class ChillerProductsDataKeywords {
 			ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = productcategory.getText()
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			if(flag == 1){
-//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
+				//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
 			}
 			else if(flag == 2){
-//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
+				//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
 			}
 			else{
 			}
@@ -192,7 +186,6 @@ public class ChillerProductsDataKeywords {
 	}
 	@Keyword
 	def visitChillerAvailableProductsData(int columnindex, String assettype){
-		ArrayList<ChillerProductsCategoryData> chillerproductscategoriesdata = new ArrayList<ChillerProductsCategoryData>()
 		ArrayList<ShopProductsData> shopproductsdata = new ArrayList<ShopProductsData>()
 		int index = 0
 		XSSFSheet chillerproductssheet = LoadDataKeywords.loadChillerProductsSheet()
@@ -366,14 +359,19 @@ public class ChillerProductsDataKeywords {
 				}
 			}
 			if(!products.isEmpty()){
+				TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
 				MissingCategoryData missingcategorydata = new MissingCategoryData()
+				MissingChillerProductsCategoryData missingchillerproductscategory = new MissingChillerProductsCategoryData()
 				missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
-				missingcategorydata.setProducts(products)
-				missingcategorydata.setProductCategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
-				missingcategorydata.setProducts_errormessage(ProjectConstants.MESSAGEFOR_PRODUCTSARE_NOTMATCH)
+				taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+				taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
+				missingchillerproductscategory.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
+				missingchillerproductscategory.setProducts(products)
+				missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_PRODUCTSARE_NOTMATCH)
+				missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
-						ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, assettype)
+						ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, "")
 						break
 					}
 					else{
@@ -397,12 +395,24 @@ public class ChillerProductsDataKeywords {
 				else{
 				}
 			}
-			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\n\nProduct Categories: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
-			for(int i=0; i<products.size(); i++){
-				message = message+products.get(i)+" , "
-			}
-			message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSARE_MORE
-			KeywordUtil.markErrorAndStop(message)
+			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
+				MissingCategoryData missingcategorydata = new MissingCategoryData()
+				MissingChillerProductsCategoryData missingchillerproductscategory = new MissingChillerProductsCategoryData()
+				missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
+				taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+				taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
+				missingchillerproductscategory.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
+				missingchillerproductscategory.setProducts(products)
+				missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_PRODUCTSARE_NOTMATCH)
+				missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, "")
+						break
+					}
+					else{
+					}
+				}
 		}
 		else if(expectedproductslist.size() > displayproductslist.size()){
 			ArrayList<String> products = new ArrayList<String>()
@@ -420,20 +430,110 @@ public class ChillerProductsDataKeywords {
 				else{
 				}
 			}
-			String message = "Chiller Type: "+ProjectConstants.CURRENTVISITING_CHILLERTYPE+"\n\nProduct Categories: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
-			for(int i=0; i<products.size(); i++){
-				message = message+products.get(i)+" , "
-			}
-			message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSARE_MISSING
-			KeywordUtil.markErrorAndStop(message)
+			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
+				MissingCategoryData missingcategorydata = new MissingCategoryData()
+				MissingChillerProductsCategoryData missingchillerproductscategory = new MissingChillerProductsCategoryData()
+				missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
+				taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+				taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
+				missingchillerproductscategory.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
+				missingchillerproductscategory.setProducts(products)
+				missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_PRODUCTSARE_NOTMATCH)
+				missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, "")
+						break
+					}
+					else{
+					}
+				}
 		}
 		else{
 			String message = "Main Category: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_EQUAL
 			KeywordUtil.logInfo(message)
 		}
+		VisitedCategoryData visitedcategorydata = new VisitedCategoryData()
+		TaggedChillersRemark taggedchillerremarks = new TaggedChillersRemark()
+		VisitedChillerProductsCategoryData visitedchillerproductscategory = new VisitedChillerProductsCategoryData()
+		visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
+		visitedchillerproductscategory.setProductCategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
+		visitedchillerproductscategory.setShopproductsdata(shopproductsdata)
+		taggedchillerremarks.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+		taggedchillerremarks.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
+		taggedchillerremarks.setVisitedchillerproductscategories(visitedchillerproductscategory)
+		visitedcategorydata.setTaggedchillersremark(taggedchillerremarks)
+		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
+			if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
+				for(int j=0; j< ProjectConstants.visitedshopdatainfo.size(); j++){
+					VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(j)
+					ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
+					if(visitedcategoriesdata.size() != 0){
+						boolean flag = false
+						for(int k=0; k<visitedcategoriesdata.size(); k++){
+							VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
+							if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
+								ArrayList<TaggedChillersRemark> taggedchillersremarks = visitedcategorydatainfo.getTaggedchillersremark()
+								for(int p=0; p<taggedchillersremarks.size(); p++){
+									TaggedChillersRemark taggedchillerremarkinfo = taggedchillersremarks.get(p)
+									if(taggedchillerremarkinfo.getChillertype().equals(taggedchillerremarks.getChillertype()) && taggedchillerremarkinfo.getChillerremark().equals(taggedchillerremarks.getChillerremark())){
+										ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductcategorydata = taggedchillerremarkinfo.getVisitedchillerproductscategories()
+										for(int y=0; y< visitedchillerproductcategorydata.size(); y++){
+											VisitedChillerProductsCategoryData visitedchillerproductscategoryinfo = visitedchillerproductcategorydata.get(y)
+											if(visitedchillerproductscategoryinfo.getProductCategory().equals(visitedchillerproductscategory.getProductCategory())){
+												ArrayList<ShopProductsData> shopproductdata = visitedchillerproductscategoryinfo.getShopproductsdata()
+												for(int z=0; z<shopproductdata.size(); z++){
+													ShopProductsData existingproductsdata = shopproductdata.get(z)
+													for(int x=0; x< shopproductsdata.size(); x++){
+														ShopProductsData newproductsdatainfo = shopproductsdata.get(x)
+														if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
+															if(assettype.equals("Facing")){
+																existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
+																break
+															}
+															else if(assettype.equals("Stock Taking")){
+																existingproductsdata.setStocktakingdata(newproductsdatainfo.getStocktakingdata())
+																break
+															}
+															else if(assettype.equals("Depth")){
+																existingproductsdata.setDepthdata(newproductsdatainfo.getStocktakingdata())
+																break
+															}
+															else if(assettype.equals("Overwrite Facing")){
+																existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
+																break
+															}
+															else if(assettype.equals("Overwrite Depth")){
+																existingproductsdata.setOverwritedepthdata(newproductsdatainfo.getOverwritestocktakingdata())
+																break
+															}
+															else{
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+						if(flag == false){
+							ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+							break
+						}
+					}
+					else{
+						ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+						break
+					}
+				}
+			}
+		}	
 	}
 	@Keyword
-	def VisitChillerNotAvailableProductsData(int columnindex){
+	def VisitChillerNotAvailableProductsData(int columnindex, String assettype){
+		ArrayList<ShopProductsData> shopproductsdata = new ArrayList<ShopProductsData>()
 		int index = 0
 		XSSFSheet channelproductssheet = LoadDataKeywords.loadChannelProductsSheet()
 		ArrayList<String> displayproductslist = new ArrayList<String>()
@@ -441,26 +541,66 @@ public class ChillerProductsDataKeywords {
 		int expectedproducts = expectedproductslist.size()
 		int totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*").size()
 		for(int i=1; i<totalproducts; i=i+3){
+			ShopProductsData productsdata = new ShopProductsData()
+			boolean flag = false
 			index = index + 1
 			MobileElement selectedproduct = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String selectedproductname = selectedproduct.getText()
+			productsdata.setProduct(selectedproductname)
 			displayproductslist.add(selectedproductname)
 			for(int j=0; j<expectedproductslist.size(); j++){
 				LoadProductsData channelproduct = expectedproductslist.get(j)
 				String productname = channelproduct.getProduct()
 				if(selectedproductname.equalsIgnoreCase(productname)){
+					flag = true
 					String productquantity = channelproduct.getProduct_data()
 					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 					selectedproducttextfield.setValue(productquantity)
+					if(assettype.equalsIgnoreCase("Facing")){
+						productsdata.setFacingdata(productquantity)
+					}
+					else if(assettype.equalsIgnoreCase("Stock Taking")){
+						productsdata.setStocktakingdata(productquantity)
+					}
+					else if(assettype.equalsIgnoreCase("Overwrite Facing")){
+						productsdata.setOverwritefacingdata(productquantity)
+					}
+					else if(assettype.equalsIgnoreCase("Overwrite Stock Taking")){
+						productsdata.setOverwritestocktakingdata(productquantity)
+					}
+					else{
+					}
 					Mobile.hideKeyboard()
 					break
 				}
 				else{
 				}
 			}
+			if(flag == false){
+				MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
+				selectedproducttextfield.setValue("0000")
+				if(assettype.equalsIgnoreCase("Facing")){
+					productsdata.setFacingdata("0000")
+				}
+				else if(assettype.equalsIgnoreCase("Stock Taking")){
+					productsdata.setStocktakingdata("0000")
+				}
+				else if(assettype.equalsIgnoreCase("Overwrite Facing")){
+					productsdata.setOverwritefacingdata("0000")
+				}
+				else if(assettype.equalsIgnoreCase("Overwrite Stock Taking")){
+					productsdata.setOverwritestocktakingdata("0000")
+				}
+				else{
+				}
+				Mobile.hideKeyboard()
+			}
+			shopproductsdata.add(productsdata)
 		}
+		totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*").size()
 		if(totalproducts >= 16){
 			while(true){
+				ShopProductsData productsdata = new ShopProductsData()
 				int xlocation = ProjectConstants.getXPoint()
 				MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 				String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
@@ -471,21 +611,58 @@ public class ChillerProductsDataKeywords {
 					break
 				}
 				else{
+					boolean flag = false
 					displayproductslist.add(lastproductnameafterswipe)
 					for(int j=0; j<expectedproductslist.size(); j++){
 						LoadProductsData channelproduct = expectedproductslist.get(j)
 						String productname = channelproduct.getProduct()
+						productsdata.setProduct(productname)
 						if(lastproductnameafterswipe.equalsIgnoreCase(productname)){
+							flag = true
 							String productquantity = channelproduct.getProduct_data()
 							MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
 							selectedproducttextfield.setValue(productquantity)
+							if(assettype.equalsIgnoreCase("Facing")){
+								productsdata.setFacingdata(productquantity)
+							}
+							else if(assettype.equalsIgnoreCase("Stock Taking")){
+								productsdata.setStocktakingdata(productquantity)
+							}
+							else if(assettype.equalsIgnoreCase("Overwrite Facing")){
+								productsdata.setOverwritefacingdata(productquantity)
+							}
+							else if(assettype.equalsIgnoreCase("Overwrite Stock Taking")){
+								productsdata.setOverwritestocktakingdata(productquantity)
+							}
+							else{
+							}
 							Mobile.hideKeyboard()
 							break
 						}
 						else{
 						}
 					}
+					if(flag == false){
+						MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
+						selectedproducttextfield.setValue(0000)
+						if(assettype.equalsIgnoreCase("Facing")){
+							productsdata.setFacingdata("0000")
+						}
+						else if(assettype.equalsIgnoreCase("Stock Taking")){
+							productsdata.setStocktakingdata("0000")
+						}
+						else if(assettype.equalsIgnoreCase("Overwrite Facing")){
+							productsdata.setOverwritefacingdata("0000")
+						}
+						else if(assettype.equalsIgnoreCase("Overwrite Stock Taking")){
+							productsdata.setOverwritestocktakingdata("0000")
+						}
+						else{
+						}
+						Mobile.hideKeyboard()
+					}
 				}
+				shopproductsdata.add(productsdata)
 			}
 		}
 		if(expectedproductslist.size() == displayproductslist.size()){
@@ -505,12 +682,21 @@ public class ChillerProductsDataKeywords {
 				}
 			}
 			if(!products.isEmpty()){
-				String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
-				for(int i=0; i<products.size(); i++){
-					message = message+products.get(i)+" , "
+				MissingCategoryData missingcategorydata = new MissingCategoryData()
+				missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
+				missingcategorydata.setProducts(products)
+				missingcategorydata.setProductCategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
+				missingcategorydata.setProducts_errormessage(ProjectConstants.MESSAGEFOR_PRODUCTSARE_NOTMATCH)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, assettype)
+						break
+					}
+					else{
+					}
 				}
-				message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSARE_NOTMATCH
-				KeywordUtil.markErrorAndStop(message)
+			}
+			else{
 			}
 		}
 		else if(expectedproductslist.size() < displayproductslist.size()){
@@ -529,12 +715,18 @@ public class ChillerProductsDataKeywords {
 				else{
 				}
 			}
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
-			for(int i=0; i<products.size(); i++){
-				message = message+products.get(i)+" , "
+			MissingCategoryData missingcategorydata = new MissingCategoryData()
+			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
+			missingcategorydata.setProducts(products)
+			missingcategorydata.setProductCategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
+			missingcategorydata.setProducts_errormessage(ProjectConstants.MESSAGEFOR_PRODUCTSARE_MORE)
+			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+					ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, assettype)
+				}
+				else{
+				}
 			}
-			message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSARE_MORE
-			KeywordUtil.markErrorAndStop(message)
 		}
 		else if(expectedproductslist.size() > displayproductslist.size()){
 			ArrayList<String> products = new ArrayList<String>()
@@ -552,16 +744,79 @@ public class ChillerProductsDataKeywords {
 				else{
 				}
 			}
-			String message = ProjectConstants.CURRENTVISITING_SHOPCHANNEL+"\n\nMain Categories: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\n\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n\nProducts: "
-			for(int i=0; i<products.size(); i++){
-				message = message+products.get(i)+" , "
+			MissingCategoryData missingcategorydata = new MissingCategoryData()
+			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
+			missingcategorydata.setProductCategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
+			missingcategorydata.setProducts_errormessage(ProjectConstants.MESSAGEFOR_PRODUCTSARE_MISSING)
+			missingcategorydata.setProducts(products)
+			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+					ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, assettype)
+					break
+				}
+				else{
+				}
 			}
-			message = message+"\n\n"+ProjectConstants.MESSAGEFOR_PRODUCTSARE_MISSING
-			KeywordUtil.markErrorAndStop(message)
 		}
 		else{
+
 			String message = "Main Category: "+ProjectConstants.CURRENTVISITING_MAINCATEGORY+"\nProduct Category: "+ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY+"\n"+ProjectConstants.MESSAGEFOR_DISPLAYEDPRODUCTSARE_EQUAL
 			KeywordUtil.logInfo(message)
+		}
+		VisitedCategoryData visitedcategorydata = new VisitedCategoryData()
+		visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
+		visitedcategorydata.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
+		visitedcategorydata.setShopProductsdata(shopproductsdata)
+		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
+			if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
+				for(int j=0; j< ProjectConstants.visitedshopdatainfo.size(); j++){
+					VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(j)
+					ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
+					if(visitedcategoriesdata.size() != 0){
+						boolean flag = false
+						for(int k=0; k<visitedcategoriesdata.size(); k++){
+							VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
+							if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory()) && visitedcategorydatainfo.getProductcategory().equals(visitedcategorydata.getProductcategory())){
+								flag = true
+								for(int l=0; l< visitedcategorydatainfo.getShopProductsdata().size(); l++){
+									ShopProductsData existingproductsdata = visitedcategorydatainfo.getShopProductsdata().get(l)
+									for(int m=0; m< shopproductsdata.size(); m++){
+										ShopProductsData newproductsdatainfo = shopproductsdata.get(m)
+										if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
+											if(assettype.equals("Facing")){
+												existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
+												break
+											}
+											else if(assettype.equals("Stock Taking")){
+												existingproductsdata.setStocktakingdata(newproductsdatainfo.getStocktakingdata())
+												break
+											}
+											else if(assettype.equals("Overwrite Facing")){
+												existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
+												break
+											}
+											else if(assettype.equals("Overwrite Stock Taking")){
+												existingproductsdata.setOverwritestocktakingdata(newproductsdatainfo.getOverwritestocktakingdata())
+												break
+											}
+											else{
+											}
+										}
+									}
+								}
+							}
+						}
+						if(flag == false){
+							ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+							break
+						}
+					}
+					else{
+						ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+						break
+					}
+				}
+			}
 		}
 	}
 }

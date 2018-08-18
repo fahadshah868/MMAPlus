@@ -25,7 +25,7 @@ import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
-public class ChillerProductsCategoryData {
+public class VisitedChillerProductsCategoryData {
 	public String ProductCategory
 	public ArrayList<ShopProductsData> shopproductsdata
 	public String getProductCategory() {

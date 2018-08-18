@@ -171,9 +171,11 @@ def static "com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailable
 }
 
 def static "com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData"(
-    	int columnindex	) {
+    	int columnindex	
+     , 	String assettype	) {
     (new com.ct.qa.keywords.ChillerProductsDataKeywords()).VisitChillerNotAvailableProductsData(
-        	columnindex)
+        	columnindex
+         , 	assettype)
 }
 
 def static "com.ct.qa.keywords.RTMVisitFrequencyKeywords.visitRTMVisitFrequency"() {

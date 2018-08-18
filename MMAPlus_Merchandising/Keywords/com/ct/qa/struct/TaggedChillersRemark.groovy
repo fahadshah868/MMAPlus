@@ -28,14 +28,13 @@ import WebUiBuiltInKeywords as WebUI
 public class TaggedChillersRemark {
 	public String chillertype
 	public String chillerremark
-	public ArrayList<ChillerProductsCategoryData> chillerproductscategories
-	public String errormessage
-	public String getErrormessage() {
-		return errormessage;
-	}
-	public void setErrormessage(String errormessage) {
-		this.errormessage = errormessage;
-	}
+	public ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductscategories
+	public ArrayList<MissingChillerProductsCategoryData> missingchillerproductscategories
+	public String errormessage_formissingproductscategories
+	
+	public TaggedChillersRemark(){
+		this.visitedchillerproductscategories = new ArrayList<VisitedChillerProductsCategoryData>()
+	}
 	public String getChillertype() {
 		return chillertype;
 	}
@@ -48,10 +47,25 @@ public class TaggedChillersRemark {
 	public void setChillerremark(String chillerremark) {
 		this.chillerremark = chillerremark;
 	}
-	public ArrayList<ChillerProductsCategoryData> getChillerproductscategories() {
-		return chillerproductscategories;
+	public ArrayList<VisitedChillerProductsCategoryData> getVisitedchillerproductscategories() {
+		return visitedchillerproductscategories;
 	}
-	public void setChillerproductscategories(ArrayList<ChillerProductsCategoryData> chillerproductscategories) {
-		this.chillerproductscategories = chillerproductscategories;
+	public void setVisitedchillerproductscategories(
+			VisitedChillerProductsCategoryData visitedchillerproductscategories) {
+		this.visitedchillerproductscategories.add(visitedchillerproductscategories);
 	}
+	public ArrayList<MissingChillerProductsCategoryData> getMissingchillerproductscategories() {
+		return missingchillerproductscategories;
+	}
+	public void setMissingchillerproductscategories(
+			ArrayList<MissingChillerProductsCategoryData> missingchillerproductscategories) {
+		this.missingchillerproductscategories = missingchillerproductscategories;
+	}
+	public String getErrormessage_formissingproductscategories() {
+		return errormessage_formissingproductscategories;
+	}
+	public void setErrormessage_formissingproductscategories(String errormessage_formissingproductscategories) {
+		this.errormessage_formissingproductscategories = errormessage_formissingproductscategories;
+	}
+	
 }

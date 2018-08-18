@@ -25,36 +25,23 @@ import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
-public class MissingCategoryData {
-	public String maincategory
-	public ArrayList<TaggedChillersRemark> taggedchillersremarks
-	
-	public String ProductCategory
+public class MissingChillerProductsCategoryData {
+	public String productcategory
 	public ArrayList<String> productcategories
+	public String errormessage_forproductcategories
 	public ArrayList<String> products
-	public String productcategories_errormessage
-	public String products_errormessage
-	
-	public MissingCategoryData(){
-		this.taggedchillersremarks = new ArrayList<TaggedChillersRemark>()
-	}
-	public String getMaincategory() {
-		return maincategory;
+	public String errormessage_forproducts
+	public String getErrormessage_forproducts() {
+		return errormessage_forproducts;
 	}
-	public void setMaincategory(String maincategory) {
-		this.maincategory = maincategory;
+	public void setErrormessage_forproducts(String errormessage_forproducts) {
+		this.errormessage_forproducts = errormessage_forproducts;
 	}
-	public ArrayList<TaggedChillersRemark> getTaggedchillersremarks() {
-		return taggedchillersremarks;
+	public String getProductcategory() {
+		return productcategory;
 	}
-	public void setTaggedchillersremarks(TaggedChillersRemark taggedchillersremarks) {
-		this.taggedchillersremarks.add(taggedchillersremarks);
-	}
-	public String getProductCategory() {
-		return ProductCategory;
-	}
-	public void setProductCategory(String productCategory) {
-		this.ProductCategory = productCategory;
+	public void setProductcategory(String productcategory) {
+		this.productcategory = productcategory;
 	}
 	public ArrayList<String> getProductcategories() {
 		return productcategories;
@@ -62,22 +49,17 @@ public class MissingCategoryData {
 	public void setProductcategories(ArrayList<String> productcategories) {
 		this.productcategories = productcategories;
 	}
+	public String getErrormessage_forproductcategories() {
+		return errormessage_forproductcategories;
+	}
+	public void setErrormessage_forproductcategories(String errormessage_forproductcategories) {
+		this.errormessage_forproductcategories = errormessage_forproductcategories;
+	}
 	public ArrayList<String> getProducts() {
 		return products;
 	}
 	public void setProducts(ArrayList<String> products) {
 		this.products = products;
 	}
-	public String getProductcategories_errormessage() {
-		return productcategories_errormessage;
-	}
-	public void setProductcategories_errormessage(String productcategories_errormessage) {
-		this.productcategories_errormessage = productcategories_errormessage;
-	}
-	public String getProducts_errormessage() {
-		return products_errormessage;
-	}
-	public void setProducts_errormessage(String products_errormessage) {
-		this.products_errormessage = products_errormessage;
-	}
+	
 }
