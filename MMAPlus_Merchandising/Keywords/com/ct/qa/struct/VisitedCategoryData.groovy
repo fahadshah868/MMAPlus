@@ -30,7 +30,7 @@ public class VisitedCategoryData {
 	public ArrayList<TaggedChillersRemark> taggedchillersremark
 	public String productcategory
 	public ArrayList<ShopProductsData> shopproductsdata
-	
+
 	public VisitedCategoryData(){
 		this.taggedchillersremark = new ArrayList<TaggedChillersRemark>()
 	}

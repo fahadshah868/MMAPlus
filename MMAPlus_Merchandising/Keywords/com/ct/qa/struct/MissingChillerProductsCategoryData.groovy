@@ -61,5 +61,4 @@ public class MissingChillerProductsCategoryData {
 	public void setProducts(ArrayList<String> products) {
 		this.products = products;
 	}
-	
 }

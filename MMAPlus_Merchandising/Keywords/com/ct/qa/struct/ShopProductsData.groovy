@@ -29,10 +29,24 @@ public class ShopProductsData {
 	public String product
 	public String facingdata
 	public String stocktakingdata
+	public String stockcountdata
 	public String depthdata
 	public String overwritefacingdata
 	public String overwritestocktakingdata
-	public String overwritedepthdata
+	public String overwritedepthdata
+	public String overwritestockcountdata
+	public String getStockcountdata() {
+		return stockcountdata;
+	}
+	public void setStockcountdata(String stockcountdata) {
+		this.stockcountdata = stockcountdata;
+	}
+	public String getOverwritestockcountdata() {
+		return overwritestockcountdata;
+	}
+	public void setOverwritestockcountdata(String overwritestockcountdata) {
+		this.overwritestockcountdata = overwritestockcountdata;
+	}
 	public String getProduct() {
 		return product;
 	}

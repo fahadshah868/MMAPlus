@@ -31,9 +31,10 @@ public class TaggedChillersRemark {
 	public ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductscategories
 	public ArrayList<MissingChillerProductsCategoryData> missingchillerproductscategories
 	public String errormessage_formissingproductscategories
-	
+
 	public TaggedChillersRemark(){
 		this.visitedchillerproductscategories = new ArrayList<VisitedChillerProductsCategoryData>()
+		this.missingchillerproductscategories = new ArrayList<MissingChillerProductsCategoryData>()
 	}
 	public String getChillertype() {
 		return chillertype;
@@ -58,8 +59,8 @@ public class TaggedChillersRemark {
 		return missingchillerproductscategories;
 	}
 	public void setMissingchillerproductscategories(
-			ArrayList<MissingChillerProductsCategoryData> missingchillerproductscategories) {
-		this.missingchillerproductscategories = missingchillerproductscategories;
+			MissingChillerProductsCategoryData missingchillerproductscategories) {
+		this.missingchillerproductscategories.add(missingchillerproductscategories);
 	}
 	public String getErrormessage_formissingproductscategories() {
 		return errormessage_formissingproductscategories;
@@ -67,5 +68,4 @@ public class TaggedChillersRemark {
 	public void setErrormessage_formissingproductscategories(String errormessage_formissingproductscategories) {
 		this.errormessage_formissingproductscategories = errormessage_formissingproductscategories;
 	}
-	
 }

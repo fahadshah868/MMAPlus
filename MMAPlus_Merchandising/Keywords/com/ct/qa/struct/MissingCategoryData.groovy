@@ -28,13 +28,13 @@ import WebUiBuiltInKeywords as WebUI
 public class MissingCategoryData {
 	public String maincategory
 	public ArrayList<TaggedChillersRemark> taggedchillersremarks
-	
+
 	public String ProductCategory
 	public ArrayList<String> productcategories
 	public ArrayList<String> products
 	public String productcategories_errormessage
 	public String products_errormessage
-	
+
 	public MissingCategoryData(){
 		this.taggedchillersremarks = new ArrayList<TaggedChillersRemark>()
 	}
