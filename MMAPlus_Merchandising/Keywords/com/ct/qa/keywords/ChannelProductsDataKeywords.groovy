@@ -469,52 +469,50 @@ public class ChannelProductsDataKeywords {
 		visitedcategorydata.setShopProductsdata(shopproductsdata)
 		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
 			if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
-				for(int j=0; j< ProjectConstants.visitedshopdatainfo.size(); j++){
-					VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(j)
-					ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
-					if(visitedcategoriesdata.size() != 0){
-						boolean flag = false
-						for(int k=0; k<visitedcategoriesdata.size(); k++){
-							VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
-							if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory()) && visitedcategorydatainfo.getProductcategory().equals(visitedcategorydata.getProductcategory())){
-								flag = true
-								for(int l=0; l< visitedcategorydatainfo.getShopProductsdata().size(); l++){
-									ShopProductsData existingproductsdata = visitedcategorydatainfo.getShopProductsdata().get(l)
-									for(int m=0; m< shopproductsdata.size(); m++){
-										ShopProductsData newproductsdatainfo = shopproductsdata.get(m)
-										if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
-											if(assettype.equals("Facing")){
-												existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
-												break
-											}
-											else if(assettype.equals("Stock Taking")){
-												existingproductsdata.setStocktakingdata(newproductsdatainfo.getStocktakingdata())
-												break
-											}
-											else if(assettype.equals("Overwrite Facing")){
-												existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
-												break
-											}
-											else if(assettype.equals("Overwrite Stock Taking")){
-												existingproductsdata.setOverwritestocktakingdata(newproductsdatainfo.getOverwritestocktakingdata())
-												break
-											}
-											else{
-											}
+				VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(i)
+				ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
+				if(visitedcategoriesdata.size() != 0){
+					boolean flag = false
+					for(int k=0; k<visitedcategoriesdata.size(); k++){
+						VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
+						if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory()) && visitedcategorydatainfo.getProductcategory().equals(visitedcategorydata.getProductcategory())){
+							flag = true
+							for(int l=0; l< visitedcategorydatainfo.getShopProductsdata().size(); l++){
+								ShopProductsData existingproductsdata = visitedcategorydatainfo.getShopProductsdata().get(l)
+								for(int m=0; m< shopproductsdata.size(); m++){
+									ShopProductsData newproductsdatainfo = shopproductsdata.get(m)
+									if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
+										if(assettype.equals("Facing")){
+											existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
+											break
+										}
+										else if(assettype.equals("Stock Taking")){
+											existingproductsdata.setStocktakingdata(newproductsdatainfo.getStocktakingdata())
+											break
+										}
+										else if(assettype.equals("Overwrite Facing")){
+											existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
+											break
+										}
+										else if(assettype.equals("Overwrite Stock Taking")){
+											existingproductsdata.setOverwritestocktakingdata(newproductsdatainfo.getOverwritestocktakingdata())
+											break
+										}
+										else{
 										}
 									}
 								}
 							}
 						}
-						if(flag == false){
-							ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
-							break
-						}
 					}
-					else{
+					if(flag == false){
 						ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
 						break
 					}
+				}
+				else{
+					ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+					break
 				}
 			}
 		}

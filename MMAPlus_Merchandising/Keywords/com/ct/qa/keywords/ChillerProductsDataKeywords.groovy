@@ -488,55 +488,53 @@ public class ChillerProductsDataKeywords {
 		visitedcategorydata.setTaggedchillersremark(taggedchillerremarks)
 		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
 			if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
-				for(int j=0; j< ProjectConstants.visitedshopdatainfo.size(); j++){
-					VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(j)
-					ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
-					if(visitedcategoriesdata.size() != 0){
-						boolean flag = false
-						for(int k=0; k<visitedcategoriesdata.size(); k++){
-							VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
-							if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
-								ArrayList<TaggedChillersRemark> taggedchillersremarks = visitedcategorydatainfo.getTaggedchillersremark()
-								for(int p=0; p<taggedchillersremarks.size(); p++){
-									TaggedChillersRemark taggedchillerremarkinfo = taggedchillersremarks.get(p)
-									if(taggedchillerremarkinfo.getChillertype().equals(taggedchillerremarks.getChillertype()) && taggedchillerremarkinfo.getChillerremark().equals(taggedchillerremarks.getChillerremark())){
-										ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductcategorydata = taggedchillerremarkinfo.getVisitedchillerproductscategories()
-										for(int y=0; y< visitedchillerproductcategorydata.size(); y++){
-											VisitedChillerProductsCategoryData visitedchillerproductscategoryinfo = visitedchillerproductcategorydata.get(y)
-											if(visitedchillerproductscategoryinfo.getProductCategory().equals(visitedchillerproductscategory.getProductCategory())){
-												flag = true
-												ArrayList<ShopProductsData> shopproductdata = visitedchillerproductscategoryinfo.getShopproductsdata()
-												for(int z=0; z<shopproductdata.size(); z++){
-													ShopProductsData existingproductsdata = shopproductdata.get(z)
-													for(int x=0; x< shopproductsdata.size(); x++){
-														ShopProductsData newproductsdatainfo = shopproductsdata.get(x)
-														if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
-															if(assettype.equals("Facing")){
-																existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
-																break
-															}
-															else if(assettype.equals("Stock Count")){
-																existingproductsdata.setStockcountdata(newproductsdatainfo.getStockcountdata())
-																break
-															}
-															else if(assettype.equals("Depth")){
-																existingproductsdata.setDepthdata(newproductsdatainfo.getDepthdata())
-																break
-															}
-															else if(assettype.equals("Overwrite Facing")){
-																existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
-																break
-															}
-															else if(assettype.equals("Overwrite Depth")){
-																existingproductsdata.setOverwritedepthdata(newproductsdatainfo.getOverwritedepthdata())
-																break
-															}
-															else if(assettype.equals("Overwrite Stock Count")){
-																existingproductsdata.setOverwritestockcountdata(newproductsdatainfo.getOverwritestockcountdata())
-																break
-															}
-															else{
-															}
+				VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(i)
+				ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
+				if(visitedcategoriesdata.size() != 0){
+					boolean flag = false
+					for(int k=0; k<visitedcategoriesdata.size(); k++){
+						VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
+						if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
+							ArrayList<TaggedChillersRemark> taggedchillersremarks = visitedcategorydatainfo.getTaggedchillersremark()
+							for(int p=0; p<taggedchillersremarks.size(); p++){
+								TaggedChillersRemark taggedchillerremarkinfo = taggedchillersremarks.get(p)
+								if(taggedchillerremarkinfo.getChillertype().equals(taggedchillerremarks.getChillertype()) && taggedchillerremarkinfo.getChillerremark().equals(taggedchillerremarks.getChillerremark())){
+									ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductcategorydata = taggedchillerremarkinfo.getVisitedchillerproductscategories()
+									for(int y=0; y< visitedchillerproductcategorydata.size(); y++){
+										VisitedChillerProductsCategoryData visitedchillerproductscategoryinfo = visitedchillerproductcategorydata.get(y)
+										if(visitedchillerproductscategoryinfo.getProductCategory().equals(visitedchillerproductscategory.getProductCategory())){
+											flag = true
+											ArrayList<ShopProductsData> shopproductdata = visitedchillerproductscategoryinfo.getShopproductsdata()
+											for(int z=0; z<shopproductdata.size(); z++){
+												ShopProductsData existingproductsdata = shopproductdata.get(z)
+												for(int x=0; x< shopproductsdata.size(); x++){
+													ShopProductsData newproductsdatainfo = shopproductsdata.get(x)
+													if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
+														if(assettype.equals("Facing")){
+															existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
+															break
+														}
+														else if(assettype.equals("Stock Count")){
+															existingproductsdata.setStockcountdata(newproductsdatainfo.getStockcountdata())
+															break
+														}
+														else if(assettype.equals("Depth")){
+															existingproductsdata.setDepthdata(newproductsdatainfo.getDepthdata())
+															break
+														}
+														else if(assettype.equals("Overwrite Facing")){
+															existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
+															break
+														}
+														else if(assettype.equals("Overwrite Depth")){
+															existingproductsdata.setOverwritedepthdata(newproductsdatainfo.getOverwritedepthdata())
+															break
+														}
+														else if(assettype.equals("Overwrite Stock Count")){
+															existingproductsdata.setOverwritestockcountdata(newproductsdatainfo.getOverwritestockcountdata())
+															break
+														}
+														else{
 														}
 													}
 												}
@@ -546,17 +544,17 @@ public class ChillerProductsDataKeywords {
 								}
 							}
 						}
-						if(flag == false){
-							ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
-							break
-						}
-						else{
-						}
 					}
-					else{
+					if(flag == false){
 						ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
 						break
 					}
+					else{
+					}
+				}
+				else{
+					ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+					break
 				}
 			}
 		}
@@ -820,47 +818,45 @@ public class ChillerProductsDataKeywords {
 		visitedcategorydata.setTaggedchillersremark(taggedchillerremarks)
 		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
 			if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
-				for(int j=0; j< ProjectConstants.visitedshopdatainfo.size(); j++){
-					VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(j)
-					ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
-					if(visitedcategoriesdata.size() != 0){
-						boolean flag = false
-						for(int k=0; k<visitedcategoriesdata.size(); k++){
-							VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
-							if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
-								ArrayList<TaggedChillersRemark> taggedchillersremarks = visitedcategorydatainfo.getTaggedchillersremark()
-								for(int p=0; p<taggedchillersremarks.size(); p++){
-									TaggedChillersRemark taggedchillerremarkinfo = taggedchillersremarks.get(p)
-									if(taggedchillerremarkinfo.getChillertype().equals(taggedchillerremarks.getChillertype()) && taggedchillerremarkinfo.getChillerremark().equals(taggedchillerremarks.getChillerremark())){
-										ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductcategorydata = taggedchillerremarkinfo.getVisitedchillerproductscategories()
-										for(int y=0; y< visitedchillerproductcategorydata.size(); y++){
-											VisitedChillerProductsCategoryData visitedchillerproductscategoryinfo = visitedchillerproductcategorydata.get(y)
-											if(visitedchillerproductscategoryinfo.getProductCategory().equals(visitedchillerproductscategory.getProductCategory())){
-												flag = true
-												ArrayList<ShopProductsData> shopproductdata = visitedchillerproductscategoryinfo.getShopproductsdata()
-												for(int z=0; z<shopproductdata.size(); z++){
-													ShopProductsData existingproductsdata = shopproductdata.get(z)
-													for(int x=0; x< shopproductsdata.size(); x++){
-														ShopProductsData newproductsdatainfo = shopproductsdata.get(x)
-														if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
-															if(assettype.equals("Facing")){
-																existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
-																break
-															}
-															else if(assettype.equals("Stock Taking")){
-																existingproductsdata.setStocktakingdata(newproductsdatainfo.getStockcountdata())
-																break
-															}
-															else if(assettype.equals("Overwrite Facing")){
-																existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
-																break
-															}
-															else if(assettype.equals("Overwrite Stock Taking")){
-																existingproductsdata.setOverwritestocktakingdata(newproductsdatainfo.getOverwritestockcountdata())
-																break
-															}
-															else{
-															}
+				VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(i)
+				ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
+				if(visitedcategoriesdata.size() != 0){
+					boolean flag = false
+					for(int k=0; k<visitedcategoriesdata.size(); k++){
+						VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
+						if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
+							ArrayList<TaggedChillersRemark> taggedchillersremarks = visitedcategorydatainfo.getTaggedchillersremark()
+							for(int p=0; p<taggedchillersremarks.size(); p++){
+								TaggedChillersRemark taggedchillerremarkinfo = taggedchillersremarks.get(p)
+								if(taggedchillerremarkinfo.getChillertype().equals(taggedchillerremarks.getChillertype()) && taggedchillerremarkinfo.getChillerremark().equals(taggedchillerremarks.getChillerremark())){
+									ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductcategorydata = taggedchillerremarkinfo.getVisitedchillerproductscategories()
+									for(int y=0; y< visitedchillerproductcategorydata.size(); y++){
+										VisitedChillerProductsCategoryData visitedchillerproductscategoryinfo = visitedchillerproductcategorydata.get(y)
+										if(visitedchillerproductscategoryinfo.getProductCategory().equals(visitedchillerproductscategory.getProductCategory())){
+											flag = true
+											ArrayList<ShopProductsData> shopproductdata = visitedchillerproductscategoryinfo.getShopproductsdata()
+											for(int z=0; z<shopproductdata.size(); z++){
+												ShopProductsData existingproductsdata = shopproductdata.get(z)
+												for(int x=0; x< shopproductsdata.size(); x++){
+													ShopProductsData newproductsdatainfo = shopproductsdata.get(x)
+													if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
+														if(assettype.equals("Facing")){
+															existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
+															break
+														}
+														else if(assettype.equals("Stock Taking")){
+															existingproductsdata.setStocktakingdata(newproductsdatainfo.getStocktakingdata())
+															break
+														}
+														else if(assettype.equals("Overwrite Facing")){
+															existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
+															break
+														}
+														else if(assettype.equals("Overwrite Stock Taking")){
+															existingproductsdata.setOverwritestocktakingdata(newproductsdatainfo.getOverwritestocktakingdata())
+															break
+														}
+														else{
 														}
 													}
 												}
@@ -870,17 +866,17 @@ public class ChillerProductsDataKeywords {
 								}
 							}
 						}
-						if(flag == false){
-							ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
-							break
-						}
-						else{
-						}
 					}
-					else{
+					if(flag == false){
 						ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
 						break
 					}
+					else{
+					}
+				}
+				else{
+					ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+					break
 				}
 			}
 		}

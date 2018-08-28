@@ -91,7 +91,7 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopWithDataVerification(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=2; i<=2; i++){
+		for(int i=2; i<=3; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -303,7 +303,7 @@ public class ShopVisitingScenariosKeywords{
 														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
 														String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
-													for(int n=0; n<visitedchillerproductcategory.getShopproductsdata().size() ; n++){
+												for(int n=0; n<visitedchillerproductcategory.getShopproductsdata().size() ; n++){
 													ShopProductsData shopproductsdata = visitedchillerproductcategory.getShopproductsdata().get(n)
 													message = message + String.format("%-50s%-20s%-20s%-30s%-30s", shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getStocktakingdata(),shopproductsdata.getOverwritefacingdata(),shopproductsdata.getOverwritestocktakingdata())+"\n"
 												}
@@ -316,7 +316,7 @@ public class ShopVisitingScenariosKeywords{
 						else{
 							message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 									String.format("%-30s%-60s", "Product Category:",visitedcategorydata.getProductcategory()) + "\n" +
-							String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
+									String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
 							for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
 								ShopProductsData shopproductsdata = visitedcategorydata.getShopProductsdata().get(k)
 								message = message + String.format("%-50s%-20s%-20s%-30s%-30s", shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getStocktakingdata(),shopproductsdata.getOverwritefacingdata(),shopproductsdata.getOverwritestocktakingdata())+"\n"
