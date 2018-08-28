@@ -91,7 +91,7 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopWithDataVerification(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=2; i<=3; i++){
+		for(int i=3; i<=3; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -159,13 +159,13 @@ public class ShopVisitingScenariosKeywords{
 		//			}
 		//		}
 
-		String message = "\n\n---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"
-		if(ProjectConstants.missingshopdatainfo != null){
-			for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
-				MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
-				message = message+"<------------------------------------------------------------------------------------------------------>\n\n"+
-						"Shop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
-						"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()
+		String message = "\n\n---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"+
+		"<-------------------------------------------------------------------------------------------------------------------------------------->"
+		for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
+			MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
+			if(missingshopdatainfo != null){
+				message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+				"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()
 				if(missingshopdatainfo.getMissingshopcategories() != null){
 					message = message+"\n\n" + String.format("%-30s", "Shop Categories:")
 					for(int j=0; j<missingshopdatainfo.getMissingshopcategories().size(); j++){
@@ -173,11 +173,8 @@ public class ShopVisitingScenariosKeywords{
 					}
 					message = message+"\n"+missingshopdatainfo.getMissingshopcategories_errormessage() + "\n\n"
 				}
-
-
 				if(missingshopdatainfo.getMissingCategoriesData() != null){
 					for(int j=0; j<missingshopdatainfo.getMissingCategoriesData().size(); j++){
-						int abc = missingshopdatainfo.getMissingCategoriesData().size()
 						MissingCategoryData missingcategorydata = missingshopdatainfo.getMissingCategoriesData().get(j)
 						if(missingcategorydata.getMaincategory().equalsIgnoreCase("Chiller Utilization")){
 							for(int m=0; m< missingcategorydata.getTaggedchillersremarks().size(); m++){
@@ -256,19 +253,18 @@ public class ShopVisitingScenariosKeywords{
 						}
 					}
 				}
-				message = message+"\n\n<------------------------------------------------------------------------------------------------------>\n\n"
+				message = message+"\n\n<-------------------------------------------------------------------------------------------------------------------------------------->\n\n"
 				KeywordUtil.logInfo(message)
+				message = ""
 			}
 		}
-		else{
-		}
-		message = "\n\n\n---------------------------------------------Visited Shop Data-----------------------------------------------------------------------------------------------------\n\n"
-		if(ProjectConstants.visitedshopdatainfo != null){
-			for(int i=0; i<ProjectConstants.visitedshopdatainfo.size(); i++){
-				VisitedShopDataInfo visitedshopdatainfo = ProjectConstants.visitedshopdatainfo.get(i)
-				message = message+"<---------------------------------------------------------------------------------------------------------------------------------------------------------------->\n\n"+
-						"Shop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
-						"\n\nVisiting Scenarios:		"+visitedshopdatainfo.getScenario()
+		message = "\n\n\n---------------------------------------------Visited Shop Data-----------------------------------------------------------------------------------------------------\n\n"+
+		"<-------------------------------------------------------------------------------------------------------------------------------------->"
+		for(int i=0; i<ProjectConstants.visitedshopdatainfo.size(); i++){
+			VisitedShopDataInfo visitedshopdatainfo = ProjectConstants.visitedshopdatainfo.get(i)
+			if(visitedshopdatainfo != null){
+				message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+				"\n\nVisiting Scenarios:		"+visitedshopdatainfo.getScenario()
 				if(visitedshopdatainfo.getVisitedcategoriesdata() != null){
 					for(int j=0; j< visitedshopdatainfo.getVisitedcategoriesdata().size(); j++){
 						VisitedCategoryData visitedcategorydata = visitedshopdatainfo.getVisitedcategoriesdata().get(j)
@@ -324,11 +320,10 @@ public class ShopVisitingScenariosKeywords{
 						}
 					}
 				}
-				message = message + "\n\n<---------------------------------------------------------------------------------------------------------------------------------------------------------------->\n\n"
+				message = message + "\n\n<-------------------------------------------------------------------------------------------------------------------------------------->\n\n"
 				KeywordUtil.logInfo(message)
+				message = ""
 			}
-		}
-		else{
 		}
 	}
 	@Keyword
