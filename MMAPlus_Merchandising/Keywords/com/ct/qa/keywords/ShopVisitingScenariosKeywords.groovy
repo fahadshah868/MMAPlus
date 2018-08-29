@@ -454,7 +454,7 @@ public class ShopVisitingScenariosKeywords{
 			}
 		}
 		String message = "\n\n---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"+
-		"<-------------------------------------------------------------------------------------------------------------------------------------->"
+				"<-------------------------------------------------------------------------------------------------------------------------------------->"
 		for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
 			MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
 			if(missingshopdatainfo != null){
@@ -650,17 +650,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Not Allocated' for chiller\n"+
-						"'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
-						"'No Space for Display' for remaining categories\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
+								"'No Space for Display' for remaining categories\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -669,17 +669,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Not Allocated' for chiller\n"+
-						"'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
-						"'No Space for Display' for remaining categories\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
+								"'No Space for Display' for remaining categories\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -695,17 +695,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
-						"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) 'SKDNA' for chiller with 'Others' remark\n"+
-						"'SKDNA' for remaining categories with 'Others' remark\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) 'SKDNA' for chiller with 'Others' remark\n"+
+								"'SKDNA' for remaining categories with 'Others' remark\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -714,17 +714,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
-						"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) 'SKDNA' for chiller with 'Others' remark\n"+
-						"'SKDNA' for remaining categories with 'Others' remark\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) 'SKDNA' for chiller with 'Others' remark\n"+
+								"'SKDNA' for remaining categories with 'Others' remark\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -740,17 +740,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
-						"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) 'Chiller Not Allocated' for chiller\n"+
-						"'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark"
+								"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) 'Chiller Not Allocated' for chiller\n"+
+								"'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark"
 						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -759,17 +759,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
-						"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) 'Chiller Not Allocated' for chiller\n"+
-						"'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark"
+								"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) 'Chiller Not Allocated' for chiller\n"+
+								"'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark"
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -785,17 +785,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Not Allocated' for chiller\n"+
-						"'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) Overwrite 'Chiller Not Allocated' for chiller\n"+
-						"Overwrite 'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) Overwrite 'Chiller Not Allocated' for chiller\n"+
+								"Overwrite 'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -804,17 +804,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Not Allocated' for chiller\n"+
-						"'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) Overwrite 'Chiller Not Allocated' for chiller\n"+
-						"Overwrite 'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) Overwrite 'Chiller Not Allocated' for chiller\n"+
+								"Overwrite 'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -826,7 +826,7 @@ public class ShopVisitingScenariosKeywords{
 			}
 		}
 		String message = "\n\n---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"+
-		"<-------------------------------------------------------------------------------------------------------------------------------------->"
+				"<-------------------------------------------------------------------------------------------------------------------------------------->"
 		for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
 			MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
 			if(missingshopdatainfo != null){
@@ -1022,17 +1022,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Available' for 'Chiller Utilization'\n"+
-						"'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) 'Chiller Not Available' for 'Chiller Utilization'\n"+
-						"'No Space for Display' for remaining categories\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) 'Chiller Not Available' for 'Chiller Utilization'\n"+
+								"'No Space for Display' for remaining categories\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -1041,17 +1041,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Available' for 'Chiller Utilization'\n"+
-						"'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) 'Chiller Not Available' for 'Chiller Utilization'\n"+
-						"'No Space for Display' for remaining categories\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) 'Chiller Not Available' for 'Chiller Utilization'\n"+
+								"'No Space for Display' for remaining categories\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -1067,17 +1067,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'SKDNA' for chiller Utilization with 'Expiry Issue' remark\n"+
-						"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) 'SKDNA' for chiller with 'Others' remark\n"+
-						"'SKDNA' for remaining categories with 'Others' remark\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) 'SKDNA' for chiller with 'Others' remark\n"+
+								"'SKDNA' for remaining categories with 'Others' remark\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -1086,17 +1086,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'SKDNA' for chiller Utilization with 'Expiry Issue' remark\n"+
-						"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) 'SKDNA' for chiller with 'Others' remark\n"+
-						"'SKDNA' for remaining categories with 'Others' remark\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) 'SKDNA' for chiller with 'Others' remark\n"+
+								"'SKDNA' for remaining categories with 'Others' remark\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -1112,17 +1112,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Type not Available' for chiller Utilization   '(note: if tagged chiller is with yogurt than select chiller without yogurt otherwise select chiller with withouyogurt)'\n"+
-						"'No Space for Display' for remaining categories\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) 'Chiller Available' for chiller Utilization\n"+
-						"Overwrite 'No Space for Display' for remaining categories\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'No Space for Display' for remaining categories\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) 'Chiller Available' for chiller Utilization\n"+
+								"Overwrite 'No Space for Display' for remaining categories\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -1131,17 +1131,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Type not Available' for chiller Utilization   '(note: if tagged chiller is with yogurt than select chiller without yogurt otherwise select chiller with withouyogurt)'\n"+
-						"'No Space for Display' for remaining categories\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) 'Chiller Available' for chiller Utilization\n"+
-						"Overwrite 'No Space for Display' for remaining categories\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'No Space for Display' for remaining categories\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) 'Chiller Available' for chiller Utilization\n"+
+								"Overwrite 'No Space for Display' for remaining categories\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -1157,17 +1157,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Available' for chiller utilization\n"+
-						"'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) Overwrite 'Chiller Available' for chiller utilization\n"+
-						"Overwrite 'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) Overwrite 'Chiller Available' for chiller utilization\n"+
+								"Overwrite 'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -1176,17 +1176,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Available' for chiller utilization\n"+
-						"'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Once a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'OB not visiting' remark\n"+
-						"'Hanger Availability' with 'Yes' remark\n\n"+
-						"(2) Overwrite 'Chiller Available' for chiller utilization\n"+
-						"Overwrite 'Display Space Available' for remaining categories\n"+
-						"'RTM visit frequency' with 'Twice a week'\n"+
-						"'Pop Application' with 'No' remark\n"+
-						"'Retailer Remarks' with 'SM not visiting' remark\n"+
-						"'Hanger Availability' with 'No' remark"
+								"'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Once a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'OB not visiting' remark\n"+
+								"'Hanger Availability' with 'Yes' remark\n\n"+
+								"(2) Overwrite 'Chiller Available' for chiller utilization\n"+
+								"Overwrite 'Display Space Available' for remaining categories\n"+
+								"'RTM visit frequency' with 'Twice a week'\n"+
+								"'Pop Application' with 'No' remark\n"+
+								"'Retailer Remarks' with 'SM not visiting' remark\n"+
+								"'Hanger Availability' with 'No' remark"
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -1197,7 +1197,7 @@ public class ShopVisitingScenariosKeywords{
 			}
 		}
 		String message = "\n\n---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"+
-		"<-------------------------------------------------------------------------------------------------------------------------------------->"
+				"<-------------------------------------------------------------------------------------------------------------------------------------->"
 		for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
 			MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
 			if(missingshopdatainfo != null){

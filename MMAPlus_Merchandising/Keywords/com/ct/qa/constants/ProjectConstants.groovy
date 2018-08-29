@@ -41,7 +41,7 @@ import WebUiBuiltInKeywords as WebUI
 public class ProjectConstants {
 
 	//variables for excel file and sheets
-	public static final String EXCEL_FILEPATH = "F:\\MMA_Merchandising1.xlsx"
+	public static final String EXCEL_FILEPATH = "F:\\MMA_Merchandising.xlsx"
 	public static final String CHANNEL_PRODUCTSSHEET = "Channel Products"
 	public static final String CHILLER_PRODUCTSSHEET = "Chiller Products"
 	public static final String DISTRIBUTION_SHEET = "Distribution Point"
@@ -109,7 +109,7 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_PRODUCTCATEGORY = ""
 	public static String CURRENTVISITING_CHILLERTYPE = ""
 	public static String CURRENTVISITING_CHILLERREMARK = ""
-	public static int VISITED_CHILLERREMARKS = 2
+	public static int VISITED_CHILLERREMARKS = 1
 
 	//list for containing shop info
 	public static ArrayList<MissingShopDataInfo> missingshopdatainfo = new ArrayList<MissingShopDataInfo>()
