@@ -180,10 +180,10 @@ public class ShopVisitingScenariosKeywords{
 		for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
 			MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
 			if(missingshopdatainfo != null){
-				message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
-						"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()
 				if(missingshopdatainfo.getMissingshopcategories() != null){
-					message = message+"\n\n" + String.format("%-30s", "Shop Categories:")
+					message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+					"\n\nVisiting Scenarios:		"+missingshopdatainfo.getScenario()+
+					"\n\n" + String.format("%-30s", "Shop Categories:")
 					for(int j=0; j<missingshopdatainfo.getMissingshopcategories().size(); j++){
 						message = message+missingshopdatainfo.getMissingshopcategories().get(j)+",   "
 					}
@@ -199,11 +199,13 @@ public class ShopVisitingScenariosKeywords{
 									for(int k=0; k<taggedchillerremarks.getMissingchillerproductscategories().size() ; k++){
 										MissingChillerProductsCategoryData missingchillerproductcategory = taggedchillerremarks.getMissingchillerproductscategories().get(k)
 										if(missingchillerproductcategory.getProductcategories() != null){
-											message = message + "\n\nProduct Categories:\n\n" +
-													String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
-													String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
-													String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
-													String.format("%-30s","Product Categories:")
+											message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+											"\n\nVisiting Scenarios:		"+missingshopdatainfo.getScenario()+
+											"\n\nProduct Categories:\n\n" +
+											String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+											String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
+											String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
+											String.format("%-30s","Product Categories:")
 											for(int n=0; n<missingchillerproductcategory.getProductcategories().size() ; n++){
 												message = message + missingchillerproductcategory.getProductcategories().get(n) + ",   "
 											}
@@ -215,7 +217,9 @@ public class ShopVisitingScenariosKeywords{
 						}
 						else{
 							if(missingcategorydata.getProductcategories() != null){
-								message = message + String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+								message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+								"\n\nVisiting Scenarios:		"+missingshopdatainfo.getScenario()+
+										String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 										String.format("%-30s","Product Categories:")
 								for(int k=0; k<missingcategorydata.getProductcategories().size(); k++){
 									message = message+missingcategorydata.getProductcategories().get(k)+",	"
@@ -235,7 +239,9 @@ public class ShopVisitingScenariosKeywords{
 									for(int k=0; k<taggedchillerremarks.getMissingchillerproductscategories().size() ; k++){
 										MissingChillerProductsCategoryData missingchillerproductcategory = taggedchillerremarks.getMissingchillerproductscategories().get(k)
 										if(missingchillerproductcategory.getProductcategory() != null){
-											message = message + "\n\nProducts:\n\n" +
+											message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+											"\n\nVisiting Scenarios:		"+missingshopdatainfo.getScenario()+
+													"\n\nProducts:\n\n" +
 													String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 													String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
 													String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
@@ -255,7 +261,9 @@ public class ShopVisitingScenariosKeywords{
 								for(int n=0; n<missingshopdatainfo.getMissingCategoriesData().size(); n++){
 									missingcategorydata = missingshopdatainfo.getMissingCategoriesData().get(n)
 									if(missingcategorydata.getProducts() != null){
-										message = message + "\n\nProducts:\n\n" +
+										message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+										"\n\nVisiting Scenarios:		"+missingshopdatainfo.getScenario()+
+												"\n\nProducts:\n\n" +
 												String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 												String.format("%-30s%-60s","Product Category:",missingcategorydata.getProductCategory()) + "\n" +
 												String.format("%-30s", "Products:")
@@ -279,8 +287,6 @@ public class ShopVisitingScenariosKeywords{
 		for(int i=0; i<ProjectConstants.visitedshopdatainfo.size(); i++){
 			VisitedShopDataInfo visitedshopdatainfo = ProjectConstants.visitedshopdatainfo.get(i)
 			if(visitedshopdatainfo != null){
-				message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
-						"\n\nVisiting Scenarios:		"+visitedshopdatainfo.getScenario()
 				if(visitedshopdatainfo.getVisitedcategoriesdata() != null){
 					for(int j=0; j< visitedshopdatainfo.getVisitedcategoriesdata().size(); j++){
 						VisitedCategoryData visitedcategorydata = visitedshopdatainfo.getVisitedcategoriesdata().get(j)
@@ -292,7 +298,9 @@ public class ShopVisitingScenariosKeywords{
 										for(int m=0; m<taggedchillerremarks.getVisitedchillerproductscategories().size() ; m++){
 											VisitedChillerProductsCategoryData visitedchillerproductcategory = taggedchillerremarks.getVisitedchillerproductscategories().get(m)
 											if(visitedchillerproductcategory.getProductCategory() != null){
-												message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+												message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+												"\n\nVisiting Scenarios:		"+visitedshopdatainfo.getScenario()+
+														String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
@@ -310,7 +318,9 @@ public class ShopVisitingScenariosKeywords{
 										for(int m=0; m<taggedchillerremarks.getVisitedchillerproductscategories().size() ; m++){
 											VisitedChillerProductsCategoryData visitedchillerproductcategory = taggedchillerremarks.getVisitedchillerproductscategories().get(m)
 											if(visitedchillerproductcategory.getProductCategory() != null){
-												message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+												message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+												"\n\nVisiting Scenarios:		"+visitedshopdatainfo.getScenario()+
+														"\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
@@ -326,7 +336,9 @@ public class ShopVisitingScenariosKeywords{
 							}
 						}
 						else{
-							message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+							message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+							"\n\nVisiting Scenarios:		"+visitedshopdatainfo.getScenario()+
+									"\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 									String.format("%-30s%-60s", "Product Category:",visitedcategorydata.getProductcategory()) + "\n" +
 									String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
 							for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
@@ -458,8 +470,6 @@ public class ShopVisitingScenariosKeywords{
 		for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
 			MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
 			if(missingshopdatainfo != null){
-				message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
-						"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()
 				if(missingshopdatainfo.getMissingshopcategories() != null){
 					message = message+"\n\n" + String.format("%-30s", "Shop Categories:")
 					for(int j=0; j<missingshopdatainfo.getMissingshopcategories().size(); j++){
@@ -477,7 +487,9 @@ public class ShopVisitingScenariosKeywords{
 									for(int k=0; k<taggedchillerremarks.getMissingchillerproductscategories().size() ; k++){
 										MissingChillerProductsCategoryData missingchillerproductcategory = taggedchillerremarks.getMissingchillerproductscategories().get(k)
 										if(missingchillerproductcategory.getProductcategories() != null){
-											message = message + "\n\nProduct Categories:\n\n" +
+											message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+											"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()+
+													"\n\nProduct Categories:\n\n" +
 													String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 													String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
 													String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
@@ -493,7 +505,9 @@ public class ShopVisitingScenariosKeywords{
 						}
 						else{
 							if(missingcategorydata.getProductcategories() != null){
-								message = message + String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+								message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+								"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()+
+										String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 										String.format("%-30s","Product Categories:")
 								for(int k=0; k<missingcategorydata.getProductcategories().size(); k++){
 									message = message+missingcategorydata.getProductcategories().get(k)+",	"
@@ -513,7 +527,9 @@ public class ShopVisitingScenariosKeywords{
 									for(int k=0; k<taggedchillerremarks.getMissingchillerproductscategories().size() ; k++){
 										MissingChillerProductsCategoryData missingchillerproductcategory = taggedchillerremarks.getMissingchillerproductscategories().get(k)
 										if(missingchillerproductcategory.getProductcategory() != null){
-											message = message + "\n\nProducts:\n\n" +
+											message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+											"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()+
+													"\n\nProducts:\n\n" +
 													String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 													String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
 													String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
@@ -533,7 +549,9 @@ public class ShopVisitingScenariosKeywords{
 								for(int n=0; n<missingshopdatainfo.getMissingCategoriesData().size(); n++){
 									missingcategorydata = missingshopdatainfo.getMissingCategoriesData().get(n)
 									if(missingcategorydata.getProducts() != null){
-										message = message + "\n\nProducts:\n\n" +
+										message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+										"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()+
+												"\n\nProducts:\n\n" +
 												String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 												String.format("%-30s%-60s","Product Category:",missingcategorydata.getProductCategory()) + "\n" +
 												String.format("%-30s", "Products:")
@@ -557,8 +575,6 @@ public class ShopVisitingScenariosKeywords{
 		for(int i=0; i<ProjectConstants.visitedshopdatainfo.size(); i++){
 			VisitedShopDataInfo visitedshopdatainfo = ProjectConstants.visitedshopdatainfo.get(i)
 			if(visitedshopdatainfo != null){
-				message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
-						"\n\nVisiting Scenarios:		"+visitedshopdatainfo.getScenario()
 				if(visitedshopdatainfo.getVisitedcategoriesdata() != null){
 					for(int j=0; j< visitedshopdatainfo.getVisitedcategoriesdata().size(); j++){
 						VisitedCategoryData visitedcategorydata = visitedshopdatainfo.getVisitedcategoriesdata().get(j)
@@ -570,7 +586,9 @@ public class ShopVisitingScenariosKeywords{
 										for(int m=0; m<taggedchillerremarks.getVisitedchillerproductscategories().size() ; m++){
 											VisitedChillerProductsCategoryData visitedchillerproductcategory = taggedchillerremarks.getVisitedchillerproductscategories().get(m)
 											if(visitedchillerproductcategory.getProductCategory() != null){
-												message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+												message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+												"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()+
+														"\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
@@ -588,7 +606,9 @@ public class ShopVisitingScenariosKeywords{
 										for(int m=0; m<taggedchillerremarks.getVisitedchillerproductscategories().size() ; m++){
 											VisitedChillerProductsCategoryData visitedchillerproductcategory = taggedchillerremarks.getVisitedchillerproductscategories().get(m)
 											if(visitedchillerproductcategory.getProductCategory() != null){
-												message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+												message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+												"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()+
+														"\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
@@ -604,7 +624,9 @@ public class ShopVisitingScenariosKeywords{
 							}
 						}
 						else{
-							message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+							message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+							"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()+
+									"\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 									String.format("%-30s%-60s", "Product Category:",visitedcategorydata.getProductcategory()) + "\n" +
 									String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
 							for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
@@ -830,8 +852,6 @@ public class ShopVisitingScenariosKeywords{
 		for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
 			MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
 			if(missingshopdatainfo != null){
-				message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
-						"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()
 				if(missingshopdatainfo.getMissingshopcategories() != null){
 					message = message+"\n\n" + String.format("%-30s", "Shop Categories:")
 					for(int j=0; j<missingshopdatainfo.getMissingshopcategories().size(); j++){
@@ -849,7 +869,9 @@ public class ShopVisitingScenariosKeywords{
 									for(int k=0; k<taggedchillerremarks.getMissingchillerproductscategories().size() ; k++){
 										MissingChillerProductsCategoryData missingchillerproductcategory = taggedchillerremarks.getMissingchillerproductscategories().get(k)
 										if(missingchillerproductcategory.getProductcategories() != null){
-											message = message + "\n\nProduct Categories:\n\n" +
+											message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+											"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()+
+													"\n\nProduct Categories:\n\n" +
 													String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 													String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
 													String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
@@ -865,7 +887,9 @@ public class ShopVisitingScenariosKeywords{
 						}
 						else{
 							if(missingcategorydata.getProductcategories() != null){
-								message = message + String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+								message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+								"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()+
+								String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 										String.format("%-30s","Product Categories:")
 								for(int k=0; k<missingcategorydata.getProductcategories().size(); k++){
 									message = message+missingcategorydata.getProductcategories().get(k)+",	"
@@ -885,7 +909,9 @@ public class ShopVisitingScenariosKeywords{
 									for(int k=0; k<taggedchillerremarks.getMissingchillerproductscategories().size() ; k++){
 										MissingChillerProductsCategoryData missingchillerproductcategory = taggedchillerremarks.getMissingchillerproductscategories().get(k)
 										if(missingchillerproductcategory.getProductcategory() != null){
-											message = message + "\n\nProducts:\n\n" +
+											message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+											"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()+
+													"\n\nProducts:\n\n" +
 													String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 													String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
 													String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
@@ -905,7 +931,9 @@ public class ShopVisitingScenariosKeywords{
 								for(int n=0; n<missingshopdatainfo.getMissingCategoriesData().size(); n++){
 									missingcategorydata = missingshopdatainfo.getMissingCategoriesData().get(n)
 									if(missingcategorydata.getProducts() != null){
-										message = message + "\n\nProducts:\n\n" +
+										message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+										"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()+
+												"\n\nProducts:\n\n" +
 												String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 												String.format("%-30s%-60s","Product Category:",missingcategorydata.getProductCategory()) + "\n" +
 												String.format("%-30s", "Products:")
@@ -929,8 +957,6 @@ public class ShopVisitingScenariosKeywords{
 		for(int i=0; i<ProjectConstants.visitedshopdatainfo.size(); i++){
 			VisitedShopDataInfo visitedshopdatainfo = ProjectConstants.visitedshopdatainfo.get(i)
 			if(visitedshopdatainfo != null){
-				message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
-						"\n\nVisiting Scenarios:		"+visitedshopdatainfo.getScenario()
 				if(visitedshopdatainfo.getVisitedcategoriesdata() != null){
 					for(int j=0; j< visitedshopdatainfo.getVisitedcategoriesdata().size(); j++){
 						VisitedCategoryData visitedcategorydata = visitedshopdatainfo.getVisitedcategoriesdata().get(j)
@@ -942,7 +968,9 @@ public class ShopVisitingScenariosKeywords{
 										for(int m=0; m<taggedchillerremarks.getVisitedchillerproductscategories().size() ; m++){
 											VisitedChillerProductsCategoryData visitedchillerproductcategory = taggedchillerremarks.getVisitedchillerproductscategories().get(m)
 											if(visitedchillerproductcategory.getProductCategory() != null){
-												message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+												message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+												"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()+
+														"\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
@@ -960,7 +988,9 @@ public class ShopVisitingScenariosKeywords{
 										for(int m=0; m<taggedchillerremarks.getVisitedchillerproductscategories().size() ; m++){
 											VisitedChillerProductsCategoryData visitedchillerproductcategory = taggedchillerremarks.getVisitedchillerproductscategories().get(m)
 											if(visitedchillerproductcategory.getProductCategory() != null){
-												message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+												message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+												"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()+
+														"\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
@@ -976,7 +1006,9 @@ public class ShopVisitingScenariosKeywords{
 							}
 						}
 						else{
-							message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+							message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+							"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()+
+									"\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 									String.format("%-30s%-60s", "Product Category:",visitedcategorydata.getProductcategory()) + "\n" +
 									String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
 							for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
@@ -1201,8 +1233,6 @@ public class ShopVisitingScenariosKeywords{
 		for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
 			MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
 			if(missingshopdatainfo != null){
-				message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
-						"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()
 				if(missingshopdatainfo.getMissingshopcategories() != null){
 					message = message+"\n\n" + String.format("%-30s", "Shop Categories:")
 					for(int j=0; j<missingshopdatainfo.getMissingshopcategories().size(); j++){
@@ -1220,7 +1250,9 @@ public class ShopVisitingScenariosKeywords{
 									for(int k=0; k<taggedchillerremarks.getMissingchillerproductscategories().size() ; k++){
 										MissingChillerProductsCategoryData missingchillerproductcategory = taggedchillerremarks.getMissingchillerproductscategories().get(k)
 										if(missingchillerproductcategory.getProductcategories() != null){
-											message = message + "\n\nProduct Categories:\n\n" +
+											message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+											"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()+
+													"\n\nProduct Categories:\n\n" +
 													String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 													String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
 													String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
@@ -1236,7 +1268,9 @@ public class ShopVisitingScenariosKeywords{
 						}
 						else{
 							if(missingcategorydata.getProductcategories() != null){
-								message = message + String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+								message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+								"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()+
+										String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 										String.format("%-30s","Product Categories:")
 								for(int k=0; k<missingcategorydata.getProductcategories().size(); k++){
 									message = message+missingcategorydata.getProductcategories().get(k)+",	"
@@ -1256,7 +1290,9 @@ public class ShopVisitingScenariosKeywords{
 									for(int k=0; k<taggedchillerremarks.getMissingchillerproductscategories().size() ; k++){
 										MissingChillerProductsCategoryData missingchillerproductcategory = taggedchillerremarks.getMissingchillerproductscategories().get(k)
 										if(missingchillerproductcategory.getProductcategory() != null){
-											message = message + "\n\nProducts:\n\n" +
+											message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+											"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()+
+													"\n\nProducts:\n\n" +
 													String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 													String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
 													String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
@@ -1276,7 +1312,9 @@ public class ShopVisitingScenariosKeywords{
 								for(int n=0; n<missingshopdatainfo.getMissingCategoriesData().size(); n++){
 									missingcategorydata = missingshopdatainfo.getMissingCategoriesData().get(n)
 									if(missingcategorydata.getProducts() != null){
-										message = message + "\n\nProducts:\n\n" +
+										message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+
+										"\n\nVisiting Scenarios:\n"+missingshopdatainfo.getScenario()+
+												"\n\nProducts:\n\n" +
 												String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 												String.format("%-30s%-60s","Product Category:",missingcategorydata.getProductCategory()) + "\n" +
 												String.format("%-30s", "Products:")
@@ -1300,8 +1338,6 @@ public class ShopVisitingScenariosKeywords{
 		for(int i=0; i<ProjectConstants.visitedshopdatainfo.size(); i++){
 			VisitedShopDataInfo visitedshopdatainfo = ProjectConstants.visitedshopdatainfo.get(i)
 			if(visitedshopdatainfo != null){
-				message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
-						"\n\nVisiting Scenarios:		"+visitedshopdatainfo.getScenario()
 				if(visitedshopdatainfo.getVisitedcategoriesdata() != null){
 					for(int j=0; j< visitedshopdatainfo.getVisitedcategoriesdata().size(); j++){
 						VisitedCategoryData visitedcategorydata = visitedshopdatainfo.getVisitedcategoriesdata().get(j)
@@ -1313,7 +1349,9 @@ public class ShopVisitingScenariosKeywords{
 										for(int m=0; m<taggedchillerremarks.getVisitedchillerproductscategories().size() ; m++){
 											VisitedChillerProductsCategoryData visitedchillerproductcategory = taggedchillerremarks.getVisitedchillerproductscategories().get(m)
 											if(visitedchillerproductcategory.getProductCategory() != null){
-												message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+												message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+												"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()+
+														"\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
@@ -1331,7 +1369,9 @@ public class ShopVisitingScenariosKeywords{
 										for(int m=0; m<taggedchillerremarks.getVisitedchillerproductscategories().size() ; m++){
 											VisitedChillerProductsCategoryData visitedchillerproductcategory = taggedchillerremarks.getVisitedchillerproductscategories().get(m)
 											if(visitedchillerproductcategory.getProductCategory() != null){
-												message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+												message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+												"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()+
+														"\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
@@ -1347,7 +1387,9 @@ public class ShopVisitingScenariosKeywords{
 							}
 						}
 						else{
-							message = message + "\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+							message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+
+							"\n\nVisiting Scenarios:\n"+visitedshopdatainfo.getScenario()+
+									"\n\n" + String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 									String.format("%-30s%-60s", "Product Category:",visitedcategorydata.getProductcategory()) + "\n" +
 									String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
 							for(int k=0; k<visitedcategorydata.getShopProductsdata().size() ; k++){
