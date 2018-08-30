@@ -110,6 +110,7 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_CHILLERTYPE = ""
 	public static String CURRENTVISITING_CHILLERREMARK = ""
 	public static int VISITED_CHILLERREMARKS = 1
+	public static String scenario = ""
 
 	//list for containing shop info
 	public static ArrayList<MissingShopDataInfo> missingshopdatainfo = new ArrayList<MissingShopDataInfo>()

@@ -482,23 +482,29 @@ public class ChannelProductsDataKeywords {
 								for(int m=0; m< shopproductsdata.size(); m++){
 									ShopProductsData newproductsdatainfo = shopproductsdata.get(m)
 									if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
-										if(assettype.equals("Facing")){
-											existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
-											break
-										}
-										else if(assettype.equals("Stock Taking")){
-											existingproductsdata.setStocktakingdata(newproductsdatainfo.getStocktakingdata())
-											break
-										}
-										else if(assettype.equals("Overwrite Facing")){
-											existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
-											break
-										}
-										else if(assettype.equals("Overwrite Stock Taking")){
-											existingproductsdata.setOverwritestocktakingdata(newproductsdatainfo.getOverwritestocktakingdata())
-											break
+										if(ProjectConstants.scenario.equals("first visit")){
+											if(assettype.equals("Facing")){
+												existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
+												break
+											}
+											else if(assettype.equals("Stock Taking")){
+												existingproductsdata.setStocktakingdata(newproductsdatainfo.getStocktakingdata())
+												break
+											}
+											else{
+											}
 										}
 										else{
+											if(assettype.equals("Facing")){
+												existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
+												break
+											}
+											else if(assettype.equals("Stock Taking")){
+												existingproductsdata.setOverwritestocktakingdata(newproductsdatainfo.getOverwritestocktakingdata())
+												break
+											}
+											else{
+											}
 										}
 									}
 								}

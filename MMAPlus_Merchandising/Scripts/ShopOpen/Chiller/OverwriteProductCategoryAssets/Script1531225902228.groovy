@@ -32,7 +32,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validat
 
 'overwrite products with facing'
 CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_CHILLER_OVERWRITEFACING, 
-    'Overwrite Facing')
+    'Facing')
 
 'tap on submit button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
@@ -48,7 +48,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validat
 
 'overwrite products with stock taking'
 CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_CHILLER_OVERWRITESTOCKTAKING, 
-    'Overwrite Stock Taking')
+    'Stock Taking')
 
 'tap on submit button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)

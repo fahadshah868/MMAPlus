@@ -33,6 +33,7 @@ import WebUiBuiltInKeywords as WebUI
 public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	@Keyword
 	def visitShopCategoriesWithDataVerification(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -203,6 +204,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CAv_DSA(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -395,6 +397,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_CNAv_NSFD(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -587,6 +590,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_SKDNA_SKDNA(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -779,6 +783,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CTNAv_NSFD(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -822,7 +827,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 		int index = 0
 		String lastvisitedcategory = ""
 		int totalcategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=totalcategories; i++){
+		for(int i=1; i<=1; i++){
 			MobileElement category = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String categoryname = category.getText()
 			if(categoryname.equalsIgnoreCase("Chiller")){
@@ -971,6 +976,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_CAv_DSA(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -1163,6 +1169,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -1355,6 +1362,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def overwriteShopCategoriesWith_CNAl_CAv_DSA(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -1547,6 +1555,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CAv_NSFD(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -1645,7 +1654,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithNSFD"), null)
 			}
 		}
@@ -1664,56 +1673,56 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/VisitAdditionalPicture"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Competition Tracking")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/VisitCompetitionTracking"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Retailer Remarks")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/VisitRetailerRemarks"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("RTM -Visit Frequency")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/VisitRTMVisitFrequency"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("POP Application")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/POPApplication/VisitPOPApplication"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/VisitHangerAvailability"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Nestrade")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithNSFD"), null)
 			}
 			else{
@@ -1721,7 +1730,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithNSFD"), null)
 			}
 			while(true){
@@ -1739,6 +1748,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_CNAv_SKDNA(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -1837,7 +1847,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithSKDNA"), null)
 			}
 		}
@@ -1856,56 +1866,56 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitChillerWithSKDNA"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerNotAvailable"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/VisitAdditionalPicture"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Competition Tracking")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/VisitCompetitionTracking"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Retailer Remarks")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/VisitRetailerRemarks"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("RTM -Visit Frequency")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/VisitRTMVisitFrequency"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("POP Application")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/POPApplication/VisitPOPApplication"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/VisitHangerAvailability"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Nestrade")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithSKDNA"), null)
 			}
 			else{
@@ -1913,7 +1923,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithSKDNA"), null)
 			}
 			while(true){
@@ -1931,6 +1941,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CNAv_SKDNA(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -2029,7 +2040,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithSKDNA"), null)
 			}
 		}
@@ -2048,56 +2059,56 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerNotAvailable"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/VisitAdditionalPicture"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Competition Tracking")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/VisitCompetitionTracking"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Retailer Remarks")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/VisitRetailerRemarks"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("RTM -Visit Frequency")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/VisitRTMVisitFrequency"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("POP Application")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/POPApplication/VisitPOPApplication"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/VisitHangerAvailability"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Nestrade")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithSKDNA"), null)
 			}
 			else{
@@ -2105,7 +2116,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithSKDNA"), null)
 			}
 			while(true){
@@ -2123,6 +2134,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CNAv_DSA(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -2221,7 +2233,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA"), null)
 			}
 		}
@@ -2240,56 +2252,56 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitChillerWithChillerNotAllocated"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerNotAvailable"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/VisitAdditionalPicture"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Competition Tracking")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/VisitCompetitionTracking"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Retailer Remarks")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/VisitRetailerRemarks"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("RTM -Visit Frequency")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/VisitRTMVisitFrequency"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("POP Application")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/POPApplication/VisitPOPApplication"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/VisitHangerAvailability"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Nestrade")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithDSA"), null)
 			}
 			else{
@@ -2297,7 +2309,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA"), null)
 			}
 			while(true){
@@ -2313,10 +2325,11 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 			}
 		}
 	}
-	
-	
+
+
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_CAv_SKDNA(){
+		ProjectConstants.scenario = "first visit"
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -2415,7 +2428,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithSKDNA"), null)
 			}
 		}
@@ -2434,56 +2447,56 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitChillerWithSKDNA"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/VisitAdditionalPicture"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Competition Tracking")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/VisitCompetitionTracking"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Retailer Remarks")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/VisitRetailerRemarks"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("RTM -Visit Frequency")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/VisitRTMVisitFrequency"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("POP Application")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/POPApplication/VisitPOPApplication"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/VisitHangerAvailability"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Nestrade")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithSKDNA"), null)
 			}
 			else{
@@ -2491,7 +2504,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				
+
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithSKDNA"), null)
 			}
 			while(true){

@@ -33,7 +33,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
 
 'overwrite chiller products with facing'
 CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITEFACING, 
-    'Overwrite Facing')
+    'Facing')
 
 'tap on submit button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 0)
@@ -51,7 +51,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
 
 'overwrite chiller products with depth'
 CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITEDEPTH, 
-    'Overwrite Depth')
+    'Depth')
 
 'tap on submit button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 0)
@@ -69,7 +69,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
 
 'overwrite chiller products with stock count'
 CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_OVERWRITESTOCKCOUNT, 
-    'Overwrite Stock Count')
+    'Stock Count')
 
 'tap on submit button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 0)

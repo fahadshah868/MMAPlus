@@ -38,7 +38,7 @@ public interface ShopCategories {
 	//SKDNA -> Chiller not allocated || NSFD -> DSA || chiller not available -> chiller available
 	//def visitShopCategoriesWith_SKDNA_CNAv_NSFD()
 	//def visitShopCategoriesWith_CNAl_CAv_DSA()
-	
+
 	//SKDNA -> SKDNA
 	def visitShopCategoriesWith_SKDNA_SKDNA_SKDNA()
 	def overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA()
@@ -46,13 +46,13 @@ public interface ShopCategories {
 	//chiller not allocated -> chiller not allocated || chiller availble -> chiller available || DSA -> DSA
 	//def visitShopCategoriesWith_CNAl_CAv_DSA()     (implemented above)
 	def overwriteShopCategoriesWith_CNAl_CAv_DSA()
-	
-	
+
+
 	/*--------------------------------------------------------------------------------------------------------------------------------*/
-	
-	
+
+
 	/*category flows with chiller utilization*/
-	
+
 	//chiller not allocated -> SKDNA || CAv -> CNAv || NSFD -> SKDNA
 	def visitShopCategoriesWith_CNAl_CAv_NSFD()
 	def visitShopCategoriesWith_SKDNA_CNAv_SKDNA()
@@ -76,7 +76,7 @@ public interface ShopCategories {
 	//chiller not allocated -> SKDNA || chiller type not available -> chiller available || NSFD -> DSA
 	def visitShopCategoriesWith_CNAl_CTNAv_NSFD()
 	//def visitShopCategoriesWith_SKDNA_CAv_DSA()		(implemented above)
-	
+
 	//SKDNA -> SKDNA
 	//def visitShopCategoriesWith_SKDNA_SKDNA_SKDNA()
 	//def overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA()
