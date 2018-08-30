@@ -22,10 +22,6 @@ import internal.GlobalVariable as GlobalVariable
 'validate shop\'s categories screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
 
-Mobile.swipe(0, 200, 0, 700)
-
-Mobile.swipe(0, 200, 0, 700)
-
-'visit shop categories with "Chiller Not Allocated" / "Chiller Type Not Available" & "No Space For Display"'
-CustomKeywords.'com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_CNAl_CTNAv_NSFD'()
+'overwrite shop categories "Chiller Not Allocated" / "Chiller Available" & "Display Space Available"'
+CustomKeywords.'com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.overwriteShopCategoriesWith_CNAl_CAv_DSA'()
 

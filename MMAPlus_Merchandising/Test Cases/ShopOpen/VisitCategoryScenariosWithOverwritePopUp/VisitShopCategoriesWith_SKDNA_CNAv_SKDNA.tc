@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA</name>
+   <name>VisitShopCategoriesWith_SKDNA_CNAv_SKDNA</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>fc16d938-37ef-4858-aab3-51c929416bf7</testCaseGuid>
+   <testCaseGuid>218a0478-b5f2-4f3e-9826-e1a39c4391b9</testCaseGuid>
 </TestCaseEntity>
