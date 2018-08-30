@@ -4,7 +4,7 @@
    <name>MMA Plus Merchandising With Category Level(Chiller Utilization) Overwrite Scenarios</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-08-10T16:35:32</lastRun>
+   <lastRun>2018-08-30T16:11:14</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>4</pageLoadTimeout>
@@ -26,7 +26,7 @@
    <testCaseLink>
       <guid>80575ba9-724c-444f-bb98-cd91ac0d89a3</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
    </testCaseLink>
    <testCaseLink>

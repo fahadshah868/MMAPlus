@@ -1,0 +1,11 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Plus Merchandising With Category Level(Chiller Utilization) Overwrite Scenarios,,,2018-08-30 16:11:18,2018-08-30 16:11:27,8.789s,FAILED
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2018-08-30 16:11:19,2018-08-30 16:11:25,6.869s,FAILED
+startApplication,,launch application,2018-08-30 16:11:19,2018-08-30 16:11:25,6.232s,FAILED
+,,,,,,
+Test Cases/DistributionPoint/VisitDistributionPoint,,,2018-08-30 16:11:25,2018-08-30 16:11:26,0.730s,FAILED
+verifyElementText,,validate dashboard screen appearance,2018-08-30 16:11:26,2018-08-30 16:11:26,0.208s,PASSED
+,,,,,,
+Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller Utilization)Overwriting,,,2018-08-30 16:11:26,2018-08-30 16:11:27,0.513s,FAILED
+verifyElementText,,validate the dashboard screen appearance,2018-08-30 16:11:27,2018-08-30 16:11:27,0.049s,PASSED
