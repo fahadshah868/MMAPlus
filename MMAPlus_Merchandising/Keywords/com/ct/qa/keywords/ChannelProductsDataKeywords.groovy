@@ -256,19 +256,24 @@ public class ChannelProductsDataKeywords {
 					String productquantity = channelproduct.getProduct_data()
 					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 					selectedproducttextfield.setValue(productquantity)
-					if(assettype.equalsIgnoreCase("Facing")){
-						productsdata.setFacingdata(productquantity)
-					}
-					else if(assettype.equalsIgnoreCase("Stock Taking")){
-						productsdata.setStocktakingdata(productquantity)
-					}
-					else if(assettype.equalsIgnoreCase("Overwrite Facing")){
-						productsdata.setOverwritefacingdata(productquantity)
-					}
-					else if(assettype.equalsIgnoreCase("Overwrite Stock Taking")){
-						productsdata.setOverwritestocktakingdata(productquantity)
+					if(ProjectConstants.scenario.equals("first visit")){
+						if(assettype.equalsIgnoreCase("Facing")){
+							productsdata.setFacingdata(productquantity)
+						}
+						else if(assettype.equalsIgnoreCase("Stock Taking")){
+							productsdata.setStocktakingdata(productquantity)
+						}
+						else{}
 					}
 					else{
+						if(assettype.equalsIgnoreCase("Facing")){
+							productsdata.setOverwritefacingdata(productquantity)
+						}
+						else if(assettype.equalsIgnoreCase("Stock Taking")){
+							productsdata.setOverwritestocktakingdata(productquantity)
+						}
+						else{
+						}
 					}
 					Mobile.hideKeyboard()
 					break
@@ -279,19 +284,24 @@ public class ChannelProductsDataKeywords {
 			if(flag == false){
 				MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 				selectedproducttextfield.setValue("0000")
-				if(assettype.equalsIgnoreCase("Facing")){
-					productsdata.setFacingdata("0000")
-				}
-				else if(assettype.equalsIgnoreCase("Stock Taking")){
-					productsdata.setStocktakingdata("0000")
-				}
-				else if(assettype.equalsIgnoreCase("Overwrite Facing")){
-					productsdata.setOverwritefacingdata("0000")
-				}
-				else if(assettype.equalsIgnoreCase("Overwrite Stock Taking")){
-					productsdata.setOverwritestocktakingdata("0000")
+				if(ProjectConstants.scenario.equals("first visit")){
+					if(assettype.equalsIgnoreCase("Facing")){
+						productsdata.setFacingdata("0000")
+					}
+					else if(assettype.equalsIgnoreCase("Stock Taking")){
+						productsdata.setStocktakingdata("0000")
+					}
+					else{}
 				}
 				else{
+					if(assettype.equalsIgnoreCase("Facing")){
+						productsdata.setOverwritefacingdata("0000")
+					}
+					else if(assettype.equalsIgnoreCase("Stock Taking")){
+						productsdata.setOverwritestocktakingdata("0000")
+					}
+					else{
+					}
 				}
 				Mobile.hideKeyboard()
 			}
@@ -322,19 +332,24 @@ public class ChannelProductsDataKeywords {
 							String productquantity = channelproduct.getProduct_data()
 							MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
 							selectedproducttextfield.setValue(productquantity)
-							if(assettype.equalsIgnoreCase("Facing")){
-								productsdata.setFacingdata(productquantity)
-							}
-							else if(assettype.equalsIgnoreCase("Stock Taking")){
-								productsdata.setStocktakingdata(productquantity)
-							}
-							else if(assettype.equalsIgnoreCase("Overwrite Facing")){
-								productsdata.setOverwritefacingdata(productquantity)
-							}
-							else if(assettype.equalsIgnoreCase("Overwrite Stock Taking")){
-								productsdata.setOverwritestocktakingdata(productquantity)
+							if(ProjectConstants.scenario.equals("first visit")){
+								if(assettype.equalsIgnoreCase("Facing")){
+									productsdata.setFacingdata(productquantity)
+								}
+								else if(assettype.equalsIgnoreCase("Stock Taking")){
+									productsdata.setStocktakingdata(productquantity)
+								}
+								else{}
 							}
 							else{
+								if(assettype.equalsIgnoreCase("Facing")){
+									productsdata.setOverwritefacingdata(productquantity)
+								}
+								else if(assettype.equalsIgnoreCase("Stock Taking")){
+									productsdata.setOverwritestocktakingdata(productquantity)
+								}
+								else{
+								}
 							}
 							Mobile.hideKeyboard()
 							break
@@ -345,19 +360,24 @@ public class ChannelProductsDataKeywords {
 					if(flag == false){
 						MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
 						selectedproducttextfield.setValue("0000")
-						if(assettype.equalsIgnoreCase("Facing")){
-							productsdata.setFacingdata("0000")
-						}
-						else if(assettype.equalsIgnoreCase("Stock Taking")){
-							productsdata.setStocktakingdata("0000")
-						}
-						else if(assettype.equalsIgnoreCase("Overwrite Facing")){
-							productsdata.setOverwritefacingdata("0000")
-						}
-						else if(assettype.equalsIgnoreCase("Overwrite Stock Taking")){
-							productsdata.setOverwritestocktakingdata("0000")
+						if(ProjectConstants.scenario.equals("first visit")){
+							if(assettype.equalsIgnoreCase("Facing")){
+								productsdata.setFacingdata("0000")
+							}
+							else if(assettype.equalsIgnoreCase("Stock Taking")){
+								productsdata.setStocktakingdata("0000")
+							}
+							else{}
 						}
 						else{
+							if(assettype.equalsIgnoreCase("Facing")){
+								productsdata.setOverwritefacingdata("0000")
+							}
+							else if(assettype.equalsIgnoreCase("Stock Taking")){
+								productsdata.setOverwritestocktakingdata("0000")
+							}
+							else{
+							}
 						}
 						Mobile.hideKeyboard()
 					}

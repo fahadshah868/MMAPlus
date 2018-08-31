@@ -229,25 +229,29 @@ public class ChillerProductsDataKeywords {
 					String productquantity = channelproduct.getProduct_data()
 					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 					selectedproducttextfield.setValue(productquantity)
-					if(assettype.equalsIgnoreCase("Facing")){
-						productsdata.setFacingdata(productquantity)
-					}
-					else if(assettype.equalsIgnoreCase("Stock Count")){
-						productsdata.setStockcountdata(productquantity)
-					}
-					else if(assettype.equalsIgnoreCase("Depth")){
-						productsdata.setDepthdata(productquantity)
-					}
-					else if(assettype.equalsIgnoreCase("Overwrite Facing")){
-						productsdata.setOverwritefacingdata(productquantity)
-					}
-					else if(assettype.equalsIgnoreCase("Overwrite Stock Count")){
-						productsdata.setOverwritestockcountdata(productquantity)
-					}
-					else if(assettype.equalsIgnoreCase("Overwrite Depth")){
-						productsdata.setOverwritedepthdata(productquantity)
+					if(ProjectConstants.scenario.equals("first visit")){
+						if(assettype.equalsIgnoreCase("Facing")){
+							productsdata.setFacingdata(productquantity)
+						}
+						else if(assettype.equalsIgnoreCase("Stock Count")){
+							productsdata.setStockcountdata(productquantity)
+						}
+						else if(assettype.equalsIgnoreCase("Depth")){
+							productsdata.setDepthdata(productquantity)
+						}
+						else{}
 					}
 					else{
+						if(assettype.equalsIgnoreCase("Facing")){
+							productsdata.setOverwritefacingdata(productquantity)
+						}
+						else if(assettype.equalsIgnoreCase("Stock Count")){
+							productsdata.setOverwritestockcountdata(productquantity)
+						}
+						else if(assettype.equalsIgnoreCase("Depth")){
+							productsdata.setOverwritedepthdata(productquantity)
+						}
+						else{}
 					}
 					Mobile.hideKeyboard()
 					break
@@ -258,25 +262,30 @@ public class ChillerProductsDataKeywords {
 			if(flag == false){
 				MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 				selectedproducttextfield.setValue("0000")
-				if(assettype.equalsIgnoreCase("Facing")){
-					productsdata.setFacingdata("0000")
-				}
-				else if(assettype.equalsIgnoreCase("Stock Count")){
-					productsdata.setStockcountdata("0000")
-				}
-				else if(assettype.equalsIgnoreCase("Depth")){
-					productsdata.setDepthdata("0000")
-				}
-				else if(assettype.equalsIgnoreCase("Overwrite Facing")){
-					productsdata.setOverwritefacingdata("0000")
-				}
-				else if(assettype.equalsIgnoreCase("Overwrite Stock Count")){
-					productsdata.setOverwritestockcountdata("0000")
-				}
-				else if(assettype.equalsIgnoreCase("Overwrite Depth")){
-					productsdata.setOverwritedepthdata("0000")
+				if(ProjectConstants.scenario.equals("first visit")){
+					if(assettype.equalsIgnoreCase("Facing")){
+						productsdata.setFacingdata("0000")
+					}
+					else if(assettype.equalsIgnoreCase("Stock Count")){
+						productsdata.setStockcountdata("0000")
+					}
+					else if(assettype.equalsIgnoreCase("Depth")){
+						productsdata.setDepthdata("0000")
+					}
+					else{}
 				}
 				else{
+					if(assettype.equalsIgnoreCase("Facing")){
+						productsdata.setOverwritefacingdata("0000")
+					}
+					else if(assettype.equalsIgnoreCase("Stock Count")){
+						productsdata.setOverwritestockcountdata("0000")
+					}
+					else if(assettype.equalsIgnoreCase("Depth")){
+						productsdata.setOverwritedepthdata("0000")
+					}
+					else{
+					}
 				}
 				Mobile.hideKeyboard()
 			}
@@ -307,25 +316,29 @@ public class ChillerProductsDataKeywords {
 							String productquantity = channelproduct.getProduct_data()
 							MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
 							selectedproducttextfield.setValue(productquantity)
-							if(assettype.equalsIgnoreCase("Facing")){
-								productsdata.setFacingdata(productquantity)
-							}
-							else if(assettype.equalsIgnoreCase("Stock Count")){
-								productsdata.setStockcountdata(productquantity)
-							}
-							else if(assettype.equalsIgnoreCase("Depth")){
-								productsdata.setDepthdata(productquantity)
-							}
-							else if(assettype.equalsIgnoreCase("Overwrite Facing")){
-								productsdata.setOverwritefacingdata(productquantity)
-							}
-							else if(assettype.equalsIgnoreCase("Overwrite Stock Count")){
-								productsdata.setOverwritestockcountdata(productquantity)
-							}
-							else if(assettype.equalsIgnoreCase("Overwrite Depth")){
-								productsdata.setOverwritedepthdata(productquantity)
+							if(ProjectConstants.scenario.equals("first visit")){
+								if(assettype.equalsIgnoreCase("Facing")){
+									productsdata.setFacingdata(productquantity)
+								}
+								else if(assettype.equalsIgnoreCase("Stock Count")){
+									productsdata.setStockcountdata(productquantity)
+								}
+								else if(assettype.equalsIgnoreCase("Depth")){
+									productsdata.setDepthdata(productquantity)
+								}
+								else{}
 							}
 							else{
+								if(assettype.equalsIgnoreCase("Facing")){
+									productsdata.setOverwritefacingdata(productquantity)
+								}
+								else if(assettype.equalsIgnoreCase("Stock Count")){
+									productsdata.setOverwritestockcountdata(productquantity)
+								}
+								else if(assettype.equalsIgnoreCase("Depth")){
+									productsdata.setOverwritedepthdata(productquantity)
+								}
+								else{}
 							}
 							Mobile.hideKeyboard()
 							break
@@ -336,25 +349,30 @@ public class ChillerProductsDataKeywords {
 					if(flag == false){
 						MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 						selectedproducttextfield.setValue("0000")
-						if(assettype.equalsIgnoreCase("Facing")){
-							productsdata.setFacingdata("0000")
-						}
-						else if(assettype.equalsIgnoreCase("Stock Count")){
-							productsdata.setStockcountdata("0000")
-						}
-						else if(assettype.equalsIgnoreCase("Depth")){
-							productsdata.setDepthdata("0000")
-						}
-						else if(assettype.equalsIgnoreCase("Overwrite Facing")){
-							productsdata.setOverwritefacingdata("0000")
-						}
-						else if(assettype.equalsIgnoreCase("Overwrite Stock Count")){
-							productsdata.setOverwritestockcountdata("0000")
-						}
-						else if(assettype.equalsIgnoreCase("Overwrite Depth")){
-							productsdata.setOverwritedepthdata("0000")
+						if(ProjectConstants.scenario.equals("first visit")){
+							if(assettype.equalsIgnoreCase("Facing")){
+								productsdata.setFacingdata("0000")
+							}
+							else if(assettype.equalsIgnoreCase("Stock Count")){
+								productsdata.setStockcountdata("0000")
+							}
+							else if(assettype.equalsIgnoreCase("Depth")){
+								productsdata.setDepthdata("0000")
+							}
+							else{}
 						}
 						else{
+							if(assettype.equalsIgnoreCase("Facing")){
+								productsdata.setOverwritefacingdata("0000")
+							}
+							else if(assettype.equalsIgnoreCase("Stock Count")){
+								productsdata.setOverwritestockcountdata("0000")
+							}
+							else if(assettype.equalsIgnoreCase("Depth")){
+								productsdata.setOverwritedepthdata("0000")
+							}
+							else{
+							}
 						}
 						Mobile.hideKeyboard()
 					}
