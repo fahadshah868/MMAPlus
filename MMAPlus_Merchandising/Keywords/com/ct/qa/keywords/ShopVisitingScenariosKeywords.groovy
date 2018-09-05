@@ -41,16 +41,23 @@ public class ShopVisitingScenariosKeywords{
 		String message = "\n\n---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"+
 				"<-------------------------------------------------------------------------------------------------------------------------------------->"
 		for(int i=0; i<ProjectConstants.missingshopdatainfo.size(); i++){
+			boolean flag = false
 			MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
 			if(missingshopdatainfo != null){
-				message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+"\n\n"+
-						"\n\nVisiting Scenarios:		"+missingshopdatainfo.getScenario()
 				if(missingshopdatainfo.getMissingshopcategories() != null){
-					message = message +"\n\n" + String.format("%-30s", "Shop Categories:")
-					for(int j=0; j<missingshopdatainfo.getMissingshopcategories().size(); j++){
-						message = message+missingshopdatainfo.getMissingshopcategories().get(j)+",   "
+					if(flag == false){
+						message = message+"\n\n"+
+								String.format("%-11s%-60s%-60s","Shop Name:",missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n\n"+
+								String.format("%-30s%-100s", "Visiting Scenarios:",missingshopdatainfo.getScenario())+
+								"\n\n" + String.format("%-30s", "Shop Categories:")
+						for(int j=0; j<missingshopdatainfo.getMissingshopcategories().size(); j++){
+							message = message+missingshopdatainfo.getMissingshopcategories().get(j)+",   "
+						}
+						message = message+"\n"+missingshopdatainfo.getMissingshopcategories_errormessage() + "\n\n"
+						flag = true
 					}
-					message = message+"\n"+missingshopdatainfo.getMissingshopcategories_errormessage() + "\n\n"
+					else{
+					}
 				}
 				if(missingshopdatainfo.getMissingCategoriesData() != null){
 					for(int j=0; j<missingshopdatainfo.getMissingCategoriesData().size(); j++){
@@ -62,16 +69,31 @@ public class ShopVisitingScenariosKeywords{
 									for(int k=0; k<taggedchillerremarks.getMissingchillerproductscategories().size() ; k++){
 										MissingChillerProductsCategoryData missingchillerproductcategory = taggedchillerremarks.getMissingchillerproductscategories().get(k)
 										if(missingchillerproductcategory.getProductcategories() != null){
-											message = message+
-													"\n\nProduct Categories:\n\n" +
-													String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
-													String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
-													String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
-													String.format("%-30s","Product Categories:")
-											for(int n=0; n<missingchillerproductcategory.getProductcategories().size() ; n++){
-												message = message + missingchillerproductcategory.getProductcategories().get(n) + ",   "
+											if(flag == false){
+												message = message+"\n\n"+
+														String.format("%-11s%-60s%-60s","Shop Name:",missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n\n"+
+														String.format("%-30s%-100s", "Visiting Scenarios:",missingshopdatainfo.getScenario())+
+														"\n\nProduct Categories:\n\n" +
+														String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
+														String.format("%-30s","Product Categories:")
+												for(int n=0; n<missingchillerproductcategory.getProductcategories().size() ; n++){
+													message = message + missingchillerproductcategory.getProductcategories().get(n) + ",   "
+												}
+												message = message + "\n" + missingchillerproductcategory.getErrormessage_forproductcategories() + "\n\n"
+												flag = true
 											}
-											message = message + "\n" + missingchillerproductcategory.getErrormessage_forproductcategories() + "\n\n"
+											else{
+												message = message +
+														"\n\nProduct Categories:\n\n" +
+														String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
+														String.format("%-30s","Product Categories:")
+												for(int n=0; n<missingchillerproductcategory.getProductcategories().size() ; n++){
+													message = message + missingchillerproductcategory.getProductcategories().get(n) + ",   "
+												}
+												message = message + "\n" + missingchillerproductcategory.getErrormessage_forproductcategories() + "\n\n"
+											}
 										}
 									}
 								}
@@ -79,14 +101,29 @@ public class ShopVisitingScenariosKeywords{
 						}
 						else{
 							if(missingcategorydata.getProductcategories() != null){
-								message = message+
-										"\n\nProduct Categories:\n\n" +
-										String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
-										String.format("%-30s","Product Categories:")
-								for(int k=0; k<missingcategorydata.getProductcategories().size(); k++){
-									message = message+missingcategorydata.getProductcategories().get(k)+",	"
+								if(flag == false){
+									message = message+"\n\n"+
+											String.format("%-11s%-60s%-60s","Shop Name:",missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n\n"+
+											String.format("%-30s%-100s", "Visiting Scenarios:",missingshopdatainfo.getScenario())+
+											"\n\nProduct Categories:\n\n" +
+											String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+											String.format("%-30s","Product Categories:")
+									for(int k=0; k<missingcategorydata.getProductcategories().size(); k++){
+										message = message+missingcategorydata.getProductcategories().get(k)+",	"
+									}
+									message = message+"\n"+missingcategorydata.getProductcategories_errormessage()+"\n\n"
+									flag = true
 								}
-								message = message+"\n"+missingcategorydata.getProductcategories_errormessage()+"\n\n"
+								else{
+									message = message+
+											"\n\nProduct Categories:\n\n" +
+											String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+											String.format("%-30s","Product Categories:")
+									for(int k=0; k<missingcategorydata.getProductcategories().size(); k++){
+										message = message+missingcategorydata.getProductcategories().get(k)+",	"
+									}
+									message = message+"\n"+missingcategorydata.getProductcategories_errormessage()+"\n\n"
+								}
 							}
 						}
 					}
@@ -101,17 +138,32 @@ public class ShopVisitingScenariosKeywords{
 									for(int k=0; k<taggedchillerremarks.getMissingchillerproductscategories().size() ; k++){
 										MissingChillerProductsCategoryData missingchillerproductcategory = taggedchillerremarks.getMissingchillerproductscategories().get(k)
 										if(missingchillerproductcategory.getProductcategory() != null){
-											message = message+
-													"\n\nProducts:\n\n" +
-													String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
-													String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
-													String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
-													String.format("%-30s%-60s","Product Category:",missingchillerproductcategory.getProductcategory()) + "\n" +
-													String.format("%-30s", "Products:")
-											for(int n=0; n<missingchillerproductcategory.getProducts().size() ; n++){
-												message = message + missingchillerproductcategory.getProducts().get(n)+",   "
+											if(flag == false){
+												message = message+"\n\n"+
+														String.format("%-11s%-60s%-60s","Shop Name:",missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n\n"+
+														String.format("%-30s%-100s", "Visiting Scenarios:",missingshopdatainfo.getScenario())+
+														"\n\nProducts:\n\n" +
+														String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
+														String.format("%-30s%-60s","Product Category:",missingchillerproductcategory.getProductcategory()) + "\n" +
+														String.format("%-30s", "Products:")
+												for(int n=0; n<missingchillerproductcategory.getProducts().size() ; n++){
+													message = message + missingchillerproductcategory.getProducts().get(n)+",   "
+												}
+												message = message + "\n" + missingchillerproductcategory.getErrormessage_forproducts() + "\n\n"
 											}
-											message = message + "\n" + missingchillerproductcategory.getErrormessage_forproducts() + "\n\n"
+											else{
+												message = message+
+														"\n\nProducts:\n\n" +
+														String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
+														String.format("%-30s%-60s","Product Category:",missingchillerproductcategory.getProductcategory()) + "\n" +
+														String.format("%-30s", "Products:")
+												for(int n=0; n<missingchillerproductcategory.getProducts().size() ; n++){
+													message = message + missingchillerproductcategory.getProducts().get(n)+",   "
+												}
+												message = message + "\n" + missingchillerproductcategory.getErrormessage_forproducts() + "\n\n"
+											}
 										}
 									}
 								}
@@ -122,24 +174,43 @@ public class ShopVisitingScenariosKeywords{
 								for(int n=0; n<missingshopdatainfo.getMissingCategoriesData().size(); n++){
 									missingcategorydata = missingshopdatainfo.getMissingCategoriesData().get(n)
 									if(missingcategorydata.getProducts() != null){
-										message = message+
-												"\n\nProducts:\n\n" +
-												String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
-												String.format("%-30s%-60s","Product Category:",missingcategorydata.getProductCategory()) + "\n" +
-												String.format("%-30s", "Products:")
-										for(int k=0; k<missingcategorydata.getProducts().size(); k++){
-											message = message+missingcategorydata.getProducts().get(k) + ",	"
+										if(flag == false){
+											message = message+"\n\n"+
+													String.format("%-11s%-60s%-60s","Shop Name:",missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n\n"+
+													String.format("%-30s%-100s", "Visiting Scenarios:",missingshopdatainfo.getScenario())+
+													"\n\nProducts:\n\n" +
+													String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+													String.format("%-30s%-60s","Product Category:",missingcategorydata.getProductCategory()) + "\n" +
+													String.format("%-30s", "Products:")
+											for(int k=0; k<missingcategorydata.getProducts().size(); k++){
+												message = message+missingcategorydata.getProducts().get(k) + ",	"
+											}
+											message = message + "\n"+missingcategorydata.getProducts_errormessage() + "\n\n"
 										}
-										message = message + "\n"+missingcategorydata.getProducts_errormessage() + "\n\n"
+										else{
+											message = message+
+													"\n\nProducts:\n\n" +
+													String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+													String.format("%-30s%-60s","Product Category:",missingcategorydata.getProductCategory()) + "\n" +
+													String.format("%-30s", "Products:")
+											for(int k=0; k<missingcategorydata.getProducts().size(); k++){
+												message = message+missingcategorydata.getProducts().get(k) + ",	"
+											}
+											message = message + "\n"+missingcategorydata.getProducts_errormessage() + "\n\n"
+										}
 									}
 								}
 							}
 						}
 					}
 				}
-				message = message+"\n\n<-------------------------------------------------------------------------------------------------------------------------------------->\n\n"
-				KeywordUtil.logInfo(message)
-				message = ""
+				if(flag != false){
+					message = message+"\n\n<-------------------------------------------------------------------------------------------------------------------------------------->\n\n"
+					KeywordUtil.logInfo(message)
+					message = ""
+				}
+				else{
+				}
 			}
 		}
 		message = "\n\n\n---------------------------------------------Visited Shop Data-----------------------------------------------------------------------------------------------------\n\n"+
@@ -147,8 +218,9 @@ public class ShopVisitingScenariosKeywords{
 		for(int i=0; i<ProjectConstants.visitedshopdatainfo.size(); i++){
 			VisitedShopDataInfo visitedshopdatainfo = ProjectConstants.visitedshopdatainfo.get(i)
 			if(visitedshopdatainfo != null){
-				message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+ "\n\n" +
-						String.format("%-30s%-100s","Visiting Scenarios:",visitedshopdatainfo.getScenario())
+				message = message+"\n\n"+
+						String.format("%-11s%-60s%-60s","Shop Name:",visitedshopdatainfo.getShopname(),visitedshopdatainfo.getShopchannel())+"\n\n"+
+						String.format("%-30s%-100s", "Visiting Scenarios:",visitedshopdatainfo.getScenario())
 				if(visitedshopdatainfo.getVisitedcategoriesdata() != null){
 					for(int j=0; j< visitedshopdatainfo.getVisitedcategoriesdata().size(); j++){
 						VisitedCategoryData visitedcategorydata = visitedshopdatainfo.getVisitedcategoriesdata().get(j)
@@ -163,7 +235,6 @@ public class ShopVisitingScenariosKeywords{
 												message = message + "\n\n" +
 														String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
-														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
 														String.format("%-45s%-14s%-14s%-20s%-24s%-24s%-30s", "Products","Facing","Depth","Stock Count","Overwrite Facing","Overwrite Depth","Overwrite Stock Count")+"\n"
 												for(int n=0; n<visitedchillerproductcategory.getShopproductsdata().size() ; n++){
@@ -182,7 +253,6 @@ public class ShopVisitingScenariosKeywords{
 												message = message+ "\n\n" +
 														String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
-														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
 														String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
 												for(int n=0; n<visitedchillerproductcategory.getShopproductsdata().size() ; n++){
@@ -392,7 +462,9 @@ public class ShopVisitingScenariosKeywords{
 				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-						ProjectConstants.visitedshopdatainfo.get(j).setScenario("(1) visit shop with 'Shop Open' with SKDNA 'Others' remark\n(2) visit shop with 'Shop Closed'")
+						String message = "(1) visit shop with 'Shop Open' with SKDNA 'Expiry Issue' remark\n"+
+								String.format("%-30s%-100s","","(2) visit shop with 'Shop Closed'")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
 				}
@@ -415,7 +487,9 @@ public class ShopVisitingScenariosKeywords{
 				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-						ProjectConstants.visitedshopdatainfo.get(j).setScenario("(1) visit shop with 'Shop Keeper did not allow' with 'Expiry Issue' remark\n(2) visit shop with 'Shopkeeper did not allow' with 'Others' remark")
+						String message = "(1) visit shop with 'Shop Keeper did not allow' with 'Expiry Issue' remark\n"+
+								String.format("%-30s%-100s","","(2) visit shop with 'Shopkeeper did not allow' with 'Others' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
 				}
@@ -438,7 +512,9 @@ public class ShopVisitingScenariosKeywords{
 				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-						ProjectConstants.visitedshopdatainfo.get(j).setScenario("(1) visit shop with 'Shop not found'\n(2) visit shop with 'Shop to be removed'")
+						String message = "(1) visit shop with 'Shop not found'\n"+
+								String.format("%-30s%-100s", "","(2) visit shop with 'Shop to be removed'")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario()
 						break
 					}
 				}
@@ -454,14 +530,16 @@ public class ShopVisitingScenariosKeywords{
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-						ProjectConstants.missingshopdatainfo.get(j).setScenario("(1) visit shop with 'Shop Closed'\n(2) visit shop with 'Shop permanently closed'")
+						ProjectConstants.missingshopdatainfo.get(j).setScenario("Shop Overwrite Scenario")
 						break
 					}
 				}
 				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-						ProjectConstants.visitedshopdatainfo.get(j).setScenario("Shop Overwrite Scenarios")
+						String message = "(1) visit shop with 'Shop Closed'\n"+
+								String.format("%-30s%-100s", "","(2) visit shop with 'Shop permanently closed'")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario()
 						break
 					}
 				}
@@ -490,17 +568,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Not Allocated' for chiller\n"+
-								"'Display Space Available' for remaining categories\n"+
-								"'RTM visit frequency' with 'Once a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'OB not visiting' remark\n"+
-								"'Hanger Availability' with 'Yes' remark\n\n"+
-								"(2) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
-								"'No Space for Display' for remaining categories\n"+
-								"'RTM visit frequency' with 'Twice a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'SM not visiting' remark\n"+
-								"'Hanger Availability' with 'No' remark"
+								String.format("%-34s%-100s", "","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Hanger Availability' with 'Yes' remark")+"\n\n"+
+								String.format("%-30s%-100s", "","(2) 'SKDNA' for chiller with 'Expiry Issue' remark\n")+"\n"+
+								String.format("%-34s%-100s", "","'No Space for Display' for remaining categories\n")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Twice a week'\n")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark\n")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'SM not visiting' remark\n")+"\n"+
+								String.format("%-34s%-100s", "","'Hanger Availability' with 'No' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -517,7 +595,7 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopsWithCategoryLevel_Chiller_Overwriting(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=1; i++){
+		for(int i=1; i<=totalshops; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -534,7 +612,7 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn"), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton"), 0)
-			if(i == 11){
+			if(i == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
@@ -551,17 +629,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Not Allocated' for chiller\n"+
-								"'Display Space Available' for remaining categories\n"+
-								"'RTM visit frequency' with 'Once a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'OB not visiting' remark\n"+
-								"'Hanger Availability' with 'Yes' remark\n\n"+
-								"(2) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
-								"'No Space for Display' for remaining categories\n"+
-								"'RTM visit frequency' with 'Twice a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'SM not visiting' remark\n"+
-								"'Hanger Availability' with 'No' remark"
+								String.format("%-34s%-100s", "","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Hanger Availability' with 'Yes' remark")+"\n\n"+
+								String.format("%-30s%-100s", "","(2) 'SKDNA' for chiller with 'Expiry Issue' remark")+"\n"+
+								String.format("%-34s%-100s", "","'No Space for Display' for remaining categories")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Hanger Availability' with 'No' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -585,17 +663,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
-								"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
-								"'RTM visit frequency' with 'Once a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'OB not visiting' remark\n"+
-								"'Hanger Availability' with 'Yes' remark\n\n"+
-								"(2) 'SKDNA' for chiller with 'Others' remark\n"+
-								"'SKDNA' for remaining categories with 'Others' remark\n"+
-								"'RTM visit frequency' with 'Twice a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'SM not visiting' remark\n"+
-								"'Hanger Availability' with 'No' remark"
+								String.format("%-34s%-100s", "","'SKDNA' for remaining categories with 'Expiry Issue' remark")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Hanger Availability' with 'Yes' remark")+"\n\n"+
+								String.format("%-30s%-100s", "","(2) 'SKDNA' for chiller with 'Others' remark")+"\n"+
+								String.format("%-34s%-100s", "","'SKDNA' for remaining categories with 'Others' remark")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Hanger Availability' with 'No' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -619,24 +697,24 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'SKDNA' for chiller with 'Expiry Issue' remark\n"+
-								"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
-								"'RTM visit frequency' with 'Once a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'OB not visiting' remark\n"+
-								"'Hanger Availability' with 'Yes' remark\n\n"+
-								"(2) 'Chiller Not Allocated' for chiller\n"+
-								"'Display Space Available' for remaining categories\n"+
-								"'RTM visit frequency' with 'Once a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'OB not visiting' remark\n"+
-								"'Hanger Availability' with 'Yes' remark"
+								String.format("%-34s%-100s", "","'SKDNA' for remaining categories with 'Expiry Issue' remark")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Hanger Availability' with 'Yes' remark")+"\n\n"+
+								String.format("%-30s%-100s", "","(2) 'Chiller Not Allocated' for chiller")+"\n"+
+								String.format("%-34s%-100s", "","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Hanger Availability' with 'Yes' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
 				}
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 			}
-			else if(i == 1){
+			else if(i == 4){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
@@ -653,17 +731,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Not Allocated' for chiller\n"+
-								String.format("%-30s%-100s","","'Display Space Available' for remaining categories")+"\n"+
-								String.format("%-30s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
-								String.format("%-30s%-100s","","'Pop Application' with 'No' remark")+"\n"+
-								String.format("%-30s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
-								String.format("%-30s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n\n"+
+								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n\n"+
 								String.format("%-30s%-100s","","(2) Overwrite 'Chiller Not Allocated' for chiller")+"\n"+
-								String.format("%-30s%-100s","","Overwrite 'Display Space Available' for remaining categories")+"\n"+
-								String.format("%-30s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
-								String.format("%-30s%-100s","","'Pop Application' with 'No' remark")+"\n"+
-								String.format("%-30s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
-								String.format("%-30s%-100s","","'Hanger Availability' with 'No' remark")
+								String.format("%-34s%-100s","","Overwrite 'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -680,7 +758,7 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopsWithCategoryLevel_ChillerUtilization_Overwriting(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=4; i<=4; i++){
+		for(int i=2; i<=2; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -697,7 +775,7 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn"), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton"), 0)
-			if(i == 1){
+			if(i == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CTNAv_NSFD"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
@@ -713,25 +791,25 @@ public class ShopVisitingScenariosKeywords{
 				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-						String message = "(1) 'Chiller Type not Available' for chiller Utilization   '(note: if tagged chiller is with yogurt than select chiller without yogurt otherwise select chiller with withouyogurt)'\n"+
-								"'No Space for Display' for remaining categories\n"+
-								"'RTM visit frequency' with 'Once a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'OB not visiting' remark\n"+
-								"'Hanger Availability' with 'Yes' remark\n\n"+
-								"(2) 'Chiller Available' for chiller Utilization\n"+
-								"Overwrite 'No Space for Display' for remaining categories\n"+
-								"'RTM visit frequency' with 'Twice a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'SM not visiting' remark\n"+
-								"'Hanger Availability' with 'No' remark"
+						String message = "(1) 'Chiller Type not Available' for chiller Utilization\n"+
+								String.format("%-34s%-100s","","'No Space for Display' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n\n"+
+								String.format("%-30s%-100s","","(2) 'Chiller Available' for chiller Utilization")+"\n"+
+								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
 				}
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 			}
-			else if(i == 2){
+			else if(i == 12){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
@@ -748,17 +826,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'SKDNA' for chiller Utilization with 'Expiry Issue' remark\n"+
-								"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
-								"'RTM visit frequency' with 'Once a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'OB not visiting' remark\n"+
-								"'Hanger Availability' with 'Yes' remark\n\n"+
-								"(2) 'SKDNA' for chiller with 'Others' remark\n"+
-								"'SKDNA' for remaining categories with 'Others' remark\n"+
-								"'RTM visit frequency' with 'Twice a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'SM not visiting' remark\n"+
-								"'Hanger Availability' with 'No' remark"
+								String.format("%-34s%-100s","","'SKDNA' for remaining categories with 'Expiry Issue' remark")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n\n"+
+								String.format("%-30s%-100s","","(2) 'SKDNA' for chiller with 'Others' remark")+"\n"+
+								String.format("%-34s%-100s","","'SKDNA' for remaining categories with 'Others' remark")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -782,17 +860,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'SKDNA' for chiller Utilization with 'Expiry Issue' remark\n"+
-								"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
-								"'RTM visit frequency' with 'Once a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'OB not visiting' remark\n"+
-								"'Hanger Availability' with 'Yes' remark\n\n"+
-								"(2) 'Chiller Available' for chiller Utilization\n"+
-								"'Display Space Available' for remaining categories\n"+
-								"'RTM visit frequency' with 'Twice a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'SM not visiting' remark\n"+
-								"'Hanger Availability' with 'No' remark"
+								String.format("%-34s%-100s","","'SKDNA' for remaining categories with 'Expiry Issue' remark")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n\n"+
+								String.format("%-30s%-100s","","(2) 'Chiller Available' for chiller Utilization")+"\n"+
+								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -816,17 +894,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Available' for chiller utilization\n"+
-								"'Display Space Available' for remaining categories\n"+
-								"'RTM visit frequency' with 'Once a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'OB not visiting' remark\n"+
-								"'Hanger Availability' with 'Yes' remark\n\n"+
-								"(2) Overwrite 'Chiller Available' for chiller utilization\n"+
-								"Overwrite 'Display Space Available' for remaining categories\n"+
-								"'RTM visit frequency' with 'Twice a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'SM not visiting' remark\n"+
-								"'Hanger Availability' with 'No' remark"
+								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n\n"+
+								String.format("%-30s%-100s","","(2) Overwrite 'Chiller Available' for chiller utilization")+"\n"+
+								String.format("%-34s%-100s","","Overwrite 'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -850,17 +928,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Not Available' for chiller utilization\n"+
-								"'Display Space Available' for remaining categories\n"+
-								"'RTM visit frequency' with 'Once a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'OB not visiting' remark\n"+
-								"'Hanger Availability' with 'Yes' remark\n\n"+
-								"(2) 'Chiller Available' for chiller utilization\n"+
-								"'SKDNA' for remaining categories with 'Expiry issue' remark\n"+
-								"'RTM visit frequency' with 'Twice a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'SM not visiting' remark\n"+
-								"'Hanger Availability' with 'No' remark"
+								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n\n"+
+								String.format("%-30s%-100s","","(2) 'Chiller Available' for chiller utilization")+"\n"+
+								String.format("%-34s%-100s","","'SKDNA' for remaining categories with 'Expiry issue' remark")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -884,24 +962,24 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Not Available' for chiller utilization\n"+
-								"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
-								"'RTM visit frequency' with 'Once a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'OB not visiting' remark\n"+
-								"'Hanger Availability' with 'Yes' remark\n\n"+
-								"(2) 'Chiller Available' for chiller utilization\n"+
-								"'Display Space Available' for remaining categories\n"+
-								"'RTM visit frequency' with 'Twice a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'SM not visiting' remark\n"+
-								"'Hanger Availability' with 'No' remark"
+								String.format("%-34s%-100s","","'SKDNA' for remaining categories with 'Expiry Issue' remark")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n\n"+
+								String.format("%-30s%-100s","","(2) 'Chiller Available' for chiller utilization")+"\n"+
+								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
 				}
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 			}
-			else if(i == 17){
+			else if(i == 7){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_NSFD"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CNAv_SKDNA"), null)
@@ -918,17 +996,17 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Available' for chiller utilization\n"+
-								"'No Space For Display' for remaining categories\n"+
-								"'RTM visit frequency' with 'Once a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'OB not visiting' remark\n"+
-								"'Hanger Availability' with 'Yes' remark\n\n"+
-								"(2) 'Chiller Not Available' for chiller utilization\n"+
-								"'SKDNA' for remaining categories with 'Expiry Issue' remark\n"+
-								"'RTM visit frequency' with 'Twice a week'\n"+
-								"'Pop Application' with 'No' remark\n"+
-								"'Retailer Remarks' with 'SM not visiting' remark\n"+
-								"'Hanger Availability' with 'No' remark"
+								String.format("%-34s%-100s","","'No Space For Display' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n\n"+
+								String.format("%-30s%-100s","","(2) 'Chiller Not Available' for chiller utilization")+"\n"+
+								String.format("%-34s%-100s","","'SKDNA' for remaining categories with 'Expiry Issue' remark")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}

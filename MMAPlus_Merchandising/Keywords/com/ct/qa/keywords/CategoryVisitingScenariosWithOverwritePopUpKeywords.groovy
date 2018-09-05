@@ -853,92 +853,92 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA"), null)
 			}
 		}
-		while(true){
-			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-			MobileElement lastitembeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-			String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
-			Mobile.swipe(0, 293, 0, 200)
-			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-			MobileElement lastitemafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-			String lastitemnameafterswipe = lastitemafterswipe.getText()
-			if(lastitemnamebeforeswipe.equalsIgnoreCase(lastitemnameafterswipe)){
-				break
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller")){
-				lastvisitedcategory = lastitemnameafterswipe
-				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				ProjectConstants.visitPopUpForOverwriting()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitChillerWithSKDNA"), null)
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
-				lastvisitedcategory = lastitemnameafterswipe
-				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				ProjectConstants.visitPopUpForOverwriting()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable"), null)
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
-				lastvisitedcategory = lastitemnameafterswipe
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/OverwriteAdditionalPicture"), null)
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Competition Tracking")){
-				lastvisitedcategory = lastitemnameafterswipe
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				ProjectConstants.visitPopUpForOverwriting()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/OverwriteCompetitionTracking"), null)
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Retailer Remarks")){
-				lastvisitedcategory = lastitemnameafterswipe
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				ProjectConstants.visitPopUpForOverwriting()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/OverwriteRetailerRemarks"), null)
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("RTM -Visit Frequency")){
-				lastvisitedcategory = lastitemnameafterswipe
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				ProjectConstants.visitPopUpForOverwriting()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/OverwriteRTMVisitFrequency"), null)
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("POP Application")){
-				lastvisitedcategory = lastitemnameafterswipe
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				ProjectConstants.visitPopUpForOverwriting()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/POPApplication/OverwritePOPApplication"), null)
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
-				lastvisitedcategory = lastitemnameafterswipe
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				ProjectConstants.visitPopUpForOverwriting()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/OverwriteHangerAvailability"), null)
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Nestrade")){
-				lastvisitedcategory = lastitemnameafterswipe
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				ProjectConstants.visitPopUpForOverwriting()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithDSA"), null)
-			}
-			else{
-				lastvisitedcategory = lastitemnameafterswipe
-				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
-				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = lastitemnameafterswipe
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				ProjectConstants.visitPopUpForOverwriting()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA"), null)
-			}
-			while(true){
-				Mobile.swipe(0, 293, 0, 200)
-				index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-				MobileElement product = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-				String productname = product.getText()
-				if(productname.equalsIgnoreCase(lastvisitedcategory)){
-					break
-				}
-				else{
-				}
-			}
-		}
+//		while(true){
+//			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+//			MobileElement lastitembeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+//			String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
+//			Mobile.swipe(0, 293, 0, 200)
+//			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+//			MobileElement lastitemafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+//			String lastitemnameafterswipe = lastitemafterswipe.getText()
+//			if(lastitemnamebeforeswipe.equalsIgnoreCase(lastitemnameafterswipe)){
+//				break
+//			}
+//			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller")){
+//				lastvisitedcategory = lastitemnameafterswipe
+//				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
+//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+//				ProjectConstants.visitPopUpForOverwriting()
+//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/VisitChillerWithSKDNA"), null)
+//			}
+//			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
+//				lastvisitedcategory = lastitemnameafterswipe
+//				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
+//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+//				ProjectConstants.visitPopUpForOverwriting()
+//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable"), null)
+//			}
+//			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
+//				lastvisitedcategory = lastitemnameafterswipe
+//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/OverwriteAdditionalPicture"), null)
+//			}
+//			else if(lastitemnameafterswipe.equalsIgnoreCase("Competition Tracking")){
+//				lastvisitedcategory = lastitemnameafterswipe
+//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+//				ProjectConstants.visitPopUpForOverwriting()
+//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/OverwriteCompetitionTracking"), null)
+//			}
+//			else if(lastitemnameafterswipe.equalsIgnoreCase("Retailer Remarks")){
+//				lastvisitedcategory = lastitemnameafterswipe
+//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+//				ProjectConstants.visitPopUpForOverwriting()
+//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/OverwriteRetailerRemarks"), null)
+//			}
+//			else if(lastitemnameafterswipe.equalsIgnoreCase("RTM -Visit Frequency")){
+//				lastvisitedcategory = lastitemnameafterswipe
+//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+//				ProjectConstants.visitPopUpForOverwriting()
+//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/OverwriteRTMVisitFrequency"), null)
+//			}
+//			else if(lastitemnameafterswipe.equalsIgnoreCase("POP Application")){
+//				lastvisitedcategory = lastitemnameafterswipe
+//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+//				ProjectConstants.visitPopUpForOverwriting()
+//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/POPApplication/OverwritePOPApplication"), null)
+//			}
+//			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
+//				lastvisitedcategory = lastitemnameafterswipe
+//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+//				ProjectConstants.visitPopUpForOverwriting()
+//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/OverwriteHangerAvailability"), null)
+//			}
+//			else if(lastitemnameafterswipe.equalsIgnoreCase("Nestrade")){
+//				lastvisitedcategory = lastitemnameafterswipe
+//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+//				ProjectConstants.visitPopUpForOverwriting()
+//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithDSA"), null)
+//			}
+//			else{
+//				lastvisitedcategory = lastitemnameafterswipe
+//				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
+//				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = lastitemnameafterswipe
+//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+//				ProjectConstants.visitPopUpForOverwriting()
+//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA"), null)
+//			}
+//			while(true){
+//				Mobile.swipe(0, 293, 0, 200)
+//				index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+//				MobileElement product = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+//				String productname = product.getText()
+//				if(productname.equalsIgnoreCase(lastvisitedcategory)){
+//					break
+//				}
+//				else{
+//				}
+//			}
+//		}
 	}
 	@Keyword
 	def overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA(){
