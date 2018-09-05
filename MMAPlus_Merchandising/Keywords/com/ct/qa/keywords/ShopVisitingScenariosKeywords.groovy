@@ -44,7 +44,7 @@ public class ShopVisitingScenariosKeywords{
 			MissingShopDataInfo missingshopdatainfo = ProjectConstants.missingshopdatainfo.get(i)
 			if(missingshopdatainfo != null){
 				message = message+"\n\nShop Name:		"+missingshopdatainfo.getShopname()+"		,		"+missingshopdatainfo.getShopchannel()+"\n\n"+
-				"\n\nVisiting Scenarios:		"+missingshopdatainfo.getScenario()
+						"\n\nVisiting Scenarios:		"+missingshopdatainfo.getScenario()
 				if(missingshopdatainfo.getMissingshopcategories() != null){
 					message = message +"\n\n" + String.format("%-30s", "Shop Categories:")
 					for(int j=0; j<missingshopdatainfo.getMissingshopcategories().size(); j++){
@@ -148,7 +148,7 @@ public class ShopVisitingScenariosKeywords{
 			VisitedShopDataInfo visitedshopdatainfo = ProjectConstants.visitedshopdatainfo.get(i)
 			if(visitedshopdatainfo != null){
 				message = message+"\n\nShop Name:		"+visitedshopdatainfo.getShopname()+"		,		"+visitedshopdatainfo.getShopchannel()+ "\n\n" +
-					String.format("%-30s%-100s","Visiting Scenarios:",visitedshopdatainfo.getScenario())
+						String.format("%-30s%-100s","Visiting Scenarios:",visitedshopdatainfo.getScenario())
 				if(visitedshopdatainfo.getVisitedcategoriesdata() != null){
 					for(int j=0; j< visitedshopdatainfo.getVisitedcategoriesdata().size(); j++){
 						VisitedCategoryData visitedcategorydata = visitedshopdatainfo.getVisitedcategoriesdata().get(j)
@@ -366,7 +366,7 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) visit shop with 'Shop Closed'\n"+
-						String.format("%-30s%-100s", "","(2) visit shop with 'Shop Open' with SKDNA 'Others' remark") 
+								String.format("%-30s%-100s", "","(2) visit shop with 'Shop Open' with SKDNA 'Others' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -680,7 +680,7 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopsWithCategoryLevel_ChillerUtilization_Overwriting(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=3; i<=3; i++){
+		for(int i=4; i<=4; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -697,7 +697,7 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn"), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton"), 0)
-			if(i == 3){
+			if(i == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CTNAv_NSFD"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
@@ -765,7 +765,7 @@ public class ShopVisitingScenariosKeywords{
 				}
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 			}
-			else if(i == 13){
+			else if(i == 3){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
@@ -901,7 +901,7 @@ public class ShopVisitingScenariosKeywords{
 				}
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 			}
-			else if(i == 7){
+			else if(i == 17){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_NSFD"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CNAv_SKDNA"), null)
