@@ -442,7 +442,7 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) visit shop with 'Shop Closed'\n"+
-								String.format("%-30s%-100s", "","(2) visit shop with 'Shop Open' with SKDNA 'Others' remark")
+								String.format("%-30s%-100s", "","(2) visit shop with 'Shop Open' with SKDNA 'Expiry Issue' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -520,7 +520,7 @@ public class ShopVisitingScenariosKeywords{
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) visit shop with 'Shop not found'\n"+
 								String.format("%-30s%-100s", "","(2) visit shop with 'Shop to be removed'")
-						ProjectConstants.visitedshopdatainfo.get(j).setScenario()
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
 				}
@@ -545,7 +545,7 @@ public class ShopVisitingScenariosKeywords{
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) visit shop with 'Shop Closed'\n"+
 								String.format("%-30s%-100s", "","(2) visit shop with 'Shop permanently closed'")
-						ProjectConstants.visitedshopdatainfo.get(j).setScenario()
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
 				}
@@ -559,7 +559,7 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 				findShop(ProjectConstants.CURRENTVISITING_SHOPNAME)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -579,11 +579,11 @@ public class ShopVisitingScenariosKeywords{
 								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
 								String.format("%-34s%-100s", "","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
 								String.format("%-34s%-100s", "","'Hanger Availability' with 'Yes' remark")+"\n\n"+
-								String.format("%-30s%-100s", "","(2) 'SKDNA' for chiller with 'Expiry Issue' remark\n")+"\n"+
-								String.format("%-34s%-100s", "","'No Space for Display' for remaining categories\n")+"\n"+
-								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Twice a week'\n")+"\n"+
-								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark\n")+"\n"+
-								String.format("%-34s%-100s", "","'Retailer Remarks' with 'SM not visiting' remark\n")+"\n"+
+								String.format("%-30s%-100s", "","(2) 'SKDNA' for chiller with 'Expiry Issue' remark")+"\n"+
+								String.format("%-34s%-100s", "","'No Space for Display' for remaining categories")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
 								String.format("%-34s%-100s", "","'Hanger Availability' with 'No' remark")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
