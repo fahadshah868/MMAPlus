@@ -516,7 +516,7 @@ public class ChillerProductsDataKeywords {
 							ArrayList<TaggedChillersRemark> taggedchillersremarks = visitedcategorydatainfo.getTaggedchillersremark()
 							for(int p=0; p<taggedchillersremarks.size(); p++){
 								TaggedChillersRemark taggedchillerremarkinfo = taggedchillersremarks.get(p)
-								if(taggedchillerremarkinfo.getChillertype().contains(taggedchillerremarks.getChillertype())){
+								if(taggedchillerremarkinfo.getChillertype().equals(taggedchillerremarks.getChillertype()) && taggedchillerremarkinfo.getChillerremark().equals(taggedchillerremarks.getChillerremark())){
 									ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductcategorydata = taggedchillerremarkinfo.getVisitedchillerproductscategories()
 									for(int y=0; y< visitedchillerproductcategorydata.size(); y++){
 										VisitedChillerProductsCategoryData visitedchillerproductscategoryinfo = visitedchillerproductcategorydata.get(y)

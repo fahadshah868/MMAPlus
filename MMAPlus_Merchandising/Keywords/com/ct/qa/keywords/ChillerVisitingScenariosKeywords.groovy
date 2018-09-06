@@ -206,9 +206,9 @@ public class ChillerVisitingScenariosKeywords {
 		if(ProjectConstants.CURRENTVISITING_CHILLERTYPE.contains("Without Yogurt")){
 			for(int i=1; i<=totalchillertypes-1; i++){
 				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-				ProjectConstants.CURRENTVISITING_CHILLERTYPE = ProjectConstants + "--->" + chiller.getText()
 				String chillername = chiller.getText()
 				if(chillername.contains("With Yogurt")){
+					ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 					break
 				}
@@ -217,9 +217,9 @@ public class ChillerVisitingScenariosKeywords {
 		else{
 			for(int i=1; i<=totalchillertypes-1; i++){
 				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-				ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 				String chillername = chiller.getText()
 				if(chillername.contains("Without Yogurt")){
+					ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 					break
 				}
@@ -232,9 +232,9 @@ public class ChillerVisitingScenariosKeywords {
 		if(ProjectConstants.CURRENTVISITING_CHILLERTYPE.contains("With Yogurt")){
 			for(int i=1; i<=totalchillertypes-1; i++){
 				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-				ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 				String chillername = chiller.getText()
 				if(chillername.contains("Without Yogurt")){
+					ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 					break
 				}
@@ -243,9 +243,9 @@ public class ChillerVisitingScenariosKeywords {
 		else{
 			for(int i=1; i<=totalchillertypes-1; i++){
 				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-				ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 				String chillername = chiller.getText()
 				if(chillername.contains("With Yogurt")){
+					ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 					break
 				}

@@ -76,6 +76,7 @@ public class ShopVisitingScenariosKeywords{
 														"\n\nProduct Categories:\n\n" +
 														String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
+														String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s","Product Categories:")
 												for(int n=0; n<missingchillerproductcategory.getProductcategories().size() ; n++){
 													message = message + missingchillerproductcategory.getProductcategories().get(n) + ",   "
@@ -88,6 +89,7 @@ public class ShopVisitingScenariosKeywords{
 														"\n\nProduct Categories:\n\n" +
 														String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
+														String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s","Product Categories:")
 												for(int n=0; n<missingchillerproductcategory.getProductcategories().size() ; n++){
 													message = message + missingchillerproductcategory.getProductcategories().get(n) + ",   "
@@ -145,6 +147,7 @@ public class ShopVisitingScenariosKeywords{
 														"\n\nProducts:\n\n" +
 														String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
+														String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s","Product Category:",missingchillerproductcategory.getProductcategory()) + "\n" +
 														String.format("%-30s", "Products:")
 												for(int n=0; n<missingchillerproductcategory.getProducts().size() ; n++){
@@ -157,6 +160,7 @@ public class ShopVisitingScenariosKeywords{
 														"\n\nProducts:\n\n" +
 														String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
+														String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s","Product Category:",missingchillerproductcategory.getProductcategory()) + "\n" +
 														String.format("%-30s", "Products:")
 												for(int n=0; n<missingchillerproductcategory.getProducts().size() ; n++){
@@ -235,6 +239,7 @@ public class ShopVisitingScenariosKeywords{
 												message = message + "\n\n" +
 														String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
+														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
 														String.format("%-45s%-14s%-14s%-20s%-24s%-24s%-30s", "Products","Facing","Depth","Stock Count","Overwrite Facing","Overwrite Depth","Overwrite Stock Count")+"\n"
 												for(int n=0; n<visitedchillerproductcategory.getShopproductsdata().size() ; n++){
@@ -253,6 +258,7 @@ public class ShopVisitingScenariosKeywords{
 												message = message+ "\n\n" +
 														String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
 														String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
+														String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
 														String.format("%-50s%-20s%-20s%-30s%-30s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
 												for(int n=0; n<visitedchillerproductcategory.getShopproductsdata().size() ; n++){
@@ -758,7 +764,7 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopsWithCategoryLevel_ChillerUtilization_Overwriting(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=2; i<=2; i++){
+		for(int i=1; i<=totalshops; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -775,7 +781,7 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn"), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton"), 0)
-			if(i == 2){
+			if(i == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CTNAv_NSFD"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
@@ -809,7 +815,7 @@ public class ShopVisitingScenariosKeywords{
 				}
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 			}
-			else if(i == 12){
+			else if(i == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
