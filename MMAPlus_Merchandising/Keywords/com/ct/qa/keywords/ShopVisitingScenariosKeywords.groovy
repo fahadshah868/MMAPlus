@@ -154,6 +154,7 @@ public class ShopVisitingScenariosKeywords{
 													message = message + missingchillerproductcategory.getProducts().get(n)+",   "
 												}
 												message = message + "\n" + missingchillerproductcategory.getErrormessage_forproducts() + "\n\n"
+												flag = true
 											}
 											else{
 												message = message+
@@ -190,6 +191,7 @@ public class ShopVisitingScenariosKeywords{
 												message = message+missingcategorydata.getProducts().get(k) + ",	"
 											}
 											message = message + "\n"+missingcategorydata.getProducts_errormessage() + "\n\n"
+											flag = true
 										}
 										else{
 											message = message+
@@ -405,7 +407,7 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopsWithShopLevelOverwriting(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=totalshops; i++){
+		for(int i=1; i<=6; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -518,8 +520,8 @@ public class ShopVisitingScenariosKeywords{
 				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-						String message = "(1) visit shop with 'Shop not found'\n"+
-								String.format("%-30s%-100s", "","(2) visit shop with 'Shop to be removed'")
+						String message = "(1) visit shop with 'Shop permanently closed'\n"+
+								String.format("%-30s%-100s", "","(2) visit shop with 'Shop not found'")
 						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
@@ -601,7 +603,7 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopsWithCategoryLevel_Chiller_Overwriting(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=totalshops; i++){
+		for(int i=1; i<=4; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -764,7 +766,7 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopsWithCategoryLevel_ChillerUtilization_Overwriting(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=totalshops; i++){
+		for(int i=1; i<=7; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")

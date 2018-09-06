@@ -1,0 +1,13 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Plus Merchandising With Category Level(Chiller) Overwrite Scenarios,,,2018-09-06 17:13:31,2018-09-06 18:46:39,1h - 33m - 7.984s,PASSED
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2018-09-06 17:13:31,2018-09-06 17:13:53,22.182s,PASSED
+startApplication,,launch application,2018-09-06 17:13:32,2018-09-06 17:13:48,16.575s,PASSED
+delay,,delay of 5 seconds,2018-09-06 17:13:48,2018-09-06 17:13:53,5.075s,PASSED
+,,,,,,
+Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller)Overwriting,,,2018-09-06 17:13:53,2018-09-06 18:46:39,1h - 32m - 45.341s,PASSED
+verifyElementText,,validate the dashboard screen appearance,2018-09-06 17:13:54,2018-09-06 17:13:56,2.648s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday,,select current day,2018-09-06 17:13:56,2018-09-06 17:14:01,5.213s,PASSED
+tap,,tap on start your day button to further proceed,2018-09-06 17:14:01,2018-09-06 17:14:03,1.664s,PASSED
+verifyElementText,,Validate shops list screen appearance,2018-09-06 17:14:03,2018-09-06 17:14:05,1.416s,PASSED
+com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithCategoryLevel_Chiller_Overwriting,,"select shops from shops list with ""Shop Level"" overwriting ",2018-09-06 17:14:05,2018-09-06 18:46:39,1h - 32m - 34.222s,PASSED
