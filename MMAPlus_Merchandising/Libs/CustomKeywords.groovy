@@ -102,6 +102,10 @@ def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.selectDifferentC
     (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).selectDifferentChillerType()
 }
 
+def static "com.ct.qa.keywords.SliderOptionsKeywords.valideSliderOptions"() {
+    (new com.ct.qa.keywords.SliderOptionsKeywords()).valideSliderOptions()
+}
+
 def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification"() {
     (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWithDataVerification()
 }

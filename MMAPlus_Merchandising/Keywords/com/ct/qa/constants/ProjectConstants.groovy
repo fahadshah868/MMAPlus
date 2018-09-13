@@ -45,6 +45,7 @@ public class ProjectConstants {
 	public static final String CHANNEL_PRODUCTSSHEET = "Channel Products"
 	public static final String CHILLER_PRODUCTSSHEET = "Chiller Products"
 	public static final String DISTRIBUTION_SHEET = "Distribution Point"
+	public static final String SLIDEROPTIONSSHEET = "Slider Options"
 	public static final AppiumDriver<MobileElement> DRIVER = MobileDriverFactory.getDriver()
 
 
@@ -101,6 +102,9 @@ public class ProjectConstants {
 	public static final int CHANNEL_CNA_STOCKTAKING
 	public static final int CHANNEL_CNA_OVERWRITEFACING
 	public static final int CHANNEL_CNA_OVERWRITESTOCKTAKING
+	
+	//slider options columns
+	public static final int SLIDEROPTIONS
 
 	//variables for current visiting shop channels, chiller and categories
 	public static String CURRENTVISITING_SHOPNAME
@@ -120,10 +124,13 @@ public class ProjectConstants {
 	static{
 		XSSFSheet channelproductssheet = LoadDataKeywords.loadChannelProductsSheet()
 		XSSFSheet chillerproductssheet = LoadDataKeywords.loadChillerProductsSheet()
+		XSSFSheet slideroptionssheet = LoadDataKeywords.loadSliderOptionsSheet()
 		Row chillerproductssheetheaderrow = chillerproductssheet.getRow(0)
 		Row channelproductssheetheaderrow = channelproductssheet.getRow(0)
+		Row slideroptionssheetheaderrow = slideroptionssheet.getRow(0)
 		int channelproductssheettotalcolumns = channelproductssheetheaderrow.getLastCellNum()
 		int chillerproductssheettotalcolumns = chillerproductssheetheaderrow.getLastCellNum()
+		int slideroptionssheettotalcolumns = slideroptionssheetheaderrow.getLastCellNum()
 		for(int cellnumber=0; cellnumber<channelproductssheettotalcolumns; cellnumber++){
 			String columnname = channelproductssheetheaderrow.getCell(cellnumber)
 			if(columnname.equalsIgnoreCase("Channel")){
@@ -215,6 +222,14 @@ public class ProjectConstants {
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Stock Count")){
 				CHILLER_OVERWRITESTOCKCOUNT = cellnumber
+			}
+		}
+		for(int cellnumber=0; cellnumber<slideroptionssheettotalcolumns; cellnumber++ ){
+			String columnname = slideroptionssheetheaderrow.getCell(cellnumber)
+			if(columnname.equalsIgnoreCase("Slider Options")){
+				SLIDEROPTIONS = cellnumber
+			}
+			else{
 			}
 		}
 	}

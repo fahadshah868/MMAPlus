@@ -64,6 +64,17 @@ public class LoadDataKeywords {
 		catch(Exception ex){
 		}
 	}
+	//load Slider Options sheet
+	def static loadSliderOptionsSheet(){
+		try{
+			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.EXCEL_FILEPATH))
+			XSSFWorkbook wb = new XSSFWorkbook(inputStream)
+			XSSFSheet sheet = wb.getSheet(ProjectConstants.SLIDEROPTIONSSHEET)
+			return sheet
+		}
+		catch(Exception ex){
+		}
+	}
 	//load shop categories
 	def static loadShopCategories(){
 		DataFormatter dataformatter = new DataFormatter()
@@ -150,5 +161,16 @@ public class LoadDataKeywords {
 			}
 		}
 		return channelproducts
+	}
+	def static loadSliderOptions(){
+		DataFormatter dataformatter = new DataFormatter()
+		XSSFSheet sheet = loadSliderOptionsSheet()
+		int totalrows = sheet.getLastRowNum()
+		ArrayList<String> slideroptions = new ArrayList<String>()
+		for(int i=1; i<=totalrows; i++){
+			Row row = sheet.getRow(i)
+			slideroptions.add(dataformatter.formatCellValue(row.getCell(ProjectConstants.SLIDEROPTIONS)))
+		}
+		return slideroptions
 	}
 }
