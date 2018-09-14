@@ -7,6 +7,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.ct.qa.keywords.LoadDataKeywords
 import com.ct.qa.struct.MissingShopDataInfo
+import com.ct.qa.struct.MissingSliderOptions
 import com.ct.qa.struct.UnmatchedProducts
 import com.ct.qa.struct.VisitedShopDataInfo
 import com.kms.katalon.core.annotation.Keyword
@@ -62,10 +63,15 @@ public class ProjectConstants {
 	public static final String MESSAGEFOR_PRODUCTSCATEGORIESARE_MISSING = "above products categories are missing on device"
 	public static final String MESSAGEFOR_PRODUCTSCATEGORIESARE_NOTMATCH = "above products categories are displaying on device not matching with expected products..."
 
-	//shop categories are not match
+	//shop categories comparison messages
 	public static final String MESSAGEFOR_SHOPCATEGORIESARE_MORE = "above shop categories are displaying on device more than to expected shop categories"
 	public static final String MESSAGEFOR_SHOPCATEGORIESARE_MISSING = "above shop categories are missing on device"
 	public static final String MESSAGEFOR_SHOPCATEGORIESARE_NOTMATCH = "above shop categories are displaying on device not matching with expected shop categories"
+
+	//slider options comparison messages
+	public static final String MESSAGEFOR_SLIDEROPTIONSARE_MORE = "above slider options are displaying on device more than to expected slider options"
+	public static final String MESSAGEFOR_SLIDEROPTIONSARE_MISSING = "above slider options are missing on device"
+	public static final String MESSAGEFOR_SLIDEROPTIONSARE_NOTMATCH = "above slider options are displaying on device not matching with expected slider options"
 
 	//variables for excel sheet columns index
 	//channel wise product categories product columns
@@ -102,12 +108,12 @@ public class ProjectConstants {
 	public static final int CHANNEL_CNA_STOCKTAKING
 	public static final int CHANNEL_CNA_OVERWRITEFACING
 	public static final int CHANNEL_CNA_OVERWRITESTOCKTAKING
-	
+
 	//slider options columns
 	public static final int SLIDEROPTIONS
 
 	//variables for current visiting shop channels, chiller and categories
-	public static String CURRENTVISITING_SHOPNAME
+	public static String CURRENTVISITING_SHOPNAME = ""
 	public static String CURRENTVISITING_SHOPCHANNEL = ""
 	public static String CURRENTVISITING_MAINCATEGORY = ""
 	public static String CURRENTVISITING_PRODUCTCATEGORY = ""
@@ -119,6 +125,7 @@ public class ProjectConstants {
 	//list for containing shop info
 	public static ArrayList<MissingShopDataInfo> missingshopdatainfo = new ArrayList<MissingShopDataInfo>()
 	public static ArrayList<VisitedShopDataInfo> visitedshopdatainfo = new ArrayList<MissingShopDataInfo>()
+	public static MissingSliderOptions missingslideroptions = new MissingSliderOptions()
 
 	//initialization of sheet columns index
 	static{

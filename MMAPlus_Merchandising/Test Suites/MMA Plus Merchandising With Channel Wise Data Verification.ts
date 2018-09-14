@@ -4,7 +4,7 @@
    <name>MMA Plus Merchandising With Channel Wise Data Verification</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-09-12T16:00:03</lastRun>
+   <lastRun>2018-09-14T18:22:14</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>15</pageLoadTimeout>
@@ -24,13 +24,19 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
+      <guid>30d38ab9-f1d4-4158-99ae-5a6ef1f1d2af</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/SliderOptions/VisitSliderOptions</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
       <guid>29b8720b-e6cb-4d54-bb93-c240c64d2319</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e7ce5887-335b-4a99-af85-93a0bd822f88</guid>
+      <guid>15a74100-fe1f-497b-95d3-d17a70d10880</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithDataVerification</testCaseId>

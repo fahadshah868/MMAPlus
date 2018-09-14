@@ -24,6 +24,12 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
+      <guid>89a747d5-414e-4f9a-9e1c-1910ff8425d5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/SliderOptions/VisitSliderOptions</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
       <guid>29b8720b-e6cb-4d54-bb93-c240c64d2319</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

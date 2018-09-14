@@ -106,6 +106,20 @@ def static "com.ct.qa.keywords.SliderOptionsKeywords.valideSliderOptions"() {
     (new com.ct.qa.keywords.SliderOptionsKeywords()).valideSliderOptions()
 }
 
+def static "com.ct.qa.keywords.SliderOptionsKeywords.displayMissingSliderOptionsInReport"() {
+    (new com.ct.qa.keywords.SliderOptionsKeywords()).displayMissingSliderOptionsInReport()
+}
+
+def static "com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption"(
+    	String option	) {
+    (new com.ct.qa.keywords.SliderOptionsKeywords()).findSliderOption(
+        	option)
+}
+
+def static "com.ct.qa.keywords.SliderOptionsKeywords.findRoute"() {
+    (new com.ct.qa.keywords.SliderOptionsKeywords()).findRoute()
+}
+
 def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification"() {
     (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWithDataVerification()
 }
