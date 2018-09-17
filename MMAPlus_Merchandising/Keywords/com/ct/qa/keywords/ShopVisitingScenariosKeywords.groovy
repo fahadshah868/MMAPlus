@@ -314,7 +314,219 @@ public class ShopVisitingScenariosKeywords{
 		}
 	}
 	@Keyword
-	def visitShopWithDataVerification(){
+	def visitShopWithChannelWiseDataVerification(){
+		int index = 0
+		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+		for(int i=1; i<=totalshops; i++){
+			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
+			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
+			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			ProjectConstants.CURRENTVISITING_SHOPNAME = shop.getText()
+			missingshopdatainfo.setShopname(shop.getText())
+			visitedshopdatainfo.setShopname(shop.getText())
+			ProjectConstants.missingshopdatainfo.add(missingshopdatainfo)
+			ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
+			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+			MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen"), "Options")
+			MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking"), 0)
+			Mobile.delay(15)
+			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen"), 60)
+			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn"), 0)
+			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
+			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton"), 0)
+			if(i == 1){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Data Verification"
+						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "'SKDNA' for chiller with 'Expiry Issue' remark\n"+
+								String.format("%-34s%-100s", "","'No Space for Display' for remaining categories")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Hanger Availability' with 'No' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			else if(i == 2){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Data Verification"
+						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "'SKDNA' for chiller with 'Others' remark\n"+
+								String.format("%-34s%-100s", "","'SKDNA' for remaining categories with 'Others' remark")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Hanger Availability' with 'No' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			else if(i == 3){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Data Verification"
+						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "'Chiller Not Allocated' for chiller\n"+
+								String.format("%-34s%-100s", "","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Hanger Availability' with 'Yes' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			else if(i == 4){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Data Verification"
+						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Overwrite 'Chiller Not Allocated' for chiller\n"+
+								String.format("%-34s%-100s","","Overwrite 'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			else{
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						ProjectConstants.missingshopdatainfo.get(j).setScenario("Data Verification")
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "'Chiller Not Allocated' for chiller\n"+
+								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+		}
+		while(true){
+			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
+			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
+			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+			MobileElement lastitembeforeswipe  = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+			String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
+			Mobile.swipe(0, 292, 0, 200)
+			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+			MobileElement lastitemafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+			String lastitemnameafterswipe = lastitemafterswipe.getText()
+			if(lastitemnamebeforeswipe.equalsIgnoreCase(lastitemnameafterswipe)){
+				break
+			}
+			else{
+				MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+				ProjectConstants.CURRENTVISITING_SHOPNAME = shop.getText()
+				missingshopdatainfo.setShopname(shop.getText())
+				visitedshopdatainfo.setShopname(shop.getText())
+				ProjectConstants.missingshopdatainfo.add(missingshopdatainfo)
+				ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen"), "Options")
+				MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking"), 0)
+				Mobile.delay(15)
+				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen"), 60)
+				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn"), 0)
+				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
+				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton"), 0)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						ProjectConstants.missingshopdatainfo.get(j).setScenario("Data Verification")
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "'Chiller Not Allocated' for chiller\n"+
+								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+		}
+		displayDataInReport()
+	}
+	@Keyword
+	def visitShopWithChillerWiseDataVerification(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalshops; i++){
@@ -347,7 +559,13 @@ public class ShopVisitingScenariosKeywords{
 			for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
 				if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 					ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-					ProjectConstants.visitedshopdatainfo.get(j).setScenario("Data Verification")
+					String message = "'Scenario given bellow' for chiller utilization\n"+
+							String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+							String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+							String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+							String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+							String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")
+					ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 					break
 				}
 			}
@@ -394,11 +612,180 @@ public class ShopVisitingScenariosKeywords{
 				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-						ProjectConstants.visitedshopdatainfo.get(j).setScenario("Data Verification")
+						String message = "'Scenario given bellow' for chiller utilization\n"+
+								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 						break
 					}
 				}
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+		}
+		displayDataInReport()
+	}
+	@Keyword
+	def visitShopsWithFirstVisit_BeforeOverwriting(){
+		int index = 0
+		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+		for(int i=1; i<=6; i++){
+			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
+			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
+			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			ProjectConstants.CURRENTVISITING_SHOPNAME = shop.getText()
+			missingshopdatainfo.setShopname(shop.getText())
+			visitedshopdatainfo.setShopname(shop.getText())
+			ProjectConstants.missingshopdatainfo.add(missingshopdatainfo)
+			ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
+			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+			MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen"), "Options")
+			MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking"), 0)
+			Mobile.delay(15)
+			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen"), 60)
+			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn"), 0)
+			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
+			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton"), 0)
+			// shop closed to shop open
+			if(i == 1){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						ProjectConstants.missingshopdatainfo.get(j).setScenario("Shop Level First Visit Before Overwriting")
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "visit shop with 'Shop Open' with SKDNA 'Expiry Issue' remark"
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			//shop open to shop closed
+			else if(i == 2){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopClosed/VisitShopClosed"), null)
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						ProjectConstants.missingshopdatainfo.get(j).setScenario("Shop Level First Visit Before Overwriting")
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "visit shop with 'Shop Closed'"
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			//SKDNA to SKDNA
+			else if(i == 3){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopKeeperDidNotAllow/OverwriteShopKeeperDidNotAllow"), null)
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						ProjectConstants.missingshopdatainfo.get(j).setScenario("Shop Level First Visit Before Overwriting")
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "visit shop with 'Shopkeeper did not allow' with 'Others' remark"
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			//shop permanently closed to shop not found
+			else if(i == 4){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopNotFound/VisitShopNotFound"), null)
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						ProjectConstants.missingshopdatainfo.get(j).setScenario("Shop Level First Visit Before Overwriting")
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "visit shop with 'Shop not found'"
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			//shop closed to shop permanently closed
+			else if(i == 5){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopPermanentlyClosed/VisitShopPermanentlyClosed"), null)
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						ProjectConstants.missingshopdatainfo.get(j).setScenario("Shop Level First Visit Before Overwriting")
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "visit shop with 'Shop permanently closed'"
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			//shop open to shop open
+			else if(i == 6){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Shop Level First Visit Before Overwriting"
+						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "'SKDNA' for chiller with 'Expiry Issue' remark\n"+
+								String.format("%-34s%-100s", "","'No Space for Display' for remaining categories")+"\n"+
+								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Hanger Availability' with 'No' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			else{
+				break
 			}
 		}
 		displayDataInReport()
@@ -561,7 +948,7 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 				findShop(ProjectConstants.CURRENTVISITING_SHOPNAME)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -623,7 +1010,7 @@ public class ShopVisitingScenariosKeywords{
 			if(i == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -657,7 +1044,7 @@ public class ShopVisitingScenariosKeywords{
 			else if(i == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -691,7 +1078,7 @@ public class ShopVisitingScenariosKeywords{
 			else if(i == 3){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -725,7 +1112,7 @@ public class ShopVisitingScenariosKeywords{
 			else if(i == 4){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -746,6 +1133,222 @@ public class ShopVisitingScenariosKeywords{
 								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n\n"+
 								String.format("%-30s%-100s","","(2) Overwrite 'Chiller Not Allocated' for chiller")+"\n"+
 								String.format("%-34s%-100s","","Overwrite 'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			else{
+				break
+			}
+		}
+		displayDataInReport()
+	}
+	@Keyword
+	def visitShopsWithCategoryLevel_ChillerUtilization_FirstVisit(){
+		int index = 0
+		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+		for(int i=1; i<=7; i++){
+			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
+			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
+			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			ProjectConstants.CURRENTVISITING_SHOPNAME = shop.getText()
+			missingshopdatainfo.setShopname(shop.getText())
+			visitedshopdatainfo.setShopname(shop.getText())
+			ProjectConstants.missingshopdatainfo.add(missingshopdatainfo)
+			ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
+			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+			MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen"), "Options")
+			MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking"), 0)
+			Mobile.delay(15)
+			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen"), 60)
+			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn"), 0)
+			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0)
+			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton"), 0)
+			if(i == 1){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Category First Visit"
+						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "'Chiller Available' for chiller Utilization\n"+
+								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			else if(i == 2){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Category First Visit"
+						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "'SKDNA' for chiller with 'Others' remark\n"+
+								String.format("%-34s%-100s","","'SKDNA' for remaining categories with 'Others' remark")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			else if(i == 3){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Category First Visit"
+						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "'Chiller Available' for chiller Utilization\n"+
+								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			else if(i == 4){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Category First Visit"
+						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Overwrite 'Chiller Available' for chiller utilization\n"+
+								String.format("%-34s%-100s","","Overwrite 'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			else if(i == 5){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CAv_SKDNA"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Category First Visit"
+						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "'Chiller Available' for chiller utilization\n"+
+								String.format("%-34s%-100s","","'SKDNA' for remaining categories with 'Expiry issue' remark")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			else if(i == 6){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Category First Visit"
+						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "'Chiller Available' for chiller utilization\n"+
+								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
+								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+								String.format("%-34s%-100s","","'Hanger Availability' with 'No' remark")
+						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen"), 0)
+			}
+			else if(i == 7){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CNAv_SKDNA"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "Category First Visit"
+						ProjectConstants.missingshopdatainfo.get(j).setScenario(message)
+						break
+					}
+				}
+				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+						String message = "'Chiller Not Available' for chiller utilization\n"+
+								String.format("%-34s%-100s","","'SKDNA' for remaining categories with 'Expiry Issue' remark")+"\n"+
 								String.format("%-34s%-100s","","'RTM visit frequency' with 'Twice a week'")+"\n"+
 								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
 								String.format("%-34s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
@@ -786,7 +1389,7 @@ public class ShopVisitingScenariosKeywords{
 			if(i == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CTNAv_NSFD"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -820,7 +1423,7 @@ public class ShopVisitingScenariosKeywords{
 			else if(i == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -854,7 +1457,7 @@ public class ShopVisitingScenariosKeywords{
 			else if(i == 3){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -888,7 +1491,7 @@ public class ShopVisitingScenariosKeywords{
 			else if(i == 4){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -922,7 +1525,7 @@ public class ShopVisitingScenariosKeywords{
 			else if(i == 5){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CNAv_DSA"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CAv_SKDNA"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CAv_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -956,7 +1559,7 @@ public class ShopVisitingScenariosKeywords{
 			else if(i == 6){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CNAv_SKDNA"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -990,7 +1593,7 @@ public class ShopVisitingScenariosKeywords{
 			else if(i == 7){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_NSFD"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CNAv_SKDNA"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CNAv_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {

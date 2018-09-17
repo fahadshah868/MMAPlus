@@ -39,6 +39,6 @@
       <guid>e7ce5887-335b-4a99-af85-93a0bd822f88</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithDataVerification</testCaseId>
+      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithChillerWiseDataVerification</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
