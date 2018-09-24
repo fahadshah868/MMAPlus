@@ -52,6 +52,10 @@ def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithShopL
     (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopsWithShopLevelOverwriting()
 }
 
+def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithCategoryLevel_Chiller_FirstVisit"() {
+    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopsWithCategoryLevel_Chiller_FirstVisit()
+}
+
 def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithCategoryLevel_Chiller_Overwriting"() {
     (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopsWithCategoryLevel_Chiller_Overwriting()
 }

@@ -30,6 +30,12 @@
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
    </testCaseLink>
    <testCaseLink>
+      <guid>5ce4c51f-ffd5-40b6-84fb-99c5dd27fc2c</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller)FirstVisit</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
       <guid>1d49206e-1f04-40cb-9064-ae01da15ee9f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
