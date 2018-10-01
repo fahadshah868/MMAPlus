@@ -1121,12 +1121,12 @@ public class ShopVisitingScenariosKeywords{
 		}
 		displayDataInReport()
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	@Keyword
 	def visitShopsWithCategoryLevel_Chiller_Overwriting(){
 		int index = 0
