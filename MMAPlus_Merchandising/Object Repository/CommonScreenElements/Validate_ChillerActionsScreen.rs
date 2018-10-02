@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '3' and (text() = 'Channel: Small Kiryana' or . = 'Channel: Small Kiryana') and @resource-id = 'com.concavetech.bloc:id/rootname_text']) = count(//*[@class = 'android.widget.TextView' and @instance = '3' and (text() = 'Channel: Small Kiryana' or . = 'Channel: Small Kiryana') and @resource-id = 'com.concavetech.bloc:id/rootname_text'])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '3' and (text() = 'Channel: Small Kiryana' or . = 'Channel: Small Kiryana')]) = count(//*[@class = 'android.widget.TextView' and @instance = '3' and (text() = 'Channel: Small Kiryana' or . = 'Channel: Small Kiryana')])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -34,7 +34,7 @@
       <value>Channel: Small Kiryana</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>

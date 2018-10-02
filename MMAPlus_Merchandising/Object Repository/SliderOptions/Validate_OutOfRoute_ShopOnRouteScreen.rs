@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Shops on Route' or . = 'Shops on Route') and @resource-id = 'com.concavetech.bloc:id/shops_list_id']) = count(//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Shops on Route' or . = 'Shops on Route') and @resource-id = 'com.concavetech.bloc:id/shops_list_id'])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Shops on Route' or . = 'Shops on Route')]) = count(//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Shops on Route' or . = 'Shops on Route')])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -34,7 +34,7 @@
       <value>Shops on Route</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>

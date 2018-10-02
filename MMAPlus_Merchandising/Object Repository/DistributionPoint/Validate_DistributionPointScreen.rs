@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Poster Quantity:' or . = 'Poster Quantity:') and @resource-id = 'com.concavetech.bloc:id/poster_quantity']) = count(//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Poster Quantity:' or . = 'Poster Quantity:') and @resource-id = 'com.concavetech.bloc:id/poster_quantity'])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Poster Quantity:' or . = 'Poster Quantity:')]) = count(//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Poster Quantity:' or . = 'Poster Quantity:')])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -34,7 +34,7 @@
       <value>Poster Quantity:</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RadioGroup[1]/android.widget.RadioButton[1][count(. | //*[@class = 'android.widget.RadioButton' and @instance = '0' and (text() = 'YES' or . = 'YES') and @resource-id = 'com.concavetech.bloc:id/yes']) = count(//*[@class = 'android.widget.RadioButton' and @instance = '0' and (text() = 'YES' or . = 'YES') and @resource-id = 'com.concavetech.bloc:id/yes'])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RadioGroup[1]/android.widget.RadioButton[1][count(. | //*[@class = 'android.widget.RadioButton' and @instance = '0' and (text() = 'YES' or . = 'YES')]) = count(//*[@class = 'android.widget.RadioButton' and @instance = '0' and (text() = 'YES' or . = 'YES')])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -34,7 +34,7 @@
       <value>YES</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>

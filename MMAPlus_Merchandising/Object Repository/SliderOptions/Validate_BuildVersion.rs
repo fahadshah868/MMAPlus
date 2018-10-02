@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[3][count(. | //*[@class = 'android.widget.TextView' and @instance = '13' and (text() = 'Build Version' or . = 'Build Version') and @resource-id = 'com.concavetech.bloc:id/version_top']) = count(//*[@class = 'android.widget.TextView' and @instance = '13' and (text() = 'Build Version' or . = 'Build Version') and @resource-id = 'com.concavetech.bloc:id/version_top'])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[3][count(. | //*[@class = 'android.widget.TextView' and @instance = '13' and (text() = 'Build Version' or . = 'Build Version')]) = count(//*[@class = 'android.widget.TextView' and @instance = '13' and (text() = 'Build Version' or . = 'Build Version')])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -34,7 +34,7 @@
       <value>Build Version</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '0' and (text() = 'Select appropriate type' or . = 'Select appropriate type') and @resource-id = 'com.concavetech.bloc:id/collection_heading_text']) = count(//*[@class = 'android.widget.TextView' and @instance = '0' and (text() = 'Select appropriate type' or . = 'Select appropriate type') and @resource-id = 'com.concavetech.bloc:id/collection_heading_text'])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '0' and (text() = 'Select appropriate type' or . = 'Select appropriate type')]) = count(//*[@class = 'android.widget.TextView' and @instance = '0' and (text() = 'Select appropriate type' or . = 'Select appropriate type')])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -34,7 +34,7 @@
       <value>Select appropriate type</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>

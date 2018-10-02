@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.ImageButton[1][count(. | //*[@class = 'android.widget.ImageButton' and @instance = '1' and @resource-id = 'com.concavetech.bloc:id/planogram_button']) = count(//*[@class = 'android.widget.ImageButton' and @instance = '1' and @resource-id = 'com.concavetech.bloc:id/planogram_button'])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.ImageButton[1][count(. | //*[@class = 'android.widget.ImageButton' and @instance = '1']) = count(//*[@class = 'android.widget.ImageButton' and @instance = '1'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -27,7 +27,7 @@
       <value>1</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>

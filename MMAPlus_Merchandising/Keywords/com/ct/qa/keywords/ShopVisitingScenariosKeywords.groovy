@@ -37,7 +37,7 @@ import com.ct.qa.struct.MissingChillerProductsCategoryData
 import com.ct.qa.struct.MissingShopDataInfo
 
 public class ShopVisitingScenariosKeywords{
-	
+
 	def displayDataInReport(){
 		String message = "\n\n---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"+
 				"<-------------------------------------------------------------------------------------------------------------------------------------->"

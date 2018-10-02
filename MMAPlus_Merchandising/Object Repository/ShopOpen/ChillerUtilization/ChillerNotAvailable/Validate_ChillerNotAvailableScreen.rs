@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '4' and (text() = 'Category:Chiller Utilization' or . = 'Category:Chiller Utilization') and @resource-id = 'com.concavetech.bloc:id/date_text']) = count(//*[@class = 'android.widget.TextView' and @instance = '4' and (text() = 'Category:Chiller Utilization' or . = 'Category:Chiller Utilization') and @resource-id = 'com.concavetech.bloc:id/date_text'])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '4' and (text() = 'Category:Chiller Utilization' or . = 'Category:Chiller Utilization')]) = count(//*[@class = 'android.widget.TextView' and @instance = '4' and (text() = 'Category:Chiller Utilization' or . = 'Category:Chiller Utilization')])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -34,7 +34,7 @@
       <value>Category:Chiller Utilization</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>
