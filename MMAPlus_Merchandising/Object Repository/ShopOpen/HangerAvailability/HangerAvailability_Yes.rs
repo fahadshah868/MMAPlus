@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RadioGroup[1]/android.widget.RadioButton[1][count(. | //*[@class = 'android.widget.RadioButton' and @instance = '0' and (text() = 'Yes' or . = 'Yes')]) = count(//*[@class = 'android.widget.RadioButton' and @instance = '0' and (text() = 'Yes' or . = 'Yes')])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RadioGroup[1]/android.widget.RadioButton[1][count(. | //*[@class = 'android.widget.RadioButton' and @instance = '0' and (text() = 'Yes' or . = 'Yes') and @resource-id = 'com.concavetech.mma:id/yes']) = count(//*[@class = 'android.widget.RadioButton' and @instance = '0' and (text() = 'Yes' or . = 'Yes') and @resource-id = 'com.concavetech.mma:id/yes'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -34,18 +34,18 @@
       <value>Yes</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>
-      <value>com.concavetech.bloc:id/yes</value>
+      <value>com.concavetech.mma:id/yes</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>package</name>
       <type>Main</type>
-      <value>com.concavetech.bloc</value>
+      <value>com.concavetech.mma</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>

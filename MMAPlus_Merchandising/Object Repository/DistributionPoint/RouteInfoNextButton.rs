@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.Button[1][count(. | //*[@class = 'android.widget.Button' and @instance = '0' and (text() = 'Next' or . = 'Next')]) = count(//*[@class = 'android.widget.Button' and @instance = '0' and (text() = 'Next' or . = 'Next')])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.Button[1][count(. | //*[@class = 'android.widget.Button' and @instance = '0' and (text() = 'Next' or . = 'Next') and @resource-id = 'com.concavetech.mma:id/next']) = count(//*[@class = 'android.widget.Button' and @instance = '0' and (text() = 'Next' or . = 'Next') and @resource-id = 'com.concavetech.mma:id/next'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -34,18 +34,18 @@
       <value>Next</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>
-      <value>com.concavetech.bloc:id/next</value>
+      <value>com.concavetech.mma:id/next</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>package</name>
       <type>Main</type>
-      <value>com.concavetech.bloc</value>
+      <value>com.concavetech.mma</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>

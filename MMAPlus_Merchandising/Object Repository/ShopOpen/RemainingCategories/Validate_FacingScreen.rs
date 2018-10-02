@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Facing' or . = 'Facing')]) = count(//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Facing' or . = 'Facing')])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Facing' or . = 'Facing') and @resource-id = 'com.concavetech.mma:id/collection_heading_text']) = count(//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Facing' or . = 'Facing') and @resource-id = 'com.concavetech.mma:id/collection_heading_text'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -34,18 +34,18 @@
       <value>Facing</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>
-      <value>com.concavetech.bloc:id/collection_heading_text</value>
+      <value>com.concavetech.mma:id/collection_heading_text</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>package</name>
       <type>Main</type>
-      <value>com.concavetech.bloc</value>
+      <value>com.concavetech.mma</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>

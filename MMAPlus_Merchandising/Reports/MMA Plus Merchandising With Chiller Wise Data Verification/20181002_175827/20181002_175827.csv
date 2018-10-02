@@ -1,0 +1,28 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Plus Merchandising With Chiller Wise Data Verification,,,2018-10-02 17:58:29,2018-10-02 18:04:43,6m - 13.807s,FAILED
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2018-10-02 17:58:30,2018-10-02 17:58:54,23.379s,PASSED
+startApplication,,launch application,2018-10-02 17:58:31,2018-10-02 17:58:48,17.717s,PASSED
+delay,,delay of 5 seconds,2018-10-02 17:58:48,2018-10-02 17:58:54,5.033s,PASSED
+,,,,,,
+Test Cases/SliderOptions/VisitSliderOptions,,,2018-10-02 17:58:54,2018-10-02 17:59:47,53.198s,PASSED
+verifyElementText,,,2018-10-02 17:58:54,2018-10-02 17:59:00,5.773s,PASSED
+swipe,,,2018-10-02 17:59:00,2018-10-02 17:59:00,0.794s,PASSED
+swipe,,,2018-10-02 17:59:00,2018-10-02 17:59:01,0.759s,PASSED
+verifyElementExist,,,2018-10-02 17:59:01,2018-10-02 17:59:01,0.403s,PASSED
+com.ct.qa.keywords.SliderOptionsKeywords.valideSliderOptions,,,2018-10-02 17:59:01,2018-10-02 17:59:15,13.168s,PASSED
+swipe,,,2018-10-02 17:59:15,2018-10-02 17:59:15,0.743s,PASSED
+swipe,,,2018-10-02 17:59:15,2018-10-02 17:59:16,0.717s,PASSED
+com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption,,,2018-10-02 17:59:16,2018-10-02 17:59:23,7.043s,PASSED
+com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption,,,2018-10-02 17:59:23,2018-10-02 17:59:35,11.381s,PASSED
+com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption,,,2018-10-02 17:59:35,2018-10-02 17:59:45,10.637s,PASSED
+swipe,,,2018-10-02 17:59:45,2018-10-02 17:59:46,0.766s,PASSED
+swipe,,,2018-10-02 17:59:46,2018-10-02 17:59:47,0.758s,PASSED
+com.ct.qa.keywords.SliderOptionsKeywords.displayMissingSliderOptionsInReport,,,2018-10-02 17:59:47,2018-10-02 17:59:47,0.016s,PASSED
+,,,,,,
+Test Cases/VisitShopScenarios/VisitShopsWithChillerWiseDataVerification,,,2018-10-02 17:59:47,2018-10-02 18:04:43,4m - 56.549s,FAILED
+verifyElementText,,validate the dashboard screen appearance,2018-10-02 17:59:47,2018-10-02 17:59:47,0.233s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday,,select current day,2018-10-02 17:59:47,2018-10-02 17:59:49,1.889s,PASSED
+tap,,tap on start your day button to further proceed,2018-10-02 17:59:49,2018-10-02 17:59:50,0.544s,PASSED
+verifyElementText,,Validate shops list screen appearance,2018-10-02 17:59:50,2018-10-02 17:59:51,1.489s,PASSED
+com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWithChillerWiseDataVerification,,select shops from shops list for data verification,2018-10-02 17:59:51,2018-10-02 18:04:43,4m - 52.117s,FAILED

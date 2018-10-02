@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.EditText[3][count(. | //*[@class = 'android.widget.EditText' and @instance = '2' and (text() = 'Enter CNIC' or . = 'Enter CNIC')]) = count(//*[@class = 'android.widget.EditText' and @instance = '2' and (text() = 'Enter CNIC' or . = 'Enter CNIC')])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.EditText[3][count(. | //*[@class = 'android.widget.EditText' and @instance = '2' and (text() = 'Enter CNIC' or . = 'Enter CNIC') and @resource-id = 'com.concavetech.mma:id/cnic']) = count(//*[@class = 'android.widget.EditText' and @instance = '2' and (text() = 'Enter CNIC' or . = 'Enter CNIC') and @resource-id = 'com.concavetech.mma:id/cnic'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -34,18 +34,18 @@
       <value>Enter CNIC</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>
-      <value>com.concavetech.bloc:id/cnic</value>
+      <value>com.concavetech.mma:id/cnic</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>package</name>
       <type>Main</type>
-      <value>com.concavetech.bloc</value>
+      <value>com.concavetech.mma</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[3]/android.widget.TextView[2][count(. | //*[@class = 'android.widget.TextView' and @instance = '8' and (text() = 'Sync Successful' or . = 'Sync Successful')]) = count(//*[@class = 'android.widget.TextView' and @instance = '8' and (text() = 'Sync Successful' or . = 'Sync Successful')])]</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[3]/android.widget.TextView[2][count(. | //*[@class = 'android.widget.TextView' and @instance = '8' and (text() = 'Sync Successful' or . = 'Sync Successful') and @resource-id = 'com.concavetech.mma:id/success_top']) = count(//*[@class = 'android.widget.TextView' and @instance = '8' and (text() = 'Sync Successful' or . = 'Sync Successful') and @resource-id = 'com.concavetech.mma:id/success_top'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -34,18 +34,18 @@
       <value>Sync Successful</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>
-      <value>com.concavetech.bloc:id/success_top</value>
+      <value>com.concavetech.mma:id/success_top</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>package</name>
       <type>Main</type>
-      <value>com.concavetech.bloc</value>
+      <value>com.concavetech.mma</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
