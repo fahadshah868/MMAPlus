@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class = 'android.widget.LinearLayout' and @instance = '2' and @resource-id = 'com.concavetech.bloc:id/dynamic_generation']</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1][count(. | //*[@class = 'android.widget.LinearLayout' and @instance = '2' and @resource-id = 'com.concavetech.bloc:id/dynamic_generation']) = count(//*[@class = 'android.widget.LinearLayout' and @instance = '2' and @resource-id = 'com.concavetech.bloc:id/dynamic_generation'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -139,7 +139,7 @@
       <value>204</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

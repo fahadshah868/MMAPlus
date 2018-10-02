@@ -4,6 +4,12 @@
    <name>UpdateProfile_EnterCNIC</name>
    <tag></tag>
    <elementGuidId>00000000-0000-0000-0000-000000000000</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.EditText[3][count(. | //*[@class = 'android.widget.EditText' and @instance = '2' and (text() = 'Enter CNIC' or . = 'Enter CNIC') and @resource-id = 'com.concavetech.bloc:id/cnic']) = count(//*[@class = 'android.widget.EditText' and @instance = '2' and (text() = 'Enter CNIC' or . = 'Enter CNIC') and @resource-id = 'com.concavetech.bloc:id/cnic'])]</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -140,7 +146,7 @@
       <value>63</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

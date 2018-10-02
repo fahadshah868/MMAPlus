@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class = 'android.widget.TextView' and @instance = '4' and (text() = 'Category:Chiller' or . = 'Category:Chiller') and @resource-id = 'com.concavetech.bloc:id/date_text']</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '4' and (text() = 'Category:Chiller' or . = 'Category:Chiller') and @resource-id = 'com.concavetech.bloc:id/date_text']) = count(//*[@class = 'android.widget.TextView' and @instance = '4' and (text() = 'Category:Chiller' or . = 'Category:Chiller') and @resource-id = 'com.concavetech.bloc:id/date_text'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -146,7 +146,7 @@
       <value>26</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

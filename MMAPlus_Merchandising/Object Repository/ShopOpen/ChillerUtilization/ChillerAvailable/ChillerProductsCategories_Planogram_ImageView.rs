@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class = 'android.widget.ImageButton' and @instance = '1' and @resource-id = 'com.concavetech.bloc:id/planogram_button']</value>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.ImageButton[1][count(. | //*[@class = 'android.widget.ImageButton' and @instance = '1' and @resource-id = 'com.concavetech.bloc:id/planogram_button']) = count(//*[@class = 'android.widget.ImageButton' and @instance = '1' and @resource-id = 'com.concavetech.bloc:id/planogram_button'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -139,7 +139,7 @@
       <value>62</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

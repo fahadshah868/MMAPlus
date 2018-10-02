@@ -4,6 +4,12 @@
    <name>Validate_ProductCategoryAssetScreen</name>
    <tag></tag>
    <elementGuidId>fdd07e46-fad6-4ca9-92d4-1ad49681603f</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '4' and (text() = 'Facing' or . = 'Facing') and @resource-id = 'com.concavetech.bloc:id/row_text_id']) = count(//*[@class = 'android.widget.TextView' and @instance = '4' and (text() = 'Facing' or . = 'Facing') and @resource-id = 'com.concavetech.bloc:id/row_text_id'])]</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -140,7 +146,7 @@
       <value>23</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

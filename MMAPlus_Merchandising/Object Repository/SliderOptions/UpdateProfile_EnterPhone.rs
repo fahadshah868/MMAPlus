@@ -4,6 +4,12 @@
    <name>UpdateProfile_EnterPhone</name>
    <tag></tag>
    <elementGuidId>00000000-0000-0000-0000-000000000000</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.EditText[2][count(. | //*[@class = 'android.widget.EditText' and @instance = '1' and (text() = 'Enter Phone' or . = 'Enter Phone') and @resource-id = 'com.concavetech.bloc:id/phone']) = count(//*[@class = 'android.widget.EditText' and @instance = '1' and (text() = 'Enter Phone' or . = 'Enter Phone') and @resource-id = 'com.concavetech.bloc:id/phone'])]</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -140,7 +146,7 @@
       <value>63</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

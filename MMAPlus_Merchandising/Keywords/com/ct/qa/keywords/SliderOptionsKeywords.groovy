@@ -63,6 +63,8 @@ public class SliderOptionsKeywords {
 	}
 	@Keyword
 	def findSliderOption(String option){
+		Mobile.swipe(5, 200, 5, 500)
+		Mobile.swipe(5, 200, 5, 500)
 		int index = 0
 		boolean flag = false
 		int slidertotaloptions = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/*").size()
@@ -70,8 +72,35 @@ public class SliderOptionsKeywords {
 			MobileElement slideroption = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String slideroptionname = slideroption.getText()
 			if(slideroptionname.equalsIgnoreCase(option)){
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				flag = true
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				if(option.equalsIgnoreCase("Update Profile")){
+					Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterEmail'), 'Enter email')
+					Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterPhone'), 'Enter Phone')
+					Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterCNIC'), 'Enter CNIC')
+					Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_SubmitButton'), 'Update Profile')
+					Mobile.pressBack()
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+				}
+				else if(option.equalsIgnoreCase("Out of Route")){
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen'), 'Route LIST')
+					findRoute()					
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_ShopOnRouteScreen'), 'Shops on Route')
+					Mobile.pressBack()
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen'), 'Route LIST')
+					Mobile.pressBack()
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+				}
+				else if(option.equalsIgnoreCase("Info")){
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginCode'), 'Login Code')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginTime'), 'Login Time')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncAttempted'), 'Sync Attempted')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncSuccessful'), 'Sync Successful')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_RefreshRoutes'), 'Refresh Routes')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_BuildVersion'), 'Build Version')
+					Mobile.pressBack()
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+				}
 				break
 			}
 			else{}
@@ -92,6 +121,33 @@ public class SliderOptionsKeywords {
 				else{
 					if(slideroptionnameafterswipe.equalsIgnoreCase(option)){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+						if(option.equalsIgnoreCase("Update Profile")){
+						Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterEmail'), 'Enter email')
+						Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterPhone'), 'Enter Phone')
+						Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterCNIC'), 'Enter CNIC')
+						Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_SubmitButton'), 'Update Profile')
+						Mobile.pressBack()
+						Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+						}
+						else if(option.equalsIgnoreCase("Out of Route")){
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen'), 'Route LIST')
+							findRoute()					
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_ShopOnRouteScreen'), 'Shops on Route')
+							Mobile.pressBack()
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen'), 'Route LIST')
+							Mobile.pressBack()
+							Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+						}
+						else if(option.equalsIgnoreCase("Info")){
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginCode'), 'Login Code')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginTime'), 'Login Time')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncAttempted'), 'Sync Attempted')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncSuccessful'), 'Sync Successful')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_RefreshRoutes'), 'Refresh Routes')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_BuildVersion'), 'Build Version')
+							Mobile.pressBack()
+							Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+						}
 						break
 					}
 					else{}
