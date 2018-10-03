@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageButton[2][count(. | //*[@class = 'android.widget.ImageButton' and @instance = '1' and @resource-id = 'com.concavetech.mma:id/pictureTwoImageBtn']) = count(//*[@class = 'android.widget.ImageButton' and @instance = '1' and @resource-id = 'com.concavetech.mma:id/pictureTwoImageBtn'])]</value>
+         <value>//*[@class = 'android.widget.ImageButton' and @instance = '1' and @resource-id = 'com.concavetech.mma:id/pictureTwoImageBtn']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -139,7 +139,7 @@
       <value>166</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

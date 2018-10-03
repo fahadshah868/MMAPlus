@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.GridView[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[1][count(. | //*[@class = 'android.widget.ImageView' and @instance = '1' and @resource-id = 'com.concavetech.mma:id/category_image']) = count(//*[@class = 'android.widget.ImageView' and @instance = '1' and @resource-id = 'com.concavetech.mma:id/category_image'])]</value>
+         <value>//*[@class = 'android.widget.ImageView' and @instance = '1' and @resource-id = 'com.concavetech.mma:id/category_image']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -139,7 +139,7 @@
       <value>330</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

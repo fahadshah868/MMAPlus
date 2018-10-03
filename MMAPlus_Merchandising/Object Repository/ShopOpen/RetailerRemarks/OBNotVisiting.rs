@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.CheckBox[1][count(. | //*[@class = 'android.widget.CheckBox' and @instance = '0' and (text() = 'OB not Visiting' or . = 'OB not Visiting')]) = count(//*[@class = 'android.widget.CheckBox' and @instance = '0' and (text() = 'OB not Visiting' or . = 'OB not Visiting')])]</value>
+         <value>//*[@class = 'android.widget.CheckBox' and @instance = '0' and (text() = 'OB not Visiting' or . = 'OB not Visiting')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -139,7 +139,7 @@
       <value>48</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

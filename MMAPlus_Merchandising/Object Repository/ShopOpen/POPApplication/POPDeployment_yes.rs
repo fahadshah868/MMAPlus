@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RadioGroup[1]/android.widget.RadioButton[1][count(. | //*[@class = 'android.widget.RadioButton' and @instance = '0' and (text() = 'YES' or . = 'YES') and @resource-id = 'com.concavetech.mma:id/yes']) = count(//*[@class = 'android.widget.RadioButton' and @instance = '0' and (text() = 'YES' or . = 'YES') and @resource-id = 'com.concavetech.mma:id/yes'])]</value>
+         <value>//*[@class = 'android.widget.RadioButton' and @instance = '0' and (text() = 'YES' or . = 'YES') and @resource-id = 'com.concavetech.mma:id/yes']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -146,7 +146,7 @@
       <value>38</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

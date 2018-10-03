@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[3]/android.widget.Button[2][count(. | //*[@class = 'android.widget.Button' and @instance = '1' and (text() = 'NO' or . = 'NO') and @resource-id = 'com.concavetech.mma:id/no']) = count(//*[@class = 'android.widget.Button' and @instance = '1' and (text() = 'NO' or . = 'NO') and @resource-id = 'com.concavetech.mma:id/no'])]</value>
+         <value>//*[@class = 'android.widget.Button' and @instance = '1' and (text() = 'NO' or . = 'NO') and @resource-id = 'com.concavetech.mma:id/no']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -146,7 +146,7 @@
       <value>98</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

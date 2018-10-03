@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.TextView[1][count(. | //*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Info' or . = 'Info')]) = count(//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Info' or . = 'Info')])]</value>
+         <value>//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Info' or . = 'Info')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -139,7 +139,7 @@
       <value>26</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

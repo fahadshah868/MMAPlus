@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>Validate_OutOfRoute_RouteListScreen[count(. | //*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Route LIST' or . = 'Route LIST') and @resource-id = 'com.concavetech.mma:id/header_text_id']) = count(//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Route LIST' or . = 'Route LIST') and @resource-id = 'com.concavetech.mma:id/header_text_id'])]</value>
+         <value>//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'Route LIST' or . = 'Route LIST') and @resource-id = 'com.concavetech.mma:id/header_text_id']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -146,7 +146,7 @@
       <value>26</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

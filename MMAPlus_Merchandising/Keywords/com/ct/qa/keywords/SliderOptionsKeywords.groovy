@@ -75,16 +75,15 @@ public class SliderOptionsKeywords {
 				flag = true
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				if(option.equalsIgnoreCase("Update Profile")){
-					Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterEmail'), 'Enter email')
-					Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterPhone'), 'Enter Phone')
-					Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterCNIC'), 'Enter CNIC')
-					Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_SubmitButton'), 'Update Profile')
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/UpdateProfile_EnterEmail"), 0)
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/UpdateProfile_EnterPhone"), 0)
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/UpdateProfile_EnterCNIC"), 0)
 					Mobile.pressBack()
 					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
 				}
 				else if(option.equalsIgnoreCase("Out of Route")){
 					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen'), 'Route LIST')
-					findRoute()					
+					findRoute()
 					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_ShopOnRouteScreen'), 'Shops on Route')
 					Mobile.pressBack()
 					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen'), 'Route LIST')
@@ -122,16 +121,16 @@ public class SliderOptionsKeywords {
 					if(slideroptionnameafterswipe.equalsIgnoreCase(option)){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
 						if(option.equalsIgnoreCase("Update Profile")){
-						Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterEmail'), 'Enter email')
-						Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterPhone'), 'Enter Phone')
-						Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterCNIC'), 'Enter CNIC')
-						Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_SubmitButton'), 'Update Profile')
-						Mobile.pressBack()
-						Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+							Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterEmail'), 'Enter email')
+							Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterPhone'), 'Enter Phone')
+							Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterCNIC'), 'Enter CNIC')
+							Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_SubmitButton'), 'Update Profile')
+							Mobile.pressBack()
+							Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
 						}
 						else if(option.equalsIgnoreCase("Out of Route")){
 							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen'), 'Route LIST')
-							findRoute()					
+							findRoute()
 							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_ShopOnRouteScreen'), 'Shops on Route')
 							Mobile.pressBack()
 							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen'), 'Route LIST')

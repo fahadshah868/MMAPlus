@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.EditText[2][count(. | //*[@class = 'android.widget.EditText' and @instance = '1' and (text() = 'Enter Phone' or . = 'Enter Phone') and @resource-id = 'com.concavetech.mma:id/phone']) = count(//*[@class = 'android.widget.EditText' and @instance = '1' and (text() = 'Enter Phone' or . = 'Enter Phone') and @resource-id = 'com.concavetech.mma:id/phone'])]</value>
+         <value>//*[@class = 'android.widget.EditText' and @instance = '1' and @resource-id = 'com.concavetech.mma:id/phone']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -27,7 +27,7 @@
       <value>1</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
@@ -146,7 +146,7 @@
       <value>63</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
