@@ -75,30 +75,30 @@ public class SliderOptionsKeywords {
 				flag = true
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				if(option.equalsIgnoreCase("Update Profile")){
-					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/UpdateProfile_EnterEmail"), 0)
-					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/UpdateProfile_EnterPhone"), 0)
-					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/UpdateProfile_EnterCNIC"), 0)
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/UpdateProfile_EnterEmail" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/UpdateProfile_EnterPhone" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/UpdateProfile_EnterCNIC" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 					Mobile.pressBack()
-					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				}
 				else if(option.equalsIgnoreCase("Out of Route")){
-					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen'), 'Route LIST')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Route LIST')
 					findRoute()
-					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_ShopOnRouteScreen'), 'Shops on Route')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_ShopOnRouteScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Shops on Route')
 					Mobile.pressBack()
-					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen'), 'Route LIST')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Route LIST')
 					Mobile.pressBack()
-					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				}
 				else if(option.equalsIgnoreCase("Info")){
-					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginCode'), 'Login Code')
-					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginTime'), 'Login Time')
-					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncAttempted'), 'Sync Attempted')
-					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncSuccessful'), 'Sync Successful')
-					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_RefreshRoutes'), 'Refresh Routes')
-					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_BuildVersion'), 'Build Version')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginCode' , [('package') : ProjectConstants.PACKAGENAME]), 'Login Code')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginTime' , [('package') : ProjectConstants.PACKAGENAME]), 'Login Time')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncAttempted' , [('package') : ProjectConstants.PACKAGENAME]), 'Sync Attempted')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncSuccessful' , [('package') : ProjectConstants.PACKAGENAME]), 'Sync Successful')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_RefreshRoutes' , [('package') : ProjectConstants.PACKAGENAME]), 'Refresh Routes')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_BuildVersion' , [('package') : ProjectConstants.PACKAGENAME]), 'Build Version')
 					Mobile.pressBack()
-					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				}
 				break
 			}
@@ -121,31 +121,31 @@ public class SliderOptionsKeywords {
 					if(slideroptionnameafterswipe.equalsIgnoreCase(option)){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
 						if(option.equalsIgnoreCase("Update Profile")){
-							Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterEmail'), 'Enter email')
-							Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterPhone'), 'Enter Phone')
-							Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterCNIC'), 'Enter CNIC')
-							Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_SubmitButton'), 'Update Profile')
+							Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterEmail' , [('package') : ProjectConstants.PACKAGENAME]), 'Enter email')
+							Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterPhone' , [('package') : ProjectConstants.PACKAGENAME]), 'Enter Phone')
+							Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterCNIC' , [('package') : ProjectConstants.PACKAGENAME]), 'Enter CNIC')
+							Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 'Update Profile')
 							Mobile.pressBack()
-							Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+							Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 						}
 						else if(option.equalsIgnoreCase("Out of Route")){
-							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen'), 'Route LIST')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Route LIST')
 							findRoute()
-							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_ShopOnRouteScreen'), 'Shops on Route')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_ShopOnRouteScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Shops on Route')
 							Mobile.pressBack()
-							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen'), 'Route LIST')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Route LIST')
 							Mobile.pressBack()
-							Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+							Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 						}
 						else if(option.equalsIgnoreCase("Info")){
-							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginCode'), 'Login Code')
-							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginTime'), 'Login Time')
-							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncAttempted'), 'Sync Attempted')
-							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncSuccessful'), 'Sync Successful')
-							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_RefreshRoutes'), 'Refresh Routes')
-							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_BuildVersion'), 'Build Version')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginCode' , [('package') : ProjectConstants.PACKAGENAME]), 'Login Code')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginTime' , [('package') : ProjectConstants.PACKAGENAME]), 'Login Time')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncAttempted' , [('package') : ProjectConstants.PACKAGENAME]), 'Sync Attempted')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncSuccessful' , [('package') : ProjectConstants.PACKAGENAME]), 'Sync Successful')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_RefreshRoutes' , [('package') : ProjectConstants.PACKAGENAME]), 'Refresh Routes')
+							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_BuildVersion' , [('package') : ProjectConstants.PACKAGENAME]), 'Build Version')
 							Mobile.pressBack()
-							Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen"), 0)
+							Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 						}
 						break
 					}

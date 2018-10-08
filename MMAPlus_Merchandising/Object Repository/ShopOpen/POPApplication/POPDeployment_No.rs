@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class = 'android.widget.RadioButton' and @instance = '1' and (text() = 'NO' or . = 'NO') and @resource-id = 'com.concavetech.mma:id/no']</value>
+         <value>//*[@class = 'android.widget.RadioButton' and @instance = '1' and (text() = 'NO' or . = 'NO') and @resource-id = '${package}:id/no']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -38,14 +38,14 @@
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>
-      <value>com.concavetech.mma:id/no</value>
+      <value>${package}:id/no</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>package</name>
       <type>Main</type>
-      <value>com.concavetech.mma</value>
+      <value>${package}</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>

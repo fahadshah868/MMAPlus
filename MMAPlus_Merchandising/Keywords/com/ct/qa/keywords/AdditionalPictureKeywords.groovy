@@ -44,10 +44,10 @@ public class AdditionalPictureKeywords {
 			String imagename = image.getText()
 			if(imagename.equalsIgnoreCase("UHT Competition")){
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.GridView[1]/android.widget.RelativeLayout["+i+"]").click()
-				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
-				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton"), 0)
+				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				Mobile.delay(5)
-				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton"), 0)
+				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				break
 			}
 		}
@@ -94,10 +94,10 @@ public class AdditionalPictureKeywords {
 		//
 		//				if(!java.util.Arrays.equals(image1Data, image2Data)){
 		//					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.GridView[1]/android.widget.RelativeLayout["+i+"]").click()
-		//					Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
-		//					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton"), 0)
-		//					Mobile.waitForElementPresent(findTestObject("Object Repository/CommonScreenElements/DoneButton"), 0)
-		//					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton"), 0)
+		//					Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//					Mobile.waitForElementPresent(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		//					break
 		//				}
 		//			}
@@ -140,10 +140,10 @@ public class AdditionalPictureKeywords {
 		//		//
 		//		//					if(!java.util.Arrays.equals(image1Data, image2Data)){
 		//		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.GridView[1]/android.widget.RelativeLayout["+j+"]").click()
-		//		//						Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
-		//		//						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton"), 0)
-		//		//						Mobile.waitForElementPresent(findTestObject("Object Repository/CommonScreenElements/DoneButton"), 0)
-		//		//						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton"), 0)
+		//		//						Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//		//						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//		//						Mobile.waitForElementPresent(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//		//						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		//		//					}
 		//		//				}
 		//		//				break
@@ -173,10 +173,10 @@ public class AdditionalPictureKeywords {
 		//		//
 		//		//					if(!java.util.Arrays.equals(image1Data, image2Data)){
 		//		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.GridView[1]/android.widget.RelativeLayout["+j+"]").click()
-		//		//						Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
-		//		//						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton"), 0)
-		//		//						Mobile.waitForElementPresent(findTestObject("Object Repository/CommonScreenElements/DoneButton"), 0)
-		//		//						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton"), 0)
+		//		//						Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//		//						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//		//						Mobile.waitForElementPresent(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//		//						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		//		//					}
 		//		//				}
 		//		//			}

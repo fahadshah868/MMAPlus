@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class = 'android.widget.TextView' and @instance = '4' and (text() = 'KPI :POP Application' or . = 'KPI :POP Application') and @resource-id = 'com.concavetech.mma:id/date_text']</value>
+         <value>//*[@class = 'android.widget.TextView' and @instance = '4' and (text() = 'KPI :POP Application' or . = 'KPI :POP Application') and @resource-id = '${package}:id/date_text']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -38,14 +38,14 @@
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>
-      <value>com.concavetech.mma:id/date_text</value>
+      <value>${package}:id/date_text</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>package</name>
       <type>Main</type>
-      <value>com.concavetech.mma</value>
+      <value>${package}</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>

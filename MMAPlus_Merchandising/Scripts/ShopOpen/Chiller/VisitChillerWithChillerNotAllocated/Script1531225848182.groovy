@@ -2,6 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import com.ct.qa.constants.ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -20,24 +22,24 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate "Chiller" detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen'), 'KPI: Chiller')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'KPI: Chiller')
 
 'tap on "Chiller Not Allocated"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocated'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocated' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate "Chiller Not Allocated" detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Category:Chiller')
 
 'visit "Chiller Not Allocated" products categories'
 CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChillerNotAllocatedProductCategories'(1)
 
 'validate "Chiller Not Allocated" detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Category:Chiller')
 
 'tap on planogram imageview'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Planogram_ImageView'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Planogram_ImageView' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'find planogram availability'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
@@ -46,19 +48,19 @@ CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
 
 'validate "Chiller Not Allocated" detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Category:Chiller')
 
 'tap on picture imageview and take picture for category'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
 
 'validate "Chiller Not Allocated" detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Category:Chiller')
 
 'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate shop categories screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 

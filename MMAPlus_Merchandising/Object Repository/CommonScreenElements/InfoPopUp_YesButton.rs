@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class = 'android.widget.Button' and @instance = '0' and (text() = 'YES' or . = 'YES') and @resource-id = 'com.concavetech.mma:id/yes']</value>
+         <value>//*[@class = 'android.widget.Button' and @instance = '0' and (text() = 'YES' or . = 'YES') and @resource-id = '${package}:id/yes']</value>
       </entry>
       <entry>
          <key>CSS</key>
@@ -44,14 +44,14 @@
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>
-      <value>com.concavetech.mma:id/yes</value>
+      <value>${package}:id/yes</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>package</name>
       <type>Main</type>
-      <value>com.concavetech.mma</value>
+      <value>${package}</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>

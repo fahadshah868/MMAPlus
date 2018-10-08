@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'CATEGORY REMARKS' or . = 'CATEGORY REMARKS') and @resource-id = 'com.concavetech.mma:id/collection_heading_text']</value>
+         <value>//*[@class = 'android.widget.TextView' and @instance = '2' and (text() = 'CATEGORY REMARKS' or . = 'CATEGORY REMARKS') and @resource-id = '${package}:id/collection_heading_text']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -38,14 +38,14 @@
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>
-      <value>com.concavetech.mma:id/collection_heading_text</value>
+      <value>${package}:id/collection_heading_text</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>package</name>
       <type>Main</type>
-      <value>com.concavetech.mma</value>
+      <value>${package}</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>

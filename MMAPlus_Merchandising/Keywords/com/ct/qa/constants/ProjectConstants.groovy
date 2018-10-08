@@ -42,7 +42,7 @@ import WebUiBuiltInKeywords as WebUI
 public class ProjectConstants {
 
 	//variables for excel file and sheets
-	public static final String EXCEL_FILEPATH = "F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\MMA_Merchandising.xlsx"
+	public static final String EXCEL_FILEPATH = "F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\MMAPlus_Merchandising.xlsx"
 	public static final String CHANNEL_PRODUCTSSHEET = "Channel Products"
 	public static final String CHILLER_PRODUCTSSHEET = "Chiller Products"
 	public static final String DISTRIBUTION_SHEET = "Distribution Point"
@@ -72,6 +72,9 @@ public class ProjectConstants {
 	public static final String MESSAGEFOR_SLIDEROPTIONSARE_MORE = "above slider options are displaying on device more than to expected slider options"
 	public static final String MESSAGEFOR_SLIDEROPTIONSARE_MISSING = "above slider options are missing on device"
 	public static final String MESSAGEFOR_SLIDEROPTIONSARE_NOTMATCH = "above slider options are displaying on device not matching with expected slider options"
+
+	//package name for elements
+	public static final String PACKAGENAME = "com.concavetech.bloc"
 
 	//variables for excel sheet columns index
 	//channel wise product categories product columns
@@ -121,6 +124,7 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_CHILLERREMARK = ""
 	public static int VISITED_CHILLERREMARKS = 1
 	public static String scenario = ""
+
 
 	//list for containing shop info
 	public static ArrayList<MissingShopDataInfo> missingshopdatainfo = new ArrayList<MissingShopDataInfo>()

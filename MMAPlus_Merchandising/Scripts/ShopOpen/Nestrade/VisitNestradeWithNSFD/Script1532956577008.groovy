@@ -2,6 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import com.ct.qa.constants.ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -20,20 +22,20 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'Validate shop\'s category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Display Space Available')
 
 'tap on "Display Space Available"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/NoSpaceForDisplay'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/NoSpaceForDisplay' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate display space available detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen'), 'Category:Nestrade')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Category:Nestrade')
 
 'visit products categories'
 CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitNestradeProductsCategoriesWithNSFD'(1)
 
 'tap on "Planogram" imageview'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/planogram_ImageView'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/planogram_ImageView' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'find planogram availability'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
@@ -42,17 +44,17 @@ CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
 
 'validate display space available detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen'), 'Category:Nestrade')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Category:Nestrade')
 
 'tap on picture imageview and take picture for category'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
 
 'validate display space available detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen'), 'Category:Nestrade')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Category:Nestrade')
 
 'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate shop\'s category screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 

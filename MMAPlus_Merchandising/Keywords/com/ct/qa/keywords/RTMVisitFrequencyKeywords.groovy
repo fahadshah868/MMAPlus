@@ -33,8 +33,8 @@ public class RTMVisitFrequencyKeywords {
 		int totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalproducts; i++){
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks"), 0)
-			Mobile.tap(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/OnceAWeek"), 0)
+			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			Mobile.tap(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/OnceAWeek" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		}
 	}
 	@Keyword
@@ -42,8 +42,8 @@ public class RTMVisitFrequencyKeywords {
 		int totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalproducts; i++){
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks"), 0)
-			Mobile.tap(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/TwiceAWeek"), 0)
+			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			Mobile.tap(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/TwiceAWeek" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		}
 	}
 }

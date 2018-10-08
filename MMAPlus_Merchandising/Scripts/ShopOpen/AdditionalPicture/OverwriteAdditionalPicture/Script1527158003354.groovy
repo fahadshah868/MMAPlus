@@ -2,6 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import com.ct.qa.constants.ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -20,7 +22,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate "Additional Picture" category screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/AdditionalPicture/Validate_AdditionalPictureScreen'), 'Additional Picture')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/AdditionalPicture/Validate_AdditionalPictureScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Additional Picture')
 
 'overwrite mandatory pictures for "Additional Picture" category'
 CustomKeywords.'com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages'()
@@ -29,5 +31,5 @@ CustomKeywords.'com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages
 Mobile.pressBack()
 
 'validate shops on route screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 

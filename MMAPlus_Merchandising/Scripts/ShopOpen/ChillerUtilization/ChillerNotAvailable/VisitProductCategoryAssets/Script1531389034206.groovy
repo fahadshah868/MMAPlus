@@ -21,14 +21,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate chiller products categories detail screen appearance'
-Mobile.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen'), 
+Mobile.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Facing')
 
 'tap on "Facing"'
-Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing'), 0)
+Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate facing detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Facing')
 
 'visit chiller products with facing'
@@ -36,17 +36,17 @@ CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAv
     'Facing')
 
 'tap on submit button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate chiller products categories detail screen appearance'
-Mobile.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen'), 
+Mobile.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Facing')
 
 'tap on "Stock Taking"'
-Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking'), 0)
+Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate stock taking detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Stock Taking')
 
 'visit chiller products with stock taking'
@@ -54,17 +54,17 @@ CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAv
     'Stock Taking')
 
 'tap on submit button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate chiller products categories detail screen appearance'
-Mobile.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen'), 
+Mobile.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Facing')
 
 'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton'), 
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton' , [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
 'validate "Chiller Utilization" detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Category:Chiller Utilization')
 

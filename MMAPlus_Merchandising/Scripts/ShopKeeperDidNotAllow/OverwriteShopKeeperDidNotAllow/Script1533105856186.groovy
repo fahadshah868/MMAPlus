@@ -2,6 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import com.ct.qa.constants.ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -20,29 +22,29 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate shop actions list screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopActions_List'), 0)
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopActions_List' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'tap on "Shopkeeper Did Not Allow" option from shop actions list'
-MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShoopKeeperDidNotAllow'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShoopKeeperDidNotAllow' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate camera screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen'), 0)
+MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'tap on take picture button'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'delay of 5 seconds while taking shop picture'
 MobileBuiltInKeywords.delay(5)
 
 'tap on done button after taking picture'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate shop remarks screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopKeeperDidNotAllow/Validate_ShopRemarksScreen'), 'SHOP REMARKS')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopKeeperDidNotAllow/Validate_ShopRemarksScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'SHOP REMARKS')
 
 'tap on shop remark "Others" from shop remarks list'
-MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShopRemarks_Others'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShopRemarks_Others' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'tap on shop remarks back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShopRemarks_BackButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopKeeperDidNotAllow/ShopRemarks_BackButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 

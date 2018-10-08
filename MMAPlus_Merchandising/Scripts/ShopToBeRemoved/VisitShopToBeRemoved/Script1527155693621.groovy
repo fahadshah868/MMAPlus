@@ -2,6 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import com.ct.qa.constants.ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -20,14 +22,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate shop actions list screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopActions_List'), 0)
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopActions_List' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'tap on "Shop To Be Removed" option from shop actions list'
-MobileBuiltInKeywords.tap(findTestObject('ShopToBeRemoved/ShopToBeRemoved'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopToBeRemoved/ShopToBeRemoved' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate confirm popup appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_InfoPopUP'), 0)
+MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_InfoPopUP' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'tap on confirm pop up yes button'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/InfoPopUp_YesButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/InfoPopUp_YesButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 

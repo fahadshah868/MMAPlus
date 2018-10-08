@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class = 'android.widget.TextView' and @instance = '3' and (text() = 'Channel: Small Kiryana' or . = 'Channel: Small Kiryana') and @resource-id = 'com.concavetech.mma:id/rootname_text']</value>
+         <value>//*[@class = 'android.widget.TextView' and @instance = '3' and (text() = 'Channel: Small Kiryana' or . = 'Channel: Small Kiryana') and @resource-id = '${package}:id/rootname_text']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -38,14 +38,14 @@
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>
-      <value>com.concavetech.mma:id/rootname_text</value>
+      <value>${package}:id/rootname_text</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>package</name>
       <type>Main</type>
-      <value>com.concavetech.mma</value>
+      <value>${package}</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>

@@ -34,8 +34,8 @@ public class CommonKeywords {
 	def selectday(){
 		Calendar calendar = Calendar.getInstance()
 		int day = calendar.get(Calendar.DAY_OF_WEEK)
-		Mobile.tap(findTestObject("Object Repository/DashboardScreenElements/DaysDropdownMenu"), 0)
-		Mobile.verifyElementExist(findTestObject("Object Repository/DashboardScreenElements/Validate_DaysListScreen"), 0)
+		Mobile.tap(findTestObject("Object Repository/DashboardScreenElements/DaysDropdownMenu" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		Mobile.verifyElementExist(findTestObject("Object Repository/DashboardScreenElements/Validate_DaysListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		if(day == 1){
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.TextView[7]").click()
 		}
@@ -62,16 +62,16 @@ public class CommonKeywords {
 	def findPictureImageView(){
 		int totalimageviews = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/*").size()
 		if(totalimageviews == 3){
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/Picture_ImageView"), 0)
-			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen"), 0)
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton"), 0)
+			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/Picture_ImageView" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.delay(5)
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton"), 0)
+			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		}
 	}
 	@Keyword
 	def checkPlanogramAvailability(){
-		Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton"), 0, FailureHandling.OPTIONAL)
+		Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton" , [('package') : ProjectConstants.PACKAGENAME]), 0, FailureHandling.OPTIONAL)
 	}
 	@Keyword
 	def closePlanogram(){

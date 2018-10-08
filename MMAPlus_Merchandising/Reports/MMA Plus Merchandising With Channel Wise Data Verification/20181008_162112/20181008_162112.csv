@@ -1,0 +1,11 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Plus Merchandising With Channel Wise Data Verification,,,2018-10-08 16:21:14,2018-10-08 16:21:21,7.041s,FAILED
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2018-10-08 16:21:14,2018-10-08 16:21:20,5.614s,FAILED
+startApplication,,launch application,2018-10-08 16:21:15,2018-10-08 16:21:20,4.968s,FAILED
+,,,,,,
+Test Cases/SliderOptions/VisitSliderOptions,,,2018-10-08 16:21:20,2018-10-08 16:21:20,0.507s,FAILED
+verifyElementText,,,2018-10-08 16:21:20,2018-10-08 16:21:20,0.030s,PASSED
+,,,,,,
+Test Cases/VisitShopScenarios/VisitShopsWithChannelWiseDataVerification,,,2018-10-08 16:21:20,2018-10-08 16:21:21,0.210s,ERROR
+verifyElementText,,validate the dashboard screen appearance,2018-10-08 16:21:21,2018-10-08 16:21:21,0.000s,PASSED

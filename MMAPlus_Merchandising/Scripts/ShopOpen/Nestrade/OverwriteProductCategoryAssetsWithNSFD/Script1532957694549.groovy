@@ -21,46 +21,46 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate product category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Facing')
 
 'tap on "Facing"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Facing'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Facing' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate facing screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_FacingScreen'), 'Facing')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_FacingScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Facing')
 
 'overwrite products with facing'
 CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_NSFD_OVERWRITEFACING, 
     'Facing')
 
 'tap on submit button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate product category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Facing')
 
 'tap on "Stock Taking"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/StockTaking'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/StockTaking' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate stock taking screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_StockTakingScreen'), 'Stock Taking')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_StockTakingScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Stock Taking')
 
 'overwrite products with stock taking'
 CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_NSFD_OVERWRITESTOCKTAKING, 
     'Stock Taking')
 
 'tap on submit button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate shop\'s categories screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Facing')
 
 'tap on back button'
-Mobile.tap(findTestObject('ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton'), 0)
+Mobile.tap(findTestObject('ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate display space available detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen'), 'Category:Nestrade')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Category:Nestrade')
 

@@ -22,40 +22,40 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate product category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen'), 'Facing')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Facing')
 
 'tap on product category "Facing"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Facing'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/Facing' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'Validate product category facing screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_FacingScreen'), 'Facing')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_FacingScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Facing')
 
 'overwrite products with facing'
 CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_CHILLER_OVERWRITEFACING, 
     'Facing')
 
 'tap on submit button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate product category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen'), 'Facing')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Facing')
 
 'tap on "Stock Taking"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/StockTaking'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/StockTaking' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate stock taking detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_StockTakingScreen'), 'Stock Taking')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_StockTakingScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Stock Taking')
 
 'overwrite products with stock taking'
 CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_CHILLER_OVERWRITESTOCKTAKING, 
     'Stock Taking')
 
 'tap on submit button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate product category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen'), 'Facing')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ProductCategoryAssetsScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Facing')
 
 'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocatedProductCategory_BackButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 

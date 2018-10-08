@@ -21,41 +21,41 @@ import internal.GlobalVariable as GlobalVariable
 import com.ct.qa.constants.ProjectConstants as ProjectConstants
 
 'validate dashboard screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen'), 'Dashboard')
+MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Dashboard')
 
 'select the current day for further proceed'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.selectday'()
 
 'tap on start your day button'
-MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay'), 0)
+MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'delay of 15 seconds for check in through map screen'
 Mobile.delay(15, FailureHandling.STOP_ON_FAILURE)
 
 'validate map screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_MapScreen'), 0)
+MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_MapScreen' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'tap on check in button through map'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/Location_CheckIn'), 0)
+MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/Location_CheckIn' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate confirm popup appearance'
-Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_InfoPopUP'), 0)
+Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_InfoPopUP' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'tap on confirm popup no button'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/InfoPopUp_NoButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/InfoPopUp_NoButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate channel summary detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('DistributionPoint/Validate_RouteInfoScreen'), 'Route Info')
+MobileBuiltInKeywords.verifyElementText(findTestObject('DistributionPoint/Validate_RouteInfoScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Route Info')
 
 'tap on next button to further proceed'
-MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/RouteInfoNextButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/RouteInfoNextButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate distribution point screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('DistributionPoint/Validate_DistributionPointScreen'), 'Poster Quantity:')
+MobileBuiltInKeywords.verifyElementText(findTestObject('DistributionPoint/Validate_DistributionPointScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Poster Quantity:')
 
 'enter quantity of products on distribution point'
 CustomKeywords.'com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPoint'()
 
 'tap on submit button after enter the quantity of products on distribution point'
-MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/DistributionPoint_SubmitButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/DistributionPoint_SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 

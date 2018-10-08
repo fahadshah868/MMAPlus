@@ -2,6 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import com.ct.qa.constants.ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -20,14 +22,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate "Pop Application" detail screen appearance'
-Mobile.verifyElementText(findTestObject('ShopOpen/POPApplication/Validate_POPApplicationDetailScreen'), 'KPI :POP Application')
+Mobile.verifyElementText(findTestObject('ShopOpen/POPApplication/Validate_POPApplicationDetailScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'KPI :POP Application')
 
 'tap on pop deployment no radio button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/POPApplication/POPDeployment_No'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/POPApplication/POPDeployment_No' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'press device back button'
 Mobile.pressBack()
 
 'validate shops\'s categories screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen'), 0)
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 

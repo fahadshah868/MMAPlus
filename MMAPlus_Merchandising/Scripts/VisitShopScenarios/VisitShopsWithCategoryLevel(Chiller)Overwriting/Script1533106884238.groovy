@@ -2,6 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import com.ct.qa.constants.ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -20,16 +22,16 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate the dashboard screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen'), 'Dashboard')
+MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Dashboard')
 
 'select current day'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.selectday'()
 
 'tap on start your day button to further proceed'
-MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay'), 0)
+MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'Validate shops list screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('Validate_ShopListScreen'), 'Shops on Route')
+MobileBuiltInKeywords.verifyElementText(findTestObject('Validate_ShopListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Shops on Route')
 
 'select shops from shops list with "Shop Level" overwriting '
 CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithCategoryLevel_Chiller_Overwriting'()

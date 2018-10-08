@@ -21,14 +21,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate chiller product categories detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Facing')
 
 'tap on "Facing"'
-Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Facing'), 0)
+Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Facing' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate facing detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Facing')
 
 'overwrite chiller products with facing'
@@ -36,17 +36,17 @@ CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvail
     'Facing')
 
 'tap on submit button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate chiller product categories detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Facing')
 
 'tap on "Depth"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Depth'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Depth' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate depth detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Depth')
 
 'overwrite chiller products with depth'
@@ -54,17 +54,17 @@ CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvail
     'Depth')
 
 'tap on submit button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate chiller product categories detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Facing')
 
 'tap on "Stock Count"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/StockCount'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/StockCount' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate stock count detail sceen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Stock Count')
 
 'overwrite chiller products with stock count'
@@ -72,17 +72,17 @@ CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvail
     'Stock Count')
 
 'tap on submit button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 'validate chiller product categories detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Facing')
 
 'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton'), 
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton' , [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
 'validate "Chiller Utiilization" screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen'), 
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
     'Category:Chiller Utilization')
 
