@@ -76,16 +76,16 @@ def static "com.ct.qa.keywords.CommonKeywords.selectday"() {
     (new com.ct.qa.keywords.CommonKeywords()).selectday()
 }
 
-def static "com.ct.qa.keywords.CommonKeywords.findPictureImageView"() {
-    (new com.ct.qa.keywords.CommonKeywords()).findPictureImageView()
+def static "com.ct.qa.keywords.CommonKeywords.visitPictureImageViewButton"() {
+    (new com.ct.qa.keywords.CommonKeywords()).visitPictureImageViewButton()
 }
 
-def static "com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability"() {
-    (new com.ct.qa.keywords.CommonKeywords()).checkPlanogramAvailability()
+def static "com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton"() {
+    (new com.ct.qa.keywords.CommonKeywords()).visitBackImageViewButton()
 }
 
-def static "com.ct.qa.keywords.CommonKeywords.closePlanogram"() {
-    (new com.ct.qa.keywords.CommonKeywords()).closePlanogram()
+def static "com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton"() {
+    (new com.ct.qa.keywords.CommonKeywords()).visitPlanogramImageViewButton()
 }
 
 def static "com.ct.qa.keywords.CategoryVisitingScenariosWithoutOverwritePopUpKeywords.visitShopCategoriesWithDataVerification"() {

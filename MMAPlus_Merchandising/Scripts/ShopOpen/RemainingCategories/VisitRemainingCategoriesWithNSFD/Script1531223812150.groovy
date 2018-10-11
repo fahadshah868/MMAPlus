@@ -21,73 +21,72 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate shop category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
-    'Display Space Available')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', 
+        [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
 
 'tap on "No Space For Display"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/NoSpaceForDisplay' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/NoSpaceForDisplay', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 'validate no space for display detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
-    'Facing')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen', 
+        [('package') : ProjectConstants.PACKAGENAME]), 'Facing')
 
 'tap on "Facing"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Facing' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/Facing', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 'validate facing detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_FacingScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Facing')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_FacingScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Facing')
 
 'visit category products with facing'
 CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_NSFD_FACING, 
     'Facing')
 
 'tap on submit button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 'validate no space for display detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
-    'Facing')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen', 
+        [('package') : ProjectConstants.PACKAGENAME]), 'Facing')
 
 'tap on "Stock Taking"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/StockTaking' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/StockTaking', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 'validate stock taking detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_StockTakingScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Stock Taking')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_StockTakingScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Stock Taking')
 
 'visit category products with stock taking'
 CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData'(ProjectConstants.CHANNEL_NSFD_STOCKTAKING, 
     'Stock Taking')
 
 'tap on submit button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/SubmitButton', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 'validate no space for display detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
-    'Facing')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen', 
+        [('package') : ProjectConstants.PACKAGENAME]), 'Facing')
 
-'tap on "Planogram" imageview'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/planogram_ImageView' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton'()
 
-'find planogram imageview availability'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
+'Validate display space available detail screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen', 
+        [('package') : ProjectConstants.PACKAGENAME]), 'Facing')
 
-'tap on planogram close button'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitPictureImageViewButton'()
 
-'validate no space for display detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
-    'Facing')
+'Validate display space available detail screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen', 
+        [('package') : ProjectConstants.PACKAGENAME]), 'Facing')
 
-'find "Picture" imageview and take picture for category'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
-
-'validate no space for display detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
-    'Facing')
-
-'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ProductCategoryAsset_BackButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton'()
 
 'validate shop\'s categories screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
