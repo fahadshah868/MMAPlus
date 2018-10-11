@@ -36,9 +36,9 @@
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>15a74100-fe1f-497b-95d3-d17a70d10880</guid>
+      <guid>ee80712d-6616-4d8e-9bcb-19b75623722d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithChannelWiseDataVerification</testCaseId>
+      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithDataVerification</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

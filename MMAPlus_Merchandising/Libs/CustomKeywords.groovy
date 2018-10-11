@@ -36,20 +36,16 @@ def static "com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages"() 
     (new com.ct.qa.keywords.AdditionalPictureKeywords()).takeMendatoryImages()
 }
 
-def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWithChannelWiseDataVerification"() {
-    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopWithChannelWiseDataVerification()
+def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_DataVerification"() {
+    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopWith_DataVerification()
 }
 
-def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWithChillerWiseDataVerification"() {
-    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopWithChillerWiseDataVerification()
+def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithShopLevel_FirstVisit"() {
+    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopsWithShopLevel_FirstVisit()
 }
 
-def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithFirstVisit_BeforeOverwriting"() {
-    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopsWithFirstVisit_BeforeOverwriting()
-}
-
-def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithShopLevelOverwriting"() {
-    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopsWithShopLevelOverwriting()
+def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithShopLevel_Overwriting"() {
+    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopsWithShopLevel_Overwriting()
 }
 
 def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithCategoryLevel_Chiller_FirstVisit"() {

@@ -33,7 +33,7 @@
       <guid>47437fb5-7c1b-4987-af43-cadb766a13e8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/VisitShopScenarios/ShopsWithFirstVisitBeforeShopLevelOverwriting</testCaseId>
+      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithShopLevelFirstVisit</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>1aed1dc1-4c53-44cb-972f-1517463fd380</guid>
