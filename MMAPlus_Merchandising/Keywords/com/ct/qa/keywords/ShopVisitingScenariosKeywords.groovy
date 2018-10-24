@@ -332,6 +332,7 @@ public class ShopVisitingScenariosKeywords{
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+			ProjectConstants.SCENARIO = "first visit"
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -384,6 +385,7 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -412,7 +414,7 @@ public class ShopVisitingScenariosKeywords{
 		displayDataInReport()
 	}
 	@Keyword
-	def visitShopsWithShopLevel_FirstVisit(){
+	def visitShopsWithShopLevel_OverwriteScenarios(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=6; i++){
@@ -435,6 +437,7 @@ public class ShopVisitingScenariosKeywords{
 			// shop closed to shop open
 			if(i == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "overwrite"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
@@ -542,7 +545,8 @@ public class ShopVisitingScenariosKeywords{
 			//shop open to shop open
 			else if(i == 6){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -557,6 +561,7 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "'SKDNA' for chiller with 'Expiry Issue' remark\n"+
+								String.format("%-34s%-100s", "","'Chiller not Available' for chiller utilization")+"\n"+
 								String.format("%-34s%-100s", "","'No Space for Display' for remaining categories")+"\n"+
 								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Twice a week'")+"\n"+
 								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
@@ -601,6 +606,7 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				findShop(ProjectConstants.CURRENTVISITING_SHOPNAME)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "overwrite"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
@@ -625,6 +631,7 @@ public class ShopVisitingScenariosKeywords{
 			//shop open to shop closed
 			else if(i == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
@@ -727,12 +734,14 @@ public class ShopVisitingScenariosKeywords{
 			//shop open to shop open
 			else if(i == 6){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				findShop(ProjectConstants.CURRENTVISITING_SHOPNAME)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -747,12 +756,14 @@ public class ShopVisitingScenariosKeywords{
 					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 						String message = "(1) 'Chiller Not Allocated' for chiller\n"+
+								String.format("%-34s%-100s", "","'Chiller Available' for chiller utilization")+"\n"+
 								String.format("%-34s%-100s", "","'Display Space Available' for remaining categories")+"\n"+
 								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Once a week'")+"\n"+
 								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
 								String.format("%-34s%-100s", "","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
 								String.format("%-34s%-100s", "","'Hanger Availability' with 'Yes' remark")+"\n\n"+
 								String.format("%-30s%-100s", "","(2) 'SKDNA' for chiller with 'Expiry Issue' remark")+"\n"+
+								String.format("%-34s%-100s", "","'Chiller Not Available' for chiller utilization")+"\n"+
 								String.format("%-34s%-100s", "","'No Space for Display' for remaining categories")+"\n"+
 								String.format("%-34s%-100s", "","'RTM visit frequency' with 'Twice a week'")+"\n"+
 								String.format("%-34s%-100s", "","'Pop Application' with 'No' remark")+"\n"+
@@ -771,10 +782,10 @@ public class ShopVisitingScenariosKeywords{
 		displayDataInReport()
 	}
 	@Keyword
-	def visitShopsWithCategoryLevel_Chiller_FirstVisit(){
+	def visitShopsWithCategoryLevel_Chiller_OverwriteScenarios(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=4; i++){
+		for(int i=1; i<=2; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -793,7 +804,8 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			if(i == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -820,7 +832,8 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -847,7 +860,8 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 3){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -874,7 +888,8 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 4){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -910,7 +925,7 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopsWithCategoryLevel_Chiller_Overwriting(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=4; i++){
+		for(int i=1; i<=2; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -929,8 +944,10 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			if(i == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -963,8 +980,10 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -997,8 +1016,10 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 3){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_CNAv_NSFD"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1031,8 +1052,10 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 4){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1070,7 +1093,7 @@ public class ShopVisitingScenariosKeywords{
 		displayDataInReport()
 	}
 	@Keyword
-	def visitShopsWithCategoryLevel_ChillerUtilization_FirstVisit(){
+	def visitShopsWithCategoryLevel_ChillerUtilization_OverwriteScenarios(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=7; i++){
@@ -1092,7 +1115,8 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			if(i == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1119,7 +1143,8 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1146,7 +1171,8 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 3){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1173,7 +1199,8 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 4){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1200,7 +1227,8 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 5){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CAv_SKDNA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_CAv_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1227,7 +1255,8 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 6){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1254,7 +1283,8 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 7){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithoutOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CNAv_SKDNA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_CNAv_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1308,8 +1338,10 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			if(i == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CTNAv_NSFD"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1342,8 +1374,10 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp/OverwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1376,8 +1410,10 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 3){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_SKDNA_SKDNA_SKDNA"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1410,8 +1446,10 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 4){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_DSA"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp/OverwriteShopCategoriesWith_CNAl_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1444,8 +1482,10 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 5){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CNAv_DSA"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CAv_SKDNA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CAv_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1478,8 +1518,10 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 6){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CNAv_SKDNA"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CAv_DSA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
@@ -1512,8 +1554,10 @@ public class ShopVisitingScenariosKeywords{
 			}
 			else if(i == 7){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_CNAl_CAv_NSFD"), null)
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp_WithDifferentRemarks/VisitShopCategoriesWith_SKDNA_CNAv_SKDNA"), null)
+				ProjectConstants.SCENARIO = "overwrite"
+				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWith_SKDNA_CNAv_SKDNA"), null)
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {

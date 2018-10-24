@@ -32,7 +32,7 @@ import WebUiBuiltInKeywords as WebUI
 public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements ShopCategories{
 	@Keyword
 	def visitShopCategoriesWithDataVerification(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0
@@ -167,7 +167,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CAv_DSA(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0
@@ -322,7 +322,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_CNAv_NSFD(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0
@@ -477,7 +477,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_SKDNA_SKDNA(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0
@@ -632,7 +632,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CTNAv_NSFD(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0
@@ -787,7 +787,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_CAv_DSA(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0
@@ -942,7 +942,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 	}
 	@Keyword
 	def overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0
@@ -1097,7 +1097,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 	}
 	@Keyword
 	def overwriteShopCategoriesWith_CNAl_CAv_DSA(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0
@@ -1252,7 +1252,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CAv_NSFD(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0
@@ -1407,7 +1407,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_CNAv_SKDNA(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0
@@ -1562,7 +1562,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CNAv_SKDNA(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0
@@ -1717,7 +1717,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CNAv_DSA(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0
@@ -1872,7 +1872,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords implements Shop
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_CAv_SKDNA(){
-		ProjectConstants.scenario = "overwrite"
+
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		int index = 0

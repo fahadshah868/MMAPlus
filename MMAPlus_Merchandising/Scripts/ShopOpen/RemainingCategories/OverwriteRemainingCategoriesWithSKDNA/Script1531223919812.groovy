@@ -2,8 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
-import com.ct.qa.constants.ProjectConstants
+import com.ct.qa.constants.ProjectConstants as ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -22,27 +21,34 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate shop category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
-    'Display Space Available')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', 
+        [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
 
 'tap on "Shopkeeper did not Allow"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ShopKeeperDidNotAllow' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ShopKeeperDidNotAllow', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 'validate "Category Remarks" screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_CategoryRemarksScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'CATEGORY REMARKS')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_CategoryRemarksScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'CATEGORY REMARKS')
 
 'tap on category remark'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_Others' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_Others', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_BackButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_BackButton', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 'validate shop category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('null'), 'Display Space Available' , [('package') : ProjectConstants.PACKAGENAME])
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', 
+        [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
 
 'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/RemainingCategory_BackButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/RemainingCategory_BackButton', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 'validate shop\'s categories screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 

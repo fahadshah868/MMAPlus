@@ -1,0 +1,28 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Plus Merchandising With Category Level(Chiller) Overwrite Scenarios,,,2018-10-24 17:09:17,2018-10-24 17:50:08,40m - 51.319s,PASSED
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2018-10-24 17:09:18,2018-10-24 17:09:40,21.982s,PASSED
+startApplication,,launch application,2018-10-24 17:09:18,2018-10-24 17:09:35,16.309s,PASSED
+delay,,delay of 5 seconds,2018-10-24 17:09:35,2018-10-24 17:09:40,5.030s,PASSED
+,,,,,,
+Test Cases/DistributionPoint/VisitDistributionPoint,,,2018-10-24 17:09:40,2018-10-24 17:10:23,43.789s,PASSED
+verifyElementText,,validate dashboard screen appearance,2018-10-24 17:09:40,2018-10-24 17:09:43,3.287s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday,,select the current day for further proceed,2018-10-24 17:09:43,2018-10-24 17:09:46,3.193s,PASSED
+tap,,tap on start your day button,2018-10-24 17:09:46,2018-10-24 17:09:48,1.726s,PASSED
+delay,,delay of 15 seconds for check in through map screen,2018-10-24 17:09:48,2018-10-24 17:10:03,15.006s,PASSED
+verifyElementExist,,validate map screen appearance,2018-10-24 17:10:03,2018-10-24 17:10:04,0.640s,PASSED
+tap,,tap on check in button through map,2018-10-24 17:10:04,2018-10-24 17:10:04,0.460s,PASSED
+verifyElementExist,,validate confirm popup appearance,2018-10-24 17:10:04,2018-10-24 17:10:05,1.109s,PASSED
+tap,,tap on confirm popup no button,2018-10-24 17:10:05,2018-10-24 17:10:06,0.716s,PASSED
+verifyElementText,,validate channel summary detail screen appearance,2018-10-24 17:10:06,2018-10-24 17:10:08,2.044s,PASSED
+tap,,tap on next button to further proceed,2018-10-24 17:10:08,2018-10-24 17:10:09,0.740s,PASSED
+verifyElementText,,validate distribution point screen appearance,2018-10-24 17:10:09,2018-10-24 17:10:10,1.331s,PASSED
+com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPoint,,enter quantity of products on distribution point,2018-10-24 17:10:10,2018-10-24 17:10:22,12.367s,PASSED
+tap,,tap on submit button after enter the quantity of products on distribution point,2018-10-24 17:10:22,2018-10-24 17:10:23,0.892s,PASSED
+,,,,,,
+Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller)Overwriting,,,2018-10-24 17:10:23,2018-10-24 17:50:08,39m - 44.875s,PASSED
+verifyElementText,,validate the dashboard screen appearance,2018-10-24 17:10:24,2018-10-24 17:10:25,1.413s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday,,select current day,2018-10-24 17:10:25,2018-10-24 17:10:27,2.302s,PASSED
+tap,,tap on start your day button to further proceed,2018-10-24 17:10:27,2018-10-24 17:10:28,1.194s,PASSED
+verifyElementText,,Validate shops list screen appearance,2018-10-24 17:10:28,2018-10-24 17:10:31,2.550s,PASSED
+com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithCategoryLevel_Chiller_Overwriting,,"select shops from shops list with ""Shop Level"" overwriting ",2018-10-24 17:10:31,2018-10-24 17:50:08,39m - 37.233s,PASSED

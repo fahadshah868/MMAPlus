@@ -33,7 +33,7 @@ import WebUiBuiltInKeywords as WebUI
 public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	@Keyword
 	def visitShopCategoriesWithDataVerification(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -204,7 +204,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CAv_DSA(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -397,7 +397,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_CNAv_NSFD(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -590,7 +590,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_SKDNA_SKDNA(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -783,7 +783,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CTNAv_NSFD(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -976,7 +976,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_CAv_DSA(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -1169,7 +1169,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def overwriteShopCategoriesWith_SKDNA_SKDNA_SKDNA(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -1362,7 +1362,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def overwriteShopCategoriesWith_CNAl_CAv_DSA(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -1555,7 +1555,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CAv_NSFD(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -1748,7 +1748,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_CNAv_SKDNA(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -1941,7 +1941,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CNAv_SKDNA(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -2134,7 +2134,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 	}
 	@Keyword
 	def visitShopCategoriesWith_CNAl_CNAv_DSA(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()
@@ -2329,7 +2329,7 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 
 	@Keyword
 	def visitShopCategoriesWith_SKDNA_CAv_SKDNA(){
-		ProjectConstants.scenario = "first visit"
+		
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
 		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareShopCategories()

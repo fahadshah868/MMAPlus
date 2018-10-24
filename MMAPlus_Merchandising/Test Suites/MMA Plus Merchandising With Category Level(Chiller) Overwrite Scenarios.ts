@@ -4,7 +4,7 @@
    <name>MMA Plus Merchandising With Category Level(Chiller) Overwrite Scenarios</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-09-06T17:13:29</lastRun>
+   <lastRun>2018-10-24T17:09:15</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>4</pageLoadTimeout>
@@ -26,14 +26,14 @@
    <testCaseLink>
       <guid>ad5a054f-d6a1-4134-84eb-f5d775f6a0b2</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>5ce4c51f-ffd5-40b6-84fb-99c5dd27fc2c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller)FirstVisit</testCaseId>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller)OverwriteScenarios</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>1d49206e-1f04-40cb-9064-ae01da15ee9f</guid>

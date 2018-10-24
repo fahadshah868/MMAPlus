@@ -229,7 +229,7 @@ public class ChillerProductsDataKeywords {
 					String productquantity = channelproduct.getProduct_data()
 					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 					selectedproducttextfield.setValue(productquantity)
-					if(ProjectConstants.scenario.equals("first visit")){
+					if(ProjectConstants.SCENARIO.equals("first visit")){
 						if(assettype.equalsIgnoreCase("Facing")){
 							productsdata.setFacingdata(productquantity)
 						}
@@ -262,7 +262,7 @@ public class ChillerProductsDataKeywords {
 			if(flag == false){
 				MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 				selectedproducttextfield.setValue("0000")
-				if(ProjectConstants.scenario.equals("first visit")){
+				if(ProjectConstants.SCENARIO.equals("first visit")){
 					if(assettype.equalsIgnoreCase("Facing")){
 						productsdata.setFacingdata("0000")
 					}
@@ -316,7 +316,7 @@ public class ChillerProductsDataKeywords {
 							String productquantity = channelproduct.getProduct_data()
 							MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
 							selectedproducttextfield.setValue(productquantity)
-							if(ProjectConstants.scenario.equals("first visit")){
+							if(ProjectConstants.SCENARIO.equals("first visit")){
 								if(assettype.equalsIgnoreCase("Facing")){
 									productsdata.setFacingdata(productquantity)
 								}
@@ -349,7 +349,7 @@ public class ChillerProductsDataKeywords {
 					if(flag == false){
 						MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 						selectedproducttextfield.setValue("0000")
-						if(ProjectConstants.scenario.equals("first visit")){
+						if(ProjectConstants.SCENARIO.equals("first visit")){
 							if(assettype.equalsIgnoreCase("Facing")){
 								productsdata.setFacingdata("0000")
 							}
@@ -528,7 +528,7 @@ public class ChillerProductsDataKeywords {
 												for(int x=0; x< shopproductsdata.size(); x++){
 													ShopProductsData newproductsdatainfo = shopproductsdata.get(x)
 													if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
-														if(ProjectConstants.scenario.equals("first visit")){
+														if(ProjectConstants.SCENARIO.equals("first visit")){
 															if(assettype.equals("Facing")){
 																existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
 																break
@@ -606,7 +606,7 @@ public class ChillerProductsDataKeywords {
 					String productquantity = channelproduct.getProduct_data()
 					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 					selectedproducttextfield.setValue(productquantity)
-					if(ProjectConstants.scenario.equals("first visit")){
+					if(ProjectConstants.SCENARIO.equals("first visit")){
 						if(assettype.equalsIgnoreCase("Facing")){
 							productsdata.setFacingdata(productquantity)
 						}
@@ -634,7 +634,7 @@ public class ChillerProductsDataKeywords {
 			if(flag == false){
 				MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 				selectedproducttextfield.setValue("0000")
-				if(ProjectConstants.scenario.equals("first visit")){
+				if(ProjectConstants.SCENARIO.equals("first visit")){
 					if(assettype.equalsIgnoreCase("Facing")){
 						productsdata.setFacingdata("0000")
 					}
@@ -682,7 +682,7 @@ public class ChillerProductsDataKeywords {
 							String productquantity = channelproduct.getProduct_data()
 							MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
 							selectedproducttextfield.setValue(productquantity)
-							if(ProjectConstants.scenario.equals("first visit")){
+							if(ProjectConstants.SCENARIO.equals("first visit")){
 								if(assettype.equalsIgnoreCase("Facing")){
 									productsdata.setFacingdata(productquantity)
 								}
@@ -710,7 +710,7 @@ public class ChillerProductsDataKeywords {
 					if(flag == false){
 						MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 						selectedproducttextfield.setValue("0000")
-						if(ProjectConstants.scenario.equals("first visit")){
+						if(ProjectConstants.SCENARIO.equals("first visit")){
 							if(assettype.equalsIgnoreCase("Facing")){
 								productsdata.setFacingdata("0000")
 							}
@@ -883,7 +883,7 @@ public class ChillerProductsDataKeywords {
 												for(int x=0; x< shopproductsdata.size(); x++){
 													ShopProductsData newproductsdatainfo = shopproductsdata.get(x)
 													if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
-														if(ProjectConstants.scenario.equals("first visit")){
+														if(ProjectConstants.SCENARIO.equals("first visit")){
 															if(assettype.equals("Facing")){
 																existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
 																break

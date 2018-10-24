@@ -34,28 +34,8 @@ import WebUiBuiltInKeywords as WebUI
 public class CompareDataKeywords {
 	//compare display and actual channel wise products categories
 	def static compareChannelWiseProductsCategories(){
-		DataFormatter dataformatter = new DataFormatter()
-		XSSFSheet sheet = LoadDataKeywords.loadChannelProductsSheet()
-		ArrayList<String> expectedproductscategorieslist = new ArrayList<String>()
 		ArrayList<String> displayedproductscategorieslist = new ArrayList<String>()
-		String currentvisitingmaincategory = ""
-		if(ProjectConstants.CURRENTVISITING_MAINCATEGORY.equalsIgnoreCase("Chiller Utilization")){
-			currentvisitingmaincategory = "Chiller"
-		}
-		else{
-			currentvisitingmaincategory = ProjectConstants.CURRENTVISITING_MAINCATEGORY
-		}
-		int totalrows = sheet.getLastRowNum()
-		for(int i=1; i<=totalrows; i++){
-			Row row = sheet.getRow(i)
-			String channel = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL))
-			String channelname = "Channel: "+channel
-			String maincategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_MAINCATEGORY))
-			if(ProjectConstants.CURRENTVISITING_SHOPCHANNEL.equalsIgnoreCase(channelname) && maincategory.equalsIgnoreCase(currentvisitingmaincategory)){
-				String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCTCATEGORY))
-				expectedproductscategorieslist.add(productcategory)
-			}
-		}
+		ArrayList<String> expectedproductscategorieslist = LoadDataKeywords.loadChannelWiseSubCategories()
 		int totalproductscategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalproductscategories; i++){
 			MobileElement productcategory = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -139,24 +119,13 @@ public class CompareDataKeywords {
 	}
 	//compare display and actual chiller wise products categories
 	def static compareChillerWiseProductsCategories(){
-		DataFormatter dataformatter = new DataFormatter()
-		XSSFSheet sheet = LoadDataKeywords.loadChillerProductsSheet()
-		ArrayList<String> expectedproductscategorieslist = new ArrayList<String>()
 		ArrayList<String> displayedproductscategorieslist = new ArrayList<String>()
-		int totalrows = sheet.getLastRowNum()
-		for(int i=1; i<=totalrows; i++){
-			Row row = sheet.getRow(i)
-			String chiller = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHILLER_TYPE))
-			if(ProjectConstants.CURRENTVISITING_CHILLERTYPE.equalsIgnoreCase(chiller)){
-				String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHILLER_PRODUCTCATEGORY))
-				expectedproductscategorieslist.add(productcategory)
-			}
-		}
+		ArrayList<String> expectedproductscategorieslist = LoadDataKeywords.loadChillerWiseSubCategories()
 		int totalproductscategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=totalproductscategories; i++){
-			MobileElement productcategory = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-			displayedproductscategorieslist.add(productcategory.getText())
-		}
+		 for(int i=1; i<=totalproductscategories; i++){
+			 MobileElement productcategory = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			 displayedproductscategorieslist.add(productcategory.getText())
+		 }
 		ArrayList<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
 		if(expectedproductscategories.size() == displayedproductscategorieslist.size()){
 			ArrayList<String> products = new ArrayList<String>()

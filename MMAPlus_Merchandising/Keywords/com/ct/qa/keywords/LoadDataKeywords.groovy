@@ -26,6 +26,8 @@ import org.apache.poi.ss.usermodel.DataFormatter
 import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import org.stringtemplate.v4.compiler.CodeGenerator.region_return
+
 import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
@@ -92,6 +94,31 @@ public class LoadDataKeywords {
 		}
 		return expectedshopcategories
 	}
+	//load channel wise sub categories
+	def static loadChannelWiseSubCategories(){
+		ArrayList<String> expectedsubcategories = new ArrayList<String>()
+		DataFormatter dataformatter = new DataFormatter()
+		XSSFSheet sheet = LoadDataKeywords.loadChannelProductsSheet()
+		String currentvisitingmaincategory = ""
+		if(ProjectConstants.CURRENTVISITING_MAINCATEGORY.equalsIgnoreCase("Chiller Utilization")){
+			currentvisitingmaincategory = "Chiller"
+		}
+		else{
+			currentvisitingmaincategory = ProjectConstants.CURRENTVISITING_MAINCATEGORY
+		}
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<=totalrows; i++){
+			Row row = sheet.getRow(i)
+			String channel = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL))
+			String channelname = "Channel: "+channel
+			String maincategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_MAINCATEGORY))
+			if(ProjectConstants.CURRENTVISITING_SHOPCHANNEL.equalsIgnoreCase(channelname) && maincategory.equalsIgnoreCase(currentvisitingmaincategory)){
+				String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCTCATEGORY))
+				expectedsubcategories.add(productcategory)
+			}
+		}
+		return expectedsubcategories
+	}
 	//load channel wise products and quantity
 	def static loadChannelWiseProductsList(XSSFSheet sheet, int column){
 		DataFormatter dataformatter = new DataFormatter()
@@ -115,6 +142,22 @@ public class LoadDataKeywords {
 			}
 		}
 		return channelproducts
+	}
+	//load chiller wise sub categories
+	def static loadChillerWiseSubCategories(){
+		DataFormatter dataformatter = new DataFormatter()
+		XSSFSheet sheet = LoadDataKeywords.loadChillerProductsSheet()
+		ArrayList<String> expectedsubcategories = new ArrayList<String>()
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<=totalrows; i++){
+			Row row = sheet.getRow(i)
+			String chiller = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHILLER_TYPE))
+			if(ProjectConstants.CURRENTVISITING_CHILLERTYPE.equalsIgnoreCase(chiller)){
+				String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHILLER_PRODUCTCATEGORY))
+				expectedsubcategories.add(productcategory)
+			}
+		}
+		return expectedsubcategories
 	}
 	//load chiller products and quantity
 	def static loadChillerAvailableProductsList(XSSFSheet sheet, int column){

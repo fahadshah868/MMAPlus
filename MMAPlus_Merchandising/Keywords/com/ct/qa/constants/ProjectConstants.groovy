@@ -123,7 +123,7 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_CHILLERTYPE = ""
 	public static String CURRENTVISITING_CHILLERREMARK = ""
 	public static int VISITED_CHILLERREMARKS = 1
-	public static String scenario = ""
+	public static String SCENARIO = ""
 
 
 	//list for containing shop info
@@ -250,7 +250,12 @@ public class ProjectConstants {
 		return xlocation+1
 	}
 	def static visitPopUpForOverwriting(){
-		Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP"), 0, FailureHandling.OPTIONAL)
-		Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton"), -20, FailureHandling.OPTIONAL)
+		try{
+			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP", [('package') : ProjectConstants.PACKAGENAME]), 0)
+			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton", [('package') : ProjectConstants.PACKAGENAME]), 0)
+		}
+		catch(Exception ex){
+			
+		}		
 	}
 }
