@@ -122,10 +122,10 @@ public class CompareDataKeywords {
 		ArrayList<String> displayedproductscategorieslist = new ArrayList<String>()
 		ArrayList<String> expectedproductscategorieslist = LoadDataKeywords.loadChillerWiseSubCategories()
 		int totalproductscategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		 for(int i=1; i<=totalproductscategories; i++){
-			 MobileElement productcategory = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-			 displayedproductscategorieslist.add(productcategory.getText())
-		 }
+		for(int i=1; i<=totalproductscategories; i++){
+			MobileElement productcategory = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			displayedproductscategorieslist.add(productcategory.getText())
+		}
 		ArrayList<String> expectedproductscategories = new HashSet<String>(expectedproductscategorieslist)
 		if(expectedproductscategories.size() == displayedproductscategorieslist.size()){
 			ArrayList<String> products = new ArrayList<String>()

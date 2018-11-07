@@ -295,7 +295,7 @@ public class ChillerProductsDataKeywords {
 		if(totalproducts >= 16){
 			while(true){
 				ShopProductsData productsdata = new ShopProductsData()
-				int xlocation = ProjectConstants.getXPoint()
+				int xlocation = CommonKeywords.getXPoint()
 				MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 				String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
 				Mobile.swipe(xlocation, 359, xlocation, 250)
@@ -661,7 +661,7 @@ public class ChillerProductsDataKeywords {
 		if(totalproducts >= 16){
 			while(true){
 				ShopProductsData productsdata = new ShopProductsData()
-				int xlocation = ProjectConstants.getXPoint()
+				int xlocation = CommonKeywords.getXPoint()
 				MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 				String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
 				Mobile.swipe(xlocation, 359, xlocation, 250)
