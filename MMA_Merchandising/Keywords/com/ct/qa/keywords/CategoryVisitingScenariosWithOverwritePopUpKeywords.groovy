@@ -22,7 +22,7 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 import com.ct.qa.interfaces.ShopCategories
-import com.ct.qa.struct.UnmatchedProducts
+import com.ct.qa.struct.UnmatchedItems
 import internal.GlobalVariable
 import io.appium.java_client.MobileElement
 import MobileBuiltInKeywords as Mobile

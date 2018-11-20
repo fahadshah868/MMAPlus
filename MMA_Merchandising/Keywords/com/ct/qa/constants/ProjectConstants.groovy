@@ -8,7 +8,6 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.ct.qa.keywords.LoadDataKeywords
 import com.ct.qa.struct.MissingShopDataInfo
 import com.ct.qa.struct.MissingSliderOptions
-import com.ct.qa.struct.UnmatchedProducts
 import com.ct.qa.struct.VisitedShopDataInfo
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -42,36 +41,20 @@ import WebUiBuiltInKeywords as WebUI
 public class ProjectConstants {
 
 	//variables for excel file and sheets
-	public static final String EXCEL_FILEPATH = "F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\MMAPlus_Merchandising.xlsx"
+	public static final String EXCEL_FILEPATH = "F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\MMA_Merchandising.xlsx"
 	public static final String CHANNEL_PRODUCTSSHEET = "Channel Products"
 	public static final String CHILLER_PRODUCTSSHEET = "Chiller Products"
 	public static final String DISTRIBUTION_SHEET = "Distribution Point"
 	public static final String SLIDEROPTIONSSHEET = "Slider Options"
+	public static final String SHOPACTIONSSHEET = "Shop Actions"
+	public static final String AUDITQUESTIONSSHEET = "Audit Questions"
 	public static final AppiumDriver<MobileElement> DRIVER = MobileDriverFactory.getDriver()
-
 
 	//variables for display messages
 	//products comparison messages
-	public static final String MESSAGEFOR_PRODUCTSARE_MORE = "above products are displaying on device more than to expected products..."
-	public static final String MESSAGEFOR_PRODUCTSARE_MISSING = "above products are missing on device..."
-	public static final String MESSAGEFOR_PRODUCTSARE_NOTMATCH = "above products are display on device not match with expected products..."
-
-	public static final String MESSAGEFOR_DISPLAYEDPRODUCTSARE_EQUAL = "displayed products are equals to expected products..."
-
-	//products categories comparison messages
-	public static final String MESSAGEFOR_PRODUCTSCATEGORIESARE_MORE = "above products categories are displaying on device more than to expected products..."
-	public static final String MESSAGEFOR_PRODUCTSCATEGORIESARE_MISSING = "above products categories are missing on device"
-	public static final String MESSAGEFOR_PRODUCTSCATEGORIESARE_NOTMATCH = "above products categories are displaying on device not matching with expected products..."
-
-	//shop categories comparison messages
-	public static final String MESSAGEFOR_SHOPCATEGORIESARE_MORE = "above shop categories are displaying on device more than to expected shop categories"
-	public static final String MESSAGEFOR_SHOPCATEGORIESARE_MISSING = "above shop categories are missing on device"
-	public static final String MESSAGEFOR_SHOPCATEGORIESARE_NOTMATCH = "above shop categories are displaying on device not matching with expected shop categories"
-
-	//slider options comparison messages
-	public static final String MESSAGEFOR_SLIDEROPTIONSARE_MORE = "above slider options are displaying on device more than to expected slider options"
-	public static final String MESSAGEFOR_SLIDEROPTIONSARE_MISSING = "above slider options are missing on device"
-	public static final String MESSAGEFOR_SLIDEROPTIONSARE_NOTMATCH = "above slider options are displaying on device not matching with expected slider options"
+	public static final String MESSAGEFOR_ITEMSARE_MORE = "above items are displaying on device more than to expected items..."
+	public static final String MESSAGEFOR_ITEMSARE_MISSING = "above items are missing on device..."
+	public static final String MESSAGEFOR_ITEMSARE_NOTMATCH = "above items are display on device not match with expected items..."
 
 	//package name for elements
 	public static final String PACKAGENAME = "com.concavetech.bloc"
@@ -112,8 +95,15 @@ public class ProjectConstants {
 	public static final int CHANNEL_CNA_OVERWRITEFACING
 	public static final int CHANNEL_CNA_OVERWRITESTOCKTAKING
 
+	//shop actions columns
+	public static final int SHOPACTIONS
+
 	//slider options columns
 	public static final int SLIDEROPTIONS
+
+	//audit questions columns
+	public static final int AUDIT_QUESTIONCATEGORY
+	public static final int AUDIT_QUESTION
 
 	//variables for current visiting shop channels, chiller and categories
 	public static String CURRENTVISITING_SHOPNAME = ""
@@ -124,6 +114,7 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_CHILLERREMARK = ""
 	public static int VISITED_CHILLERREMARKS = 1
 	public static String SCENARIO = ""
+	public static String CURRENTVISITING_AUDITQUESTIONCATEGORY = ""
 
 
 	//list for containing shop info
@@ -136,12 +127,18 @@ public class ProjectConstants {
 		XSSFSheet channelproductssheet = LoadDataKeywords.loadChannelProductsSheet()
 		XSSFSheet chillerproductssheet = LoadDataKeywords.loadChillerProductsSheet()
 		XSSFSheet slideroptionssheet = LoadDataKeywords.loadSliderOptionsSheet()
+		XSSFSheet shopactionssheet = LoadDataKeywords.loadShopActionsSheet()
+		XSSFSheet auditquestionssheet = LoadDataKeywords.loadAuditQuestionsSheet()
 		Row chillerproductssheetheaderrow = chillerproductssheet.getRow(0)
 		Row channelproductssheetheaderrow = channelproductssheet.getRow(0)
 		Row slideroptionssheetheaderrow = slideroptionssheet.getRow(0)
+		Row shopactionssheetheaderrow = shopactionssheet.getRow(0)
+		Row auditquestionssheetheaderrow = auditquestionssheet.getRow(0)
 		int channelproductssheettotalcolumns = channelproductssheetheaderrow.getLastCellNum()
 		int chillerproductssheettotalcolumns = chillerproductssheetheaderrow.getLastCellNum()
 		int slideroptionssheettotalcolumns = slideroptionssheetheaderrow.getLastCellNum()
+		int shopactionssheettotalcolumns = shopactionssheetheaderrow.getLastCellNum()
+		int auditquestionssheettotalcolumns = auditquestionssheetheaderrow.getLastCellNum()
 		for(int cellnumber=0; cellnumber<channelproductssheettotalcolumns; cellnumber++){
 			String columnname = channelproductssheetheaderrow.getCell(cellnumber)
 			if(columnname.equalsIgnoreCase("Channel")){
@@ -239,6 +236,25 @@ public class ProjectConstants {
 			String columnname = slideroptionssheetheaderrow.getCell(cellnumber)
 			if(columnname.equalsIgnoreCase("Slider Options")){
 				SLIDEROPTIONS = cellnumber
+			}
+			else{
+			}
+		}
+		for(int cellnumber=0; cellnumber<shopactionssheettotalcolumns; cellnumber++ ){
+			String columnname = shopactionssheetheaderrow.getCell(cellnumber)
+			if(columnname.equalsIgnoreCase("Shop Actions")){
+				SHOPACTIONS = cellnumber
+			}
+			else{
+			}
+		}
+		for(int cellnumber=0; cellnumber<auditquestionssheettotalcolumns; cellnumber++ ){
+			String columnname = auditquestionssheetheaderrow.getCell(cellnumber)
+			if(columnname.equalsIgnoreCase("Question Category")){
+				AUDIT_QUESTIONCATEGORY = cellnumber
+			}
+			else if(columnname.equalsIgnoreCase("Question")){
+				AUDIT_QUESTION = cellnumber
 			}
 			else{
 			}

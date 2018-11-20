@@ -114,13 +114,13 @@ public class CommonKeywords {
 		}
 	}
 	def static takeCategoryPrePicture(){
-		try{
-			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen", [('package') : ProjectConstants.PACKAGENAME]), -2)
+		if(Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen", [('package') : ProjectConstants.PACKAGENAME]), 0, FailureHandling.OPTIONAL)){
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton", [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.delay(5)
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton", [('package') : ProjectConstants.PACKAGENAME]), 0)
 		}
-		catch(Exception ex){
+		else{
+			
 		}
 	}
 	def static getXPoint(){

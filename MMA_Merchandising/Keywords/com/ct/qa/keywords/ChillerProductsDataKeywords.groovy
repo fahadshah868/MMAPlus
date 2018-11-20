@@ -37,7 +37,7 @@ import com.ct.qa.struct.LoadProductsData
 import com.ct.qa.struct.MissingCategoryData
 import com.ct.qa.struct.ShopProductsData
 import com.ct.qa.struct.TaggedChillersRemark
-import com.ct.qa.struct.UnmatchedProducts
+import com.ct.qa.struct.UnmatchedItems
 import com.ct.qa.struct.VisitedCategoryData
 import com.ct.qa.struct.VisitedChillerProductsCategoryData
 import com.ct.qa.struct.VisitedShopDataInfo
@@ -47,16 +47,16 @@ public class ChillerProductsDataKeywords {
 
 	@Keyword
 	def visitChillerAvailableProductCategories(int flag){
-		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareChillerWiseProductsCategories()
-		if(unmatchedproducts_status.getStatus() == 2){
+		UnmatchedItems unmatcheditems = CompareDataKeywords.compareChillerWiseProductsCategories()
+		if(unmatcheditems.getStatus() == 2){
 			MissingCategoryData missingcategorydata = new MissingCategoryData()
 			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
 			MissingChillerProductsCategoryData missingchillercategory = new MissingChillerProductsCategoryData()
 			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-			missingchillercategory.setProductcategories(unmatchedproducts_status.getProducts())
-			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_NOTMATCH)
+			missingchillercategory.setProductcategories(unmatcheditems.getItems())
+			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_ITEMSARE_NOTMATCH)
 			taggedchillerremark.setMissingchillerproductscategories(missingchillercategory)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -68,15 +68,15 @@ public class ChillerProductsDataKeywords {
 				}
 			}
 		}
-		else if(unmatchedproducts_status.getStatus() == 1){
+		else if(unmatcheditems.getStatus() == 1){
 			MissingCategoryData missingcategorydata = new MissingCategoryData()
 			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
 			MissingChillerProductsCategoryData missingchillercategory = new MissingChillerProductsCategoryData()
 			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-			missingchillercategory.setProductcategories(unmatchedproducts_status.getProducts())
-			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MORE)
+			missingchillercategory.setProductcategories(unmatcheditems.getItems())
+			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_ITEMSARE_MORE)
 			taggedchillerremark.setMissingchillerproductscategories(missingchillercategory)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -88,15 +88,15 @@ public class ChillerProductsDataKeywords {
 				}
 			}
 		}
-		else if(unmatchedproducts_status.getStatus() == -1){
+		else if(unmatcheditems.getStatus() == -1){
 			MissingCategoryData missingcategorydata = new MissingCategoryData()
 			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
 			MissingChillerProductsCategoryData missingchillercategory = new MissingChillerProductsCategoryData()
 			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-			missingchillercategory.setProductcategories(unmatchedproducts_status.getProducts())
-			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MISSING)
+			missingchillercategory.setProductcategories(unmatcheditems.getItems())
+			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_ITEMSARE_MISSING)
 			taggedchillerremark.setMissingchillerproductscategories(missingchillercategory)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -127,16 +127,16 @@ public class ChillerProductsDataKeywords {
 	}
 	@Keyword
 	def visitChillerNotAvailableProductCategories(int flag){
-		UnmatchedProducts unmatchedproducts_status = CompareDataKeywords.compareChannelWiseProductsCategories()
-		if(unmatchedproducts_status.getStatus() == 2){
+		UnmatchedItems unmatcheditems = CompareDataKeywords.compareChannelWiseProductsCategories()
+		if(unmatcheditems.getStatus() == 2){
 			MissingCategoryData missingcategorydata = new MissingCategoryData()
 			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
 			MissingChillerProductsCategoryData missingchillercategory = new MissingChillerProductsCategoryData()
 			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-			missingchillercategory.setProductcategories(unmatchedproducts_status.getProducts())
-			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_NOTMATCH)
+			missingchillercategory.setProductcategories(unmatcheditems.getItems())
+			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_ITEMSARE_NOTMATCH)
 			taggedchillerremark.setMissingchillerproductscategories(missingchillercategory)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -148,15 +148,15 @@ public class ChillerProductsDataKeywords {
 				}
 			}
 		}
-		else if(unmatchedproducts_status.getStatus() == 1){
+		else if(unmatcheditems.getStatus() == 1){
 			MissingCategoryData missingcategorydata = new MissingCategoryData()
 			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
 			MissingChillerProductsCategoryData missingchillercategory = new MissingChillerProductsCategoryData()
 			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-			missingchillercategory.setProductcategories(unmatchedproducts_status.getProducts())
-			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MORE)
+			missingchillercategory.setProductcategories(unmatcheditems.getItems())
+			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_ITEMSARE_MORE)
 			taggedchillerremark.setMissingchillerproductscategories(missingchillercategory)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -168,15 +168,15 @@ public class ChillerProductsDataKeywords {
 				}
 			}
 		}
-		else if(unmatchedproducts_status.getStatus() == -1){
+		else if(unmatcheditems.getStatus() == -1){
 			MissingCategoryData missingcategorydata = new MissingCategoryData()
 			TaggedChillersRemark taggedchillerremark = new TaggedChillersRemark()
 			MissingChillerProductsCategoryData missingchillercategory = new MissingChillerProductsCategoryData()
 			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			taggedchillerremark.setChillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-			missingchillercategory.setProductcategories(unmatchedproducts_status.getProducts())
-			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_PRODUCTSCATEGORIESARE_MISSING)
+			missingchillercategory.setProductcategories(unmatcheditems.getItems())
+			missingchillercategory.setErrormessage_forproductcategories(ProjectConstants.MESSAGEFOR_ITEMSARE_MISSING)
 			taggedchillerremark.setMissingchillerproductscategories(missingchillercategory)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -405,7 +405,7 @@ public class ChillerProductsDataKeywords {
 				taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
 				missingchillerproductscategory.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
 				missingchillerproductscategory.setProducts(products)
-				missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_PRODUCTSARE_NOTMATCH)
+				missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_ITEMSARE_NOTMATCH)
 				taggedchillerremark.setMissingchillerproductscategories(missingchillerproductscategory)
 				missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -442,7 +442,7 @@ public class ChillerProductsDataKeywords {
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
 			missingchillerproductscategory.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
 			missingchillerproductscategory.setProducts(products)
-			missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_PRODUCTSARE_MORE)
+			missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_ITEMSARE_MORE)
 			taggedchillerremark.setMissingchillerproductscategories(missingchillerproductscategory)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -478,7 +478,7 @@ public class ChillerProductsDataKeywords {
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
 			missingchillerproductscategory.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
 			missingchillerproductscategory.setProducts(products)
-			missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_PRODUCTSARE_MISSING)
+			missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_ITEMSARE_MISSING)
 			taggedchillerremark.setMissingchillerproductscategories(missingchillerproductscategory)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -760,7 +760,7 @@ public class ChillerProductsDataKeywords {
 				taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
 				missingchillerproductscategory.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
 				missingchillerproductscategory.setProducts(products)
-				missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_PRODUCTSARE_NOTMATCH)
+				missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_ITEMSARE_NOTMATCH)
 				taggedchillerremark.setMissingchillerproductscategories(missingchillerproductscategory)
 				missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -797,7 +797,7 @@ public class ChillerProductsDataKeywords {
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
 			missingchillerproductscategory.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
 			missingchillerproductscategory.setProducts(products)
-			missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_PRODUCTSARE_MORE)
+			missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_ITEMSARE_MORE)
 			taggedchillerremark.setMissingchillerproductscategories(missingchillerproductscategory)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
@@ -833,7 +833,7 @@ public class ChillerProductsDataKeywords {
 			taggedchillerremark.setChillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
 			missingchillerproductscategory.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
 			missingchillerproductscategory.setProducts(products)
-			missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_PRODUCTSARE_MISSING)
+			missingchillerproductscategory.setErrormessage_forproducts(ProjectConstants.MESSAGEFOR_ITEMSARE_MISSING)
 			taggedchillerremark.setMissingchillerproductscategories(missingchillerproductscategory)
 			missingcategorydata.setTaggedchillersremarks(taggedchillerremark)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){

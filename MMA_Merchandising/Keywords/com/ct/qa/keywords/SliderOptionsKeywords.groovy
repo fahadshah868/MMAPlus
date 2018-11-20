@@ -22,7 +22,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.mysql.jdbc.DatabaseMetaData.SingleStringIterator
 import com.ct.qa.constants.ProjectConstants
 import com.ct.qa.struct.MissingSliderOptions
-import com.ct.qa.struct.UnmatchedProducts
+import com.ct.qa.struct.UnmatchedItems
 
 import internal.GlobalVariable
 import io.appium.java_client.MobileElement
@@ -30,18 +30,18 @@ import io.appium.java_client.MobileElement
 public class SliderOptionsKeywords {
 	@Keyword
 	def valideSliderOptions(){
-		UnmatchedProducts unmatchedoptions = CompareDataKeywords.compareSliderOptions()
-		if(unmatchedoptions.getStatus() == 2){
-			ProjectConstants.missingslideroptions.setMissingslideroptions(unmatchedoptions.getProducts())
-			ProjectConstants.missingslideroptions.setMessageformissingslideroptions(ProjectConstants.MESSAGEFOR_SLIDEROPTIONSARE_NOTMATCH)
+		UnmatchedItems unmatcheditems = CompareDataKeywords.compareSliderOptions()
+		if(unmatcheditems.getStatus() == 2){
+			ProjectConstants.missingslideroptions.setMissingslideroptions(unmatcheditems.getItems())
+			ProjectConstants.missingslideroptions.setMessageformissingslideroptions(ProjectConstants.MESSAGEFOR_ITEMSARE_NOTMATCH)
 		}
-		else if(unmatchedoptions.getStatus() == 1){
-			ProjectConstants.missingslideroptions.setMissingslideroptions(unmatchedoptions.getProducts())
-			ProjectConstants.missingslideroptions.setMessageformissingslideroptions(ProjectConstants.MESSAGEFOR_SLIDEROPTIONSARE_MORE)
+		else if(unmatcheditems.getStatus() == 1){
+			ProjectConstants.missingslideroptions.setMissingslideroptions(unmatcheditems.getItems())
+			ProjectConstants.missingslideroptions.setMessageformissingslideroptions(ProjectConstants.MESSAGEFOR_ITEMSARE_MORE)
 		}
-		else if(unmatchedoptions.getStatus() == -1){
-			ProjectConstants.missingslideroptions.setMissingslideroptions(unmatchedoptions.getProducts())
-			ProjectConstants.missingslideroptions.setMessageformissingslideroptions(ProjectConstants.MESSAGEFOR_SLIDEROPTIONSARE_MISSING)
+		else if(unmatcheditems.getStatus() == -1){
+			ProjectConstants.missingslideroptions.setMissingslideroptions(unmatcheditems.getItems())
+			ProjectConstants.missingslideroptions.setMessageformissingslideroptions(ProjectConstants.MESSAGEFOR_ITEMSARE_MISSING)
 		}
 		else{
 		}

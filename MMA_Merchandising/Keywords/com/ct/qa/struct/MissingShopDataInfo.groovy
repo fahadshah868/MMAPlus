@@ -29,13 +29,56 @@ public class MissingShopDataInfo {
 	public String shopname
 	public String shopchannel
 	public String scenario
+	public ArrayList<String> missingshopactions
+	public String missingshopactions_errormessage
 	public ArrayList<String> missingshopcategories
 	public String missingshopcategories_errormessage
 	public ArrayList<MissingCategoryData> missingcategoriesdata
-
+	public ArrayList<String> missing_auditquestioncategories
+	public String missing_auditquestioncategories_errormessage
+	public ArrayList<String> missing_auditquestions
+	public String missing_auditquestions_errormessage
+	
 	public MissingShopDataInfo(){
 		this.missingcategoriesdata = new ArrayList<MissingCategoryData>()
-	}
+	}
+
+	public String getMissingshopactions_errormessage() {
+		return missingshopactions_errormessage;
+	}
+	public void setMissingshopactions_errormessage(String missingshopactions_errormessage) {
+		this.missingshopactions_errormessage = missingshopactions_errormessage;
+	}
+	public ArrayList<String> getMissing_auditquestioncategories() {
+		return missing_auditquestioncategories;
+	}
+	public void setMissing_auditquestioncategories(ArrayList<String> missing_auditquestioncategories) {
+		this.missing_auditquestioncategories = missing_auditquestioncategories;
+	}
+	public String getMissing_auditquestioncategories_errormessage() {
+		return missing_auditquestioncategories_errormessage;
+	}
+	public void setMissing_auditquestioncategories_errormessage(String missing_auditquestioncategories_errormessage) {
+		this.missing_auditquestioncategories_errormessage = missing_auditquestioncategories_errormessage;
+	}
+	public ArrayList<String> getMissing_auditquestions() {
+		return missing_auditquestions;
+	}
+	public void setMissing_auditquestions(ArrayList<String> missing_auditquestions) {
+		this.missing_auditquestions = missing_auditquestions;
+	}
+	public String getMissing_auditquestions_errormessage() {
+		return missing_auditquestions_errormessage;
+	}
+	public void setMissing_auditquestions_errormessage(String missing_auditquestions_errormessage) {
+		this.missing_auditquestions_errormessage = missing_auditquestions_errormessage;
+	}
+	public ArrayList<String> getMissingshopactions() {
+		return missingshopactions;
+	}
+	public void setMissingshopactions(ArrayList<String> missingshopactions) {
+		this.missingshopactions = missingshopactions;
+	}
 	public String getShopname() {
 		return shopname;
 	}

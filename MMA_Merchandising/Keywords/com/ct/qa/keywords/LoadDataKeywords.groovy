@@ -77,6 +77,70 @@ public class LoadDataKeywords {
 		catch(Exception ex){
 		}
 	}
+	//load Slider Options sheet
+	def static loadShopActionsSheet(){
+		try{
+			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.EXCEL_FILEPATH))
+			XSSFWorkbook wb = new XSSFWorkbook(inputStream)
+			XSSFSheet sheet = wb.getSheet(ProjectConstants.SHOPACTIONSSHEET)
+			return sheet
+		}
+		catch(Exception ex){
+		}
+	}
+	//load Slider Options sheet
+	def static loadAuditQuestionsSheet(){
+		try{
+			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.EXCEL_FILEPATH))
+			XSSFWorkbook wb = new XSSFWorkbook(inputStream)
+			XSSFSheet sheet = wb.getSheet(ProjectConstants.AUDITQUESTIONSSHEET)
+			return sheet
+		}
+		catch(Exception ex){
+		}
+	}
+	//load audit question category list
+	def static loadAuditQuestionCategoryList(){
+		DataFormatter dataformatter = new DataFormatter()
+		ArrayList<String> expectedquestioncategorylist = new ArrayList<String>()
+		XSSFSheet sheet = loadAuditQuestionsSheet()
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<= totalrows; i++){
+			Row row = sheet.getRow(i)
+			String questioncategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTIONCATEGORY))
+			expectedquestioncategorylist.add(questioncategory)
+		}
+		return expectedquestioncategorylist
+	}
+	//load audit question list
+	def static loadAuditQuestionsList(){
+		DataFormatter dataformatter = new DataFormatter()
+		ArrayList<String> expectedquestionslist = new ArrayList<String>()
+		XSSFSheet sheet = loadAuditQuestionsSheet()
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<= totalrows; i++){
+			Row row = sheet.getRow(i)
+			String questioncategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTIONCATEGORY))
+			if(ProjectConstants.CURRENTVISITING_AUDITQUESTIONCATEGORY.equalsIgnoreCase(questioncategory)){
+				String question = dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTION))
+				expectedquestionslist.add(question)
+			}
+		}
+		return expectedquestionslist
+	}
+	//load shop actions
+	def static loadShopActionsList(){
+		DataFormatter dataformatter = new DataFormatter()
+		ArrayList<String> expectedshopactionslist = new ArrayList<String>()
+		XSSFSheet sheet = loadShopActionsSheet()
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<= totalrows; i++){
+			Row row = sheet.getRow(i)
+			String shopaction = dataformatter.formatCellValue(row.getCell(ProjectConstants.SHOPACTIONS))
+			expectedshopactionslist.add(shopaction)
+		}
+		return expectedshopactionslist
+	}
 	//load shop categories
 	def static loadShopCategories(){
 		DataFormatter dataformatter = new DataFormatter()

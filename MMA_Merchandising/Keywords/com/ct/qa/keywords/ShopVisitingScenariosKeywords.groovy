@@ -29,6 +29,7 @@ import WebUiBuiltInKeywords as WebUI
 import com.ct.qa.constants.ProjectConstants
 import com.ct.qa.struct.ShopProductsData
 import com.ct.qa.struct.TaggedChillersRemark
+import com.ct.qa.struct.UnmatchedItems
 import com.ct.qa.struct.VisitedCategoryData
 import com.ct.qa.struct.VisitedShopDataInfo
 import com.ct.qa.struct.VisitedChillerProductsCategoryData
@@ -58,6 +59,27 @@ public class ShopVisitingScenariosKeywords{
 						flag = true
 					}
 					else{
+					}
+				}
+				if(missingshopdatainfo.getMissingshopactions() != null){
+					if(flag == false){
+						message = message+"\n\n"+
+								String.format("%-11s%-60s%-60s","Shop Name:",missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n\n"+
+								String.format("%-30s%-100s", "Visiting Scenarios:",missingshopdatainfo.getScenario())+
+								"\n\n" + String.format("%-30s", "Shop Actions:")
+						for(int j=0; j<missingshopdatainfo.getMissingshopactions().size(); j++){
+							message = message+missingshopdatainfo.getMissingshopactions().get(j)+",   "
+						}
+						message = message+"\n"+missingshopdatainfo.getMissingshopactions_errormessage() + "\n\n"
+						flag = true
+					}
+					else{
+						message = message+"\n\n"+
+								String.format("%-30s", "Shop Actions:")
+						for(int j=0; j<missingshopdatainfo.getMissingshopactions().size(); j++){
+							message = message+missingshopdatainfo.getMissingshopactions().get(j)+",   "
+						}
+						message = message+"\n"+missingshopdatainfo.getMissingshopactions_errormessage() + "\n\n"
 					}
 				}
 				if(missingshopdatainfo.getMissingCategoriesData() != null){
@@ -297,7 +319,7 @@ public class ShopVisitingScenariosKeywords{
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Options")
 				MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-				ProjectConstants.visitPopUpForOverwriting()
+				CommonKeywords.visitPopUpForOverwriting()
 				Mobile.delay(15)
 				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen" , [('package') : ProjectConstants.PACKAGENAME]), 60)
 				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
@@ -309,12 +331,49 @@ public class ShopVisitingScenariosKeywords{
 			}
 		}
 	}
-
+	def missingShopActionsList(){
+		UnmatchedItems unmatcheditems = CompareDataKeywords.compareShopActionsList()
+		if(unmatcheditems.getStatus() == 2){
+			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+					ProjectConstants.missingshopdatainfo.get(j).setMissingshopactions(unmatcheditems.getItems())
+					ProjectConstants.missingshopdatainfo.get(j).setMissingshopactions_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_NOTMATCH)
+					break
+				}
+				else{
+				}
+			}
+		}
+		else if(unmatcheditems.getStatus() == 1){
+			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+					ProjectConstants.missingshopdatainfo.get(j).setMissingshopactions(unmatcheditems.getItems())
+					ProjectConstants.missingshopdatainfo.get(j).setMissingshopactions_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_MORE)
+					break
+				}
+				else{
+				}
+			}
+		}
+		else if(unmatcheditems.getStatus() == -1){
+			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+					ProjectConstants.missingshopdatainfo.get(j).setMissingshopactions(unmatcheditems.getItems())
+					ProjectConstants.missingshopdatainfo.get(j).setMissingshopactions_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_MISSING)
+					break
+				}
+				else{
+				}
+			}
+		}
+		else{
+		}
+	}
 	@Keyword
 	def visitShopWith_DataVerification(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<= totalshops; i++){
+		for(int i=4; i<= 4; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -325,92 +384,96 @@ public class ShopVisitingScenariosKeywords{
 			ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Options")
-			MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.delay(15)
-			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen" , [('package') : ProjectConstants.PACKAGENAME]), 60)
-			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-			ProjectConstants.SCENARIO = "first visit"
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
-			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
-				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
-					ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-					ProjectConstants.missingshopdatainfo.get(j).setScenario("Data Verification")
-					break
-				}
-			}
-			for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
-				if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
-					ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-					String message = "'Scenario given bellow' for chiller utilization\n"+
-							String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
-							String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
-							String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
-							String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
-							String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")
-					ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
-					break
-				}
-			}
-			Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			//validate missing shop actions list e.g. start working / get routes etc...
+			missingShopActionsList()
+			//			MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			//			Mobile.delay(15)
+			//			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen" , [('package') : ProjectConstants.PACKAGENAME]), 60)
+			//			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			//			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			//			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			//			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+			//			ProjectConstants.SCENARIO = "first visit"
+			//			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
+			//			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+			//			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+			//				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+			//					ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+			//					ProjectConstants.missingshopdatainfo.get(j).setScenario("Data Verification")
+			//					break
+			//				}
+			//			}
+			//			for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+			//				if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+			//					ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+			//					String message = "'Scenario given bellow' for chiller utilization\n"+
+			//							String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+			//							String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+			//							String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+			//							String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+			//							String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")
+			//					ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+			//					break
+			//				}
+			//			}
+			//Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		}
-		while(true){
-			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
-			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
-			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-			MobileElement lastitembeforeswipe  = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-			String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
-			Mobile.swipe(0, 292, 0, 200)
-			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-			MobileElement lastitemafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-			String lastitemnameafterswipe = lastitemafterswipe.getText()
-			if(lastitemnamebeforeswipe.equalsIgnoreCase(lastitemnameafterswipe)){
-				break
-			}
-			else{
-				ProjectConstants.CURRENTVISITING_SHOPNAME = lastitemnameafterswipe
-				missingshopdatainfo.setShopname(lastitemnameafterswipe)
-				visitedshopdatainfo.setShopname(lastitemnameafterswipe)
-				ProjectConstants.missingshopdatainfo.add(missingshopdatainfo)
-				ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Options")
-				MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-				Mobile.delay(15)
-				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen" , [('package') : ProjectConstants.PACKAGENAME]), 60)
-				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
-				ProjectConstants.SCENARIO = "first visit"
-				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
-				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
-					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
-						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-						ProjectConstants.missingshopdatainfo.get(j).setScenario("Data Verification")
-						break
-					}
-				}
-				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
-					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
-						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
-						String message = "'Scenario given bellow' for chiller utilization\n"+
-								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
-								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
-								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
-								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
-								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")
-						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
-						break
-					}
-				}
-				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			}
-		}
+		//		while(true){
+		//			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
+		//			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
+		//			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+		//			MobileElement lastitembeforeswipe  = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+		//			String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
+		//			Mobile.swipe(0, 292, 0, 200)
+		//			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+		//			MobileElement lastitemafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+		//			String lastitemnameafterswipe = lastitemafterswipe.getText()
+		//			if(lastitemnamebeforeswipe.equalsIgnoreCase(lastitemnameafterswipe)){
+		//				break
+		//			}
+		//			else{
+		//				ProjectConstants.CURRENTVISITING_SHOPNAME = lastitemnameafterswipe
+		//				missingshopdatainfo.setShopname(lastitemnameafterswipe)
+		//				visitedshopdatainfo.setShopname(lastitemnameafterswipe)
+		//				ProjectConstants.missingshopdatainfo.add(missingshopdatainfo)
+		//				ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
+		//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+		//				MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Options")
+		//				//validate missing shop actions list e.g. start working / get routes etc...
+		//				missingShopActionsList()
+		//				MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//				Mobile.delay(15)
+		//				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen" , [('package') : ProjectConstants.PACKAGENAME]), 60)
+		//				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+		//				ProjectConstants.SCENARIO = "first visit"
+		//				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
+		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+		//				for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+		//					if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+		//						ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+		//						ProjectConstants.missingshopdatainfo.get(j).setScenario("Data Verification")
+		//						break
+		//					}
+		//				}
+		//				for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+		//					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+		//						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+		//						String message = "'Scenario given bellow' for chiller utilization\n"+
+		//								String.format("%-34s%-100s","","'Display Space Available' for remaining categories")+"\n"+
+		//								String.format("%-34s%-100s","","'RTM visit frequency' with 'Once a week'")+"\n"+
+		//								String.format("%-34s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+		//								String.format("%-34s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+		//								String.format("%-34s%-100s","","'Hanger Availability' with 'Yes' remark")
+		//						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
+		//						break
+		//					}
+		//				}
+		//				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//			}
+		//		}
 		displayDataInReport()
 	}
 	@Keyword
@@ -428,6 +491,8 @@ public class ShopVisitingScenariosKeywords{
 			ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Options")
+			//validate missing shop actions list e.g. start working / get routes etc...
+			missingShopActionsList()
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.delay(15)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen" , [('package') : ProjectConstants.PACKAGENAME]), 60)
@@ -594,6 +659,8 @@ public class ShopVisitingScenariosKeywords{
 			ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Options")
+			//validate missing shop actions list e.g. start working / get routes etc...
+			missingShopActionsList()
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.delay(15)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen" , [('package') : ProjectConstants.PACKAGENAME]), 60)
@@ -796,6 +863,8 @@ public class ShopVisitingScenariosKeywords{
 			ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Options")
+			//validate missing shop actions list e.g. start working / get routes etc...
+			missingShopActionsList()
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.delay(15)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen" , [('package') : ProjectConstants.PACKAGENAME]), 60)
@@ -936,6 +1005,8 @@ public class ShopVisitingScenariosKeywords{
 			ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Options")
+			//validate missing shop actions list e.g. start working / get routes etc...
+			missingShopActionsList()
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.delay(15)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen" , [('package') : ProjectConstants.PACKAGENAME]), 60)
@@ -1107,6 +1178,8 @@ public class ShopVisitingScenariosKeywords{
 			ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Options")
+			//validate missing shop actions list e.g. start working / get routes etc...
+			missingShopActionsList()
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.delay(15)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen" , [('package') : ProjectConstants.PACKAGENAME]), 60)
@@ -1330,6 +1403,8 @@ public class ShopVisitingScenariosKeywords{
 			ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Options")
+			//validate missing shop actions list e.g. start working / get routes etc...
+			missingShopActionsList()
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking"), 0)
 			Mobile.delay(15)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen" , [('package') : ProjectConstants.PACKAGENAME]), 60)
