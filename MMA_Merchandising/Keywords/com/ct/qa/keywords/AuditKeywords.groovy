@@ -6,6 +6,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.ct.qa.constants.ProjectConstants
+import com.ct.qa.struct.QuestionsData
 import com.ct.qa.struct.UnmatchedItems
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -73,7 +74,11 @@ public class AuditKeywords {
 	def visitQuestions(){
 		int index = 0
 		ArrayList<String> displayedquestions = new ArrayList<String>()
-		ArrayList<String> expectedquestions = LoadDataKeywords.loadAuditQuestionsList()
+		ArrayList<String> expectedquestions = new ArrayList<String>()
+		ArrayList<QuestionsData> expectedquestionslist = LoadDataKeywords.loadAuditQuestionsList()
+		for(int i=0; i< expectedquestionslist.size(); i++){
+			expectedquestions.add(expectedquestionslist.get(i).getQuestion())
+		}
 		int questionlist = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*").size()
 		for(int i=1; i<= questionlist; i++){
 			if(i == questionlist){
@@ -81,19 +86,37 @@ public class AuditKeywords {
 				MobileElement question = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.Spinner["+i+"]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 				String questiontext = question.getText()
 				displayedquestions.add(questiontext)
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.Spinner["+i+"]").click()
-				Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/Audit/Validate_RemarksPopup"), 0)
-				Mobile.tap(findTestObject("Object Repository/ShopOpen/Audit/RemarksPopup_Yes"), 0)
-				CommonKeywords.takeCategoryPrePicture()
+				for(int j=0; j< expectedquestionslist; j++){
+					QuestionsData expectedquestion = expectedquestionslist.get(j)
+					if(expectedquestion.getQuestion().equalsIgnoreCase(questiontext) && expectedquestion.getQuestionoption().equalsIgnoreCase("Y")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.Spinner["+i+"]").click()
+						Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/Audit/Validate_RemarksPopup"), 0)
+						Mobile.tap(findTestObject("Object Repository/ShopOpen/Audit/RemarksPopup_Yes"), 0)
+						if(expectedquestion.getQuestionoption_takepicture().equalsIgnoreCase("Y")){
+							CommonKeywords.takeCategoryPrePicture()
+						}
+						else{
+						}
+					}
+				}
 			}
 			else{
 				MobileElement question = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.Spinner["+i+"]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 				String questiontext = question.getText()
 				displayedquestions.add(questiontext)
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.Spinner["+i+"]").click()
-				Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/Audit/Validate_RemarksPopup"), 0)
-				Mobile.tap(findTestObject("Object Repository/ShopOpen/Audit/RemarksPopup_Yes"), 0)
-				CommonKeywords.takeCategoryPrePicture()
+				for(int j=0; j< expectedquestionslist; j++){
+					QuestionsData expectedquestion = expectedquestionslist.get(j)
+					if(expectedquestion.getQuestion().equalsIgnoreCase(questiontext) && expectedquestion.getQuestionoption().equalsIgnoreCase("Y")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.Spinner["+i+"]").click()
+						Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/Audit/Validate_RemarksPopup"), 0)
+						Mobile.tap(findTestObject("Object Repository/ShopOpen/Audit/RemarksPopup_Yes"), 0)
+						if(expectedquestion.getQuestionoption_takepicture().equalsIgnoreCase("Y")){
+							CommonKeywords.takeCategoryPrePicture()
+						}
+						else{
+						}
+					}
+				}
 			}
 		}
 		while(true){
@@ -111,13 +134,23 @@ public class AuditKeywords {
 				MobileElement question = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.Spinner["+i+"]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 				String questiontext = question.getText()
 				displayedquestions.add(questiontext)
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.Spinner["+i+"]").click()
-				Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/Audit/Validate_RemarksPopup"), 0)
-				Mobile.tap(findTestObject("Object Repository/ShopOpen/Audit/RemarksPopup_Yes"), 0)
-				CommonKeywords.takeCategoryPrePicture()
+				for(int j=0; j< expectedquestionslist; j++){
+					QuestionsData expectedquestion = expectedquestionslist.get(j)
+					if(expectedquestion.getQuestion().equalsIgnoreCase(questiontext) && expectedquestion.getQuestionoption().equalsIgnoreCase("Y")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.Spinner["+i+"]").click()
+						Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/Audit/Validate_RemarksPopup"), 0)
+						Mobile.tap(findTestObject("Object Repository/ShopOpen/Audit/RemarksPopup_Yes"), 0)
+						if(expectedquestion.getQuestionoption_takepicture().equalsIgnoreCase("Y")){
+							CommonKeywords.takeCategoryPrePicture()
+						}
+						else{
+						}
+					}
+				}
 			}
 		}
-		UnmatchedItems unmatcheditems = CompareDataKeywords.compareLists(expectedquestions, displayedquestions)
+		ArrayList<String> _expectedquestions = new HashSet<String>(expectedquestions)
+		UnmatchedItems unmatcheditems = CompareDataKeywords.compareLists(_expectedquestions, displayedquestions)
 		if(unmatcheditems.getStatus() == 2){
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {

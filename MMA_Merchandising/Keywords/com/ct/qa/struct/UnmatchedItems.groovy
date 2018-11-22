@@ -40,6 +40,4 @@ public class UnmatchedItems {
 	public void setItems(ArrayList<String> items) {
 		this.items = items;
 	}
-
-	
 }

@@ -7,6 +7,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.ct.qa.constants.ProjectConstants
 import com.ct.qa.struct.LoadProductsData
+import com.ct.qa.struct.QuestionsData
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory
@@ -115,18 +116,21 @@ public class LoadDataKeywords {
 	//load audit question list
 	def static loadAuditQuestionsList(){
 		DataFormatter dataformatter = new DataFormatter()
-		ArrayList<String> expectedquestionslist = new ArrayList<String>()
+		ArrayList<QuestionsData> questions = new ArrayList<QuestionsData>()
+		QuestionsData question = new QuestionsData()
 		XSSFSheet sheet = loadAuditQuestionsSheet()
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<= totalrows; i++){
 			Row row = sheet.getRow(i)
 			String questioncategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTIONCATEGORY))
 			if(ProjectConstants.CURRENTVISITING_AUDITQUESTIONCATEGORY.equalsIgnoreCase(questioncategory)){
-				String question = dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTION))
-				expectedquestionslist.add(question)
+				question.setQuestion(dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTION)))
+				question.setQuestionoption(dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTIONOPTION)))
+				question.setQuestionoption_takepicture(dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTIONOPTION_TAKEPICTURE)))
+				questions.add(question)
 			}
 		}
-		return expectedquestionslist
+		return questions
 	}
 	//load shop actions
 	def static loadShopActionsList(){

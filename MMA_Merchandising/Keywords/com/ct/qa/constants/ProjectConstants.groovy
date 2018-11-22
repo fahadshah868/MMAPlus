@@ -104,6 +104,8 @@ public class ProjectConstants {
 	//audit questions columns
 	public static final int AUDIT_QUESTIONCATEGORY
 	public static final int AUDIT_QUESTION
+	public static final int AUDIT_QUESTIONOPTION
+	public static final int AUDIT_QUESTIONOPTION_TAKEPICTURE
 
 	//variables for current visiting shop channels, chiller and categories
 	public static String CURRENTVISITING_SHOPNAME = ""
@@ -255,6 +257,12 @@ public class ProjectConstants {
 			}
 			else if(columnname.equalsIgnoreCase("Question")){
 				AUDIT_QUESTION = cellnumber
+			}
+			else if(columnname.equalsIgnoreCase("Option")){
+				AUDIT_QUESTIONOPTION = cellnumber
+			}
+			else if(columnname.equalsIgnoreCase("Take Picture")){
+				AUDIT_QUESTIONOPTION_TAKEPICTURE = cellnumber
 			}
 			else{
 			}
