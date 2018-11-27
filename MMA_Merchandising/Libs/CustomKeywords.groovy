@@ -84,6 +84,14 @@ def static "com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton"() {
     (new com.ct.qa.keywords.CommonKeywords()).visitPlanogramImageViewButton()
 }
 
+def static "com.ct.qa.keywords.SurveyKeywords.visitQuestionCategories"() {
+    (new com.ct.qa.keywords.SurveyKeywords()).visitQuestionCategories()
+}
+
+def static "com.ct.qa.keywords.SurveyKeywords.visitQuestions"() {
+    (new com.ct.qa.keywords.SurveyKeywords()).visitQuestions()
+}
+
 def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedInChillerUtilizationWithDataVerification"() {
     (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).visitChillersTaggedInChillerUtilizationWithDataVerification()
 }
@@ -286,12 +294,4 @@ def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywor
 
 def static "com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWith_SKDNA_CAv_SKDNA"() {
     (new com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords()).visitShopCategoriesWith_SKDNA_CAv_SKDNA()
-}
-
-def static "com.ct.qa.keywords.AuditKeywords.visitQuestionCategories"() {
-    (new com.ct.qa.keywords.AuditKeywords()).visitQuestionCategories()
-}
-
-def static "com.ct.qa.keywords.AuditKeywords.visitQuestions"() {
-    (new com.ct.qa.keywords.AuditKeywords()).visitQuestions()
 }

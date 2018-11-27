@@ -48,5 +48,4 @@ public class QuestionsData {
 	public void setQuestionoption_takepicture(String questionoption_takepicture) {
 		this.questionoption_takepicture = questionoption_takepicture;
 	}
-	
 }

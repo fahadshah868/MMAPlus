@@ -30,10 +30,50 @@ public class MissingCategoryData {
 	public ArrayList<TaggedChillersRemark> taggedchillersremarks
 
 	public String ProductCategory
+	public String QuestionCategory
 	public ArrayList<String> productcategories
 	public ArrayList<String> products
 	public String productcategories_errormessage
 	public String products_errormessage
+	public ArrayList<String> missing_auditquestioncategories
+	public String missing_auditquestioncategories_errormessage
+	public ArrayList<String> missing_auditquestions
+	public String missing_auditquestions_errormessage
+
+	public void setMissing_auditquestions(ArrayList<String> missing_auditquestions) {
+		this.missing_auditquestions = missing_auditquestions;
+	}
+	
+	public String getQuestionCategory() {
+		return QuestionCategory;
+	}
+
+	public void setQuestionCategory(String questionCategory) {
+		QuestionCategory = questionCategory;
+	}
+	public ArrayList<String> getMissing_auditquestioncategories() {
+		return missing_auditquestioncategories;
+	}
+	public void setMissing_auditquestioncategories(ArrayList<String> missing_auditquestioncategories) {
+		this.missing_auditquestioncategories = missing_auditquestioncategories;
+	}
+	public String getMissing_auditquestioncategories_errormessage() {
+		return missing_auditquestioncategories_errormessage;
+	}
+	public void setMissing_auditquestioncategories_errormessage(String missing_auditquestioncategories_errormessage) {
+		this.missing_auditquestioncategories_errormessage = missing_auditquestioncategories_errormessage;
+	}
+	public ArrayList<String> getMissing_auditquestions() {
+		return missing_auditquestions;
+	}
+
+	public String getMissing_auditquestions_errormessage() {
+		return missing_auditquestions_errormessage;
+	}
+
+	public void setMissing_auditquestions_errormessage(String missing_auditquestions_errormessage) {
+		this.missing_auditquestions_errormessage = missing_auditquestions_errormessage;
+	}
 
 	public MissingCategoryData(){
 		this.taggedchillersremarks = new ArrayList<TaggedChillersRemark>()

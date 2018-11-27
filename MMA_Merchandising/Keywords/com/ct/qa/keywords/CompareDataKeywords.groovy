@@ -255,16 +255,16 @@ public class CompareDataKeywords {
 		UnmatchedItems unmatcheditems = compareLists(expectedshopactionslist, displayedshopactionslist)
 		return unmatcheditems
 	}
-	def static compareAuditQuestionCategories(){
-		ArrayList<String> expectedquestioncategories = LoadDataKeywords.loadAuditQuestionCategoryList()
+	def static compareSurveyQuestionCategories(){
+		ArrayList<String> expectedquestioncategories = LoadDataKeywords.loadSurveyQuestionCategoryList()
 		ArrayList<String> displayedquestioncategorieslist = new ArrayList<String>()
 		int questioncategorieslist = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		 for(int i=1; i<= questioncategorieslist; i++){
-			 MobileElement questioncategory = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-			 displayedquestioncategorieslist.add(questioncategory.getText())
-		 }
-		 ArrayList<String> expectedquestioncategorieslist = new HashSet<String>(expectedquestioncategories)
-		 UnmatchedItems unmatcheditems = compareLists(expectedquestioncategorieslist, displayedquestioncategorieslist)
-		 return unmatcheditems
+		for(int i=1; i<= questioncategorieslist; i++){
+			MobileElement questioncategory = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			displayedquestioncategorieslist.add(questioncategory.getText())
+		}
+		ArrayList<String> expectedquestioncategorieslist = new HashSet<String>(expectedquestioncategories)
+		UnmatchedItems unmatcheditems = compareLists(expectedquestioncategorieslist, displayedquestioncategorieslist)
+		return unmatcheditems
 	}
 }

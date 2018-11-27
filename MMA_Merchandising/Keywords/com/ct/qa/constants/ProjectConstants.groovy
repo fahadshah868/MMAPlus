@@ -41,13 +41,13 @@ import WebUiBuiltInKeywords as WebUI
 public class ProjectConstants {
 
 	//variables for excel file and sheets
-	public static final String EXCEL_FILEPATH = "F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\MMA_Merchandising.xlsx"
+	public static final String EXCEL_FILEPATH = "G:\\MMA_Merchandising.xlsx"
 	public static final String CHANNEL_PRODUCTSSHEET = "Channel Products"
 	public static final String CHILLER_PRODUCTSSHEET = "Chiller Products"
 	public static final String DISTRIBUTION_SHEET = "Distribution Point"
 	public static final String SLIDEROPTIONSSHEET = "Slider Options"
 	public static final String SHOPACTIONSSHEET = "Shop Actions"
-	public static final String AUDITQUESTIONSSHEET = "Audit Questions"
+	public static final String SURVEYQUESTIONSSHEET = "Survey Questions"
 	public static final AppiumDriver<MobileElement> DRIVER = MobileDriverFactory.getDriver()
 
 	//variables for display messages
@@ -102,10 +102,10 @@ public class ProjectConstants {
 	public static final int SLIDEROPTIONS
 
 	//audit questions columns
-	public static final int AUDIT_QUESTIONCATEGORY
-	public static final int AUDIT_QUESTION
-	public static final int AUDIT_QUESTIONOPTION
-	public static final int AUDIT_QUESTIONOPTION_TAKEPICTURE
+	public static final int SURVEY_QUESTIONCATEGORY
+	public static final int SURVEY_QUESTION
+	public static final int SURVEY_QUESTIONOPTION
+	public static final int SURVEY_QUESTIONOPTION_TAKEPICTURE
 
 	//variables for current visiting shop channels, chiller and categories
 	public static String CURRENTVISITING_SHOPNAME = ""
@@ -116,7 +116,7 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_CHILLERREMARK = ""
 	public static int VISITED_CHILLERREMARKS = 1
 	public static String SCENARIO = ""
-	public static String CURRENTVISITING_AUDITQUESTIONCATEGORY = ""
+	public static String CURRENTVISITING_QUESTIONCATEGORY = ""
 
 
 	//list for containing shop info
@@ -130,7 +130,7 @@ public class ProjectConstants {
 		XSSFSheet chillerproductssheet = LoadDataKeywords.loadChillerProductsSheet()
 		XSSFSheet slideroptionssheet = LoadDataKeywords.loadSliderOptionsSheet()
 		XSSFSheet shopactionssheet = LoadDataKeywords.loadShopActionsSheet()
-		XSSFSheet auditquestionssheet = LoadDataKeywords.loadAuditQuestionsSheet()
+		XSSFSheet auditquestionssheet = LoadDataKeywords.loadSurveyQuestionsSheet()
 		Row chillerproductssheetheaderrow = chillerproductssheet.getRow(0)
 		Row channelproductssheetheaderrow = channelproductssheet.getRow(0)
 		Row slideroptionssheetheaderrow = slideroptionssheet.getRow(0)
@@ -253,16 +253,16 @@ public class ProjectConstants {
 		for(int cellnumber=0; cellnumber<auditquestionssheettotalcolumns; cellnumber++ ){
 			String columnname = auditquestionssheetheaderrow.getCell(cellnumber)
 			if(columnname.equalsIgnoreCase("Question Category")){
-				AUDIT_QUESTIONCATEGORY = cellnumber
+				SURVEY_QUESTIONCATEGORY = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Question")){
-				AUDIT_QUESTION = cellnumber
+				SURVEY_QUESTION = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Option")){
-				AUDIT_QUESTIONOPTION = cellnumber
+				SURVEY_QUESTIONOPTION = cellnumber
 			}
 			else if(columnname.equalsIgnoreCase("Take Picture")){
-				AUDIT_QUESTIONOPTION_TAKEPICTURE = cellnumber
+				SURVEY_QUESTIONOPTION_TAKEPICTURE = cellnumber
 			}
 			else{
 			}

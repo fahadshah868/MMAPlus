@@ -90,43 +90,43 @@ public class LoadDataKeywords {
 		}
 	}
 	//load Slider Options sheet
-	def static loadAuditQuestionsSheet(){
+	def static loadSurveyQuestionsSheet(){
 		try{
 			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.EXCEL_FILEPATH))
 			XSSFWorkbook wb = new XSSFWorkbook(inputStream)
-			XSSFSheet sheet = wb.getSheet(ProjectConstants.AUDITQUESTIONSSHEET)
+			XSSFSheet sheet = wb.getSheet(ProjectConstants.SURVEYQUESTIONSSHEET)
 			return sheet
 		}
 		catch(Exception ex){
 		}
 	}
 	//load audit question category list
-	def static loadAuditQuestionCategoryList(){
+	def static loadSurveyQuestionCategoryList(){
 		DataFormatter dataformatter = new DataFormatter()
 		ArrayList<String> expectedquestioncategorylist = new ArrayList<String>()
-		XSSFSheet sheet = loadAuditQuestionsSheet()
+		XSSFSheet sheet = loadSurveyQuestionsSheet()
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<= totalrows; i++){
 			Row row = sheet.getRow(i)
-			String questioncategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTIONCATEGORY))
+			String questioncategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONCATEGORY))
 			expectedquestioncategorylist.add(questioncategory)
 		}
 		return expectedquestioncategorylist
 	}
 	//load audit question list
-	def static loadAuditQuestionsList(){
+	def static loadSurveyQuestionsList(){
 		DataFormatter dataformatter = new DataFormatter()
 		ArrayList<QuestionsData> questions = new ArrayList<QuestionsData>()
-		QuestionsData question = new QuestionsData()
-		XSSFSheet sheet = loadAuditQuestionsSheet()
+		XSSFSheet sheet = loadSurveyQuestionsSheet()
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<= totalrows; i++){
 			Row row = sheet.getRow(i)
-			String questioncategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTIONCATEGORY))
-			if(ProjectConstants.CURRENTVISITING_AUDITQUESTIONCATEGORY.equalsIgnoreCase(questioncategory)){
-				question.setQuestion(dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTION)))
-				question.setQuestionoption(dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTIONOPTION)))
-				question.setQuestionoption_takepicture(dataformatter.formatCellValue(row.getCell(ProjectConstants.AUDIT_QUESTIONOPTION_TAKEPICTURE)))
+			String questioncategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONCATEGORY))
+			if(ProjectConstants.CURRENTVISITING_QUESTIONCATEGORY.equalsIgnoreCase(questioncategory)){
+				QuestionsData question = new QuestionsData()
+				question.setQuestion(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTION)))
+				question.setQuestionoption(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONOPTION)))
+				question.setQuestionoption_takepicture(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONOPTION_TAKEPICTURE)))
 				questions.add(question)
 			}
 		}

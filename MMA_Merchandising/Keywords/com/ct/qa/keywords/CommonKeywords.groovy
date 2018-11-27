@@ -120,7 +120,6 @@ public class CommonKeywords {
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton", [('package') : ProjectConstants.PACKAGENAME]), 0)
 		}
 		else{
-			
 		}
 	}
 	def static getXPoint(){

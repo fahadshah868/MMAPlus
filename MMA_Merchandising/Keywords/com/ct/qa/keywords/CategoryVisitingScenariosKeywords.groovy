@@ -123,11 +123,11 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				CommonKeywords.takeCategoryPrePicture()
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithDSA"), null)
 			}
-			else if(categoryname.equalsIgnoreCase("Audit")){
+			else if(categoryname.equalsIgnoreCase("Survey")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				CommonKeywords.takeCategoryPrePicture()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Audit/visitAudit"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/Survey/visitSurvey"), null)
 			}
 			else{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
@@ -198,14 +198,12 @@ public class CategoryVisitingScenariosKeywords implements ShopCategories{
 				CommonKeywords.takeCategoryPrePicture()
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithDSA"), null)
 			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Audit")){
-				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Survey")){
 				lastvisitedcategory = lastitemnameafterswipe
-				//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				//				CommonKeywords.takeCategoryPrePicture()
-				//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithDSA"), null)
-				Mobile.swipe(0, 200, 0, 750)
-				Mobile.swipe(0, 200, 0, 750)
+				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				CommonKeywords.takeCategoryPrePicture()
+				Mobile.callTestCase(findTestCase("ShopOpen/Survey/visitSurvey"), null)
 			}
 			else{
 				lastvisitedcategory = lastitemnameafterswipe
