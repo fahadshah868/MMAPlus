@@ -1,0 +1,43 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Merchandising With Channel Wise Data Verification,,,2018-12-03 18:08:30,2018-12-03 18:45:36,37m - 6.159s,FAILED
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2018-12-03 18:08:30,2018-12-03 18:08:53,22.855s,PASSED
+startApplication,,launch application,2018-12-03 18:08:31,2018-12-03 18:08:48,16.998s,PASSED
+delay,,delay of 5 seconds,2018-12-03 18:08:48,2018-12-03 18:08:53,5.062s,PASSED
+,,,,,,
+Test Cases/SliderOptions/VisitSliderOptions,,,2018-12-03 18:08:53,2018-12-03 18:10:08,1m - 14.627s,PASSED
+verifyElementText,,,2018-12-03 18:08:54,2018-12-03 18:08:59,4.743s,PASSED
+swipe,,,2018-12-03 18:08:59,2018-12-03 18:08:59,0.856s,PASSED
+swipe,,,2018-12-03 18:08:59,2018-12-03 18:09:00,0.878s,PASSED
+verifyElementExist,,,2018-12-03 18:09:00,2018-12-03 18:09:01,0.493s,PASSED
+com.ct.qa.keywords.SliderOptionsKeywords.valideSliderOptions,,,2018-12-03 18:09:01,2018-12-03 18:09:25,24.628s,PASSED
+swipe,,,2018-12-03 18:09:25,2018-12-03 18:09:26,0.809s,PASSED
+swipe,,,2018-12-03 18:09:26,2018-12-03 18:09:27,0.760s,PASSED
+com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption,,,2018-12-03 18:09:27,2018-12-03 18:09:34,7.481s,PASSED
+com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption,,,2018-12-03 18:09:34,2018-12-03 18:09:48,13.937s,PASSED
+com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption,,,2018-12-03 18:09:48,2018-12-03 18:10:06,18.019s,PASSED
+swipe,,,2018-12-03 18:10:06,2018-12-03 18:10:07,0.731s,PASSED
+swipe,,,2018-12-03 18:10:07,2018-12-03 18:10:08,0.696s,PASSED
+com.ct.qa.keywords.SliderOptionsKeywords.displayMissingSliderOptionsInReport,,,2018-12-03 18:10:08,2018-12-03 18:10:08,0.009s,PASSED
+,,,,,,
+Test Cases/DistributionPoint/VisitDistributionPoint,,,2018-12-03 18:10:08,2018-12-03 18:10:47,38.981s,PASSED
+verifyElementText,,validate dashboard screen appearance,2018-12-03 18:10:08,2018-12-03 18:10:08,0.264s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday,,select the current day for further proceed,2018-12-03 18:10:08,2018-12-03 18:10:11,2.387s,PASSED
+tap,,tap on start your day button,2018-12-03 18:10:11,2018-12-03 18:10:12,1.703s,PASSED
+delay,,delay of 15 seconds for check in through map screen,2018-12-03 18:10:12,2018-12-03 18:10:28,15.038s,PASSED
+verifyElementExist,,validate map screen appearance,2018-12-03 18:10:28,2018-12-03 18:10:29,1.198s,PASSED
+tap,,tap on check in button through map,2018-12-03 18:10:29,2018-12-03 18:10:29,0.446s,PASSED
+verifyElementExist,,validate confirm popup appearance,2018-12-03 18:10:29,2018-12-03 18:10:30,1.089s,PASSED
+tap,,tap on confirm popup no button,2018-12-03 18:10:30,2018-12-03 18:10:31,1.154s,PASSED
+verifyElementText,,validate channel summary detail screen appearance,2018-12-03 18:10:31,2018-12-03 18:10:32,0.990s,PASSED
+tap,,tap on next button to further proceed,2018-12-03 18:10:32,2018-12-03 18:10:33,0.372s,PASSED
+verifyElementText,,validate distribution point screen appearance,2018-12-03 18:10:33,2018-12-03 18:10:34,1.595s,PASSED
+com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPoint,,enter quantity of products on distribution point,2018-12-03 18:10:34,2018-12-03 18:10:46,11.471s,PASSED
+tap,,tap on submit button after enter the quantity of products on distribution point,2018-12-03 18:10:46,2018-12-03 18:10:47,0.945s,PASSED
+,,,,,,
+Test Cases/VisitShopScenarios/VisitShopsWithDataVerification,,,2018-12-03 18:10:47,2018-12-03 18:45:36,34m - 49.126s,FAILED
+verifyElementText,,validate the dashboard screen appearance,2018-12-03 18:10:47,2018-12-03 18:10:48,1.186s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday,,select current day,2018-12-03 18:10:48,2018-12-03 18:10:51,2.283s,PASSED
+tap,,tap on start your day button to further proceed,2018-12-03 18:10:51,2018-12-03 18:10:52,1.317s,PASSED
+verifyElementText,,Validate shops list screen appearance,2018-12-03 18:10:52,2018-12-03 18:10:53,1.447s,PASSED
+com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_DataVerification,,select shops from shops list for data verification,2018-12-03 18:10:53,2018-12-03 18:45:36,34m - 42.522s,FAILED

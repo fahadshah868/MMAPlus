@@ -4,7 +4,7 @@
    <name>MMA Merchandising With Channel Wise Data Verification</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-11-27T18:10:15</lastRun>
+   <lastRun>2018-12-04T14:57:12</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>15</pageLoadTimeout>
