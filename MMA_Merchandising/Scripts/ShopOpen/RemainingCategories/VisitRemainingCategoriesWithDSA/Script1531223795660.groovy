@@ -21,14 +21,6 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
-'validate shop category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', 
-        [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
-
-'tap on "Display Space Available"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/DisplaySpaceAvailable', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
 'Validate display space available detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen', 
         [('package') : ProjectConstants.PACKAGENAME]), 'Facing')

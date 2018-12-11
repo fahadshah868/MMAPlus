@@ -20,14 +20,6 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'validate shop category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', 
-        [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
-
-'tap on "Shopkeeper did not Allow"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/ShopKeeperDidNotAllow', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
 'validate "Category Remarks" screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_CategoryRemarksScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'CATEGORY REMARKS')

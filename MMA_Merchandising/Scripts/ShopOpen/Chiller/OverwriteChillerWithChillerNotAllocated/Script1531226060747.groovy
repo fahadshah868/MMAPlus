@@ -20,14 +20,6 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'validate "Chiller" detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    'KPI: Chiller')
-
-'tap on "Chiller Not Allocated"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/ChillerNotAllocated', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
 'validate "Chiller Not Allocated" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen', 
         [('package') : ProjectConstants.PACKAGENAME]), 'Category:Chiller')

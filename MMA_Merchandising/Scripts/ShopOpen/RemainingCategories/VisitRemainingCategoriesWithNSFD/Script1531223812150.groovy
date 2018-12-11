@@ -20,14 +20,6 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'validate shop category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', 
-        [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
-
-'tap on "No Space For Display"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/NoSpaceForDisplay', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
 'validate no space for display detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_ProductCategoryAssetScreen', 
         [('package') : ProjectConstants.PACKAGENAME]), 'Facing')

@@ -105,8 +105,8 @@ public class ChillerVisitingScenariosKeywords {
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/VisitChillerTypeNotAvailable"), null)
 				}
 				else{
-					findChillerRemark("Shopkeeper did not allow")
-					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
+					findChillerRemark("Chiller Available")
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
 				}
 			}
 		}

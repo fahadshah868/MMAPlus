@@ -20,14 +20,6 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'Validate shop\'s category detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', 
-        [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
-
-'tap on "Display Space Available"'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/DisplaySpaceAvailable', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
 'validate display space available detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Category:Nestrade')

@@ -114,9 +114,10 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_PRODUCTCATEGORY = ""
 	public static String CURRENTVISITING_CHILLERTYPE = ""
 	public static String CURRENTVISITING_CHILLERREMARK = ""
-	public static int VISITED_CHILLERREMARKS = 1
 	public static String SCENARIO = ""
 	public static String CURRENTVISITING_QUESTIONCATEGORY = ""
+	public static int VISITED_CHILLERREMARKS = 1
+	public static int SHOP_ATTEMPT = 0
 
 
 	//list for containing shop info

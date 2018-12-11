@@ -20,31 +20,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'validate display space available detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    'Category:Nestrade')
+'validate the dashboard screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Dashboard')
 
-'visit products categories'
-CustomKeywords.'com.ct.qa.keywords.ChannelProductsDataKeywords.visitNestradeProductsCategoriesWithNSFD'(1)
+'select current day'
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.selectday'()
 
-'visit products categories'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton'()
-
-'validate display space available detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    'Category:Nestrade')
-
-'visit products categories'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitPictureImageViewButton'()
-
-'validate display space available detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    'Category:Nestrade')
-
-'visit products categories'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton'()
-
-'validate shop\'s category screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+'tap on start your day button to further proceed'
+MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
+
+'Validate shops list screen appearance'
+MobileBuiltInKeywords.verifyElementText(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Shops on Route')
+
+'select shops from shops list with "Shop Level" overwriting '
+CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWith_CategoryLevel_Overwriting'()
 
