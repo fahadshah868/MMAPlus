@@ -4,7 +4,7 @@
    <name>MMA Merchandising With Category Level Overwrite Scenarios</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-12-11T16:41:50</lastRun>
+   <lastRun>2018-12-12T18:26:51</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>4</pageLoadTimeout>
@@ -28,12 +28,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>5ce4c51f-ffd5-40b6-84fb-99c5dd27fc2c</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
-      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevel(Chiller)OverwriteScenarios</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>1d49206e-1f04-40cb-9064-ae01da15ee9f</guid>

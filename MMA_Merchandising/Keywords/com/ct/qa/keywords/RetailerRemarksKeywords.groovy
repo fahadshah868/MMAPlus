@@ -33,8 +33,16 @@ public class RetailerRemarksKeywords {
 		int totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalproducts; i++){
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.tap(findTestObject("Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarks_RemarksScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			int totalremarks = ProjectConstants.DRIVER.findElementsByClassName("android.widget.CheckBox").size()
+			for(int j=1; j<= totalremarks; j++){
+				MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+j+"]/android.widget.CheckBox[1]")
+				String remark_text = remark.getText()
+				if(remark_text.equalsIgnoreCase("OB not Visiting")){
+					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+j+"]/android.widget.CheckBox[1]").click()
+					break
+				}
+			}
 			Mobile.pressBack()
 			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen" , [('package') : ProjectConstants.PACKAGENAME]), "KPI: Retailer Remarks")
 		}
@@ -44,8 +52,16 @@ public class RetailerRemarksKeywords {
 		int totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalproducts; i++){
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RetailerRemarks/OBNotVisiting" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.tap(findTestObject("Object Repository/ShopOpen/RetailerRemarks/SMNotVisiting" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarks_RemarksScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			int totalremarks = ProjectConstants.DRIVER.findElementsByClassName("android.widget.CheckBox").size()
+			for(int j=1; j<= totalremarks; j++){
+				MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+j+"]/android.widget.CheckBox[1]")
+				String remark_text = remark.getText()
+				if(remark_text.equalsIgnoreCase("SM not Visiting")){
+					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+j+"]/android.widget.CheckBox[1]").click()
+					break
+				}
+			}
 			Mobile.pressBack()
 			Mobile.verifyElementText(findTestObject("Object Repository/ShopOpen/RetailerRemarks/Validate_RetailerRemarksScreen" , [('package') : ProjectConstants.PACKAGENAME]), "KPI: Retailer Remarks")
 		}

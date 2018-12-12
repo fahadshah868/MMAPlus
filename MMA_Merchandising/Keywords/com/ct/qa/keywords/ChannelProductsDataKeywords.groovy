@@ -101,6 +101,7 @@ public class ChannelProductsDataKeywords {
 			}
 			else if(flag == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteProductCategoryAssets"), null)
+				MobileBuiltInKeywords.verifyElementText(findTestObject("ShopOpen/Chiller/Validate_ChillerNotAllocatedProductCategoryScreen" , [('package') : ProjectConstants.PACKAGENAME]),"Category:Chiller")
 			}
 			else{
 			}
@@ -160,9 +161,11 @@ public class ChannelProductsDataKeywords {
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			if(flag == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitProductCategoryAssetsWithDSA"), null)
+				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]),'Category:Nestrade')
 			}
 			else if(flag == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteProductCategoryAssetsWithDSA"), null)
+				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]),'Category:Nestrade')
 			}
 			else{
 			}
@@ -222,9 +225,11 @@ public class ChannelProductsDataKeywords {
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			if(flag == 1){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitProductCategoryAssetsWithNSFD"), null)
+				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]),'Category:Nestrade')
 			}
 			else if(flag == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteProductCategoryAssetsWithNSFD"), null)
+				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Nestrade/Validate_NestradePorductCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]),'Category:Nestrade')
 			}
 			else{
 			}
@@ -261,7 +266,7 @@ public class ChannelProductsDataKeywords {
 							productsdata.setFacingdata(productquantity)
 						}
 						else if(assettype.equalsIgnoreCase("Stock Taking")){
-							productsdata.setStocktakingdata(productquantity)
+							productsdata.setStocktakingdata_stockcountdata(productquantity)
 						}
 						else{}
 					}
@@ -270,7 +275,7 @@ public class ChannelProductsDataKeywords {
 							productsdata.setOverwritefacingdata(productquantity)
 						}
 						else if(assettype.equalsIgnoreCase("Stock Taking")){
-							productsdata.setOverwritestocktakingdata(productquantity)
+							productsdata.setOverwritestocktakingdata_stockcountdata(productquantity)
 						}
 						else{
 						}
@@ -289,7 +294,7 @@ public class ChannelProductsDataKeywords {
 						productsdata.setFacingdata("0000")
 					}
 					else if(assettype.equalsIgnoreCase("Stock Taking")){
-						productsdata.setStocktakingdata("0000")
+						productsdata.setStocktakingdata_stockcountdata("0000")
 					}
 					else{}
 				}
@@ -298,7 +303,7 @@ public class ChannelProductsDataKeywords {
 						productsdata.setOverwritefacingdata("0000")
 					}
 					else if(assettype.equalsIgnoreCase("Stock Taking")){
-						productsdata.setOverwritestocktakingdata("0000")
+						productsdata.setOverwritestocktakingdata_stockcountdata("0000")
 					}
 					else{
 					}
@@ -337,7 +342,7 @@ public class ChannelProductsDataKeywords {
 									productsdata.setFacingdata(productquantity)
 								}
 								else if(assettype.equalsIgnoreCase("Stock Taking")){
-									productsdata.setStocktakingdata(productquantity)
+									productsdata.setStocktakingdata_stockcountdata(productquantity)
 								}
 								else{}
 							}
@@ -346,7 +351,7 @@ public class ChannelProductsDataKeywords {
 									productsdata.setOverwritefacingdata(productquantity)
 								}
 								else if(assettype.equalsIgnoreCase("Stock Taking")){
-									productsdata.setOverwritestocktakingdata(productquantity)
+									productsdata.setOverwritestocktakingdata_stockcountdata(productquantity)
 								}
 								else{
 								}
@@ -365,7 +370,7 @@ public class ChannelProductsDataKeywords {
 								productsdata.setFacingdata("0000")
 							}
 							else if(assettype.equalsIgnoreCase("Stock Taking")){
-								productsdata.setStocktakingdata("0000")
+								productsdata.setStocktakingdata_stockcountdata("0000")
 							}
 							else{}
 						}
@@ -374,7 +379,7 @@ public class ChannelProductsDataKeywords {
 								productsdata.setOverwritefacingdata("0000")
 							}
 							else if(assettype.equalsIgnoreCase("Stock Taking")){
-								productsdata.setOverwritestocktakingdata("0000")
+								productsdata.setOverwritestocktakingdata_stockcountdata("0000")
 							}
 							else{
 							}
@@ -485,6 +490,12 @@ public class ChannelProductsDataKeywords {
 		}
 		VisitedCategoryData visitedcategorydata = new VisitedCategoryData()
 		visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
+		if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+			visitedcategorydata.setFirstvisit_remark(ProjectConstants.CATEGORY_REMARK)
+		}
+		else{
+			visitedcategorydata.setOverwrite_remark(ProjectConstants.CATEGORY_REMARK)
+		}
 		visitedcategorydata.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
 		visitedcategorydata.setShopProductsdata(shopproductsdata)
 		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
@@ -497,6 +508,17 @@ public class ChannelProductsDataKeywords {
 						VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
 						if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory()) && visitedcategorydatainfo.getProductcategory().equals(visitedcategorydata.getProductcategory())){
 							flag = true
+							
+							
+							
+							
+							
+							if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+								visitedcategorydatainfo.setFirstvisit_remark(ProjectConstants.CATEGORY_REMARK)
+							}
+							else{
+								visitedcategorydatainfo.setOverwrite_remark(ProjectConstants.CATEGORY_REMARK)
+							}
 							for(int l=0; l< visitedcategorydatainfo.getShopProductsdata().size(); l++){
 								ShopProductsData existingproductsdata = visitedcategorydatainfo.getShopProductsdata().get(l)
 								for(int m=0; m< shopproductsdata.size(); m++){
@@ -508,7 +530,7 @@ public class ChannelProductsDataKeywords {
 												break
 											}
 											else if(assettype.equals("Stock Taking")){
-												existingproductsdata.setStocktakingdata(newproductsdatainfo.getStocktakingdata())
+												existingproductsdata.setStocktakingdata_stockcountdata(newproductsdatainfo.getStocktakingdata_stockcountdata())
 												break
 											}
 											else{
@@ -520,7 +542,7 @@ public class ChannelProductsDataKeywords {
 												break
 											}
 											else if(assettype.equals("Stock Taking")){
-												existingproductsdata.setOverwritestocktakingdata(newproductsdatainfo.getOverwritestocktakingdata())
+												existingproductsdata.setOverwritestocktakingdata_stockcountdata(newproductsdatainfo.getOverwritestocktakingdata_stockcountdata())
 												break
 											}
 											else{

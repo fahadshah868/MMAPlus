@@ -24,9 +24,7 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_CategoryRemarks', [('package') : ProjectConstants.PACKAGENAME]), 
     'CATEGORY REMARKS')
 
-'tap on remark'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/CategoryRemarks_Others', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitSKDNA'()
 
 'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/CategoryRemarks_BackButton', [('package') : ProjectConstants.PACKAGENAME]), 

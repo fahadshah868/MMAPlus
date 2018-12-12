@@ -34,7 +34,16 @@ public class RTMVisitFrequencyKeywords {
 		for(int i=1; i<=totalproducts; i++){
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.tap(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/OnceAWeek" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			int totalremarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+			for(int j=1; j<= totalremarks; j++){
+				MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]/android.widget.TextView[1]")
+				String remark_text = remark.getText()
+				if(remark_text.equalsIgnoreCase("Once a week")){
+					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]").click()
+					break
+				}
+			}
+			MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Options')
 		}
 	}
 	@Keyword
@@ -43,7 +52,16 @@ public class RTMVisitFrequencyKeywords {
 		for(int i=1; i<=totalproducts; i++){
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyRemarks" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.tap(findTestObject("Object Repository/ShopOpen/RTMVisitFrequency/TwiceAWeek" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			int totalremarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+			for(int j=1; j<= totalremarks; j++){
+				MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]/android.widget.TextView[1]")
+				String remark_text = remark.getText()
+				if(remark_text.equalsIgnoreCase("Twice a week")){
+					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]").click()
+					break
+				}
+			}
+			MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RTMVisitFrequency/Validate_RTMVisitFrequencyScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Options')
 		}
 	}
 }

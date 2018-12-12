@@ -19,14 +19,13 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 'validate category remarks screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_CategoryRemarks', [('package') : ProjectConstants.PACKAGENAME]), 
     'CATEGORY REMARKS')
 
-'tap on remark'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/CategoryRemarks_ExpiryIssue', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitSKDNA'()
 
 'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/Chiller/CategoryRemarks_BackButton', [('package') : ProjectConstants.PACKAGENAME]), 

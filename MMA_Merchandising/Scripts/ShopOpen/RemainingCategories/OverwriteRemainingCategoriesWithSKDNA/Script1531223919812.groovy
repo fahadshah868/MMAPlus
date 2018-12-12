@@ -24,9 +24,7 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_CategoryRemarksScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'CATEGORY REMARKS')
 
-'tap on category remark'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_Others', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitSKDNA'()
 
 'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/RemainingCategories/CategoryRemarks_BackButton', [('package') : ProjectConstants.PACKAGENAME]), 

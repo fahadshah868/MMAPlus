@@ -88,6 +88,10 @@ def static "com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton"() {
     (new com.ct.qa.keywords.CommonKeywords()).visitPlanogramImageViewButton()
 }
 
+def static "com.ct.qa.keywords.CommonKeywords.visitSKDNA"() {
+    (new com.ct.qa.keywords.CommonKeywords()).visitSKDNA()
+}
+
 def static "com.ct.qa.keywords.SurveyKeywords.visitQuestionCategories"() {
     (new com.ct.qa.keywords.SurveyKeywords()).visitQuestionCategories()
 }

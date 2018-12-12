@@ -28,25 +28,11 @@ import WebUiBuiltInKeywords as WebUI
 public class ShopProductsData {
 	public String product
 	public String facingdata
-	public String stocktakingdata
-	public String stockcountdata
+	public String stocktakingdata_stockcountdata
 	public String depthdata
 	public String overwritefacingdata
-	public String overwritestocktakingdata
-	public String overwritedepthdata
-	public String overwritestockcountdata
-	public String getStockcountdata() {
-		return stockcountdata;
-	}
-	public void setStockcountdata(String stockcountdata) {
-		this.stockcountdata = stockcountdata;
-	}
-	public String getOverwritestockcountdata() {
-		return overwritestockcountdata;
-	}
-	public void setOverwritestockcountdata(String overwritestockcountdata) {
-		this.overwritestockcountdata = overwritestockcountdata;
-	}
+	public String overwritestocktakingdata_stockcountdata
+	public String overwritedepthdata
 	public String getProduct() {
 		return product;
 	}
@@ -59,11 +45,11 @@ public class ShopProductsData {
 	public void setFacingdata(String facingdata) {
 		this.facingdata = facingdata;
 	}
-	public String getStocktakingdata() {
-		return stocktakingdata;
+	public String getStocktakingdata_stockcountdata() {
+		return stocktakingdata_stockcountdata;
 	}
-	public void setStocktakingdata(String stocktakingdata) {
-		this.stocktakingdata = stocktakingdata;
+	public void setStocktakingdata_stockcountdata(String stocktakingdata_stockcountdata) {
+		this.stocktakingdata_stockcountdata = stocktakingdata_stockcountdata;
 	}
 	public String getDepthdata() {
 		return depthdata;
@@ -77,11 +63,11 @@ public class ShopProductsData {
 	public void setOverwritefacingdata(String overwritefacingdata) {
 		this.overwritefacingdata = overwritefacingdata;
 	}
-	public String getOverwritestocktakingdata() {
-		return overwritestocktakingdata;
+	public String getOverwritestocktakingdata_stockcountdata() {
+		return overwritestocktakingdata_stockcountdata;
 	}
-	public void setOverwritestocktakingdata(String overwritestocktakingdata) {
-		this.overwritestocktakingdata = overwritestocktakingdata;
+	public void setOverwritestocktakingdata_stockcountdata(String overwritestocktakingdata_stockcountdata) {
+		this.overwritestocktakingdata_stockcountdata = overwritestocktakingdata_stockcountdata;
 	}
 	public String getOverwritedepthdata() {
 		return overwritedepthdata;
@@ -89,4 +75,6 @@ public class ShopProductsData {
 	public void setOverwritedepthdata(String overwritedepthdata) {
 		this.overwritedepthdata = overwritedepthdata;
 	}
+
+	
 }
