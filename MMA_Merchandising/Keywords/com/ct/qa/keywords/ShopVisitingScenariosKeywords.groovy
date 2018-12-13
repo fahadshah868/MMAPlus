@@ -311,7 +311,7 @@ public class ShopVisitingScenariosKeywords{
 										if(visitedchillerproductcategory.getProductCategory() != null){
 											message = message+ "\n\n" +
 													String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
-													String.format("%-30s%-30s%-10s%-30s", "Scenarios:",visitedcategorydata.getFirstvisit_remark(),"==>",visitedcategorydata.getOverwrite_remark()) + "\n" +
+													String.format("%-30s%-30s%-20s%-30s", "Scenarios:",visitedcategorydata.getFirstvisit_remark(),"==>",visitedcategorydata.getOverwrite_remark()) + "\n" +
 													String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
 													String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 													String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
@@ -329,7 +329,7 @@ public class ShopVisitingScenariosKeywords{
 						else{
 							message = message+ "\n\n" +
 									String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
-									String.format("%-30s%-30s%-10s%-30s", "Scenarios:",visitedcategorydata.getFirstvisit_remark(),"==>",visitedcategorydata.getOverwrite_remark()) + "\n" +
+									String.format("%-30s%-30s%-20s%-30s", "Scenarios:",visitedcategorydata.getFirstvisit_remark(),"==>",visitedcategorydata.getOverwrite_remark()) + "\n" +
 									String.format("%-30s%-60s", "Product Category:",visitedcategorydata.getProductcategory()) + "\n" +
 									String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "Products:","Facing","Stock Taking/","Depth","Overwrite Facing","Overwrite Stock Taking/","Overwrite Depth")+"\n"+
 									String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "","","Stock Count","","","Overwrite Stock Count","")+"\n"
