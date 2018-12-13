@@ -34,6 +34,7 @@ import WebUiBuiltInKeywords as WebUI
 import com.ct.qa.constants.ProjectConstants
 import com.ct.qa.struct.LoadProductsData
 import com.ct.qa.struct.MissingCategoryData
+import com.ct.qa.struct.ProductCategoryWithProducts
 import com.ct.qa.struct.ShopProductsData
 import com.ct.qa.struct.UnmatchedItems
 import com.ct.qa.struct.VisitedCategoryData
@@ -489,6 +490,7 @@ public class ChannelProductsDataKeywords {
 			KeywordUtil.logInfo(message)
 		}
 		VisitedCategoryData visitedcategorydata = new VisitedCategoryData()
+		ProductCategoryWithProducts productcategorywithproducts = new ProductCategoryWithProducts()
 		visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 		if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
 			visitedcategorydata.setFirstvisit_remark(ProjectConstants.CATEGORY_REMARK)
@@ -496,8 +498,9 @@ public class ChannelProductsDataKeywords {
 		else{
 			visitedcategorydata.setOverwrite_remark(ProjectConstants.CATEGORY_REMARK)
 		}
-		visitedcategorydata.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
-		visitedcategorydata.setShopProductsdata(shopproductsdata)
+		productcategorywithproducts.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
+		productcategorywithproducts.setShopproductsdata(shopproductsdata)
+		visitedcategorydata.setProductcategorywithproducts(productcategorywithproducts)
 		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
 			if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
 				VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(i)
@@ -508,57 +511,64 @@ public class ChannelProductsDataKeywords {
 						VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
 						if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
 							flag = true
-							// if main category and also its products categories are visited
-							if(visitedcategorydatainfo.getProductcategory().equals(visitedcategorydata.getProductcategory())){
-								if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-									visitedcategorydatainfo.setFirstvisit_remark(ProjectConstants.CATEGORY_REMARK)
-								}
-								else{
-									visitedcategorydatainfo.setOverwrite_remark(ProjectConstants.CATEGORY_REMARK)
-								}
-								for(int l=0; l< visitedcategorydatainfo.getShopProductsdata().size(); l++){
-									ShopProductsData existingproductsdata = visitedcategorydatainfo.getShopProductsdata().get(l)
-									for(int m=0; m< shopproductsdata.size(); m++){
-										ShopProductsData newproductsdatainfo = shopproductsdata.get(m)
-										if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
-											if(ProjectConstants.SCENARIO.equals("first visit")){
-												if(assettype.equals("Facing")){
-													existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
-													break
-												}
-												else if(assettype.equals("Stock Taking")){
-													existingproductsdata.setStocktakingdata_stockcountdata(newproductsdatainfo.getStocktakingdata_stockcountdata())
-													break
-												}
-												else{
-												}
-											}
-											else{
-												if(assettype.equals("Facing")){
-													existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
-													break
-												}
-												else if(assettype.equals("Stock Taking")){
-													existingproductsdata.setOverwritestocktakingdata_stockcountdata(newproductsdatainfo.getOverwritestocktakingdata_stockcountdata())
-													break
-												}
-												else{
+							ArrayList<ProductCategoryWithProducts> productcategorywithproductsdatalist = visitedcategorydatainfo.getProductcategorywithproducts()
+							if(productcategorywithproductsdatalist != null){
+								boolean productcategoryflag = false
+								for(int h=0; h< productcategorywithproductsdatalist.size(); h++){
+									ProductCategoryWithProducts productcategorywithproductsdata = productcategorywithproductsdatalist.get(h)
+									if(productcategorywithproductsdata.getProductcategory().equals(productcategorywithproducts.getProductcategory())){
+										productcategoryflag = true
+										if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+											visitedcategorydatainfo.setFirstvisit_remark(ProjectConstants.CATEGORY_REMARK)
+										}
+										else{
+											visitedcategorydatainfo.setOverwrite_remark(ProjectConstants.CATEGORY_REMARK)
+										}
+										for(int l=0; l< productcategorywithproductsdata.getShopproductsdata().size(); l++){
+											ShopProductsData existingproductsdata = productcategorywithproductsdata.getShopproductsdata().get(l)
+											for(int m=0; m< shopproductsdata.size(); m++){
+												ShopProductsData newproductsdatainfo = shopproductsdata.get(m)
+												if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
+													if(ProjectConstants.SCENARIO.equals("first visit")){
+														if(assettype.equals("Facing")){
+															existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
+															break
+														}
+														else if(assettype.equals("Stock Taking")){
+															existingproductsdata.setStocktakingdata_stockcountdata(newproductsdatainfo.getStocktakingdata_stockcountdata())
+															break
+														}
+														else{
+														}
+													}
+													else{
+														if(assettype.equals("Facing")){
+															existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
+															break
+														}
+														else if(assettype.equals("Stock Taking")){
+															existingproductsdata.setOverwritestocktakingdata_stockcountdata(newproductsdatainfo.getOverwritestocktakingdata_stockcountdata())
+															break
+														}
+														else{
+														}
+													}
 												}
 											}
 										}
 									}
+									else{
+									}
 								}
-							}
-							else{
-								visitedcategorydatainfo.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
-								if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-									visitedcategorydatainfo.setFirstvisit_remark(ProjectConstants.CATEGORY_REMARK)
+								if(productcategoryflag == false){
+									if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+										visitedcategorydatainfo.setFirstvisit_remark(ProjectConstants.CATEGORY_REMARK)
+									}
+									else{
+										visitedcategorydatainfo.setOverwrite_remark(ProjectConstants.CATEGORY_REMARK)
+									}
+									visitedcategorydatainfo.setProductcategorywithproducts(productcategorywithproducts)
 								}
-								else{
-									visitedcategorydatainfo.setOverwrite_remark(ProjectConstants.CATEGORY_REMARK)
-								}
-								visitedcategorydatainfo.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
-								visitedcategorydatainfo.setShopProductsdata(shopproductsdata)
 							}
 						}
 					}

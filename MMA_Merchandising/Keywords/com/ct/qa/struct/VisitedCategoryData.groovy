@@ -30,11 +30,12 @@ public class VisitedCategoryData {
 	public String firstvisit_remark
 	public String overwrite_remark
 	public ArrayList<TaggedChillersRemark> taggedchillersremark
-	public String productcategory
-	public ArrayList<ShopProductsData> shopproductsdata
+	public ArrayList<ProductCategoryWithProducts> productcategorywithproducts
 
+	
 	public VisitedCategoryData(){
 		this.taggedchillersremark = new ArrayList<TaggedChillersRemark>()
+		this.productcategorywithproducts = new ArrayList<ProductCategoryWithProducts>()
 	}
 	public String getFirstvisit_remark() {
 		return firstvisit_remark;
@@ -60,16 +61,10 @@ public class VisitedCategoryData {
 	public void setTaggedchillersremark(TaggedChillersRemark taggedchillersremark) {
 		this.taggedchillersremark.add(taggedchillersremark);
 	}
-	public String getProductcategory() {
-		return productcategory;
+	public ArrayList<ProductCategoryWithProducts> getProductcategorywithproducts() {
+		return productcategorywithproducts;
 	}
-	public void setProductcategory(String productcategory) {
-		this.productcategory = productcategory;
-	}
-	public ArrayList<ShopProductsData> getShopProductsdata() {
-		return shopproductsdata;
-	}
-	public void setShopProductsdata(ArrayList<ShopProductsData> shopproductsdata) {
-		this.shopproductsdata = shopproductsdata;
+	public void setProductcategorywithproducts(ProductCategoryWithProducts productcategorywithproducts) {
+		this.productcategorywithproducts.add(productcategorywithproducts);
 	}
 }
