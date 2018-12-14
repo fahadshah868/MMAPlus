@@ -17,7 +17,7 @@ import internal.GlobalVariable as GlobalVariable
 Mobile.verifyElementText(findTestObject('ShopOpen/Survey/Validate_QuestionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Questions')
 
-CustomKeywords.'com.ct.qa.keywords.SurveyKeywords.visitQuestions'()
+CustomKeywords.'com.ct.qa.keywords.SurveyKeywords.overwriteQuestions'()
 
 Mobile.tap(findTestObject('ShopOpen/Survey/SubmitButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
 

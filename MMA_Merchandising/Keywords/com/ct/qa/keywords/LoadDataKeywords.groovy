@@ -198,11 +198,11 @@ public class LoadDataKeywords {
 			String channelname = "Channel: "+channel
 			String maincategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_MAINCATEGORY))
 			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCTCATEGORY))
-			
+
 			String a = ProjectConstants.CURRENTVISITING_SHOPCHANNEL
 			String b = ProjectConstants.CURRENTVISITING_MAINCATEGORY
 			String c = ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY
-			
+
 			if((ProjectConstants.CURRENTVISITING_SHOPCHANNEL.equalsIgnoreCase(channelname) && ProjectConstants.CURRENTVISITING_MAINCATEGORY.equalsIgnoreCase(maincategory)) && ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY.equalsIgnoreCase(productcategory)){
 				LoadProductsData channelproduct = new LoadProductsData()
 				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCT))

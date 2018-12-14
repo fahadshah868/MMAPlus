@@ -87,7 +87,7 @@ public class CategoryVisitingScenariosKeywords{
 			if(categoryname.equalsIgnoreCase("Chiller")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen', [('package') : ProjectConstants.PACKAGENAME]), 'KPI: Chiller')
 				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
 				for(int j=1; j<= remarks; j++){
@@ -104,7 +104,7 @@ public class CategoryVisitingScenariosKeywords{
 			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWithDataVerification"), null)
 			}
 			else if(categoryname.equalsIgnoreCase("Additional Picture")){
@@ -135,7 +135,7 @@ public class CategoryVisitingScenariosKeywords{
 			else if(categoryname.equalsIgnoreCase("Nestrade")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
 				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 				for(int j=1; j<= remarks; j++){
@@ -152,14 +152,14 @@ public class CategoryVisitingScenariosKeywords{
 			else if(categoryname.equalsIgnoreCase("Survey")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				Mobile.callTestCase(findTestCase("ShopOpen/Survey/visitSurvey"), null)
 			}
 			else{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
 				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 				for(int j=1; j<= remarks; j++){
@@ -189,7 +189,7 @@ public class CategoryVisitingScenariosKeywords{
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen', [('package') : ProjectConstants.PACKAGENAME]), 'KPI: Chiller')
 				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
 				for(int j=1; j<= remarks; j++){
@@ -207,7 +207,7 @@ public class CategoryVisitingScenariosKeywords{
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
@@ -243,7 +243,7 @@ public class CategoryVisitingScenariosKeywords{
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Nestrade")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
 				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 				for(int j=1; j<= remarks; j++){
@@ -261,7 +261,7 @@ public class CategoryVisitingScenariosKeywords{
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				Mobile.callTestCase(findTestCase("ShopOpen/Survey/visitSurvey"), null)
 			}
 			else{
@@ -269,7 +269,7 @@ public class CategoryVisitingScenariosKeywords{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
 				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 				for(int j=1; j<= remarks; j++){
@@ -351,7 +351,7 @@ public class CategoryVisitingScenariosKeywords{
 			if(categoryname.equalsIgnoreCase("Chiller")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen', [('package') : ProjectConstants.PACKAGENAME]), 'KPI: Chiller')
 				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
 				for(int j=1; j<= remarks; j++){
@@ -395,7 +395,7 @@ public class CategoryVisitingScenariosKeywords{
 			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				visitChillerUtilizationOverwriteScenarios()
 			}
 			else if(categoryname.equalsIgnoreCase("Additional Picture")){
@@ -426,7 +426,7 @@ public class CategoryVisitingScenariosKeywords{
 			else if(categoryname.equalsIgnoreCase("Nestrade")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
 				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
 				for(int j=1; j<= remarks; j++){
@@ -478,14 +478,14 @@ public class CategoryVisitingScenariosKeywords{
 			else if(categoryname.equalsIgnoreCase("Survey")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				Mobile.callTestCase(findTestCase("ShopOpen/Survey/visitSurvey"), null)
 			}
 			else{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
 				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
 				for(int j=1; j<= remarks; j++){
@@ -550,7 +550,7 @@ public class CategoryVisitingScenariosKeywords{
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen', [('package') : ProjectConstants.PACKAGENAME]), 'KPI: Chiller')
 				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
 				for(int j=1; j<= remarks; j++){
@@ -595,7 +595,7 @@ public class CategoryVisitingScenariosKeywords{
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				visitChillerUtilizationOverwriteScenarios()
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
@@ -631,7 +631,7 @@ public class CategoryVisitingScenariosKeywords{
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Nestrade")){
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
 				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
 				for(int j=1; j<= remarks; j++){
@@ -684,7 +684,7 @@ public class CategoryVisitingScenariosKeywords{
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				Mobile.callTestCase(findTestCase("ShopOpen/Survey/visitSurvey"), null)
 			}
 			else{
@@ -692,7 +692,7 @@ public class CategoryVisitingScenariosKeywords{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-				CommonKeywords.takeCategoryPrePicture()
+				CommonKeywords.takePicture()
 				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
 				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
 				for(int j=1; j<= remarks; j++){

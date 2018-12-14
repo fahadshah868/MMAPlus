@@ -92,12 +92,18 @@ def static "com.ct.qa.keywords.CommonKeywords.visitSKDNA"() {
     (new com.ct.qa.keywords.CommonKeywords()).visitSKDNA()
 }
 
-def static "com.ct.qa.keywords.SurveyKeywords.visitQuestionCategories"() {
-    (new com.ct.qa.keywords.SurveyKeywords()).visitQuestionCategories()
+def static "com.ct.qa.keywords.SurveyKeywords.visitQuestionCategories"(
+    	int flag	) {
+    (new com.ct.qa.keywords.SurveyKeywords()).visitQuestionCategories(
+        	flag)
 }
 
 def static "com.ct.qa.keywords.SurveyKeywords.visitQuestions"() {
     (new com.ct.qa.keywords.SurveyKeywords()).visitQuestions()
+}
+
+def static "com.ct.qa.keywords.SurveyKeywords.overwriteQuestions"() {
+    (new com.ct.qa.keywords.SurveyKeywords()).overwriteQuestions()
 }
 
 def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedInChillerUtilizationWithDataVerification"() {

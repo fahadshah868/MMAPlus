@@ -511,13 +511,13 @@ public class ShopVisitingScenariosKeywords{
 		//					if(ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 		//						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 		//						String message = "(1) 'RTM visit frequency' with 'Once a week'\n"+
-//								String.format("%-44s%-100s","","'Pop Application' with 'No' remark")+"\n"+
-//								String.format("%-44s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
-//								String.format("%-44s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n"+
-//								String.format("%-40s%-100s","","(2) 'RTM visit frequency' with 'Twice a week'")+"\n"+
-//								String.format("%-44s%-100s","","'Pop Application' with 'No' remark")+"\n"+
-//								String.format("%-44s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
-//								String.format("%-44s%-100s","","'Hanger Availability' with 'No' remark")
+		//								String.format("%-44s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+		//								String.format("%-44s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+		//								String.format("%-44s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n"+
+		//								String.format("%-40s%-100s","","(2) 'RTM visit frequency' with 'Twice a week'")+"\n"+
+		//								String.format("%-44s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+		//								String.format("%-44s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+		//								String.format("%-44s%-100s","","'Hanger Availability' with 'No' remark")
 		//						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 		//						break
 		//					}
@@ -1006,13 +1006,13 @@ public class ShopVisitingScenariosKeywords{
 		//						ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
 		//						String message = "'Scenario given bellow' for chiller utilization\n"+
 		//								String message = "(1) 'RTM visit frequency' with 'Once a week'\n"+
-//										String.format("%-44s%-100s","","'Pop Application' with 'No' remark")+"\n"+
-//										String.format("%-44s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
-//										String.format("%-44s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n"+
-//										String.format("%-40s%-100s","","(2) 'RTM visit frequency' with 'Twice a week'")+"\n"+
-//										String.format("%-44s%-100s","","'Pop Application' with 'No' remark")+"\n"+
-//										String.format("%-44s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
-//										String.format("%-44s%-100s","","'Hanger Availability' with 'No' remark")
+		//										String.format("%-44s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+		//										String.format("%-44s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+		//										String.format("%-44s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n"+
+		//										String.format("%-40s%-100s","","(2) 'RTM visit frequency' with 'Twice a week'")+"\n"+
+		//										String.format("%-44s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+		//										String.format("%-44s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+		//										String.format("%-44s%-100s","","'Hanger Availability' with 'No' remark")
 		//						ProjectConstants.visitedshopdatainfo.get(j).setScenario(message)
 		//						break
 		//					}
