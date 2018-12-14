@@ -26,8 +26,15 @@ import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
 public class VisitedChillerProductsCategoryData {
+	public String chillerremark
 	public String ProductCategory
 	public ArrayList<ShopProductsData> shopproductsdata
+	public String getChillerremark() {
+		return chillerremark;
+	}
+	public void setChillerremark(String chillerremark) {
+		this.chillerremark = chillerremark;
+	}
 	public String getProductCategory() {
 		return ProductCategory;
 	}

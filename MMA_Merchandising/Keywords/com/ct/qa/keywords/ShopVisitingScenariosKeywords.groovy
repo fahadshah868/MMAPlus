@@ -308,20 +308,40 @@ public class ShopVisitingScenariosKeywords{
 							for(int k=0; k< visitedcategorydata.getTaggedchillersremark().size(); k++){
 								TaggedChillersRemark taggedchillerremarks = visitedcategorydata.getTaggedchillersremark().get(k)
 								if(taggedchillerremarks.getVisitedchillerproductscategories() != null){
+									message = message+ "\n\n" +
+									String.format("%-30s%-130s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
+									String.format("%-30s%-130s", "Chiller Type Scenarios:",taggedchillerremarks.getChillertype_scenario()) + "\n" +
+									String.format("%-30s%-130s", "Chiller Remark Scenarios:",taggedchillerremarks.getChillerremark_scenario()) + "\n" 
 									for(int m=0; m<taggedchillerremarks.getVisitedchillerproductscategories().size() ; m++){
 										VisitedChillerProductsCategoryData visitedchillerproductcategory = taggedchillerremarks.getVisitedchillerproductscategories().get(m)
 										if(visitedchillerproductcategory.getProductCategory() != null){
-											message = message+ "\n\n" +
-													String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
-													String.format("%-30s%-130s", "Scenarios:",visitedcategorydata.getScenario()) + "\n" +
-													//													String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
-													//													String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
-													String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
-													String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "Products:","Facing","Stock Taking/","Depth","Overwrite Facing","Overwrite Stock Taking/","Overwrite Depth")+"\n"+
-													String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "","","Stock Count","","","Overwrite Stock Count","")+"\n"
-											for(int n=0; n<visitedchillerproductcategory.getShopproductsdata().size() ; n++){
-												ShopProductsData shopproductsdata = visitedchillerproductcategory.getShopproductsdata().get(n)
-												message = message + String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getStocktakingdata_stockcountdata(),shopproductsdata.getDepthdata(),shopproductsdata.getOverwritefacingdata(),shopproductsdata.getOverwritestocktakingdata_stockcountdata(),shopproductsdata.getOverwritedepthdata())+"\n"
+											String[] splitted_chillertype = (taggedchillerremarks.getChillertype_scenario()).split("==>")
+											String[] splitted_chillerremark = (taggedchillerremarks.getChillerremark_scenario()).split("==>")
+											String firstvisit_chillertype = splitted_chillertype[0].replaceAll("\\s", "")
+											String firstvisit_chillerremark = splitted_chillerremark[0].replaceAll("\\s", "")
+											String overwrite_chillertype = splitted_chillertype[1].replaceAll("\\s", "")
+											String overwrite_chillerremark = splitted_chillerremark[1].replaceAll("\\s", "")
+											if(firstvisit_chillerremark.equalsIgnoreCase(visitedchillerproductcategory.getChillerremark())){
+												message = message + "\n\n" +
+												firstvisit_chillerremark + " with " + firstvisit_chillertype +
+												String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
+												String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "Products:","Facing","Stock Taking/","Depth","Overwrite Facing","Overwrite Stock Taking/","Overwrite Depth")+"\n"+
+												String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "","","Stock Count","","","Overwrite Stock Count","")+"\n"
+												for(int n=0; n<visitedchillerproductcategory.getShopproductsdata().size() ; n++){
+													ShopProductsData shopproductsdata = visitedchillerproductcategory.getShopproductsdata().get(n)
+													message = message + String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getStocktakingdata_stockcountdata(),shopproductsdata.getDepthdata(),shopproductsdata.getOverwritefacingdata(),shopproductsdata.getOverwritestocktakingdata_stockcountdata(),shopproductsdata.getOverwritedepthdata())+"\n"
+												}
+											}
+											else{
+												message = message + "\n\n" +
+												overwrite_chillerremark + " with " + overwrite_chillertype +
+												String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
+												String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "Products:","Facing","Stock Taking/","Depth","Overwrite Facing","Overwrite Stock Taking/","Overwrite Depth")+"\n"+
+												String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "","","Stock Count","","","Overwrite Stock Count","")+"\n"
+												for(int n=0; n<visitedchillerproductcategory.getShopproductsdata().size() ; n++){
+													ShopProductsData shopproductsdata = visitedchillerproductcategory.getShopproductsdata().get(n)
+													message = message + String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getStocktakingdata_stockcountdata(),shopproductsdata.getDepthdata(),shopproductsdata.getOverwritefacingdata(),shopproductsdata.getOverwritestocktakingdata_stockcountdata(),shopproductsdata.getOverwritedepthdata())+"\n"
+												}
 											}
 										}
 									}

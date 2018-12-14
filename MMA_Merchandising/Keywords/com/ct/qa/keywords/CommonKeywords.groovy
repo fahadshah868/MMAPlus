@@ -138,7 +138,7 @@ public class CommonKeywords {
 		}
 	}
 	@Keyword
-	def visitSKDNA(){
+	def visitSKDNA_ForChannel(){
 		int totalremarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 		String remark_text = ""
 		for(int i=1; i<= totalremarks; i++){
