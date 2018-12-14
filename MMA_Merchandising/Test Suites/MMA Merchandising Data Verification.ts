@@ -4,7 +4,7 @@
    <name>MMA Merchandising Data Verification</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-12-13T18:50:30</lastRun>
+   <lastRun>2018-12-14T12:56:12</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>15</pageLoadTimeout>

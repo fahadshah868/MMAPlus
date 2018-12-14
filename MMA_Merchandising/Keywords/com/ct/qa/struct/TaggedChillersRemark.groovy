@@ -26,8 +26,10 @@ import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
 public class TaggedChillersRemark {
-	public String chillertype
-	public String chillerremark
+	public String firstvisit_chillertype
+	public String overwrite_chillertype
+	public String firstvisit_chillerremark
+	public String overwrite_chillerremark
 	public ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductscategories
 	public ArrayList<MissingChillerProductsCategoryData> missingchillerproductscategories
 	public String errormessage_formissingproductscategories
@@ -36,18 +38,6 @@ public class TaggedChillersRemark {
 		this.visitedchillerproductscategories = new ArrayList<VisitedChillerProductsCategoryData>()
 		this.missingchillerproductscategories = new ArrayList<MissingChillerProductsCategoryData>()
 	}
-	public String getChillertype() {
-		return chillertype;
-	}
-	public void setChillertype(String chillertype) {
-		this.chillertype = chillertype;
-	}
-	public String getChillerremark() {
-		return chillerremark;
-	}
-	public void setChillerremark(String chillerremark) {
-		this.chillerremark = chillerremark;
-	}
 	public ArrayList<VisitedChillerProductsCategoryData> getVisitedchillerproductscategories() {
 		return visitedchillerproductscategories;
 	}

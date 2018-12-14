@@ -493,10 +493,25 @@ public class ChannelProductsDataKeywords {
 		ProductCategoryWithProducts productcategorywithproducts = new ProductCategoryWithProducts()
 		visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 		if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-			visitedcategorydata.setFirstvisit_remark(ProjectConstants.CATEGORY_REMARK)
+			visitedcategorydata.setScenario(ProjectConstants.CATEGORY_REMARK)
 		}
 		else{
-			visitedcategorydata.setOverwrite_remark(ProjectConstants.CATEGORY_REMARK)
+			for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
+				if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
+					VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(i)
+					ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
+					if(visitedcategoriesdata.size() != 0){
+						boolean flag = false
+						for(int k=0; k<visitedcategoriesdata.size(); k++){
+							VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
+							if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
+								String scenario = visitedcategorydatainfo.getScenario()+"  ==>  "+ProjectConstants.CATEGORY_REMARK
+								visitedcategorydata.setScenario(scenario)
+							}
+						}
+					}
+				}
+			}
 		}
 		productcategorywithproducts.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
 		productcategorywithproducts.setShopproductsdata(shopproductsdata)
@@ -519,11 +534,13 @@ public class ChannelProductsDataKeywords {
 									if(productcategorywithproductsdata.getProductcategory().equals(productcategorywithproducts.getProductcategory())){
 										productcategoryflag = true
 										if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-											visitedcategorydatainfo.setFirstvisit_remark(ProjectConstants.CATEGORY_REMARK)
+											visitedcategorydatainfo.setScenario(ProjectConstants.CATEGORY_REMARK)
 										}
-										else{
-											visitedcategorydatainfo.setOverwrite_remark(ProjectConstants.CATEGORY_REMARK)
+										else if(assettype.equalsIgnoreCase("Facing")){
+											String scenario = visitedcategorydatainfo.getScenario()+"  ==>  "+ProjectConstants.CATEGORY_REMARK
+											visitedcategorydatainfo.setScenario(scenario)
 										}
+										else{}
 										for(int l=0; l< productcategorywithproductsdata.getShopproductsdata().size(); l++){
 											ShopProductsData existingproductsdata = productcategorywithproductsdata.getShopproductsdata().get(l)
 											for(int m=0; m< shopproductsdata.size(); m++){
@@ -562,11 +579,13 @@ public class ChannelProductsDataKeywords {
 								}
 								if(productcategoryflag == false){
 									if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-										visitedcategorydatainfo.setFirstvisit_remark(ProjectConstants.CATEGORY_REMARK)
+										visitedcategorydatainfo.setScenario(ProjectConstants.CATEGORY_REMARK)
 									}
-									else{
-										visitedcategorydatainfo.setOverwrite_remark(ProjectConstants.CATEGORY_REMARK)
+									else if(assettype.equalsIgnoreCase("Facing")){
+										String scenario = visitedcategorydatainfo.getScenario()+"  ==>  "+ProjectConstants.CATEGORY_REMARK
+										visitedcategorydatainfo.setScenario(scenario)
 									}
+									else{}
 									visitedcategorydatainfo.setProductcategorywithproducts(productcategorywithproducts)
 								}
 							}

@@ -162,10 +162,25 @@ public class CommonKeywords {
 		VisitedCategoryData visitedcategorydata = new VisitedCategoryData()
 		visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 		if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-			visitedcategorydata.setFirstvisit_remark(ProjectConstants.CATEGORY_REMARK+" with '"+remark_text+"' remark")
+			visitedcategorydata.setScenario(ProjectConstants.CATEGORY_REMARK+" with '"+remark_text+"' remark")
 		}
 		else{
-			visitedcategorydata.setOverwrite_remark(ProjectConstants.CATEGORY_REMARK+" with '"+remark_text+"' remark")
+			for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
+				if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
+					VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(i)
+					ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
+					if(visitedcategoriesdata.size() != 0){
+						boolean flag = false
+						for(int k=0; k<visitedcategoriesdata.size(); k++){
+							VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
+							if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
+								String scenario = visitedcategorydatainfo.getScenario()+"  ==>  "+ProjectConstants.CATEGORY_REMARK+" with '"+remark_text+"' remark"
+								visitedcategorydata.setScenario(scenario)
+							}
+						}
+					}
+				}
+			}
 		}
 		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
 			if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
@@ -178,10 +193,11 @@ public class CommonKeywords {
 						if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
 							flag = true
 							if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-								visitedcategorydatainfo.setFirstvisit_remark(ProjectConstants.CATEGORY_REMARK+" with '"+remark_text+"' remark")
+								visitedcategorydatainfo.setScenario(ProjectConstants.CATEGORY_REMARK+" with '"+remark_text+"' remark")
 							}
 							else{
-								visitedcategorydatainfo.setOverwrite_remark(ProjectConstants.CATEGORY_REMARK+" with '"+remark_text+"' remark")
+								String scenario = visitedcategorydatainfo.getScenario()+"  ==>  "+ProjectConstants.CATEGORY_REMARK+" with '"+remark_text+"' remark"
+								visitedcategorydatainfo.setScenario(scenario)
 							}
 						}
 					}

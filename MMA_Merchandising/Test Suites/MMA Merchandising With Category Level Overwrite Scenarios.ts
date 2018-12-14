@@ -4,7 +4,7 @@
    <name>MMA Merchandising With Category Level Overwrite Scenarios</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-12-13T17:22:32</lastRun>
+   <lastRun>2018-12-14T17:17:29</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>4</pageLoadTimeout>

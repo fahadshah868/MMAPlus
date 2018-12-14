@@ -313,9 +313,9 @@ public class ShopVisitingScenariosKeywords{
 										if(visitedchillerproductcategory.getProductCategory() != null){
 											message = message+ "\n\n" +
 													String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
-													String.format("%-30s%-50s%-10s%-30s", "Scenarios:",visitedcategorydata.getFirstvisit_remark(),"==>",visitedcategorydata.getOverwrite_remark()) + "\n" +
-													String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
-													String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
+													String.format("%-30s%-130s", "Scenarios:",visitedcategorydata.getScenario()) + "\n" +
+													//													String.format("%-30s%-60s", "Chiller Type:",taggedchillerremarks.getChillertype()) + "\n" +
+													//													String.format("%-30s%-60s", "Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
 													String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
 													String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "Products:","Facing","Stock Taking/","Depth","Overwrite Facing","Overwrite Stock Taking/","Overwrite Depth")+"\n"+
 													String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "","","Stock Count","","","Overwrite Stock Count","")+"\n"
@@ -331,17 +331,16 @@ public class ShopVisitingScenariosKeywords{
 						else{
 							message = message+ "\n\n" +
 									String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
-									String.format("%-30s%-50s%-10s%-30s", "Scenarios:",visitedcategorydata.getFirstvisit_remark(),"==>",visitedcategorydata.getOverwrite_remark())
+									String.format("%-30s%-130s", "Scenarios:",visitedcategorydata.getScenario())
 							if(productcategorywithproducts != null){
 								for(int h=0; h< productcategorywithproducts.size(); h++){
 									ProductCategoryWithProducts productcategorywithproduct = productcategorywithproducts.get(h)
 									message = message + "\n\n" +
 											String.format("%-30s%-60s", "Product Category:",productcategorywithproduct.getProductcategory()) + "\n" +
-											String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "Products:","Facing","Stock Taking/","Depth","Overwrite Facing","Overwrite Stock Taking/","Overwrite Depth")+"\n"+
-											String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "","","Stock Count","","","Overwrite Stock Count","")+"\n"
+											String.format("%-50s%-28s%-28s%-28s%-28s", "Products:","Facing","Stock Taking","Overwrite Facing","Overwrite Stock Taking")+"\n"
 									for(int k=0; k<productcategorywithproduct.getShopproductsdata().size() ; k++){
 										ShopProductsData shopproductsdata = productcategorywithproduct.getShopproductsdata().get(k)
-										message = message + String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getStocktakingdata_stockcountdata(),shopproductsdata.getDepthdata(),shopproductsdata.getOverwritefacingdata(),shopproductsdata.getOverwritestocktakingdata_stockcountdata(),shopproductsdata.getOverwritedepthdata())+"\n"
+										message = message + String.format("%-50s%-28s%-28s%-28s%-28s", shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getStocktakingdata_stockcountdata(),shopproductsdata.getOverwritefacingdata(),shopproductsdata.getOverwritestocktakingdata_stockcountdata())+"\n"
 									}
 								}
 							}
@@ -420,7 +419,7 @@ public class ShopVisitingScenariosKeywords{
 	def visitShopWith_DataVerification(){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=5; i<= 5; i++){
+		for(int i=2; i<= 2; i++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
@@ -909,7 +908,7 @@ public class ShopVisitingScenariosKeywords{
 		int index = 0
 		int _shop = 1
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(_shop; _shop<= 4; _shop++){
+		for(_shop; _shop<= 1; _shop++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+_shop+"]/android.widget.TextView[1]")
