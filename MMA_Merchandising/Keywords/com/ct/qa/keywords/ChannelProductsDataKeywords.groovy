@@ -493,25 +493,10 @@ public class ChannelProductsDataKeywords {
 		ProductCategoryWithProducts productcategorywithproducts = new ProductCategoryWithProducts()
 		visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 		if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-			visitedcategorydata.setScenario(ProjectConstants.CATEGORY_REMARK)
+			visitedcategorydata.setFirstvisit_categoryremark(ProjectConstants.CATEGORY_REMARK)
 		}
 		else{
-			for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
-				if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
-					VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(i)
-					ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
-					if(visitedcategoriesdata.size() != 0){
-						boolean flag = false
-						for(int k=0; k<visitedcategoriesdata.size(); k++){
-							VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
-							if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
-								String scenario = visitedcategorydatainfo.getScenario()+"  ==>  "+ProjectConstants.CATEGORY_REMARK
-								visitedcategorydata.setScenario(scenario)
-							}
-						}
-					}
-				}
-			}
+			visitedcategorydata.setOverwrite_categoryremark(ProjectConstants.CATEGORY_REMARK)
 		}
 		productcategorywithproducts.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
 		productcategorywithproducts.setShopproductsdata(shopproductsdata)
@@ -526,6 +511,13 @@ public class ChannelProductsDataKeywords {
 						VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
 						if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
 							flag = true
+							if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+								visitedcategorydatainfo.setFirstvisit_categoryremark(ProjectConstants.CATEGORY_REMARK)
+							}
+							else if(assettype.equalsIgnoreCase("Facing")){
+								visitedcategorydatainfo.setOverwrite_categoryremark(ProjectConstants.CATEGORY_REMARK)
+							}
+							else{}
 							ArrayList<ProductCategoryWithProducts> productcategorywithproductsdatalist = visitedcategorydatainfo.getProductcategorywithproducts()
 							if(productcategorywithproductsdatalist != null){
 								boolean productcategoryflag = false
@@ -533,14 +525,6 @@ public class ChannelProductsDataKeywords {
 									ProductCategoryWithProducts productcategorywithproductsdata = productcategorywithproductsdatalist.get(h)
 									if(productcategorywithproductsdata.getProductcategory().equals(productcategorywithproducts.getProductcategory())){
 										productcategoryflag = true
-										if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-											visitedcategorydatainfo.setScenario(ProjectConstants.CATEGORY_REMARK)
-										}
-										else if(assettype.equalsIgnoreCase("Facing")){
-											String scenario = visitedcategorydatainfo.getScenario()+"  ==>  "+ProjectConstants.CATEGORY_REMARK
-											visitedcategorydatainfo.setScenario(scenario)
-										}
-										else{}
 										for(int l=0; l< productcategorywithproductsdata.getShopproductsdata().size(); l++){
 											ShopProductsData existingproductsdata = productcategorywithproductsdata.getShopproductsdata().get(l)
 											for(int m=0; m< shopproductsdata.size(); m++){
@@ -579,11 +563,10 @@ public class ChannelProductsDataKeywords {
 								}
 								if(productcategoryflag == false){
 									if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-										visitedcategorydatainfo.setScenario(ProjectConstants.CATEGORY_REMARK)
+										visitedcategorydatainfo.setFirstvisit_categoryremark(ProjectConstants.CATEGORY_REMARK)
 									}
 									else if(assettype.equalsIgnoreCase("Facing")){
-										String scenario = visitedcategorydatainfo.getScenario()+"  ==>  "+ProjectConstants.CATEGORY_REMARK
-										visitedcategorydatainfo.setScenario(scenario)
+										visitedcategorydatainfo.setOverwrite_categoryremark(ProjectConstants.CATEGORY_REMARK)
 									}
 									else{}
 									visitedcategorydatainfo.setProductcategorywithproducts(productcategorywithproducts)

@@ -4,7 +4,7 @@
    <name>MMA Merchandising With Category Level Overwrite Scenarios</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-12-14T17:17:29</lastRun>
+   <lastRun>2018-12-17T12:52:32</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>4</pageLoadTimeout>
@@ -26,7 +26,7 @@
    <testCaseLink>
       <guid>ad5a054f-d6a1-4134-84eb-f5d775f6a0b2</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
    </testCaseLink>
    <testCaseLink>

@@ -27,7 +27,8 @@ import WebUiBuiltInKeywords as WebUI
 
 public class VisitedCategoryData {
 	public String maincategory
-	public String scenario
+	public String firstvisit_categoryremark
+	public String overwrite_categoryremark
 	public ArrayList<TaggedChillersRemark> taggedchillersremark
 	public ArrayList<ProductCategoryWithProducts> productcategorywithproducts
 
@@ -36,11 +37,17 @@ public class VisitedCategoryData {
 		this.productcategorywithproducts = new ArrayList<ProductCategoryWithProducts>()
 	}
 
-	public String getScenario() {
-		return scenario;
+	public String getFirstvisit_categoryremark() {
+		return firstvisit_categoryremark;
 	}
-	public void setScenario(String scenario) {
-		this.scenario = scenario;
+	public void setFirstvisit_categoryremark(String firstvisit_categoryremark) {
+		this.firstvisit_categoryremark = firstvisit_categoryremark;
+	}
+	public String getOverwrite_categoryremark() {
+		return overwrite_categoryremark;
+	}
+	public void setOverwrite_categoryremark(String overwrite_categoryremark) {
+		this.overwrite_categoryremark = overwrite_categoryremark;
 	}
 	public String getMaincategory() {
 		return maincategory;
