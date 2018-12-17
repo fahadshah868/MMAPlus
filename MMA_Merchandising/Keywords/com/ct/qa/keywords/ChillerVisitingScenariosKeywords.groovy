@@ -80,7 +80,11 @@ public class ChillerVisitingScenariosKeywords {
 				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				Mobile.delay(5)
 				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]),0)
-				if(ProjectConstants.VISITED_CHILLERREMARKS == 2){
+				if(ProjectConstants.VISITED_CHILLERREMARKS == 1){
+					findChillerRemark("Chiller Available")
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
+				}
+				else if(ProjectConstants.VISITED_CHILLERREMARKS == 2){
 					findChillerRemark("Chiller not Available")
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
 				}

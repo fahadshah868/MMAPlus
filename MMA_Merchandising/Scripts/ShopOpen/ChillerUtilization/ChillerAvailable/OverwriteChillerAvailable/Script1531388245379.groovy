@@ -38,13 +38,6 @@ CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen', 
         [('package') : ProjectConstants.PACKAGENAME]), 0)
 
-'find "Picture" imageview and take chiller picture'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
-
-'validate "Chiller Available" detail screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen', 
-        [('package') : ProjectConstants.PACKAGENAME]), 0)
-
 'tap on take picture for depth 1'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Depth1_TakePicture', [('package') : ProjectConstants.PACKAGENAME]), 
     0)

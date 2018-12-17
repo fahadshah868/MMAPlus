@@ -514,10 +514,9 @@ public class ChannelProductsDataKeywords {
 							if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
 								visitedcategorydatainfo.setFirstvisit_categoryremark(ProjectConstants.CURRENTVISITING_CATEGORYREMARK)
 							}
-							else if(assettype.equalsIgnoreCase("Facing")){
+							else{
 								visitedcategorydatainfo.setOverwrite_categoryremark(ProjectConstants.CURRENTVISITING_CATEGORYREMARK)
 							}
-							else{}
 							ArrayList<ProductCategoryWithProducts> productcategorywithproductsdatalist = visitedcategorydatainfo.getProductcategorywithproducts()
 							if(productcategorywithproductsdatalist != null){
 								boolean productcategoryflag = false

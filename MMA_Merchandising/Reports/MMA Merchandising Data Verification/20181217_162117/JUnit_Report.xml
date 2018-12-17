@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="MMA Merchandising Data Verification" time="153" tests="1" failures="0" errors="1">
+   <testsuite name="MMA Merchandising Data Verification" tests="1" failures="0" errors="1" time="153" timestamp="2018-12-17 16:21:19" hostname="Fahad Shah - DESKTOP-L12UUAD" id="Test Suites/MMA Merchandising Data Verification">
+      <properties>
+         <property name="deviceName" value="samsung SM-J110H (Android 4.4.4)"/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising Data Verification\\20181217_162117"/>
+         <property name="logFiles" value="F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising Data Verification\\20181217_162117\\appium.log, F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising Data Verification\\20181217_162117\\execution0.log"/>
+         <property name="attachments" value="F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising Data Verification\\20181217_162117\\1545045810107.png"/>
+         <property name="hostName" value="Fahad Shah - DESKTOP-L12UUAD"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.9.1.2"/>
+         <property name="deviceOS" value="Android"/>
+         <property name="appiumVersion" value="1.8.1"/>
+         <property name="deviceModel" value="SM-J110H"/>
+         <property name="hostAddress" value="192.168.3.221"/>
+         <property name="deviceManufacturer" value="samsung"/>
+         <property name="deviceId" value="11015a1136d0b24a"/>
+         <property name="deviceName" value="samsung SM-J110H (Android 4.4.4)"/>
+         <property name="deviceOSVersion" value="4.4.4"/>
+      </properties>
+      <testcase name="Test Cases/LaunchingApp/LaunchApp" classname="Test Cases/LaunchingApp/LaunchApp" status="PASSED">
+         <system-out><![CDATA[2018-12-17 16:21:20 - [TEST_CASE][PASSED] - Test Cases/LaunchingApp/LaunchApp: Test Cases/LaunchingApp/LaunchApp
+
+2018-12-17 16:21:21 - [TEST_STEP][PASSED] - startApplication("F:\QA_Automation\Builds\mmaplus_061218_local_v151.apk", false): Started app at: 'F:\QA_Automation\Builds\mmaplus_061218_local_v151.apk'
+
+2018-12-17 16:21:21 - [MESSAGE][INFO] - User set preference: ['deviceId', '']
+
+2018-12-17 16:21:26 - [MESSAGE][INFO] - Appium server started on port 52,476
+
+2018-12-17 16:21:39 - [MESSAGE][PASSED] - Started app at: 'F:\QA_Automation\Builds\mmaplus_061218_local_v151.apk'
+
+2018-12-17 16:21:39 - [TEST_STEP][PASSED] - delay(5): Delayed 5 second(s)
+
+2018-12-17 16:21:44 - [MESSAGE][PASSED] - Delayed 5 second(s)]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/VisitShopScenarios/VisitShopsWithDataVerification" classname="Test Cases/VisitShopScenarios/VisitShopsWithDataVerification" status="ERROR">
+         <error type="ERROR" message="Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+"/>
+         <system-out><![CDATA[2018-12-17 16:21:44 - [TEST_CASE][ERROR] - Test Cases/VisitShopScenarios/VisitShopsWithDataVerification: Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+
+2018-12-17 16:21:44 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("DashboardScreenElements/Validate_DashboardScreen", ["package":PACKAGENAME]), "Dashboard"): Actual text and expected text of test object 'Object Repository/DashboardScreenElements/Validate_DashboardScreen' are matched.
+
+2018-12-17 16:21:49 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/DashboardScreenElements/Validate_DashboardScreen' are matched.
+
+2018-12-17 16:21:49 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.selectday(): com.ct.qa.keywords.CommonKeywords.selectday is PASSED
+
+2018-12-17 16:21:49 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:21:50 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/DashboardScreenElements/DaysDropdownMenu'
+
+2018-12-17 16:21:50 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:21:51 - [MESSAGE][PASSED] - Element 'Object Repository/DashboardScreenElements/Validate_DaysListScreen' is exist
+
+2018-12-17 16:21:52 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.selectday is PASSED
+
+2018-12-17 16:21:52 - [TEST_STEP][PASSED] - tap(findTestObject("DashboardScreenElements/StartYourDay", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/DashboardScreenElements/StartYourDay'
+
+2018-12-17 16:21:52 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:21:53 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/DashboardScreenElements/StartYourDay'
+
+2018-12-17 16:21:53 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("Validate_ShopListScreen", ["package":PACKAGENAME]), "Shops on Route"): Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-12-17 16:21:55 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-12-17 16:21:55 - [TEST_STEP][ERROR] - com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_DataVerification(): com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_DataVerification() FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+
+2018-12-17 16:21:59 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopOptionsScreen' are matched.
+
+2018-12-17 16:22:00 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:22:02 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/StartWorking'
+
+2018-12-17 16:22:17 - [MESSAGE][PASSED] - Delayed 15 second(s)
+
+2018-12-17 16:22:17 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_MapScreen' is exist
+
+2018-12-17 16:22:17 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:22:18 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Location_CheckIn'
+
+2018-12-17 16:22:18 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:22:20 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist
+
+2018-12-17 16:22:20 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:22:20 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_NoButton'
+
+2018-12-17 16:22:20 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/VisitShopOpen: Test Cases/ShopOpen/VisitShopOpen
+
+2018-12-17 16:22:20 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopActions_List", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopActions_List' is exist
+
+2018-12-17 16:22:20 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:22:21 - [MESSAGE][PASSED] - Element 'Object Repository/ShopActions_List' is exist
+
+2018-12-17 16:22:21 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ShopOpen", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ShopOpen'
+
+2018-12-17 16:22:21 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:22:23 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ShopOpen'
+
+2018-12-17 16:22:23 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("CommonScreenElements/Validate_CameraScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-12-17 16:22:23 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:22:24 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-12-17 16:22:24 - [TEST_STEP][PASSED] - tap(findTestObject("CommonScreenElements/TakePictureButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-12-17 16:22:24 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:22:28 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-12-17 16:22:28 - [TEST_STEP][PASSED] - delay(5): Delayed 5 second(s)
+
+2018-12-17 16:22:33 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-12-17 16:22:33 - [TEST_STEP][PASSED] - tap(findTestObject("CommonScreenElements/DoneButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-12-17 16:22:33 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:22:33 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-12-17 16:22:33 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/VisitShopOpen' successfully
+
+2018-12-17 16:22:33 - [TEST_CASE][ERROR] - Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification: Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+
+2018-12-17 16:22:34 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/Validate_ShopCategoriesListScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-12-17 16:22:34 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:22:36 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-12-17 16:22:36 - [TEST_STEP][ERROR] - com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification(): com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification() FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+
+2018-12-17 16:22:41 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-12-17 16:22:45 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-12-17 16:22:49 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-12-17 16:22:53 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-12-17 16:22:57 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-12-17 16:23:02 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-12-17 16:23:06 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-12-17 16:23:09 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-12-17 16:23:13 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-12-17 16:23:17 - [MESSAGE][PASSED] - Swiped from 0,293 to 0,200
+
+2018-12-17 16:23:21 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,750
+
+2018-12-17 16:23:21 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,750
+
+2018-12-17 16:23:24 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:23:31 - [MESSAGE][WARNING] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' not found
+[[ATTACHMENT|F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising Data Verification\\20181217_162117\\1545045810107.png]]
+
+2018-12-17 16:23:31 - [TEST_CASE][ERROR] - Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWithDataVerification: Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWithDataVerification FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+
+2018-12-17 16:23:32 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen", ["package":PACKAGENAME]), "Shop Chillers"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen' are matched.
+
+2018-12-17 16:23:32 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen' are matched.
+
+2018-12-17 16:23:32 - [TEST_STEP][ERROR] - com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedInChillerUtilizationWithDataVerification(): com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedInChillerUtilizationWithDataVerification() FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+
+2018-12-17 16:23:34 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:23:35 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-12-17 16:23:35 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:23:38 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-12-17 16:23:43 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-12-17 16:23:43 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:23:44 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-12-17 16:23:47 - [TEST_CASE][ERROR] - Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable: Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+
+2018-12-17 16:23:48 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen' is exist
+
+2018-12-17 16:23:48 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:23:49 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen' is exist
+
+2018-12-17 16:23:49 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Planogram_ImageView", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Planogram_ImageView'
+
+2018-12-17 16:23:49 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:23:49 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Planogram_ImageView'
+
+2018-12-17 16:23:49 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability(): com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability is PASSED
+
+2018-12-17 16:23:49 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:23:51 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_OKButton'
+
+2018-12-17 16:23:51 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability is PASSED
+
+2018-12-17 16:23:51 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.closePlanogram(): com.ct.qa.keywords.CommonKeywords.closePlanogram is PASSED
+
+2018-12-17 16:23:52 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.closePlanogram is PASSED
+
+2018-12-17 16:23:52 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen' is exist
+
+2018-12-17 16:23:52 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 16:23:53 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen' is exist
+
+2018-12-17 16:23:53 - [TEST_STEP][ERROR] - com.ct.qa.keywords.CommonKeywords.findPictureImageView(): com.ct.qa.keywords.CommonKeywords.findPictureImageView() FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+
+2018-12-17 16:23:53 - [MESSAGE][ERROR] - No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+2018-12-17 16:23:53 - [MESSAGE][ERROR] - com.ct.qa.keywords.CommonKeywords.findPictureImageView() FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+
+2018-12-17 16:23:53 - [MESSAGE][FAILED] - Unable to call Test Case 'Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable' (Root cause: com.kms.katalon.core.exception.StepErrorException: Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable' failed because of error(s))
+
+2018-12-17 16:23:53 - [MESSAGE][ERROR] - No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+2018-12-17 16:23:53 - [MESSAGE][ERROR] - com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedInChillerUtilizationWithDataVerification() FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+
+2018-12-17 16:23:53 - [MESSAGE][FAILED] - Unable to call Test Case 'Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWithDataVerification' (Root cause: com.kms.katalon.core.exception.StepErrorException: Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWithDataVerification' failed because of error(s))
+
+2018-12-17 16:23:53 - [MESSAGE][ERROR] - No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+2018-12-17 16:23:53 - [MESSAGE][ERROR] - com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification() FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+
+2018-12-17 16:23:53 - [MESSAGE][FAILED] - Unable to call Test Case 'Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification' (Root cause: com.kms.katalon.core.exception.StepErrorException: Call Test Case 'Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification' failed because of error(s))
+
+2018-12-17 16:23:53 - [MESSAGE][ERROR] - No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []
+
+2018-12-17 16:23:53 - [MESSAGE][ERROR] - com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_DataVerification() FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []]]></system-out>
+         <system-err><![CDATA[2018-12-17 16:21:44 - [TEST_CASE][ERROR] - Test Cases/VisitShopScenarios/VisitShopsWithDataVerification: Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-12-17 16:21:19 - [TEST_SUITE][ERROR] - MMA Merchandising Data Verification: Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []]]></system-out>
+      <system-err><![CDATA[2018-12-17 16:21:19 - [TEST_SUITE][ERROR] - MMA Merchandising Data Verification: Test Cases/VisitShopScenarios/VisitShopsWithDataVerification FAILED.
+Reason:
+org.codehaus.groovy.runtime.metaclass.MissingMethodExceptionNoStack: No signature of method: com.ct.qa.keywords.CommonKeywords.findPictureImageView() is applicable for argument types: () values: []]]></system-err>
+   </testsuite>
+</testsuites>

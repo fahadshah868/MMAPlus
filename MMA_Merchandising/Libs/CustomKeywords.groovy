@@ -76,6 +76,14 @@ def static "com.ct.qa.keywords.CommonKeywords.selectday"() {
     (new com.ct.qa.keywords.CommonKeywords()).selectday()
 }
 
+def static "com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability"() {
+    (new com.ct.qa.keywords.CommonKeywords()).checkPlanogramAvailability()
+}
+
+def static "com.ct.qa.keywords.CommonKeywords.closePlanogram"() {
+    (new com.ct.qa.keywords.CommonKeywords()).closePlanogram()
+}
+
 def static "com.ct.qa.keywords.CommonKeywords.visitPictureImageViewButton"() {
     (new com.ct.qa.keywords.CommonKeywords()).visitPictureImageViewButton()
 }

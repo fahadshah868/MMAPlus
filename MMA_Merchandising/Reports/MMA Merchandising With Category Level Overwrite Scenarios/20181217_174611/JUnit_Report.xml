@@ -1,0 +1,1320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="MMA Merchandising With Category Level Overwrite Scenarios" time="934" tests="2" failures="0" errors="0">
+   <testsuite name="MMA Merchandising With Category Level Overwrite Scenarios" tests="2" failures="0" errors="0" time="934" timestamp="2018-12-17 17:46:14" hostname="Fahad Shah - DESKTOP-L12UUAD" id="Test Suites/MMA Merchandising With Category Level Overwrite Scenarios">
+      <properties>
+         <property name="deviceName" value="samsung SM-J110H (Android 4.4.4)"/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising With Category Level Overwrite Scenarios\\20181217_174611"/>
+         <property name="logFiles" value="F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising With Category Level Overwrite Scenarios\\20181217_174611\\appium.log, F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising With Category Level Overwrite Scenarios\\20181217_174611\\execution0.log"/>
+         <property name="attachments" value="F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising With Category Level Overwrite Scenarios\\20181217_174611\\1545050942107.png, F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising With Category Level Overwrite Scenarios\\20181217_174611\\1545051305378.png, F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising With Category Level Overwrite Scenarios\\20181217_174611\\1545051682449.png"/>
+         <property name="hostName" value="Fahad Shah - DESKTOP-L12UUAD"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.9.1.2"/>
+         <property name="deviceOS" value="Android"/>
+         <property name="appiumVersion" value="1.8.1"/>
+         <property name="deviceModel" value="SM-J110H"/>
+         <property name="hostAddress" value="192.168.3.221"/>
+         <property name="deviceManufacturer" value="samsung"/>
+         <property name="deviceId" value="11015a1136d0b24a"/>
+         <property name="deviceName" value="samsung SM-J110H (Android 4.4.4)"/>
+         <property name="deviceOSVersion" value="4.4.4"/>
+      </properties>
+      <testcase name="Test Cases/LaunchingApp/LaunchApp" classname="Test Cases/LaunchingApp/LaunchApp" status="PASSED">
+         <system-out><![CDATA[2018-12-17 17:46:15 - [TEST_CASE][PASSED] - Test Cases/LaunchingApp/LaunchApp: Test Cases/LaunchingApp/LaunchApp
+
+2018-12-17 17:46:16 - [TEST_STEP][PASSED] - startApplication("F:\QA_Automation\Builds\mmaplus_061218_local_v151.apk", false): Started app at: 'F:\QA_Automation\Builds\mmaplus_061218_local_v151.apk'
+
+2018-12-17 17:46:37 - [MESSAGE][PASSED] - Started app at: 'F:\QA_Automation\Builds\mmaplus_061218_local_v151.apk'
+
+2018-12-17 17:46:37 - [TEST_STEP][PASSED] - delay(5): Delayed 5 second(s)
+
+2018-12-17 17:46:42 - [MESSAGE][PASSED] - Delayed 5 second(s)]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevelOverwriting" classname="Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevelOverwriting" status="PASSED">
+         <system-out><![CDATA[2018-12-17 17:46:42 - [TEST_CASE][PASSED] - Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevelOverwriting: Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevelOverwriting
+
+2018-12-17 17:46:42 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("DashboardScreenElements/Validate_DashboardScreen", ["package":PACKAGENAME]), "Dashboard"): Actual text and expected text of test object 'Object Repository/DashboardScreenElements/Validate_DashboardScreen' are matched.
+
+2018-12-17 17:46:52 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/DashboardScreenElements/Validate_DashboardScreen' are matched.
+
+2018-12-17 17:46:52 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.selectday(): com.ct.qa.keywords.CommonKeywords.selectday is PASSED
+
+2018-12-17 17:46:53 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:46:53 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/DashboardScreenElements/DaysDropdownMenu'
+
+2018-12-17 17:46:53 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:46:54 - [MESSAGE][PASSED] - Element 'Object Repository/DashboardScreenElements/Validate_DaysListScreen' is exist
+
+2018-12-17 17:46:55 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.selectday is PASSED
+
+2018-12-17 17:46:55 - [TEST_STEP][PASSED] - tap(findTestObject("DashboardScreenElements/StartYourDay", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/DashboardScreenElements/StartYourDay'
+
+2018-12-17 17:46:55 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:46:56 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/DashboardScreenElements/StartYourDay'
+
+2018-12-17 17:46:56 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("Validate_ShopListScreen", ["package":PACKAGENAME]), "Shops on Route"): Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-12-17 17:46:58 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-12-17 17:46:58 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWith_CategoryLevel_Overwriting(): com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWith_CategoryLevel_Overwriting is PASSED
+
+2018-12-17 17:47:03 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopOptionsScreen' are matched.
+
+2018-12-17 17:47:04 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:47:06 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/StartWorking'
+
+2018-12-17 17:47:21 - [MESSAGE][PASSED] - Delayed 15 second(s)
+
+2018-12-17 17:47:21 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_MapScreen' is exist
+
+2018-12-17 17:47:21 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:47:22 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Location_CheckIn'
+
+2018-12-17 17:47:22 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:47:23 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist
+
+2018-12-17 17:47:23 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:47:24 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_NoButton'
+
+2018-12-17 17:47:24 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/VisitShopOpen: Test Cases/ShopOpen/VisitShopOpen
+
+2018-12-17 17:47:25 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopActions_List", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopActions_List' is exist
+
+2018-12-17 17:47:25 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:47:25 - [MESSAGE][PASSED] - Element 'Object Repository/ShopActions_List' is exist
+
+2018-12-17 17:47:25 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ShopOpen", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ShopOpen'
+
+2018-12-17 17:47:25 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:47:27 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ShopOpen'
+
+2018-12-17 17:47:27 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("CommonScreenElements/Validate_CameraScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-12-17 17:47:27 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:47:28 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-12-17 17:47:28 - [TEST_STEP][PASSED] - tap(findTestObject("CommonScreenElements/TakePictureButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-12-17 17:47:28 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:47:31 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-12-17 17:47:31 - [TEST_STEP][PASSED] - delay(5): Delayed 5 second(s)
+
+2018-12-17 17:47:36 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-12-17 17:47:36 - [TEST_STEP][PASSED] - tap(findTestObject("CommonScreenElements/DoneButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-12-17 17:47:36 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:47:37 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-12-17 17:47:37 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/VisitShopOpen' successfully
+
+2018-12-17 17:48:52 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithOverwriteScenarios: Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithOverwriteScenarios
+
+2018-12-17 17:48:52 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/Validate_ShopCategoriesListScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-12-17 17:48:52 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:48:53 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-12-17 17:48:53 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithOverwriteScenarios(): com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithOverwriteScenarios is PASSED
+
+2018-12-17 17:48:54 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,750
+
+2018-12-17 17:48:54 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,750
+
+2018-12-17 17:48:56 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:03 - [MESSAGE][WARNING] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' not found
+[[ATTACHMENT|F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising With Category Level Overwrite Scenarios\\20181217_174611\\1545050942107.png]]
+
+2018-12-17 17:49:03 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable: Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable
+
+2018-12-17 17:49:03 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen", ["package":PACKAGENAME]), "Shop Chillers"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen' are matched.
+
+2018-12-17 17:49:04 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen' are matched.
+
+2018-12-17 17:49:04 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedinChillerUtilizationWithSingleRemark("Chiller Available"): com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedinChillerUtilizationWithSingleRemark is PASSED
+
+2018-12-17 17:49:06 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:07 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-12-17 17:49:07 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:10 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-12-17 17:49:15 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-12-17 17:49:15 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:16 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-12-17 17:49:19 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable: Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable
+
+2018-12-17 17:49:21 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen' is exist
+
+2018-12-17 17:49:21 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:21 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen' is exist
+
+2018-12-17 17:49:21 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Planogram_ImageView", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Planogram_ImageView'
+
+2018-12-17 17:49:21 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:22 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Planogram_ImageView'
+
+2018-12-17 17:49:22 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability(): com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability is PASSED
+
+2018-12-17 17:49:22 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:24 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_OKButton'
+
+2018-12-17 17:49:24 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability is PASSED
+
+2018-12-17 17:49:24 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.closePlanogram(): com.ct.qa.keywords.CommonKeywords.closePlanogram is PASSED
+
+2018-12-17 17:49:25 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.closePlanogram is PASSED
+
+2018-12-17 17:49:25 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen' is exist
+
+2018-12-17 17:49:25 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:26 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen' is exist
+
+2018-12-17 17:49:26 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Depth1_TakePicture", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Depth1_TakePicture'
+
+2018-12-17 17:49:26 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:27 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Depth1_TakePicture'
+
+2018-12-17 17:49:27 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("CommonScreenElements/Validate_CameraScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-12-17 17:49:27 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:28 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-12-17 17:49:28 - [TEST_STEP][PASSED] - tap(findTestObject("CommonScreenElements/TakePictureButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-12-17 17:49:28 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:32 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-12-17 17:49:32 - [TEST_STEP][PASSED] - delay(5): Delayed 5 second(s)
+
+2018-12-17 17:49:37 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-12-17 17:49:37 - [TEST_STEP][PASSED] - tap(findTestObject("CommonScreenElements/DoneButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-12-17 17:49:37 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:38 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-12-17 17:49:38 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen' is exist
+
+2018-12-17 17:49:38 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:39 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen' is exist
+
+2018-12-17 17:49:39 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Depth2TakePicture", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Depth2TakePicture'
+
+2018-12-17 17:49:39 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:40 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Depth2TakePicture'
+
+2018-12-17 17:49:40 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("CommonScreenElements/Validate_CameraScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-12-17 17:49:40 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:41 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-12-17 17:49:41 - [TEST_STEP][PASSED] - tap(findTestObject("CommonScreenElements/TakePictureButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-12-17 17:49:41 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:45 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-12-17 17:49:45 - [TEST_STEP][PASSED] - delay(5): Delayed 5 second(s)
+
+2018-12-17 17:49:50 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-12-17 17:49:50 - [TEST_STEP][PASSED] - tap(findTestObject("CommonScreenElements/DoneButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-12-17 17:49:50 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:50 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-12-17 17:49:50 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen' is exist
+
+2018-12-17 17:49:50 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:51 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen' is exist
+
+2018-12-17 17:49:51 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/NextButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/NextButton'
+
+2018-12-17 17:49:51 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:49:52 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/NextButton'
+
+2018-12-17 17:49:52 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:49:54 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:49:54 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories(1): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories is PASSED
+
+2018-12-17 17:49:57 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets: Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets
+
+2018-12-17 17:49:58 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:49:59 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:49:59 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Facing", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Facing'
+
+2018-12-17 17:49:59 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:50:00 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Facing'
+
+2018-12-17 17:50:00 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:50:02 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:50:02 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData(CHILLER_FACING, "Facing"): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:50:05 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:50:06 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:50:06 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:50:06 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:50:07 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:50:07 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:50:08 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:50:08 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Depth", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Depth'
+
+2018-12-17 17:50:08 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:50:08 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Depth'
+
+2018-12-17 17:50:08 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen", ["package":PACKAGENAME]), "Depth"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen' are matched.
+
+2018-12-17 17:50:10 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen' are matched.
+
+2018-12-17 17:50:10 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData(CHILLER_DEPTH, "Depth"): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:50:14 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:50:15 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:50:15 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:50:15 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:50:15 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:50:15 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:50:16 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:50:16 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/StockCount", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/StockCount'
+
+2018-12-17 17:50:16 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:50:17 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/StockCount'
+
+2018-12-17 17:50:17 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen", ["package":PACKAGENAME]), "Stock Count"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen' are matched.
+
+2018-12-17 17:50:19 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen' are matched.
+
+2018-12-17 17:50:19 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData(CHILLER_STOCKCOUNT, "Stock Count"): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:50:23 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:50:24 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:50:24 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:50:24 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:50:24 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:50:24 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:50:25 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:50:25 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton'
+
+2018-12-17 17:50:25 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:50:26 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton'
+
+2018-12-17 17:50:26 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:50:27 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:50:27 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets' successfully
+
+2018-12-17 17:50:28 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets: Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets
+
+2018-12-17 17:50:28 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:50:30 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:50:30 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Facing", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Facing'
+
+2018-12-17 17:50:30 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:50:30 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Facing'
+
+2018-12-17 17:50:30 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:50:32 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:50:32 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData(CHILLER_FACING, "Facing"): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:50:36 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:50:39 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:50:42 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:50:45 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:50:46 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:50:46 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:50:46 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:50:47 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:50:47 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:50:48 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:50:48 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Depth", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Depth'
+
+2018-12-17 17:50:48 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:50:49 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Depth'
+
+2018-12-17 17:50:49 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen", ["package":PACKAGENAME]), "Depth"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen' are matched.
+
+2018-12-17 17:50:51 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen' are matched.
+
+2018-12-17 17:50:51 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData(CHILLER_DEPTH, "Depth"): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:50:55 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:50:58 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:01 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:04 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:05 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:51:05 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:51:05 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:51:06 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:51:06 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:51:07 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:51:07 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/StockCount", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/StockCount'
+
+2018-12-17 17:51:07 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:51:08 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/StockCount'
+
+2018-12-17 17:51:08 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen", ["package":PACKAGENAME]), "Stock Count"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen' are matched.
+
+2018-12-17 17:51:10 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen' are matched.
+
+2018-12-17 17:51:10 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData(CHILLER_STOCKCOUNT, "Stock Count"): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:51:14 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:17 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:20 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:23 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:24 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:51:24 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:51:24 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:51:25 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:51:25 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:51:26 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:51:26 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton'
+
+2018-12-17 17:51:26 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:51:26 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton'
+
+2018-12-17 17:51:26 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:51:27 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:51:27 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets' successfully
+
+2018-12-17 17:51:28 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets: Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets
+
+2018-12-17 17:51:28 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:51:30 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:51:30 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Facing", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Facing'
+
+2018-12-17 17:51:30 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:51:30 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Facing'
+
+2018-12-17 17:51:30 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:51:32 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:51:32 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData(CHILLER_FACING, "Facing"): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:51:37 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:40 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:43 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:46 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:49 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:52 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:51:56 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:51:59 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:52:01 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:52:04 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:52:06 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:52:09 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:52:11 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:52:12 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:52:12 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:52:12 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:52:12 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:52:12 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:52:13 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:52:13 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Depth", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Depth'
+
+2018-12-17 17:52:13 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:52:14 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Depth'
+
+2018-12-17 17:52:14 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen", ["package":PACKAGENAME]), "Depth"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen' are matched.
+
+2018-12-17 17:52:16 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen' are matched.
+
+2018-12-17 17:52:16 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData(CHILLER_DEPTH, "Depth"): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:52:21 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:52:24 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:52:27 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:52:30 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:52:33 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:52:36 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:52:40 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:52:43 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:52:45 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:52:48 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:52:49 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:52:53 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:52:54 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:52:56 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:52:56 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:52:56 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:52:56 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:52:56 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:52:57 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:52:57 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/StockCount", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/StockCount'
+
+2018-12-17 17:52:57 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:52:58 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/StockCount'
+
+2018-12-17 17:52:58 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen", ["package":PACKAGENAME]), "Stock Count"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen' are matched.
+
+2018-12-17 17:53:00 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen' are matched.
+
+2018-12-17 17:53:00 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData(CHILLER_STOCKCOUNT, "Stock Count"): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:53:04 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:53:07 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:53:10 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:53:13 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:53:16 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:53:19 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:53:23 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:53:26 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:53:27 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:53:31 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:53:33 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:53:36 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:53:37 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:53:39 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:53:39 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:53:39 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:53:39 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:53:39 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:53:40 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:53:40 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton'
+
+2018-12-17 17:53:40 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:53:41 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton'
+
+2018-12-17 17:53:41 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:53:42 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:53:42 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets' successfully
+
+2018-12-17 17:53:43 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets: Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets
+
+2018-12-17 17:53:43 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:53:45 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:53:45 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Facing", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Facing'
+
+2018-12-17 17:53:45 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:53:45 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Facing'
+
+2018-12-17 17:53:45 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:53:47 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:53:47 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData(CHILLER_FACING, "Facing"): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:53:51 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:53:54 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:53:57 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:53:58 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:53:58 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:53:58 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:53:59 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:53:59 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:54:00 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:54:00 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Depth", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Depth'
+
+2018-12-17 17:54:00 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:54:01 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Depth'
+
+2018-12-17 17:54:01 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen", ["package":PACKAGENAME]), "Depth"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen' are matched.
+
+2018-12-17 17:54:03 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_DepthScreen' are matched.
+
+2018-12-17 17:54:03 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData(CHILLER_DEPTH, "Depth"): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:54:07 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:54:10 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:54:13 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:54:14 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:54:14 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:54:14 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:54:15 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:54:15 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:54:16 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:54:16 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/StockCount", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/StockCount'
+
+2018-12-17 17:54:16 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:54:17 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/StockCount'
+
+2018-12-17 17:54:17 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen", ["package":PACKAGENAME]), "Stock Count"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen' are matched.
+
+2018-12-17 17:54:19 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_StockCountScreen' are matched.
+
+2018-12-17 17:54:19 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData(CHILLER_STOCKCOUNT, "Stock Count"): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:54:23 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:54:26 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:54:29 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:54:30 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData is PASSED
+
+2018-12-17 17:54:30 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:54:30 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:54:31 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/SubmitButton'
+
+2018-12-17 17:54:31 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:54:32 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:54:32 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton'
+
+2018-12-17 17:54:32 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:54:32 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/PorductCategoryActions_BackButton'
+
+2018-12-17 17:54:32 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:54:33 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:54:33 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitProductCategoryAssets' successfully
+
+2018-12-17 17:54:33 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories is PASSED
+
+2018-12-17 17:54:33 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton(): com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton is PASSED
+
+2018-12-17 17:54:35 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:54:37 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_OKButton'
+
+2018-12-17 17:54:38 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton is PASSED
+
+2018-12-17 17:54:38 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:54:39 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:54:39 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.visitPictureImageViewButton(): com.ct.qa.keywords.CommonKeywords.visitPictureImageViewButton is PASSED
+
+2018-12-17 17:54:40 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.visitPictureImageViewButton is PASSED
+
+2018-12-17 17:54:40 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:54:40 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen' are matched.
+
+2018-12-17 17:54:40 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton(): com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton is PASSED
+
+2018-12-17 17:54:42 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton is PASSED
+
+2018-12-17 17:54:42 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen", ["package":PACKAGENAME]), "Shop Chillers"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen' are matched.
+
+2018-12-17 17:54:43 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen' are matched.
+
+2018-12-17 17:54:43 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable' successfully
+
+2018-12-17 17:54:43 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedinChillerUtilizationWithSingleRemark is PASSED
+
+2018-12-17 17:54:43 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerUtilization_backButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerUtilization_backButton'
+
+2018-12-17 17:54:43 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:54:43 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerUtilization_backButton'
+
+2018-12-17 17:54:43 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/Validate_ShopCategoriesListScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-12-17 17:54:43 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:54:45 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-12-17 17:54:45 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable' successfully
+
+2018-12-17 17:54:45 - [MESSAGE][PASSED] - com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithOverwriteScenarios is PASSED
+
+2018-12-17 17:54:45 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithOverwriteScenarios' successfully
+
+2018-12-17 17:54:54 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWithOverwriteScenarios: Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWithOverwriteScenarios
+
+2018-12-17 17:54:55 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/Validate_ShopCategoriesListScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-12-17 17:54:55 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:54:55 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-12-17 17:54:55 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWithOverwriteScenarios(): com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWithOverwriteScenarios is PASSED
+
+2018-12-17 17:54:56 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,750
+
+2018-12-17 17:54:56 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,750
+
+2018-12-17 17:54:58 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:54:59 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist
+
+2018-12-17 17:54:59 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:55:00 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_YesButton'
+
+2018-12-17 17:55:00 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:55:06 - [MESSAGE][WARNING] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' not found
+[[ATTACHMENT|F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising With Category Level Overwrite Scenarios\\20181217_174611\\1545051305378.png]]
+
+2018-12-17 17:55:17 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerNotAvailable: Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerNotAvailable
+
+2018-12-17 17:55:18 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen", ["package":PACKAGENAME]), "Shop Chillers"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen' are matched.
+
+2018-12-17 17:55:18 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen' are matched.
+
+2018-12-17 17:55:18 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerVisitingScenariosKeywords.overwriteChillersTaggedinChillerUtilizationWithSingleRemark("Chiller not Available"): com.ct.qa.keywords.ChillerVisitingScenariosKeywords.overwriteChillersTaggedinChillerUtilizationWithSingleRemark is PASSED
+
+2018-12-17 17:55:20 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:55:21 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-12-17 17:55:21 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:55:24 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-12-17 17:55:29 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-12-17 17:55:29 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:55:30 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-12-17 17:55:34 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/OverwriteChillerNotAvailable: Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/OverwriteChillerNotAvailable
+
+2018-12-17 17:55:34 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 17:55:36 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 17:55:36 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerNotAvailableProductCategories(2): com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerNotAvailableProductCategories is PASSED
+
+2018-12-17 17:55:39 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets: Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets
+
+2018-12-17 17:55:39 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:55:41 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:55:41 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing'
+
+2018-12-17 17:55:41 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:55:41 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing'
+
+2018-12-17 17:55:41 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:55:43 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:55:43 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData(CHANNEL_CNA_FACING, "Facing"): com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:55:48 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:55:51 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:55:54 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:55:57 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:56:00 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:56:03 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:56:06 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:56:07 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:56:07 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:56:07 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:56:08 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:56:08 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:56:09 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:56:09 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking'
+
+2018-12-17 17:56:09 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:56:09 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking'
+
+2018-12-17 17:56:09 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen", ["package":PACKAGENAME]), "Stock Taking"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen' are matched.
+
+2018-12-17 17:56:11 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen' are matched.
+
+2018-12-17 17:56:11 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData(CHANNEL_CNA_STOCKTAKING, "Stock Taking"): com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:56:15 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:56:18 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:56:21 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:56:24 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:56:27 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:56:30 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:56:34 - [MESSAGE][PASSED] - Swiped from 55,359 to 55,250
+
+2018-12-17 17:56:35 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:56:35 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:56:35 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:56:35 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:56:35 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:56:36 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:56:36 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton'
+
+2018-12-17 17:56:36 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:56:37 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton'
+
+2018-12-17 17:56:37 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 17:56:38 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 17:56:38 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets' successfully
+
+2018-12-17 17:56:39 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets: Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets
+
+2018-12-17 17:56:39 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:56:40 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:56:40 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing'
+
+2018-12-17 17:56:40 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:56:41 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing'
+
+2018-12-17 17:56:41 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:56:43 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:56:43 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData(CHANNEL_CNA_FACING, "Facing"): com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:56:46 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:56:47 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:56:47 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:56:47 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:56:47 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:56:47 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:56:48 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:56:48 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking'
+
+2018-12-17 17:56:48 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:56:49 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking'
+
+2018-12-17 17:56:49 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen", ["package":PACKAGENAME]), "Stock Taking"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen' are matched.
+
+2018-12-17 17:56:51 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen' are matched.
+
+2018-12-17 17:56:51 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData(CHANNEL_CNA_STOCKTAKING, "Stock Taking"): com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:56:54 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:56:55 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:56:55 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:56:55 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:56:55 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:56:55 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:56:56 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:56:56 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton'
+
+2018-12-17 17:56:56 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:56:57 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton'
+
+2018-12-17 17:56:57 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 17:56:58 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 17:56:58 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets' successfully
+
+2018-12-17 17:56:59 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets: Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets
+
+2018-12-17 17:56:59 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:57:01 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:57:01 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing'
+
+2018-12-17 17:57:01 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:57:01 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing'
+
+2018-12-17 17:57:01 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:57:03 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:57:03 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData(CHANNEL_CNA_FACING, "Facing"): com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:57:07 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:57:10 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:57:13 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:57:14 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:57:14 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:57:14 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:57:15 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:57:15 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:57:16 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:57:16 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking'
+
+2018-12-17 17:57:16 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:57:16 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking'
+
+2018-12-17 17:57:16 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen", ["package":PACKAGENAME]), "Stock Taking"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen' are matched.
+
+2018-12-17 17:57:18 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen' are matched.
+
+2018-12-17 17:57:18 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData(CHANNEL_CNA_STOCKTAKING, "Stock Taking"): com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:57:22 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:57:25 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:57:28 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:57:29 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:57:29 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:57:29 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:57:30 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:57:30 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:57:31 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:57:31 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton'
+
+2018-12-17 17:57:31 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:57:31 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton'
+
+2018-12-17 17:57:31 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 17:57:32 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 17:57:32 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets' successfully
+
+2018-12-17 17:57:33 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets: Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets
+
+2018-12-17 17:57:33 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:57:35 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:57:35 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing'
+
+2018-12-17 17:57:35 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:57:35 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Facing'
+
+2018-12-17 17:57:35 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:57:37 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_FacingScreen' are matched.
+
+2018-12-17 17:57:37 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData(CHANNEL_CNA_FACING, "Facing"): com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:57:42 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:57:45 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:57:48 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:57:51 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:57:54 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:57:57 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:58:01 - [MESSAGE][PASSED] - Swiped from 23,359 to 23,250
+
+2018-12-17 17:58:04 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:58:05 - [MESSAGE][PASSED] - Swiped from 23,359 to 23,250
+
+2018-12-17 17:58:07 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:58:07 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:58:07 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:58:07 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 17:58:07 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:58:08 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 17:58:08 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking'
+
+2018-12-17 17:58:08 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 17:58:09 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/StockTaking'
+
+2018-12-17 17:58:09 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen", ["package":PACKAGENAME]), "Stock Taking"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen' are matched.
+
+2018-12-17 17:58:11 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_StockTakingScreen' are matched.
+
+2018-12-17 17:58:11 - [TEST_STEP][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData(CHANNEL_CNA_STOCKTAKING, "Stock Taking"): com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 17:58:15 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:58:18 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:58:21 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:58:24 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:58:27 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:58:30 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:58:34 - [MESSAGE][PASSED] - Swiped from 23,359 to 23,250
+
+2018-12-17 17:58:37 - [MESSAGE][PASSED] - Keyboard is hidden
+
+2018-12-17 17:58:39 - [MESSAGE][PASSED] - Swiped from 23,359 to 23,250
+
+2018-12-17 18:01:12 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData is PASSED
+
+2018-12-17 18:01:12 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 18:01:12 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 18:01:13 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/SubmitButton'
+
+2018-12-17 18:01:13 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen", ["package":PACKAGENAME]), "Facing"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 18:01:14 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ProductCategoryAssetScreen' are matched.
+
+2018-12-17 18:01:14 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton'
+
+2018-12-17 18:01:14 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 18:01:14 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/ProductCategory_BackButton'
+
+2018-12-17 18:01:14 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 18:01:15 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 18:01:15 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets' successfully
+
+2018-12-17 18:01:15 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerNotAvailableProductCategories is PASSED
+
+2018-12-17 18:01:15 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton(): com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton is PASSED
+
+2018-12-17 18:01:17 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 18:01:23 - [MESSAGE][WARNING] - Object Object Repository/CommonScreenElements/InfoPopUp_OKButton not found
+[[ATTACHMENT|F:\\Git Projects\\MMA_Merchandising\\MMA_Merchandising\\Reports\\MMA Merchandising With Category Level Overwrite Scenarios\\20181217_174611\\1545051682449.png]]
+
+2018-12-17 18:01:24 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton is PASSED
+
+2018-12-17 18:01:24 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 18:01:25 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 18:01:25 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.visitPictureImageViewButton(): com.ct.qa.keywords.CommonKeywords.visitPictureImageViewButton is PASSED
+
+2018-12-17 18:01:28 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 18:01:29 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist
+
+2018-12-17 18:01:29 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 18:01:33 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/TakePictureButton'
+
+2018-12-17 18:01:38 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-12-17 18:01:38 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 18:01:38 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/DoneButton'
+
+2018-12-17 18:01:38 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.visitPictureImageViewButton is PASSED
+
+2018-12-17 18:01:38 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen", ["package":PACKAGENAME]), "Category:Chiller Utilization"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 18:01:40 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen' are matched.
+
+2018-12-17 18:01:40 - [TEST_STEP][PASSED] - com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton(): com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton is PASSED
+
+2018-12-17 18:01:41 - [MESSAGE][PASSED] - com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton is PASSED
+
+2018-12-17 18:01:41 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen", ["package":PACKAGENAME]), "Shop Chillers"): Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen' are matched.
+
+2018-12-17 18:01:42 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen' are matched.
+
+2018-12-17 18:01:42 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/OverwriteChillerNotAvailable' successfully
+
+2018-12-17 18:01:42 - [MESSAGE][PASSED] - com.ct.qa.keywords.ChillerVisitingScenariosKeywords.overwriteChillersTaggedinChillerUtilizationWithSingleRemark is PASSED
+
+2018-12-17 18:01:42 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ChillerUtilization/ChillerUtilization_backButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerUtilization_backButton'
+
+2018-12-17 18:01:42 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 18:01:43 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ChillerUtilization/ChillerUtilization_backButton'
+
+2018-12-17 18:01:43 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/Validate_ShopCategoriesListScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-12-17 18:01:43 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 18:01:45 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist
+
+2018-12-17 18:01:45 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerNotAvailable' successfully
+
+2018-12-17 18:01:45 - [MESSAGE][PASSED] - com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWithOverwriteScenarios is PASSED
+
+2018-12-17 18:01:45 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/VisitCategoryScenariosWithOverwritePopUp/VisitShopCategoriesWithOverwriteScenarios' successfully
+
+2018-12-17 18:01:45 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/SaveShop: Test Cases/ShopOpen/SaveShop
+
+2018-12-17 18:01:45 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/SubmitButtonToSaveShop", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/SubmitButtonToSaveShop'
+
+2018-12-17 18:01:45 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 18:01:46 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/SubmitButtonToSaveShop'
+
+2018-12-17 18:01:46 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("CommonScreenElements/Validate_InfoPopUP", ["package":PACKAGENAME]), 0): Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist
+
+2018-12-17 18:01:46 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 18:01:47 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist
+
+2018-12-17 18:01:47 - [TEST_STEP][PASSED] - tap(findTestObject("CommonScreenElements/InfoPopUp_YesButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_YesButton'
+
+2018-12-17 18:01:47 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 18:01:48 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_YesButton'
+
+2018-12-17 18:01:48 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("Validate_ShopListScreen", ["package":PACKAGENAME]), "Shops on Route"): Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-12-17 18:01:49 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.
+
+2018-12-17 18:01:49 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/SaveShop' successfully
+
+2018-12-17 18:01:49 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '5'
+
+2018-12-17 18:01:49 - [MESSAGE][PASSED] - Element 'Object Repository/Validate_ShopListScreen' is exist
+
+2018-12-17 18:01:49 - [MESSAGE][PASSED] - com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWith_CategoryLevel_Overwriting is PASSED]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-12-17 17:46:14 - [TEST_SUITE][PASSED] - MMA Merchandising With Category Level Overwrite Scenarios: Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevelOverwriting]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

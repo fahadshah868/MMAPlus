@@ -310,20 +310,13 @@ public class ShopVisitingScenariosKeywords{
 								if(taggedchillerremarks.getVisitedchillerproductscategories() != null){
 									message = message+ "\n\n" +
 											String.format("%-30s%-130s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
-											String.format("%-30s%-130s", "Chiller Type Scenarios:",taggedchillerremarks.getChillertype_scenario()) + "\n" +
-											String.format("%-30s%-130s", "Chiller Remark Scenarios:",taggedchillerremarks.getChillerremark_scenario()) + "\n"
+											String.format("%-30s%-130s", "Chiller Type Scenarios:",taggedchillerremarks.getFirstvisit_chillertype()+"  ==>  "+taggedchillerremarks.getOverwrite_chillertype()) + "\n" +
+											String.format("%-30s%-130s", "Chiller Remark Scenarios:",taggedchillerremarks.getFirstvisit_chillerremark()+"  ==>  "+taggedchillerremarks.getOverwrite_chillerremark()) + "\n"
 									for(int m=0; m<taggedchillerremarks.getVisitedchillerproductscategories().size() ; m++){
 										VisitedChillerProductsCategoryData visitedchillerproductcategory = taggedchillerremarks.getVisitedchillerproductscategories().get(m)
 										if(visitedchillerproductcategory.getProductCategory() != null){
-											String[] splitted_chillertype = (taggedchillerremarks.getChillertype_scenario()).split("==>")
-											String[] splitted_chillerremark = (taggedchillerremarks.getChillerremark_scenario()).split("==>")
-											String firstvisit_chillertype = splitted_chillertype[0].replaceAll("\\s", "")
-											String firstvisit_chillerremark = splitted_chillerremark[0].replaceAll("\\s", "")
-											String overwrite_chillertype = splitted_chillertype[1].replaceAll("\\s", "")
-											String overwrite_chillerremark = splitted_chillerremark[1].replaceAll("\\s", "")
-											if(firstvisit_chillerremark.equalsIgnoreCase(visitedchillerproductcategory.getChillerremark())){
+											if(taggedchillerremarks.getFirstvisit_chillerremark() != null){
 												message = message + "\n\n" +
-														firstvisit_chillerremark + " with " + firstvisit_chillertype +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
 														String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "Products:","Facing","Stock Taking/","Depth","Overwrite Facing","Overwrite Stock Taking/","Overwrite Depth")+"\n"+
 														String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "","","Stock Count","","","Overwrite Stock Count","")+"\n"
@@ -334,7 +327,6 @@ public class ShopVisitingScenariosKeywords{
 											}
 											else{
 												message = message + "\n\n" +
-														overwrite_chillerremark + " with " + overwrite_chillertype +
 														String.format("%-30s%-60s", "Product Category:",visitedchillerproductcategory.getProductCategory()) + "\n" +
 														String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "Products:","Facing","Stock Taking/","Depth","Overwrite Facing","Overwrite Stock Taking/","Overwrite Depth")+"\n"+
 														String.format("%-50s%-12s%-19s%-11s%-22s%-29s%-21s", "","","Stock Count","","","Overwrite Stock Count","")+"\n"
@@ -926,9 +918,9 @@ public class ShopVisitingScenariosKeywords{
 	@Keyword
 	def visitShopsWith_CategoryLevel_Overwriting(){
 		int index = 0
-		int _shop = 4
+		int _shop = 2
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(_shop; _shop<= 4; _shop++){
+		for(_shop; _shop<= 2; _shop++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+_shop+"]/android.widget.TextView[1]")
