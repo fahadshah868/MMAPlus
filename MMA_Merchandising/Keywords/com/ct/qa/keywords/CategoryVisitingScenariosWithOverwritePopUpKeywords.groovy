@@ -68,7 +68,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChillerWithChillerNotAllocated"), null)
@@ -82,7 +82,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 				else{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChillerWithChillerNotAllocated"), null)
@@ -149,7 +149,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithDSA"), null)
@@ -167,7 +167,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 				else{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithDSA"), null)
@@ -209,7 +209,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithDSA"), null)
@@ -227,7 +227,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 				else{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithDSA"), null)
@@ -275,7 +275,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChillerWithChillerNotAllocated"), null)
@@ -289,7 +289,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 				else{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChillerWithChillerNotAllocated"), null)
@@ -362,7 +362,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithDSA"), null)
@@ -380,7 +380,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 				else{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithDSA"), null)
@@ -424,7 +424,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithDSA"), null)
@@ -442,7 +442,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 				else{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithDSA"), null)

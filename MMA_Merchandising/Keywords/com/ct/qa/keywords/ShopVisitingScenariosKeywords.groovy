@@ -99,8 +99,8 @@ public class ShopVisitingScenariosKeywords{
 														String.format("%-30s%-100s", "Visiting Scenarios:",missingshopdatainfo.getScenario())+
 														"\n\nProduct Categories:\n\n" +
 														String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
-														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
-														String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
+														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getFirstvisit_chillertype()) + "\n" +
+														String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getFirstvisit_chillerremark()) + "\n" +
 														String.format("%-30s","Product Categories:")
 												for(int n=0; n<missingchillerproductcategory.getProductcategories().size() ; n++){
 													message = message + missingchillerproductcategory.getProductcategories().get(n) + ",   "
@@ -112,8 +112,8 @@ public class ShopVisitingScenariosKeywords{
 												message = message +
 														"\n\nProduct Categories:\n\n" +
 														String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
-														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
-														String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
+														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getFirstvisit_chillertype()) + "\n" +
+														String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getFirstvisit_chillerremark()) + "\n" +
 														String.format("%-30s","Product Categories:")
 												for(int n=0; n<missingchillerproductcategory.getProductcategories().size() ; n++){
 													message = message + missingchillerproductcategory.getProductcategories().get(n) + ",   "
@@ -196,8 +196,8 @@ public class ShopVisitingScenariosKeywords{
 														String.format("%-30s%-100s", "Visiting Scenarios:",missingshopdatainfo.getScenario())+
 														"\n\nProducts:\n\n" +
 														String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
-														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
-														String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
+														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getFirstvisit_chillertype()) + "\n" +
+														String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getFirstvisit_chillerremark()) + "\n" +
 														String.format("%-30s%-60s","Product Category:",missingchillerproductcategory.getProductcategory()) + "\n" +
 														String.format("%-30s", "Products:")
 												for(int n=0; n<missingchillerproductcategory.getProducts().size() ; n++){
@@ -210,8 +210,8 @@ public class ShopVisitingScenariosKeywords{
 												message = message+
 														"\n\nProducts:\n\n" +
 														String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
-														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getChillertype()) + "\n" +
-														String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getChillerremark()) + "\n" +
+														String.format("%-30s%-60s","Chiller type:",taggedchillerremarks.getFirstvisit_chillertype()) + "\n" +
+														String.format("%-30s%-60s","Chiller Remark:",taggedchillerremarks.getFirstvisit_chillerremark()) + "\n" +
 														String.format("%-30s%-60s","Product Category:",missingchillerproductcategory.getProductcategory()) + "\n" +
 														String.format("%-30s", "Products:")
 												for(int n=0; n<missingchillerproductcategory.getProducts().size() ; n++){
@@ -926,9 +926,9 @@ public class ShopVisitingScenariosKeywords{
 	@Keyword
 	def visitShopsWith_CategoryLevel_Overwriting(){
 		int index = 0
-		int _shop = 1
+		int _shop = 4
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		for(_shop; _shop<= 1; _shop++){
+		for(_shop; _shop<= 4; _shop++){
 			MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+_shop+"]/android.widget.TextView[1]")

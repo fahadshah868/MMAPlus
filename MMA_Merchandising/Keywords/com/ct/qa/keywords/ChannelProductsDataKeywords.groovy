@@ -493,10 +493,10 @@ public class ChannelProductsDataKeywords {
 		ProductCategoryWithProducts productcategorywithproducts = new ProductCategoryWithProducts()
 		visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 		if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-			visitedcategorydata.setFirstvisit_categoryremark(ProjectConstants.CATEGORY_REMARK)
+			visitedcategorydata.setFirstvisit_categoryremark(ProjectConstants.CURRENTVISITING_CATEGORYREMARK)
 		}
 		else{
-			visitedcategorydata.setOverwrite_categoryremark(ProjectConstants.CATEGORY_REMARK)
+			visitedcategorydata.setOverwrite_categoryremark(ProjectConstants.CURRENTVISITING_CATEGORYREMARK)
 		}
 		productcategorywithproducts.setProductcategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
 		productcategorywithproducts.setShopproductsdata(shopproductsdata)
@@ -512,10 +512,10 @@ public class ChannelProductsDataKeywords {
 						if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
 							flag = true
 							if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-								visitedcategorydatainfo.setFirstvisit_categoryremark(ProjectConstants.CATEGORY_REMARK)
+								visitedcategorydatainfo.setFirstvisit_categoryremark(ProjectConstants.CURRENTVISITING_CATEGORYREMARK)
 							}
 							else if(assettype.equalsIgnoreCase("Facing")){
-								visitedcategorydatainfo.setOverwrite_categoryremark(ProjectConstants.CATEGORY_REMARK)
+								visitedcategorydatainfo.setOverwrite_categoryremark(ProjectConstants.CURRENTVISITING_CATEGORYREMARK)
 							}
 							else{}
 							ArrayList<ProductCategoryWithProducts> productcategorywithproductsdatalist = visitedcategorydatainfo.getProductcategorywithproducts()
@@ -563,10 +563,10 @@ public class ChannelProductsDataKeywords {
 								}
 								if(productcategoryflag == false){
 									if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-										visitedcategorydatainfo.setFirstvisit_categoryremark(ProjectConstants.CATEGORY_REMARK)
+										visitedcategorydatainfo.setFirstvisit_categoryremark(ProjectConstants.CURRENTVISITING_CATEGORYREMARK)
 									}
 									else if(assettype.equalsIgnoreCase("Facing")){
-										visitedcategorydatainfo.setOverwrite_categoryremark(ProjectConstants.CATEGORY_REMARK)
+										visitedcategorydatainfo.setOverwrite_categoryremark(ProjectConstants.CURRENTVISITING_CATEGORYREMARK)
 									}
 									else{}
 									visitedcategorydatainfo.setProductcategorywithproducts(productcategorywithproducts)

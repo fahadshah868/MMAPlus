@@ -111,7 +111,7 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_SHOPNAME = ""
 	public static String CURRENTVISITING_SHOPCHANNEL = ""
 	public static String CURRENTVISITING_MAINCATEGORY = ""
-	public static String CATEGORY_REMARK = ""
+	public static String CURRENTVISITING_CATEGORYREMARK = ""
 	public static String CURRENTVISITING_PRODUCTCATEGORY = ""
 	public static String CURRENTVISITING_CHILLERTYPE = ""
 	public static String CURRENTVISITING_CHILLERREMARK = ""

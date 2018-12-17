@@ -94,7 +94,7 @@ public class CategoryVisitingScenariosKeywords{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
 					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
-						ProjectConstants.CATEGORY_REMARK = remarktext
+						ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]").click()
 						Mobile.callTestCase(findTestCase("ShopOpen/Chiller/VisitChillerWithChillerNotAllocated"), null)
 						break
@@ -142,7 +142,7 @@ public class CategoryVisitingScenariosKeywords{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
-						ProjectConstants.CATEGORY_REMARK = remarktext
+						ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithDSA"), null)
 						break
@@ -166,7 +166,7 @@ public class CategoryVisitingScenariosKeywords{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
-						ProjectConstants.CATEGORY_REMARK = remarktext
+						ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA"), null)
 						break
@@ -196,7 +196,7 @@ public class CategoryVisitingScenariosKeywords{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
 					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
-						ProjectConstants.CATEGORY_REMARK = remarktext
+						ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]").click()
 						Mobile.callTestCase(findTestCase("ShopOpen/Chiller/VisitChillerWithChillerNotAllocated"), null)
 						break
@@ -250,7 +250,7 @@ public class CategoryVisitingScenariosKeywords{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
-						ProjectConstants.CATEGORY_REMARK = remarktext
+						ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithDSA"), null)
 						break
@@ -276,7 +276,7 @@ public class CategoryVisitingScenariosKeywords{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
-						ProjectConstants.CATEGORY_REMARK = remarktext
+						ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+j+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA"), null)
 						break
@@ -304,42 +304,42 @@ public class CategoryVisitingScenariosKeywords{
 		ArrayList<ScenariosCombination> scenarioscombination = new ArrayList<ScenariosCombination>()
 		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
-//		UnmatchedItems unmatcheditems = CompareDataKeywords.compareShopCategories()
-//		if(unmatcheditems.getStatus() == 2){
-//			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
-//				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
-//					ProjectConstants.missingshopdatainfo.get(j).setMissingshopcategories(unmatcheditems.getItems())
-//					ProjectConstants.missingshopdatainfo.get(j).setMissingshopcategories_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_NOTMATCH)
-//					break
-//				}
-//				else{
-//				}
-//			}
-//		}
-//		else if(unmatcheditems.getStatus() == 1){
-//			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
-//				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
-//					ProjectConstants.missingshopdatainfo.get(j).setMissingshopcategories(unmatcheditems.getItems())
-//					ProjectConstants.missingshopdatainfo.get(j).setMissingshopcategories_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_MORE)
-//					break
-//				}
-//				else{
-//				}
-//			}
-//		}
-//		else if(unmatcheditems.getStatus() == -1){
-//			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
-//				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
-//					ProjectConstants.missingshopdatainfo.get(j).setMissingshopcategories(unmatcheditems.getItems())
-//					ProjectConstants.missingshopdatainfo.get(j).setMissingshopcategories_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_MISSING)
-//					break
-//				}
-//				else{
-//				}
-//			}
-//		}
-//		else{
-//		}
+		//		UnmatchedItems unmatcheditems = CompareDataKeywords.compareShopCategories()
+		//		if(unmatcheditems.getStatus() == 2){
+		//			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+		//				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+		//					ProjectConstants.missingshopdatainfo.get(j).setMissingshopcategories(unmatcheditems.getItems())
+		//					ProjectConstants.missingshopdatainfo.get(j).setMissingshopcategories_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_NOTMATCH)
+		//					break
+		//				}
+		//				else{
+		//				}
+		//			}
+		//		}
+		//		else if(unmatcheditems.getStatus() == 1){
+		//			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+		//				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+		//					ProjectConstants.missingshopdatainfo.get(j).setMissingshopcategories(unmatcheditems.getItems())
+		//					ProjectConstants.missingshopdatainfo.get(j).setMissingshopcategories_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_MORE)
+		//					break
+		//				}
+		//				else{
+		//				}
+		//			}
+		//		}
+		//		else if(unmatcheditems.getStatus() == -1){
+		//			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+		//				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+		//					ProjectConstants.missingshopdatainfo.get(j).setMissingshopcategories(unmatcheditems.getItems())
+		//					ProjectConstants.missingshopdatainfo.get(j).setMissingshopcategories_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_MISSING)
+		//					break
+		//				}
+		//				else{
+		//				}
+		//			}
+		//		}
+		//		else{
+		//		}
 		Mobile.swipe(0, 200, 0, 750)
 		Mobile.swipe(0, 200, 0, 750)
 		int index = 0
@@ -366,7 +366,7 @@ public class CategoryVisitingScenariosKeywords{
 					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getFirstvisit_scenario()+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getFirstvisit_scenario()+"]").click()
 						Mobile.callTestCase(findTestCase("ShopOpen/Chiller/VisitChillerWithChillerNotAllocated"), null)
@@ -380,7 +380,7 @@ public class CategoryVisitingScenariosKeywords{
 				else{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 						Mobile.callTestCase(findTestCase("ShopOpen/Chiller/VisitChillerWithChillerNotAllocated"), null)
@@ -441,7 +441,7 @@ public class CategoryVisitingScenariosKeywords{
 					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getFirstvisit_scenario()+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getFirstvisit_scenario()+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithDSA"), null)
@@ -459,7 +459,7 @@ public class CategoryVisitingScenariosKeywords{
 				else{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithDSA"), null)
@@ -500,7 +500,7 @@ public class CategoryVisitingScenariosKeywords{
 					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getFirstvisit_scenario()+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getFirstvisit_scenario()+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA"), null)
@@ -518,7 +518,7 @@ public class CategoryVisitingScenariosKeywords{
 				else{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA"), null)
@@ -565,7 +565,7 @@ public class CategoryVisitingScenariosKeywords{
 					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getFirstvisit_scenario()+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getFirstvisit_scenario()+"]").click()
 						Mobile.callTestCase(findTestCase("ShopOpen/Chiller/VisitChillerWithChillerNotAllocated"), null)
@@ -579,7 +579,7 @@ public class CategoryVisitingScenariosKeywords{
 				else{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 						Mobile.callTestCase(findTestCase("ShopOpen/Chiller/VisitChillerWithChillerNotAllocated"), null)
@@ -646,7 +646,7 @@ public class CategoryVisitingScenariosKeywords{
 					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getFirstvisit_scenario()+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getFirstvisit_scenario()+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithDSA"), null)
@@ -664,7 +664,7 @@ public class CategoryVisitingScenariosKeywords{
 				else{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/VisitNestradeWithDSA"), null)
@@ -707,7 +707,7 @@ public class CategoryVisitingScenariosKeywords{
 					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getFirstvisit_scenario()+"]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getFirstvisit_scenario()+"]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA"), null)
@@ -725,7 +725,7 @@ public class CategoryVisitingScenariosKeywords{
 				else{
 					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 					String remarktext = remark.getText()
-					ProjectConstants.CATEGORY_REMARK = remarktext
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
 					if(remarktext.equalsIgnoreCase("Display Space Available")){
 						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
 						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/VisitRemainingCategoriesWithDSA"), null)

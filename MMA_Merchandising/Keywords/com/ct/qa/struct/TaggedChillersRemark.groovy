@@ -26,10 +26,10 @@ import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
 public class TaggedChillersRemark {
-	public String chillertype //for missing data
-	public String chillerremark //for missing data
-	public String chillertype_scenario //for visited data
-	public String chillerremark_scenario //for visited data
+	public String firstvisit_chillertype
+	public String overwrite_chillertype
+	public String firstvisit_chillerremark
+	public String overwrite_chillerremark
 	public ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductscategories
 	public ArrayList<MissingChillerProductsCategoryData> missingchillerproductscategories
 	public String errormessage_formissingproductscategories
@@ -38,29 +38,29 @@ public class TaggedChillersRemark {
 		this.visitedchillerproductscategories = new ArrayList<VisitedChillerProductsCategoryData>()
 		this.missingchillerproductscategories = new ArrayList<MissingChillerProductsCategoryData>()
 	}
-	public String getChillertype() {
-		return chillertype;
+	public String getFirstvisit_chillertype() {
+		return firstvisit_chillertype;
 	}
-	public void setChillertype(String chillertype) {
-		this.chillertype = chillertype;
+	public void setFirstvisit_chillertype(String firstvisit_chillertype) {
+		this.firstvisit_chillertype = firstvisit_chillertype;
 	}
-	public String getChillerremark() {
-		return chillerremark;
+	public String getOverwrite_chillertype() {
+		return overwrite_chillertype;
 	}
-	public void setChillerremark(String chillerremark) {
-		this.chillerremark = chillerremark;
+	public void setOverwrite_chillertype(String overwrite_chillertype) {
+		this.overwrite_chillertype = overwrite_chillertype;
 	}
-	public String getChillertype_scenario() {
-		return chillertype_scenario;
+	public String getFirstvisit_chillerremark() {
+		return firstvisit_chillerremark;
 	}
-	public void setChillertype_scenario(String chillertype_scenario) {
-		this.chillertype_scenario = chillertype_scenario;
+	public void setFirstvisit_chillerremark(String firstvisit_chillerremark) {
+		this.firstvisit_chillerremark = firstvisit_chillerremark;
 	}
-	public String getChillerremark_scenario() {
-		return chillerremark_scenario;
+	public String getOverwrite_chillerremark() {
+		return overwrite_chillerremark;
 	}
-	public void setChillerremark_scenario(String chillerremark_scenario) {
-		this.chillerremark_scenario = chillerremark_scenario;
+	public void setOverwrite_chillerremark(String overwrite_chillerremark) {
+		this.overwrite_chillerremark = overwrite_chillerremark;
 	}
 	public ArrayList<VisitedChillerProductsCategoryData> getVisitedchillerproductscategories() {
 		return visitedchillerproductscategories;
