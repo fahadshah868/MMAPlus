@@ -520,19 +520,19 @@ public class ChillerProductsDataKeywords {
 						VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
 						if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
 							maincategory_flag = true
-							if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-								taggedchillerremarks.setFirstvisit_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-								taggedchillerremarks.setFirstvisit_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-							}
-							else{
-								taggedchillerremarks.setOverwrite_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-								taggedchillerremarks.setOverwrite_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-							}
 							ArrayList<TaggedChillersRemark> taggedchillersremarks = visitedcategorydatainfo.getTaggedchillersremark()
 							boolean chiller_type_remark_flag = false
 							for(int p=0; p<taggedchillersremarks.size(); p++){
 								TaggedChillersRemark taggedchillerremarkinfo = taggedchillersremarks.get(p)
-								if(taggedchillerremarkinfo.getFirstvisit_chillertype().equals(taggedchillerremarks.getFirstvisit_chillertype()) && taggedchillerremarkinfo.getFirstvisit_chillerremark().equals(taggedchillerremarks.getFirstvisit_chillerremark())){
+								if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+									taggedchillerremarkinfo.setFirstvisit_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+									taggedchillerremarkinfo.setFirstvisit_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
+								}
+								else{
+									taggedchillerremarkinfo.setOverwrite_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+									taggedchillerremarkinfo.setOverwrite_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
+								}
+								if((taggedchillerremarkinfo.getFirstvisit_chillertype().equals(taggedchillerremarks.getFirstvisit_chillertype()) && taggedchillerremarkinfo.getFirstvisit_chillerremark().equals(taggedchillerremarks.getFirstvisit_chillerremark())) || (taggedchillerremarkinfo.getFirstvisit_chillertype().equals(taggedchillerremarks.getOverwrite_chillertype()) && taggedchillerremarkinfo.getFirstvisit_chillerremark().equals(taggedchillerremarks.getOverwrite_chillerremark()))){
 									chiller_type_remark_flag = true
 									ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductcategorydata = taggedchillerremarkinfo.getVisitedchillerproductscategories()
 									boolean productcategory_flag = false
@@ -584,11 +584,13 @@ public class ChillerProductsDataKeywords {
 									}
 									if(productcategory_flag == false){
 										taggedchillerremarkinfo.setVisitedchillerproductscategories(visitedchillerproductscategory)
+										break
 									}
 								}
 							}
 							if(chiller_type_remark_flag == false){
 								visitedcategorydatainfo.setTaggedchillersremark(taggedchillerremarks)
+								break
 							}
 						}
 					}

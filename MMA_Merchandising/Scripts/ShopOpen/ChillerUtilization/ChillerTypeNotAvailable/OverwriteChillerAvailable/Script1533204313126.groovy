@@ -92,41 +92,25 @@ MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAva
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen', 
         [('package') : ProjectConstants.PACKAGENAME]), 'Category:Chiller Utilization')
 
-'visit chiller available products categories'
+'overwrite chiller available products categories'
 CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductCategories'(2)
 
-'tap on "Planogram" imageview'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/ChillerProductsCategories_Planogram_ImageView', 
-        [('package') : ProjectConstants.PACKAGENAME]), 0)
-
-'find planogram availability'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.checkPlanogramAvailability'()
-
-'tap on planogram close button'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.closePlanogram'()
+'tap on picture imageview and take picture for category'
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton'()
 
 'validate products categories screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen', 
         [('package') : ProjectConstants.PACKAGENAME]), 'Category:Chiller Utilization')
 
-'find "Picture" imageview and taking picture for category'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.findPictureImageView'()
+'tap on picture imageview and take picture for category'
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitPictureImageViewButton'()
 
 'validate products categories screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerProductsCategoriesScreen', 
         [('package') : ProjectConstants.PACKAGENAME]), 'Category:Chiller Utilization')
 
-'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/ChillerProductsCategories_BackButton', 
-        [('package') : ProjectConstants.PACKAGENAME]), 0)
-
-'validate chiller remarks screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerRemarksScreen'), 'KPI: Chiller Utilization', 
-    [('package') : ProjectConstants.PACKAGENAME])
-
-'tap on back button'
-Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerRemarks_BackButton', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
+'tap on picture imageview and take picture for category'
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton'()
 
 'validate "Chiller Utilization" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen', 

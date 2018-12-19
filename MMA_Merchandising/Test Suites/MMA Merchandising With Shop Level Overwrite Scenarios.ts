@@ -4,7 +4,7 @@
    <name>MMA Merchandising With Shop Level Overwrite Scenarios</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-09-06T16:14:02</lastRun>
+   <lastRun>2018-12-19T13:21:05</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>4</pageLoadTimeout>
@@ -26,19 +26,19 @@
    <testCaseLink>
       <guid>f3022bb4-0c7c-4b9e-aa6d-a3911d3dbd52</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f5233383-86d9-4dca-9fb3-2f2586983b04</guid>
+      <guid>049b1696-d111-4151-b876-d1c3919608fb</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithShopLevelOverwritingScenarios</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>a65988ad-a085-4f26-b424-9f4e91c5932d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithShopLevelOverwriteScenarios</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>1aed1dc1-4c53-44cb-972f-1517463fd380</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithShopLevelOverwriting</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

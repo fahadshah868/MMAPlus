@@ -36,5 +36,5 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('Validate_ShopListScreen'
     'Shops on Route')
 
 'select shops from shops list with "Shop Level" overwriting '
-CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWith_CategoryLevel_Overwriting'()
+CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithShopLevel_OverwritingScenarios'()
 

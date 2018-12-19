@@ -19,5 +19,5 @@ MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopC
     0)
 
 'visit shop categories for data verification'
-CustomKeywords.'com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWithOverwriteScenarios'()
+CustomKeywords.'com.ct.qa.keywords.CategoryVisitingScenariosWithOverwritePopUpKeywords.visitShopCategoriesWithOverwritingScenarios'()
 

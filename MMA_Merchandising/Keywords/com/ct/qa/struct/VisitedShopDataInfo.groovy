@@ -28,12 +28,25 @@ import WebUiBuiltInKeywords as WebUI
 public class VisitedShopDataInfo {
 	public String shopname
 	public String shopchannel
-	public String scenario
+	public String shop_scenario
+	public String othercategories_scenarios
 	public ArrayList<VisitedCategoryData> visitedcategoriesdata
 
 	public VisitedShopDataInfo(){
 		this.visitedcategoriesdata = new ArrayList<VisitedCategoryData>()
 	}
+	public String getShop_scenario() {
+		return shop_scenario;
+	}
+	public void setShop_scenario(String shop_scenario) {
+		this.shop_scenario = shop_scenario;
+	}
+	public String getOthercategories_scenarios() {
+		return othercategories_scenarios;
+	}
+	public void setOthercategories_scenarios(String othercategories_scenarios) {
+		this.othercategories_scenarios = othercategories_scenarios;
+	}
 	public String getShopname() {
 		return shopname;
 	}
@@ -46,12 +59,7 @@ public class VisitedShopDataInfo {
 	public void setShopchannel(String shopchannel) {
 		this.shopchannel = shopchannel;
 	}
-	public String getScenario() {
-		return scenario;
-	}
-	public void setScenario(String scenario) {
-		this.scenario = scenario;
-	}
+	
 	public ArrayList<VisitedCategoryData> getVisitedcategoriesdata() {
 		return visitedcategoriesdata;
 	}

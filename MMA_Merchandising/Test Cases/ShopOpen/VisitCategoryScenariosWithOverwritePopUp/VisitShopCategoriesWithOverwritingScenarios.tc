@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VisitShopCategoriesWithOverwriteScenarios</name>
+   <name>VisitShopCategoriesWithOverwritingScenarios</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>b4c6aaf0-99c9-41a8-aa25-c946e22f2778</testCaseGuid>
+   <testCaseGuid>353793ee-70b1-4898-a476-a4e28e88a25a</testCaseGuid>
 </TestCaseEntity>
