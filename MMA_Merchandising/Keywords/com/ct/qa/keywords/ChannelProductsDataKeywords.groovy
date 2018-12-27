@@ -329,10 +329,10 @@ public class ChannelProductsDataKeywords {
 				else{
 					boolean flag = false
 					displayproductslist.add(lastproductnameafterswipe)
+					productsdata.setProduct(lastproductnameafterswipe)
 					for(int j=0; j<expectedproductslist.size(); j++){
 						LoadProductsData channelproduct = expectedproductslist.get(j)
 						String productname = channelproduct.getProduct()
-						productsdata.setProduct(productname)
 						if(lastproductnameafterswipe.equalsIgnoreCase(productname)){
 							flag = true
 							String productquantity = channelproduct.getProduct_data()

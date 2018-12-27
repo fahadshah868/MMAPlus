@@ -201,6 +201,12 @@ public class ChillerProductsDataKeywords {
 			else if(flag == 2){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
 			}
+			else if(flag == 3){
+				if(i == 1){
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
+				}
+				else{}
+			}
 			else{
 			}
 		}
@@ -307,10 +313,10 @@ public class ChillerProductsDataKeywords {
 				else{
 					boolean flag = false
 					displayproductslist.add(lastproductnameafterswipe)
+					productsdata.setProduct(lastproductnameafterswipe)
 					for(int j=0; j<expectedproductslist.size(); j++){
 						LoadProductsData channelproduct = expectedproductslist.get(j)
 						String productname = channelproduct.getProduct()
-						productsdata.setProduct(lastproductnameafterswipe)
 						if(lastproductnameafterswipe.equalsIgnoreCase(productname)){
 							flag = true
 							String productquantity = channelproduct.getProduct_data()
@@ -699,10 +705,10 @@ public class ChillerProductsDataKeywords {
 				else{
 					boolean flag = false
 					displayproductslist.add(lastproductnameafterswipe)
+					productsdata.setProduct(lastproductnameafterswipe)
 					for(int j=0; j<expectedproductslist.size(); j++){
 						LoadProductsData channelproduct = expectedproductslist.get(j)
 						String productname = channelproduct.getProduct()
-						productsdata.setProduct(lastproductnameafterswipe)
 						if(lastproductnameafterswipe.equalsIgnoreCase(productname)){
 							flag = true
 							String productquantity = channelproduct.getProduct_data()

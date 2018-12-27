@@ -117,7 +117,7 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_CHILLERREMARK = ""
 	public static String SCENARIO = ""
 	public static String CURRENTVISITING_QUESTIONCATEGORY = ""
-	public static int VISITED_CHILLERREMARKS = 1
+	public static int VISITED_CHILLERREMARKS = 0
 	public static int SHOP_ATTEMPT = 0
 
 

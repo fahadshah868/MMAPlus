@@ -491,6 +491,11 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 		else if(ProjectConstants.SHOP_ATTEMPT == 7){
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
 		}
-		else{}
+		else if(ProjectConstants.SHOP_ATTEMPT == 8){
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+		}
+		else{
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+		}
 	}
 }

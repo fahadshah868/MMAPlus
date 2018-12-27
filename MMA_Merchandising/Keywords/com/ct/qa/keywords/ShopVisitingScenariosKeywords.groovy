@@ -547,6 +547,11 @@ public class ShopVisitingScenariosKeywords{
 		//		}
 		displayDataInReport()
 	}
+	
+	/*************************************************
+	 SHOP LEVEL OVERWRITE SCENARIOS
+	 ************************************************/
+	
 	@Keyword
 	def visitShopsWithShopLevel_OverwritingScenarios(){
 		int index = 0
@@ -994,9 +999,9 @@ public class ShopVisitingScenariosKeywords{
 		displayDataInReport()
 	}
 
-	/*******************************************
-	 VISIT SHOPS WITH CATEGORY LEVEL OVERWRITING
-	 *******************************************/
+	/*************************************************
+	 CATEGORY LEVEL OVERWRITE SCENARIOS
+	 ************************************************/
 
 	@Keyword
 	def visitShopsWith_CategoryLevel_OverwritingScenarios(){
