@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>MMA Merchandising Data Verification</name>
+   <name>MMA Plus Merchandising Data Verification</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-12-17T17:13:37</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>15</pageLoadTimeout>
