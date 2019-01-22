@@ -59,7 +59,7 @@ public class VisitedShopDataInfo {
 	public void setShopchannel(String shopchannel) {
 		this.shopchannel = shopchannel;
 	}
-	
+
 	public ArrayList<VisitedCategoryData> getVisitedcategoriesdata() {
 		return visitedcategoriesdata;
 	}

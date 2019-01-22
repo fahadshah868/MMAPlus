@@ -22,7 +22,14 @@ import internal.GlobalVariable
 
 public class ProductCategoryWithProducts {
 	public String productcategory
-	public ArrayList<ShopProductsData> shopproductsdata
+	public ArrayList<ShopProductsData> shopproductsdata
+	public ArrayList<QuestionsData> surveyquestions
+	public ArrayList<QuestionsData> getSurveyquestions() {
+		return surveyquestions;
+	}
+	public void setSurveyquestions(ArrayList<QuestionsData> surveyquestions) {
+		this.surveyquestions = surveyquestions;
+	}
 	public String getProductcategory() {
 		return productcategory;
 	}
@@ -35,5 +42,4 @@ public class ProductCategoryWithProducts {
 	public void setShopproductsdata(ArrayList<ShopProductsData> shopproductsdata) {
 		this.shopproductsdata = shopproductsdata;
 	}
-	
 }

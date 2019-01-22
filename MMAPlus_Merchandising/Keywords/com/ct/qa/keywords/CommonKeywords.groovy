@@ -219,71 +219,71 @@ public class CommonKeywords {
 	@Keyword
 	def visitSKDNA_ForChiller(){
 		int totalremarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-		 String remark_text = ""
-		 for(int i=1; i<= totalremarks; i++){
-			 MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-			 remark_text = remark.getText()
-			 if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-				 if(remark_text.equalsIgnoreCase("Expiry Issue")){
-					 ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-					 break
-				 }
-				 else{}
-			 }
-			 else{
-				 if(remark_text.equalsIgnoreCase("Others")){
-					 ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-					 break
-				 }
-				 else{}
-			 }
-		 }
-		 VisitedCategoryData visitedcategorydata = new VisitedCategoryData()
-		 TaggedChillersRemark taggedchillerremarks = new TaggedChillersRemark()
-		 visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
-		 if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-			 taggedchillerremarks.setFirstvisit_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-			 taggedchillerremarks.setFirstvisit_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK+" with '"+remark_text+"' remark")
-		 }
-		 else{
-			 taggedchillerremarks.setOverwrite_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-			 taggedchillerremarks.setOverwrite_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK+" with '"+remark_text+"' remark")
-		 }
-		 visitedcategorydata.setTaggedchillersremark(taggedchillerremarks)
-		 for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
-			 if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
-				 VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(i)
-				 ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
-				 if(visitedcategoriesdata.size() != 0){
-					 boolean maincategory_flag = false
-					 for(int k=0; k<visitedcategoriesdata.size(); k++){
-						 VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
-						 if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
-							 maincategory_flag = true
-							 ArrayList<TaggedChillersRemark> taggedchillersremarks = visitedcategorydatainfo.getTaggedchillersremark()
-							 for(int p=0; p<taggedchillersremarks.size(); p++){
-								 TaggedChillersRemark taggedchillerremarkinfo = taggedchillersremarks.get(p)
-								 if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-									 taggedchillerremarkinfo.setFirstvisit_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-									 taggedchillerremarkinfo.setFirstvisit_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK+" with '"+remark_text+"' remark")
-								 }
-								 else{
-									 taggedchillerremarkinfo.setOverwrite_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-									 taggedchillerremarkinfo.setOverwrite_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK+" with '"+remark_text+"' remark")
-								 }
-							 }
-						 }
-					 }
-					 if(maincategory_flag == false){
-						 ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
-						 break
-					 }
-				 }
-				 else{
-					 ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
-					 break
-				 }
-			 }
-		 }
+		String remark_text = ""
+		for(int i=1; i<= totalremarks; i++){
+			MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			remark_text = remark.getText()
+			if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+				if(remark_text.equalsIgnoreCase("Expiry Issue")){
+					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+					break
+				}
+				else{}
+			}
+			else{
+				if(remark_text.equalsIgnoreCase("Others")){
+					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+					break
+				}
+				else{}
+			}
+		}
+		VisitedCategoryData visitedcategorydata = new VisitedCategoryData()
+		TaggedChillersRemark taggedchillerremarks = new TaggedChillersRemark()
+		visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
+		if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+			taggedchillerremarks.setFirstvisit_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+			taggedchillerremarks.setFirstvisit_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK+" with '"+remark_text+"' remark")
+		}
+		else{
+			taggedchillerremarks.setOverwrite_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+			taggedchillerremarks.setOverwrite_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK+" with '"+remark_text+"' remark")
+		}
+		visitedcategorydata.setTaggedchillersremark(taggedchillerremarks)
+		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
+			if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
+				VisitedShopDataInfo visitedshopdata = ProjectConstants.visitedshopdatainfo.get(i)
+				ArrayList<VisitedCategoryData> visitedcategoriesdata = visitedshopdata.getVisitedcategoriesdata()
+				if(visitedcategoriesdata.size() != 0){
+					boolean maincategory_flag = false
+					for(int k=0; k<visitedcategoriesdata.size(); k++){
+						VisitedCategoryData visitedcategorydatainfo = visitedcategoriesdata.get(k)
+						if(visitedcategorydatainfo.getMaincategory().equals(visitedcategorydata.getMaincategory())){
+							maincategory_flag = true
+							ArrayList<TaggedChillersRemark> taggedchillersremarks = visitedcategorydatainfo.getTaggedchillersremark()
+							for(int p=0; p<taggedchillersremarks.size(); p++){
+								TaggedChillersRemark taggedchillerremarkinfo = taggedchillersremarks.get(p)
+								if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+									taggedchillerremarkinfo.setFirstvisit_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+									taggedchillerremarkinfo.setFirstvisit_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK+" with '"+remark_text+"' remark")
+								}
+								else{
+									taggedchillerremarkinfo.setOverwrite_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+									taggedchillerremarkinfo.setOverwrite_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK+" with '"+remark_text+"' remark")
+								}
+							}
+						}
+					}
+					if(maincategory_flag == false){
+						ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+						break
+					}
+				}
+				else{
+					ProjectConstants.visitedshopdatainfo.get(i).setVisitedcategoriesdata(visitedcategorydata)
+					break
+				}
+			}
+		}
 	}
 }

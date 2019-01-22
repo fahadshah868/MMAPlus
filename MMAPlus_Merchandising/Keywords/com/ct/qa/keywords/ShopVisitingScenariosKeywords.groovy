@@ -37,6 +37,7 @@ import com.ct.qa.struct.MissingCategoryData
 import com.ct.qa.struct.MissingChillerProductsCategoryData
 import com.ct.qa.struct.MissingShopDataInfo
 import com.ct.qa.struct.ProductCategoryWithProducts
+import com.ct.qa.struct.QuestionsData
 
 public class ShopVisitingScenariosKeywords{
 
@@ -347,6 +348,25 @@ public class ShopVisitingScenariosKeywords{
 								}
 							}
 						}
+						else if(visitedcategorydata.getMaincategory().equalsIgnoreCase("Survey")){
+							message = message+ "\n\n" +
+									String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n\n"
+							ArrayList<ProductCategoryWithProducts> productcategorywithproductslist = visitedcategorydata.getProductcategorywithproducts()
+							for(int qc=0; qc< productcategorywithproductslist.size(); qc++){
+								ProductCategoryWithProducts productcategorywithproduct = productcategorywithproductslist.get(qc)
+								message = message +
+										String.format("%-30s%-60s", "Question Category:",productcategorywithproduct.getProductcategory()) + "\n"
+								ArrayList<QuestionsData> questions = productcategorywithproduct.getSurveyquestions()
+								message = message +
+										String.format("%-108s%-12s%-13s%-15s%-16s","Question","Option","Picture","Overwrite","Overwrite")+"\n"+
+										String.format("%-108s%-12s%-13s%-15s%-16s","","","Status","Option","Picture Status")+"\n"
+								for(int q=0; q< questions.size(); q++){
+									QuestionsData question = questions.get(q)
+									message = message +
+											String.format("%-108s%-12s%-13s%-15s%-16s",question.getQuestion(),question.getQuestionoption(),question.getQuestionoption_takepicture(),question.getOverwrite_questionoption(),question.getOverwrite_questionoption_takepicture())+"\n"
+								}
+							}
+						}
 						else{
 							message = message+ "\n\n" +
 									String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
@@ -547,11 +567,11 @@ public class ShopVisitingScenariosKeywords{
 		//		}
 		displayDataInReport()
 	}
-	
+
 	/*************************************************
 	 SHOP LEVEL OVERWRITE SCENARIOS
 	 ************************************************/
-	
+
 	@Keyword
 	def visitShopsWithShopLevel_OverwritingScenarios(){
 		int index = 0
