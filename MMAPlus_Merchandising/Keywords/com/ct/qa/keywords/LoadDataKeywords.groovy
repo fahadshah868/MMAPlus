@@ -116,21 +116,21 @@ public class LoadDataKeywords {
 	//load audit question list
 	def static loadSurveyQuestionsList(){
 		DataFormatter dataformatter = new DataFormatter()
-		ArrayList<QuestionsData> questions = new ArrayList<QuestionsData>()
+		ArrayList<LoadProductsData> productsdatalist = new ArrayList<LoadProductsData>()
 		XSSFSheet sheet = loadSurveyQuestionsSheet()
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<= totalrows; i++){
 			Row row = sheet.getRow(i)
 			String questioncategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONCATEGORY))
 			if(ProjectConstants.CURRENTVISITING_QUESTIONCATEGORY.equalsIgnoreCase(questioncategory)){
-				QuestionsData question = new QuestionsData()
-				question.setQuestion(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTION)))
-				question.setQuestionoption(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONOPTION)))
-				question.setQuestionoption_takepicture(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONOPTION_TAKEPICTURE)))
-				questions.add(question)
+				LoadProductsData productsdata = new LoadProductsData()
+				productsdata.setProduct(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTION)))
+				productsdata.setOptions(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONOPTION)))
+				productsdata.setStatus(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONOPTION_TAKEPICTURE)))
+				productsdatalist.add(productsdata)
 			}
 		}
-		return questions
+		return productsdatalist
 	}
 	//load shop actions
 	def static loadShopActionsList(){

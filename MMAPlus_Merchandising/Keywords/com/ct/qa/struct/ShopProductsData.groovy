@@ -75,6 +75,4 @@ public class ShopProductsData {
 	public void setOverwritedepthdata(String overwritedepthdata) {
 		this.overwritedepthdata = overwritedepthdata;
 	}
-
-	
 }

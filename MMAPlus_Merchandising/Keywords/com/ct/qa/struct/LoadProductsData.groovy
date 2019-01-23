@@ -29,7 +29,21 @@ import WebUiBuiltInKeywords as WebUI
 
 public class LoadProductsData {
 	public String product
-	public String product_data
+	public String product_data
+	public String status
+	public String options
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getOptions() {
+		return options;
+	}
+	public void setOptions(String options) {
+		this.options = options;
+	}
 	public String getProduct() {
 		return product;
 	}
