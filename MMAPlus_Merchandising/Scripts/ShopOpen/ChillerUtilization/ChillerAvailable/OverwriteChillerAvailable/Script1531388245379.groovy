@@ -42,20 +42,7 @@ MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtiliza
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Depth1_TakePicture', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
-'validate camera screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
-'tap on tak picture button'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
-'delay of 5 seconds while taking picture'
-MobileBuiltInKeywords.delay(5)
-
-'tap on done button'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.takePicture'()
 
 'validate "Chiller Available" detail screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen', 
@@ -65,20 +52,7 @@ MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtiliza
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Depth2TakePicture', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
-'validate camera screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
-'tap on take picture button'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
-'delay of 5 seconds while taking picture'
-MobileBuiltInKeywords.delay(5)
-
-'tap on done button'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.takePicture'()
 
 'validate "Chiller Available" detail screen appearance'
 MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/ChillerUtilization/ChillerAvailable/Validate_ChillerAvailableScreen', 

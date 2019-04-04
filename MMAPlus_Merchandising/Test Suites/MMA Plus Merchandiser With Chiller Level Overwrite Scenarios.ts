@@ -25,7 +25,7 @@
    <testCaseLink>
       <guid>30510692-9942-4758-a1ce-13bc49c194d5</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Attendence/VisitAttendance</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -39,12 +39,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
       <testCaseId>Test Cases/SliderOptions/VisitSliderOptions</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>e20e987d-eafd-4b02-a2fa-4f143efff15d</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
-      <testCaseId>Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevelOverwritingScenarios</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>346ce220-0a89-4795-b8d1-057aaf0e9204</guid>

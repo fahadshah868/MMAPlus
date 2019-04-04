@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>TakePictureButton</name>
+   <name>Camera_DoneButton</name>
    <tag></tag>
    <elementGuidId>00000000-0000-0000-0000-000000000000</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class = 'android.widget.Button' and @instance = '1' and @resource-id = '${package}:id/take_photo_button']</value>
+         <value>//*[@class = 'android.widget.Button' and @instance = '0' and @resource-id = '${package}:id/done_photo_button']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -24,14 +24,14 @@
       <matchCondition>equals</matchCondition>
       <name>instance</name>
       <type>Main</type>
-      <value>1</value>
+      <value>0</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>resource-id</name>
       <type>Main</type>
-      <value>${package}:id/take_photo_button</value>
+      <value>${package}:id/done_photo_button</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -115,7 +115,7 @@
       <matchCondition>equals</matchCondition>
       <name>x</name>
       <type>Main</type>
-      <value>167</value>
+      <value>6</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -143,6 +143,6 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.Button[2]</value>
+      <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.Button[1]</value>
    </webElementProperties>
 </WebElementEntity>

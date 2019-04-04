@@ -57,7 +57,7 @@ public class ProjectConstants {
 	public static final String MESSAGEFOR_ITEMSARE_NOTMATCH = "above items are display on device not match with expected items..."
 
 	//package name for elements
-	public static final String PACKAGENAME = "com.concavetech.bloc"
+	public static final String PACKAGENAME = "com.concavetech.audit"
 
 	//variables for excel sheet columns index
 	//channel wise product categories product columns
