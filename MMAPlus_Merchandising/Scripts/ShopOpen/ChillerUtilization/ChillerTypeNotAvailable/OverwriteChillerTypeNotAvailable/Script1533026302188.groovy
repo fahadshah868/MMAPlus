@@ -27,20 +27,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
 'select different chiller type'
 CustomKeywords.'com.ct.qa.keywords.ChillerVisitingScenariosKeywords.selectChillerType'()
 
-'validate camera screen appearance'
-Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
-'tap on take picture button'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
-'delay of 5 seconds while taking picture'
-MobileBuiltInKeywords.delay(5)
-
-'tap on done button'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
+CustomKeywords.'com.ct.qa.keywords.CommonKeywords.takePicture'()
 
 'Visit "Chiller Available" flow for "Chiller Type Not Available"'
 WebUI.callTestCase(findTestCase('ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/OverwriteChillerAvailable'), [:], FailureHandling.STOP_ON_FAILURE)
