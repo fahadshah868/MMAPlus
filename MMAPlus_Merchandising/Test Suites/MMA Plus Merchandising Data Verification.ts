@@ -23,16 +23,22 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>30d38ab9-f1d4-4158-99ae-5a6ef1f1d2af</guid>
+      <guid>9aec6f53-26d3-4860-b54f-8134b25f2f59</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
-      <testCaseId>Test Cases/SliderOptions/VisitSliderOptions</testCaseId>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Attendence/VisitAttendance</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>29b8720b-e6cb-4d54-bb93-c240c64d2319</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>30d38ab9-f1d4-4158-99ae-5a6ef1f1d2af</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/SliderOptions/VisitSliderOptions</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>ee80712d-6616-4d8e-9bcb-19b75623722d</guid>
