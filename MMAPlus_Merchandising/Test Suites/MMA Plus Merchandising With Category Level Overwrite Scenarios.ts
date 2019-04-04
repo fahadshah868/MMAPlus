@@ -25,13 +25,13 @@
    <testCaseLink>
       <guid>e9031150-d94d-4317-a6d8-65ad3f48be1c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Attendence/VisitAttendance</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>ad5a054f-d6a1-4134-84eb-f5d775f6a0b2</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/DistributionPoint/VisitDistributionPoint</testCaseId>
    </testCaseLink>
    <testCaseLink>
