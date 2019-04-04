@@ -81,7 +81,7 @@ public class CategoryVisitingScenariosKeywords{
 		int index = 0
 		String lastvisitedcategory = ""
 		int totalcategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=11; i<=totalcategories; i++){
+		for(int i=1; i<=totalcategories; i++){
 			MobileElement category = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String categoryname = category.getText()
 			if(categoryname.equalsIgnoreCase("Chiller")){
@@ -105,7 +105,7 @@ public class CategoryVisitingScenariosKeywords{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				CommonKeywords.takePicture()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWithDataVerification"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/VisitChillerUtilizationWithDataVerification"), null)
 			}
 			else if(categoryname.equalsIgnoreCase("Additional Picture")){
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
@@ -208,7 +208,7 @@ public class CategoryVisitingScenariosKeywords{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
 				CommonKeywords.takePicture()
-				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/VisitChillerUtilizationWithDataVerification"), null)
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
 				lastvisitedcategory = lastitemnameafterswipe
@@ -396,6 +396,7 @@ public class CategoryVisitingScenariosKeywords{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				CommonKeywords.takePicture()
+				ProjectConstants.CHILLER_OVERWRITEPOPUP = "no"
 				visitChillerUtilizationOverwriteScenarios()
 			}
 			else if(categoryname.equalsIgnoreCase("Additional Picture")){
@@ -596,6 +597,7 @@ public class CategoryVisitingScenariosKeywords{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
 				CommonKeywords.takePicture()
+				ProjectConstants.CHILLER_OVERWRITEPOPUP = "no"
 				visitChillerUtilizationOverwriteScenarios()
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
@@ -750,35 +752,6 @@ public class CategoryVisitingScenariosKeywords{
 					break
 				}
 			}
-		}
-	}
-	def visitChillerUtilizationOverwriteScenarios(){
-		if(ProjectConstants.SHOP_ATTEMPT == 1){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable"), null)
-		}
-		else if(ProjectConstants.SHOP_ATTEMPT == 2){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerRemovedForMaintenance"), null)
-		}
-		else if(ProjectConstants.SHOP_ATTEMPT == 3){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerTypeNotAvailable"), null)
-		}
-		else if(ProjectConstants.SHOP_ATTEMPT == 4){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ShopKeeperDidNotAllow"), null)
-		}
-		else if(ProjectConstants.SHOP_ATTEMPT == 5){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ShopKeeperDidNotAllow"), null)
-		}
-		else if(ProjectConstants.SHOP_ATTEMPT == 6){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerNotAvailable"), null)
-		}
-		else if(ProjectConstants.SHOP_ATTEMPT == 7){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable"), null)
-		}
-		else if(ProjectConstants.SHOP_ATTEMPT == 8){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailableWithOneProductCategory"), null)
-		}
-		else{
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/VisitChillerUtilizationWith_ChillerAvailable"), null)
 		}
 	}
 	@Keyword
@@ -842,8 +815,8 @@ public class CategoryVisitingScenariosKeywords{
 			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-
 				CommonKeywords.takePicture()
+				ProjectConstants.CHILLER_OVERWRITEPOPUP = "no"
 				visitChillerUtilizationOverwritingScenarios()
 			}
 			else if(categoryname.equalsIgnoreCase("Additional Picture")){
@@ -1050,8 +1023,8 @@ public class CategoryVisitingScenariosKeywords{
 				lastvisitedcategory = lastitemnameafterswipe
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-
 				CommonKeywords.takePicture()
+				ProjectConstants.CHILLER_OVERWRITEPOPUP = "no"
 				visitChillerUtilizationOverwritingScenarios()
 			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
@@ -1214,33 +1187,137 @@ public class CategoryVisitingScenariosKeywords{
 			}
 		}
 	}
-	def visitChillerUtilizationOverwritingScenarios(){
+
+	/********************************************************************
+	 VISIT SHOP MAIN CATEGORIES WITH Chiller Level OVERWRITE SCENARIOS
+	 *******************************************************************/
+	@Keyword
+	def visitShopCategoriesWith_ChillerLevelOverwriteScenarios(){
+		ArrayList<ScenariosCombination> scenarioscombination = new ArrayList<ScenariosCombination>()
+		MobileElement channel = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
+		ProjectConstants.CURRENTVISITING_SHOPCHANNEL = channel.getText()
+		Mobile.swipe(0, 200, 0, 750)
+		Mobile.swipe(0, 200, 0, 750)
+		int index = 0
+		String lastvisitedcategory = ""
+		int totalcategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+		for(int i=1; i<=1; i++){
+			MobileElement category = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			String categoryname = category.getText()
+			if(categoryname.equalsIgnoreCase("Chiller Utilization")){
+				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+				CommonKeywords.takePicture()
+				ProjectConstants.CHILLER_OVERWRITEPOPUP = "no"
+				visitChillerUtilization_WithChillerLevel_OverwriteScenarios()
+				ProjectConstants.SCENARIO = "overwrite"
+				ProjectConstants.CHILLER_OVERWRITEPOPUP = "yes"
+				visitChillerUtilizationOverwritingScenarios()
+			}
+		}
+	}
+
+	/********************************************************************
+	 VISIT CHILLER UTILIZATION OVERWRITE SCENARIOS
+	 *******************************************************************/
+
+	//overwrite scenarios
+	def visitChillerUtilizationOverwriteScenarios(){
 		if(ProjectConstants.SHOP_ATTEMPT == 1){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerNotAvailable"), null)
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/VisitChillerUtilizationWith_ChillerAvailable"), null)
 		}
 		else if(ProjectConstants.SHOP_ATTEMPT == 2){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerNeedMaintainence"), null)
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/VisitChillerUtilizationWith_ChillerRemovedForMaintenance"), null)
 		}
 		else if(ProjectConstants.SHOP_ATTEMPT == 3){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/VisitChillerUtilizationWith_ChillerTypeNotAvailable"), null)
 		}
 		else if(ProjectConstants.SHOP_ATTEMPT == 4){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ShopKeeperDidNotAllow"), null)
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/VisitChillerUtilizationWith_ShopKeeperDidNotAllow"), null)
 		}
 		else if(ProjectConstants.SHOP_ATTEMPT == 5){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/VisitChillerUtilizationWith_ShopKeeperDidNotAllow"), null)
 		}
 		else if(ProjectConstants.SHOP_ATTEMPT == 6){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/VisitChillerUtilizationWith_ChillerNotAvailable"), null)
 		}
 		else if(ProjectConstants.SHOP_ATTEMPT == 7){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/VisitChillerUtilizationWith_ChillerAvailable"), null)
 		}
 		else if(ProjectConstants.SHOP_ATTEMPT == 8){
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/VisitChillerUtilizationWith_ChillerNotAvailable_WithOneSubCategory"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 9){
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/VisitChillerUtilizationWith_ChillerAvailable"), null)
 		}
 		else{
-			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/VisitChillerUtilizationWith_ChillerAvailable"), null)
+		}
+	}
+	//overwriting scenarios
+	def visitChillerUtilizationOverwritingScenarios(){
+		if(ProjectConstants.SHOP_ATTEMPT == 1){
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/OverwriteChillerUtilizationWith_ChillerNotAvailable"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 2){
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/OverwriteChillerUtilizationWith_ChillerNeedMaintainence"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 3){
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 4){
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/OverwriteChillerUtilizationWith_ShopKeeperDidNotAllow"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 5){
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 6){
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 7){
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 8){
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 9){
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/OverwriteChillerUtilizationWith_ChillerTypeNotAvailable"), null)
+		}
+		else{
+			Mobile.callTestCase(findTestCase("ShopOpen/ChillerUtilization/VisitChillerScenarios_WithCategeoryLevel/OverwriteChillerUtilizationWith_ChillerAvailable"), null)
+		}
+	}
+	//chiller level overwrite scenarios
+	def visitChillerUtilization_WithChillerLevel_OverwriteScenarios(){
+		if(ProjectConstants.SHOP_ATTEMPT == 1){
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios_WithChillerLevel/VisitChillerUtilizationWith_ChillerAvailable"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 2){
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios_WithChillerLevel/VisitChillerUtilizationWith_ChillerRemovedForMaintenance"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 3){
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios_WithChillerLevel/VisitChillerUtilizationWith_ChillerTypeNotAvailable"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 4){
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios_WithChillerLevel/VisitChillerUtilizationWith_ShopKeeperDidNotAllow"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 5){
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios_WithChillerLevel/VisitChillerUtilizationWith_ShopKeeperDidNotAllow"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 6){
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios_WithChillerLevel/VisitChillerUtilizationWith_ChillerNotAvailable"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 7){
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios_WithChillerLevel/VisitChillerUtilizationWith_ChillerAvailable"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 8){
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios_WithChillerLevel/VisitChillerUtilizationWith_ChillerNotAvailable_WithOneSubCategory"), null)
+		}
+		else if(ProjectConstants.SHOP_ATTEMPT == 9){
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios_WithChillerLevel/VisitChillerUtilizationWith_ChillerAvailable"), null)
+		}
+		else{
+			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/VisitChillerScenarios_WithChillerLevel/VisitChillerUtilizationWith_ChillerAvailable"), null)
 		}
 	}
 }

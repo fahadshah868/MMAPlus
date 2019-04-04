@@ -20,35 +20,6 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.ct.qa.constants.ProjectConstants as ProjectConstants
 
-'validate dashboard screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    'Dashboard')
-
-'select the current day for further proceed'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.selectday'()
-
-'tap on start your day button'
-MobileBuiltInKeywords.tap(findTestObject('DashboardScreenElements/StartYourDay', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
-'delay of 15 seconds for check in through map screen'
-Mobile.delay(15, FailureHandling.STOP_ON_FAILURE)
-
-'validate map screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('CommonScreenElements/Validate_MapScreen'), 0)
-
-'tap on check in button through map'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/Location_CheckIn', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
-'validate confirm popup appearance'
-Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_InfoPopUP', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
-'tap on confirm popup no button'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/InfoPopUp_NoButton', [('package') : ProjectConstants.PACKAGENAME]), 
-    0)
-
 'validate channel summary detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('DistributionPoint/Validate_RouteInfoScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Route Info')
@@ -67,4 +38,8 @@ CustomKeywords.'com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPo
 'tap on submit button after enter the quantity of products on distribution point'
 MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/DistributionPoint_SubmitButton', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
+
+'validate dashboard screen appearance'
+Mobile.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Dashboard')
 

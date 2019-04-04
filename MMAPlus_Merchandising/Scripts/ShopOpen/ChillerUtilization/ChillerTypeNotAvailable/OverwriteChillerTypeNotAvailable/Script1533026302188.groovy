@@ -2,8 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
-import com.ct.qa.constants.ProjectConstants
+import com.ct.qa.constants.ProjectConstants as ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -22,23 +21,26 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate chiller types listview appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/Validate_SelectAppropriateTypeScreen' , [('package') : ProjectConstants.PACKAGENAME]), 
-    'Select appropriate type')
+MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/Validate_SelectAppropriateTypeScreen', 
+        [('package') : ProjectConstants.PACKAGENAME]), 'Select appropriate type')
 
 'select different chiller type'
-CustomKeywords.'com.ct.qa.keywords.ChillerVisitingScenariosKeywords.selectDifferentChillerType'()
+CustomKeywords.'com.ct.qa.keywords.ChillerVisitingScenariosKeywords.selectChillerType'()
 
 'validate camera screen appearance'
-Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_CameraScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 'tap on take picture button'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/TakePictureButton', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 'delay of 5 seconds while taking picture'
 MobileBuiltInKeywords.delay(5)
 
 'tap on done button'
-MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton' , [('package') : ProjectConstants.PACKAGENAME]), 0)
+MobileBuiltInKeywords.tap(findTestObject('CommonScreenElements/DoneButton', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 'Visit "Chiller Available" flow for "Chiller Type Not Available"'
 WebUI.callTestCase(findTestCase('ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/OverwriteChillerAvailable'), [:], FailureHandling.STOP_ON_FAILURE)

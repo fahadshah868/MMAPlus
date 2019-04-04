@@ -122,6 +122,9 @@ public class ChillerVisitingScenariosKeywords {
 			MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+			if(ProjectConstants.CHILLER_OVERWRITEPOPUP.equalsIgnoreCase("yes")){
+				CommonKeywords.visitPopUpForOverwriting()
+			}
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.delay(5)
@@ -148,6 +151,9 @@ public class ChillerVisitingScenariosKeywords {
 			else if(chillerremark.equalsIgnoreCase("Shopkeeper did not Allow")){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
 			}
+			else if(chillerremark.equalsIgnoreCase("Chiller not Available with one subcategory")){
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
+			}
 			else{
 			}
 		}
@@ -159,6 +165,9 @@ public class ChillerVisitingScenariosKeywords {
 			MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
+			if(ProjectConstants.CHILLER_OVERWRITEPOPUP.equalsIgnoreCase("yes")){
+				CommonKeywords.visitPopUpForOverwriting()
+			}
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.delay(5)
@@ -205,7 +214,7 @@ public class ChillerVisitingScenariosKeywords {
 	@Keyword
 	def selectChillerType(){
 		int totalchillertypes = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		if(ProjectConstants.CURRENTVISITING_CHILLERTYPE.contains("Without Yogurt")){
+		if(ProjectConstants.CURRENTVISITING_CHILLERTYPE.contains("Without Yogurt") || ProjectConstants.CURRENTVISITING_CHILLERTYPE.contains("SAX 90") || ProjectConstants.CURRENTVISITING_CHILLERTYPE.contains("SAX 60")){
 			for(int i=1; i<=totalchillertypes-1; i++){
 				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 				String chillername = chiller.getText()
@@ -221,32 +230,6 @@ public class ChillerVisitingScenariosKeywords {
 				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 				String chillername = chiller.getText()
 				if(chillername.contains("Without Yogurt")){
-					ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
-					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-					break
-				}
-			}
-		}
-	}
-	@Keyword
-	def selectDifferentChillerType(){
-		int totalchillertypes = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
-		if(ProjectConstants.CURRENTVISITING_CHILLERTYPE.contains("With Yogurt")){
-			for(int i=1; i<=totalchillertypes-1; i++){
-				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-				String chillername = chiller.getText()
-				if(chillername.contains("Without Yogurt")){
-					ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
-					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-					break
-				}
-			}
-		}
-		else{
-			for(int i=1; i<=totalchillertypes-1; i++){
-				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-				String chillername = chiller.getText()
-				if(chillername.contains("With Yogurt")){
 					ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 					break

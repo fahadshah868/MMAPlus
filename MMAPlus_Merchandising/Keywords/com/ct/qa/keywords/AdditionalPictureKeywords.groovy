@@ -40,6 +40,9 @@ public class AdditionalPictureKeywords {
 	def takeMendatoryImages(){
 		int images = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.GridView[1]/*").size()
 		for(int i=1; i<images; i++){
+			if(i == 5){
+				Mobile.swipe(200, 380, 200, 200)
+			}
 			MobileElement image = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.GridView[1]/android.widget.RelativeLayout["+i+"]/android.widget.TextView[1]")
 			String imagename = image.getText()
 			if(imagename.equalsIgnoreCase("UHT Competition")){
@@ -53,7 +56,7 @@ public class AdditionalPictureKeywords {
 		}
 		//		int index = 0
 		//		final int[] image1Data = null
-		//		File screenshot = ((TakesScreenshot)ProjectConstants.driver).getScreenshotAs(OutputType.FILE)
+		//		File screent = ((TakesScreenshot)ProjectConstants.driver).getScreenshotAs(OutputType.FILE)
 		//		BufferedImage fullImg = ImageIO.read(screenshot)
 		//
 		//		MobileElement expectedimageview = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.GridView[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[1]")

@@ -56,6 +56,10 @@ def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWith_Cate
     (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopsWith_CategoryLevel_OverwriteScenarios()
 }
 
+def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWith_ChillerLevel_OverwriteScenarios"() {
+    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopsWith_ChillerLevel_OverwriteScenarios()
+}
+
 def static "com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPoint"() {
     (new com.ct.qa.keywords.DistributionPointKeywords()).visitdistributionPoint()
 }
@@ -82,6 +86,10 @@ def static "com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton"() {
 
 def static "com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton"() {
     (new com.ct.qa.keywords.CommonKeywords()).visitPlanogramImageViewButton()
+}
+
+def static "com.ct.qa.keywords.CommonKeywords.takePicture"() {
+    (new com.ct.qa.keywords.CommonKeywords()).takePicture()
 }
 
 def static "com.ct.qa.keywords.CommonKeywords.visitSKDNA_ForChannel"() {
@@ -132,10 +140,6 @@ def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.selectChillerTyp
     (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).selectChillerType()
 }
 
-def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.selectDifferentChillerType"() {
-    (new com.ct.qa.keywords.ChillerVisitingScenariosKeywords()).selectDifferentChillerType()
-}
-
 def static "com.ct.qa.keywords.SliderOptionsKeywords.valideSliderOptions"() {
     (new com.ct.qa.keywords.SliderOptionsKeywords()).valideSliderOptions()
 }
@@ -164,6 +168,14 @@ def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCatego
 
 def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithOverwritingScenarios"() {
     (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWithOverwritingScenarios()
+}
+
+def static "com.ct.qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWith_ChillerLevelOverwriteScenarios"() {
+    (new com.ct.qa.keywords.CategoryVisitingScenariosKeywords()).visitShopCategoriesWith_ChillerLevelOverwriteScenarios()
+}
+
+def static "com.ct.qa.keywords.Attendence.visitAttendenceRemark"() {
+    (new com.ct.qa.keywords.Attendence()).visitAttendenceRemark()
 }
 
 def static "com.ct.qa.keywords.RetailerRemarksKeywords.visitRetailerRemarks"() {

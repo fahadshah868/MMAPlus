@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>OverwriteChillerUtilizationWith_ShopKeeperDidNotAllow</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f7a4b57c-4ed3-4f54-8830-131ca3da3f49</testCaseGuid>
+</TestCaseEntity>
