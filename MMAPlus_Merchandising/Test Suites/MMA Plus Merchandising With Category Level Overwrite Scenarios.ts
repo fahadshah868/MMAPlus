@@ -37,7 +37,7 @@
    <testCaseLink>
       <guid>8fea2548-849c-451c-8df3-986197cdd96d</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/SliderOptions/VisitSliderOptions</testCaseId>
    </testCaseLink>
    <testCaseLink>
