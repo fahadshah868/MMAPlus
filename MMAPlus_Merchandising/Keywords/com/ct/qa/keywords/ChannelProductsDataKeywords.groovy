@@ -245,12 +245,12 @@ public class ChannelProductsDataKeywords {
 		ArrayList<String> displayproductslist = new ArrayList<String>()
 		ArrayList<LoadProductsData> expectedproductslist = LoadDataKeywords.loadChannelWiseProductsList(channelproductssheet, columnindex)
 		int expectedproducts = expectedproductslist.size()
-		int totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*").size()
-		for(int i=1; i<totalproducts; i=i+3){
+		MobileElement list = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]")
+		int totalproducts = list.findElementsByClassName("android.widget.EditText").size()
+		for(int i=1; i<= totalproducts; i++){
 			ShopProductsData productsdata = new ShopProductsData()
 			boolean flag = false
-			index = index + 1
-			MobileElement selectedproduct = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
+			MobileElement selectedproduct = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+i+"]")
 			String selectedproductname = selectedproduct.getText()
 			productsdata.setProduct(selectedproductname)
 			displayproductslist.add(selectedproductname)
@@ -260,7 +260,7 @@ public class ChannelProductsDataKeywords {
 				if(selectedproductname.equalsIgnoreCase(productname)){
 					flag = true
 					String productquantity = channelproduct.getProduct_data()
-					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
+					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.EditText[1]")
 					selectedproducttextfield.setValue(productquantity)
 					if(ProjectConstants.SCENARIO.equals("first visit")){
 						if(assettype.equalsIgnoreCase("Facing")){
@@ -288,7 +288,7 @@ public class ChannelProductsDataKeywords {
 				}
 			}
 			if(flag == false){
-				MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
+				MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.EditText[1]")
 				selectedproducttextfield.setValue("0000")
 				if(ProjectConstants.SCENARIO.equals("first visit")){
 					if(assettype.equalsIgnoreCase("Facing")){
@@ -313,83 +313,82 @@ public class ChannelProductsDataKeywords {
 			}
 			shopproductsdata.add(productsdata)
 		}
-		totalproducts = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/*").size()
-		if(totalproducts >= 16){
-			while(true){
-				ShopProductsData productsdata = new ShopProductsData()
-				int xlocation = CommonKeywords.getXPoint()
-				MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-				String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-				Mobile.swipe(xlocation, 359, xlocation, 250)
-				MobileElement lastproductafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
-				String lastproductnameafterswipe = lastproductafterswipe.getText()
-				if(lastproductnamebeforeswipe.equalsIgnoreCase(lastproductnameafterswipe)){
-					break
-				}
-				else{
-					boolean flag = false
-					displayproductslist.add(lastproductnameafterswipe)
-					productsdata.setProduct(lastproductnameafterswipe)
-					for(int j=0; j<expectedproductslist.size(); j++){
-						LoadProductsData channelproduct = expectedproductslist.get(j)
-						String productname = channelproduct.getProduct()
-						if(lastproductnameafterswipe.equalsIgnoreCase(productname)){
-							flag = true
-							String productquantity = channelproduct.getProduct_data()
-							MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-							selectedproducttextfield.setValue(productquantity)
-							if(ProjectConstants.SCENARIO.equals("first visit")){
-								if(assettype.equalsIgnoreCase("Facing")){
-									productsdata.setFacingdata(productquantity)
-								}
-								else if(assettype.equalsIgnoreCase("Stock Taking")){
-									productsdata.setStocktakingdata_stockcountdata(productquantity)
-								}
-								else{}
-							}
-							else{
-								if(assettype.equalsIgnoreCase("Facing")){
-									productsdata.setOverwritefacingdata(productquantity)
-								}
-								else if(assettype.equalsIgnoreCase("Stock Taking")){
-									productsdata.setOverwritestocktakingdata_stockcountdata(productquantity)
-								}
-								else{
-								}
-							}
-							Mobile.hideKeyboard()
-							break
-						}
-						else{
-						}
-					}
-					if(flag == false){
-						MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
-						selectedproducttextfield.setValue("0000")
+		while(true){
+			ShopProductsData productsdata = new ShopProductsData()
+			int xlocation = CommonKeywords.getXPoint()
+			index = list.findElementsByClassName("android.widget.EditText").size()
+			MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
+			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
+			Mobile.swipe(xlocation, 359, xlocation, 250)
+			index = list.findElementsByClassName("android.widget.EditText").size()
+			MobileElement lastproductafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
+			String lastproductnameafterswipe = lastproductafterswipe.getText()
+			if(lastproductnamebeforeswipe.equalsIgnoreCase(lastproductnameafterswipe)){
+				break
+			}
+			else{
+				boolean flag = false
+				displayproductslist.add(lastproductnameafterswipe)
+				productsdata.setProduct(lastproductnameafterswipe)
+				for(int j=0; j<expectedproductslist.size(); j++){
+					LoadProductsData channelproduct = expectedproductslist.get(j)
+					String productname = channelproduct.getProduct()
+					if(lastproductnameafterswipe.equalsIgnoreCase(productname)){
+						flag = true
+						String productquantity = channelproduct.getProduct_data()
+						MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
+						selectedproducttextfield.setValue(productquantity)
 						if(ProjectConstants.SCENARIO.equals("first visit")){
 							if(assettype.equalsIgnoreCase("Facing")){
-								productsdata.setFacingdata("0000")
+								productsdata.setFacingdata(productquantity)
 							}
 							else if(assettype.equalsIgnoreCase("Stock Taking")){
-								productsdata.setStocktakingdata_stockcountdata("0000")
+								productsdata.setStocktakingdata_stockcountdata(productquantity)
 							}
 							else{}
 						}
 						else{
 							if(assettype.equalsIgnoreCase("Facing")){
-								productsdata.setOverwritefacingdata("0000")
+								productsdata.setOverwritefacingdata(productquantity)
 							}
 							else if(assettype.equalsIgnoreCase("Stock Taking")){
-								productsdata.setOverwritestocktakingdata_stockcountdata("0000")
+								productsdata.setOverwritestocktakingdata_stockcountdata(productquantity)
 							}
 							else{
 							}
 						}
 						Mobile.hideKeyboard()
+						break
+					}
+					else{
 					}
 				}
-				shopproductsdata.add(productsdata)
+				if(flag == false){
+					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.EditText[1]")
+					selectedproducttextfield.setValue("0000")
+					if(ProjectConstants.SCENARIO.equals("first visit")){
+						if(assettype.equalsIgnoreCase("Facing")){
+							productsdata.setFacingdata("0000")
+						}
+						else if(assettype.equalsIgnoreCase("Stock Taking")){
+							productsdata.setStocktakingdata_stockcountdata("0000")
+						}
+						else{}
+					}
+					else{
+						if(assettype.equalsIgnoreCase("Facing")){
+							productsdata.setOverwritefacingdata("0000")
+						}
+						else if(assettype.equalsIgnoreCase("Stock Taking")){
+							productsdata.setOverwritestocktakingdata_stockcountdata("0000")
+						}
+						else{
+						}
+					}
+					Mobile.hideKeyboard()
+				}
 			}
+			shopproductsdata.add(productsdata)
 		}
 		if(expectedproductslist.size() == displayproductslist.size()){
 			ArrayList<String> products = new ArrayList<String>()
