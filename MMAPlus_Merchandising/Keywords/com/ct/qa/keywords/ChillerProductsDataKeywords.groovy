@@ -301,11 +301,11 @@ public class ChillerProductsDataKeywords {
 			ShopProductsData productsdata = new ShopProductsData()
 			int xlocation = CommonKeywords.getXPoint()
 			index = list.findElementsByClassName("android.widget.EditText").size()
-			MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
+			MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
 			Mobile.swipe(xlocation, 359, xlocation, 250)
 			index = list.findElementsByClassName("android.widget.EditText").size()
-			MobileElement lastproductafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
+			MobileElement lastproductafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 			String lastproductnameafterswipe = lastproductafterswipe.getText()
 			if(lastproductnamebeforeswipe.equalsIgnoreCase(lastproductnameafterswipe)){
 				break
@@ -692,11 +692,11 @@ public class ChillerProductsDataKeywords {
 			ShopProductsData productsdata = new ShopProductsData()
 			int xlocation = CommonKeywords.getXPoint()
 			index = list.findElementsByClassName("android.widget.EditText").size()
-			MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
+			MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
 			Mobile.swipe(xlocation, 359, xlocation, 250)
 			index = list.findElementsByClassName("android.widget.EditText").size()
-			MobileElement lastproductafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
+			MobileElement lastproductafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView[5]")
 			String lastproductnameafterswipe = lastproductafterswipe.getText()
 			if(lastproductnamebeforeswipe.equalsIgnoreCase(lastproductnameafterswipe)){
 				break
