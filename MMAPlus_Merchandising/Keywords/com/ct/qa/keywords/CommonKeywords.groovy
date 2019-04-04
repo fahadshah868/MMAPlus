@@ -88,10 +88,7 @@ public class CommonKeywords {
 			String buttontext = button.getText()
 			if(buttontext.equalsIgnoreCase("Picture")){
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+i+"]/android.widget.ImageButton[1]").click()
-				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-				Mobile.delay(5)
-				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+				takePicture()
 				break
 			}
 			else{}
@@ -137,6 +134,7 @@ public class CommonKeywords {
 	@Keyword
 	def static takePicture(){
 		if(Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen", [('package') : ProjectConstants.PACKAGENAME]), 0, FailureHandling.OPTIONAL)){
+			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/Camera_flashButton", [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton", [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.delay(5)
 			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton", [('package') : ProjectConstants.PACKAGENAME]), 0)

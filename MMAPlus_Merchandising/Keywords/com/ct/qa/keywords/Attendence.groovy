@@ -21,17 +21,17 @@ import internal.GlobalVariable
 import io.appium.java_client.MobileElement
 
 public class Attendence {
-	
+
 	@Keyword
 	def visitAttendenceRemark(){
 		int attendance_remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.RadioGroup[1]/*").size()
-		 for(int i=1; i<= attendance_remarks; i++){
-			 MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.RadioGroup[1]/android.widget.RadioButton["+i+"]")
-			 String remark_text = remark.getText()
-			 if(remark_text.equalsIgnoreCase("Check In")){
-				 ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.RadioGroup[1]/android.widget.RadioButton["+i+"]").click()
-				 break
-			 }
-		 }
+		for(int i=1; i<= attendance_remarks; i++){
+			MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.RadioGroup[1]/android.widget.RadioButton["+i+"]")
+			String remark_text = remark.getText()
+			if(remark_text.equalsIgnoreCase("Check In")){
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.RadioGroup[1]/android.widget.RadioButton["+i+"]").click()
+				break
+			}
+		}
 	}
 }

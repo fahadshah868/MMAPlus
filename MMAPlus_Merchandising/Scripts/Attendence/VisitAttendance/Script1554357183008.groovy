@@ -24,17 +24,17 @@ CustomKeywords.'com.ct.qa.keywords.CommonKeywords.selectday'()
 'tap on start your day button'
 Mobile.tap(findTestObject('DashboardScreenElements/StartYourDay', [('package') : ProjectConstants.PACKAGENAME]), 0)
 
-Mobile.verifyElementText(findTestObject('Attendence_Tposm/Validate_AttendenceScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+Mobile.verifyElementText(findTestObject('Attendence/Validate_AttendenceScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Attendance')
 
-Mobile.tap(findTestObject('Attendence_Tposm/TakeSelfie_ImageViewButton', [('package') : ProjectConstants.PACKAGENAME]), 
+Mobile.tap(findTestObject('Attendence/TakeSelfie_ImageViewButton', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.takePicture'()
 
 CustomKeywords.'com.ct.qa.keywords.Attendence.visitAttendenceRemark'()
 
-Mobile.tap(findTestObject('Attendence_Tposm/Attendence_SubmitButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
+Mobile.tap(findTestObject('Attendence/Attendence_SubmitButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 Mobile.delay(15, FailureHandling.STOP_ON_FAILURE)
 

@@ -40,10 +40,7 @@ public class ChillerVisitingScenariosKeywords {
 				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 				ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-				Mobile.delay(5)
-				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]),0)
+				CommonKeywords.takePicture()
 				findChillerRemark("Chiller Available")
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
 			}
@@ -61,10 +58,7 @@ public class ChillerVisitingScenariosKeywords {
 				else{
 					ProjectConstants.CURRENTVISITING_CHILLERTYPE = lastchillernameafterswipe
 					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-					Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-					Mobile.delay(5)
-					Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]),0)
+					CommonKeywords.takePicture()
 					findChillerRemark("Chiller Available")
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
 				}
@@ -76,10 +70,7 @@ public class ChillerVisitingScenariosKeywords {
 				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 				ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
-				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-				Mobile.delay(5)
-				Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]),0)
+				CommonKeywords.takePicture()
 				if(ProjectConstants.VISITED_CHILLERREMARKS == 1){
 					findChillerRemark("Chiller Available")
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
@@ -125,10 +116,7 @@ public class ChillerVisitingScenariosKeywords {
 			if(ProjectConstants.CHILLER_OVERWRITEPOPUP.equalsIgnoreCase("yes")){
 				CommonKeywords.visitPopUpForOverwriting()
 			}
-			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.delay(5)
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]),0)
+			CommonKeywords.takePicture()
 			findChillerRemark(chillerremark)
 			if(chillerremark.equalsIgnoreCase("Chiller Available")){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
@@ -168,10 +156,7 @@ public class ChillerVisitingScenariosKeywords {
 			if(ProjectConstants.CHILLER_OVERWRITEPOPUP.equalsIgnoreCase("yes")){
 				CommonKeywords.visitPopUpForOverwriting()
 			}
-			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_CameraScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/TakePictureButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.delay(5)
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/DoneButton" , [('package') : ProjectConstants.PACKAGENAME]),0)
+			CommonKeywords.takePicture()
 			findChillerRemark(chillerremark)
 			if(chillerremark.equalsIgnoreCase("Chiller Available")){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/OverwriteChillerAvailable"), null)
