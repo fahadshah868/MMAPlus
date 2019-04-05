@@ -44,6 +44,12 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
 'tap on picture imageview and take picture for category'
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton'()
 
+Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_InfoPopUP', 
+        [('package') : ProjectConstants.PACKAGENAME]), 0)
+
+Mobile.tap(findTestObject('CommonScreenElements/InfoPopUp_YesButton', 
+        [('package') : ProjectConstants.PACKAGENAME]), 0)
+
 'validate "Chiller Utilization" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen', 
         [('package') : ProjectConstants.PACKAGENAME]), 'Shop Chillers')

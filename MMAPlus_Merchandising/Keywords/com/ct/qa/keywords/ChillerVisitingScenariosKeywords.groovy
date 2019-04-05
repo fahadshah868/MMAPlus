@@ -35,74 +35,64 @@ public class ChillerVisitingScenariosKeywords {
 		ArrayList<TaggedChillersRemark> taggedchillersremark = new ArrayList<TaggedChillersRemark>()
 		int index = 0
 		int totalchillers = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-		if(totalchillers >= 2){
-			for(int i=1; i<=totalchillers; i++){
-				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-				ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
-				CommonKeywords.takePicture()
+		ProjectConstants.VISITED_CHILLERREMARKS = ProjectConstants.VISITED_CHILLERREMARKS + 1
+		for(int i=1; i<=totalchillers; i++){
+			ProjectConstants.CURRENTVISITING_CHILLERCOUNT = i
+			MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
+			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
+			CommonKeywords.takePicture()
+			if(ProjectConstants.VISITED_CHILLERREMARKS == 1){
 				findChillerRemark("Chiller Available")
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
 			}
-			while(true){
-				index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-				MobileElement lastchillerbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-				String lastchillernamebeforeswipe = lastchillerbeforeswipe.getText()
-				Mobile.swipe(0, 292, 0, 200)
-				index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-				MobileElement lastchillerafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-				String lastchillernameafterswipe = lastchillerafterswipe.getText()
-				if(lastchillernamebeforeswipe.equalsIgnoreCase(lastchillernameafterswipe)){
-					break
-				}
-				else{
-					ProjectConstants.CURRENTVISITING_CHILLERTYPE = lastchillernameafterswipe
-					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-					CommonKeywords.takePicture()
-					findChillerRemark("Chiller Available")
-					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
-				}
+			else if(ProjectConstants.VISITED_CHILLERREMARKS == 2){
+				findChillerRemark("Chiller not Available")
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
+			}
+			else if(ProjectConstants.VISITED_CHILLERREMARKS == 3){
+				findChillerRemark("Chiller removed for maintenance")
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerRemovedForMaintenance/VisitChillerRemovedForMaintenance"), null)
+			}
+			else if(ProjectConstants.VISITED_CHILLERREMARKS == 4){
+				findChillerRemark("Chiller need maintenance")
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNeedMaintenance/VisitChillerNeedMaintenance"), null)
+			}
+			else if(ProjectConstants.VISITED_CHILLERREMARKS == 5){
+				findChillerRemark("Chiller not in access")
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotInAccess/VisitChillerNotInAccess"), null)
+			}
+			else if(ProjectConstants.VISITED_CHILLERREMARKS == 6){
+				findChillerRemark("Shopkeeper did not allow")
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
+			}
+			else if(ProjectConstants.VISITED_CHILLERREMARKS == 7){
+				findChillerRemark("Chiller Type not Available")
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/VisitChillerTypeNotAvailable"), null)
+			}
+			else{
+				findChillerRemark("Chiller Available")
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
 			}
 		}
-		else{
-			ProjectConstants.VISITED_CHILLERREMARKS = ProjectConstants.VISITED_CHILLERREMARKS + 1
-			for(int i=1; i<=totalchillers; i++){
-				MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
-				ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
-				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
+		while(true){
+			ProjectConstants.CURRENTVISITING_CHILLERCOUNT = ProjectConstants.CURRENTVISITING_CHILLERCOUNT + 1
+			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+			MobileElement lastchillerbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+			String lastchillernamebeforeswipe = lastchillerbeforeswipe.getText()
+			Mobile.swipe(0, 292, 0, 200)
+			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+			MobileElement lastchillerafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+			String lastchillernameafterswipe = lastchillerafterswipe.getText()
+			if(lastchillernamebeforeswipe.equalsIgnoreCase(lastchillernameafterswipe)){
+				break
+			}
+			else{
+				ProjectConstants.CURRENTVISITING_CHILLERTYPE = lastchillernameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
 				CommonKeywords.takePicture()
-				if(ProjectConstants.VISITED_CHILLERREMARKS == 1){
-					findChillerRemark("Chiller Available")
-					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
-				}
-				else if(ProjectConstants.VISITED_CHILLERREMARKS == 2){
-					findChillerRemark("Chiller not Available")
-					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailable"), null)
-				}
-				else if(ProjectConstants.VISITED_CHILLERREMARKS == 3){
-					findChillerRemark("Chiller removed for maintenance")
-					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerRemovedForMaintenance/VisitChillerRemovedForMaintenance"), null)
-				}
-				else if(ProjectConstants.VISITED_CHILLERREMARKS == 4){
-					findChillerRemark("Chiller need maintenance")
-					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNeedMaintenance/VisitChillerNeedMaintenance"), null)
-				}
-				else if(ProjectConstants.VISITED_CHILLERREMARKS == 5){
-					findChillerRemark("Chiller not in access")
-					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotInAccess/VisitChillerNotInAccess"), null)
-				}
-				else if(ProjectConstants.VISITED_CHILLERREMARKS == 6){
-					findChillerRemark("Shopkeeper did not allow")
-					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
-				}
-				else if(ProjectConstants.VISITED_CHILLERREMARKS == 7){
-					findChillerRemark("Chiller Type not Available")
-					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerTypeNotAvailable/VisitChillerTypeNotAvailable"), null)
-				}
-				else{
-					findChillerRemark("Chiller Available")
-					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
-				}
+				findChillerRemark("Chiller Available")
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
 			}
 		}
 	}
@@ -110,6 +100,7 @@ public class ChillerVisitingScenariosKeywords {
 	def visitChillersTaggedinChillerUtilizationWithSingleRemark(String chillerremark){
 		int totalchillers = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalchillers; i++){
+			ProjectConstants.CURRENTVISITING_CHILLERCOUNT = i
 			MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
@@ -117,7 +108,12 @@ public class ChillerVisitingScenariosKeywords {
 				CommonKeywords.visitPopUpForOverwriting()
 			}
 			CommonKeywords.takePicture()
-			findChillerRemark(chillerremark)
+			if(chillerremark.equalsIgnoreCase("Chiller not Available with one subcategory")){
+				findChillerRemark("Chiller not Available")
+			}
+			else{
+				findChillerRemark(chillerremark)
+			}
 			if(chillerremark.equalsIgnoreCase("Chiller Available")){
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerAvailable/VisitChillerAvailable"), null)
 			}
@@ -140,7 +136,7 @@ public class ChillerVisitingScenariosKeywords {
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
 			}
 			else if(chillerremark.equalsIgnoreCase("Chiller not Available with one subcategory")){
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/VisitShopKeeperDidNotAllow"), null)
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitChillerNotAvailableWithOneProductCategory"), null)
 			}
 			else{
 			}
@@ -150,6 +146,7 @@ public class ChillerVisitingScenariosKeywords {
 	def overwriteChillersTaggedinChillerUtilizationWithSingleRemark(String chillerremark){
 		int totalchillers = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalchillers; i++){
+			ProjectConstants.CURRENTVISITING_CHILLERCOUNT = i
 			MobileElement chiller = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			ProjectConstants.CURRENTVISITING_CHILLERTYPE = chiller.getText()
 			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()

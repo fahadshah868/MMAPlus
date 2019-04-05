@@ -159,12 +159,7 @@ public class CommonKeywords {
 		return xlocation+1
 	}
 	def static visitPopUpForOverwriting(){
-		try{
-			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP", [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton", [('package') : ProjectConstants.PACKAGENAME]), 0)
-		}
-		catch(Exception ex){
-		}
+		Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_YesButton", [('package') : ProjectConstants.PACKAGENAME]), 0, FailureHandling.OPTIONAL)
 	}
 	@Keyword
 	def visitSKDNA_ForChannel(){

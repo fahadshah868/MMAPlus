@@ -194,15 +194,17 @@ public class ChillerProductsDataKeywords {
 		for(int i=1; i<=totalproductcategories; i++){
 			MobileElement productcategory = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = productcategory.getText()
-			ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 			if(flag == 1){
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
 			}
 			else if(flag == 2){
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
 			}
 			else if(flag == 3){
 				if(i == 1){
+					ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ChillerUtilization/ChillerNotAvailable/VisitProductCategoryAssets"), null)
 				}
 				else{}
@@ -504,6 +506,7 @@ public class ChillerProductsDataKeywords {
 		TaggedChillersRemark taggedchillerremarks = new TaggedChillersRemark()
 		VisitedChillerProductsCategoryData visitedchillerproductscategory = new VisitedChillerProductsCategoryData()
 		visitedcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
+		taggedchillerremarks.setCount(ProjectConstants.CURRENTVISITING_CHILLERCOUNT)
 		if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
 			taggedchillerremarks.setFirstvisit_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
 			taggedchillerremarks.setFirstvisit_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)

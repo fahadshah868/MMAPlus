@@ -113,6 +113,7 @@ public class ProjectConstants {
 	public static String CURRENTVISITING_MAINCATEGORY = ""
 	public static String CURRENTVISITING_CATEGORYREMARK = ""
 	public static String CURRENTVISITING_PRODUCTCATEGORY = ""
+	public static String CURRENTVISITING_CHILLERCOUNT = ""
 	public static String CURRENTVISITING_CHILLERTYPE = ""
 	public static String CURRENTVISITING_CHILLERREMARK = ""
 	public static String SCENARIO = ""

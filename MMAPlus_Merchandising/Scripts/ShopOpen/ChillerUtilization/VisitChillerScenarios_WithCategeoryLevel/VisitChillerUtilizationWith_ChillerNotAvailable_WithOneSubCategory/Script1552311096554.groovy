@@ -2,6 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import com.ct.qa.constants.ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -14,7 +16,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'validate "Chiller Utilization" detail screen appearance'
-MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen', 
+Mobile.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/Validate_ChillerUtilizationScreen', 
         [('package') : ProjectConstants.PACKAGENAME]), 'Shop Chillers')
 
 'visit chillers tagged in "Chiller Utilization" and select chiller remark "Chiller Not Available"'
@@ -22,10 +24,10 @@ CustomKeywords.'com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChiller
     'Chiller not Available with one subcategory')
 
 'tap on back button'
-MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerUtilization_backButton', [('package') : ProjectConstants.PACKAGENAME]), 
+Mobile.tap(findTestObject('ShopOpen/ChillerUtilization/ChillerUtilization_backButton', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
 'validate shop\'s categories screen appearance'
-MobileBuiltInKeywords.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+Mobile.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
