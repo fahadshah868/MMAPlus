@@ -46,7 +46,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 		int index = 0
 		String lastvisitedcategory = ""
 		int totalcategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=1; i++){
+		for(int i=1; i<=totalcategories; i++){
 			if(i == totalcategories){
 				Mobile.swipe(0, 240, 0, 200)
 			}
@@ -190,7 +190,7 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				CommonKeywords.takePicture()
-				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Survey/OverwriteSurvey"), null)
+				Mobile.callTestCase(findTestCase("ShopOpen/Survey/OverwriteSurveyCategories"), null)
 			}
 			else{
 				ProjectConstants.CURRENTVISITING_MAINCATEGORY = categoryname
@@ -247,230 +247,232 @@ public class CategoryVisitingScenariosWithOverwritePopUpKeywords{
 				}
 			}
 		}
-		//		while(true){
-		//			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-		//			MobileElement lastitembeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-		//			String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
-		//			Mobile.swipe(0, 293, 0, 200)
-		//			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-		//			MobileElement lastitemafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-		//			String lastitemnameafterswipe = lastitemafterswipe.getText()
-		//			if(lastitemnamebeforeswipe.equalsIgnoreCase(lastitemnameafterswipe)){
-		//				break
-		//			}
-		//			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller")){
-		//				lastvisitedcategory = lastitemnameafterswipe
-		//				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
-		//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-		//				CommonKeywords.visitPopUpForOverwriting()
-		//				CommonKeywords.takePicture()
-		//				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen', [('package') : ProjectConstants.PACKAGENAME]), 'KPI: Chiller')
-		//				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
-		//				for(int j=1; j<= remarks; j++){
-		//					for(int k=1; k<= remarks; k++){
-		//						ScenariosCombination _scenarioscombination = new ScenariosCombination()
-		//						_scenarioscombination.setFirstvisit_scenario(j)
-		//						_scenarioscombination.setOverwrite_scenario(k)
-		//						scenarioscombination.add(_scenarioscombination)
-		//					}
-		//				}
-		//				if(scenarioscombination.size() >= ProjectConstants.SHOP_ATTEMPT){
-		//					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
-		//					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]/android.widget.TextView[1]")
-		//					String remarktext = remark.getText()
-		//					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
-		//					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChillerWithChillerNotAllocated"), null)
-		//					}
-		//					else if(remarktext.equalsIgnoreCase("Shopkeeper did not allow")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChillerWithSKDNA"), null)
-		//					}
-		//					else{}
-		//				}
-		//				else{
-		//					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
-		//					String remarktext = remark.getText()
-		//					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
-		//					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChillerWithChillerNotAllocated"), null)
-		//					}
-		//					else if(remarktext.equalsIgnoreCase("Shopkeeper did not allow")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChillerWithSKDNA"), null)
-		//					}
-		//					else{}
-		//				}
-		//			}
-		//			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
-		//				lastvisitedcategory = lastitemnameafterswipe
-		//				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
-		//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-		//				CommonKeywords.visitPopUpForOverwriting()
-		//				CommonKeywords.takePicture()
-		//				visitChillerUtilizationOverwriteScenarios()
-		//			}
-		//			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
-		//				lastvisitedcategory = lastitemnameafterswipe
-		//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/OverwriteAdditionalPicture"), null)
-		//			}
-		//			else if(lastitemnameafterswipe.equalsIgnoreCase("Competition Tracking")){
-		//				lastvisitedcategory = lastitemnameafterswipe
-		//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-		//				CommonKeywords.visitPopUpForOverwriting()
-		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/OverwriteCompetitionTracking"), null)
-		//			}
-		//			else if(lastitemnameafterswipe.equalsIgnoreCase("Retailer Remarks")){
-		//				lastvisitedcategory = lastitemnameafterswipe
-		//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-		//				CommonKeywords.visitPopUpForOverwriting()
-		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/OverwriteRetailerRemarks"), null)
-		//			}
-		//			else if(lastitemnameafterswipe.equalsIgnoreCase("RTM -Visit Frequency")){
-		//				lastvisitedcategory = lastitemnameafterswipe
-		//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-		//				CommonKeywords.visitPopUpForOverwriting()
-		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/OverwriteRTMVisitFrequency"), null)
-		//			}
-		//			else if(lastitemnameafterswipe.equalsIgnoreCase("POP Application")){
-		//				lastvisitedcategory = lastitemnameafterswipe
-		//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-		//				CommonKeywords.visitPopUpForOverwriting()
-		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/POPApplication/OverwritePOPApplication"), null)
-		//			}
-		//			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
-		//				lastvisitedcategory = lastitemnameafterswipe
-		//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/OverwriteHangerAvailability"), null)
-		//			}
-		//			else if(lastitemnameafterswipe.equalsIgnoreCase("Nestrade")){
-		//				lastvisitedcategory = lastitemnameafterswipe
-		//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-		//				CommonKeywords.visitPopUpForOverwriting()
-		//				CommonKeywords.takePicture()
-		//				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
-		//				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
-		//				for(int j=1; j<= remarks; j++){
-		//					for(int k=1; k<= remarks; k++){
-		//						ScenariosCombination _scenarioscombination = new ScenariosCombination()
-		//						_scenarioscombination.setFirstvisit_scenario(j)
-		//						_scenarioscombination.setOverwrite_scenario(k)
-		//						scenarioscombination.add(_scenarioscombination)
-		//					}
-		//				}
-		//				if(scenarioscombination.size() >= ProjectConstants.SHOP_ATTEMPT){
-		//					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
-		//					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]/android.widget.TextView[1]")
-		//					String remarktext = remark.getText()
-		//					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
-		//					if(remarktext.equalsIgnoreCase("Display Space Available")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithDSA"), null)
-		//					}
-		//					else if(remarktext.equalsIgnoreCase("No Space For Display")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithNSFD"), null)
-		//					}
-		//					else if(remarktext.equalsIgnoreCase("Shopkeeper did not allow")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithSKDNA"), null)
-		//					}
-		//					else{}
-		//				}
-		//				else{
-		//					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
-		//					String remarktext = remark.getText()
-		//					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
-		//					if(remarktext.equalsIgnoreCase("Display Space Available")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithDSA"), null)
-		//					}
-		//					else if(remarktext.equalsIgnoreCase("No Space For Display")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithNSFD"), null)
-		//					}
-		//					else if(remarktext.equalsIgnoreCase("Shopkeeper did not allow")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithSKDNA"), null)
-		//					}
-		//					else{}
-		//				}
-		//			}
-		//			else if(lastitemnameafterswipe.equalsIgnoreCase("Survey")){
-		//				lastvisitedcategory = lastitemnameafterswipe
-		//				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
-		//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-		//				CommonKeywords.takePicture()
-		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Survey/OverwriteSurvey"), null)
-		//			}
-		//			else{
-		//				lastvisitedcategory = lastitemnameafterswipe
-		//				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
-		//				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = lastitemnameafterswipe
-		//				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
-		//				CommonKeywords.visitPopUpForOverwriting()
-		//				CommonKeywords.takePicture()
-		//				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
-		//				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
-		//				for(int j=1; j<= remarks; j++){
-		//					for(int k=1; k<= remarks; k++){
-		//						ScenariosCombination _scenarioscombination = new ScenariosCombination()
-		//						_scenarioscombination.setFirstvisit_scenario(j)
-		//						_scenarioscombination.setOverwrite_scenario(k)
-		//						scenarioscombination.add(_scenarioscombination)
-		//					}
-		//				}
-		//				if(scenarioscombination.size() >= ProjectConstants.SHOP_ATTEMPT){
-		//					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
-		//					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]/android.widget.TextView[1]")
-		//					String remarktext = remark.getText()
-		//					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
-		//					if(remarktext.equalsIgnoreCase("Display Space Available")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithDSA"), null)
-		//					}
-		//					else if(remarktext.equalsIgnoreCase("No Space For Display")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithNSFD"), null)
-		//					}
-		//					else if(remarktext.equalsIgnoreCase("Shopkeeper did not allow")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithSKDNA"), null)
-		//					}
-		//					else{}
-		//				}
-		//				else{
-		//					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
-		//					String remarktext = remark.getText()
-		//					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
-		//					if(remarktext.equalsIgnoreCase("Display Space Available")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithDSA"), null)
-		//					}
-		//					else if(remarktext.equalsIgnoreCase("No Space For Display")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithNSFD"), null)
-		//					}
-		//					else if(remarktext.equalsIgnoreCase("Shopkeeper did not allow")){
-		//						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
-		//						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithSKDNA"), null)
-		//					}
-		//					else{}
-		//				}
-		//			}
-		//			while(true){
-		//				Mobile.swipe(0, 293, 0, 200)
-		//				index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-		//				MobileElement product = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-		//				String productname = product.getText()
-		//				if(productname.equalsIgnoreCase(lastvisitedcategory)){
-		//					break
-		//				}
-		//			}
-		//		}
+		Mobile.swipe(0, 240, 0, 200)
+		while(true){
+			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+			MobileElement lastitembeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+			String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
+			Mobile.swipe(0, 293, 0, 200)
+			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+			MobileElement lastitemafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+			String lastitemnameafterswipe = lastitemafterswipe.getText()
+			if(lastitemnamebeforeswipe.equalsIgnoreCase(lastitemnameafterswipe)){
+				break
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller")){
+				lastvisitedcategory = lastitemnameafterswipe
+				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				CommonKeywords.visitPopUpForOverwriting()
+				CommonKeywords.takePicture()
+				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/Chiller/Validate_ChillerScreen', [('package') : ProjectConstants.PACKAGENAME]), 'KPI: Chiller')
+				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
+				for(int j=1; j<= remarks; j++){
+					for(int k=1; k<= remarks; k++){
+						ScenariosCombination _scenarioscombination = new ScenariosCombination()
+						_scenarioscombination.setFirstvisit_scenario(j)
+						_scenarioscombination.setOverwrite_scenario(k)
+						scenarioscombination.add(_scenarioscombination)
+					}
+				}
+				if(scenarioscombination.size() >= ProjectConstants.SHOP_ATTEMPT){
+					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
+					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]/android.widget.TextView[1]")
+					String remarktext = remark.getText()
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
+					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChillerWithChillerNotAllocated"), null)
+					}
+					else if(remarktext.equalsIgnoreCase("Shopkeeper did not allow")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChillerWithSKDNA"), null)
+					}
+					else{}
+				}
+				else{
+					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
+					String remarktext = remark.getText()
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
+					if(remarktext.equalsIgnoreCase("Chiller Not Allocated")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChillerWithChillerNotAllocated"), null)
+					}
+					else if(remarktext.equalsIgnoreCase("Shopkeeper did not allow")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Chiller/OverwriteChillerWithSKDNA"), null)
+					}
+					else{}
+				}
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
+				lastvisitedcategory = lastitemnameafterswipe
+				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				CommonKeywords.visitPopUpForOverwriting()
+				CommonKeywords.takePicture()
+				visitChillerUtilizationOverwriteScenarios()
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
+				lastvisitedcategory = lastitemnameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/AdditionalPicture/OverwriteAdditionalPicture"), null)
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Competition Tracking")){
+				lastvisitedcategory = lastitemnameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				CommonKeywords.visitPopUpForOverwriting()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/CompetitionTracking/OverwriteCompetitionTracking"), null)
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Retailer Remarks")){
+				lastvisitedcategory = lastitemnameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				CommonKeywords.visitPopUpForOverwriting()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RetailerRemarks/OverwriteRetailerRemarks"), null)
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("RTM -Visit Frequency")){
+				lastvisitedcategory = lastitemnameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				CommonKeywords.visitPopUpForOverwriting()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RTMVisitFrequency/OverwriteRTMVisitFrequency"), null)
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("POP Application")){
+				lastvisitedcategory = lastitemnameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				CommonKeywords.visitPopUpForOverwriting()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/POPApplication/OverwritePOPApplication"), null)
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
+				lastvisitedcategory = lastitemnameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/HangerAvailability/OverwriteHangerAvailability"), null)
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Nestrade")){
+				lastvisitedcategory = lastitemnameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				CommonKeywords.visitPopUpForOverwriting()
+				CommonKeywords.takePicture()
+				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
+				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
+				for(int j=1; j<= remarks; j++){
+					for(int k=1; k<= remarks; k++){
+						ScenariosCombination _scenarioscombination = new ScenariosCombination()
+						_scenarioscombination.setFirstvisit_scenario(j)
+						_scenarioscombination.setOverwrite_scenario(k)
+						scenarioscombination.add(_scenarioscombination)
+					}
+				}
+				if(scenarioscombination.size() >= ProjectConstants.SHOP_ATTEMPT){
+					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
+					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]/android.widget.TextView[1]")
+					String remarktext = remark.getText()
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
+					if(remarktext.equalsIgnoreCase("Display Space Available")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithDSA"), null)
+					}
+					else if(remarktext.equalsIgnoreCase("No Space For Display")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithNSFD"), null)
+					}
+					else if(remarktext.equalsIgnoreCase("Shopkeeper did not allow")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithSKDNA"), null)
+					}
+					else{}
+				}
+				else{
+					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
+					String remarktext = remark.getText()
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
+					if(remarktext.equalsIgnoreCase("Display Space Available")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithDSA"), null)
+					}
+					else if(remarktext.equalsIgnoreCase("No Space For Display")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithNSFD"), null)
+					}
+					else if(remarktext.equalsIgnoreCase("Shopkeeper did not allow")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/Nestrade/OverwriteNestradeWithSKDNA"), null)
+					}
+					else{}
+				}
+			}
+			else if(lastitemnameafterswipe.equalsIgnoreCase("Survey")){
+				lastvisitedcategory = lastitemnameafterswipe
+				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				CommonKeywords.takePicture()
+				Mobile.callTestCase(findTestCase("ShopOpen/Survey/OverwriteSurveyCategories"), null)
+			}
+			else{
+				lastvisitedcategory = lastitemnameafterswipe
+				ProjectConstants.CURRENTVISITING_MAINCATEGORY = lastitemnameafterswipe
+				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = lastitemnameafterswipe
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				CommonKeywords.visitPopUpForOverwriting()
+				CommonKeywords.takePicture()
+				MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/RemainingCategories/Validate_MainCategoryDetailScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Display Space Available')
+				int remarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size();
+				for(int j=1; j<= remarks; j++){
+					for(int k=1; k<= remarks; k++){
+						ScenariosCombination _scenarioscombination = new ScenariosCombination()
+						_scenarioscombination.setFirstvisit_scenario(j)
+						_scenarioscombination.setOverwrite_scenario(k)
+						scenarioscombination.add(_scenarioscombination)
+					}
+				}
+				if(scenarioscombination.size() >= ProjectConstants.SHOP_ATTEMPT){
+					ScenariosCombination scenario = scenarioscombination.get((ProjectConstants.SHOP_ATTEMPT-1))
+					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]/android.widget.TextView[1]")
+					String remarktext = remark.getText()
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
+					if(remarktext.equalsIgnoreCase("Display Space Available")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithDSA"), null)
+					}
+					else if(remarktext.equalsIgnoreCase("No Space For Display")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithNSFD"), null)
+					}
+					else if(remarktext.equalsIgnoreCase("Shopkeeper did not allow")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+scenario.getOverwrite_scenario()+"]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithSKDNA"), null)
+					}
+					else{}
+				}
+				else{
+					MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
+					String remarktext = remark.getText()
+					ProjectConstants.CURRENTVISITING_CATEGORYREMARK = remarktext
+					if(remarktext.equalsIgnoreCase("Display Space Available")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithDSA"), null)
+					}
+					else if(remarktext.equalsIgnoreCase("No Space For Display")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithNSFD"), null)
+					}
+					else if(remarktext.equalsIgnoreCase("Shopkeeper did not allow")){
+						ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]").click()
+						Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/RemainingCategories/OverwriteRemainingCategoriesWithSKDNA"), null)
+					}
+					else{}
+				}
+			}
+			Mobile.swipe(0, 240, 0, 200)
+			while(true){
+				Mobile.swipe(0, 293, 0, 200)
+				index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
+				MobileElement product = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+				String productname = product.getText()
+				if(productname.equalsIgnoreCase(lastvisitedcategory)){
+					break
+				}
+			}
+		}
 	}
 	def visitChillerUtilizationOverwriteScenarios(){
 		if(ProjectConstants.SHOP_ATTEMPT == 1){

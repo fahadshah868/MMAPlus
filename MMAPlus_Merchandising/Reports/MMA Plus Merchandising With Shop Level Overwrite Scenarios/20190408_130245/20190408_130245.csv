@@ -1,0 +1,51 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Plus Merchandising With Shop Level Overwrite Scenarios,,,2019-04-08 13:02:48,2019-04-08 13:21:50,19m - 1.135s,FAILED
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2019-04-08 13:02:49,2019-04-08 13:03:16,27.287s,PASSED
+"startApplication(""F:\QA_Automation\Builds\mmaplus_030419_local_v154.apk"", false)",,launch application,2019-04-08 13:02:50,2019-04-08 13:03:11,21.430s,PASSED
+delay(5),,delay of 5 seconds,2019-04-08 13:03:11,2019-04-08 13:03:16,5.052s,PASSED
+,,,,,,
+Test Cases/Attendence/VisitAttendance,,,2019-04-08 13:03:16,2019-04-08 13:04:01,44.508s,PASSED
+"verifyElementText(findTestObject(""DashboardScreenElements/Validate_DashboardScreen"", [""package"":PACKAGENAME]), ""Dashboard"")",,validate dashboard screen appearance,2019-04-08 13:03:16,2019-04-08 13:03:20,3.288s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday(),,select the current day for further proceed,2019-04-08 13:03:20,2019-04-08 13:03:23,3.570s,PASSED
+"tap(findTestObject(""DashboardScreenElements/StartYourDay"", [""package"":PACKAGENAME]), 0)",,tap on start your day button,2019-04-08 13:03:23,2019-04-08 13:03:24,0.777s,PASSED
+"verifyElementText(findTestObject(""Attendence/Validate_AttendenceScreen"", [""package"":PACKAGENAME]), ""Attendance"")",,,2019-04-08 13:03:24,2019-04-08 13:03:26,1.656s,PASSED
+"tap(findTestObject(""Attendence/TakeSelfie_ImageViewButton"", [""package"":PACKAGENAME]), 0)",,,2019-04-08 13:03:26,2019-04-08 13:03:26,0.312s,PASSED
+com.ct.qa.keywords.CommonKeywords.takePicture(),,,2019-04-08 13:03:26,2019-04-08 13:03:39,12.922s,PASSED
+com.ct.qa.keywords.Attendence.visitAttendenceRemark(),,,2019-04-08 13:03:39,2019-04-08 13:03:41,1.688s,PASSED
+"tap(findTestObject(""Attendence/Attendence_SubmitButton"", [""package"":PACKAGENAME]), 0)",,,2019-04-08 13:03:41,2019-04-08 13:03:43,2.056s,PASSED
+"delay(15, STOP_ON_FAILURE)",,,2019-04-08 13:03:43,2019-04-08 13:03:58,15.001s,PASSED
+"verifyElementExist(findTestObject(""CommonScreenElements/Validate_MapScreen"", [""package"":PACKAGENAME]), 0)",,validate map screen appearance,2019-04-08 13:03:58,2019-04-08 13:03:58,0.634s,PASSED
+"tap(findTestObject(""CommonScreenElements/Location_CheckIn"", [""package"":PACKAGENAME]), 0)",,tap on check in button through map,2019-04-08 13:03:58,2019-04-08 13:03:59,0.493s,PASSED
+"verifyElementExist(findTestObject(""CommonScreenElements/Validate_InfoPopUP"", [""package"":PACKAGENAME]), 0)",,validate confirm popup appearance,2019-04-08 13:03:59,2019-04-08 13:04:00,1.128s,PASSED
+"tap(findTestObject(""CommonScreenElements/InfoPopUp_YesButton"", [""package"":PACKAGENAME]), 0)",,tap on confirm popup no button,2019-04-08 13:04:00,2019-04-08 13:04:01,0.681s,PASSED
+,,,,,,
+Test Cases/DistributionPoint/VisitDistributionPoint,,,2019-04-08 13:04:01,2019-04-08 13:04:20,18.894s,PASSED
+"verifyElementText(findTestObject(""DistributionPoint/Validate_RouteInfoScreen"", [""package"":PACKAGENAME]), ""Route Info"")",,validate channel summary detail screen appearance,2019-04-08 13:04:01,2019-04-08 13:04:03,1.626s,PASSED
+"tap(findTestObject(""DistributionPoint/RouteInfoNextButton"", [""package"":PACKAGENAME]), 0)",,tap on next button to further proceed,2019-04-08 13:04:03,2019-04-08 13:04:03,0.477s,PASSED
+"verifyElementText(findTestObject(""DistributionPoint/Validate_DistributionPointScreen"", [""package"":PACKAGENAME]), ""Poster Quantity:"")",,validate distribution point screen appearance,2019-04-08 13:04:03,2019-04-08 13:04:05,2.424s,PASSED
+com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPoint(),,enter quantity of products on distribution point,2019-04-08 13:04:05,2019-04-08 13:04:17,11.573s,PASSED
+"tap(findTestObject(""DistributionPoint/DistributionPoint_SubmitButton"", [""package"":PACKAGENAME]), 0)",,tap on submit button after enter the quantity of products on distribution point,2019-04-08 13:04:17,2019-04-08 13:04:18,0.924s,PASSED
+"verifyElementText(findTestObject(""DashboardScreenElements/Validate_DashboardScreen"", [""package"":PACKAGENAME]), ""Dashboard"")",,validate dashboard screen appearance,2019-04-08 13:04:18,2019-04-08 13:04:20,1.600s,PASSED
+,,,,,,
+Test Cases/SliderOptions/VisitSliderOptions,,,2019-04-08 13:04:20,2019-04-08 13:05:36,1m - 16.633s,PASSED
+"verifyElementText(findTestObject(""DashboardScreenElements/Validate_DashboardScreen"", [""package"":PACKAGENAME]), ""Dashboard"")",,,2019-04-08 13:04:20,2019-04-08 13:04:20,0.147s,PASSED
+"swipe(2, 250, 400, 250)",,,2019-04-08 13:04:20,2019-04-08 13:04:21,0.724s,PASSED
+"swipe(2, 250, 400, 250)",,,2019-04-08 13:04:21,2019-04-08 13:04:21,0.733s,PASSED
+"verifyElementExist(findTestObject(""SliderOptions/Validate_SliderItemsScreen"", [""package"":PACKAGENAME]), 0)",,,2019-04-08 13:04:21,2019-04-08 13:04:22,0.238s,PASSED
+com.ct.qa.keywords.SliderOptionsKeywords.valideSliderOptions(),,,2019-04-08 13:04:22,2019-04-08 13:04:49,27.344s,PASSED
+"swipe(5, 200, 5, 500)",,,2019-04-08 13:04:49,2019-04-08 13:04:50,0.752s,PASSED
+"swipe(5, 200, 5, 500)",,,2019-04-08 13:04:50,2019-04-08 13:04:50,0.701s,PASSED
+"com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption(""Update Profile"")",,,2019-04-08 13:04:50,2019-04-08 13:04:58,7.128s,PASSED
+"com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption(""Out of Route"")",,,2019-04-08 13:04:58,2019-04-08 13:05:13,15.258s,PASSED
+"com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption(""Info"")",,,2019-04-08 13:05:13,2019-04-08 13:05:35,21.947s,PASSED
+"swipe(320, 5, 2, 5)",,,2019-04-08 13:05:35,2019-04-08 13:05:35,0.709s,PASSED
+"swipe(320, 5, 2, 5)",,,2019-04-08 13:05:35,2019-04-08 13:05:36,0.708s,PASSED
+com.ct.qa.keywords.SliderOptionsKeywords.displayMissingSliderOptionsInReport(),,,2019-04-08 13:05:36,2019-04-08 13:05:36,0.003s,PASSED
+,,,,,,
+Test Cases/VisitShopScenarios/VisitShopsWithShopLevelOverwriteScenarios,,,2019-04-08 13:05:36,2019-04-08 13:21:50,16m - 13.353s,FAILED
+"verifyElementText(findTestObject(""DashboardScreenElements/Validate_DashboardScreen"", [""package"":PACKAGENAME]), ""Dashboard"")",,,2019-04-08 13:05:36,2019-04-08 13:05:37,0.233s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday(),,,2019-04-08 13:05:37,2019-04-08 13:05:39,2.731s,PASSED
+"tap(findTestObject(""DashboardScreenElements/StartYourDay"", [""package"":PACKAGENAME]), 0)",,,2019-04-08 13:05:39,2019-04-08 13:05:41,1.614s,PASSED
+"verifyElementText(findTestObject(""Validate_ShopListScreen"", [""package"":PACKAGENAME]), ""Shops on Route"")",,,2019-04-08 13:05:41,2019-04-08 13:05:43,1.601s,PASSED
+com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWithShopLevel_OverwriteScenarios(),,,2019-04-08 13:05:43,2019-04-08 13:21:50,16m - 6.940s,FAILED

@@ -25,7 +25,7 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 'launch application'
-Mobile.startApplication('F:\\QA_Automation\\Builds\\mmaplus_030419_local_v154.apk', false)
+Mobile.startApplication('F:\\QA_Automation\\Builds\\mmaplus_170419_local_v154 (2).apk', false)
 
 'delay of 5 seconds'
 MobileBuiltInKeywords.delay(5)

@@ -30,7 +30,7 @@ public class TaggedChillersRemark {
 	public String overwrite_chillertype
 	public String firstvisit_chillerremark
 	public String overwrite_chillerremark
-	public String count
+	public int count
 	public ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductscategories
 	public ArrayList<MissingChillerProductsCategoryData> missingchillerproductscategories
 	public String errormessage_formissingproductscategories
@@ -39,10 +39,10 @@ public class TaggedChillersRemark {
 		this.visitedchillerproductscategories = new ArrayList<VisitedChillerProductsCategoryData>()
 		this.missingchillerproductscategories = new ArrayList<MissingChillerProductsCategoryData>()
 	}
-	public String getCount() {
+	public int getCount() {
 		return count;
 	}
-	public void setCount(String count) {
+	public void setCount(int count) {
 		this.count = count;
 	}
 	public String getFirstvisit_chillertype() {

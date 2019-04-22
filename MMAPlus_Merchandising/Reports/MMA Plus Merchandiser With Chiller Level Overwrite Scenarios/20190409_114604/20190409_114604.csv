@@ -1,0 +1,8 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Plus Merchandiser With Chiller Level Overwrite Scenarios,,,2019-04-09 11:46:08,2019-04-09 11:46:18,10.016s,FAILED
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2019-04-09 11:46:08,2019-04-09 11:46:17,8.698s,FAILED
+"startApplication(""F:\QA_Automation\Builds\mmaplus_030419_local_v154.apk"", false)",,launch application,2019-04-09 11:46:10,2019-04-09 11:46:17,7.426s,FAILED
+,,,,,,
+Test Cases/VisitShopScenarios/VisitShopsWithChillerLevelOverwriteScenarios,,,2019-04-09 11:46:17,2019-04-09 11:46:18,0.669s,FAILED
+"verifyElementText(findTestObject(""DashboardScreenElements/Validate_DashboardScreen"", [""package"":PACKAGENAME]), ""Dashboard"")",,validate the dashboard screen appearance,2019-04-09 11:46:18,2019-04-09 11:46:18,0.073s,FAILED

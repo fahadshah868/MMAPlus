@@ -47,7 +47,7 @@ public class ProjectConstants {
 	public static final String DISTRIBUTION_SHEET = "Distribution Point"
 	public static final String SLIDEROPTIONSSHEET = "Slider Options"
 	public static final String SHOPACTIONSSHEET = "Shop Actions"
-	public static final String SURVEYQUESTIONSSHEET = "Survey Questions"
+	public static final String SURVEYQUESTIONSSHEET = "Survey"
 	public static final AppiumDriver<MobileElement> DRIVER = MobileDriverFactory.getDriver()
 
 	//variables for display messages
@@ -57,7 +57,7 @@ public class ProjectConstants {
 	public static final String MESSAGEFOR_ITEMSARE_NOTMATCH = "above items are display on device not match with expected items..."
 
 	//package name for elements
-	public static final String PACKAGENAME = "com.concavetech.audit"
+	public static final String PACKAGENAME = "com.concavetech.bloc"
 
 	//variables for excel sheet columns index
 	//channel wise product categories product columns
@@ -106,18 +106,20 @@ public class ProjectConstants {
 	public static final int SURVEY_QUESTION
 	public static final int SURVEY_QUESTIONOPTION
 	public static final int SURVEY_QUESTIONOPTION_TAKEPICTURE
+	public static final int SURVEY_VALUE
+	public static final int OVERWRITE_SURVEY_VALUE
 
 	//variables for current visiting shop channels, chiller and categories
-	public static String CURRENTVISITING_SHOPNAME = ""
-	public static String CURRENTVISITING_SHOPCHANNEL = ""
-	public static String CURRENTVISITING_MAINCATEGORY = ""
-	public static String CURRENTVISITING_CATEGORYREMARK = ""
-	public static String CURRENTVISITING_PRODUCTCATEGORY = ""
-	public static String CURRENTVISITING_CHILLERCOUNT = ""
-	public static String CURRENTVISITING_CHILLERTYPE = ""
-	public static String CURRENTVISITING_CHILLERREMARK = ""
-	public static String SCENARIO = ""
-	public static String CURRENTVISITING_QUESTIONCATEGORY = ""
+	public static String CURRENTVISITING_SHOPNAME
+	public static String CURRENTVISITING_SHOPCHANNEL
+	public static String CURRENTVISITING_MAINCATEGORY
+	public static String CURRENTVISITING_CATEGORYREMARK
+	public static String CURRENTVISITING_PRODUCTCATEGORY
+	public static int CURRENTVISITING_CHILLERCOUNT
+	public static String CURRENTVISITING_CHILLERTYPE
+	public static String CURRENTVISITING_CHILLERREMARK
+	public static String SCENARIO
+	public static String CURRENTVISITING_QUESTIONCATEGORY
 	public static int VISITED_CHILLERREMARKS = 0
 	public static int SHOP_ATTEMPT = 0
 	public static String CHILLER_OVERWRITEPOPUP = "no"
@@ -267,6 +269,12 @@ public class ProjectConstants {
 			}
 			else if(columnname.equalsIgnoreCase("Take Picture")){
 				SURVEY_QUESTIONOPTION_TAKEPICTURE = cellnumber
+			}
+			else if(columnname.equalsIgnoreCase("Survey Questions Value")){
+				SURVEY_VALUE = cellnumber
+			}
+			else if(columnname.equalsIgnoreCase("Overwrite Survey Questions Value")){
+				OVERWRITE_SURVEY_VALUE = cellnumber
 			}
 			else{
 			}

@@ -106,12 +106,16 @@ def static "com.ct.qa.keywords.SurveyKeywords.visitQuestionCategories"(
         	flag)
 }
 
-def static "com.ct.qa.keywords.SurveyKeywords.visitQuestions"() {
-    (new com.ct.qa.keywords.SurveyKeywords()).visitQuestions()
+def static "com.ct.qa.keywords.SurveyKeywords.visitCompetitionTrackingQuestions"() {
+    (new com.ct.qa.keywords.SurveyKeywords()).visitCompetitionTrackingQuestions()
 }
 
-def static "com.ct.qa.keywords.SurveyKeywords.overwriteQuestions"() {
-    (new com.ct.qa.keywords.SurveyKeywords()).overwriteQuestions()
+def static "com.ct.qa.keywords.SurveyKeywords.overwriteCompetitionTrackingQuestions"() {
+    (new com.ct.qa.keywords.SurveyKeywords()).overwriteCompetitionTrackingQuestions()
+}
+
+def static "com.ct.qa.keywords.SurveyKeywords.visitSurveyQuestions"() {
+    (new com.ct.qa.keywords.SurveyKeywords()).visitSurveyQuestions()
 }
 
 def static "com.ct.qa.keywords.ChillerVisitingScenariosKeywords.visitChillersTaggedInChillerUtilizationWithDataVerification"() {

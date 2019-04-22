@@ -116,21 +116,23 @@ public class LoadDataKeywords {
 	//load audit question list
 	def static loadSurveyQuestionsList(){
 		DataFormatter dataformatter = new DataFormatter()
-		ArrayList<LoadProductsData> productsdatalist = new ArrayList<LoadProductsData>()
+		ArrayList<QuestionsData> questionslist = new ArrayList<QuestionsData>()
 		XSSFSheet sheet = loadSurveyQuestionsSheet()
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<= totalrows; i++){
 			Row row = sheet.getRow(i)
 			String questioncategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONCATEGORY))
 			if(ProjectConstants.CURRENTVISITING_QUESTIONCATEGORY.equalsIgnoreCase(questioncategory)){
-				LoadProductsData productsdata = new LoadProductsData()
-				productsdata.setProduct(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTION)))
-				productsdata.setOptions(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONOPTION)))
-				productsdata.setStatus(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONOPTION_TAKEPICTURE)))
-				productsdatalist.add(productsdata)
+				QuestionsData question = new QuestionsData()
+				question.setQuestion(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTION)))
+				question.setQuestionoption(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONOPTION)))
+				question.setQuestionoption_takepicture(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_QUESTIONOPTION_TAKEPICTURE)))
+				question.setSurvey_value(dataformatter.formatCellValue(row.getCell(ProjectConstants.SURVEY_VALUE)))
+				question.setOverwrite_survey_value(dataformatter.formatCellValue(row.getCell(ProjectConstants.OVERWRITE_SURVEY_VALUE)))
+				questionslist.add(question)
 			}
 		}
-		return productsdatalist
+		return questionslist
 	}
 	//load shop actions
 	def static loadShopActionsList(){
@@ -155,7 +157,7 @@ public class LoadDataKeywords {
 			Row row = sheet.getRow(i)
 			String channel = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL))
 			String channelname = "Channel: "+channel
-			if(ProjectConstants.CURRENTVISITING_SHOPCHANNEL.equalsIgnoreCase(channelname)){
+			if(ProjectConstants.CURRENTVISITING_SHOPCHANNEL.equalsIgnoreCase(channelname) || channel.equalsIgnoreCase("Others")){
 				String category = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_MAINCATEGORY))
 				expectedshopcategories.add(category)
 			}

@@ -23,7 +23,21 @@ public class QuestionsData {
 	public String questionoption
 	public String questionoption_takepicture
 	public String Overwrite_questionoption
-	public String Overwrite_questionoption_takepicture
+	public String Overwrite_questionoption_takepicture
+	public String survey_value
+	public String overwrite_survey_value
+	public String getSurvey_value() {
+		return survey_value;
+	}
+	public void setSurvey_value(String survey_value) {
+		this.survey_value = survey_value;
+	}
+	public String getOverwrite_survey_value() {
+		return overwrite_survey_value;
+	}
+	public void setOverwrite_survey_value(String overwrite_survey_value) {
+		this.overwrite_survey_value = overwrite_survey_value;
+	}
 	public String getOverwrite_questionoption() {
 		return Overwrite_questionoption;
 	}

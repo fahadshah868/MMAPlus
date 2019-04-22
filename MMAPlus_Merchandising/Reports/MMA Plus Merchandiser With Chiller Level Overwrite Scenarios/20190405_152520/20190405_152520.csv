@@ -1,0 +1,13 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+MMA Plus Merchandiser With Chiller Level Overwrite Scenarios,,,2019-04-05 15:25:23,2019-04-05 16:47:51,1h - 22m - 27.986s,PASSED
+,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,2019-04-05 15:25:24,2019-04-05 15:25:50,26.182s,PASSED
+"startApplication(""F:\QA_Automation\Builds\mmaplus_030419_local_v154.apk"", false)",,launch application,2019-04-05 15:25:25,2019-04-05 15:25:45,20.212s,PASSED
+delay(5),,delay of 5 seconds,2019-04-05 15:25:45,2019-04-05 15:25:50,5.051s,PASSED
+,,,,,,
+Test Cases/VisitShopScenarios/VisitShopsWithChillerLevelOverwriteScenarios,,,2019-04-05 15:25:50,2019-04-05 16:47:51,1h - 22m - 1.307s,PASSED
+"verifyElementText(findTestObject(""DashboardScreenElements/Validate_DashboardScreen"", [""package"":PACKAGENAME]), ""Dashboard"")",,validate the dashboard screen appearance,2019-04-05 15:25:50,2019-04-05 15:25:54,3.559s,PASSED
+com.ct.qa.keywords.CommonKeywords.selectday(),,select current day,2019-04-05 15:25:54,2019-04-05 15:25:57,2.848s,PASSED
+"tap(findTestObject(""DashboardScreenElements/StartYourDay"", [""package"":PACKAGENAME]), 0)",,tap on start your day button to further proceed,2019-04-05 15:25:57,2019-04-05 15:25:58,0.967s,PASSED
+"verifyElementText(findTestObject(""Validate_ShopListScreen"", [""package"":PACKAGENAME]), ""Shops on Route"")",,Validate shops list screen appearance,2019-04-05 15:25:58,2019-04-05 15:25:59,1.376s,PASSED
+com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWith_ChillerLevel_OverwriteScenarios(),,,2019-04-05 15:25:59,2019-04-05 16:47:51,1h - 21m - 52.233s,PASSED

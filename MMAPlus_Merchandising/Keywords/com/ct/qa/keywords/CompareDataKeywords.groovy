@@ -143,30 +143,8 @@ public class CompareDataKeywords {
 			}
 			MobileElement category = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String categoryname = category.getText()
-			if(categoryname.equalsIgnoreCase("Chiller")){
-				displayshopcategorieslist.add(categoryname)
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("Chiller Utilization")){
+			if(categoryname.equalsIgnoreCase("Chiller Utilization")){
 				displayshopcategorieslist.add("Chiller")
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("Additional Picture")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("POP Application")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("Competition Tracking")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("Retailer Remarks")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("RTM -Visit Frequency")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(categoryname.equalsIgnoreCase("Hanger Availibility")){
 				mandatorycategories = mandatorycategories + 1
 			}
 			else{
@@ -184,30 +162,8 @@ public class CompareDataKeywords {
 			if(lastitemnamebeforeswipe.equalsIgnoreCase(lastitemnameafterswipe)){
 				break
 			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller")){
-				displayshopcategorieslist.add(lastitemnameafterswipe)
-				mandatorycategories = mandatorycategories + 1
-			}
 			else if(lastitemnameafterswipe.equalsIgnoreCase("Chiller Utilization")){
 				displayshopcategorieslist.add("Chiller")
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Additional Picture")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Competition Tracking")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Retailer Remarks")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("RTM -Visit Frequency")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("POP Application")){
-				mandatorycategories = mandatorycategories + 1
-			}
-			else if(lastitemnameafterswipe.equalsIgnoreCase("Hanger Availibility")){
 				mandatorycategories = mandatorycategories + 1
 			}
 			else{

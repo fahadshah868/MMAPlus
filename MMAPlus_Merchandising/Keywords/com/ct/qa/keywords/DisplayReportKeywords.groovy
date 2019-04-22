@@ -295,21 +295,28 @@ public class DisplayReportKeywords {
 						String.format("%-40s%-100s", "Other Categories Visiting Scenarios:",visitedshopdatainfo.getOthercategories_scenarios())
 				if(visitedshopdatainfo.getVisitedcategoriesdata() != null){
 					for(int j=0; j< visitedshopdatainfo.getVisitedcategoriesdata().size(); j++){
+						int chiller_count
 						VisitedCategoryData visitedcategorydata = visitedshopdatainfo.getVisitedcategoriesdata().get(j)
 						ArrayList<ProductCategoryWithProducts> productcategorywithproducts = visitedcategorydata.getProductcategorywithproducts()
 						if(visitedcategorydata.getMaincategory().equalsIgnoreCase("Chiller Utilization")){
+							message = message+ "\n\n" +
+									String.format("%-30s%-130s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n"
 							for(int k=0; k< visitedcategorydata.getTaggedchillersremark().size(); k++){
 								TaggedChillersRemark taggedchillerremarks = visitedcategorydata.getTaggedchillersremark().get(k)
 								if(taggedchillerremarks.getVisitedchillerproductscategories() != null){
-									if(k==0){
-										message = message+ "\n\n" +
-												String.format("%-30s%-130s", "Main Category:",visitedcategorydata.getMaincategory()) + "\n" +
-												String.format("%-30s%-130s", "Chiller Type Scenarios:",taggedchillerremarks.getFirstvisit_chillertype()+"  ==>  "+taggedchillerremarks.getOverwrite_chillertype()) + "\n" +
-												String.format("%-30s%-130s", "Chiller Remark Scenarios:",taggedchillerremarks.getFirstvisit_chillerremark()+"  ==>  "+taggedchillerremarks.getOverwrite_chillerremark()) + "\n"
-									}
-									else{
-										message = message + "\n\n" +
-												String.format("%-100s","<----------------------------------------------->")+"\n"
+									if(chiller_count == null || chiller_count != taggedchillerremarks.getCount()){
+										chiller_count = taggedchillerremarks.getCount()
+										if(taggedchillerremarks.getFirstvisit_chillertype() == null){
+											message = message + "\n\n" +
+													String.format("%-100s","Overwrite Chiller "+taggedchillerremarks.getCount()+" ----------------------------------------------------------------------->")+"\n"+
+													String.format("%-30s%-130s", "Chiller Type:",taggedchillerremarks.getOverwrite_chillertype()) + "\n" +
+													String.format("%-30s%-130s", "Chiller Remark:",taggedchillerremarks.getOverwrite_chillerremark()) + "\n"
+										}
+										else{
+											message = message+ "\n\n" +
+													String.format("%-30s%-130s", "Chiller Type Scenarios:",taggedchillerremarks.getFirstvisit_chillertype()+"  ==>  "+taggedchillerremarks.getOverwrite_chillertype()) + "\n" +
+													String.format("%-30s%-130s", "Chiller Remark Scenarios:",taggedchillerremarks.getFirstvisit_chillerremark()+"  ==>  "+taggedchillerremarks.getOverwrite_chillerremark()) + "\n"
+										}
 									}
 									for(int m=0; m<taggedchillerremarks.getVisitedchillerproductscategories().size() ; m++){
 										VisitedChillerProductsCategoryData visitedchillerproductcategory = taggedchillerremarks.getVisitedchillerproductscategories().get(m)

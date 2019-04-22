@@ -533,67 +533,69 @@ public class ChillerProductsDataKeywords {
 							boolean chiller_type_remark_flag = false
 							for(int p=0; p<taggedchillersremarks.size(); p++){
 								TaggedChillersRemark taggedchillerremarkinfo = taggedchillersremarks.get(p)
-								if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-									taggedchillerremarkinfo.setFirstvisit_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-									taggedchillerremarkinfo.setFirstvisit_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-								}
-								else{
-									taggedchillerremarkinfo.setOverwrite_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-									taggedchillerremarkinfo.setOverwrite_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-								}
-								if((taggedchillerremarkinfo.getFirstvisit_chillertype().equals(taggedchillerremarks.getFirstvisit_chillertype()) && taggedchillerremarkinfo.getFirstvisit_chillerremark().equals(taggedchillerremarks.getFirstvisit_chillerremark())) || (taggedchillerremarkinfo.getFirstvisit_chillertype().equals(taggedchillerremarks.getOverwrite_chillertype()) && taggedchillerremarkinfo.getFirstvisit_chillerremark().equals(taggedchillerremarks.getOverwrite_chillerremark()))){
-									chiller_type_remark_flag = true
-									ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductcategorydata = taggedchillerremarkinfo.getVisitedchillerproductscategories()
-									boolean productcategory_flag = false
-									for(int y=0; y< visitedchillerproductcategorydata.size(); y++){
-										VisitedChillerProductsCategoryData visitedchillerproductscategoryinfo = visitedchillerproductcategorydata.get(y)
-										if(visitedchillerproductscategoryinfo.getProductCategory().equals(visitedchillerproductscategory.getProductCategory())){
-											productcategory_flag = true
-											ArrayList<ShopProductsData> shopproductdata = visitedchillerproductscategoryinfo.getShopproductsdata()
-											for(int z=0; z<shopproductdata.size(); z++){
-												ShopProductsData existingproductsdata = shopproductdata.get(z)
-												for(int x=0; x< shopproductsdata.size(); x++){
-													ShopProductsData newproductsdatainfo = shopproductsdata.get(x)
-													if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
-														if(ProjectConstants.SCENARIO.equals("first visit")){
-															if(assettype.equals("Facing")){
-																existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
-																break
-															}
-															else if(assettype.equals("Stock Count")){
-																existingproductsdata.setStocktakingdata_stockcountdata(newproductsdatainfo.getStocktakingdata_stockcountdata())
-																break
-															}
-															else if(assettype.equals("Depth")){
-																existingproductsdata.setDepthdata(newproductsdatainfo.getDepthdata())
-																break
-															}
-															else{}
-														}
-														else{
-															if(assettype.equals("Facing")){
-																existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
-																break
-															}
-															else if(assettype.equals("Depth")){
-																existingproductsdata.setOverwritedepthdata(newproductsdatainfo.getOverwritedepthdata())
-																break
-															}
-															else if(assettype.equals("Stock Count")){
-																existingproductsdata.setOverwritestocktakingdata_stockcountdata(newproductsdatainfo.getOverwritestocktakingdata_stockcountdata())
-																break
+								if(taggedchillerremarkinfo.getCount() == ProjectConstants.CURRENTVISITING_CHILLERCOUNT){
+									if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+										taggedchillerremarkinfo.setFirstvisit_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+										taggedchillerremarkinfo.setFirstvisit_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
+									}
+									else{
+										taggedchillerremarkinfo.setOverwrite_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+										taggedchillerremarkinfo.setOverwrite_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
+									}
+									if((taggedchillerremarkinfo.getFirstvisit_chillertype().equals(taggedchillerremarks.getFirstvisit_chillertype()) && taggedchillerremarkinfo.getFirstvisit_chillerremark().equals(taggedchillerremarks.getFirstvisit_chillerremark())) || (taggedchillerremarkinfo.getFirstvisit_chillertype().equals(taggedchillerremarks.getOverwrite_chillertype()) && taggedchillerremarkinfo.getFirstvisit_chillerremark().equals(taggedchillerremarks.getOverwrite_chillerremark()))){
+										chiller_type_remark_flag = true
+										ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductcategorydata = taggedchillerremarkinfo.getVisitedchillerproductscategories()
+										boolean productcategory_flag = false
+										for(int y=0; y< visitedchillerproductcategorydata.size(); y++){
+											VisitedChillerProductsCategoryData visitedchillerproductscategoryinfo = visitedchillerproductcategorydata.get(y)
+											if(visitedchillerproductscategoryinfo.getProductCategory().equals(visitedchillerproductscategory.getProductCategory())){
+												productcategory_flag = true
+												ArrayList<ShopProductsData> shopproductdata = visitedchillerproductscategoryinfo.getShopproductsdata()
+												for(int z=0; z<shopproductdata.size(); z++){
+													ShopProductsData existingproductsdata = shopproductdata.get(z)
+													for(int x=0; x< shopproductsdata.size(); x++){
+														ShopProductsData newproductsdatainfo = shopproductsdata.get(x)
+														if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
+															if(ProjectConstants.SCENARIO.equals("first visit")){
+																if(assettype.equals("Facing")){
+																	existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
+																	break
+																}
+																else if(assettype.equals("Stock Count")){
+																	existingproductsdata.setStocktakingdata_stockcountdata(newproductsdatainfo.getStocktakingdata_stockcountdata())
+																	break
+																}
+																else if(assettype.equals("Depth")){
+																	existingproductsdata.setDepthdata(newproductsdatainfo.getDepthdata())
+																	break
+																}
+																else{}
 															}
 															else{
+																if(assettype.equals("Facing")){
+																	existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
+																	break
+																}
+																else if(assettype.equals("Depth")){
+																	existingproductsdata.setOverwritedepthdata(newproductsdatainfo.getOverwritedepthdata())
+																	break
+																}
+																else if(assettype.equals("Stock Count")){
+																	existingproductsdata.setOverwritestocktakingdata_stockcountdata(newproductsdatainfo.getOverwritestocktakingdata_stockcountdata())
+																	break
+																}
+																else{
+																}
 															}
 														}
 													}
 												}
 											}
 										}
-									}
-									if(productcategory_flag == false){
-										taggedchillerremarkinfo.setVisitedchillerproductscategories(visitedchillerproductscategory)
-										break
+										if(productcategory_flag == false){
+											taggedchillerremarkinfo.setVisitedchillerproductscategories(visitedchillerproductscategory)
+											break
+										}
 									}
 								}
 							}
@@ -899,6 +901,7 @@ public class ChillerProductsDataKeywords {
 		visitedchillerproductscategory.setProductCategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
 		visitedchillerproductscategory.setShopproductsdata(shopproductsdata)
 		taggedchillerremarks.setVisitedchillerproductscategories(visitedchillerproductscategory)
+		taggedchillerremarks.setCount(ProjectConstants.CURRENTVISITING_CHILLERCOUNT)
 		visitedcategorydata.setTaggedchillersremark(taggedchillerremarks)
 		for(int i=0; i< ProjectConstants.visitedshopdatainfo.size(); i++){
 			if(ProjectConstants.visitedshopdatainfo.get(i).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)){
@@ -914,58 +917,60 @@ public class ChillerProductsDataKeywords {
 							boolean chiller_type_remark_flag = false
 							for(int p=0; p<taggedchillersremarks.size(); p++){
 								TaggedChillersRemark taggedchillerremarkinfo = taggedchillersremarks.get(p)
-								if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-									taggedchillerremarkinfo.setFirstvisit_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-									taggedchillerremarkinfo.setFirstvisit_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-								}
-								else{
-									taggedchillerremarkinfo.setOverwrite_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
-									taggedchillerremarkinfo.setOverwrite_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
-								}
-								if(taggedchillerremarkinfo.getFirstvisit_chillertype().equals(taggedchillerremarks.getFirstvisit_chillertype()) && taggedchillerremarkinfo.getFirstvisit_chillerremark().equals(taggedchillerremarks.getFirstvisit_chillerremark())){
-									chiller_type_remark_flag = true
-									ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductcategorydata = taggedchillerremarkinfo.getVisitedchillerproductscategories()
-									boolean productcategory_flag = false
-									for(int y=0; y< visitedchillerproductcategorydata.size(); y++){
-										VisitedChillerProductsCategoryData visitedchillerproductscategoryinfo = visitedchillerproductcategorydata.get(y)
-										if(visitedchillerproductscategoryinfo.getProductCategory().equals(visitedchillerproductscategory.getProductCategory())){
-											productcategory_flag = true
-											ArrayList<ShopProductsData> shopproductdata = visitedchillerproductscategoryinfo.getShopproductsdata()
-											for(int z=0; z<shopproductdata.size(); z++){
-												ShopProductsData existingproductsdata = shopproductdata.get(z)
-												for(int x=0; x< shopproductsdata.size(); x++){
-													ShopProductsData newproductsdatainfo = shopproductsdata.get(x)
-													if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
-														if(ProjectConstants.SCENARIO.equals("first visit")){
-															if(assettype.equals("Facing")){
-																existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
-																break
-															}
-															else if(assettype.equals("Stock Taking")){
-																existingproductsdata.setStocktakingdata_stockcountdata(newproductsdatainfo.getStocktakingdata_stockcountdata())
-																break
-															}
-															else{}
-														}
-														else{
-															if(assettype.equals("Facing")){
-																existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
-																break
-															}
-															else if(assettype.equals("Stock Taking")){
-																existingproductsdata.setOverwritestocktakingdata_stockcountdata(newproductsdatainfo.getOverwritestocktakingdata_stockcountdata())
-																break
+								if(taggedchillerremarkinfo.getCount() == ProjectConstants.CURRENTVISITING_CHILLERCOUNT){
+									if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+										taggedchillerremarkinfo.setFirstvisit_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+										taggedchillerremarkinfo.setFirstvisit_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
+									}
+									else{
+										taggedchillerremarkinfo.setOverwrite_chillertype(ProjectConstants.CURRENTVISITING_CHILLERTYPE)
+										taggedchillerremarkinfo.setOverwrite_chillerremark(ProjectConstants.CURRENTVISITING_CHILLERREMARK)
+									}
+									if(taggedchillerremarkinfo.getFirstvisit_chillertype().equals(taggedchillerremarks.getFirstvisit_chillertype()) && taggedchillerremarkinfo.getFirstvisit_chillerremark().equals(taggedchillerremarks.getFirstvisit_chillerremark())){
+										chiller_type_remark_flag = true
+										ArrayList<VisitedChillerProductsCategoryData> visitedchillerproductcategorydata = taggedchillerremarkinfo.getVisitedchillerproductscategories()
+										boolean productcategory_flag = false
+										for(int y=0; y< visitedchillerproductcategorydata.size(); y++){
+											VisitedChillerProductsCategoryData visitedchillerproductscategoryinfo = visitedchillerproductcategorydata.get(y)
+											if(visitedchillerproductscategoryinfo.getProductCategory().equals(visitedchillerproductscategory.getProductCategory())){
+												productcategory_flag = true
+												ArrayList<ShopProductsData> shopproductdata = visitedchillerproductscategoryinfo.getShopproductsdata()
+												for(int z=0; z<shopproductdata.size(); z++){
+													ShopProductsData existingproductsdata = shopproductdata.get(z)
+													for(int x=0; x< shopproductsdata.size(); x++){
+														ShopProductsData newproductsdatainfo = shopproductsdata.get(x)
+														if(existingproductsdata.getProduct().equals(newproductsdatainfo.getProduct())){
+															if(ProjectConstants.SCENARIO.equals("first visit")){
+																if(assettype.equals("Facing")){
+																	existingproductsdata.setFacingdata(newproductsdatainfo.getFacingdata())
+																	break
+																}
+																else if(assettype.equals("Stock Taking")){
+																	existingproductsdata.setStocktakingdata_stockcountdata(newproductsdatainfo.getStocktakingdata_stockcountdata())
+																	break
+																}
+																else{}
 															}
 															else{
+																if(assettype.equals("Facing")){
+																	existingproductsdata.setOverwritefacingdata(newproductsdatainfo.getOverwritefacingdata())
+																	break
+																}
+																else if(assettype.equals("Stock Taking")){
+																	existingproductsdata.setOverwritestocktakingdata_stockcountdata(newproductsdatainfo.getOverwritestocktakingdata_stockcountdata())
+																	break
+																}
+																else{
+																}
 															}
 														}
 													}
 												}
 											}
 										}
-									}
-									if(productcategory_flag == false){
-										taggedchillerremarkinfo.setVisitedchillerproductscategories(visitedchillerproductscategory)
+										if(productcategory_flag == false){
+											taggedchillerremarkinfo.setVisitedchillerproductscategories(visitedchillerproductscategory)
+										}
 									}
 								}
 							}
