@@ -29,6 +29,7 @@ public class VisitedShopDataInfo {
 	public String shopname
 	public String shopchannel
 	public String shop_scenario
+	public String remark
 	public String othercategories_scenarios
 	public ArrayList<VisitedCategoryData> visitedcategoriesdata
 
@@ -59,9 +60,14 @@ public class VisitedShopDataInfo {
 	public void setShopchannel(String shopchannel) {
 		this.shopchannel = shopchannel;
 	}
-
 	public ArrayList<VisitedCategoryData> getVisitedcategoriesdata() {
 		return visitedcategoriesdata;
+	}
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
 	public void setVisitedcategoriesdata(VisitedCategoryData visitedcategoriesdata) {
 		this.visitedcategoriesdata.add(visitedcategoriesdata);

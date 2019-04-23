@@ -36,6 +36,12 @@ def static "com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages"() 
     (new com.ct.qa.keywords.AdditionalPictureKeywords()).takeMendatoryImages()
 }
 
+def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitSliderShops"(
+    	String remark	) {
+    (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitSliderShops(
+        	remark)
+}
+
 def static "com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_DataVerification"() {
     (new com.ct.qa.keywords.ShopVisitingScenariosKeywords()).visitShopWith_DataVerification()
 }

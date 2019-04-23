@@ -1,8 +1,0 @@
-Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
-MMA Plus Merchandising With Category Level Overwrite Scenarios,,,2019-04-05 17:28:33,2019-04-05 17:28:43,10.279s,FAILED
-,,,,,,
-Test Cases/LaunchingApp/LaunchApp,,,2019-04-05 17:28:33,2019-04-05 17:28:42,9.058s,FAILED
-"startApplication(""F:\QA_Automation\Builds\mmaplus_030419_local_v154.apk"", false)",,launch application,2019-04-05 17:28:34,2019-04-05 17:28:42,8.000s,FAILED
-,,,,,,
-Test Cases/VisitShopScenarios/VisitShopsWithCategoryLevelOverwriteScenarios,,,2019-04-05 17:28:42,2019-04-05 17:28:43,0.593s,FAILED
-"verifyElementText(findTestObject(""DashboardScreenElements/Validate_DashboardScreen"", [""package"":PACKAGENAME]), ""Dashboard"")",,validate the dashboard screen appearance,2019-04-05 17:28:43,2019-04-05 17:28:43,0.060s,FAILED

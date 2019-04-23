@@ -127,7 +127,7 @@ public class ProjectConstants {
 
 	//list for containing shop info
 	public static ArrayList<MissingShopDataInfo> missingshopdatainfo = new ArrayList<MissingShopDataInfo>()
-	public static ArrayList<VisitedShopDataInfo> visitedshopdatainfo = new ArrayList<MissingShopDataInfo>()
+	public static ArrayList<VisitedShopDataInfo> visitedshopdatainfo = new ArrayList<VisitedShopDataInfo>()
 	public static MissingSliderOptions missingslideroptions = new MissingSliderOptions()
 
 	//initialization of sheet columns index

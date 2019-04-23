@@ -29,6 +29,7 @@ public class MissingShopDataInfo {
 	public String shopname
 	public String shopchannel
 	public String scenario
+	public String remark
 	public ArrayList<String> missingshopactions
 	public String missingshopactions_errormessage
 	public ArrayList<String> missingshopcategories
@@ -39,6 +40,12 @@ public class MissingShopDataInfo {
 		this.missingcategoriesdata = new ArrayList<MissingCategoryData>()
 	}
 
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
 	public String getMissingshopactions_errormessage() {
 		return missingshopactions_errormessage;
 	}

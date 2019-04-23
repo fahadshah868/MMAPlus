@@ -21,9 +21,10 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.mysql.jdbc.DatabaseMetaData.SingleStringIterator
 import com.ct.qa.constants.ProjectConstants
+import com.ct.qa.struct.MissingShopDataInfo
 import com.ct.qa.struct.MissingSliderOptions
 import com.ct.qa.struct.UnmatchedItems
-
+import com.ct.qa.struct.VisitedShopDataInfo
 import internal.GlobalVariable
 import io.appium.java_client.MobileElement
 
@@ -59,7 +60,9 @@ public class SliderOptionsKeywords {
 					"\n\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n"
 			KeywordUtil.logInfo(message)
 		}
-		else{}
+		DisplayReportKeywords.displayDataInReport()
+		ProjectConstants.missingshopdatainfo = new ArrayList<MissingShopDataInfo>()
+		ProjectConstants.visitedshopdatainfo = new ArrayList<VisitedShopDataInfo>()
 	}
 	@Keyword
 	def findSliderOption(String option){
@@ -85,6 +88,7 @@ public class SliderOptionsKeywords {
 					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Route LIST')
 					findRoute()
 					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_ShopOnRouteScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Shops on Route')
+					ShopVisitingScenariosKeywords.visitSliderShops("Out Of Route Shops")
 					Mobile.pressBack()
 					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Route LIST')
 					Mobile.pressBack()
@@ -99,6 +103,19 @@ public class SliderOptionsKeywords {
 					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_BuildVersion' , [('package') : ProjectConstants.PACKAGENAME]), 'Build Version')
 					Mobile.pressBack()
 					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+				}
+				else if(option.equalsIgnoreCase("Abnormal Shops")){
+					Mobile.delay(10)
+					try{
+						Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 20)
+						Mobile.verifyElementText(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Shops on Route")
+						ShopVisitingScenariosKeywords.visitSliderShops("Abnormal Shops")
+						Mobile.pressBack()
+					}
+					catch(Exception ex){
+						Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+					}
 				}
 				break
 			}
@@ -132,6 +149,7 @@ public class SliderOptionsKeywords {
 							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Route LIST')
 							findRoute()
 							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_ShopOnRouteScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Shops on Route')
+							ShopVisitingScenariosKeywords.visitSliderShops("Out Of Route Shops")
 							Mobile.pressBack()
 							Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Route LIST')
 							Mobile.pressBack()
@@ -147,6 +165,19 @@ public class SliderOptionsKeywords {
 							Mobile.pressBack()
 							Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 						}
+						else if(option.equalsIgnoreCase("Abnormal Shops")){
+							Mobile.delay(10)
+							try{
+								Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 20)
+								Mobile.verifyElementText(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Shops on Route")
+								ShopVisitingScenariosKeywords.visitSliderShops("Abnormal Shops")
+								Mobile.pressBack()
+							}
+							catch(Exception ex){
+								Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+								Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+							}
+						}
 						break
 					}
 					else{}
@@ -157,11 +188,33 @@ public class SliderOptionsKeywords {
 	}
 	@Keyword
 	def findRoute(){
+		Calendar calendar = Calendar.getInstance()
+		int day = calendar.get(Calendar.DAY_OF_WEEK)
+		if(day == 1){
+			getRoute("Monday")
+		}
+		else if(day == 2){
+			getRoute("Tuesday")
+		}
+		else if(day == 3){
+			getRoute("Wednesday")
+		}
+		else if(day == 4){
+			getRoute("Thursday")
+		}
+		else if(day == 5){
+			getRoute("Friday")
+		}
+		else if(day == 6){
+			getRoute("Saturday")
+		}
+	}
+	def getRoute(String _route){
 		int totalroutes = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<=totalroutes; i++){
 			MobileElement route = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String routename = route.getText()
-			if(routename.equalsIgnoreCase("Monday")){
+			if(routename.equalsIgnoreCase(_route)){
 				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]").click()
 				break
 			}
