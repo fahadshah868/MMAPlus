@@ -47,6 +47,7 @@ public class ProjectConstants {
 	public static final String DISTRIBUTION_SHEET = "Distribution Point"
 	public static final String SLIDEROPTIONSSHEET = "Slider Options"
 	public static final String SHOPACTIONSSHEET = "Shop Actions"
+	public static final String SHOPREMARKSSHEET = "Shop Remarks"
 	public static final String SURVEYQUESTIONSSHEET = "Survey"
 	public static final AppiumDriver<MobileElement> DRIVER = MobileDriverFactory.getDriver()
 
@@ -98,6 +99,9 @@ public class ProjectConstants {
 	//shop actions columns
 	public static final int SHOPACTIONS
 
+	//shop remarks columns
+	public static final int SHOPREMARKS
+
 	//slider options columns
 	public static final int SLIDEROPTIONS
 
@@ -137,16 +141,22 @@ public class ProjectConstants {
 		XSSFSheet slideroptionssheet = LoadDataKeywords.loadSliderOptionsSheet()
 		XSSFSheet shopactionssheet = LoadDataKeywords.loadShopActionsSheet()
 		XSSFSheet auditquestionssheet = LoadDataKeywords.loadSurveyQuestionsSheet()
+		XSSFSheet shopremarkssheet = LoadDataKeywords.loadShopRemarksSheet()
+
 		Row chillerproductssheetheaderrow = chillerproductssheet.getRow(0)
 		Row channelproductssheetheaderrow = channelproductssheet.getRow(0)
 		Row slideroptionssheetheaderrow = slideroptionssheet.getRow(0)
 		Row shopactionssheetheaderrow = shopactionssheet.getRow(0)
 		Row auditquestionssheetheaderrow = auditquestionssheet.getRow(0)
+		Row shopremarkssheetheaderrow = shopremarkssheet.getRow(0)
+
 		int channelproductssheettotalcolumns = channelproductssheetheaderrow.getLastCellNum()
 		int chillerproductssheettotalcolumns = chillerproductssheetheaderrow.getLastCellNum()
 		int slideroptionssheettotalcolumns = slideroptionssheetheaderrow.getLastCellNum()
 		int shopactionssheettotalcolumns = shopactionssheetheaderrow.getLastCellNum()
 		int auditquestionssheettotalcolumns = auditquestionssheetheaderrow.getLastCellNum()
+		int shopremarkssheettotalcolumns = shopremarkssheetheaderrow.getLastCellNum()
+
 		for(int cellnumber=0; cellnumber<channelproductssheettotalcolumns; cellnumber++){
 			String columnname = channelproductssheetheaderrow.getCell(cellnumber)
 			if(columnname.equalsIgnoreCase("Channel")){
@@ -252,6 +262,14 @@ public class ProjectConstants {
 			String columnname = shopactionssheetheaderrow.getCell(cellnumber)
 			if(columnname.equalsIgnoreCase("Shop Actions")){
 				SHOPACTIONS = cellnumber
+			}
+			else{
+			}
+		}
+		for(int cellnumber=0; cellnumber<shopremarkssheettotalcolumns; cellnumber++ ){
+			String columnname = shopremarkssheetheaderrow.getCell(cellnumber)
+			if(columnname.equalsIgnoreCase("Shop Remarks")){
+				SHOPREMARKS = cellnumber
 			}
 			else{
 			}

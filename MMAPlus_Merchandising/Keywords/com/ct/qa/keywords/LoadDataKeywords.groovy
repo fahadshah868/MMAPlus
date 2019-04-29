@@ -100,6 +100,17 @@ public class LoadDataKeywords {
 		catch(Exception ex){
 		}
 	}
+	//load Slider Options sheet
+	def static loadShopRemarksSheet(){
+		try{
+			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.EXCEL_FILEPATH))
+			XSSFWorkbook wb = new XSSFWorkbook(inputStream)
+			XSSFSheet sheet = wb.getSheet(ProjectConstants.SHOPREMARKSSHEET)
+			return sheet
+		}
+		catch(Exception ex){
+		}
+	}
 	//load audit question category list
 	def static loadSurveyQuestionCategoryList(){
 		DataFormatter dataformatter = new DataFormatter()
@@ -146,6 +157,19 @@ public class LoadDataKeywords {
 			expectedshopactionslist.add(shopaction)
 		}
 		return expectedshopactionslist
+	}
+	//load shop actions
+	def static loadShopRemarksList(){
+		DataFormatter dataformatter = new DataFormatter()
+		ArrayList<String> expectedshopremarkslist = new ArrayList<String>()
+		XSSFSheet sheet = loadShopRemarksSheet()
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<= totalrows; i++){
+			Row row = sheet.getRow(i)
+			String shopaction = dataformatter.formatCellValue(row.getCell(ProjectConstants.SHOPREMARKS))
+			expectedshopremarkslist.add(shopaction)
+		}
+		return expectedshopremarkslist
 	}
 	//load shop categories
 	def static loadShopCategories(){

@@ -32,6 +32,8 @@ public class MissingShopDataInfo {
 	public String remark
 	public ArrayList<String> missingshopactions
 	public String missingshopactions_errormessage
+	public ArrayList<String> missingshopremarks
+	public String missingshopremarks_errormessage
 	public ArrayList<String> missingshopcategories
 	public String missingshopcategories_errormessage
 	public ArrayList<MissingCategoryData> missingcategoriesdata
@@ -69,6 +71,18 @@ public class MissingShopDataInfo {
 	}
 	public void setMissingshopactions(ArrayList<String> missingshopactions) {
 		this.missingshopactions = missingshopactions;
+	}
+	public ArrayList<String> getMissingshopremarks() {
+		return missingshopremarks;
+	}
+	public void setMissingshopremarks(ArrayList<String> missingshopremarks) {
+		this.missingshopremarks = missingshopremarks;
+	}
+	public String getMissingshopremarks_errormessage() {
+		return missingshopremarks_errormessage;
+	}
+	public void setMissingshopremarks_errormessage(String missingshopremarks_errormessage) {
+		this.missingshopremarks_errormessage = missingshopremarks_errormessage;
 	}
 	public String getShopname() {
 		return shopname;

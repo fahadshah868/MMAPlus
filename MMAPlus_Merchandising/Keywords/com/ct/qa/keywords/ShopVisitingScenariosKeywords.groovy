@@ -92,6 +92,44 @@ public class ShopVisitingScenariosKeywords{
 		else{
 		}
 	}
+	def static missingShopRemarksList(){
+		UnmatchedItems unmatcheditems = CompareDataKeywords.compareShopRemarksList()
+		if(unmatcheditems.getStatus() == 2){
+			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+					ProjectConstants.missingshopdatainfo.get(j).setMissingshopremarks(unmatcheditems.getItems())
+					ProjectConstants.missingshopdatainfo.get(j).setMissingshopremarks_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_NOTMATCH)
+					break
+				}
+				else{
+				}
+			}
+		}
+		else if(unmatcheditems.getStatus() == 1){
+			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+					ProjectConstants.missingshopdatainfo.get(j).setMissingshopremarks(unmatcheditems.getItems())
+					ProjectConstants.missingshopdatainfo.get(j).setMissingshopremarks_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_MORE)
+					break
+				}
+				else{
+				}
+			}
+		}
+		else if(unmatcheditems.getStatus() == -1){
+			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+					ProjectConstants.missingshopdatainfo.get(j).setMissingshopremarks(unmatcheditems.getItems())
+					ProjectConstants.missingshopdatainfo.get(j).setMissingshopremarks_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_MISSING)
+					break
+				}
+				else{
+				}
+			}
+		}
+		else{
+		}
+	}
 	@Keyword
 	def static visitSliderShops(String remark){
 		int index = 0
@@ -117,6 +155,8 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			//validate missing shop remarks list e.g. shop open, closed etc...
+			missingShopRemarksList()
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 			ProjectConstants.SCENARIO = "first visit"
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
@@ -172,6 +212,8 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			//validate missing shop remarks list e.g. shop open, closed etc...
+			missingShopRemarksList()
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 			ProjectConstants.SCENARIO = "first visit"
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
@@ -232,6 +274,8 @@ public class ShopVisitingScenariosKeywords{
 		//				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		//				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		//				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//				//validate missing shop remarks list e.g. shop open, closed etc...
+		//				missingShopRemarksList()
 		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 		//				ProjectConstants.SCENARIO = "first visit"
 		//				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
@@ -296,6 +340,8 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			// shop closed to shop open
 			if(i == 1){
+				//validate missing shop remarks list e.g. shop open, closed etc...
+				missingShopRemarksList()
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				ProjectConstants.SCENARIO = "overwrite"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
@@ -444,6 +490,8 @@ public class ShopVisitingScenariosKeywords{
 			}
 			//shop open to shop open
 			else if(i == 6){
+				//validate missing shop remarks list e.g. shop open, closed etc...
+				missingShopRemarksList()
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				ProjectConstants.SCENARIO = "overwrite"
 				ProjectConstants.SHOP_ATTEMPT = 1
@@ -512,6 +560,8 @@ public class ShopVisitingScenariosKeywords{
 				Mobile.callTestCase(findTestCase("Test Cases/ShopClosed/VisitShopClosed"), null)
 				Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 				findShop(ProjectConstants.CURRENTVISITING_SHOPNAME)
+				//validate missing shop remarks list e.g. shop open, closed etc...
+				missingShopRemarksList()
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				ProjectConstants.SCENARIO = "overwrite"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
@@ -544,6 +594,8 @@ public class ShopVisitingScenariosKeywords{
 			}
 			//shop open to shop closed
 			else if(i == 2){
+				//validate missing shop remarks list e.g. shop open, closed etc...
+				missingShopRemarksList()
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				ProjectConstants.SCENARIO = "first visit"
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
@@ -675,6 +727,8 @@ public class ShopVisitingScenariosKeywords{
 			}
 			//shop open to shop open
 			else if(i == 6){
+				//validate missing shop remarks list e.g. shop open, closed etc...
+				missingShopRemarksList()
 				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 				ProjectConstants.SCENARIO = "first visit"
 				ProjectConstants.SHOP_ATTEMPT = 1
@@ -751,6 +805,8 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			//validate missing shop remarks list e.g. shop open, closed etc...
+			missingShopRemarksList()
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 			ProjectConstants.SCENARIO = "Overwrite"
 			Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithOverwritingScenarios"), null)
@@ -813,6 +869,8 @@ public class ShopVisitingScenariosKeywords{
 		//				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		//				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		//				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//				//validate missing shop remarks list e.g. shop open, closed etc...
+		//				missingShopRemarksList()
 		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 		//				ProjectConstants.SCENARIO = "Overwrite"
 		//				Mobile.callTestCase(findTestCase("ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithOverwritingScenarios"), null)
@@ -873,6 +931,8 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			//validate missing shop remarks list e.g. shop open, closed etc...
+			missingShopRemarksList()
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 			ProjectConstants.SCENARIO = "first visit"
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithOverwriteScenarios"), null)
@@ -937,6 +997,8 @@ public class ShopVisitingScenariosKeywords{
 		//				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		//				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		//				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//				//validate missing shop remarks list e.g. shop open, closed etc...
+		//				missingShopRemarksList()
 		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 		//				ProjectConstants.SCENARIO = "first visit"
 		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithOverwriteScenarios"), null)
@@ -1003,6 +1065,8 @@ public class ShopVisitingScenariosKeywords{
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 			MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+			//validate missing shop remarks list e.g. shop open, closed etc...
+			missingShopRemarksList()
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 			ProjectConstants.SCENARIO = "first visit"
 			Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_ChillerLevelOverwriteScenarios"), null)
@@ -1065,6 +1129,8 @@ public class ShopVisitingScenariosKeywords{
 		//				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		//				Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		//				MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//				//validate missing shop remarks list e.g. shop open, closed etc...
+		//				missingShopRemarksList()
 		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 		//				ProjectConstants.SCENARIO = "first visit"
 		//				Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWith_ChillerLevelOverwriteScenarios"), null)

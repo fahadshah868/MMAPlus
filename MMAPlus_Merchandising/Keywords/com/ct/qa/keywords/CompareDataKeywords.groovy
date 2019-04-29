@@ -214,6 +214,17 @@ public class CompareDataKeywords {
 		UnmatchedItems unmatcheditems = compareLists(expectedshopactionslist, displayedshopactionslist)
 		return unmatcheditems
 	}
+	def static compareShopRemarksList(){
+		ArrayList<String> displayedshopremarkslist = new ArrayList<String>()
+		ArrayList<String> expectedshopremarkslist = LoadDataKeywords.loadShopRemarksList()
+		int remarkslist = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+		for(int i=1; i<= remarkslist; i++){
+			MobileElement action = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
+			displayedshopremarkslist.add(action.getText())
+		}
+		UnmatchedItems unmatcheditems = compareLists(expectedshopremarkslist, displayedshopremarkslist)
+		return unmatcheditems
+	}
 	def static compareSurveyQuestionCategories(){
 		ArrayList<String> expectedquestioncategories = LoadDataKeywords.loadSurveyQuestionCategoryList()
 		ArrayList<String> displayedquestioncategorieslist = new ArrayList<String>()

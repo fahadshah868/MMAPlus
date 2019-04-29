@@ -38,6 +38,8 @@ CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption'('Abno
 
 CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption'('Info')
 
+CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption'('RedFlag Shops')
+
 Mobile.swipe(320, 5, 2, 5)
 
 Mobile.swipe(320, 5, 2, 5)

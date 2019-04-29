@@ -117,6 +117,19 @@ public class SliderOptionsKeywords {
 						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 					}
 				}
+				else if(option.equalsIgnoreCase("RedFlag Shops")){
+					Mobile.delay(10)
+					try{
+						Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 20)
+						Mobile.verifyElementText(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Shops on Route")
+						ShopVisitingScenariosKeywords.visitSliderShops("RedFlag Shops")
+						Mobile.pressBack()
+					}
+					catch(Exception ex){
+						Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+					}
+				}
 				break
 			}
 			else{}
@@ -171,6 +184,19 @@ public class SliderOptionsKeywords {
 								Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 20)
 								Mobile.verifyElementText(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Shops on Route")
 								ShopVisitingScenariosKeywords.visitSliderShops("Abnormal Shops")
+								Mobile.pressBack()
+							}
+							catch(Exception ex){
+								Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+								Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+							}
+						}
+						else if(option.equalsIgnoreCase("RedFlag Shops")){
+							Mobile.delay(10)
+							try{
+								Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 20)
+								Mobile.verifyElementText(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Shops on Route")
+								ShopVisitingScenariosKeywords.visitSliderShops("RedFlag Shops")
 								Mobile.pressBack()
 							}
 							catch(Exception ex){

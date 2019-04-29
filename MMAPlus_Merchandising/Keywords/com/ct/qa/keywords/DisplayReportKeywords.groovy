@@ -75,6 +75,27 @@ public class DisplayReportKeywords {
 						message = message+"\n"+missingshopdatainfo.getMissingshopactions_errormessage() + "\n\n"
 					}
 				}
+				if(missingshopdatainfo.getMissingshopremarks() != null){
+					if(flag == false){
+						message = message+"\n\n"+
+								String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
+								String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
+								"\n\n" + String.format("%-30s", "Shop Remarks:")
+						for(int j=0; j<missingshopdatainfo.getMissingshopremarks().size(); j++){
+							message = message+missingshopdatainfo.getMissingshopremarks().get(j)+",   "
+						}
+						message = message+"\n"+missingshopdatainfo.getMissingshopremarks_errormessage() + "\n\n"
+						flag = true
+					}
+					else{
+						message = message+"\n\n"+
+								String.format("%-30s", "Shop Remarks:")
+						for(int j=0; j<missingshopdatainfo.getMissingshopremarks().size(); j++){
+							message = message+missingshopdatainfo.getMissingshopremarks().get(j)+",   "
+						}
+						message = message+"\n"+missingshopdatainfo.getMissingshopremarks_errormessage() + "\n\n"
+					}
+				}
 				if(missingshopdatainfo.getMissingCategoriesData() != null){
 					for(int j=0; j<missingshopdatainfo.getMissingCategoriesData().size(); j++){
 						MissingCategoryData missingcategorydata = missingshopdatainfo.getMissingCategoriesData().get(j)
