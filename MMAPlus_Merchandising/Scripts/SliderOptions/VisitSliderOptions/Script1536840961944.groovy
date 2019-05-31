@@ -19,16 +19,10 @@ Mobile.verifyElementText(findTestObject('DashboardScreenElements/Validate_Dashbo
 
 Mobile.swipe(2, 250, 400, 250)
 
-Mobile.swipe(2, 250, 400, 250)
-
 Mobile.verifyElementExist(findTestObject('SliderOptions/Validate_SliderItemsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
 CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.valideSliderOptions'()
-
-Mobile.swipe(5, 200, 5, 500)
-
-Mobile.swipe(5, 200, 5, 500)
 
 CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption'('Update Profile')
 
@@ -39,8 +33,6 @@ CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption'('Abno
 CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption'('Info')
 
 CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption'('RedFlag Shops')
-
-Mobile.swipe(320, 5, 2, 5)
 
 Mobile.swipe(320, 5, 2, 5)
 

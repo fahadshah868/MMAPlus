@@ -100,7 +100,7 @@ public class LoadDataKeywords {
 		catch(Exception ex){
 		}
 	}
-	//load Slider Options sheet
+	//load Shop remarks sheet
 	def static loadShopRemarksSheet(){
 		try{
 			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.EXCEL_FILEPATH))
@@ -158,7 +158,7 @@ public class LoadDataKeywords {
 		}
 		return expectedshopactionslist
 	}
-	//load shop actions
+	//load shop remarks
 	def static loadShopRemarksList(){
 		DataFormatter dataformatter = new DataFormatter()
 		ArrayList<String> expectedshopremarkslist = new ArrayList<String>()

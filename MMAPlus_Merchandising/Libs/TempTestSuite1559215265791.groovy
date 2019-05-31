@@ -3,7 +3,6 @@ import com.kms.katalon.core.exception.StepFailedException
 import com.kms.katalon.core.reporting.ReportUtil
 import com.kms.katalon.core.main.TestCaseMain
 import com.kms.katalon.core.testdata.TestDataColumn
-import groovy.lang.MissingPropertyException
 import com.kms.katalon.core.testcase.TestCaseBinding
 import com.kms.katalon.core.driver.internal.DriverCleanerCollector
 import com.kms.katalon.core.model.FailureHandling
@@ -29,7 +28,7 @@ DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.c
 
 
 
-RunConfiguration.setExecutionSettingFile("F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising Data Verification\\20190429_164705\\execution.properties")
+RunConfiguration.setExecutionSettingFile("F:\\Git Projects\\MMAPlus_Merchandising\\MMAPlus_Merchandising\\Reports\\MMA Plus Merchandising Data Verification\\20190530_162101\\execution.properties")
 
 TestCaseMain.beforeStart()
 

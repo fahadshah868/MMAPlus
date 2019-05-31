@@ -5,6 +5,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.time.Duration
+
 import org.junit.After
 
 import com.kms.katalon.core.annotation.Keyword
@@ -27,6 +29,7 @@ import com.ct.qa.struct.UnmatchedItems
 import com.ct.qa.struct.VisitedShopDataInfo
 import internal.GlobalVariable
 import io.appium.java_client.MobileElement
+import io.appium.java_client.TouchAction
 
 public class SliderOptionsKeywords {
 	@Keyword
@@ -66,12 +69,13 @@ public class SliderOptionsKeywords {
 	}
 	@Keyword
 	def findSliderOption(String option){
+		TouchAction touchaction = new TouchAction(ProjectConstants.DRIVER)
 		Mobile.swipe(5, 200, 5, 500)
 		Mobile.swipe(5, 200, 5, 500)
 		int index = 0
 		boolean flag = false
 		int slidertotaloptions = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<=slidertotaloptions; i++){
+		for(int i=1; i< slidertotaloptions; i++){
 			MobileElement slideroption = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String slideroptionname = slideroption.getText()
 			if(slideroptionname.equalsIgnoreCase(option)){
@@ -135,13 +139,16 @@ public class SliderOptionsKeywords {
 			else{}
 		}
 		if(flag == false){
-			Mobile.swipe(0, 255, 0, 200)
 			while(true){
 				index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/*").size()
+				index = index - 1
 				MobileElement slideroptionbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
 				String slideroptionnamebeforeswipe = slideroptionbeforeswipe.getText()
-				Mobile.swipe(0, 284, 0, 200)
+				MobileElement startpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout[3]")
+				MobileElement endpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout[2]")
+				touchaction.press(startpoint).waitAction(Duration.ofMillis(500)).moveTo(endpoint).release().perform()
 				index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/*").size()
+				index = index - 1
 				MobileElement slideroptionafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
 				String slideroptionnameafterswipe = slideroptionafterswipe.getText()
 				if(slideroptionnamebeforeswipe.equals(slideroptionnameafterswipe)){
@@ -207,6 +214,66 @@ public class SliderOptionsKeywords {
 						break
 					}
 					else{}
+				}
+			}
+			index = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/*").size()
+			MobileElement lastitem = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+			String lastitemtext = lastitem.getText()
+			if(lastitemtext.equalsIgnoreCase(option)){
+				ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]").click()
+				if(option.equalsIgnoreCase("Update Profile")){
+					Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterEmail' , [('package') : ProjectConstants.PACKAGENAME]), 'Enter email')
+					Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterPhone' , [('package') : ProjectConstants.PACKAGENAME]), 'Enter Phone')
+					Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_EnterCNIC' , [('package') : ProjectConstants.PACKAGENAME]), 'Enter CNIC')
+					Mobile.verifyElementText(findTestObject('SliderOptions/UpdateProfile_SubmitButton' , [('package') : ProjectConstants.PACKAGENAME]), 'Update Profile')
+					Mobile.pressBack()
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+				}
+				else if(option.equalsIgnoreCase("Out of Route")){
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Route LIST')
+					findRoute()
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_ShopOnRouteScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Shops on Route')
+					ShopVisitingScenariosKeywords.visitSliderShops("Out Of Route Shops")
+					Mobile.pressBack()
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_OutOfRoute_RouteListScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Route LIST')
+					Mobile.pressBack()
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+				}
+				else if(option.equalsIgnoreCase("Info")){
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginCode' , [('package') : ProjectConstants.PACKAGENAME]), 'Login Code')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_LoginTime' , [('package') : ProjectConstants.PACKAGENAME]), 'Login Time')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncAttempted' , [('package') : ProjectConstants.PACKAGENAME]), 'Sync Attempted')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_SyncSuccessful' , [('package') : ProjectConstants.PACKAGENAME]), 'Sync Successful')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_RefreshRoutes' , [('package') : ProjectConstants.PACKAGENAME]), 'Refresh Routes')
+					Mobile.verifyElementText(findTestObject('SliderOptions/Validate_BuildVersion' , [('package') : ProjectConstants.PACKAGENAME]), 'Build Version')
+					Mobile.pressBack()
+					Mobile.verifyElementExist(findTestObject("Object Repository/SliderOptions/Validate_SliderItemsScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+				}
+				else if(option.equalsIgnoreCase("Abnormal Shops")){
+					Mobile.delay(10)
+					try{
+						Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 20)
+						Mobile.verifyElementText(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Shops on Route")
+						ShopVisitingScenariosKeywords.visitSliderShops("Abnormal Shops")
+						Mobile.pressBack()
+					}
+					catch(Exception ex){
+						Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+					}
+				}
+				else if(option.equalsIgnoreCase("RedFlag Shops")){
+					Mobile.delay(10)
+					try{
+						Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 20)
+						Mobile.verifyElementText(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Shops on Route")
+						ShopVisitingScenariosKeywords.visitSliderShops("RedFlag Shops")
+						Mobile.pressBack()
+					}
+					catch(Exception ex){
+						Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+						Mobile.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_OKButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+					}
 				}
 			}
 		}
