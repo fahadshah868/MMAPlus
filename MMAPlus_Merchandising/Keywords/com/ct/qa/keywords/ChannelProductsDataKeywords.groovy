@@ -44,6 +44,7 @@ import com.ct.qa.struct.VisitedShopDataInfo
 
 import io.appium.java_client.MobileElement
 import io.appium.java_client.TouchAction
+import io.appium.java_client.touch.offset.PointOption
 
 public class ChannelProductsDataKeywords {
 	//visit chiller not allocated product categories in chiller
@@ -242,30 +243,29 @@ public class ChannelProductsDataKeywords {
 	//enter quantity to related field
 	@Keyword
 	def visitChannelWiseProductsData(int columnindex, String assettype){
-		TouchAction touchAction = new TouchAction(ProjectConstants.DRIVER);
+		TouchAction touchaction = new TouchAction(ProjectConstants.DRIVER)
 		int xlocation = CommonKeywords.getXPoint()
 		ArrayList<ShopProductsData> shopproductsdata = new ArrayList<ShopProductsData>()
-		int textviewindex, editfieldindex
+		int index
 		XSSFSheet channelproductssheet = LoadDataKeywords.loadChannelProductsSheet()
 		ArrayList<String> displayproductslist = new ArrayList<String>()
 		ArrayList<LoadProductsData> expectedproductslist = LoadDataKeywords.loadChannelWiseProductsList(channelproductssheet, columnindex)
 		int expectedproducts = expectedproductslist.size()
 		MobileElement list = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]")
-		int totalproducts_tv = list.findElementsByClassName("android.widget.TextView").size()
-		int totalproducts_et = list.findElementsByClassName("android.widget.EditText").size()
-		for(int i=1; i<= totalproducts_tv; i++){
+		int totaltextviews = list.findElementsByClassName("android.widget.TextView").size()
+		int totaleditboxes = list.findElementsByClassName("android.widget.EditText").size()
+		for(int i=1; i<= totaltextviews; i++){
 			ShopProductsData productsdata = new ShopProductsData()
 			boolean flag = false
 			MobileElement selectedproduct = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+i+"]")
 			String selectedproductname = selectedproduct.getText()
 			productsdata.setProduct(selectedproductname)
 			displayproductslist.add(selectedproductname)
-			if(i == totalproducts_tv){
-				if(totalproducts_et != totalproducts_tv){
-					touchAction.press(xlocation, 300).waitAction(Duration.ofMillis(100)).moveTo(xlocation,200).release().perform();
-				}
+			if(i == totaltextviews && totaltextviews != totaleditboxes){
+				touchaction.press(xlocation, 250).waitAction(Duration.ofMillis(500)).moveTo(xlocation, 200).release().perform()
+				Thread.sleep(500)
 			}
-			for(int j=0; j<expectedproductslist.size(); j++){
+			for(int j=0; j< expectedproductslist.size(); j++){
 				LoadProductsData channelproduct = expectedproductslist.get(j)
 				String productname = channelproduct.getProduct()
 				if(selectedproductname.equalsIgnoreCase(productname)){
@@ -326,18 +326,19 @@ public class ChannelProductsDataKeywords {
 		}
 		while(true){
 			ShopProductsData productsdata = new ShopProductsData()
-			textviewindex = list.findElementsByClassName("android.widget.TextView").size()
-			MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+textviewindex+"]")
+			index = list.findElementsByClassName("android.widget.TextView").size()
+			MobileElement lastproductbeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String lastproductnamebeforeswipe = lastproductbeforeswipe.getText()
-			Mobile.swipe(xlocation, 359, xlocation, 250)
-			textviewindex = list.findElementsByClassName("android.widget.TextView").size()
-			MobileElement lastproductafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+textviewindex+"]")
+			touchaction.press(xlocation, 270).waitAction(Duration.ofMillis(500)).moveTo(xlocation, 200).release().perform()
+			Thread.sleep(500)
+			index = list.findElementsByClassName("android.widget.TextView").size()
+			MobileElement lastproductafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.TextView["+index+"]")
 			String lastproductnameafterswipe = lastproductafterswipe.getText()
 			if(lastproductnamebeforeswipe.equalsIgnoreCase(lastproductnameafterswipe)){
 				break
 			}
 			else{
-				editfieldindex = list.findElementsByClassName("android.widget.EditText").size()
+				index = list.findElementsByClassName("android.widget.EditText").size()
 				boolean flag = false
 				displayproductslist.add(lastproductnameafterswipe)
 				productsdata.setProduct(lastproductnameafterswipe)
@@ -347,7 +348,7 @@ public class ChannelProductsDataKeywords {
 					if(lastproductnameafterswipe.equalsIgnoreCase(productname)){
 						flag = true
 						String productquantity = channelproduct.getProduct_data()
-						MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+editfieldindex+"]/android.widget.EditText[1]")
+						MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 						selectedproducttextfield.setValue(productquantity)
 						if(ProjectConstants.SCENARIO.equals("first visit")){
 							if(assettype.equalsIgnoreCase("Facing")){
@@ -375,7 +376,7 @@ public class ChannelProductsDataKeywords {
 					}
 				}
 				if(flag == false){
-					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+editfieldindex+"]/android.widget.EditText[1]")
+					MobileElement selectedproducttextfield = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout["+index+"]/android.widget.EditText[1]")
 					selectedproducttextfield.setValue("0000")
 					if(ProjectConstants.SCENARIO.equals("first visit")){
 						if(assettype.equalsIgnoreCase("Facing")){
@@ -401,6 +402,7 @@ public class ChannelProductsDataKeywords {
 			}
 			shopproductsdata.add(productsdata)
 		}
+		// compare expected and displayed product list
 		if(expectedproductslist.size() == displayproductslist.size()){
 			ArrayList<String> products = new ArrayList<String>()
 			for(int i=0; i<displayproductslist.size(); i++){
