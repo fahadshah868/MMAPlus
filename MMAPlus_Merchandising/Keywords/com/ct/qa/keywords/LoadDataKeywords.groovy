@@ -78,7 +78,7 @@ public class LoadDataKeywords {
 		catch(Exception ex){
 		}
 	}
-	//load Slider Options sheet
+	//load Shop Action sheet
 	def static loadShopActionsSheet(){
 		try{
 			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.EXCEL_FILEPATH))
@@ -89,7 +89,7 @@ public class LoadDataKeywords {
 		catch(Exception ex){
 		}
 	}
-	//load Slider Options sheet
+	//load Survey Question sheet
 	def static loadSurveyQuestionsSheet(){
 		try{
 			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.EXCEL_FILEPATH))
@@ -110,6 +110,30 @@ public class LoadDataKeywords {
 		}
 		catch(Exception ex){
 		}
+	}
+	//load score card sheet
+	def static loadScoreCardSheet(){
+		try{
+			FileInputStream inputStream = new FileInputStream(new File(ProjectConstants.EXCEL_FILEPATH))
+			XSSFWorkbook wb = new XSSFWorkbook(inputStream)
+			XSSFSheet sheet = wb.getSheet(ProjectConstants.SCORECARDSHEET)
+			return sheet
+		}
+		catch(Exception ex){
+		}
+	}
+	//load score card remarks list
+	def static loadScoreCardRemarksList(){
+		DataFormatter dataformatter = new DataFormatter()
+		ArrayList<String> expectedscorecardremarkslist = new ArrayList<String>()
+		XSSFSheet sheet = loadScoreCardSheet()
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<= totalrows; i++){
+			Row row = sheet.getRow(i)
+			String scorecardremark = dataformatter.formatCellValue(row.getCell(ProjectConstants.SCORE_CARD))
+			expectedscorecardremarkslist.add(scorecardremark)
+		}
+		return expectedscorecardremarkslist
 	}
 	//load audit question category list
 	def static loadSurveyQuestionCategoryList(){
@@ -304,6 +328,7 @@ public class LoadDataKeywords {
 		}
 		return channelproducts
 	}
+	//load slider items
 	def static loadSliderOptions(){
 		DataFormatter dataformatter = new DataFormatter()
 		XSSFSheet sheet = loadSliderOptionsSheet()

@@ -28,7 +28,6 @@ import WebUiBuiltInKeywords as WebUI
 public class MissingCategoryData {
 	public String maincategory
 	public ArrayList<TaggedChillersRemark> taggedchillersremarks
-
 	public String ProductCategory
 	public String QuestionCategory
 	public ArrayList<String> productcategories
@@ -40,14 +39,16 @@ public class MissingCategoryData {
 	public ArrayList<String> missing_auditquestions
 	public String missing_auditquestions_errormessage
 
+	public MissingCategoryData(){
+		this.taggedchillersremarks = new ArrayList<TaggedChillersRemark>()
+	}
+	
 	public void setMissing_auditquestions(ArrayList<String> missing_auditquestions) {
 		this.missing_auditquestions = missing_auditquestions;
 	}
-
 	public String getQuestionCategory() {
 		return QuestionCategory;
 	}
-
 	public void setQuestionCategory(String questionCategory) {
 		QuestionCategory = questionCategory;
 	}
@@ -66,18 +67,12 @@ public class MissingCategoryData {
 	public ArrayList<String> getMissing_auditquestions() {
 		return missing_auditquestions;
 	}
-
 	public String getMissing_auditquestions_errormessage() {
 		return missing_auditquestions_errormessage;
 	}
-
 	public void setMissing_auditquestions_errormessage(String missing_auditquestions_errormessage) {
 		this.missing_auditquestions_errormessage = missing_auditquestions_errormessage;
 	}
-
-	public MissingCategoryData(){
-		this.taggedchillersremarks = new ArrayList<TaggedChillersRemark>()
-	}
 	public String getMaincategory() {
 		return maincategory;
 	}

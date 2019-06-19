@@ -108,7 +108,6 @@
 	<classpathentry kind="lib" path="F:/QA_Automation/Softwares/Katalon_Studio_Windows_64-5.10.0/plugins/com.google.http-client.google-http-client_1.22.0.jar"/>
 	<classpathentry kind="lib" path="F:/Git Projects/MMAPlus_Merchandising/MMAPlus_Merchandising/Drivers/ashot-1.5.3.jar"/>
 	<classpathentry kind="lib" path="F:/Git Projects/MMAPlus_Merchandising/MMAPlus_Merchandising/Drivers/java-client-7.0.0.jar"/>
-	<classpathentry kind="lib" path="F:/QA_Automation/Softwares/Katalon_Studio_Windows_64-5.10.0/configuration/plugin/install/11997/1.0.3/katalon-studio-basic-report-plugin.jar"/>
 	<classpathentry exported="true" kind="con" path="GROOVY_SUPPORT"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

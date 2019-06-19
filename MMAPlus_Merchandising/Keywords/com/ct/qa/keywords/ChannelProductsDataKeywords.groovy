@@ -47,8 +47,8 @@ import io.appium.java_client.TouchAction
 import io.appium.java_client.touch.offset.PointOption
 
 public class ChannelProductsDataKeywords {
-	//visit chiller not allocated product categories in chiller
 	@Keyword
+	//visit chiller not allocated product categories in chiller
 	def visitChillerNotAllocatedProductCategories(int flag){
 		UnmatchedItems unmatcheditems = CompareDataKeywords.compareChannelWiseProductsCategories()
 		if(unmatcheditems.getStatus() == 2){

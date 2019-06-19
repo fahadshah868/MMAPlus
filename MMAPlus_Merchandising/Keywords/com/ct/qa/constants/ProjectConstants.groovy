@@ -8,6 +8,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.ct.qa.keywords.LoadDataKeywords
 import com.ct.qa.struct.MissingShopDataInfo
 import com.ct.qa.struct.MissingSliderOptions
+import com.ct.qa.struct.ScoreCard
 import com.ct.qa.struct.VisitedShopDataInfo
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -49,6 +50,7 @@ public class ProjectConstants {
 	public static final String SHOPACTIONSSHEET = "Shop Actions"
 	public static final String SHOPREMARKSSHEET = "Shop Remarks"
 	public static final String SURVEYQUESTIONSSHEET = "Survey"
+	public static final String SCORECARDSHEET = "Score Card"
 	public static final AppiumDriver<MobileElement> DRIVER = MobileDriverFactory.getDriver()
 
 	//variables for display messages
@@ -113,7 +115,14 @@ public class ProjectConstants {
 	public static final int SURVEY_VALUE
 	public static final int OVERWRITE_SURVEY_VALUE
 
+	//score card columns
+	public static final int SCORE_CARD
+
 	//variables for current visiting shop channels, chiller and categories
+	public static String SUPERVISOR_NAME
+	public static String MERCHANDISER_NAME
+	public static String WORKING_ACTION
+	public static String CURRENTVISITING_ROUTE
 	public static String CURRENTVISITING_SHOPNAME
 	public static String CURRENTVISITING_SHOPCHANNEL
 	public static String CURRENTVISITING_MAINCATEGORY
@@ -128,11 +137,11 @@ public class ProjectConstants {
 	public static int SHOP_ATTEMPT = 0
 	public static String CHILLER_OVERWRITEPOPUP = "no"
 
-
 	//list for containing shop info
 	public static ArrayList<MissingShopDataInfo> missingshopdatainfo = new ArrayList<MissingShopDataInfo>()
 	public static ArrayList<VisitedShopDataInfo> visitedshopdatainfo = new ArrayList<VisitedShopDataInfo>()
 	public static MissingSliderOptions missingslideroptions = new MissingSliderOptions()
+	public static ArrayList<ScoreCard> missingscorecardremarks = new ArrayList<ScoreCard>()
 
 	//initialization of sheet columns index
 	static{
@@ -142,6 +151,7 @@ public class ProjectConstants {
 		XSSFSheet shopactionssheet = LoadDataKeywords.loadShopActionsSheet()
 		XSSFSheet auditquestionssheet = LoadDataKeywords.loadSurveyQuestionsSheet()
 		XSSFSheet shopremarkssheet = LoadDataKeywords.loadShopRemarksSheet()
+		XSSFSheet scorecardsheet = LoadDataKeywords.loadScoreCardSheet()
 
 		Row chillerproductssheetheaderrow = chillerproductssheet.getRow(0)
 		Row channelproductssheetheaderrow = channelproductssheet.getRow(0)
@@ -149,6 +159,7 @@ public class ProjectConstants {
 		Row shopactionssheetheaderrow = shopactionssheet.getRow(0)
 		Row auditquestionssheetheaderrow = auditquestionssheet.getRow(0)
 		Row shopremarkssheetheaderrow = shopremarkssheet.getRow(0)
+		Row scorecardsheetheaderrow = scorecardsheet.getRow(0)
 
 		int channelproductssheettotalcolumns = channelproductssheetheaderrow.getLastCellNum()
 		int chillerproductssheettotalcolumns = chillerproductssheetheaderrow.getLastCellNum()
@@ -156,6 +167,7 @@ public class ProjectConstants {
 		int shopactionssheettotalcolumns = shopactionssheetheaderrow.getLastCellNum()
 		int auditquestionssheettotalcolumns = auditquestionssheetheaderrow.getLastCellNum()
 		int shopremarkssheettotalcolumns = shopremarkssheetheaderrow.getLastCellNum()
+		int scorecardsheettotalcolumns = scorecardsheetheaderrow.getLastCellNum()
 
 		for(int cellnumber=0; cellnumber<channelproductssheettotalcolumns; cellnumber++){
 			String columnname = channelproductssheetheaderrow.getCell(cellnumber)
@@ -293,6 +305,14 @@ public class ProjectConstants {
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Survey Questions Value")){
 				OVERWRITE_SURVEY_VALUE = cellnumber
+			}
+			else{
+			}
+		}
+		for(int cellnumber=0; cellnumber<scorecardsheettotalcolumns; cellnumber++ ){
+			String columnname = scorecardsheetheaderrow.getCell(cellnumber)
+			if(columnname.equalsIgnoreCase("Score Card")){
+				SCORE_CARD = cellnumber
 			}
 			else{
 			}

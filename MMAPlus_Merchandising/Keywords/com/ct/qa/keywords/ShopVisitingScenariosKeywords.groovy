@@ -32,6 +32,7 @@ import io.appium.java_client.android.AndroidDriver
 
 public class ShopVisitingScenariosKeywords{
 
+	//find shop from shops list against shop name
 	def findShop(String _shopname){
 		int index = 0
 		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
@@ -54,6 +55,7 @@ public class ShopVisitingScenariosKeywords{
 			}
 		}
 	}
+	//capture missing shop actions list e.g. start working, shop fascia, get route etc
 	def static missingShopActionsList(){
 		UnmatchedItems unmatcheditems = CompareDataKeywords.compareShopActionsList()
 		if(unmatcheditems.getStatus() == 2){
@@ -92,6 +94,7 @@ public class ShopVisitingScenariosKeywords{
 		else{
 		}
 	}
+	//capture missing shop remarks list e.g. shop open, shop closed, shop to be removed etc
 	def static missingShopRemarksList(){
 		UnmatchedItems unmatcheditems = CompareDataKeywords.compareShopRemarksList()
 		if(unmatcheditems.getStatus() == 2){
@@ -130,6 +133,9 @@ public class ShopVisitingScenariosKeywords{
 		else{
 		}
 	}
+	/******************************************************************
+	 VISIT SHOPS FROM SLIDER E.G. OUT OF ROUTE SHOP, RED FLAG SHOP ETC
+	 *****************************************************************/
 	@Keyword
 	def static visitSliderShops(String remark){
 		int index = 0
@@ -139,8 +145,18 @@ public class ShopVisitingScenariosKeywords{
 			VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
 			MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			ProjectConstants.CURRENTVISITING_SHOPNAME = shop.getText()
+			//setting info about shop for missing items
+			missingshopdatainfo.setSupervisorname(ProjectConstants.SUPERVISOR_NAME)
+			missingshopdatainfo.setMerchandisername(ProjectConstants.MERCHANDISER_NAME)
+			missingshopdatainfo.setWorkingaction(ProjectConstants.WORKING_ACTION)
+			missingshopdatainfo.setRoute(ProjectConstants.CURRENTVISITING_ROUTE)
 			missingshopdatainfo.setShopname(shop.getText())
 			missingshopdatainfo.setRemark(remark)
+			//setting info about shop for visiting items
+			visitedshopdatainfo.setSupervisorname(ProjectConstants.SUPERVISOR_NAME)
+			visitedshopdatainfo.setMerchandisername(ProjectConstants.MERCHANDISER_NAME)
+			visitedshopdatainfo.setWorkingaction(ProjectConstants.WORKING_ACTION)
+			visitedshopdatainfo.setRoute(ProjectConstants.CURRENTVISITING_ROUTE)
 			visitedshopdatainfo.setShopname(shop.getText())
 			visitedshopdatainfo.setRemark(remark)
 			ProjectConstants.missingshopdatainfo.add(missingshopdatainfo)
@@ -186,6 +202,73 @@ public class ShopVisitingScenariosKeywords{
 			}
 			Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		}
+	}
+	/******************************************************************
+	 VISIT SHOPS FROM WORK ACTIONS INCLUDING WW, WR, MERCHANDISING
+	 *****************************************************************/
+	@Keyword
+	def visitShopWith_HappyFlow(){
+		int index = 0
+		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
+		int _shop = ProjectConstants.SHOP_ATTEMPT
+		MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
+		VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
+		MobileElement shop = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+_shop+"]/android.widget.TextView[1]")
+		ProjectConstants.CURRENTVISITING_SHOPNAME = shop.getText()
+		missingshopdatainfo.setSupervisorname(ProjectConstants.SUPERVISOR_NAME)
+		missingshopdatainfo.setMerchandisername(ProjectConstants.MERCHANDISER_NAME)
+		missingshopdatainfo.setWorkingaction(ProjectConstants.WORKING_ACTION)
+		missingshopdatainfo.setRoute(ProjectConstants.CURRENTVISITING_ROUTE)
+		missingshopdatainfo.setShopname(shop.getText())
+		visitedshopdatainfo.setSupervisorname(ProjectConstants.SUPERVISOR_NAME)
+		visitedshopdatainfo.setMerchandisername(ProjectConstants.MERCHANDISER_NAME)
+		visitedshopdatainfo.setWorkingaction(ProjectConstants.WORKING_ACTION)
+		visitedshopdatainfo.setRoute(ProjectConstants.CURRENTVISITING_ROUTE)
+		visitedshopdatainfo.setShopname(shop.getText())
+		ProjectConstants.missingshopdatainfo.add(missingshopdatainfo)
+		ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
+		ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+_shop+"]").click()
+		if(Mobile.verifyElementExist(findTestObject("Object Repository/Validate_VisitDetail_Popup", [('package') : ProjectConstants.PACKAGENAME]), 0, FailureHandling.OPTIONAL)){
+			Mobile.tap(findTestObject("Object Repository/VisitDetailsPopup_ProceedButton", [('package') : ProjectConstants.PACKAGENAME]), 0, FailureHandling.STOP_ON_FAILURE)
+		}
+		else{}
+		MobileBuiltInKeywords.verifyElementText(findTestObject("Object Repository/Validate_ShopOptionsScreen" , [('package') : ProjectConstants.PACKAGENAME]), "Options")
+		//validate missing shop actions list e.g. start working / get routes etc...
+		missingShopActionsList()
+		MobileBuiltInKeywords.tap(findTestObject("Object Repository/StartWorking" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		Mobile.delay(15)
+		Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_MapScreen" , [('package') : ProjectConstants.PACKAGENAME]), 60)
+		MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
+		ProjectConstants.SCENARIO = "first visit"
+		Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)
+		Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/SaveShop"), null)
+		for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
+			if(ProjectConstants.missingshopdatainfo.get(j).getWorkingaction().equals(ProjectConstants.WORKING_ACTION) && ProjectConstants.missingshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+				ProjectConstants.missingshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+				ProjectConstants.missingshopdatainfo.get(j).setScenario("Data Verification")
+				break
+			}
+		}
+		for(int j=0; j<ProjectConstants.visitedshopdatainfo.size(); j++){
+			if(ProjectConstants.visitedshopdatainfo.get(j).getWorkingaction().equals(ProjectConstants.WORKING_ACTION) && ProjectConstants.visitedshopdatainfo.get(j).getShopname().equals(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
+				ProjectConstants.visitedshopdatainfo.get(j).setShopchannel(ProjectConstants.CURRENTVISITING_SHOPCHANNEL)
+				ProjectConstants.visitedshopdatainfo.get(j).setShop_scenario("Shop Open")
+				String message = "(1) 'RTM visit frequency' with 'Once a week'\n"+
+						String.format("%-44s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+						String.format("%-44s%-100s","","'Retailer Remarks' with 'OB not visiting' remark")+"\n"+
+						String.format("%-44s%-100s","","'Hanger Availability' with 'Yes' remark")+"\n"+
+						String.format("%-40s%-100s","","(2) 'RTM visit frequency' with 'Twice a week'")+"\n"+
+						String.format("%-44s%-100s","","'Pop Application' with 'No' remark")+"\n"+
+						String.format("%-44s%-100s","","'Retailer Remarks' with 'SM not visiting' remark")+"\n"+
+						String.format("%-44s%-100s","","'Hanger Availability' with 'No' remark")
+				ProjectConstants.visitedshopdatainfo.get(j).setOthercategories_scenarios(message)
+				break
+			}
+		}
+		Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 	}
 	/***********************************************************
 	 VISIT SHOPS WITH DATA VERIFICATION

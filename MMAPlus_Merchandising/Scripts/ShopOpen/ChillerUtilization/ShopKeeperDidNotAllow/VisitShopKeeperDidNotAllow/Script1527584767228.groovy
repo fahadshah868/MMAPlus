@@ -25,7 +25,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/Validate_CategoryRemarksScreen', 
         [('package') : ProjectConstants.PACKAGENAME]), 'CATEGORY REMARKS')
 
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitSKDNA_ForChiller'()
+CustomKeywords.'com.ct.qa.keywords.ChillerSKDNA.visitSKDNA'()
 
 'tap on back button'
 MobileBuiltInKeywords.tap(findTestObject('ShopOpen/ChillerUtilization/ShopKeeperDidNotAllow/CategoryRemarks_BackButton', 

@@ -32,6 +32,7 @@ import internal.GlobalVariable
 
 public class DisplayReportKeywords {
 
+	@Keyword
 	def static displayDataInReport(){
 		String message = "\n\n---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------\n\n"+
 				"<-------------------------------------------------------------------------------------------------------------------------------------->"
@@ -41,10 +42,15 @@ public class DisplayReportKeywords {
 			if(missingshopdatainfo != null){
 				if(missingshopdatainfo.getMissingshopcategories() != null){
 					if(flag == false){
-						message = message+"\n\n"+
-								String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
-								String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
-								"\n\n" + String.format("%-30s", "Shop Categories:")
+							if(missingshopdatainfo.getSupervisorname() != null){
+								message = message+"\n\n"+
+								String.format("%-20s%-30s%-20s%-30s","Supervisor Name:",missingshopdatainfo.getSupervisorname(),"Merchandiser Name",missingshopdatainfo.getMerchandisername())+"\n"+
+								String.format("%-20s%-30s%-20s%-30s","Working Action:",missingshopdatainfo.getWorkingaction(),"Route",missingshopdatainfo.getRoute())+"\n\n"
+							}
+							message = message+"\n\n"+
+							String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
+							String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
+							"\n\n" + String.format("%-30s", "Shop Categories:")
 						for(int j=0; j<missingshopdatainfo.getMissingshopcategories().size(); j++){
 							message = message+missingshopdatainfo.getMissingshopcategories().get(j)+",   "
 						}
@@ -56,6 +62,11 @@ public class DisplayReportKeywords {
 				}
 				if(missingshopdatainfo.getMissingshopactions() != null){
 					if(flag == false){
+						if(missingshopdatainfo.getSupervisorname() != null){
+							message = message+"\n\n"+
+							String.format("%-20s%-30s%-20s%-30s","Supervisor Name:",missingshopdatainfo.getSupervisorname(),"Merchandiser Name",missingshopdatainfo.getMerchandisername())+"\n"+
+							String.format("%-20s%-30s%-20s%-30s","Working Action:",missingshopdatainfo.getWorkingaction(),"Route",missingshopdatainfo.getRoute())+"\n\n"
+						}
 						message = message+"\n\n"+
 								String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
 								String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
@@ -77,6 +88,11 @@ public class DisplayReportKeywords {
 				}
 				if(missingshopdatainfo.getMissingshopremarks() != null){
 					if(flag == false){
+						if(missingshopdatainfo.getSupervisorname() != null){
+							message = message+"\n\n"+
+							String.format("%-20s%-30s%-20s%-30s","Supervisor Name:",missingshopdatainfo.getSupervisorname(),"Merchandiser Name",missingshopdatainfo.getMerchandisername())+"\n"+
+							String.format("%-20s%-30s%-20s%-30s","Working Action:",missingshopdatainfo.getWorkingaction(),"Route",missingshopdatainfo.getRoute())+"\n\n"
+						}
 						message = message+"\n\n"+
 								String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
 								String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
@@ -107,6 +123,11 @@ public class DisplayReportKeywords {
 										MissingChillerProductsCategoryData missingchillerproductcategory = taggedchillerremarks.getMissingchillerproductscategories().get(k)
 										if(missingchillerproductcategory.getProductcategories() != null){
 											if(flag == false){
+												if(missingshopdatainfo.getSupervisorname() != null){
+													message = message+"\n\n"+
+													String.format("%-20s%-30s%-20s%-30s","Supervisor Name:",missingshopdatainfo.getSupervisorname(),"Merchandiser Name",missingshopdatainfo.getMerchandisername())+"\n"+
+													String.format("%-20s%-30s%-20s%-30s","Working Action:",missingshopdatainfo.getWorkingaction(),"Route",missingshopdatainfo.getRoute())+"\n\n"
+												}
 												message = message+"\n\n"+
 														String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
 														String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
@@ -141,6 +162,11 @@ public class DisplayReportKeywords {
 						else{
 							if(missingcategorydata.getProductcategories() != null){
 								if(flag == false){
+									if(missingshopdatainfo.getSupervisorname() != null){
+										message = message+"\n\n"+
+										String.format("%-20s%-30s%-20s%-30s","Supervisor Name:",missingshopdatainfo.getSupervisorname(),"Merchandiser Name",missingshopdatainfo.getMerchandisername())+"\n"+
+										String.format("%-20s%-30s%-20s%-30s","Working Action:",missingshopdatainfo.getWorkingaction(),"Route",missingshopdatainfo.getRoute())+"\n\n"
+									}
 									message = message+"\n\n"+
 											String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
 											String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
@@ -166,6 +192,11 @@ public class DisplayReportKeywords {
 							}
 							else if(missingcategorydata.getMissing_auditquestioncategories() != null){
 								if(flag == false){
+									if(missingshopdatainfo.getSupervisorname() != null){
+										message = message+"\n\n"+
+										String.format("%-20s%-30s%-20s%-30s","Supervisor Name:",missingshopdatainfo.getSupervisorname(),"Merchandiser Name",missingshopdatainfo.getMerchandisername())+"\n"+
+										String.format("%-20s%-30s%-20s%-30s","Working Action:",missingshopdatainfo.getWorkingaction(),"Route",missingshopdatainfo.getRoute())+"\n\n"
+									}
 									message = message+"\n\n"+
 											String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
 											String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
@@ -204,6 +235,11 @@ public class DisplayReportKeywords {
 										MissingChillerProductsCategoryData missingchillerproductcategory = taggedchillerremarks.getMissingchillerproductscategories().get(k)
 										if(missingchillerproductcategory.getProductcategory() != null){
 											if(flag == false){
+												if(missingshopdatainfo.getSupervisorname() != null){
+													message = message+"\n\n"+
+													String.format("%-20s%-30s%-20s%-30s","Supervisor Name:",missingshopdatainfo.getSupervisorname(),"Merchandiser Name",missingshopdatainfo.getMerchandisername())+"\n"+
+													String.format("%-20s%-30s%-20s%-30s","Working Action:",missingshopdatainfo.getWorkingaction(),"Route",missingshopdatainfo.getRoute())+"\n\n"
+												}
 												message = message+"\n\n"+
 														String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
 														String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
@@ -240,6 +276,11 @@ public class DisplayReportKeywords {
 						else{
 							if(missingcategorydata.getProducts() != null){
 								if(flag == false){
+									if(missingshopdatainfo.getSupervisorname() != null){
+										message = message+"\n\n"+
+										String.format("%-20s%-30s%-20s%-30s","Supervisor Name:",missingshopdatainfo.getSupervisorname(),"Merchandiser Name",missingshopdatainfo.getMerchandisername())+"\n"+
+										String.format("%-20s%-30s%-20s%-30s","Working Action:",missingshopdatainfo.getWorkingaction(),"Route",missingshopdatainfo.getRoute())+"\n\n"
+									}
 									message = message+"\n\n"+
 											String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
 											String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
@@ -267,6 +308,11 @@ public class DisplayReportKeywords {
 							}
 							else if(missingcategorydata.getMissing_auditquestions() != null){
 								if(flag == false){
+									if(missingshopdatainfo.getSupervisorname() != null){
+										message = message+"\n\n"+
+										String.format("%-20s%-30s%-20s%-30s","Supervisor Name:",missingshopdatainfo.getSupervisorname(),"Merchandiser Name",missingshopdatainfo.getMerchandisername())+"\n"+
+										String.format("%-20s%-30s%-20s%-30s","Working Action:",missingshopdatainfo.getWorkingaction(),"Route",missingshopdatainfo.getRoute())+"\n\n"
+									}
 									message = message+"\n\n"+
 											String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
 											String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
@@ -310,6 +356,11 @@ public class DisplayReportKeywords {
 		for(int i=0; i<ProjectConstants.visitedshopdatainfo.size(); i++){
 			VisitedShopDataInfo visitedshopdatainfo = ProjectConstants.visitedshopdatainfo.get(i)
 			if(visitedshopdatainfo != null){
+				if(visitedshopdatainfo.getSupervisorname() != null){
+					message = message+"\n\n"+
+					String.format("%-20s%-30s%-20s%-30s","Supervisor Name:",visitedshopdatainfo.getSupervisorname(),"Merchandiser Name",visitedshopdatainfo.getMerchandisername())+"\n"+
+					String.format("%-20s%-30s%-20s%-30s","Working Action:",visitedshopdatainfo.getWorkingaction(),"Route",visitedshopdatainfo.getRoute())+"\n\n"
+				}
 				message = message+"\n\n"+
 						String.format("%-60s%-60s","Shop Name: "+visitedshopdatainfo.getShopname(),visitedshopdatainfo.getShopchannel())+"\n"+
 						String.format("%-60s%-60s", "Visiting Scenarios: "+visitedshopdatainfo.getShop_scenario(),"Remark: "+visitedshopdatainfo.getRemark())+"\n\n"+
@@ -325,6 +376,7 @@ public class DisplayReportKeywords {
 							for(int k=0; k< visitedcategorydata.getTaggedchillersremark().size(); k++){
 								TaggedChillersRemark taggedchillerremarks = visitedcategorydata.getTaggedchillersremark().get(k)
 								if(taggedchillerremarks.getVisitedchillerproductscategories() != null){
+									// print chiller scenarios details only on when chiller changed when 2 or more chillers are tagged in a shop
 									if(chiller_count == null || chiller_count != taggedchillerremarks.getCount()){
 										chiller_count = taggedchillerremarks.getCount()
 										if(taggedchillerremarks.getFirstvisit_chillertype() == null){
