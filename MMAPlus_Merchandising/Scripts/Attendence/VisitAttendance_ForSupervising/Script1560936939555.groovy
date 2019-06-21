@@ -18,26 +18,26 @@ import internal.GlobalVariable as GlobalVariable
 Mobile.verifyElementText(findTestObject('DashboardScreenElements/Validate_DashboardScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Dashboard')
 
-Mobile.tap(findTestObject('DashboardScreenElements/AttendenceButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
+Mobile.tap(findTestObject('Attendence/AttendenceButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
 
-Mobile.verifyElementText(findTestObject('Attendance/Validate_SupervisorAttendanceScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+Mobile.verifyElementText(findTestObject('Attendence/Validate_SupervisorAttendanceScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Attendance')
 
-Mobile.tap(findTestObject('Attendance/Supervisor_SelfieCamera_Imageiew', [('package') : ProjectConstants.PACKAGENAME]), 
+Mobile.tap(findTestObject('Attendence/Supervisor_SelfieCamera_Imageiew', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
 CustomKeywords.'com.ct.qa.keywords.CommonKeywords.takePicture'()
 
-Mobile.verifyElementText(findTestObject('Attendance/Validate_SupervisorAttendanceScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    'Attendance')
+Mobile.verifyElementText(findTestObject('Attendence/Validate_SupervisorAttendanceScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Attendance')
 
 CustomKeywords.'com.ct.qa.keywords.AttendenceKeywords.visitAttendenceRemark'()
 
-Mobile.tap(findTestObject('Attendance/SubmitButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
+Mobile.tap(findTestObject('Attendence/SubmitButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
 
 Mobile.delay(15)
 
-Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_MapScreen'), 0)
+Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_MapScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 
 Mobile.tap(findTestObject('CommonScreenElements/Location_CheckIn', [('package') : ProjectConstants.PACKAGENAME]), 0)
 
@@ -46,10 +46,10 @@ Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_InfoPopU
 
 Mobile.tap(findTestObject('CommonScreenElements/InfoPopUp_YesButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
 
-Mobile.verifyElementText(findTestObject('Attendance/Validate_MerchandisersListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+Mobile.verifyElementText(findTestObject('Attendence/Validate_MerchandisersListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'List of Team Members')
 
 CustomKeywords.'com.ct.qa.keywords.AttendenceKeywords.visitMerchandisersAttendance'()
 
-Mobile.tap(findTestObject('Attendance/StartYourDayButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
+Mobile.tap(findTestObject('Attendence/StartYourDayButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
 

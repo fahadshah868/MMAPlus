@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>F%%Git Projects%MMA_Merchandising%MMA_Merchandising%MMAPlus_Merchandising.prj</name>
+	<name>F%%Git Projects%MMAPlus_Merchandising%MMAPlus_Merchandising%MMAPlus.prj</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -647,7 +647,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1547017833824</id>
+			<id>0</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -656,7 +656,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1547017833852</id>
+			<id>0</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -665,7 +665,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1547025889150</id>
+			<id>0</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -674,7 +674,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1547025889271</id>
+			<id>0</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -683,7 +683,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1547549072000</id>
+			<id>0</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -692,7 +692,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1547549072012</id>
+			<id>0</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -701,7 +701,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1548050678326</id>
+			<id>0</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -710,7 +710,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1548050678360</id>
+			<id>0</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -719,7 +719,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1554362612961</id>
+			<id>0</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -728,7 +728,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1554362612976</id>
+			<id>0</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -737,7 +737,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1559193184462</id>
+			<id>0</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -746,7 +746,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1559193184503</id>
+			<id>0</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -755,7 +755,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1560771547620</id>
+			<id>0</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -764,7 +764,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1560771547638</id>
+			<id>0</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -773,7 +773,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1560858169984</id>
+			<id>0</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -782,7 +782,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1560858170031</id>
+			<id>0</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -791,7 +791,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1560923411234</id>
+			<id>0</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -800,7 +800,25 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1560923411281</id>
+			<id>0</id>
+			<name></name>
+			<type>6</type>
+			<matcher>
+				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+				<arguments>(.*\.svn-base$)|(.*\.png$)|(.*\.log$)|(.*\.xlsx$)|(.*\.xls$)|(.*\.csv$)|(.*\.txt$)</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>0</id>
+			<name></name>
+			<type>10</type>
+			<matcher>
+				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+				<arguments>.*\.svn$</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>0</id>
 			<name></name>
 			<type>6</type>
 			<matcher>

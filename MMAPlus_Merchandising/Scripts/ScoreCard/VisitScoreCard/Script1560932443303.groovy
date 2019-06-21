@@ -14,10 +14,10 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-Mobile.verifyElementVisible(findTestObject('MerchandisersScore/Validate_MerchandisersScoreScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+Mobile.verifyElementVisible(findTestObject('ScoreCard/Validate_MerchandisersListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     500)
 
-Mobile.verifyElementText(findTestObject('MerchandisersScore/Validate_MerchandisersScoreScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+Mobile.verifyElementText(findTestObject('ScoreCard/Validate_MerchandisersListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Scoring')
 
 CustomKeywords.'com.ct.qa.keywords.ScoreCardKeywords.validate_Supervisor_Merchandisers_PD_MTD_Remarks'()

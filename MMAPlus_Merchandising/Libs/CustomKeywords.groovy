@@ -86,6 +86,10 @@ def static "com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPoint"
     (new com.ct.qa.keywords.DistributionPointKeywords()).visitdistributionPoint()
 }
 
+def static "com.ct.qa.keywords.DisplayReportKeywords.displayDataInReport"() {
+    (new com.ct.qa.keywords.DisplayReportKeywords()).displayDataInReport()
+}
+
 def static "com.ct.qa.keywords.CommonKeywords.selectday"() {
     (new com.ct.qa.keywords.CommonKeywords()).selectday()
 }
@@ -108,10 +112,6 @@ def static "com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton"() {
 
 def static "com.ct.qa.keywords.CommonKeywords.takePicture"() {
     (new com.ct.qa.keywords.CommonKeywords()).takePicture()
-}
-
-def static "com.ct.qa.keywords.DisplayReportKeywords.displayDataInReport"() {
-    (new com.ct.qa.keywords.DisplayReportKeywords()).displayDataInReport()
 }
 
 def static "com.ct.qa.keywords.SurveyKeywords.visitQuestionCategories"(

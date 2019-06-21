@@ -24,7 +24,7 @@ import internal.GlobalVariable
 import io.appium.java_client.MobileElement
 
 public class ScoreCardKeywords {
-	
+
 	@Keyword
 	def displayMissingScoreCardInReport(){
 		if(!ProjectConstants.missingscorecardremarks.isEmpty()){
@@ -54,7 +54,7 @@ public class ScoreCardKeywords {
 		//validate supervisor score buttons remarks
 		//P.D button
 		ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.Button[1]").click()
-		Mobile.verifyElementText(findTestObject("Object Repository/MerchandisersScore/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
+		Mobile.verifyElementText(findTestObject("ScoreCard/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
 		int totalremarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<= totalremarks; i++){
 			MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout["+i+"]/android.widget.TextView[1]")
@@ -87,13 +87,13 @@ public class ScoreCardKeywords {
 		}
 		else{
 		}
-		Mobile.verifyElementText(findTestObject("Object Repository/MerchandisersScore/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
+		Mobile.verifyElementText(findTestObject("ScoreCard/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
 		Mobile.pressBack()
-		Mobile.verifyElementText(findTestObject('MerchandisersScore/Validate_MerchandisersScoreScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Scoring')
+		Mobile.verifyElementText(findTestObject('ScoreCard/Validate_MerchandisersListScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Scoring')
 		//MTD button
 		displayedscorecardremarks = new ArrayList<String>()
 		ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.Button[2]").click()
-		Mobile.verifyElementText(findTestObject("Object Repository/MerchandisersScore/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
+		Mobile.verifyElementText(findTestObject("ScoreCard/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
 		totalremarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<= totalremarks; i++){
 			MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout["+i+"]/android.widget.TextView[1]")
@@ -126,14 +126,14 @@ public class ScoreCardKeywords {
 		}
 		else{
 		}
-		Mobile.verifyElementText(findTestObject("Object Repository/MerchandisersScore/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
+		Mobile.verifyElementText(findTestObject("ScoreCard/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
 		Mobile.pressBack()
-		Mobile.verifyElementText(findTestObject('MerchandisersScore/Validate_MerchandisersScoreScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Scoring')
+		Mobile.verifyElementText(findTestObject('ScoreCard/Validate_MerchandisersListScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Scoring')
 		//validate merchandiser score buttons remarks
 		//P.D button
 		displayedscorecardremarks = new ArrayList<String>()
 		ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.Button[1]").click()
-		Mobile.verifyElementText(findTestObject("Object Repository/MerchandisersScore/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
+		Mobile.verifyElementText(findTestObject("ScoreCard/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
 		totalremarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<= totalremarks; i++){
 			MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout["+i+"]/android.widget.TextView[1]")
@@ -166,13 +166,13 @@ public class ScoreCardKeywords {
 		}
 		else{
 		}
-		Mobile.verifyElementText(findTestObject("Object Repository/MerchandisersScore/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
+		Mobile.verifyElementText(findTestObject("ScoreCard/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
 		Mobile.pressBack()
-		Mobile.verifyElementText(findTestObject('MerchandisersScore/Validate_MerchandisersScoreScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Scoring')
+		Mobile.verifyElementText(findTestObject('ScoreCard/Validate_MerchandisersListScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Scoring')
 		//MTD button
 		displayedscorecardremarks = new ArrayList<String>()
 		ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.Button[2]").click()
-		Mobile.verifyElementText(findTestObject("Object Repository/MerchandisersScore/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
+		Mobile.verifyElementText(findTestObject("ScoreCard/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
 		totalremarks = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 		for(int i=1; i<= totalremarks; i++){
 			MobileElement remark = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout["+i+"]/android.widget.TextView[1]")
@@ -205,14 +205,15 @@ public class ScoreCardKeywords {
 		}
 		else{
 		}
-		Mobile.verifyElementText(findTestObject("Object Repository/MerchandisersScore/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
+		Mobile.verifyElementText(findTestObject("ScoreCard/Validate_ScoreDetailsScreen", [('package') : ProjectConstants.PACKAGENAME]), "Score Details")
 		Mobile.pressBack()
-		Mobile.verifyElementText(findTestObject('MerchandisersScore/Validate_MerchandisersScoreScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Scoring')
+		Mobile.verifyElementText(findTestObject('ScoreCard/Validate_MerchandisersListScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Scoring')
 		//pick supervisor and first merchandiser name
 		MobileElement supervisor = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[2]")
 		ProjectConstants.SUPERVISOR_NAME = supervisor.getText()
 		MobileElement merchandiser = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
 		ProjectConstants.MERCHANDISER_NAME = merchandiser.getText()
+		//click on first merchandiser
 		ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout[1]").click()
 	}
 }

@@ -21,6 +21,7 @@ import com.ct.qa.struct.VisitedChillerProductsCategoryData
 import com.ct.qa.struct.VisitedShopDataInfo
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords
+import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.util.KeywordUtil
 import io.appium.java_client.touch.WaitOptions
@@ -209,7 +210,6 @@ public class ShopVisitingScenariosKeywords{
 	@Keyword
 	def visitShopWith_HappyFlow(){
 		int index = 0
-		int totalshops = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/*").size()
 		int _shop = ProjectConstants.SHOP_ATTEMPT
 		MissingShopDataInfo missingshopdatainfo = new MissingShopDataInfo()
 		VisitedShopDataInfo visitedshopdatainfo = new VisitedShopDataInfo()
@@ -220,11 +220,13 @@ public class ShopVisitingScenariosKeywords{
 		missingshopdatainfo.setWorkingaction(ProjectConstants.WORKING_ACTION)
 		missingshopdatainfo.setRoute(ProjectConstants.CURRENTVISITING_ROUTE)
 		missingshopdatainfo.setShopname(shop.getText())
+		missingshopdatainfo.setRemark("Normal Shops")
 		visitedshopdatainfo.setSupervisorname(ProjectConstants.SUPERVISOR_NAME)
 		visitedshopdatainfo.setMerchandisername(ProjectConstants.MERCHANDISER_NAME)
 		visitedshopdatainfo.setWorkingaction(ProjectConstants.WORKING_ACTION)
 		visitedshopdatainfo.setRoute(ProjectConstants.CURRENTVISITING_ROUTE)
 		visitedshopdatainfo.setShopname(shop.getText())
+		visitedshopdatainfo.setRemark("Normal Shops")
 		ProjectConstants.missingshopdatainfo.add(missingshopdatainfo)
 		ProjectConstants.visitedshopdatainfo.add(visitedshopdatainfo)
 		ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+_shop+"]").click()
@@ -241,6 +243,8 @@ public class ShopVisitingScenariosKeywords{
 		MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/Location_CheckIn" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		Mobile.verifyElementExist(findTestObject("Object Repository/CommonScreenElements/Validate_InfoPopUP" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		MobileBuiltInKeywords.tap(findTestObject("Object Repository/CommonScreenElements/InfoPopUp_NoButton" , [('package') : ProjectConstants.PACKAGENAME]), 0)
+		//validate missing shop remarks list e.g. shop open, closed etc...
+		missingShopRemarksList()
 		Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitShopOpen"), null)
 		ProjectConstants.SCENARIO = "first visit"
 		Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification"), null)

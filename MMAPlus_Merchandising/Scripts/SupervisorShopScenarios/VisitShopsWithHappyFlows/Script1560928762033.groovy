@@ -46,103 +46,109 @@ CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_H
 
 Mobile.pressBack()
 
-Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Route LIST')
 
-Mobile.pressBack()
+not_run: Mobile.pressBack()
 
-Mobile.verifyElementText(findTestObject('WorkActions/Validate_SubWorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_SubWorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectAction'('Un-Captured')
+not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectAction'('Un-Captured')
 
-Mobile.verifyElementExist(findTestObject('WorkActions/Validate_UncapturedVisit_Popup', [('package') : ProjectConstants.PACKAGENAME]), 
+not_run: Mobile.verifyElementExist(findTestObject('WorkActions/Validate_UncapturedVisit_Popup', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
-Mobile.tap(findTestObject('WorkActions/Uncapturedvisit_OkButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
-
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.validateShopListScreenForUnCapturedShops'()
-
-Mobile.pressBack()
-
-Mobile.verifyElementText(findTestObject('WorkActions/validate_WorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    'Select')
-
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectAction'('WR')
-
-Mobile.verifyElementText(findTestObject('WorkActions/Validate_SubWorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    'Select')
-
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSubAction'('Route')
-
-Mobile.verifyElementVisible(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    100)
-
-Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    'Route LIST')
-
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSameRouteForDifferentWorkActions'(ProjectConstants.CURRENTVISITING_ROUTE)
-
-'Validate shops list screen appearance'
-Mobile.verifyElementVisible(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 100)
-
-'Validate shops list screen appearance'
-Mobile.verifyElementText(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Shops on Route')
-
-'select shops from shops list for data verification'
-CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_HappyFlow'()
-
-Mobile.pressBack()
-
-Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    'Route LIST')
-
-Mobile.pressBack()
-
-Mobile.verifyElementText(findTestObject('WorkActions/Validate_SubWorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    'Select')
-
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSubAction'('Un-Captured')
-
-Mobile.verifyElementExist(findTestObject('WorkActions/Validate_UncapturedVisit_Popup', [('package') : ProjectConstants.PACKAGENAME]), 
+not_run: Mobile.tap(findTestObject('WorkActions/Uncapturedvisit_OkButton', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
-Mobile.tap(findTestObject('WorkActions/Uncapturedvisit_OkButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
+not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.validateShopListScreenForUnCapturedShops'()
 
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.validateShopListScreenForUnCapturedShops'()
+not_run: Mobile.pressBack()
 
-Mobile.pressBack()
-
-Mobile.verifyElementText(findTestObject('WorkActions/validate_WorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+not_run: Mobile.verifyElementText(findTestObject('WorkActions/validate_WorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
-CustomKeywords.'com.ct.qa.keywords.WorkActions.selectAction'('Merchandising')
+not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectAction'('WR')
 
-Mobile.verifyElementVisible(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_SubWorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Select')
+
+not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSubAction'('Route')
+
+not_run: Mobile.verifyElementVisible(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     100)
 
-Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Route LIST')
 
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSameRouteForDifferentWorkActions'(ProjectConstants.CURRENTVISITING_ROUTE)
+not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSameRouteForDifferentWorkActions'(ProjectConstants.CURRENTVISITING_ROUTE)
 
 'Validate shops list screen appearance'
-Mobile.verifyElementVisible(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 100)
+not_run: Mobile.verifyElementVisible(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    100)
 
 'Validate shops list screen appearance'
-Mobile.verifyElementText(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Shops on Route')
+not_run: Mobile.verifyElementText(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Shops on Route')
 
 'select shops from shops list for data verification'
-CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_HappyFlow'()
+not_run: CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_HappyFlow'()
 
-Mobile.pressBack()
+not_run: Mobile.pressBack()
 
-Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Route LIST')
 
-Mobile.pressBack()
+not_run: Mobile.pressBack()
 
-Mobile.verifyElementText(findTestObject('WorkActions/validate_WorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_SubWorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Select')
+
+not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSubAction'('Un-Captured')
+
+not_run: Mobile.verifyElementExist(findTestObject('WorkActions/Validate_UncapturedVisit_Popup', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
+
+not_run: Mobile.tap(findTestObject('WorkActions/Uncapturedvisit_OkButton', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
+
+not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.validateShopListScreenForUnCapturedShops'()
+
+not_run: Mobile.pressBack()
+
+not_run: Mobile.verifyElementText(findTestObject('WorkActions/validate_WorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Select')
+
+not_run: CustomKeywords.'com.ct.qa.keywords.WorkActions.selectAction'('Merchandising')
+
+not_run: Mobile.verifyElementVisible(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    100)
+
+not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Route LIST')
+
+not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSameRouteForDifferentWorkActions'(ProjectConstants.CURRENTVISITING_ROUTE)
+
+'Validate shops list screen appearance'
+not_run: Mobile.verifyElementVisible(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    100)
+
+'Validate shops list screen appearance'
+not_run: Mobile.verifyElementText(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Shops on Route')
+
+'select shops from shops list for data verification'
+not_run: CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_HappyFlow'()
+
+not_run: Mobile.pressBack()
+
+not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Route LIST')
+
+not_run: Mobile.pressBack()
+
+not_run: Mobile.verifyElementText(findTestObject('WorkActions/validate_WorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
 CustomKeywords.'com.ct.qa.keywords.DisplayReportKeywords.displayDataInReport'()
