@@ -2,7 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import com.ct.qa.constants.ProjectConstants as ProjectConstants
+import qa.constants.ProjectConstants as ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -32,7 +32,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
     'Facing')
 
 'visit chiller products with facing'
-CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData'(ProjectConstants.CHANNEL_CNA_FACING, 
+CustomKeywords.'qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData'(ProjectConstants.CHANNEL_CNA_FACING, 
     'Facing')
 
 'tap on submit button'
@@ -50,7 +50,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
     'Stock Taking')
 
 'visit chiller products with stock taking'
-CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData'(ProjectConstants.CHANNEL_CNA_STOCKTAKING, 
+CustomKeywords.'qa.keywords.ChillerProductsDataKeywords.VisitChillerNotAvailableProductsData'(ProjectConstants.CHANNEL_CNA_STOCKTAKING, 
     'Stock Taking')
 
 'tap on submit button'

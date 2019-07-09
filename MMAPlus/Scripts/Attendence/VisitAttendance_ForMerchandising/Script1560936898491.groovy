@@ -2,7 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import com.ct.qa.constants.ProjectConstants as ProjectConstants
+import qa.constants.ProjectConstants as ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -19,7 +19,7 @@ Mobile.verifyElementText(findTestObject('DashboardScreenElements/Validate_Dashbo
     'Dashboard')
 
 'select the current day for further proceed'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.selectday'()
+CustomKeywords.'qa.keywords.CommonKeywords.selectday'()
 
 'tap on start your day button'
 Mobile.tap(findTestObject('DashboardScreenElements/StartYourDay', [('package') : ProjectConstants.PACKAGENAME]), 0)
@@ -30,9 +30,9 @@ Mobile.verifyElementText(findTestObject('Attendence/Validate_AttendenceScreen', 
 Mobile.tap(findTestObject('Attendence/TakeSelfie_ImageViewButton', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.takePicture'()
+CustomKeywords.'qa.keywords.CommonKeywords.takePicture'()
 
-CustomKeywords.'com.ct.qa.keywords.AttendenceKeywords.visitAttendenceRemark'()
+CustomKeywords.'qa.keywords.AttendenceKeywords.visitAttendenceRemark'()
 
 Mobile.tap(findTestObject('Attendence/Attendence_SubmitButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
 

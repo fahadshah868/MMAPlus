@@ -18,7 +18,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import com.ct.qa.constants.ProjectConstants as ProjectConstants
+import qa.constants.ProjectConstants as ProjectConstants
 
 'validate channel summary detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('DistributionPoint/Validate_RouteInfoScreen', [('package') : ProjectConstants.PACKAGENAME]), 
@@ -33,7 +33,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('DistributionPoint/Valida
     'Poster Quantity:')
 
 'enter quantity of products on distribution point'
-CustomKeywords.'com.ct.qa.keywords.DistributionPointKeywords.visitdistributionPoint'()
+CustomKeywords.'qa.keywords.DistributionPointKeywords.visitdistributionPoint'()
 
 'tap on submit button after enter the quantity of products on distribution point'
 MobileBuiltInKeywords.tap(findTestObject('DistributionPoint/DistributionPoint_SubmitButton', [('package') : ProjectConstants.PACKAGENAME]), 

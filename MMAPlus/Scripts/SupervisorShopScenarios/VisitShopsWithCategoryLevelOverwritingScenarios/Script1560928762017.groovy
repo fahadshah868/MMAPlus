@@ -2,7 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import com.ct.qa.constants.ProjectConstants as ProjectConstants
+import qa.constants.ProjectConstants as ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -20,12 +20,12 @@ Mobile.verifyElementVisible(findTestObject('WorkActions/validate_WorkActionsScre
 Mobile.verifyElementText(findTestObject('WorkActions/validate_WorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectAction'('WW')
+CustomKeywords.'qa.keywords.WorkActionsKeywords.selectAction'('WW')
 
 Mobile.verifyElementText(findTestObject('WorkActions/Validate_SubWorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSubAction'('Route')
+CustomKeywords.'qa.keywords.WorkActionsKeywords.selectSubAction'('Route')
 
 Mobile.verifyElementVisible(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     100)
@@ -33,7 +33,7 @@ Mobile.verifyElementVisible(findTestObject('WorkActions/Validate_RouteListScreen
 Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Route LIST')
 
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectRoute'()
+CustomKeywords.'qa.keywords.WorkActionsKeywords.selectRoute'()
 
 'Validate shops list screen appearance'
 Mobile.verifyElementVisible(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 100)
@@ -42,5 +42,5 @@ Mobile.verifyElementVisible(findTestObject('Validate_ShopListScreen', [('package
 Mobile.verifyElementText(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Shops on Route')
 
 'select shops from shops list with "Shop Level" overwriting '
-CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopsWith_CategoryLevel_OverwritingScenarios'()
+CustomKeywords.'qa.keywords.ShopVisitingScenariosKeywords.visitShopsWith_CategoryLevel_OverwritingScenarios'()
 

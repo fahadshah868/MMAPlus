@@ -2,7 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import com.ct.qa.constants.ProjectConstants as ProjectConstants
+import qa.constants.ProjectConstants as ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -20,12 +20,12 @@ Mobile.verifyElementVisible(findTestObject('WorkActions/validate_WorkActionsScre
 Mobile.verifyElementText(findTestObject('WorkActions/validate_WorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectAction'('WW')
+CustomKeywords.'qa.keywords.WorkActionsKeywords.selectAction'('WW')
 
 Mobile.verifyElementText(findTestObject('WorkActions/Validate_SubWorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSubAction'('Route')
+CustomKeywords.'qa.keywords.WorkActionsKeywords.selectSubAction'('Route')
 
 Mobile.verifyElementVisible(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     100)
@@ -33,7 +33,7 @@ Mobile.verifyElementVisible(findTestObject('WorkActions/Validate_RouteListScreen
 Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Route LIST')
 
-CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectRoute'()
+CustomKeywords.'qa.keywords.WorkActionsKeywords.selectRoute'()
 
 'Validate shops list screen appearance'
 Mobile.verifyElementVisible(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 100)
@@ -42,7 +42,7 @@ Mobile.verifyElementVisible(findTestObject('Validate_ShopListScreen', [('package
 Mobile.verifyElementText(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Shops on Route')
 
 'select shops from shops list for data verification'
-CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_HappyFlow'()
+CustomKeywords.'qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_HappyFlow'()
 
 Mobile.pressBack()
 
@@ -54,7 +54,7 @@ not_run: Mobile.pressBack()
 not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_SubWorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
-not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectAction'('Un-Captured')
+not_run: CustomKeywords.'qa.keywords.WorkActionsKeywords.selectAction'('Un-Captured')
 
 not_run: Mobile.verifyElementExist(findTestObject('WorkActions/Validate_UncapturedVisit_Popup', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
@@ -62,19 +62,19 @@ not_run: Mobile.verifyElementExist(findTestObject('WorkActions/Validate_Uncaptur
 not_run: Mobile.tap(findTestObject('WorkActions/Uncapturedvisit_OkButton', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
-not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.validateShopListScreenForUnCapturedShops'()
+not_run: CustomKeywords.'qa.keywords.WorkActionsKeywords.validateShopListScreenForUnCapturedShops'()
 
 not_run: Mobile.pressBack()
 
 not_run: Mobile.verifyElementText(findTestObject('WorkActions/validate_WorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
-not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectAction'('WR')
+not_run: CustomKeywords.'qa.keywords.WorkActionsKeywords.selectAction'('WR')
 
 not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_SubWorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
-not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSubAction'('Route')
+not_run: CustomKeywords.'qa.keywords.WorkActionsKeywords.selectSubAction'('Route')
 
 not_run: Mobile.verifyElementVisible(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     100)
@@ -82,7 +82,7 @@ not_run: Mobile.verifyElementVisible(findTestObject('WorkActions/Validate_RouteL
 not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Route LIST')
 
-not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSameRouteForDifferentWorkActions'(ProjectConstants.CURRENTVISITING_ROUTE)
+not_run: CustomKeywords.'qa.keywords.WorkActionsKeywords.selectSameRouteForDifferentWorkActions'(ProjectConstants.CURRENTVISITING_ROUTE)
 
 'Validate shops list screen appearance'
 not_run: Mobile.verifyElementVisible(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
@@ -93,7 +93,7 @@ not_run: Mobile.verifyElementText(findTestObject('Validate_ShopListScreen', [('p
     'Shops on Route')
 
 'select shops from shops list for data verification'
-not_run: CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_HappyFlow'()
+not_run: CustomKeywords.'qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_HappyFlow'()
 
 not_run: Mobile.pressBack()
 
@@ -105,7 +105,7 @@ not_run: Mobile.pressBack()
 not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_SubWorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
-not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSubAction'('Un-Captured')
+not_run: CustomKeywords.'qa.keywords.WorkActionsKeywords.selectSubAction'('Un-Captured')
 
 not_run: Mobile.verifyElementExist(findTestObject('WorkActions/Validate_UncapturedVisit_Popup', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
@@ -113,14 +113,14 @@ not_run: Mobile.verifyElementExist(findTestObject('WorkActions/Validate_Uncaptur
 not_run: Mobile.tap(findTestObject('WorkActions/Uncapturedvisit_OkButton', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
-not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.validateShopListScreenForUnCapturedShops'()
+not_run: CustomKeywords.'qa.keywords.WorkActionsKeywords.validateShopListScreenForUnCapturedShops'()
 
 not_run: Mobile.pressBack()
 
 not_run: Mobile.verifyElementText(findTestObject('WorkActions/validate_WorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
-not_run: CustomKeywords.'com.ct.qa.keywords.WorkActions.selectAction'('Merchandising')
+not_run: CustomKeywords.'qa.keywords.WorkActions.selectAction'('Merchandising')
 
 not_run: Mobile.verifyElementVisible(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     100)
@@ -128,7 +128,7 @@ not_run: Mobile.verifyElementVisible(findTestObject('WorkActions/Validate_RouteL
 not_run: Mobile.verifyElementText(findTestObject('WorkActions/Validate_RouteListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Route LIST')
 
-not_run: CustomKeywords.'com.ct.qa.keywords.WorkActionsKeywords.selectSameRouteForDifferentWorkActions'(ProjectConstants.CURRENTVISITING_ROUTE)
+not_run: CustomKeywords.'qa.keywords.WorkActionsKeywords.selectSameRouteForDifferentWorkActions'(ProjectConstants.CURRENTVISITING_ROUTE)
 
 'Validate shops list screen appearance'
 not_run: Mobile.verifyElementVisible(findTestObject('Validate_ShopListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
@@ -139,7 +139,7 @@ not_run: Mobile.verifyElementText(findTestObject('Validate_ShopListScreen', [('p
     'Shops on Route')
 
 'select shops from shops list for data verification'
-not_run: CustomKeywords.'com.ct.qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_HappyFlow'()
+not_run: CustomKeywords.'qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_HappyFlow'()
 
 not_run: Mobile.pressBack()
 
@@ -151,5 +151,5 @@ not_run: Mobile.pressBack()
 not_run: Mobile.verifyElementText(findTestObject('WorkActions/validate_WorkActionsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Select')
 
-CustomKeywords.'com.ct.qa.keywords.DisplayReportKeywords.displayDataInReport'()
+CustomKeywords.'qa.keywords.DisplayReportKeywords.displayDataInReport'()
 

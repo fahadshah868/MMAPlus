@@ -3,7 +3,7 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import com.ct.qa.constants.ProjectConstants
+import qa.constants.ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -25,7 +25,7 @@ import internal.GlobalVariable as GlobalVariable
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/AdditionalPicture/Validate_AdditionalPictureScreen' , [('package') : ProjectConstants.PACKAGENAME]), 'Additional Picture')
 
 'take mandatory pictures for "Additional Picture" category'
-CustomKeywords.'com.ct.qa.keywords.AdditionalPictureKeywords.takeMendatoryImages'()
+CustomKeywords.'qa.keywords.AdditionalPictureKeywords.takeMendatoryImages'()
 
 'press device back button'
 Mobile.pressBack()

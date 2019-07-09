@@ -2,7 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import com.ct.qa.constants.ProjectConstants as ProjectConstants
+import qa.constants.ProjectConstants as ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -32,7 +32,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
     'Facing')
 
 'visit chiller products with facing'
-CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_FACING, 
+CustomKeywords.'qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_FACING, 
     'Facing')
 
 'tap on submit button'
@@ -50,7 +50,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
     'Depth')
 
 'visit chiller products with depth'
-CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_DEPTH, 
+CustomKeywords.'qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_DEPTH, 
     'Depth')
 
 'tap on submit button'
@@ -68,7 +68,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
     'Stock Count')
 
 'visit chiller products with stock count'
-CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_STOCKCOUNT, 
+CustomKeywords.'qa.keywords.ChillerProductsDataKeywords.visitChillerAvailableProductsData'(ProjectConstants.CHILLER_STOCKCOUNT, 
     'Stock Count')
 
 'tap on submit button'

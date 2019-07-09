@@ -2,7 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import com.ct.qa.constants.ProjectConstants as ProjectConstants
+import qa.constants.ProjectConstants as ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -26,11 +26,11 @@ Mobile.verifyElementText(findTestObject('Attendence/Validate_SupervisorAttendanc
 Mobile.tap(findTestObject('Attendence/Supervisor_SelfieCamera_Imageiew', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.takePicture'()
+CustomKeywords.'qa.keywords.CommonKeywords.takePicture'()
 
 Mobile.verifyElementText(findTestObject('Attendence/Validate_SupervisorAttendanceScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Attendance')
 
-CustomKeywords.'com.ct.qa.keywords.AttendenceKeywords.visitAttendenceRemark'()
+CustomKeywords.'qa.keywords.AttendenceKeywords.visitAttendenceRemark'()
 
 Mobile.tap(findTestObject('Attendence/SubmitButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
 
@@ -49,7 +49,7 @@ Mobile.tap(findTestObject('CommonScreenElements/InfoPopUp_YesButton', [('package
 Mobile.verifyElementText(findTestObject('Attendence/Validate_MerchandisersListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'List of Team Members')
 
-CustomKeywords.'com.ct.qa.keywords.AttendenceKeywords.visitMerchandisersAttendance'()
+CustomKeywords.'qa.keywords.AttendenceKeywords.visitMerchandisersAttendance'()
 
 Mobile.tap(findTestObject('Attendence/StartYourDayButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
 

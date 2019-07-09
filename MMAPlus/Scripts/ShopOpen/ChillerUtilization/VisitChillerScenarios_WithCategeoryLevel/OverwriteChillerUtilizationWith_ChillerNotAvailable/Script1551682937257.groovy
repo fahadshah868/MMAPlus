@@ -3,7 +3,7 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import com.ct.qa.constants.ProjectConstants
+import qa.constants.ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -26,7 +26,7 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
     'Shop Chillers')
 
 'visit chillers tagged in "Chiller Utilization" and select chiller remark "Chiller Not Available"'
-CustomKeywords.'com.ct.qa.keywords.ChillerVisitingScenariosKeywords.overwriteChillersTaggedinChillerUtilizationWithSingleRemark'(
+CustomKeywords.'qa.keywords.ChillerVisitingScenariosKeywords.overwriteChillersTaggedinChillerUtilizationWithSingleRemark'(
     'Chiller not Available')
 
 'tap on back button'

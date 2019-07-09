@@ -2,7 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import com.ct.qa.constants.ProjectConstants as ProjectConstants
+import qa.constants.ProjectConstants as ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -25,24 +25,24 @@ MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilizat
         [('package') : ProjectConstants.PACKAGENAME]), 'Category:Chiller Utilization')
 
 'visit chiller not available products categories'
-CustomKeywords.'com.ct.qa.keywords.ChillerProductsDataKeywords.visitChillerNotAvailableProductCategories'(3)
+CustomKeywords.'qa.keywords.ChillerProductsDataKeywords.visitChillerNotAvailableProductCategories'(3)
 
 'tap on picture imageview and take picture for category'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitPlanogramImageViewButton'()
+CustomKeywords.'qa.keywords.CommonKeywords.visitPlanogramImageViewButton'()
 
 'validate "Chiller Not Available" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen', 
         [('package') : ProjectConstants.PACKAGENAME]), 'Category:Chiller Utilization')
 
 'tap on picture imageview and take picture for category'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitPictureImageViewButton'()
+CustomKeywords.'qa.keywords.CommonKeywords.visitPictureImageViewButton'()
 
 'validate "Chiller Not Available" detail screen appearance'
 MobileBuiltInKeywords.verifyElementText(findTestObject('ShopOpen/ChillerUtilization/ChillerNotAvailable/Validate_ChillerNotAvailableScreen', 
         [('package') : ProjectConstants.PACKAGENAME]), 'Category:Chiller Utilization')
 
 'tap on picture imageview and take picture for category'
-CustomKeywords.'com.ct.qa.keywords.CommonKeywords.visitBackImageViewButton'()
+CustomKeywords.'qa.keywords.CommonKeywords.visitBackImageViewButton'()
 
 Mobile.verifyElementExist(findTestObject('CommonScreenElements/Validate_InfoPopUP', 
         [('package') : ProjectConstants.PACKAGENAME]), 0)

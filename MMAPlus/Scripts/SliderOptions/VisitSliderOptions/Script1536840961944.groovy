@@ -2,7 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import com.ct.qa.constants.ProjectConstants as ProjectConstants
+import qa.constants.ProjectConstants as ProjectConstants
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -22,19 +22,19 @@ Mobile.swipe(2, 250, 400, 250)
 Mobile.verifyElementExist(findTestObject('SliderOptions/Validate_SliderItemsScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     0)
 
-CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.valideSliderOptions'()
+CustomKeywords.'qa.keywords.SliderOptionsKeywords.valideSliderOptions'()
 
-CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption'('Update Profile')
+CustomKeywords.'qa.keywords.SliderOptionsKeywords.findSliderOption'('Update Profile')
 
-CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption'('Out of Route')
+CustomKeywords.'qa.keywords.SliderOptionsKeywords.findSliderOption'('Out of Route')
 
-CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption'('Abnormal Shops')
+not_run: CustomKeywords.'qa.keywords.SliderOptionsKeywords.findSliderOption'('Abnormal Shops')
 
-CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption'('Info')
+CustomKeywords.'qa.keywords.SliderOptionsKeywords.findSliderOption'('Info')
 
-CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.findSliderOption'('RedFlag Shops')
+not_run: CustomKeywords.'qa.keywords.SliderOptionsKeywords.findSliderOption'('RedFlag Shops')
 
 Mobile.swipe(320, 5, 2, 5)
 
-CustomKeywords.'com.ct.qa.keywords.SliderOptionsKeywords.displayMissingSliderOptionsInReport'()
+CustomKeywords.'qa.keywords.SliderOptionsKeywords.displayMissingSliderOptionsInReport'()
 
