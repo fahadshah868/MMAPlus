@@ -80,6 +80,8 @@ public class ProjectConstants {
 	public static final int CHANNEL_CHILLER_STOCKTAKING
 	public static final int CHANNEL_CHILLER_OVERWRITEFACING
 	public static final int CHANNEL_CHILLER_OVERWRITESTOCKTAKING
+	public static final int CHANNEL_EXPIREDPRODUCT
+	public static final int CHANNEL_SHORTLYEXPIRE
 
 	//chiller available columns
 	public static final int CHILLER_TYPE
@@ -119,22 +121,22 @@ public class ProjectConstants {
 	public static final int SCORE_CARD
 
 	//variables for current visiting shop channels, chiller and categories
-	public static String SUPERVISOR_NAME
-	public static String MERCHANDISER_NAME
-	public static String WORKING_ACTION
-	public static String CURRENTVISITING_ROUTE
-	public static String CURRENTVISITING_SHOPNAME
-	public static String CURRENTVISITING_SHOPCHANNEL
-	public static String CURRENTVISITING_MAINCATEGORY
-	public static String CURRENTVISITING_CATEGORYREMARK
-	public static String CURRENTVISITING_PRODUCTCATEGORY
+	public static String SUPERVISOR_NAME = null
+	public static String MERCHANDISER_NAME = null
+	public static String WORKING_ACTION = null
+	public static String CURRENTVISITING_ROUTE = null
+	public static String CURRENTVISITING_SHOPNAME = null
+	public static String CURRENTVISITING_SHOPCHANNEL = null
+	public static String CURRENTVISITING_MAINCATEGORY = null
+	public static String CURRENTVISITING_CATEGORYREMARK = null
+	public static String CURRENTVISITING_PRODUCTCATEGORY = null
 	public static int CURRENTVISITING_CHILLERCOUNT
-	public static String CURRENTVISITING_CHILLERTYPE
-	public static String CURRENTVISITING_CHILLERREMARK
-	public static String SCENARIO
-	public static String CURRENTVISITING_QUESTIONCATEGORY
-	public static int VISITED_CHILLERREMARKS = 0
-	public static int SHOP_ATTEMPT = 0
+	public static String CURRENTVISITING_CHILLERTYPE = null
+	public static String CURRENTVISITING_CHILLERREMARK = null
+	public static String SCENARIO = null
+	public static String CURRENTVISITING_QUESTIONCATEGORY = null
+	public static int VISITED_CHILLERREMARKS
+	public static int SHOP_ATTEMPT
 	public static String CHILLER_OVERWRITEPOPUP = "no"
 
 	//list for containing shop info
@@ -230,6 +232,12 @@ public class ProjectConstants {
 			}
 			else if(columnname.equalsIgnoreCase("Overwrite Stock Taking For Chiller Not Available")){
 				CHANNEL_CNA_OVERWRITESTOCKTAKING = cellnumber
+			}
+			else if(columnname.equalsIgnoreCase("Expired Product")){
+				CHANNEL_EXPIREDPRODUCT = cellnumber
+			}
+			else if(columnname.equalsIgnoreCase("Shortly Expire")){
+				CHANNEL_SHORTLYEXPIRE = cellnumber
 			}
 		}
 		for(int cellnumber=0; cellnumber<chillerproductssheettotalcolumns; cellnumber++){

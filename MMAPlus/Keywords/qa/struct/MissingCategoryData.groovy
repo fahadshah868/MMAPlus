@@ -30,6 +30,7 @@ public class MissingCategoryData {
 	public ArrayList<TaggedChillersRemark> taggedchillersremarks
 	public String ProductCategory
 	public String QuestionCategory
+	public String categoryremark
 	public ArrayList<String> productcategories
 	public ArrayList<String> products
 	public String productcategories_errormessage
@@ -78,6 +79,12 @@ public class MissingCategoryData {
 	}
 	public void setMaincategory(String maincategory) {
 		this.maincategory = maincategory;
+	}
+	public String getCategoryremark() {
+		return categoryremark;
+	}
+	public void setCategoryremark(String categoryremark) {
+		this.categoryremark = categoryremark;
 	}
 	public ArrayList<TaggedChillersRemark> getTaggedchillersremarks() {
 		return taggedchillersremarks;

@@ -217,7 +217,7 @@ public class LoadDataKeywords {
 		ArrayList<String> expectedsubcategories = new ArrayList<String>()
 		DataFormatter dataformatter = new DataFormatter()
 		XSSFSheet sheet = LoadDataKeywords.loadChannelProductsSheet()
-		String currentvisitingmaincategory = ""
+		String currentvisitingmaincategory = null
 		if(ProjectConstants.CURRENTVISITING_MAINCATEGORY.equalsIgnoreCase("Chiller Utilization")){
 			currentvisitingmaincategory = "Chiller"
 		}
@@ -237,10 +237,52 @@ public class LoadDataKeywords {
 		}
 		return expectedsubcategories
 	}
-	//load channel wise products and quantity
-	def static loadChannelWiseProductsList(XSSFSheet sheet, int column){
+	//load channel wise product categories for expiry issue category
+	def static loadExpiryIssueSubCategories(){
+		ArrayList<String> expectedsubcategories = new ArrayList<String>()
+		DataFormatter dataformatter = new DataFormatter()
+		XSSFSheet sheet = LoadDataKeywords.loadChannelProductsSheet()
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<=totalrows; i++){
+			Row row = sheet.getRow(i)
+			String channel = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL))
+			String channelname = "Channel: "+channel
+			if(ProjectConstants.CURRENTVISITING_SHOPCHANNEL.equalsIgnoreCase(channelname)){
+				String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCTCATEGORY))
+				expectedsubcategories.add(productcategory)
+			}
+		}
+		return expectedsubcategories
+	}
+	//load channel wise products for expiry issue category
+	def static loadExpiryIssueChannelProduct(int column){
 		DataFormatter dataformatter = new DataFormatter()
 		ArrayList<LoadProductsData> channelproducts = new ArrayList<LoadProductsData>()
+		XSSFSheet sheet = loadChannelProductsSheet()
+		int totalrows = sheet.getLastRowNum()
+		for(int i=1; i<=totalrows; i++){
+			Row row = sheet.getRow(i)
+			String channel = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL))
+			String channelname = "Channel: "+channel
+			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCTCATEGORY))
+			if(ProjectConstants.CURRENTVISITING_SHOPCHANNEL.equalsIgnoreCase(channelname) && ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY.equalsIgnoreCase(productcategory)){
+				LoadProductsData channelproduct = new LoadProductsData()
+				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCT))
+				String columndata = dataformatter.formatCellValue(row.getCell(column))
+				channelproduct.setProduct(product)
+				channelproduct.setProduct_data(columndata)
+				channelproducts.add(channelproduct)
+			}
+			else{
+			}
+		}
+		return channelproducts
+	}
+	//load channel wise products and quantity
+	def static loadChannelWiseProductsList(int column){
+		DataFormatter dataformatter = new DataFormatter()
+		ArrayList<LoadProductsData> channelproducts = new ArrayList<LoadProductsData>()
+		XSSFSheet sheet = loadChannelProductsSheet()
 		int totalrows = sheet.getLastRowNum()
 		for(int i=1; i<=totalrows; i++){
 			Row row = sheet.getRow(i)
@@ -248,11 +290,6 @@ public class LoadDataKeywords {
 			String channelname = "Channel: "+channel
 			String maincategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_MAINCATEGORY))
 			String productcategory = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCTCATEGORY))
-
-			String a = ProjectConstants.CURRENTVISITING_SHOPCHANNEL
-			String b = ProjectConstants.CURRENTVISITING_MAINCATEGORY
-			String c = ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY
-
 			if((ProjectConstants.CURRENTVISITING_SHOPCHANNEL.equalsIgnoreCase(channelname) && ProjectConstants.CURRENTVISITING_MAINCATEGORY.equalsIgnoreCase(maincategory)) && ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY.equalsIgnoreCase(productcategory)){
 				LoadProductsData channelproduct = new LoadProductsData()
 				String product = dataformatter.formatCellValue(row.getCell(ProjectConstants.CHANNEL_PRODUCT))

@@ -249,7 +249,7 @@ public class ChannelProductsDataKeywords {
 		int index
 		XSSFSheet channelproductssheet = LoadDataKeywords.loadChannelProductsSheet()
 		ArrayList<String> displayproductslist = new ArrayList<String>()
-		ArrayList<LoadProductsData> expectedproductslist = LoadDataKeywords.loadChannelWiseProductsList(channelproductssheet, columnindex)
+		ArrayList<LoadProductsData> expectedproductslist = LoadDataKeywords.loadChannelWiseProductsList(columnindex)
 		int expectedproducts = expectedproductslist.size()
 		MobileElement list = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]")
 		int totaltextviews = list.findElementsByClassName("android.widget.TextView").size()

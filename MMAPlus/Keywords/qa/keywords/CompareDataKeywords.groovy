@@ -154,8 +154,6 @@ public class CompareDataKeywords {
 				displayedshopcategories.add(categoryname)
 			}
 		}
-		touchaction.press(0, 230).waitAction(Duration.ofMillis(500)).moveTo(0, 200).release().perform()
-		Thread.sleep(500)
 		while(true){
 			categories = listcontainer.findElementsByClassName("android.widget.TextView")
 			MobileElement lastitembeforeswipe = categories.get((categories.size()-1))

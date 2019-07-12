@@ -31,6 +31,7 @@ public class VisitedCategoryData {
 	public String overwrite_categoryremark
 	public ArrayList<TaggedChillersRemark> taggedchillersremark
 	public ArrayList<ProductCategoryWithProducts> productcategorywithproducts
+	public ArrayList<ExpiryIssueProduct> expiryissueproducts
 
 	public VisitedCategoryData(){
 		this.taggedchillersremark = new ArrayList<TaggedChillersRemark>()
@@ -66,5 +67,11 @@ public class VisitedCategoryData {
 	}
 	public void setProductcategorywithproducts(ProductCategoryWithProducts productcategorywithproducts) {
 		this.productcategorywithproducts.add(productcategorywithproducts);
+	}
+	public ArrayList<ExpiryIssueProduct> getExpiryissueproducts() {
+		return expiryissueproducts;
+	}
+	public void setExpiryissueproducts(ExpiryIssueProduct expiryissueproduct) {
+		this.expiryissueproducts.add(expiryissueproducts);
 	}
 }

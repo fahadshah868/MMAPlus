@@ -182,6 +182,28 @@ def static "qa.keywords.ChannelProductsDataKeywords.visitChannelWiseProductsData
          , 	assettype)
 }
 
+def static "qa.keywords.ExpiryIssue.visitExpiryIssueRemark"() {
+    (new qa.keywords.ExpiryIssue()).visitExpiryIssueRemark()
+}
+
+def static "qa.keywords.ExpiryIssue.validateProductCategory"() {
+    (new qa.keywords.ExpiryIssue()).validateProductCategory()
+}
+
+def static "qa.keywords.ExpiryIssue.visitProductCategories"() {
+    (new qa.keywords.ExpiryIssue()).visitProductCategories()
+}
+
+def static "qa.keywords.ExpiryIssue.validateProducts"() {
+    (new qa.keywords.ExpiryIssue()).validateProducts()
+}
+
+def static "qa.keywords.ExpiryIssue.visitExpiredProducts"(
+    	int columnindex	) {
+    (new qa.keywords.ExpiryIssue()).visitExpiredProducts(
+        	columnindex)
+}
+
 def static "qa.keywords.ChillerSKDNA.visitSKDNA"() {
     (new qa.keywords.ChillerSKDNA()).visitSKDNA()
 }
