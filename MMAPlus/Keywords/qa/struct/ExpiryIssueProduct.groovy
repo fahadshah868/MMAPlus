@@ -20,7 +20,11 @@ import internal.GlobalVariable
 
 public class ExpiryIssueProduct {
 	public String remark
-	public ArrayList<ProductCategoryWithProducts> productcategorywithproducts
+	public ArrayList<ProductCategoryWithProducts> productcategorywithproducts
+	
+	public ExpiryIssueProduct(){
+		this.productcategorywithproducts = new ArrayList<ProductCategoryWithProducts>()
+	}
 	public String getRemark() {
 		return remark;
 	}

@@ -36,6 +36,7 @@ public class VisitedCategoryData {
 	public VisitedCategoryData(){
 		this.taggedchillersremark = new ArrayList<TaggedChillersRemark>()
 		this.productcategorywithproducts = new ArrayList<ProductCategoryWithProducts>()
+		this.expiryissueproducts = new ArrayList<ExpiryIssueProduct>()
 	}
 
 	public String getFirstvisit_categoryremark() {

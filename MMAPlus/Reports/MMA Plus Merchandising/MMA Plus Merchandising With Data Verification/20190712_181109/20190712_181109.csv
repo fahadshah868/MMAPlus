@@ -1,8 +1,0 @@
-Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
-MMA Plus Merchandising With Data Verification,,,,2019-07-12 18:11:16,2019-07-12 18:11:28,11.833s,INCOMPLETE
-,,,,,,,
-Test Cases/LaunchingApp/LaunchApp,,,,2019-07-12 18:11:17,2019-07-12 18:11:27,10.360s,FAILED
-"startApplication(""F:\QA_Automation\Builds\MMA Plus\mmaplus_expired_product_module_080719_local.apk"", false)",,launch application,,2019-07-12 18:11:18,2019-07-12 18:11:27,9.246s,FAILED
-,,,,,,,
-Test Cases/MerchandisingShopScenarios/VisitShopsWithDataVerification,,,,2019-07-12 18:11:27,2019-07-12 18:11:28,0.942s,FAILED
-"verifyElementText(findTestObject(""DashboardScreenElements/Validate_DashboardScreen"", [""package"":PACKAGENAME]), ""Dashboard"")",,validate the dashboard screen appearance,,2019-07-12 18:11:28,2019-07-12 18:11:28,0.179s,PASSED

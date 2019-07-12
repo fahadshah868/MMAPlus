@@ -17,7 +17,7 @@ import qa.constants.ProjectConstants as ProjectConstants
 Mobile.verifyElementText(findTestObject('ExpiryIssue/Validate_ProductCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]), 
     'Expire CATEGORY')
 
-not_run: CustomKeywords.'qa.keywords.ExpiryIssue.validateProductCategory'()
+CustomKeywords.'qa.keywords.ExpiryIssue.validateProductCategory'()
 
 Mobile.swipe(0, 200, 0, 500)
 
