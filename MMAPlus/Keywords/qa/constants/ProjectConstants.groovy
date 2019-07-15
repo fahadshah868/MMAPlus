@@ -81,7 +81,9 @@ public class ProjectConstants {
 	public static final int CHANNEL_CHILLER_OVERWRITEFACING
 	public static final int CHANNEL_CHILLER_OVERWRITESTOCKTAKING
 	public static final int CHANNEL_EXPIREDPRODUCT
-	public static final int CHANNEL_SHORTLYEXPIRE
+	public static final int CHANNEL_OVERWRITEEXPIREDPRODUCT
+	public static final int CHANNEL_SHORTLYEXPIREPRODUCT
+	public static final int CHANNEL_OVERWRITESHORTLYEXPIREPRODUCT
 
 	//chiller available columns
 	public static final int CHILLER_TYPE
@@ -236,8 +238,14 @@ public class ProjectConstants {
 			else if(columnname.equalsIgnoreCase("Expired Product")){
 				CHANNEL_EXPIREDPRODUCT = cellnumber
 			}
-			else if(columnname.equalsIgnoreCase("Shortly Expire")){
-				CHANNEL_SHORTLYEXPIRE = cellnumber
+			else if(columnname.equalsIgnoreCase("Overwrite Expired Product")){
+				CHANNEL_OVERWRITEEXPIREDPRODUCT = cellnumber
+			}
+			else if(columnname.equalsIgnoreCase("Shortly Expire Product")){
+				CHANNEL_SHORTLYEXPIREPRODUCT = cellnumber
+			}
+			else if(columnname.equalsIgnoreCase("Overwrite Shortly Expire Product")){
+				CHANNEL_OVERWRITESHORTLYEXPIREPRODUCT = cellnumber
 			}
 		}
 		for(int cellnumber=0; cellnumber<chillerproductssheettotalcolumns; cellnumber++){

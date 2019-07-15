@@ -6,6 +6,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import qa.constants.ProjectConstants
+import qa.struct.ExpiryIssueProduct
 import qa.struct.MissingCategoryData
 import qa.struct.MissingChillerProductsCategoryData
 import qa.struct.MissingShopDataInfo
@@ -160,7 +161,39 @@ public class DisplayReportKeywords {
 							}
 						}
 						else{
-							if(missingcategorydata.getProductcategories() != null){
+							if(missingcategorydata.getMaincategory().equalsIgnoreCase("Expiry Issue") && missingcategorydata.getProductcategories() != null){
+								if(flag == false){
+									if(missingshopdatainfo.getSupervisorname() != null){
+										message = message+"\n\n"+
+												String.format("%-20s%-30s%-20s%-30s","Supervisor Name:",missingshopdatainfo.getSupervisorname(),"Merchandiser Name",missingshopdatainfo.getMerchandisername())+"\n"+
+												String.format("%-20s%-30s%-20s%-30s","Working Action:",missingshopdatainfo.getWorkingaction(),"Route",missingshopdatainfo.getRoute())
+									}
+									message = message+"\n\n"+
+											String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
+											String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
+											"\n\nProduct Categories:\n\n" +
+											String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+											String.format("%-30s%-60s","Category Remark:",missingcategorydata.getCategoryremark()) + "\n" +
+											String.format("%-30s","Product Categories:")
+									for(int k=0; k<missingcategorydata.getProductcategories().size(); k++){
+										message = message+missingcategorydata.getProductcategories().get(k)+",	"
+									}
+									message = message+"\n"+missingcategorydata.getProductcategories_errormessage()+"\n\n"
+									flag = true
+								}
+								else{
+									message = message+
+											"\n\nProduct Categories:\n\n" +
+											String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+											String.format("%-30s%-60s","Category Remark:",missingcategorydata.getCategoryremark()) + "\n" +
+											String.format("%-30s","Product Categories:")
+									for(int k=0; k<missingcategorydata.getProductcategories().size(); k++){
+										message = message+missingcategorydata.getProductcategories().get(k)+",	"
+									}
+									message = message+"\n"+missingcategorydata.getProductcategories_errormessage()+"\n\n"
+								}
+							}
+							else if(missingcategorydata.getProductcategories() != null){
 								if(flag == false){
 									if(missingshopdatainfo.getSupervisorname() != null){
 										message = message+"\n\n"+
@@ -274,7 +307,41 @@ public class DisplayReportKeywords {
 							}
 						}
 						else{
-							if(missingcategorydata.getProducts() != null){
+							if(missingcategorydata.getMaincategory().equalsIgnoreCase("Expiry Issue") && missingcategorydata.getProducts() != null){
+								if(flag == false){
+									if(missingshopdatainfo.getSupervisorname() != null){
+										message = message+"\n\n"+
+												String.format("%-20s%-30s%-20s%-30s","Supervisor Name:",missingshopdatainfo.getSupervisorname(),"Merchandiser Name",missingshopdatainfo.getMerchandisername())+"\n"+
+												String.format("%-20s%-30s%-20s%-30s","Working Action:",missingshopdatainfo.getWorkingaction(),"Route",missingshopdatainfo.getRoute())
+									}
+									message = message+"\n\n"+
+											String.format("%-60s%-60s","Shop Name: "+missingshopdatainfo.getShopname(),missingshopdatainfo.getShopchannel())+"\n"+
+											String.format("%-60s%-60s", "Visiting Scenarios: "+missingshopdatainfo.getScenario(),"Remark: "+missingshopdatainfo.getRemark())+
+											"\n\nProducts:\n\n" +
+											String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+											String.format("%-30s%-60s","Category Remark:",missingcategorydata.getCategoryremark()) + "\n" +
+											String.format("%-30s%-60s","Product Category:",missingcategorydata.getProductCategory()) + "\n" +
+											String.format("%-30s", "Products:")
+									for(int k=0; k<missingcategorydata.getProducts().size(); k++){
+										message = message+missingcategorydata.getProducts().get(k) + ",	"
+									}
+									message = message + "\n"+missingcategorydata.getProducts_errormessage() + "\n\n"
+									flag = true
+								}
+								else{
+									message = message+
+											"\n\nProducts:\n\n" +
+											String.format("%-30s%-60s","Main Category:",missingcategorydata.getMaincategory()) + "\n" +
+											String.format("%-30s%-60s","Category Remark:",missingcategorydata.getCategoryremark()) + "\n" +
+											String.format("%-30s%-60s","Product Category:",missingcategorydata.getProductCategory()) + "\n" +
+											String.format("%-30s", "Products:")
+									for(int k=0; k<missingcategorydata.getProducts().size(); k++){
+										message = message+missingcategorydata.getProducts().get(k) + ",	"
+									}
+									message = message + "\n"+missingcategorydata.getProducts_errormessage() + "\n\n"
+								}
+							}
+							else if(missingcategorydata.getProducts() != null){
 								if(flag == false){
 									if(missingshopdatainfo.getSupervisorname() != null){
 										message = message+"\n\n"+
@@ -435,6 +502,44 @@ public class DisplayReportKeywords {
 									QuestionsData question = questions.get(q)
 									message = message +
 											String.format("%-108s%-12s%-13s%-15s%-16s",question.getQuestion(),question.getQuestionoption(),question.getQuestionoption_takepicture(),question.getOverwrite_questionoption(),question.getOverwrite_questionoption_takepicture())+"\n"
+								}
+							}
+						}
+						else if(visitedcategorydata.getMaincategory().equalsIgnoreCase("Expiry Issue")){
+							String remark = null
+							message = message+ "\n\n" +
+									String.format("%-30s%-60s", "Main Category:",visitedcategorydata.getMaincategory())
+							ArrayList<ExpiryIssueProduct> expiryissueproducts = visitedcategorydata.getExpiryissueproducts()
+							for(int ex=0; ex< expiryissueproducts.size(); ex++){
+								ExpiryIssueProduct expiryissueproduct = expiryissueproducts.get(ex)
+								if(remark == null || !remark.equalsIgnoreCase(expiryissueproduct.getRemark())){
+									remark = expiryissueproduct.getRemark()
+									message = message+"\n\n"+
+											String.format("%-30s%-60s", "Category Remark:",expiryissueproduct.getRemark())
+									ArrayList<ProductCategoryWithProducts> productcategorywithproductslist = expiryissueproduct.getProductcategorywithproducts()
+									for(int h=0; h< productcategorywithproductslist.size(); h++){
+										ProductCategoryWithProducts productcategorywithproduct = productcategorywithproductslist.get(h)
+										message = message + "\n\n" +
+												String.format("%-5s%-30s%-60s", "","Product Category:",productcategorywithproduct.getProductcategory()) + "\n\n" +
+												String.format("%-5s%-50s%-30s%-30s", "","Products:","Product Quantity","Overwrite Product Quantity")+"\n"
+										for(int k=0; k<productcategorywithproduct.getShopproductsdata().size() ; k++){
+											ShopProductsData shopproductsdata = productcategorywithproduct.getShopproductsdata().get(k)
+											message = message + String.format("%-5s%-50s%-30s%-30s", "",shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getOverwritefacingdata())+"\n"
+										}
+									}
+								}
+								else{
+									ArrayList<ProductCategoryWithProducts> productcategorywithproductslist = expiryissueproduct.getProductcategorywithproducts()
+									for(int h=0; h< productcategorywithproductslist.size(); h++){
+										ProductCategoryWithProducts productcategorywithproduct = productcategorywithproductslist.get(h)
+										message = message + "\n\n" +
+												String.format("%-5s%-30s%-60s", "","Product Category:",productcategorywithproduct.getProductcategory()) + "\n\n" +
+												String.format("%-5s%-50s%-30s%-30s", "","Products:","Product Quantity","Overwrite Product Quantity")+"\n"
+										for(int k=0; k<productcategorywithproduct.getShopproductsdata().size() ; k++){
+											ShopProductsData shopproductsdata = productcategorywithproduct.getShopproductsdata().get(k)
+											message = message + String.format("%-5s%-50s%-30s%-30s", "",shopproductsdata.getProduct(),shopproductsdata.getFacingdata(),shopproductsdata.getOverwritefacingdata())+"\n"
+										}
+									}
 								}
 							}
 						}

@@ -14,14 +14,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import qa.constants.ProjectConstants as ProjectConstants
 
-Mobile.verifyElementText(findTestObject('ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen', [('package') : ProjectConstants.PACKAGENAME]), 
-    'Expire Product List')
+Mobile.verifyElementText(findTestObject('ShopOpen/ExpiryIssue/Validate_ExpiredCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    'Expire Category')
 
-CustomKeywords.'qa.keywords.ExpiryIssue.validateProducts'()
+CustomKeywords.'qa.keywords.ExpiryIssue.visitExpiryIssueRemark'()
 
-Mobile.swipe(0, 200, 0, 500)
+Mobile.tap(findTestObject('ShopOpen/ExpiryIssue/MainPictureButton', [('package') : ProjectConstants.PACKAGENAME]), 0)
 
-Mobile.swipe(0, 200, 0, 500)
+CustomKeywords.'qa.keywords.CommonKeywords.takePicture'()
 
-CustomKeywords.'qa.keywords.ExpiryIssue.visitExpiredProducts'(ProjectConstants.CHANNEL_EXPIREDPRODUCT)
+Mobile.verifyElementText(findTestObject('ShopOpen/ExpiryIssue/Validate_ExpiredCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]),
+	'Expire Category')
+
+Mobile.pressBack()
+
+'validate shop\'s categories screen appearance'
+Mobile.verifyElementExist(findTestObject('ShopOpen/Validate_ShopCategoriesListScreen', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 

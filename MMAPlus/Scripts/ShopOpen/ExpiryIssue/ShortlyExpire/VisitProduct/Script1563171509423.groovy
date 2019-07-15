@@ -14,7 +14,16 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import qa.constants.ProjectConstants
 
-Mobile.verifyElementText(findTestObject('ExpiryIssue/Validate_ExpiredCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Expire Category')
+Mobile.verifyElementText(findTestObject('ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Expire Product List')
 
-CustomKeywords.'qa.keywords.ExpiryIssue.visitExpiryIssueRemark'()
+CustomKeywords.'qa.keywords.ExpiryIssue.validateProducts'()
+
+Mobile.swipe(0, 200, 0, 500)
+
+Mobile.swipe(0, 200, 0, 500)
+
+CustomKeywords.'qa.keywords.ExpiryIssue.visitExpiredProducts'(ProjectConstants.CHANNEL_SHORTLYEXPIREPRODUCT)
+
+Mobile.tap(findTestObject('ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton', [('package') : ProjectConstants.PACKAGENAME]), 
+    0)
 

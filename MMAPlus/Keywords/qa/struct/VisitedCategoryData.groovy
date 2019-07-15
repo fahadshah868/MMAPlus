@@ -73,6 +73,6 @@ public class VisitedCategoryData {
 		return expiryissueproducts;
 	}
 	public void setExpiryissueproducts(ExpiryIssueProduct expiryissueproduct) {
-		this.expiryissueproducts.add(expiryissueproducts);
+		this.expiryissueproducts.add(expiryissueproduct);
 	}
 }

@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testsuites name="MMA Plus Merchandising With Data Verification" time="429" tests="2" failures="0" errors="0">
+    <testsuite name="MMA Plus Merchandising With Data Verification" tests="2" failures="0" errors="0" time="429" timestamp="2019-07-15 17:23:06" hostname="Fahad Shah - DESKTOP-L12UUAD" id="Test Suites/MMA Plus Merchandising/MMA Plus Merchandising With Data Verification">
+        <properties>
+            <property name="deviceName" value="samsung SM-J110H (Android 4.4.4)"/>
+            <property name="devicePlatform" value=""/>
+            <property name="logFolder" value="F:\\Git Projects\\MMAPlus\\MMAPlus\\Reports\\MMA Plus Merchandising\\MMA Plus Merchandising With Data Verification\\20190715_172259"/>
+            <property name="logFiles" value="F:\\Git Projects\\MMAPlus\\MMAPlus\\Reports\\MMA Plus Merchandising\\MMA Plus Merchandising With Data Verification\\20190715_172259\\appium.log, F:\\Git Projects\\MMAPlus\\MMAPlus\\Reports\\MMA Plus Merchandising\\MMA Plus Merchandising With Data Verification\\20190715_172259\\execution0.log"/>
+            <property name="attachments" value=""/>
+            <property name="hostName" value="Fahad Shah - DESKTOP-L12UUAD"/>
+            <property name="os" value="Windows 10 64bit"/>
+            <property name="katalonVersion" value="6.1.5.3"/>
+            <property name="deviceOS" value="Android"/>
+            <property name="appiumVersion" value="1.8.1"/>
+            <property name="deviceModel" value="SM-J110H"/>
+            <property name="hostAddress" value="192.168.123.2"/>
+            <property name="deviceManufacturer" value="samsung"/>
+            <property name="deviceId" value="11016e423244a24a"/>
+            <property name="deviceName" value="samsung SM-J110H (Android 4.4.4)"/>
+            <property name="deviceOSVersion" value="4.4.4"/>
+        </properties>
+        <testcase name="Test Cases/LaunchingApp/LaunchApp" classname="Test Cases/LaunchingApp/LaunchApp" status="PASSED">
+            <system-out>2019-07-15 17:23:06 - [TEST_CASE][PASSED] - Test Cases/LaunchingApp/LaunchApp: Test Cases/LaunchingApp/LaunchApp&#xD;
+&#xD;
+2019-07-15 17:23:07 - [TEST_STEP][PASSED] - startApplication("F:\QA_Automation\Builds\MMA Plus\mmaplus_expired_product_module_080719_local.apk", false): Started app at: 'F:\QA_Automation\Builds\MMA Plus\mmaplus_expired_product_module_080719_local.apk'&#xD;
+&#xD;
+2019-07-15 17:23:08 - [MESSAGE][INFO] - User set preference: ['deviceId', '']&#xD;
+&#xD;
+2019-07-15 17:23:12 - [MESSAGE][INFO] - Appium server started on port 52,444&#xD;
+&#xD;
+2019-07-15 17:23:29 - [MESSAGE][PASSED] - Started app at: 'F:\QA_Automation\Builds\MMA Plus\mmaplus_expired_product_module_080719_local.apk'&#xD;
+&#xD;
+2019-07-15 17:23:29 - [TEST_STEP][PASSED] - delay(5): Delayed 5 second(s)&#xD;
+&#xD;
+2019-07-15 17:23:34 - [MESSAGE][PASSED] - Delayed 5 second(s)</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/MerchandisingShopScenarios/VisitShopsWithDataVerification" classname="Test Cases/MerchandisingShopScenarios/VisitShopsWithDataVerification" status="PASSED">
+            <system-out>2019-07-15 17:23:34 - [TEST_CASE][PASSED] - Test Cases/MerchandisingShopScenarios/VisitShopsWithDataVerification: Test Cases/MerchandisingShopScenarios/VisitShopsWithDataVerification&#xD;
+&#xD;
+2019-07-15 17:23:35 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("DashboardScreenElements/Validate_DashboardScreen", ["package":PACKAGENAME]), "Dashboard"): Actual text and expected text of test object 'Object Repository/DashboardScreenElements/Validate_DashboardScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:23:40 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/DashboardScreenElements/Validate_DashboardScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:23:40 - [TEST_STEP][PASSED] - qa.keywords.CommonKeywords.selectday(): qa.keywords.CommonKeywords.selectday is PASSED&#xD;
+&#xD;
+2019-07-15 17:23:40 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:23:41 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/DashboardScreenElements/DaysDropdownMenu'&#xD;
+&#xD;
+2019-07-15 17:23:41 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:23:42 - [MESSAGE][PASSED] - Element 'Object Repository/DashboardScreenElements/Validate_DaysListScreen' is exist&#xD;
+&#xD;
+2019-07-15 17:23:43 - [MESSAGE][PASSED] - qa.keywords.CommonKeywords.selectday is PASSED&#xD;
+&#xD;
+2019-07-15 17:23:43 - [TEST_STEP][PASSED] - tap(findTestObject("DashboardScreenElements/StartYourDay", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/DashboardScreenElements/StartYourDay'&#xD;
+&#xD;
+2019-07-15 17:23:43 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:23:45 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/DashboardScreenElements/StartYourDay'&#xD;
+&#xD;
+2019-07-15 17:23:45 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("Validate_ShopListScreen", ["package":PACKAGENAME]), "Shops on Route"): Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:23:46 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:23:46 - [TEST_STEP][PASSED] - qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_DataVerification(): qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_DataVerification is PASSED&#xD;
+&#xD;
+2019-07-15 17:23:50 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopOptionsScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:23:52 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:23:53 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/StartWorking'&#xD;
+&#xD;
+2019-07-15 17:24:08 - [MESSAGE][PASSED] - Delayed 15 second(s)&#xD;
+&#xD;
+2019-07-15 17:24:09 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_MapScreen' is exist&#xD;
+&#xD;
+2019-07-15 17:24:09 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:24:10 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Location_CheckIn'&#xD;
+&#xD;
+2019-07-15 17:24:10 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:24:10 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist&#xD;
+&#xD;
+2019-07-15 17:24:10 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:24:11 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_NoButton'&#xD;
+&#xD;
+2019-07-15 17:24:13 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/VisitShopOpen: Test Cases/ShopOpen/VisitShopOpen&#xD;
+&#xD;
+2019-07-15 17:24:13 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopActions_List", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopActions_List' is exist&#xD;
+&#xD;
+2019-07-15 17:24:13 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:24:14 - [MESSAGE][PASSED] - Element 'Object Repository/ShopActions_List' is exist&#xD;
+&#xD;
+2019-07-15 17:24:14 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ShopOpen", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ShopOpen'&#xD;
+&#xD;
+2019-07-15 17:24:14 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:24:16 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ShopOpen'&#xD;
+&#xD;
+2019-07-15 17:24:16 - [TEST_STEP][PASSED] - qa.keywords.CommonKeywords.takePicture(): qa.keywords.CommonKeywords.takePicture is PASSED&#xD;
+&#xD;
+2019-07-15 17:24:16 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:24:16 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist&#xD;
+&#xD;
+2019-07-15 17:24:16 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:24:19 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Camera_TakePictureButton'&#xD;
+&#xD;
+2019-07-15 17:24:24 - [MESSAGE][PASSED] - Delayed 5 second(s)&#xD;
+&#xD;
+2019-07-15 17:24:24 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:24:25 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Camera_DoneButton'&#xD;
+&#xD;
+2019-07-15 17:24:25 - [MESSAGE][PASSED] - qa.keywords.CommonKeywords.takePicture is PASSED&#xD;
+&#xD;
+2019-07-15 17:24:25 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/VisitShopOpen' successfully&#xD;
+&#xD;
+2019-07-15 17:24:25 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification: Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification&#xD;
+&#xD;
+2019-07-15 17:24:26 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/Validate_ShopCategoriesListScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist&#xD;
+&#xD;
+2019-07-15 17:24:26 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:24:27 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist&#xD;
+&#xD;
+2019-07-15 17:24:27 - [TEST_STEP][PASSED] - qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification(): qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification is PASSED&#xD;
+&#xD;
+2019-07-15 17:24:28 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,750&#xD;
+&#xD;
+2019-07-15 17:24:28 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,750&#xD;
+&#xD;
+2019-07-15 17:24:36 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ExpiryIssue/VisitExpiryIssue: Test Cases/ShopOpen/ExpiryIssue/VisitExpiryIssue&#xD;
+&#xD;
+2019-07-15 17:24:36 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ExpiryIssue/Validate_ExpiredCategoryScreen", ["package":PACKAGENAME]), "Expire Category"): Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ExpiredCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:24:37 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ExpiredCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:24:37 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.visitExpiryIssueRemark(): qa.keywords.ExpiryIssue.visitExpiryIssueRemark is PASSED&#xD;
+&#xD;
+2019-07-15 17:24:38 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ExpiryIssue/VisitProductCategory: Test Cases/ShopOpen/ExpiryIssue/VisitProductCategory&#xD;
+&#xD;
+2019-07-15 17:24:38 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen", ["package":PACKAGENAME]), "Expire CATEGORY"): Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:24:40 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:24:40 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.validateProductCategory(): qa.keywords.ExpiryIssue.validateProductCategory is PASSED&#xD;
+&#xD;
+2019-07-15 17:24:54 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.validateProductCategory is PASSED&#xD;
+&#xD;
+2019-07-15 17:24:54 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:24:54 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:24:54 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:24:54 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:24:54 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.visitProductCategories(): qa.keywords.ExpiryIssue.visitProductCategories is PASSED&#xD;
+&#xD;
+2019-07-15 17:24:57 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ExpiryIssue/ExpiredProduct/VisitProduct: Test Cases/ShopOpen/ExpiryIssue/ExpiredProduct/VisitProduct&#xD;
+&#xD;
+2019-07-15 17:24:57 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen", ["package":PACKAGENAME]), "Expire Product List"): Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:24:58 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:24:58 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.validateProducts(): qa.keywords.ExpiryIssue.validateProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:25:05 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.validateProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:25:05 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:25:05 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:25:05 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:25:05 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:25:06 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.visitExpiredProducts(CHANNEL_EXPIREDPRODUCT): qa.keywords.ExpiryIssue.visitExpiredProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:25:07 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:25:08 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:25:14 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:25:14 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:25:14 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:25:15 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:25:16 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:25:17 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:25:22 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:25:22 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:25:23 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:25:24 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:25:25 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:25:26 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:25:31 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:25:31 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:25:32 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:25:33 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:25:34 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:25:35 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:25:40 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:25:40 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:25:41 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:25:42 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:25:43 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:25:44 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:25:49 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:25:49 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:25:50 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:25:51 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:25:52 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:25:53 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:25:58 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:25:58 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:25:59 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:26:00 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:00 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.visitExpiredProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:26:00 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton'&#xD;
+&#xD;
+2019-07-15 17:26:00 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:26:01 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton'&#xD;
+&#xD;
+2019-07-15 17:26:01 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ExpiryIssue/ExpiredProduct/VisitProduct' successfully&#xD;
+&#xD;
+2019-07-15 17:26:02 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:03 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ExpiryIssue/ExpiredProduct/VisitProduct: Test Cases/ShopOpen/ExpiryIssue/ExpiredProduct/VisitProduct&#xD;
+&#xD;
+2019-07-15 17:26:03 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen", ["package":PACKAGENAME]), "Expire Product List"): Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:04 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:04 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.validateProducts(): qa.keywords.ExpiryIssue.validateProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:26:09 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.validateProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:26:09 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:26:10 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:26:10 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:26:10 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:26:10 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.visitExpiredProducts(CHANNEL_EXPIREDPRODUCT): qa.keywords.ExpiryIssue.visitExpiredProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:26:12 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:26:13 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:26:18 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:26:18 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:26:19 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:26:20 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:21 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:26:22 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:26:27 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:26:27 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:26:28 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:26:29 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:30 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:26:31 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:26:36 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:26:36 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:26:37 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:26:38 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:38 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.visitExpiredProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:26:38 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton'&#xD;
+&#xD;
+2019-07-15 17:26:38 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:26:39 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton'&#xD;
+&#xD;
+2019-07-15 17:26:39 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ExpiryIssue/ExpiredProduct/VisitProduct' successfully&#xD;
+&#xD;
+2019-07-15 17:26:40 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:41 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ExpiryIssue/ExpiredProduct/VisitProduct: Test Cases/ShopOpen/ExpiryIssue/ExpiredProduct/VisitProduct&#xD;
+&#xD;
+2019-07-15 17:26:41 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen", ["package":PACKAGENAME]), "Expire Product List"): Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:42 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:42 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.validateProducts(): qa.keywords.ExpiryIssue.validateProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:26:43 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.validateProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:26:43 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:26:44 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:26:44 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:26:44 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:26:44 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.visitExpiredProducts(CHANNEL_EXPIREDPRODUCT): qa.keywords.ExpiryIssue.visitExpiredProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:26:45 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:26:46 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:26:51 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:26:51 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:26:52 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:26:53 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:53 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.visitExpiredProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:26:53 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton'&#xD;
+&#xD;
+2019-07-15 17:26:53 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:26:54 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton'&#xD;
+&#xD;
+2019-07-15 17:26:54 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ExpiryIssue/ExpiredProduct/VisitProduct' successfully&#xD;
+&#xD;
+2019-07-15 17:26:55 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:55 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.visitProductCategories is PASSED&#xD;
+&#xD;
+2019-07-15 17:26:55 - [TEST_STEP][PASSED] - pressBack(): Press back button successfully&#xD;
+&#xD;
+2019-07-15 17:26:56 - [MESSAGE][PASSED] - Press back button successfully&#xD;
+&#xD;
+2019-07-15 17:26:56 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ExpiryIssue/VisitProductCategory' successfully&#xD;
+&#xD;
+2019-07-15 17:26:57 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ExpiredCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:26:58 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ExpiryIssue/VisitProductCategory: Test Cases/ShopOpen/ExpiryIssue/VisitProductCategory&#xD;
+&#xD;
+2019-07-15 17:26:58 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen", ["package":PACKAGENAME]), "Expire CATEGORY"): Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:27:00 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:27:00 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.validateProductCategory(): qa.keywords.ExpiryIssue.validateProductCategory is PASSED&#xD;
+&#xD;
+2019-07-15 17:27:15 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.validateProductCategory is PASSED&#xD;
+&#xD;
+2019-07-15 17:27:15 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:27:16 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:27:16 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:27:16 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:27:16 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.visitProductCategories(): qa.keywords.ExpiryIssue.visitProductCategories is PASSED&#xD;
+&#xD;
+2019-07-15 17:27:18 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ExpiryIssue/ShortlyExpire/VisitProduct: Test Cases/ShopOpen/ExpiryIssue/ShortlyExpire/VisitProduct&#xD;
+&#xD;
+2019-07-15 17:27:18 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen", ["package":PACKAGENAME]), "Expire Product List"): Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:27:20 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:27:20 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.validateProducts(): qa.keywords.ExpiryIssue.validateProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:27:26 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.validateProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:27:26 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:27:27 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:27:27 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:27:27 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:27:27 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.visitExpiredProducts(CHANNEL_SHORTLYEXPIREPRODUCT): qa.keywords.ExpiryIssue.visitExpiredProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:27:30 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:27:31 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:27:36 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:27:37 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:27:38 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton' is exist&#xD;
+&#xD;
+2019-07-15 17:27:38 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:27:38 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton'&#xD;
+&#xD;
+2019-07-15 17:27:38 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:27:39 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:27:39 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:27:40 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:27:40 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:27:41 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:27:42 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:27:47 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:27:48 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:27:49 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton' is exist&#xD;
+&#xD;
+2019-07-15 17:27:49 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:27:50 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton'&#xD;
+&#xD;
+2019-07-15 17:27:50 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:27:50 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:27:50 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:27:51 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:27:51 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:27:53 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:27:54 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:27:59 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:28:00 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:01 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton' is exist&#xD;
+&#xD;
+2019-07-15 17:28:01 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:02 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton'&#xD;
+&#xD;
+2019-07-15 17:28:02 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:02 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:28:02 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:03 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:28:04 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:28:04 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:06 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:28:11 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:28:12 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:14 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton' is exist&#xD;
+&#xD;
+2019-07-15 17:28:14 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:14 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton'&#xD;
+&#xD;
+2019-07-15 17:28:14 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:15 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:28:15 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:15 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:28:17 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:28:18 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:19 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:28:25 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:28:25 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:26 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton' is exist&#xD;
+&#xD;
+2019-07-15 17:28:26 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:27 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton'&#xD;
+&#xD;
+2019-07-15 17:28:27 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:27 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:28:27 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:28 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:28:29 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:28:30 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:31 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:28:36 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:28:37 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:38 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton' is exist&#xD;
+&#xD;
+2019-07-15 17:28:38 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:39 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton'&#xD;
+&#xD;
+2019-07-15 17:28:39 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:39 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:28:39 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:40 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:28:41 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:28:42 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:43 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:28:49 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:28:49 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:50 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton' is exist&#xD;
+&#xD;
+2019-07-15 17:28:50 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:51 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton'&#xD;
+&#xD;
+2019-07-15 17:28:51 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:51 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:28:51 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:52 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:28:53 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:28:54 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:28:55 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:29:01 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:29:01 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:02 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton' is exist&#xD;
+&#xD;
+2019-07-15 17:29:02 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:03 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton'&#xD;
+&#xD;
+2019-07-15 17:29:03 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:04 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:29:04 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:04 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:29:05 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:29:05 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.visitExpiredProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:29:05 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton'&#xD;
+&#xD;
+2019-07-15 17:29:05 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:06 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton'&#xD;
+&#xD;
+2019-07-15 17:29:06 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ExpiryIssue/ShortlyExpire/VisitProduct' successfully&#xD;
+&#xD;
+2019-07-15 17:29:07 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:29:08 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/ExpiryIssue/ShortlyExpire/VisitProduct: Test Cases/ShopOpen/ExpiryIssue/ShortlyExpire/VisitProduct&#xD;
+&#xD;
+2019-07-15 17:29:08 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen", ["package":PACKAGENAME]), "Expire Product List"): Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:29:09 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:29:09 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.validateProducts(): qa.keywords.ExpiryIssue.validateProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:29:14 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.validateProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:29:14 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:29:15 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:29:15 - [TEST_STEP][PASSED] - swipe(0, 200, 0, 500): Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:29:15 - [MESSAGE][PASSED] - Swiped from 0,200 to 0,500&#xD;
+&#xD;
+2019-07-15 17:29:15 - [TEST_STEP][PASSED] - qa.keywords.ExpiryIssue.visitExpiredProducts(CHANNEL_SHORTLYEXPIREPRODUCT): qa.keywords.ExpiryIssue.visitExpiredProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:29:16 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:17 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:29:22 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:29:23 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:24 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton' is exist&#xD;
+&#xD;
+2019-07-15 17:29:24 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:25 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton'&#xD;
+&#xD;
+2019-07-15 17:29:25 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:25 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:29:25 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:26 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:29:26 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:29:27 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:28 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:29:34 - [MESSAGE][PASSED] - Keyboard is hidden&#xD;
+&#xD;
+2019-07-15 17:29:34 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:36 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton' is exist&#xD;
+&#xD;
+2019-07-15 17:29:36 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:36 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton'&#xD;
+&#xD;
+2019-07-15 17:29:36 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:37 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup' is exist&#xD;
+&#xD;
+2019-07-15 17:29:37 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:37 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/QuantityPopupSubmitButton'&#xD;
+&#xD;
+2019-07-15 17:29:38 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:29:38 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.visitExpiredProducts is PASSED&#xD;
+&#xD;
+2019-07-15 17:29:38 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton'&#xD;
+&#xD;
+2019-07-15 17:29:38 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:39 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/ExpiredProduct/ProceedButton'&#xD;
+&#xD;
+2019-07-15 17:29:39 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ExpiryIssue/ShortlyExpire/VisitProduct' successfully&#xD;
+&#xD;
+2019-07-15 17:29:40 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:29:40 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.visitProductCategories is PASSED&#xD;
+&#xD;
+2019-07-15 17:29:40 - [TEST_STEP][PASSED] - pressBack(): Press back button successfully&#xD;
+&#xD;
+2019-07-15 17:29:40 - [MESSAGE][PASSED] - Press back button successfully&#xD;
+&#xD;
+2019-07-15 17:29:40 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ExpiryIssue/VisitProductCategory' successfully&#xD;
+&#xD;
+2019-07-15 17:29:41 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ExpiredCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:29:41 - [MESSAGE][PASSED] - qa.keywords.ExpiryIssue.visitExpiryIssueRemark is PASSED&#xD;
+&#xD;
+2019-07-15 17:29:41 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/ExpiryIssue/MainPictureButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/MainPictureButton'&#xD;
+&#xD;
+2019-07-15 17:29:41 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:42 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/ExpiryIssue/MainPictureButton'&#xD;
+&#xD;
+2019-07-15 17:29:42 - [TEST_STEP][PASSED] - qa.keywords.CommonKeywords.takePicture(): qa.keywords.CommonKeywords.takePicture is PASSED&#xD;
+&#xD;
+2019-07-15 17:29:42 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:44 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_CameraScreen' is exist&#xD;
+&#xD;
+2019-07-15 17:29:44 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:47 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Camera_TakePictureButton'&#xD;
+&#xD;
+2019-07-15 17:29:52 - [MESSAGE][PASSED] - Delayed 5 second(s)&#xD;
+&#xD;
+2019-07-15 17:29:52 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:53 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/Camera_DoneButton'&#xD;
+&#xD;
+2019-07-15 17:29:53 - [MESSAGE][PASSED] - qa.keywords.CommonKeywords.takePicture is PASSED&#xD;
+&#xD;
+2019-07-15 17:29:53 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("ShopOpen/ExpiryIssue/Validate_ExpiredCategoryScreen", ["package":PACKAGENAME]), "Expire Category"): Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ExpiredCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:29:54 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/ShopOpen/ExpiryIssue/Validate_ExpiredCategoryScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:29:54 - [TEST_STEP][PASSED] - pressBack(): Press back button successfully&#xD;
+&#xD;
+2019-07-15 17:29:55 - [MESSAGE][PASSED] - Press back button successfully&#xD;
+&#xD;
+2019-07-15 17:29:55 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("ShopOpen/Validate_ShopCategoriesListScreen", ["package":PACKAGENAME]), 0): Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist&#xD;
+&#xD;
+2019-07-15 17:29:55 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:29:55 - [MESSAGE][PASSED] - Element 'Object Repository/ShopOpen/Validate_ShopCategoriesListScreen' is exist&#xD;
+&#xD;
+2019-07-15 17:29:55 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/ExpiryIssue/VisitExpiryIssue' successfully&#xD;
+&#xD;
+2019-07-15 17:30:13 - [MESSAGE][PASSED] - qa.keywords.CategoryVisitingScenariosKeywords.visitShopCategoriesWithDataVerification is PASSED&#xD;
+&#xD;
+2019-07-15 17:30:13 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/VisitCategoryScenarios/VisitShopCategoriesWithDataVerification' successfully&#xD;
+&#xD;
+2019-07-15 17:30:13 - [TEST_CASE][PASSED] - Test Cases/ShopOpen/SaveShop: Test Cases/ShopOpen/SaveShop&#xD;
+&#xD;
+2019-07-15 17:30:13 - [TEST_STEP][PASSED] - tap(findTestObject("ShopOpen/SubmitButtonToSaveShop", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/ShopOpen/SubmitButtonToSaveShop'&#xD;
+&#xD;
+2019-07-15 17:30:13 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:30:14 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/ShopOpen/SubmitButtonToSaveShop'&#xD;
+&#xD;
+2019-07-15 17:30:14 - [TEST_STEP][PASSED] - verifyElementExist(findTestObject("CommonScreenElements/Validate_InfoPopUP", ["package":PACKAGENAME]), 0): Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist&#xD;
+&#xD;
+2019-07-15 17:30:14 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:30:14 - [MESSAGE][PASSED] - Element 'Object Repository/CommonScreenElements/Validate_InfoPopUP' is exist&#xD;
+&#xD;
+2019-07-15 17:30:14 - [TEST_STEP][PASSED] - tap(findTestObject("CommonScreenElements/InfoPopUp_YesButton", ["package":PACKAGENAME]), 0): Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_YesButton'&#xD;
+&#xD;
+2019-07-15 17:30:14 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:30:15 - [MESSAGE][PASSED] - Tapped on element 'Object Repository/CommonScreenElements/InfoPopUp_YesButton'&#xD;
+&#xD;
+2019-07-15 17:30:15 - [TEST_STEP][PASSED] - verifyElementText(findTestObject("Validate_ShopListScreen", ["package":PACKAGENAME]), "Shops on Route"): Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:30:15 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/Validate_ShopListScreen' are matched.&#xD;
+&#xD;
+2019-07-15 17:30:15 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/ShopOpen/SaveShop' successfully&#xD;
+&#xD;
+2019-07-15 17:30:16 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '6'&#xD;
+&#xD;
+2019-07-15 17:30:16 - [MESSAGE][PASSED] - Element 'Object Repository/Validate_ShopListScreen' is exist&#xD;
+&#xD;
+2019-07-15 17:30:16 - [MESSAGE][INFO] - 
+
+---------------------------------------------Missing Shop Data-----------------------------------------------------------------------------------------------------
+
+&lt;--------------------------------------------------------------------------------------------------------------------------------------&gt;
+
+Shop Name: Al Ghani Store                                   Channel: Small General                                      
+Visiting Scenarios: Data Verification                       Remark: Normal Shops                                        
+
+Shop Remarks:                 Shop To Be Removed,   
+above items are missing on device...
+
+
+
+Product Categories:
+
+Main Category:                Expiry Issue                                                
+Category Remark:              Expired Product                                             
+Product Categories:           Juices - 1000ML,	
+above items are display on device not match with expected items...
+
+
+
+Product Categories:
+
+Main Category:                Expiry Issue                                                
+Category Remark:              Shortly Expire                                              
+Product Categories:           Juices - 1000ML,	
+above items are display on device not match with expected items...
+
+
+
+Products:
+
+Main Category:                Expiry Issue                                                
+Category Remark:              Shortly Expire                                              
+Product Category:             Nutrition                                                   
+Products:                     CERELAC RICE 175GM,	NIDO NNS 1+ 400GM,	
+above items are display on device not match with expected items...
+
+
+
+&lt;--------------------------------------------------------------------------------------------------------------------------------------&gt;
+
+&#xD;
+&#xD;
+2019-07-15 17:30:16 - [MESSAGE][INFO] - 
+
+
+---------------------------------------------Visited Shop Data-----------------------------------------------------------------------------------------------------
+
+&lt;--------------------------------------------------------------------------------------------------------------------------------------&gt;
+
+Shop Name: Al Ghani Store                                   Channel: Small General                                      
+Visiting Scenarios: Shop Open                               Remark: Normal Shops                                        
+
+Other Categories Visiting Scenarios:    (1) 'RTM visit frequency' with 'Once a week'
+                                            'Pop Application' with 'No' remark                                                                  
+                                            'Retailer Remarks' with 'OB not visiting' remark                                                    
+                                            'Hanger Availability' with 'Yes' remark                                                             
+                                        (2) 'RTM visit frequency' with 'Twice a week'                                                       
+                                            'Pop Application' with 'No' remark                                                                  
+                                            'Retailer Remarks' with 'SM not visiting' remark                                                    
+                                            'Hanger Availability' with 'No' remark                                                              
+
+Main Category:                Expiry Issue                                                
+
+Category Remark:              Expired Product                                             
+
+     Product Category:             Juices - 200ML                                              
+
+     Products:                                         Product Quantity              Overwrite Product Quantity    
+     NESFRUTA MANGO 200ML                              1133                          null                          
+     FRUITA VITALS CHAUNSA 200ML                       1130                          null                          
+     FRUITA VITALS RED GRAPES 200ML                    1131                          null                          
+     FRUITA VITALS APPLE 200ML                         1132                          null                          
+     FRUITA VITALS PEACH 200ML                         1134                          null                          
+     FRUITA VITALS ROYAL MANGOES 200ML                 1135                          null                          
+
+
+     Product Category:             Water                                                       
+
+     Products:                                         Product Quantity              Overwrite Product Quantity    
+     Water Npl 500ML                                   1145                          null                          
+     Water Npl 1500ML                                  1146                          null                          
+     Water Npl 330ML                                   1147                          null                          
+
+
+     Product Category:             Flavoured Milk                                              
+
+     Products:                                         Product Quantity              Overwrite Product Quantity    
+     MILO RTD 200ML                                    1144                          null                          
+
+
+Category Remark:              Shortly Expire                                              
+
+     Product Category:             Yogurt                                                      
+
+     Products:                                         Product Quantity              Overwrite Product Quantity    
+     Sweet &amp; Tasty 400GM                               4765                          null                          
+     PODINA RAITA 250GM                                4766                          null                          
+     NESTLE MILKPAK YOGURT POUCH 500GM                 4764                          null                          
+     Nestle Nesvita YOGURT 400GM                       4767                          null                          
+     NESTLE ZEERA RAITA 250GM                          4768                          null                          
+     NESTLE MILKPAK YOGURT CUP 450GM                   4769                          null                          
+     Sweet &amp; Tasty 200GM                               4770                          null                          
+     NESTLE MILKPAK YOGURT POUCH 1000GM                4771                          null                          
+
+
+     Product Category:             Nutrition                                                   
+
+     Products:                                         Product Quantity              Overwrite Product Quantity    
+     CERELAC 3 Fruit 175GM                             4791                          null                          
+     CERELAC Wheat 175GM                               4793                          null                          
+
+                                ----------------------------------------------------------------------------------------------------                                
+
+
+&lt;--------------------------------------------------------------------------------------------------------------------------------------&gt;
+
+&#xD;
+&#xD;
+2019-07-15 17:30:16 - [MESSAGE][PASSED] - qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_DataVerification is PASSED</system-out>
+            <system-err></system-err>
+        </testcase>
+        <system-out>2019-07-15 17:23:06 - [TEST_SUITE][INCOMPLETE] - MMA Plus Merchandising With Data Verification: null</system-out>
+        <system-err>2019-07-15 17:23:06 - [TEST_SUITE][INCOMPLETE] - MMA Plus Merchandising With Data Verification: null</system-err>
+    </testsuite>
+</testsuites>

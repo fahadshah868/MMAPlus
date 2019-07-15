@@ -1,0 +1,13 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+MMA Plus Merchandising With Data Verification,,,,2019-07-15 17:03:19,2019-07-15 17:09:48,6m - 29.088s,INCOMPLETE
+,,,,,,,
+Test Cases/LaunchingApp/LaunchApp,,,,2019-07-15 17:03:20,2019-07-15 17:03:46,25.892s,PASSED
+"startApplication(""F:\QA_Automation\Builds\MMA Plus\mmaplus_expired_product_module_080719_local.apk"", false)",,launch application,,2019-07-15 17:03:20,2019-07-15 17:03:40,20.021s,PASSED
+delay(5),,delay of 5 seconds,,2019-07-15 17:03:40,2019-07-15 17:03:46,5.085s,PASSED
+,,,,,,,
+Test Cases/MerchandisingShopScenarios/VisitShopsWithDataVerification,,,,2019-07-15 17:03:46,2019-07-15 17:09:48,6m - 2.714s,PASSED
+"verifyElementText(findTestObject(""DashboardScreenElements/Validate_DashboardScreen"", [""package"":PACKAGENAME]), ""Dashboard"")",,validate the dashboard screen appearance,,2019-07-15 17:03:46,2019-07-15 17:03:53,6.709s,PASSED
+qa.keywords.CommonKeywords.selectday(),,select current day,,2019-07-15 17:03:53,2019-07-15 17:03:56,3.199s,PASSED
+"tap(findTestObject(""DashboardScreenElements/StartYourDay"", [""package"":PACKAGENAME]), 0)",,tap on start your day button to further proceed,,2019-07-15 17:03:56,2019-07-15 17:03:58,1.458s,PASSED
+"verifyElementText(findTestObject(""Validate_ShopListScreen"", [""package"":PACKAGENAME]), ""Shops on Route"")",,Validate shops list screen appearance,,2019-07-15 17:03:58,2019-07-15 17:03:59,1.522s,PASSED
+qa.keywords.ShopVisitingScenariosKeywords.visitShopWith_DataVerification(),,select shops from shops list for data verification,,2019-07-15 17:03:59,2019-07-15 17:09:48,5m - 48.927s,PASSED

@@ -334,55 +334,55 @@ public class ShopVisitingScenariosKeywords{
 		String visitedshop
 		MobileElement listcontainer = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]")
 		ArrayList<MobileElement> shops = listcontainer.findElementsByClassName("android.widget.TextView")
-		for(int i=0; i< 2; i++){
+		for(int i=0; i< 1; i++){
 			MobileElement shop = shops.get(i)
 			visitedshop = shop.getText()
 			visitShopWith_DataVerification(shop)
 			Mobile.verifyElementExist(findTestObject("Object Repository/Validate_ShopListScreen" , [('package') : ProjectConstants.PACKAGENAME]), 0)
 		}
-//		touchaction.press(0, 220).waitAction(Duration.ofMillis(500)).moveTo(0, 200).release().perform()
-//		Thread.sleep(500)
-//		while(true){
-//			swipecounter++
-//			index = listcontainer.findElementsByClassName("android.widget.TextView").size()
-//			MobileElement lastitembeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-//			String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
-//			MobileElement startpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]")
-//			MobileElement endpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]")
-//			touchaction.press(startpoint).waitAction(Duration.ofMillis(2000)).moveTo(endpoint).release().perform()
-//			Thread.sleep(500)
-//			index = listcontainer.findElementsByClassName("android.widget.TextView").size()
-//			MobileElement lastitemafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
-//			String lastitemnameafterswipe = lastitemafterswipe.getText()
-//			if(lastitemnamebeforeswipe.equalsIgnoreCase(lastitemnameafterswipe)){
-//				break
-//			}
-//			else{
-//				shops = listcontainer.findElementsByClassName("android.widget.TextView")
-//				for(int i=0; i< shops.size(); i++){
-//					MobileElement shop = shops.get(i)
-//					//if current element match with last visited element
-//					if(visitedshop.equalsIgnoreCase(shop.getText())){
-//						//if current element is not a last element of screen
-//						if(i < (shops.size()-1)){
-//							shop = shops.get((i+1))
-//							visitedshop = shop.getText()
-//							visitShopWith_DataVerification(shop)
-//							//swipe to last visited item screen view
-//							touchaction.press(0, 230).waitAction(Duration.ofMillis(500)).moveTo(0, 200).release().perform()
-//							Thread.sleep(500)
-//							for(int j=1; j<= swipecounter; j++){
-//								index = listcontainer.findElementsByClassName("android.widget.TextView").size()
-//								startpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]")
-//								endpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]")
-//								touchaction.press(startpoint).waitAction(Duration.ofMillis(2000)).moveTo(endpoint).release().perform()
-//								Thread.sleep(500)
-//							}
-//						}
-//					}
-//				}
-//			}
-//		}
+		//		touchaction.press(0, 220).waitAction(Duration.ofMillis(500)).moveTo(0, 200).release().perform()
+		//		Thread.sleep(500)
+		//		while(true){
+		//			swipecounter++
+		//			index = listcontainer.findElementsByClassName("android.widget.TextView").size()
+		//			MobileElement lastitembeforeswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+		//			String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
+		//			MobileElement startpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]")
+		//			MobileElement endpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]")
+		//			touchaction.press(startpoint).waitAction(Duration.ofMillis(2000)).moveTo(endpoint).release().perform()
+		//			Thread.sleep(500)
+		//			index = listcontainer.findElementsByClassName("android.widget.TextView").size()
+		//			MobileElement lastitemafterswipe = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]/android.widget.TextView[1]")
+		//			String lastitemnameafterswipe = lastitemafterswipe.getText()
+		//			if(lastitemnamebeforeswipe.equalsIgnoreCase(lastitemnameafterswipe)){
+		//				break
+		//			}
+		//			else{
+		//				shops = listcontainer.findElementsByClassName("android.widget.TextView")
+		//				for(int i=0; i< shops.size(); i++){
+		//					MobileElement shop = shops.get(i)
+		//					//if current element match with last visited element
+		//					if(visitedshop.equalsIgnoreCase(shop.getText())){
+		//						//if current element is not a last element of screen
+		//						if(i < (shops.size()-1)){
+		//							shop = shops.get((i+1))
+		//							visitedshop = shop.getText()
+		//							visitShopWith_DataVerification(shop)
+		//							//swipe to last visited item screen view
+		//							touchaction.press(0, 230).waitAction(Duration.ofMillis(500)).moveTo(0, 200).release().perform()
+		//							Thread.sleep(500)
+		//							for(int j=1; j<= swipecounter; j++){
+		//								index = listcontainer.findElementsByClassName("android.widget.TextView").size()
+		//								startpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]")
+		//								endpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]")
+		//								touchaction.press(startpoint).waitAction(Duration.ofMillis(2000)).moveTo(endpoint).release().perform()
+		//								Thread.sleep(500)
+		//							}
+		//						}
+		//					}
+		//				}
+		//			}
+		//		}
 		/****Generate Report and Display Data in Report****/
 		DisplayReportKeywords.displayDataInReport()
 	}

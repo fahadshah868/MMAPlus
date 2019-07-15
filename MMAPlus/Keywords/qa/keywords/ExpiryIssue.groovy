@@ -36,16 +36,13 @@ public class ExpiryIssue {
 	@Keyword
 	def visitExpiryIssueRemark(){
 		int expirecategories = ProjectConstants.DRIVER.findElementsByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/*").size()
-		for(int i=1; i<= expirecategories; i++){
+		for(int i=2; i<= expirecategories; i++){
 			MobileElement expirecategory = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+i+"]/android.widget.TextView[1]")
 			String categorytext = expirecategory.getText()
 			ProjectConstants.CURRENTVISITING_CATEGORYREMARK = categorytext
 			expirecategory.click()
-			if(categorytext.equalsIgnoreCase("Expired Product")){
-				Mobile.callTestCase(findTestCase("ExpiryIssue/VisitProductCategory"), null)
-			}
-			else if(categorytext.equalsIgnoreCase("Shortly Expire")){
-			}
+			Mobile.callTestCase(findTestCase("ShopOpen/ExpiryIssue/VisitProductCategory"), null)
+			Mobile.verifyElementText(findTestObject('ShopOpen/ExpiryIssue/Validate_ExpiredCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Expire Category')
 		}
 	}
 	@Keyword
@@ -138,25 +135,32 @@ public class ExpiryIssue {
 		int visitedcategories
 		MobileElement listcontainer = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]")
 		ArrayList<MobileElement> productcategories = listcontainer.findElementsByClassName("android.widget.TextView")
-		for(int i=0; i< 2; i++){
-			MobileElement productcategory = productcategories.get(i)
-			ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = productcategory.getText()
-			productcategory.click()
-			if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
-				if(ProjectConstants.CURRENTVISITING_CATEGORYREMARK.equalsIgnoreCase("Expired Product")){
-					Mobile.callTestCase(findTestCase("Test Cases/ExpiryIssue/ExpiredProduct/VisitProduct"), null)
+		if(ProjectConstants.CURRENTVISITING_CATEGORYREMARK.equalsIgnoreCase("Expired Product")){
+			for(int i=0; i< 3; i++){
+				MobileElement productcategory = productcategories.get(i)
+				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = productcategory.getText()
+				productcategory.click()
+				if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+					Mobile.callTestCase(findTestCase("ShopOpen/ExpiryIssue/ExpiredProduct/VisitProduct"), null)
 				}
-				else if(ProjectConstants.CURRENTVISITING_CATEGORYREMARK.equalsIgnoreCase("Shortly Expire")){
+				else{
 					Mobile.callTestCase(findTestCase(""), null)
 				}
+				Mobile.verifyElementText(findTestObject('ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Expire CATEGORY')
 			}
-			else{
-				if(ProjectConstants.CURRENTVISITING_CATEGORYREMARK.equalsIgnoreCase("Expired Product")){
+		}
+		else if(ProjectConstants.CURRENTVISITING_CATEGORYREMARK.equalsIgnoreCase("Shortly Expire")){
+			for(int i=3; i< 5; i++){
+				MobileElement productcategory = productcategories.get(i)
+				ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY = productcategory.getText()
+				productcategory.click()
+				if(ProjectConstants.SCENARIO.equalsIgnoreCase("first visit")){
+					Mobile.callTestCase(findTestCase("Test Cases/ShopOpen/ExpiryIssue/ShortlyExpire/VisitProduct"), null)
+				}
+				else{
 					Mobile.callTestCase(findTestCase(""), null)
 				}
-				else if(ProjectConstants.CURRENTVISITING_CATEGORYREMARK.equalsIgnoreCase("Shortly Expire")){
-					Mobile.callTestCase(findTestCase(""), null)
-				}
+				Mobile.verifyElementText(findTestObject('ShopOpen/ExpiryIssue/Validate_ProductCategoryScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Expire CATEGORY')
 			}
 		}
 	}
@@ -179,10 +183,12 @@ public class ExpiryIssue {
 			String lastitemnamebeforeswipe = lastitembeforeswipe.getText()
 			// swipe using touch action from element to element
 			index = products.size()
-			MobileElement startpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]")
-			MobileElement endpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]")
-			touchaction.longPress(startpoint).waitAction(Duration.ofMillis(500)).moveTo(endpoint).release().perform()
-			Thread.sleep(500)
+			if(index > 1){
+				MobileElement startpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout["+index+"]")
+				MobileElement endpoint = ProjectConstants.DRIVER.findElementByXPath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.LinearLayout[1]")
+				touchaction.longPress(startpoint).waitAction(Duration.ofMillis(500)).moveTo(endpoint).release().perform()
+				Thread.sleep(500)
+			}
 			products = listcontainer.findElementsByClassName("android.widget.TextView")
 			MobileElement lastitemafterswipe = products.get((products.size()-1))
 			String lastitemnameafterswipe = lastitemafterswipe.getText()
@@ -208,8 +214,8 @@ public class ExpiryIssue {
 			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			missingcategorydata.setCategoryremark(ProjectConstants.CURRENTVISITING_CATEGORYREMARK)
 			missingcategorydata.setProductCategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
-			missingcategorydata.setProductcategories(unmatcheditems.getItems())
-			missingcategorydata.setProductcategories_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_NOTMATCH)
+			missingcategorydata.setProducts(unmatcheditems.getItems())
+			missingcategorydata.setProducts_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_NOTMATCH)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 					ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, "")
@@ -224,8 +230,8 @@ public class ExpiryIssue {
 			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			missingcategorydata.setCategoryremark(ProjectConstants.CURRENTVISITING_CATEGORYREMARK)
 			missingcategorydata.setProductCategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
-			missingcategorydata.setProductcategories(unmatcheditems.getItems())
-			missingcategorydata.setProductcategories_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_MORE)
+			missingcategorydata.setProducts(unmatcheditems.getItems())
+			missingcategorydata.setProducts_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_MORE)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 					ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, "")
@@ -240,8 +246,8 @@ public class ExpiryIssue {
 			missingcategorydata.setMaincategory(ProjectConstants.CURRENTVISITING_MAINCATEGORY)
 			missingcategorydata.setCategoryremark(ProjectConstants.CURRENTVISITING_CATEGORYREMARK)
 			missingcategorydata.setProductCategory(ProjectConstants.CURRENTVISITING_PRODUCTCATEGORY)
-			missingcategorydata.setProductcategories(unmatcheditems.getItems())
-			missingcategorydata.setProductcategories_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_MISSING)
+			missingcategorydata.setProducts(unmatcheditems.getItems())
+			missingcategorydata.setProducts_errormessage(ProjectConstants.MESSAGEFOR_ITEMSARE_MISSING)
 			for(int j=0; j<ProjectConstants.missingshopdatainfo.size(); j++){
 				if(ProjectConstants.missingshopdatainfo.get(j).getShopname().equalsIgnoreCase(ProjectConstants.CURRENTVISITING_SHOPNAME)) {
 					ProjectConstants.missingshopdatainfo.get(j).setMissingCategoriesData(missingcategorydata, "")
@@ -268,10 +274,12 @@ public class ExpiryIssue {
 				LoadProductsData expectedproduct = expectedproducts.get(j)
 				if(product.getText().equalsIgnoreCase(expectedproduct.getProduct())){
 					product.click()
-					Mobile.verifyElementExist(findTestObject("Object Repository/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup", [('package') : ProjectConstants.PACKAGENAME]), 0)
-					MobileElement edittext = ProjectConstants.DRIVER.findElementByXPath("//*[@class = 'android.widget.EditText' and @instance = '0']")
-					edittext.setValue(expectedproduct.getProduct_data())
-					Mobile.hideKeyboard()
+					if(ProjectConstants.CURRENTVISITING_CATEGORYREMARK.equalsIgnoreCase("Expired Product")){
+						visitExpiredProductPopup(expectedproduct.getProduct_data())
+					}
+					else if(ProjectConstants.CURRENTVISITING_CATEGORYREMARK.equalsIgnoreCase("Shortly Expire")){
+						visitShortlyExpiredProductPopup(expectedproduct.getProduct_data())
+					}
 					shopproductdata.setFacingdata(expectedproduct.getProduct_data())
 					flag = true
 					break
@@ -279,15 +287,15 @@ public class ExpiryIssue {
 			}
 			if(!flag){
 				product.click()
-				Mobile.verifyElementExist(findTestObject("Object Repository/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup", [('package') : ProjectConstants.PACKAGENAME]), 0)
-				MobileElement edittext = ProjectConstants.DRIVER.findElementByXPath("//*[@class = 'android.widget.EditText' and @instance = '0']")
-				edittext.setValue("0000")
-				Mobile.hideKeyboard()
+				if(ProjectConstants.CURRENTVISITING_CATEGORYREMARK.equalsIgnoreCase("Expired Product")){
+					visitExpiredProductPopup("0000")
+				}
+				else if(ProjectConstants.CURRENTVISITING_CATEGORYREMARK.equalsIgnoreCase("Shortly Expire")){
+					visitShortlyExpiredProductPopup("0000")
+				}
 				shopproductdata.setFacingdata("0000")
 			}
 			shopproductsdata.add(shopproductdata)
-			Mobile.tap(findTestObject("Object Repository/ExpiryIssue/ExpiredProduct/QuantityPopupSubmitButton", [('package') : ProjectConstants.PACKAGENAME]), 0)
-			Mobile.verifyElementText(findTestObject('ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Expire Product List')
 		}
 		VisitedCategoryData visitedcategorydata = new VisitedCategoryData()
 		ExpiryIssueProduct expiryissueproduct = new ExpiryIssueProduct()
@@ -368,5 +376,26 @@ public class ExpiryIssue {
 				}
 			}
 		}
+	}
+	def visitExpiredProductPopup(String val){
+		Mobile.verifyElementExist(findTestObject("ShopOpen/ExpiryIssue/ExpiredProduct/Validate_QuantityPopup", [('package') : ProjectConstants.PACKAGENAME]), 0)
+		MobileElement quantity_edittext = ProjectConstants.DRIVER.findElementByXPath("//*[@class = 'android.widget.EditText' and @instance = '0']")
+		quantity_edittext.setValue(val)
+		Mobile.hideKeyboard()
+		Mobile.tap(findTestObject("ShopOpen/ExpiryIssue/ExpiredProduct/QuantityPopupSubmitButton", [('package') : ProjectConstants.PACKAGENAME]), 0)
+		Mobile.verifyElementText(findTestObject('ShopOpen/ExpiryIssue/ExpiredProduct/Validate_ExpiredProductScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Expire Product List')
+	}
+	def visitShortlyExpiredProductPopup(String val){
+		Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup", [('package') : ProjectConstants.PACKAGENAME]), 0)
+		MobileElement quantity_edittext = ProjectConstants.DRIVER.findElementByXPath("//*[@class = 'android.widget.EditText' and @instance = '0']")
+		quantity_edittext.setValue(val)
+		Mobile.hideKeyboard()
+		MobileElement date_edittext = ProjectConstants.DRIVER.findElementByXPath("//*[@class = 'android.widget.EditText' and @instance = '1']")
+		date_edittext.click()
+		Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton"), 0)
+		Mobile.tap(findTestObject("Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Calendar_SelectButton"), 0)
+		Mobile.verifyElementExist(findTestObject("Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_QuantityPopup", [('package') : ProjectConstants.PACKAGENAME]), 0)
+		Mobile.tap(findTestObject("Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/QuantityPopupSubmitButton", [('package') : ProjectConstants.PACKAGENAME]), 0)
+		Mobile.verifyElementText(findTestObject('Object Repository/ShopOpen/ExpiryIssue/ShortlyExpire/Validate_ExpiredProductScreen', [('package') : ProjectConstants.PACKAGENAME]), 'Expire Product List')
 	}
 }
